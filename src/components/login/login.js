@@ -2,7 +2,7 @@ import React from "react";
 import "./login.css";
 import { Col, Label, Input, Container, Row, Button } from "reactstrap";
 
-function Login() {
+function Login(props) {
   return (
     <Container>
       <Container>
@@ -73,7 +73,11 @@ function Login() {
           </Row>
           <Row>
             <Col>
-              <Button color="primary" block>CREATE NEW USER</Button>
+              <Button color="primary" 
+              onClick={() => {
+                  props.history.push(`/createUser`);
+                }}
+              block>CREATE NEW USER</Button>
             </Col>
           </Row>
         </Container>
