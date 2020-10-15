@@ -1,0 +1,25 @@
+.whiteBgd {
+  background-color: white;
+}
+
+/* .tempBGD {
+  background-color: white;
+  margin: 8px;
+} */
+
+.containerTempBGD {
+  background-color: red;
+  /* margin: 2px; */
+}
+
+.createButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 4px;
+  padding: 8px;
+}
+
+.gap {
+  margin: 4px;
+}
