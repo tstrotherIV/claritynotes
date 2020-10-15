@@ -1,0 +1,42 @@
+.siteBackground {
+  background-image: url(../media/blue\ bg\ clarity\ HD.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0%;
+}
+
+.centerText {
+  text-align: center;
+  margin: 5px;
+}
+
+.textWhite {
+  color: white;
+}
+
+.titleFontSize {
+  font-size: 100px;
+  font-family: sans-serif;
+}
+
+.welcomeText {
+  font-size: 40px;
+  font-family: sans-serif;
+}
+
+.pleaseLoginText {
+  font-size: 25px;
+  font-family: sans-serif;
+}
+
+.titleSpacing {
+  margin-top: 10px;
+}
+
+.subHeaderFontSize {
+  font-size: 65px;
+}
+
+.formDiv {
+  justify-content: flex-end;
+}
