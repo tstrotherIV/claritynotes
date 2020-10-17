@@ -2,7 +2,7 @@ import { Route } from "react-router-dom";
 import React from "react";
 import Login from "./login/login"
 import CreateUser from "./createUser/createUser"
-
+import PatientHomePage from "./patient/patientHome"
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -24,6 +24,13 @@ const ApplicationViews = (props) => {
         path="/createUser"
         render={(props) => {
           return <CreateUser setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/patient"
+        render={(props) => {
+          return <PatientHomePage setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
     </React.Fragment>

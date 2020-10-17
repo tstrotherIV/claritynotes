@@ -51,7 +51,7 @@ function Login(props) {
                 type="email"
                 name="email"
                 id="exampleEmail"
-                placeholder="with a placeholder"
+                placeholder="email placeholder"
               />
             </Col>
           </Row>
@@ -71,6 +71,16 @@ function Login(props) {
               />
             </Col>
           </Row>
+          <Row>
+            <Col>
+              <Button color="primary" 
+              onClick={() => {
+                  props.history.push(`/patient`);
+                }}
+              block>Login</Button>
+            </Col>
+          </Row>
+          <br></br>
           <Row>
             <Col>
               <Button color="primary" 
