@@ -75,7 +75,7 @@ function Login(props) {
             <Col>
               <Button color="primary" 
               onClick={() => {
-                  props.history.push(`/`);
+                  props.history.push(`/patient`);
                 }}
               block>Login</Button>
             </Col>
