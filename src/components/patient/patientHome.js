@@ -2,7 +2,7 @@ import React from "react";
 import "./patientHome.css";
 import { Button, Container, Row, Col } from "reactstrap";
 
-function PatientHomePage() {
+function PatientHomePage(props) {
 
   let USERNAME = "Chris"
 
@@ -22,9 +22,9 @@ function PatientHomePage() {
               // className="mr-2"
               block
               color="light"
-              // onClick={() => {
-              //   props.history.push(`/tourViewer/${props.tour.id}`);
-              // }}
+              onClick={() => {
+                props.history.push(`/sessionStep1`);
+              }}
             >
               New Patient
             </Button>

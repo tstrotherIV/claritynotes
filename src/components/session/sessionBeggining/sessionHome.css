@@ -1,0 +1,30 @@
+h1 {
+  color: white
+}
+
+.wrapContent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.header {
+  margin: 8px;
+  display: flex;
+  justify-content: center;
+  flex: auto;
+  text-align: center;
+}
+
+.buttonSection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.button {
+  margin: 10px;
+  flex: auto;
+}
