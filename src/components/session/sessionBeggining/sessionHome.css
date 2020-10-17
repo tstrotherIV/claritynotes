@@ -27,4 +27,5 @@ h1 {
 .button {
   margin: 10px;
   flex: auto;
+  height: 50px;
 }
