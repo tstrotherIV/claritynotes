@@ -9,7 +9,7 @@ function PatientHomePage(props) {
   return (
     <>
       <div className="d-flex flex-row justify-content-center mt-5">
-        <h1>Welcome</h1> `<h1>{USERNAME}</h1>`
+        <h1 className="textWhite">Welcome</h1> `<h1 className="textWhite">{USERNAME}</h1>`
       </div>
       <h4 className="d-flex justify-content-center textWhite">
         Please select an option
