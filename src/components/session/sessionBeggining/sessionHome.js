@@ -2,7 +2,7 @@ import React from "react";
 import "./sessionHome.css";
 import { Button, Container, Row, Col } from "reactstrap";
 
-function SessionStep1() {
+function SessionStep1(props) {
   let USERNAME = "Chris";
   let FirstName = "John";
   let LastName = "Doe";
@@ -19,7 +19,7 @@ function SessionStep1() {
       </section>
       <div className="header">
         `
-        <h1>
+        <h1 className="textWhite">
           What would you like to do for {FirstName} {LastName}?
         </h1>
         `
@@ -28,13 +28,13 @@ function SessionStep1() {
         Please select an option
       </h4>
       <br></br>
-      <section section className="buttonSection mt-5">
+      <section className="buttonSection mt-5">
         <Button
           className="button"
           color="light"
-          // onClick={() => {
-          //   props.history.push(`/tourViewer/${props.tour.id}`);
-          // }}
+          onClick={() => {
+            props.history.push(`/psychological_evaluation`);
+          }}
         >
           Psychological Evaluation
         </Button>

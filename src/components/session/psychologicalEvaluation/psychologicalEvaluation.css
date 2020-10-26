@@ -1,0 +1,52 @@
+.section1Fields {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.line1 {
+  display: flex;
+  flex: auto;
+  margin: 10px;
+  padding: 5px;
+  max-width: 500px;
+}
+
+.title {
+  display: flex;
+  min-width: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+.fieldData {
+  max-width: 500px;
+}
+
+.evalDate {
+  min-width: 500px;
+  max-width: 500px;
+}
+
+.evalButton{
+  width: 100%;
+  max-width: 500px;
+}
+.dropdown {
+  width: 100%;
+  max-width: 500px;
+}
+
+.buttonSection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.button {
+  margin: 20px;
+  flex: auto;
+  height: 50px;
+}
