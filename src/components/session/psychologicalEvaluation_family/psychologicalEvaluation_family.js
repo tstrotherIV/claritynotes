@@ -129,9 +129,9 @@ function PsychologicalEvaluation_family(props) {
         </div>
       </section>
       <section className="buttonSection mt-5" id="footer">
-        <Button color="info" className="button">
-          Previous
-        </Button>
+      <Button color="info" className="button" onClick={() => {
+            props.history.push(`/psychological_evaluation`);
+          }}>Previous</Button>
         <Button color="info" className="button">
           Save
         </Button>
