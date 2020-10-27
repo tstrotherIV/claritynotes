@@ -6,6 +6,7 @@ import PatientHomePage from "./patient/patientHome"
 import SessionStep1 from "./session/sessionBeggining/sessionHome"
 import PsychologicalEvaluation from "./session/psychologicalEvaluation/psychologicalEvaluation"
 import PsychologicalEvaluation_family from "./session/psychologicalEvaluation_family/psychologicalEvaluation_family"
+import PsychologicalEvaluation_siblings from "./session/psychologicalEvaluation_family/psychologicalEvaluation_siblings"
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -55,6 +56,13 @@ const ApplicationViews = (props) => {
         path="/psychological_evaluation_family"
         render={(props) => {
           return <PsychologicalEvaluation_family setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/psychological_evaluation_siblings"
+        render={(props) => {
+          return <PsychologicalEvaluation_siblings setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
     </React.Fragment>
