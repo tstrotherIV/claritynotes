@@ -16,7 +16,7 @@ function Login(props) {
         <Row>
           <Col>
             <h3 className="textWhite subHeaderFontSize d-flex justify-content-center">
-              Professional Notetaking for Psychologists
+            Enhancing Perspective with Psychological Assessment
             </h3>
           </Col>
         </Row>
