@@ -212,7 +212,9 @@ function PsychologicalEvaluation(props) {
         <Button color="info" className="button">Previous</Button>
         <Button color="info" className="button">Save</Button>
         <Button color="info" className="button">Submit</Button>
-        <Button color="info" className="button">Next</Button>
+        <Button color="info" className="button" onClick={() => {
+            props.history.push(`/psychological_evaluation_family`);
+          }}>Next</Button>
       </section>
     </>
   );
