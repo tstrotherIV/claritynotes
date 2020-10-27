@@ -10,7 +10,7 @@ import {
   DropdownItem,
 } from "reactstrap";
 
-function PsychologicalEvaluation_children(props) {
+function PsychologicalEvaluation_siblings(props) {
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
 
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
@@ -40,20 +40,20 @@ function PsychologicalEvaluation_children(props) {
             id=""
             placeholder=""
           />
-          <Label className="textWhite title" for="firstName">
-          Patient is an Only Child
+          <Label className="textWhite title" for="">
+          Patient Has No Children
           </Label>
         </div>
         <div className="line1">
-          <Label className="textWhite title" for="firstName">
-            Siblings
+          <Label className="textWhite title" for="">
+            Children
           </Label>
           <Input
             className="fieldData"
             type="text"
-            name="firstName"
-            id="firstName"
-            placeholder="Sibling First Name"
+            name=""
+            id=""
+            placeholder="Child First Name"
           />
         </div>
         <div className="line1">
@@ -62,9 +62,9 @@ function PsychologicalEvaluation_children(props) {
           <Input
             className="fieldData"
             type="text"
-            name="firstName"
-            id="firstName"
-            placeholder="Sibling Last Name"
+            name=""
+            id=""
+            placeholder="Child Last Name"
           />
         </div>
         
@@ -104,7 +104,7 @@ function PsychologicalEvaluation_children(props) {
       </section>
       <section className="buttonSection mt-5" id="footer">
       <Button color="info" className="button" onClick={() => {
-            props.history.push(`/psychological_evaluation_family`);
+            props.history.push(`/psychological_evaluation_siblings`);
           }}>Previous</Button>
         <Button color="info" className="button">
           Save
@@ -113,11 +113,11 @@ function PsychologicalEvaluation_children(props) {
           Submit
         </Button>
         <Button color="info" className="button" onClick={() => {
-            props.history.push(`/psychological_evaluation_children`);
+            props.history.push(`/psychological_evaluation_spouse`);
           }}>Next</Button>
       </section>
     </>
   );
 }
 
-export default PsychologicalEvaluation_children;
+export default PsychologicalEvaluation_siblings;

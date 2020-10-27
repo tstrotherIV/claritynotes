@@ -7,6 +7,8 @@ import SessionStep1 from "./session/sessionBeggining/sessionHome"
 import PsychologicalEvaluation from "./session/psychologicalEvaluation/psychologicalEvaluation"
 import PsychologicalEvaluation_family from "./session/psychologicalEvaluation_family/psychologicalEvaluation_family"
 import PsychologicalEvaluation_siblings from "./session/psychologicalEvaluation_family/psychologicalEvaluation_siblings"
+import PsychologicalEvaluation_children from "./session/psychologicalEvaluation_family/psychologicalEvaluation_children"
+import PsychologicalEvaluation_spouse from "./session/psychologicalEvaluation_family/psychologicalEvaluation_spouse"
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -63,6 +65,20 @@ const ApplicationViews = (props) => {
         path="/psychological_evaluation_siblings"
         render={(props) => {
           return <PsychologicalEvaluation_siblings setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/psychological_evaluation_children"
+        render={(props) => {
+          return <PsychologicalEvaluation_children setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/psychological_evaluation_spouse"
+        render={(props) => {
+          return <PsychologicalEvaluation_spouse setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
     </React.Fragment>

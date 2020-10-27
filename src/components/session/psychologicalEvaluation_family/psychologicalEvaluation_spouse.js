@@ -10,7 +10,7 @@ import {
   DropdownItem,
 } from "reactstrap";
 
-function PsychologicalEvaluation_children(props) {
+function PsychologicalEvaluation_spouse(props) {
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
 
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
@@ -32,28 +32,35 @@ function PsychologicalEvaluation_children(props) {
         <h1 className="textWhite">Please Confirm or Update Information</h1>
       </div>
       <section className="siblingsFields">
-        <div className="">
+        <div className="line1">
+        <Label className="textWhite title" for="examplePassword">
+        Marital Status
+          </Label>
+          <Dropdown isOpen={dropdownOpen1} toggle={toggle1}>
+            <DropdownToggle color="light" className="dropdown" caret>
+              Please Select
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem header>Header</DropdownItem>
+              <DropdownItem>Some Action</DropdownItem>
+              <DropdownItem disabled>Action (disabled)</DropdownItem>
+              <DropdownItem divider />
+              <DropdownItem>Foo Action</DropdownItem>
+              <DropdownItem>Bar Action</DropdownItem>
+              <DropdownItem>Quo Action</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </div>
+        <div className="line1">
+          <Label className="textWhite title" for="">
+            Spouse
+          </Label>
           <Input
-            className=""
-            type="checkbox"
+            className="fieldData"
+            type="text"
             name=""
             id=""
-            placeholder=""
-          />
-          <Label className="textWhite title" for="firstName">
-          Patient is an Only Child
-          </Label>
-        </div>
-        <div className="line1">
-          <Label className="textWhite title" for="firstName">
-            Siblings
-          </Label>
-          <Input
-            className="fieldData"
-            type="text"
-            name="firstName"
-            id="firstName"
-            placeholder="Sibling First Name"
+            placeholder="Spouse First Name"
           />
         </div>
         <div className="line1">
@@ -62,9 +69,9 @@ function PsychologicalEvaluation_children(props) {
           <Input
             className="fieldData"
             type="text"
-            name="firstName"
-            id="firstName"
-            placeholder="Sibling Last Name"
+            name=""
+            id=""
+            placeholder="Spouse Last Name"
           />
         </div>
         
@@ -104,7 +111,7 @@ function PsychologicalEvaluation_children(props) {
       </section>
       <section className="buttonSection mt-5" id="footer">
       <Button color="info" className="button" onClick={() => {
-            props.history.push(`/psychological_evaluation_family`);
+            props.history.push(`/psychological_evaluation_children`);
           }}>Previous</Button>
         <Button color="info" className="button">
           Save
@@ -112,12 +119,12 @@ function PsychologicalEvaluation_children(props) {
         <Button color="info" className="button">
           Submit
         </Button>
-        <Button color="info" className="button" onClick={() => {
-            props.history.push(`/psychological_evaluation_children`);
-          }}>Next</Button>
+        <Button color="info" className="button">
+          Next
+        </Button>
       </section>
     </>
   );
 }
 
-export default PsychologicalEvaluation_children;
+export default PsychologicalEvaluation_spouse;
