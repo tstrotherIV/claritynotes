@@ -128,7 +128,7 @@ function PsychologicalEvaluation_family(props) {
           </div>
         </div>
       </section>
-      <section className="buttonSection mt-5">
+      <section className="buttonSection mt-5" id="footer">
         <Button color="info" className="button">
           Previous
         </Button>
