@@ -32,9 +32,8 @@ function PsychologicalEvaluation_siblings(props) {
         <h1 className="textWhite">Please Confirm or Update Information</h1>
       </div>
       <section className="siblingsFields">
-        <div className="">
+        <div>
           <Input
-            className=""
             type="checkbox"
             name=""
             id=""

@@ -119,9 +119,9 @@ function PsychologicalEvaluation_spouse(props) {
         <Button color="info" className="button">
           Submit
         </Button>
-        <Button color="info" className="button">
-          Next
-        </Button>
+        <Button color="info" className="button" onClick={() => {
+            props.history.push(`/psychological_evaluation_consent`);
+          }}>Next</Button>
       </section>
     </>
   );
