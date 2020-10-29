@@ -9,6 +9,9 @@ import PsychologicalEvaluation_family from "./session/psychologicalEvaluation_fa
 import PsychologicalEvaluation_siblings from "./session/psychologicalEvaluation_family/psychologicalEvaluation_siblings"
 import PsychologicalEvaluation_children from "./session/psychologicalEvaluation_family/psychologicalEvaluation_children"
 import PsychologicalEvaluation_spouse from "./session/psychologicalEvaluation_family/psychologicalEvaluation_spouse"
+import PsychologicalEvaluationConsent from "./session/consent/consent"
+import PsychologicalEvaluationReferral from "./session/referral/referral"
+import PsychologicalEvaluationAdditionalData from "./session/additionalData/additionalData"
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -79,6 +82,27 @@ const ApplicationViews = (props) => {
         path="/psychological_evaluation_spouse"
         render={(props) => {
           return <PsychologicalEvaluation_spouse setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/psychological_evaluation_consent"
+        render={(props) => {
+          return <PsychologicalEvaluationConsent setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/psychological_evaluation_referral"
+        render={(props) => {
+          return <PsychologicalEvaluationReferral setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/psychological_evaluation_additional_data"
+        render={(props) => {
+          return <PsychologicalEvaluationAdditionalData setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
     </React.Fragment>

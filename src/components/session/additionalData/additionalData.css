@@ -1,0 +1,26 @@
+.fullpage {
+  height: 100%;
+}
+
+.whiteBGD {
+  background-color: white;
+  height: 100%;
+}
+
+.siblingsFields {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.centerContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.centerText {
+  text-align: center;
+  width: 500px;
+}
