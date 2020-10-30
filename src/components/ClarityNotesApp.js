@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./ClarityNotes.css";
 import ApplicationViews from "./ApplicationViews";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ClarityNotes = (props) => {
   const isAuthenticated = () => sessionStorage.getItem("loggedUser") !== null;

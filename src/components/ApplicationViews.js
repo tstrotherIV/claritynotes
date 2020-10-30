@@ -12,6 +12,7 @@ import PsychologicalEvaluation_spouse from "./session/psychologicalEvaluation_fa
 import PsychologicalEvaluationConsent from "./session/consent/consent"
 import PsychologicalEvaluationReferral from "./session/referral/referral"
 import PsychologicalEvaluationAdditionalData from "./session/additionalData/additionalData"
+import Interview_Pg1 from "./session/interviews/interview_pg1"
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -103,6 +104,13 @@ const ApplicationViews = (props) => {
         path="/psychological_evaluation_additional_data"
         render={(props) => {
           return <PsychologicalEvaluationAdditionalData setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/interview_pg_1"
+        render={(props) => {
+          return <Interview_Pg1 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
     </React.Fragment>

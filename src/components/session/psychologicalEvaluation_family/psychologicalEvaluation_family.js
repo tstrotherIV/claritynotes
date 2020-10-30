@@ -31,7 +31,7 @@ function PsychologicalEvaluation_family(props) {
       <div className="header">
         <h1 className="textWhite">Please Confirm or Update Information</h1>
       </div>
-      <section className="">
+      <section>
         <div className="section1Fields">
           <div className="line1">
             <Label className="textWhite title" for="firstName">

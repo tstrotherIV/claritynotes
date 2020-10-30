@@ -28,7 +28,7 @@ function PsychologicalEvaluationAdditionalData(props) {
             color="info"
             className="button"
             onClick={() => {
-              props.history.push(`/psychological_evaluation_children`);
+              props.history.push(`/psychological_evaluation_referral`);
             }}
           >
             Previous
@@ -43,7 +43,7 @@ function PsychologicalEvaluationAdditionalData(props) {
             color="info"
             className="button"
             onClick={() => {
-              props.history.push(`/psychological_evaluation_consent`);
+              props.history.push(`/interview_pg_1`);
             }}
           >
             Next
