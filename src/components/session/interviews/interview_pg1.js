@@ -9,8 +9,11 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Popover from "react-bootstrap/Popover";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function Interview_Pg1(props) {
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
@@ -125,24 +128,92 @@ function Interview_Pg1(props) {
           Next
         </Button>
       </section>
-      <section>
-        <OverlayTrigger
-          trigger="click"
-          key='top'
-          placement="top"
-          overlay={
-            <Popover id={`popover-positioned-top`}>
-              {/* <Popover.Title as="h3">{`Popover top`}</Popover.Title> */}
-              <Popover.Content>
-                <div>
-                  Content
-                </div>
-              </Popover.Content>
-            </Popover>
-          }
+      <section className="d-flex justify-content-center">
+        <DropdownButton
+          as={ButtonGroup}
+          key="up"
+          id="{`dropdown-button-drop-up`}"
+          drop="up"
+          variant="light"
+          title={` Termination of Parental Rights Criteria `}
+          className="terminationButton"
         >
-          <Button variant="secondary">Termination of Parental Rights Criteria</Button>
-        </OverlayTrigger>
+          <section className="checkBoxContainer">
+            <div className="m-2">
+              <h4>Termination of Parental Rights Criteria</h4>
+            </div>
+            <div className="checkBoxRow">
+              <div className="checkBoxSection">
+                <input type="checkbox" className="check"></input>
+                <div className="checkItem">Unforeseeable Future Change</div>
+              </div>
+              <div className="checkBoxSection">
+                <input type="checkbox" className="check"></input>
+                <div className="checkItem">Rehabilitation Failure</div>
+              </div>
+              <div className="checkBoxSection">
+                <input type="checkbox" className="check"></input>
+                <div className="checkItem">Failure to Maintain Material Needs</div>
+              </div>
+            </div>
+            <div className="checkBoxRow">
+              <div className="checkBoxSection">
+                <input type="checkbox" className="check"></input>
+                <div className="checkItem">Conviction and Imprisonment of Felony</div>
+              </div>
+              <div className="checkBoxSection">
+                <input type="checkbox" className="check"></input>
+                <div className="checkItem">Serious Physical Injury to child</div>
+              </div>
+              <div className="checkBoxSection">
+                <input type="checkbox" className="check"></input>
+                <div className="checkItem">Failure to Maintain Consistent Contact</div>
+              </div>
+            </div>
+            <div className="checkBoxRow">
+              <div className="checkBoxSection">
+                <input type="checkbox" className="check"></input>
+                <div className="checkItem">Emotional Illness and mental deficiency</div>
+              </div>
+              <div className="checkBoxSection">
+                <input type="checkbox" className="check"></input>
+                <div className="checkItem">Willful Neglect/Abandonment</div>
+              </div>
+              <div className="checkBoxSection">
+                <input type="checkbox" className="check"></input>
+                <div className="checkItem">Parent has tortured, abused, cruelly beaten, or</div>
+              </div>
+            </div>
+            <div className="checkBoxRow">
+              <div className="checkBoxSection">
+                <input type="checkbox" className="check"></input>
+                <div className="checkItem">Unable to Discharge Childcare Responsibilities</div>
+              </div>
+              <div className="checkBoxSection">
+                <input type="checkbox" className="check"></input>
+                <div className="checkItem">Loss of Custody of Other Child(ren)</div>
+              </div>
+              <div className="checkBoxSection">
+                <input type="checkbox" className="check"></input>
+                <div className="checkItem">otherwise maltreated the child</div>
+              </div>
+            </div>
+            <div className="checkBoxRow">
+              <div className="checkBoxSection">
+                <input type="checkbox" className="check"></input>
+                <div className="checkItem">Excessive Use of a Controlled Substance</div>
+              </div>
+              <div className="checkBoxSection">
+                <input type="checkbox" className="check"></input>
+                <div className="checkItem">Serious Bodily Injury of Child</div>
+              </div>
+              <div className="checkBoxSection">
+                <input type="checkbox" className="check"></input>
+                <div className="checkItem">Lack of Effort to Adjust to His/Her Circumstances</div>
+              </div>
+            </div>
+          </section>
+        </DropdownButton>
       </section>
     </>
   );

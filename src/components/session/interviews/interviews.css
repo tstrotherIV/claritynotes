@@ -42,7 +42,7 @@
   max-width: 500px;
 }
 
-.evalButton{
+.evalButton {
   width: 100%;
   max-width: 500px;
 }
@@ -78,4 +78,36 @@
   left: 0;
   width: 100%;
   height: 10%;
+}
+
+.terminationButton {
+  width: 98%;
+}
+
+.dropdown-menu {
+  width: 100% !important;
+}
+
+.checkBoxRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex: auto;
+}
+
+.checkBoxSection {
+  display: flex;
+  flex-direction: row;
+  flex: 1 0;
+  margin: 5px;
+}
+
+
+.checkItem {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.check {
+  margin: 14px;
 }
