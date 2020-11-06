@@ -111,3 +111,18 @@
 .check {
   margin: 14px;
 }
+
+.in1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fieldData2 {
+  min-width: 500px;
+}
+
+.centerItem{
+  display: flex;
+  justify-content: center;
+}
