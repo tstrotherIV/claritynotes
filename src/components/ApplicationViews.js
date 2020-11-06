@@ -13,6 +13,10 @@ import PsychologicalEvaluationConsent from "./session/consent/consent"
 import PsychologicalEvaluationReferral from "./session/referral/referral"
 import PsychologicalEvaluationAdditionalData from "./session/additionalData/additionalData"
 import Interview_Pg1 from "./session/interviews/interview_pg1"
+import Interview_Pg2 from "./session/interviews/interview_pg2"
+import Interview_Pg3 from "./session/interviews/interview_pg3"
+import Interview_Pg4 from "./session/interviews/interview_pg4";
+import Interview_Pg5 from "./session/interviews/interview_pg5";
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -111,6 +115,34 @@ const ApplicationViews = (props) => {
         path="/interview_pg_1"
         render={(props) => {
           return <Interview_Pg1 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/interview_pg_2"
+        render={(props) => {
+          return <Interview_Pg2 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/interview_pg_3"
+        render={(props) => {
+          return <Interview_Pg3 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/interview_pg_4"
+        render={(props) => {
+          return <Interview_Pg4 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/interview_pg_5"
+        render={(props) => {
+          return <Interview_Pg5 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
     </React.Fragment>
