@@ -17,6 +17,9 @@ import Interview_Pg2 from "./session/interviews/interview_pg2"
 import Interview_Pg3 from "./session/interviews/interview_pg3"
 import Interview_Pg4 from "./session/interviews/interview_pg4";
 import Interview_Pg5 from "./session/interviews/interview_pg5";
+import Interview_Pg6 from "./session/interviews/interview_pg6";
+import Interview_Pg7 from "./session/interviews/interview_pg7";
+import Interview_Pg8 from "./session/interviews/interview_pg8";
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -143,6 +146,27 @@ const ApplicationViews = (props) => {
         path="/interview_pg_5"
         render={(props) => {
           return <Interview_Pg5 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/interview_pg_6"
+        render={(props) => {
+          return <Interview_Pg6 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/interview_pg_7"
+        render={(props) => {
+          return <Interview_Pg7 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/interview_pg_8"
+        render={(props) => {
+          return <Interview_Pg8 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
     </React.Fragment>

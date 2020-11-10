@@ -16,16 +16,12 @@ import {
 import DropdownButton from "react-bootstrap/DropdownButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 
-function Interview_Pg4(props) {
+function Interview_Pg8(props) {
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
-  const [dropdownOpen2, setDropdownOpen2] = useState(false);
-  const [dropdownOpen4, setDropdownOpen4] = useState(false);
   const [modal, setModal] = useState(false);
 
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
-  const toggle2 = () => setDropdownOpen2((prevState) => !prevState);
   const toggle3 = () => setModal(!modal);
-  const toggle4 = () => setDropdownOpen4((prevState) => !prevState);
 
   return (
     <>
@@ -45,7 +41,7 @@ function Interview_Pg4(props) {
       </div>
       <br></br>
       <h4 className="textWhite centerItem">
-      How many times have you been involved with DHR in Alabama?
+      How have you served as the primary caretaker of your child(ren)?
       </h4>
       <section className="interview_section1">
         <div className="interview_line1">
@@ -59,59 +55,17 @@ function Interview_Pg4(props) {
             id=""
             placeholder=""
           />
-          <div className="ml-1">
-            <Dropdown isOpen={dropdownOpen2} toggle={toggle2}>
-              <DropdownToggle color="light" className="dropdown" caret>
-                Please Select
-              </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem header>Header</DropdownItem>
-                <DropdownItem>Some Action</DropdownItem>
-                <DropdownItem disabled>Action (disabled)</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Foo Action</DropdownItem>
-                <DropdownItem>Bar Action</DropdownItem>
-                <DropdownItem>Quo Action</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </div>
         </div>
       </section>
-      <h4 className="textWhite centerItem">
-      How many times have you been involved with other child protective agencies in other states/countries/territories?
-      </h4>
-      <section className="interview_section1">
-        <div className="interview_line1">
-          <Label className="textWhite interview_title" for="">
-            [Patient Name, First] said:
-          </Label>
-          <Input
-            className="interview_fieldData"
-            type="text"
-            name=""
-            id=""
-            placeholder=""
-          />
-          <div className="ml-1">
-            <Dropdown isOpen={dropdownOpen4} toggle={toggle4}>
-              <DropdownToggle color="light" className="dropdown" caret>
-                Please Select
-              </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem header>Header</DropdownItem>
-                <DropdownItem>Some Action</DropdownItem>
-                <DropdownItem disabled>Action (disabled)</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Foo Action</DropdownItem>
-                <DropdownItem>Bar Action</DropdownItem>
-                <DropdownItem>Quo Action</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </div>
-        </div>
-      </section>
+      
+      <br></br>
       <section>
         <div className="section1Fields">
+          <div className="in1">
+            <div className="textWhite containText">
+            (PROTECTIVE: Has the parent shown any initiative to be the primary caretaker? If not, why? What are the encumbrances?)
+            </div>
+          </div>
           <div className="in1">
             <Label className="textWhite mr-2" for="firstName">
               [User Name, First]’s Inference and Observations:
@@ -182,12 +136,89 @@ function Interview_Pg4(props) {
           </div>
         </div>
       </section>
-      <section className="buttonSection mt-5" id="">
+      <section>
+        <div className="section1Fields">
+          <div className="in1">
+            <div className="textWhite containText">
+            (MANAGING: Has the parent not been the primary caretaker because he/she cannot manage resources? If so, what got in the way? Is the client well dressed? Will he or she groom the child appropriately? Is the client motivated to look good today? If not, do they appear they will clean and teach their child to brush teeth, bathe, eat healthy?)
+            </div>
+          </div>
+          <div className="in1">
+            <Label className="textWhite mr-2" for="firstName">
+              [User Name, First]’s Inference and Observations:
+            </Label>
+            <Dropdown isOpen={dropdownOpen1} toggle={toggle1}>
+              <DropdownToggle color="light" className="dropdown" caret>
+                Please Select
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem header>Header</DropdownItem>
+                <DropdownItem>Some Action</DropdownItem>
+                <DropdownItem disabled>Action (disabled)</DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem>Foo Action</DropdownItem>
+                <DropdownItem>Bar Action</DropdownItem>
+                <DropdownItem>Quo Action</DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+            <div>
+              <Button color="light" className="m-3">
+                Edit List
+              </Button>
+            </div>
+          </div>
+          <div className="in1">
+            <Label className="textWhite title" for="caseNumber">
+              Additional Notes:
+            </Label>
+            <Input
+              className="fieldData2"
+              type="text"
+              name="caseNumber"
+              id="caseNumber"
+              placeholder=""
+            />
+            <div>
+              <div className="m-3">
+                <Button color="light" onClick={toggle3}>
+                  Add Notes to Gold
+                </Button>
+                <Modal isOpen={modal} fade={false} toggle={toggle3}>
+                  <ModalHeader toggle={toggle3}>Add Notes to Gold</ModalHeader>
+                  <ModalBody>
+                    <div className="in1">
+                      <Label className=" title" for="caseNumber">
+                        Additional Notes:
+                      </Label>
+                      <Input
+                        className=""
+                        type="text"
+                        name="caseNumber"
+                        id="caseNumber"
+                        placeholder=""
+                      />
+                    </div>
+                  </ModalBody>
+                  <ModalFooter>
+                    <Button color="info" onClick={toggle3}>
+                      Cancel
+                    </Button>{" "}
+                    <Button color="info" onClick={toggle3}>
+                      Save
+                    </Button>
+                  </ModalFooter>
+                </Modal>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="buttonSection mt-6" id="">
         <Button
           color="info"
           className="button"
           onClick={() => {
-            props.history.push(`/interview_pg_4`);
+            props.history.push(`/interview_pg_7`);
           }}
         >
           Previous
@@ -202,7 +233,7 @@ function Interview_Pg4(props) {
           color="info"
           className="button"
           onClick={() => {
-            props.history.push(`/interview_pg_6`);
+            props.history.push(`/interview_pg_9`);
           }}
         >
           Next
@@ -319,4 +350,4 @@ function Interview_Pg4(props) {
   );
 }
 
-export default Interview_Pg4;
+export default Interview_Pg8;

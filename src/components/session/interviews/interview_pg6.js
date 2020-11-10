@@ -16,16 +16,12 @@ import {
 import DropdownButton from "react-bootstrap/DropdownButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 
-function Interview_Pg4(props) {
+function Interview_Pg6(props) {
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
-  const [dropdownOpen2, setDropdownOpen2] = useState(false);
-  const [dropdownOpen4, setDropdownOpen4] = useState(false);
   const [modal, setModal] = useState(false);
 
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
-  const toggle2 = () => setDropdownOpen2((prevState) => !prevState);
   const toggle3 = () => setModal(!modal);
-  const toggle4 = () => setDropdownOpen4((prevState) => !prevState);
 
   return (
     <>
@@ -45,7 +41,7 @@ function Interview_Pg4(props) {
       </div>
       <br></br>
       <h4 className="textWhite centerItem">
-      How many times have you been involved with DHR in Alabama?
+        What steps have you taken with DHR already?
       </h4>
       <section className="interview_section1">
         <div className="interview_line1">
@@ -59,26 +55,10 @@ function Interview_Pg4(props) {
             id=""
             placeholder=""
           />
-          <div className="ml-1">
-            <Dropdown isOpen={dropdownOpen2} toggle={toggle2}>
-              <DropdownToggle color="light" className="dropdown" caret>
-                Please Select
-              </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem header>Header</DropdownItem>
-                <DropdownItem>Some Action</DropdownItem>
-                <DropdownItem disabled>Action (disabled)</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Foo Action</DropdownItem>
-                <DropdownItem>Bar Action</DropdownItem>
-                <DropdownItem>Quo Action</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </div>
         </div>
       </section>
       <h4 className="textWhite centerItem">
-      How many times have you been involved with other child protective agencies in other states/countries/territories?
+        What is your understanding of why you are here today?
       </h4>
       <section className="interview_section1">
         <div className="interview_line1">
@@ -92,26 +72,20 @@ function Interview_Pg4(props) {
             id=""
             placeholder=""
           />
-          <div className="ml-1">
-            <Dropdown isOpen={dropdownOpen4} toggle={toggle4}>
-              <DropdownToggle color="light" className="dropdown" caret>
-                Please Select
-              </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem header>Header</DropdownItem>
-                <DropdownItem>Some Action</DropdownItem>
-                <DropdownItem disabled>Action (disabled)</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Foo Action</DropdownItem>
-                <DropdownItem>Bar Action</DropdownItem>
-                <DropdownItem>Quo Action</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </div>
         </div>
       </section>
+      <br></br>
       <section>
         <div className="section1Fields">
+          <div className="in1">
+            <h3 className="textWhite">Responsiveness</h3>
+            <div className="textWhite containText">
+              Is the parent sensitive to and has picked up on the child’s
+              disposition, personality, spirit? Is the parent willing to be
+              sensitive to the child’s subtle needs to ensure the child is a
+              success?)
+            </div>
+          </div>
           <div className="in1">
             <Label className="textWhite mr-2" for="firstName">
               [User Name, First]’s Inference and Observations:
@@ -187,7 +161,7 @@ function Interview_Pg4(props) {
           color="info"
           className="button"
           onClick={() => {
-            props.history.push(`/interview_pg_4`);
+            props.history.push(`/interview_pg_5`);
           }}
         >
           Previous
@@ -202,7 +176,7 @@ function Interview_Pg4(props) {
           color="info"
           className="button"
           onClick={() => {
-            props.history.push(`/interview_pg_6`);
+            props.history.push(`/interview_pg_7`);
           }}
         >
           Next
@@ -319,4 +293,4 @@ function Interview_Pg4(props) {
   );
 }
 
-export default Interview_Pg4;
+export default Interview_Pg6;
