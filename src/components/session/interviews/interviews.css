@@ -126,3 +126,7 @@
   display: flex;
   justify-content: center;
 }
+
+.containText {
+  max-width: 500px;
+}
