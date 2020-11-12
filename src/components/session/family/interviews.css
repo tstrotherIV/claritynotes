@@ -8,6 +8,17 @@
 .interview_section1 {
   display: flex;
 }
+.interview_section2 {
+  display: flex;
+  flex-direction: row;
+  max-width: 90%;
+}
+
+.interview_section3 {
+  display: flex;
+  flex-direction: row;
+  padding: 40px;
+}
 
 .interview_line1 {
   display: flex;
@@ -25,6 +36,15 @@
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 5px;
+}
+
+.interview_line3 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
 }
 
 .header {
