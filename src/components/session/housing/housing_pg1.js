@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./interviews.css";
+import "./housing.css";
 import { Label, Input, Button } from "reactstrap";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 
-function Family_Pg7(props) {
+function Housing_Pg1(props) {
   return (
     <>
       <h1 className="titleFontSize whiteBgd d-flex justify-content-center">
@@ -12,14 +12,11 @@ function Family_Pg7(props) {
       </h1>
 
       <div className="header">
-        <h1 className="textWhite">Family</h1>
+        <h1 className="textWhite">Housing</h1>
       </div>
 
       <br></br>
-      <h4 className="textWhite centerItem">
-        How was disapproval of your actions displayed by your parents/how were
-        you punished when you acted out?s
-      </h4>
+      <h4 className="textWhite centerItem">Do you live alone?</h4>
       <section className="interview_section1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
@@ -34,15 +31,26 @@ function Family_Pg7(props) {
           />
         </div>
       </section>
-
-      <section className="interview_section3">
-        <div className="interview_line3">
-          <h4 className="textWhite centerItem">
-            Discipline [User Name, First]’s Inference and Observations: Put
-            information about harsh discipline into the discipline conclusion.
-            How did their punishment shape how they punish? Does this appear
-            genuine or are they saying more than what sounds good.
-          </h4>
+      <br></br>
+      <h4 className="textWhite centerItem">Who do you live with?</h4>
+      <section className="interview_section1">
+        <div className="interview_line1">
+          <Label className="textWhite interview_title" for="">
+            [Patient Name, First] said:
+          </Label>
+          <Input
+            className="interview_fieldData"
+            type="text"
+            name=""
+            id=""
+            placeholder=""
+          />
+        </div>
+      </section>
+      <br></br>
+      <h4 className="textWhite centerItem ">Who pays your rent or mortgage?</h4>
+      <section className="interview_section1">
+        <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
@@ -61,7 +69,7 @@ function Family_Pg7(props) {
           color="info"
           className="button"
           onClick={() => {
-            props.history.push(`/family_pg_6`);
+            props.history.push(`/psychological_evaluation_report_summary`);
           }}
         >
           Previous
@@ -76,7 +84,7 @@ function Family_Pg7(props) {
           color="info"
           className="button"
           onClick={() => {
-            props.history.push(`/family_pg_8`);
+            props.history.push(`/housing_pg_2`);
           }}
         >
           Next
@@ -197,4 +205,4 @@ function Family_Pg7(props) {
   );
 }
 
-export default Family_Pg7;
+export default Housing_Pg1;

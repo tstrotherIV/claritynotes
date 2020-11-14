@@ -28,6 +28,16 @@ import Family_Pg4 from "./session/family/family_pg4";
 import Family_Pg5 from "./session/family/family_pg5";
 import Family_Pg6 from "./session/family/family_pg6";
 import Family_Pg7 from "./session/family/family_pg7";
+import Family_Pg8 from "./session/family/family_pg8";
+import Family_Pg9 from "./session/family/family_pg9";
+import Family_Pg10 from "./session/family/family_pg10";
+import Family_Pg11 from "./session/family/family_pg11";
+import Family_Pg12 from "./session/family/family_pg12";
+import Family_Pg13 from "./session/family/family_pg13";
+import Family_Pg14 from "./session/family/family_pg14";
+import Family_Pg15 from "./session/family/family_pg15";
+import PsychologicalEvaluationReportSummary from "./session/family/reportSummary/reportSummary";
+import Housing_Pg1 from "./session/housing/housing_pg1";
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -231,6 +241,76 @@ const ApplicationViews = (props) => {
         path="/family_pg_7"
         render={(props) => {
           return <Family_Pg7 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/family_pg_8"
+        render={(props) => {
+          return <Family_Pg8 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/family_pg_9"
+        render={(props) => {
+          return <Family_Pg9 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/family_pg_10"
+        render={(props) => {
+          return <Family_Pg10 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/family_pg_11"
+        render={(props) => {
+          return <Family_Pg11 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/family_pg_12"
+        render={(props) => {
+          return <Family_Pg12 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/family_pg_13"
+        render={(props) => {
+          return <Family_Pg13 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/family_pg_14"
+        render={(props) => {
+          return <Family_Pg14 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/family_pg_15"
+        render={(props) => {
+          return <Family_Pg15 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/psychological_evaluation_report_summary"
+        render={(props) => {
+          return <PsychologicalEvaluationReportSummary setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/housing_pg_1"
+        render={(props) => {
+          return <Housing_Pg1 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
     </React.Fragment>
