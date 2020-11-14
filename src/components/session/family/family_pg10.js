@@ -17,8 +17,7 @@ function Family_Pg7(props) {
 
       <br></br>
       <h4 className="textWhite centerItem">
-        How was disapproval of your actions displayed by your parents/how were
-        you punished when you acted out?s
+        What is your least favorite childhood memory?
       </h4>
       <section className="interview_section1">
         <div className="interview_line1">
@@ -36,23 +35,26 @@ function Family_Pg7(props) {
       </section>
 
       <section className="interview_section3">
+        <h3 className="textWhite">Protective</h3>
         <div className="interview_line3">
-          <h4 className="textWhite centerItem">
-            Discipline [User Name, First]’s Inference and Observations: Put
-            information about harsh discipline into the discipline conclusion.
-            How did their punishment shape how they punish? Does this appear
-            genuine or are they saying more than what sounds good.
+          <h4 className="textWhite centerItem containText">
+            Any memories which were negative, which taught them the importance
+            of being protective, cautious, restrained, etc? Did they learn from
+            this negative experience? Does the parent try to prevent things from
+            happening from anything negative?
           </h4>
-          <Label className="textWhite interview_title" for="">
-            [Patient Name, First] said:
-          </Label>
-          <Input
-            className="interview_fieldData"
-            type="text"
-            name=""
-            id=""
-            placeholder=""
-          />
+          <div className="observationsColumn pl-3">
+            <Label className="textWhite " for="">
+              [User Name, First]’s Inference and Observations:
+            </Label>
+            <Input
+              className=""
+              type="text"
+              name=""
+              id=""
+              placeholder=""
+            />
+          </div>
         </div>
       </section>
 
@@ -61,7 +63,7 @@ function Family_Pg7(props) {
           color="info"
           className="button"
           onClick={() => {
-            props.history.push(`/family_pg_6`);
+            props.history.push(`/family_pg_9`);
           }}
         >
           Previous
@@ -76,7 +78,7 @@ function Family_Pg7(props) {
           color="info"
           className="button"
           onClick={() => {
-            props.history.push(`/family_pg_8`);
+            props.history.push(`/family_pg_11`);
           }}
         >
           Next
