@@ -1,5 +1,7 @@
 import { Route } from "react-router-dom";
 import React from "react";
+import Heading from "../components/shared/Heading";
+import Footer from "../components/shared/Footer";
 import Login from "./login/login"
 import CreateUser from "./createUser/createUser"
 import PatientHomePage from "./patient/patientHome"
@@ -48,6 +50,7 @@ const ApplicationViews = (props) => {
 
   return (
     <React.Fragment>
+      <Heading />
       <Route
         exact
         path="/"
@@ -321,6 +324,7 @@ const ApplicationViews = (props) => {
           return <Housing_Pg2 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
+    <Footer />
     </React.Fragment>
   );
 };
