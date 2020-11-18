@@ -79,9 +79,7 @@ function PsychologicalEvaluation(props) {
             <Input
               className="fieldData"
               type="date"
-              name="date"
               id="date"
-              placeholder=""
             />
           </div>
         </div>
@@ -91,9 +89,7 @@ function PsychologicalEvaluation(props) {
             <Input
               className="fieldData"
               type="text"
-              name="lastName"
               id="lastName"
-              placeholder="Last Name"
             />
           </div>
           <div className="line1 evalDate">
@@ -109,9 +105,7 @@ function PsychologicalEvaluation(props) {
             <Input
               className="fieldData"
               type="date"
-              name="dateOfBirth"
               id="dateOfBirth"
-              placeholder=""
             />
           </div>
           <div className="line1">
@@ -161,9 +155,7 @@ function PsychologicalEvaluation(props) {
             <Input
               className="fieldData"
               type="time"
-              name="firstName"
               id="firstName"
-              placeholder=""
             />
           </div>
         </div>
@@ -175,9 +167,7 @@ function PsychologicalEvaluation(props) {
             <Input
               className="fieldData"
               type="time"
-              name="firstName"
               id="firstName"
-              placeholder=""
             />
           </div>
           <div className="line1">
@@ -187,9 +177,7 @@ function PsychologicalEvaluation(props) {
             <Input
               className="fieldData"
               type="time"
-              name="firstName"
               id="firstName"
-              placeholder=""
             />
           </div>
         </div>
@@ -201,9 +189,7 @@ function PsychologicalEvaluation(props) {
             <Input
               className="fieldData"
               type="text"
-              name="firstName"
               id="firstName"
-              placeholder=""
             />
           </div>
           <div className="line1"></div>

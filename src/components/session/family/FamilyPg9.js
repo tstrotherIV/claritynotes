@@ -1,57 +1,71 @@
 import React from "react";
-import "./housing.css";
+import "./interviews.css";
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 
-function HousingPg1(props) {
+function FamilyPg9(props) {
   return (
-    <>
-    <Heading />
-      <h4 className="textWhite centerItem">Do you live alone?</h4>
+    <>  
+    <Heading /> 
+      <div className="header">
+        <h1 className="textWhite">Family</h1>
+      </div>
+      <br></br>
+      <h4 className="textWhite centerItem">
+      Tell me more about that. How did it make you feel?
+      </h4>
       <section className="interview_section1">
         <div className="interview_line1">
-          <Label className="textWhite interview_title" for="hs-live-alone">
+          <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
           <Input
             className="interview_fieldData"
             type="text"
-            id="hs-live-alone"
+            name=""
+            id=""
           />
         </div>
       </section>
-      <h4 className="textWhite centerItem">Who do you live with?</h4>
+      <br></br>
+      <h4 className="textWhite centerItem">
+      How do you want the memories of your children to be different?
+      </h4>
       <section className="interview_section1">
         <div className="interview_line1">
-          <Label className="textWhite interview_title" for="hs-live-with">
+          <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
           <Input
             className="interview_fieldData"
             type="text"
-            id="hs-live-with"
+            name=""
+            id=""
           />
         </div>
       </section>
-      <h4 className="textWhite centerItem ">Who pays your rent or mortgage?</h4>
+      <br></br>
+      <h4 className="textWhite centerItem">How do you do this?</h4>
       <section className="interview_section1">
         <div className="interview_line1">
-          <Label className="textWhite interview_title" for="hs-who-pays">
+          <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
           <Input
             className="interview_fieldData"
             type="text"
-            id="hs-who-pays" 
+            name=""
+            id=""
           />
         </div>
       </section>
+
       <section className="buttonSection mt-6" id="">
         <Button
           color="info"
           className="button"
           onClick={() => {
-            props.history.push(`/psychological_evaluation_report_summary`);
+            props.history.push(`/family_pg_8`);
           }}
         >
           Previous
@@ -66,7 +80,7 @@ function HousingPg1(props) {
           color="info"
           className="button"
           onClick={() => {
-            props.history.push(`/housing_pg_2`);
+            props.history.push(`/family_pg_10`);
           }}
         >
           Next
@@ -80,4 +94,4 @@ function HousingPg1(props) {
   );
 }
 
-export default HousingPg1;
+export default FamilyPg9;

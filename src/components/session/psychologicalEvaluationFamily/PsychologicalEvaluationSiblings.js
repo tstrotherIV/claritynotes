@@ -36,9 +36,7 @@ function PsychologicalEvaluation_children(props) {
           <Input
             className=""
             type="checkbox"
-            name=""
             id=""
-            placeholder=""
           />
           <Label className="textWhite title" for="firstName">
           Patient is an Only Child

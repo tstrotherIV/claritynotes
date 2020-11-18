@@ -4,7 +4,7 @@ import { Label, Input, Button } from "reactstrap";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 
-function Family_Pg7(props) {
+function Family_Pg8(props) {
   return (
     <>
       <h1 className="titleFontSize whiteBgd d-flex justify-content-center">
@@ -17,7 +17,7 @@ function Family_Pg7(props) {
 
       <br></br>
       <h4 className="textWhite centerItem">
-        What is your least favorite childhood memory?
+      What is your favorite childhood memory?
       </h4>
       <section className="interview_section1">
         <div className="interview_line1">
@@ -27,33 +27,55 @@ function Family_Pg7(props) {
           <Input
             className="interview_fieldData"
             type="text"
-            name=""
             id=""
-            placeholder=""
           />
         </div>
       </section>
 
       <section className="interview_section3">
-        <h3 className="textWhite">Protective</h3>
+        <h3 className="textWhite">Impulse Control</h3>
         <div className="interview_line3">
-          <h4 className="textWhite centerItem containText">
-            Any memories which were negative, which taught them the importance
-            of being protective, cautious, restrained, etc? Did they learn from
-            this negative experience? Does the parent try to prevent things from
-            happening from anything negative?
-          </h4>
+          <h5 className="textWhite centerItem containText">
+            Does the parent have any positive memories to reflect upon, empathic
+            experience, loving memories, which may help them to be patient
+            loving and kind?
+          </h5>
           <div className="observationsColumn pl-3">
-            <Label className="textWhite " for="">
+            <Label className="textWhite" for="">
               [User Name, First]’s Inference and Observations:
             </Label>
-            <Input
-              className=""
-              type="text"
-              name=""
-              id=""
-              placeholder=""
-            />
+            <Input className="" type="text" name="" id="" />
+          </div>
+        </div>
+      </section>
+      <section className="interview_section3">
+        <h3 className="textWhite">Responsiveness</h3>
+        <div className="interview_line3">
+          <h5 className="textWhite centerItem containText">
+            Does the parent have any loving and warm memories which they can
+            reference to guide sensitivity to be responsive to the needs of
+            their children?
+          </h5>
+          <div className="observationsColumn pl-3">
+            <Label className="textWhite" for="">
+              [User Name, First]’s Inference and Observations:
+            </Label>
+            <Input className="" type="text" name="" id="" />
+          </div>
+        </div>
+      </section>
+      <section className="interview_section3">
+        <h3 className="textWhite">Communication</h3>
+        <div className="interview_line3">
+          <h5 className="textWhite centerItem containText">
+            Does the parent have warm and nurturing memories which may guide
+            healthy ways to communicate in an effective manner?
+          </h5>
+          <div className="observationsColumn pl-3">
+            <Label className="textWhite" for="">
+              [User Name, First]’s Inference and Observations:
+            </Label>
+            <Input className="" type="text" name="" id="" />
           </div>
         </div>
       </section>
@@ -63,7 +85,7 @@ function Family_Pg7(props) {
           color="info"
           className="button"
           onClick={() => {
-            props.history.push(`/family_pg_9`);
+            props.history.push(`/family_pg_7`);
           }}
         >
           Previous
@@ -78,7 +100,7 @@ function Family_Pg7(props) {
           color="info"
           className="button"
           onClick={() => {
-            props.history.push(`/family_pg_11`);
+            props.history.push(`/family_pg_9`);
           }}
         >
           Next
@@ -199,4 +221,4 @@ function Family_Pg7(props) {
   );
 }
 
-export default Family_Pg7;
+export default Family_Pg8;
