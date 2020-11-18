@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./housing.css";
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
@@ -66,7 +66,7 @@ function HousingPg2(props) {
           color="info"
           className="button"
           onClick={() => {
-            props.history.push(`/HousingPg_2`);
+            props.history.push(`/Housing_pg_3`);
           }}
         >
           Next

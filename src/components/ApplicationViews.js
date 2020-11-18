@@ -22,21 +22,21 @@ import InterviewPg6 from "./session/interviews/InterviewPg6";
 import InterviewPg7 from "./session/interviews/InterviewPg7";
 import InterviewPg8 from "./session/interviews/InterviewPg8";
 import InterviewPg9 from "./session/interviews/InterviewPg9";
-import Family_Pg1 from "./session/family/family_pg1";
-import Family_Pg2 from "./session/family/family_pg2";
-import Family_Pg3 from "./session/family/family_pg3";
-import Family_Pg4 from "./session/family/family_pg4";
-import Family_Pg5 from "./session/family/family_pg5";
-import Family_Pg6 from "./session/family/family_pg6";
-import Family_Pg7 from "./session/family/family_pg7";
-import Family_Pg8 from "./session/family/family_pg8";
-import Family_Pg9 from "./session/family/family_pg9";
-import Family_Pg10 from "./session/family/family_pg10";
-import Family_Pg11 from "./session/family/family_pg11";
-import Family_Pg12 from "./session/family/family_pg12";
-import Family_Pg13 from "./session/family/family_pg13";
-import Family_Pg14 from "./session/family/family_pg14";
-import Family_Pg15 from "./session/family/family_pg15";
+import FamilyPg1 from "./session/family/FamilyPg1";
+import FamilyPg2 from "./session/family/FamilyPg2";
+import FamilyPg3 from "./session/family/FamilyPg3";
+import FamilyPg4 from "./session/family/FamilyPg4";
+import FamilyPg5 from "./session/family/FamilyPg5";
+import FamilyPg6 from "./session/family/FamilyPg6";
+import FamilyPg7 from "./session/family/FamilyPg7";
+import FamilyPg8 from "./session/family/FamilyPg8";
+import FamilyPg9 from "./session/family/FamilyPg9";
+import FamilyPg10 from "./session/family/FamilyPg10";
+import FamilyPg11 from "./session/family/FamilyPg11";
+import FamilyPg12 from "./session/family/FamilyPg12";
+import FamilyPg13 from "./session/family/FamilyPg13";
+import FamilyPg14 from "./session/family/FamilyPg14";
+import FamilyPg15 from "./session/family/FamilyPg15";
 import PsychologicalEvaluationReportSummary from "./session/family/reportSummary/reportSummary";
 import HousingPg1 from "./session/housing/HousingPg1";
 import HousingPg2 from "./session/housing/HousingPg2";
@@ -45,7 +45,7 @@ const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
   const setUser = props.setUser;
 
-  const userId = parseInt(props.userId);
+  // const userId = parseInt(props.userId);
 
   return (
     <>
@@ -201,105 +201,105 @@ const ApplicationViews = (props) => {
         exact
         path="/family_pg_1"
         render={(props) => {
-          return <Family_Pg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg1 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_2"
         render={(props) => {
-          return <Family_Pg2 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg2 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_3"
         render={(props) => {
-          return <Family_Pg3 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg3 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_4"
         render={(props) => {
-          return <Family_Pg4 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg4 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_5"
         render={(props) => {
-          return <Family_Pg5 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg5 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_6"
         render={(props) => {
-          return <Family_Pg6 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg6 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_7"
         render={(props) => {
-          return <Family_Pg7 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg7 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_8"
         render={(props) => {
-          return <Family_Pg8 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg8 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_9"
         render={(props) => {
-          return <Family_Pg9 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg9 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_10"
         render={(props) => {
-          return <Family_Pg10 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg10 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_11"
         render={(props) => {
-          return <Family_Pg11 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg11 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_12"
         render={(props) => {
-          return <Family_Pg12 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg12 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_13"
         render={(props) => {
-          return <Family_Pg13 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg13 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_14"
         render={(props) => {
-          return <Family_Pg14 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg14 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_15"
         render={(props) => {
-          return <Family_Pg15 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg15 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
       <Route

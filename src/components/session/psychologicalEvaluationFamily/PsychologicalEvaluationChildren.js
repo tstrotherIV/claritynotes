@@ -34,10 +34,9 @@ function PsychologicalEvaluation_siblings(props) {
       <section className="siblingsFields">
         <div>
           <Input
+            className=""
             type="checkbox"
-            name=""
             id=""
-            placeholder=""
           />
           <Label className="textWhite title" for="">
           Patient Has No Children

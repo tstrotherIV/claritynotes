@@ -48,9 +48,7 @@ function InterviewPg7(props) {
           <Input
             className="interview_fieldData"
             type="text"
-            name=""
             id=""
-            placeholder=""
           />
         </div>
       </section>
@@ -65,9 +63,7 @@ function InterviewPg7(props) {
           <Input
             className="interview_fieldData"
             type="text"
-            name=""
             id=""
-            placeholder=""
           />
         </div>
       </section>
@@ -114,9 +110,7 @@ function InterviewPg7(props) {
             <Input
               className="fieldData2"
               type="text"
-              name="caseNumber"
               id="caseNumber"
-              placeholder=""
             />
             <div>
               <div className="m-3">
@@ -133,9 +127,7 @@ function InterviewPg7(props) {
                       <Input
                         className=""
                         type="text"
-                        name="caseNumber"
                         id="caseNumber"
-                        placeholder=""
                       />
                     </div>
                   </ModalBody>

@@ -52,9 +52,7 @@ function InterviewPg5(props) {
           <Input
             className="interview_fieldData"
             type="text"
-            name=""
             id=""
-            placeholder=""
           />
           <div className="ml-1">
             <Dropdown isOpen={dropdownOpen2} toggle={toggle2}>
@@ -85,9 +83,7 @@ function InterviewPg5(props) {
           <Input
             className="interview_fieldData"
             type="text"
-            name=""
             id=""
-            placeholder=""
           />
           <div className="ml-1">
             <Dropdown isOpen={dropdownOpen4} toggle={toggle4}>
@@ -140,9 +136,7 @@ function InterviewPg5(props) {
             <Input
               className="fieldData2"
               type="text"
-              name="caseNumber"
               id="caseNumber"
-              placeholder=""
             />
             <div>
               <div className="m-3">
@@ -159,9 +153,7 @@ function InterviewPg5(props) {
                       <Input
                         className=""
                         type="text"
-                        name="caseNumber"
                         id="caseNumber"
-                        placeholder=""
                       />
                     </div>
                   </ModalBody>
