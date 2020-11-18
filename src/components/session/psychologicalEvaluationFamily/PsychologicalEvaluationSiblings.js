@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./psychologicalEvaluation_family.css";
+import "./psychologicalEvaluationFamily.css";
 import {
   Label,
   Input,
@@ -10,7 +10,7 @@ import {
   DropdownItem,
 } from "reactstrap";
 
-function PsychologicalEvaluation_siblings(props) {
+function PsychologicalEvaluation_children(props) {
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
 
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
@@ -32,27 +32,28 @@ function PsychologicalEvaluation_siblings(props) {
         <h1 className="textWhite">Please Confirm or Update Information</h1>
       </div>
       <section className="siblingsFields">
-        <div>
+        <div className="">
           <Input
+            className=""
             type="checkbox"
             name=""
             id=""
             placeholder=""
           />
-          <Label className="textWhite title" for="">
-          Patient Has No Children
+          <Label className="textWhite title" for="firstName">
+          Patient is an Only Child
           </Label>
         </div>
         <div className="line1">
-          <Label className="textWhite title" for="">
-            Children
+          <Label className="textWhite title" for="firstName">
+            Siblings
           </Label>
           <Input
             className="fieldData"
             type="text"
-            name=""
-            id=""
-            placeholder="Child First Name"
+            name="firstName"
+            id="firstName"
+            placeholder="Sibling First Name"
           />
         </div>
         <div className="line1">
@@ -61,9 +62,9 @@ function PsychologicalEvaluation_siblings(props) {
           <Input
             className="fieldData"
             type="text"
-            name=""
-            id=""
-            placeholder="Child Last Name"
+            name="firstName"
+            id="firstName"
+            placeholder="Sibling Last Name"
           />
         </div>
         
@@ -103,7 +104,7 @@ function PsychologicalEvaluation_siblings(props) {
       </section>
       <section className="buttonSection mt-5" id="footer">
       <Button color="info" className="button" onClick={() => {
-            props.history.push(`/psychological_evaluation_siblings`);
+            props.history.push(`/psychological_evaluation_family`);
           }}>Previous</Button>
         <Button color="info" className="button">
           Save
@@ -112,11 +113,11 @@ function PsychologicalEvaluation_siblings(props) {
           Submit
         </Button>
         <Button color="info" className="button" onClick={() => {
-            props.history.push(`/psychological_evaluation_spouse`);
+            props.history.push(`/psychological_evaluation_children`);
           }}>Next</Button>
       </section>
     </>
   );
 }
 
-export default PsychologicalEvaluation_siblings;
+export default PsychologicalEvaluation_children;

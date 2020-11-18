@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./psychologicalEvaluation.css";
 import {
   Label,
   Input,
@@ -9,6 +8,8 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
+
+import "./psychologicalEvaluation.css";
 
 function PsychologicalEvaluation(props) {
   const [dropdownOpen1, setDropdownOpen1] = useState(false);

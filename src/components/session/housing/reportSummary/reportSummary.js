@@ -61,7 +61,7 @@ function PsychologicalEvaluationReportSummary(props) {
             color="info"
             className="button"
             onClick={() => {
-              props.history.push(`/housing_pg_1`);
+              props.history.push(`/HousingPg_1`);
             }}
           >
             Next
