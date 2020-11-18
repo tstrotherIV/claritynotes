@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "./housing.css";
 import { Label, Input, Button } from "reactstrap";
+import Heading from '../../shared/PsychologicalHeading';
 
-function Housing_Pg2(props) {
+function HousingPg2(props) {
   return (
     <>  
+      <Heading />
       <h4 className="textWhite centerItem">All or part?</h4>
       <section className="interview_section1">
         <div className="interview_line1">
@@ -18,7 +20,6 @@ function Housing_Pg2(props) {
           />
         </div>
       </section>
-      <br></br>
       <h4 className="textWhite centerItem">How much is your rent or mortgage?</h4>
       <section className="interview_section1">
         <div className="interview_line1">
@@ -32,7 +33,6 @@ function Housing_Pg2(props) {
           />
         </div>
       </section>
-      <br></br>
       <h4 className="textWhite centerItem ">Have you ever experienced times without shelter?</h4>
       <section className="interview_section1">
         <div className="interview_line1">
@@ -46,7 +46,6 @@ function Housing_Pg2(props) {
           />
         </div>
       </section>
-
       <section className="buttonSection mt-6" id="">
         <Button
           color="info"
@@ -67,7 +66,7 @@ function Housing_Pg2(props) {
           color="info"
           className="button"
           onClick={() => {
-            props.history.push(`/housing_pg_2`);
+            props.history.push(`/HousingPg_2`);
           }}
         >
           Next
@@ -81,4 +80,4 @@ function Housing_Pg2(props) {
   );
 }
 
-export default Housing_Pg2;
+export default HousingPg2;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Heading = () => {
+const PsychologicalHeading = () => {
     return (
     <>
       <h1 className="titleFontSize whiteBgd d-flex justify-content-center">
@@ -10,4 +10,4 @@ const Heading = () => {
     )
 }
 
-export default Heading;
+export default PsychologicalHeading;
