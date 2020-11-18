@@ -2,58 +2,47 @@ import React, { useState } from "react";
 import "./housing.css";
 import { Label, Input, Button } from "reactstrap";
 
-function Housing_Pg1(props) {
+function Housing_Pg2(props) {
   return (
-    <>
-      <div className="header">
-        <h1 className="textWhite">Housing</h1>
-      </div>
-
-      <br></br>
-      <h4 className="textWhite centerItem">Do you live alone?</h4>
+    <>  
+      <h4 className="textWhite centerItem">All or part?</h4>
       <section className="interview_section1">
         <div className="interview_line1">
-          <Label className="textWhite interview_title" for="">
+          <Label className="textWhite interview_title" for="hs-all-or-part">
             [Patient Name, First] said:
           </Label>
           <Input
             className="interview_fieldData"
             type="text"
-            name=""
-            id=""
-            placeholder=""
+            id="hs-all-or-part"
           />
         </div>
       </section>
       <br></br>
-      <h4 className="textWhite centerItem">Who do you live with?</h4>
+      <h4 className="textWhite centerItem">How much is your rent or mortgage?</h4>
       <section className="interview_section1">
         <div className="interview_line1">
-          <Label className="textWhite interview_title" for="">
+          <Label className="textWhite interview_title" for="hs-housing-cost">
             [Patient Name, First] said:
           </Label>
           <Input
             className="interview_fieldData"
             type="text"
-            name=""
-            id=""
-            placeholder=""
+            id="hs-housing-cost"
           />
         </div>
       </section>
       <br></br>
-      <h4 className="textWhite centerItem ">Who pays your rent or mortgage?</h4>
+      <h4 className="textWhite centerItem ">Have you ever experienced times without shelter?</h4>
       <section className="interview_section1">
         <div className="interview_line1">
-          <Label className="textWhite interview_title" for="">
+          <Label className="textWhite interview_title" for="hs-without-shelter">
             [Patient Name, First] said:
           </Label>
           <Input
             className="interview_fieldData"
             type="text"
-            name=""
-            id=""
-            placeholder=""
+            id="hs-without-shelter"
           />
         </div>
       </section>
@@ -92,4 +81,4 @@ function Housing_Pg1(props) {
   );
 }
 
-export default Housing_Pg1;
+export default Housing_Pg2;

@@ -1,5 +1,7 @@
 import { Route } from "react-router-dom";
 import React from "react";
+import Heading from "../components/shared/Heading";
+import Footer from "../components/shared/Footer";
 import Login from "./login/login"
 import CreateUser from "./createUser/createUser"
 import PatientHomePage from "./patient/patientHome"
@@ -38,6 +40,7 @@ import Family_Pg14 from "./session/family/family_pg14";
 import Family_Pg15 from "./session/family/family_pg15";
 import PsychologicalEvaluationReportSummary from "./session/family/reportSummary/reportSummary";
 import Housing_Pg1 from "./session/housing/housing_pg1";
+import Housing_Pg2 from "./session/housing/housing_pg2";
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -47,6 +50,7 @@ const ApplicationViews = (props) => {
 
   return (
     <React.Fragment>
+      <Heading />
       <Route
         exact
         path="/"
@@ -313,6 +317,14 @@ const ApplicationViews = (props) => {
           return <Housing_Pg1 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
+      <Route
+        exact
+        path="/housing_pg_2"
+        render={(props) => {
+          return <Housing_Pg2 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+    <Footer />
     </React.Fragment>
   );
 };
