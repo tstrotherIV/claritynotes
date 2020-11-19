@@ -1,13 +1,13 @@
 import React from "react";
-import "./login.css";
+import "./login.scss";
 import { Label, Input, Container, Button} from "reactstrap";
 
 function Login(props) {
   return (
-    <div className="mt-5 mb-5">
+    <div className="textWhite mt-5 mb-5">
       <Container className="mt-5">
         <div className="text-center mt-5">
-          <h1 className="mt-5 title">
+          <h1 className="mt-5 loginTitle">
             CLARITYNOTES
           </h1>
           <h2 className="">

@@ -11,7 +11,7 @@ function FamilyPg8(props) {
         <h1 className="textWhite">Family</h1>
       </div>
 
-      <br></br>
+      
       <h4 className="textWhite centerItem">
       What is your favorite childhood memory?
       </h4>

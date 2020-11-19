@@ -10,7 +10,7 @@ function FamilyPg7(props) {
       <div className="header">
         <h1 className="textWhite">Family</h1>
       </div>
-      <br></br>
+      
       <h4 className="textWhite centerItem">
         How was disapproval of your actions displayed by your parents/how were
         you punished when you acted out?s

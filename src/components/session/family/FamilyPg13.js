@@ -27,7 +27,7 @@ function FamilyPg13(props) {
           />
         </div>
       </section>
-      <br></br>
+      
       <h4 className="textWhite centerItem">
       Was there ever anyone that was more important to you than your biological family?
       </h4>
@@ -43,7 +43,7 @@ function FamilyPg13(props) {
           />
         </div>
       </section>
-      <br></br>
+      
       <h4 className="textWhite centerItem ">If so, who and why?</h4>
       <section className="interview_section1">
         <div className="interview_line1">

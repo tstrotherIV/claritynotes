@@ -25,7 +25,7 @@ function FamilyPg12(props) {
           />
         </div>
       </section>
-      <br></br>
+      
       <h4 className="textWhite centerItem">
       Tell me about your most serious relationship that did not result in cohabitation; which can include non-sexual friendships with the same or opposite sex.
       </h4>
@@ -41,7 +41,7 @@ function FamilyPg12(props) {
           />
         </div>
       </section>
-      <br></br>
+      
       <h4 className="textWhite centerItem ">Tell me more about relationships with children, teachers, supervisors, schoolmates, bosses, or workmates of any importance.</h4>
       <section className="interview_section1">
         <div className="interview_line1">

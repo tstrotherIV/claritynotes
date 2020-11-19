@@ -36,7 +36,7 @@ function InterviewPg7(props) {
       <div className="header">
         <h1 className="textWhite">Interviews</h1>
       </div>
-      <br></br>
+      
       <h4 className="textWhite centerItem">
       How do you typically discipline your child when they misbehave?
       </h4>
@@ -67,7 +67,7 @@ function InterviewPg7(props) {
           />
         </div>
       </section>
-      <br></br>
+      
       <section>
         <div className="section1Fields">
           <div className="in1">

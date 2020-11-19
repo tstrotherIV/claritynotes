@@ -11,7 +11,7 @@ function FamilyPg6(props) {
         <h1 className="textWhite">Family</h1>
       </div>
 
-      <br></br>
+      
       <h4 className="textWhite centerItem">
         Was there a lot of drinking in the home growing up?
       </h4>
@@ -40,7 +40,7 @@ function FamilyPg6(props) {
           />
         </div>
       </section>
-      <br></br>
+      
       <section className="interview_section3">
         <div className="interview_line3">
           <h4 className="textWhite centerItem">

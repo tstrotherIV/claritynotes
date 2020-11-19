@@ -9,7 +9,7 @@ import {
   DropdownItem,
 } from "reactstrap";
 
-import "./psychologicalEvaluation.css";
+import "./psychologicalEvaluation.scss";
 
 function PsychologicalEvaluation(props) {
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
@@ -20,7 +20,7 @@ function PsychologicalEvaluation(props) {
 
   return (
     <>
-      <h1 className="titleFontSize whiteBgd d-flex justify-content-center">
+      <h1 className="whiteBgd d-flex justify-content-center">
         Psychological Evaluation
       </h1>
       <section className="wrapContent mt-5">

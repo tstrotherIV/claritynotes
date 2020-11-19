@@ -1,0 +1,131 @@
+@import '_variables.scss';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body {
+  background-image: url(../../media/blue_bg_clarity_HD.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.aligner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.aligner-item{
+  max-width: 50%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+body, h1, h2, h3, h4, p, Label{
+  font-family: sans-serif;
+}
+Button{
+  border-radius: 8px !important;
+}
+
+.loginBtn {
+  border-radius: 8px !important;
+  height: 50px !important;
+  min-width: 200px;
+  max-width: 200px;
+  color:black !important; 
+  margin: 10px;
+  font-size: 1.2em;
+}
+
+.whiteBtn {
+  background-color: white !important;
+  margin: 10px;
+}
+
+.textWhite {
+  color: white;
+}
+
+.titleSpacing {
+  margin-top: 10px;
+}
+
+.titleFontSize {
+  font-size: 100px;
+  font-family: sans-serif;
+}
+
+.centerText {
+  text-align: center;
+  margin: 5px;
+}
+
+.textWhite {
+  color: white;
+}
+
+.titleFontSize {
+  font-size: 100px;
+  font-family: sans-serif;
+}
+
+.welcomeText {
+  font-size: 40px;
+  font-family: sans-serif;
+}
+
+.pleaseLoginText {
+  font-size: 25px;
+  font-family: sans-serif;
+}
+
+.titleSpacing {
+  margin-top: 10px;
+}
+
+.subHeaderFontSize {
+  font-size: 65px;
+  text-align: center;
+}
+
+.formDiv {
+  justify-content: flex-end;
+}
+
+@media (max-width: 767px){
+  .inputFieldSize{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px !important;
+    margin-right:20px;   
+  }
+}
+
+@media(min-width: 768px){
+  .inputFieldSize{
+    height: 50px !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 80px;
+    border-radius: 8px !important;
+  }
+}
+
+@media(min-width: 900px){
+  .inputFieldSize{
+    height: 50px !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 80px;
+    border-radius: 8px !important;
+}
+}

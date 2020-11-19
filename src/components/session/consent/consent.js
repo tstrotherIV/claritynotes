@@ -24,7 +24,7 @@ function PsychologicalEvaluationConsent(props) {
             </div>
           </div>
         </section>
-        <br></br>
+        
         <section className="siblingsFields">
           <div>
             <Input type="checkbox" name="" id="" />

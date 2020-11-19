@@ -37,21 +37,21 @@ function InterviewPg1(props) {
       </section>
       <div className="header">
         <h1 className="textWhite">Interviews</h1>
-        <br></br>
+        
         <h5 className="textWhite">
           Perspective from [Patient Name, First] [Patient Name, Last]:
         </h5>
-        <br></br>
+        
         <h4 className="textWhite">
           The following is from [Patient Name, First]’s perspective unless
           otherwise noted.
         </h4>
-        <br></br>
+        
         <h4 className="textWhite">
           [Patient Name, First], how many times has DHR directly or indirectly
           interacted with you?
         </h4>
-        <br></br>
+        
       </div>
       <section className="interview_section1">
         <div className="interview_line1">

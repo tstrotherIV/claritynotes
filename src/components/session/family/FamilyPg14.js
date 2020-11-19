@@ -25,7 +25,7 @@ function FamilyPg14(props) {
           />
         </div>
       </section>
-      <br></br>
+      
       <h4 className="textWhite centerItem">
         What do you want people to say about you someday? How do you want to be
         remembered?
@@ -42,7 +42,7 @@ function FamilyPg14(props) {
           />
         </div>
       </section>
-      <br></br>
+      
       <h4 className="textWhite centerItem ">
         How do you reach toward your potential each day?
       </h4>

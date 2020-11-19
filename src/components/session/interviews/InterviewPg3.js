@@ -38,7 +38,7 @@ function Interview_Pg3(props) {
       <div className="header">
         <h1 className="textWhite">Interviews</h1>
       </div>
-      <br></br>
+      
       <h4 className="textWhite centerItem">What grains of truth are there in DHR allegations?</h4>
       <section className="interview_section1">
         <div className="interview_line1">

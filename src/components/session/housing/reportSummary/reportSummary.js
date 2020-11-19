@@ -1,5 +1,5 @@
 import React from "react";
-import { Label, Input, Button } from "reactstrap";
+import { Button } from "reactstrap";
 import "./reportSummary.css";
 
 function PsychologicalEvaluationReportSummary(props) {
@@ -18,20 +18,20 @@ function PsychologicalEvaluationReportSummary(props) {
               [Patient Name, First][Patient Name, Last] reported she has been
               married since xx. She has son/s and daughter/s. [Patient Name,
               First] said she currently lives with _ in [Location] 
-              <br></br>
-              <br></br>
+              
+              
               [Patient
               Name, First] reported she has been married _ times. She has son/s
               and daughter/s. [Patient Name, First] and her current spouse have
               been married for _ years. She said she currently lives with _ in
               [Location]. 
-              <br></br>
-              <br></br>
+              
+              
               Why did they split up?
-              <br></br>
-              <br></br> or 
-              <br></br>
-              <br></br>
+              
+               or 
+              
+              
               [Patient Name, First]
               reported she has never been married. She has _son/s and
               _daughter/s. [Patient Name, First] said she currently lives with _
@@ -39,7 +39,7 @@ function PsychologicalEvaluationReportSummary(props) {
             </div>
           </div>
         </section>
-        <br></br>
+        
 
         <section className="buttonSection mt-6" id="">
           <Button

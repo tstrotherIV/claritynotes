@@ -10,7 +10,7 @@ function FamilyPg5(props) {
       <div className="header">
         <h1 className="textWhite">Family</h1>
       </div>
-      <br></br>
+      
       <h4 className="textWhite centerItem">
         Did you feel loved and accepted by each parent, even when you
         disappointed them?
@@ -34,7 +34,7 @@ function FamilyPg5(props) {
             about that.” GET AS MUCH INFO AS POSSIBLE.
         </div>
       </section>
-      <br></br>
+      
       <h4 className="textWhite centerItem">
         Do you remember a lot of fighting in the home growing up?
       </h4>
