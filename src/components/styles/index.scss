@@ -176,3 +176,21 @@ Button, Input{
   padding: 0;
   text-align: center;
 }
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 10.5rem;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10.5rem;  
+  margin-bottom: 70px; 
+  background-image: url('../../media/blue_bg_clarity_HD.jpg');         /* Footer height */
+}
+

@@ -2,7 +2,7 @@ import React from 'react';
 import DropdownButton from "react-bootstrap/DropdownButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 
-const termOfParentalRights = () => {
+const TermOfParentalRights = () => {
     return(
         <section className="d-flex justify-content-center">
         <DropdownButton
@@ -115,4 +115,4 @@ const termOfParentalRights = () => {
     )
 }
 
-export default termOfParentalRights;
+export default TermOfParentalRights;

@@ -18,6 +18,8 @@ function PsychologicalEvaluation_family(props) {
 
   return (
     <>
+     <div id="page-container">
+    <div id="content-wrap">
       <Heading />   
       <div className="minWidthContainer">  
       <div className="header">
@@ -113,7 +115,9 @@ function PsychologicalEvaluation_family(props) {
           </div>
         </div>
         </section>
-      <section className="buttonSection mt-5" id="">
+        </div>
+      <div id="footer"> 
+      <section className="buttonSection">
       <Button color="info" className="button" onClick={() => {
             props.history.push(`/psychological_evaluation`);
           }}>Previous</Button>
@@ -128,6 +132,9 @@ function PsychologicalEvaluation_family(props) {
           }}>Next</Button>
       </section>
       </div>
+      </div>
+      </div>
+
     </>
   );
 }

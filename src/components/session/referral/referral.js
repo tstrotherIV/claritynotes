@@ -4,6 +4,8 @@ import "./referral.css";
 
 function PsychologicalEvaluationReferral(props) {
   return (
+    <div id="page-container">
+    <div id="content-wrap" className="whiteBGD">
     <section className="fullpage">
       <div className="whiteBGD">
         <section className="centerContent">
@@ -19,9 +21,9 @@ function PsychologicalEvaluationReferral(props) {
             </div>
           </div>
         </section>
-        
-        
-        <section className="buttonSection mt-5" id="">
+        </div>
+        <div id="footer">
+        <section className="buttonSection">
           <Button
             color="info"
             className="button"
@@ -49,6 +51,8 @@ function PsychologicalEvaluationReferral(props) {
         </section>
       </div>
     </section>
+    </div>
+    </div>
   );
 }
 
