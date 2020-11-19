@@ -8,7 +8,7 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
-
+import Heading from '../../shared/PsychologicalHeading.js';
 import "./psychologicalEvaluation.scss";
 
 function PsychologicalEvaluation(props) {
@@ -20,121 +20,58 @@ function PsychologicalEvaluation(props) {
 
   return (
     <>
-      <h1 className="whiteBgd d-flex justify-content-center">
-        Psychological Evaluation
-      </h1>
-      <section className="wrapContent mt-5">
-        <div className="textWhite m-2 p-2">
-          [Patient Name, First] [Patient Name, Last]
-        </div>
-        <div className="textWhite m-2 p-2">DOB: [Patient DOB]</div>
-        <div className="textWhite m-2 p-2">Patient ID: [Patient ID]</div>
-        <div className="textWhite m-2 p-2">Existing Patient: [Case #]</div>
-      </section>
+  <Heading /> 
+  <div className="minWidthContainer">   
       <div className="header">
-        <h1 className="textWhite">Please Confirm or Update Information</h1>
+        <h2 className="textWhite mt-2">Please Confirm or Update Information</h2>
       </div>
-      <section className="">
-        <div className="section1Fields">
-          <div className="line1">
-            <Label className="textWhite title" for="firstName">
+     <div className="row no-gutters text-center d-flex justify-content-center minWidthContainer">
+        <div className="col-6">
+          <div className="d-flex m-4">
+            <Label className="textWhite labelWidth" for="firstName">
               Name
             </Label>
             <Input
-              className="fieldData"
+              className="text-center col-8"
               type="text"
-              name="firstName"
               id="firstName"
               placeholder="First Name"
             />
           </div>
-          <div className="line1">
-            <Label className="textWhite title" for="caseNumber">
-              Case #
-            </Label>
+          <div className="d-flex m-4">
+            <Label className="textWhite labelWidth" for="middleName"></Label>
             <Input
-              className="fieldData"
+              className="text-center col-8"
               type="text"
-              name="caseNumber"
-              id="caseNumber"
-              placeholder="Case Number"
-            />
-          </div>
-        </div>
-        <div className="section1Fields">
-          <div className="line1">
-            <Label className="textWhite title" for=""></Label>
-            <Input
-              className="fieldData"
-              type="text"
-              name="middleName"
               id="middleName"
               placeholder="Middle Name"
             />
           </div>
-          <div className="line1">
-            <Label className="textWhite title" for="examplePassword">
-              Eval 1 Date
-            </Label>
+          <div className="d-flex justify-items-center m-4">
+            <Label className="textWhite labelWidth" for="lastName"></Label>
             <Input
-              className="fieldData"
-              type="date"
-              id="date"
-            />
-          </div>
-        </div>
-        <div className="section1Fields">
-          <div className="line1">
-            <Label className="textWhite title" for=""></Label>
-            <Input
-              className="fieldData"
+              className="text-center col-8"
               type="text"
               id="lastName"
+              placeholder="Last Name"
             />
           </div>
-          <div className="line1 evalDate">
-            <Label className="textWhite title" for=""></Label>
-            <Button className="evalButton">Add Eval Date</Button>
-          </div>
-        </div>
-        <div className="section1Fields">
-          <div className="line1">
-            <Label className="textWhite title" for="">
+          <div className="d-flex justify-items-center m-4">
+            <Label className="textWhite labelWidth col-2" for="dateOfBirth">
               DOB
             </Label>
             <Input
-              className="fieldData"
+              className="text-center col-8"
               type="date"
               id="dateOfBirth"
             />
           </div>
-          <div className="line1">
-            <Label className="textWhite title" for="examplePassword">
-              County
-            </Label>
-            <Dropdown isOpen={dropdownOpen1} toggle={toggle1}>
-              <DropdownToggle color="light" className="dropdown" caret>
-                Please Select
-              </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem header>Header</DropdownItem>
-                <DropdownItem>Some Action</DropdownItem>
-                <DropdownItem disabled>Action (disabled)</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Foo Action</DropdownItem>
-                <DropdownItem>Bar Action</DropdownItem>
-                <DropdownItem>Quo Action</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </div>
-        </div>
-        <div className="section1Fields">
-          <div className="line1">
-            <Label className="textWhite title" for="examplePassword">
+          <div className="d-flex justify-items-center m-4">
+            <Label className="textWhite labelWidth" for="examplePassword">
               Referral
             </Label>
-            <Dropdown isOpen={dropdownOpen2} toggle={toggle2}>
-              <DropdownToggle color="light" className="dropdown" caret>
+            <Dropdown isOpen={dropdownOpen2} toggle={toggle2} className="col-8">
+              <DropdownToggle color="light" className="dropdown text-center" caret>
                 Please Select
               </DropdownToggle>
               <DropdownMenu>
@@ -148,63 +85,105 @@ function PsychologicalEvaluation(props) {
               </DropdownMenu>
             </Dropdown>
           </div>
-          <div className="line1">
-            <Label className="textWhite title" for="firstName">
-              Interview Time
-            </Label>
-            <Input
-              className="fieldData"
-              type="time"
-              id="firstName"
-            />
-          </div>
-        </div>
-        <div className="section1Fields">
-          <div className="line1">
-            <Label className="textWhite title" for="firstName">
-              Intake Time
-            </Label>
-            <Input
-              className="fieldData"
-              type="time"
-              id="firstName"
-            />
-          </div>
-          <div className="line1">
-            <Label className="textWhite title" for="firstName">
+          <div className="d-flex justify-items-center m-4">
+            <Label className="textWhite labelWidth" for="firstName">
               Office Time
             </Label>
             <Input
-              className="fieldData"
+              className="text-center col-8"
               type="time"
               id="firstName"
             />
           </div>
-        </div>
-        <div className="section1Fields">
-          <div className="line1">
-            <Label className="textWhite title" for="firstName">
+          <div className="d-flex justify-items-center m-4">
+            <Label className="textWhite labelWidth" for="firstName">
               Report Writing
             </Label>
             <Input
-              className="fieldData"
+              className="text-center col-8"
               type="text"
               id="firstName"
             />
           </div>
-          <div className="line1"></div>
+          </div>     
+{/* --------------------------------------------- */}    
+<div className="col-6"> 
+          <div className="d-flex justify-items-center m-4">
+            <Label className="textWhite labelWidth" for="caseNumber">
+              Case #
+            </Label>
+            <Input
+              className="text-center col-8"
+              type="text"
+              id="caseNumber"
+              placeholder="Case Number"
+            />
+          </div>
+        <div>
+          <div className="d-flex justify-items-center m-4">
+            <Label className="textWhite labelWidth" for="examplePassword">
+              Eval 1 Date
+            </Label>
+            <Input
+              className="text-center col-5"
+              type="date"
+              id="date"
+            />          
+              <Button className="col-3 ml-2">Add Eval Date</Button>
+          </div>
         </div>
-      </section>
+          <div className="textWhite d-flex justify-items-center m-4">
+            <Label className="textWhite labelWidth" for="examplePassword">
+              County
+            </Label>
+            <Dropdown isOpen={dropdownOpen1} toggle={toggle1} className="col-8">
+              <DropdownToggle color="light" className="dropdown" caret>
+                Please Select
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem header>Header</DropdownItem>
+                <DropdownItem>Some Action</DropdownItem>
+                <DropdownItem disabled>Action (disabled)</DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem>Foo Action</DropdownItem>
+                <DropdownItem>Bar Action</DropdownItem>
+                <DropdownItem>Quo Action</DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+          </div>         
+          <div className="textWhite d-flex justify-items-center m-4">
+            <Label className="labelWidth" for="intakeTime">
+              Interview Time
+            </Label>
+            <Input
+              className="col-8"
+              type="time"
+              id="intakeTime"
+            />
+          </div>
+          <div className="textWhite d-flex justify-items-center m-4">
+            <Label className="textWhite labelWidth" for="inTakeTime">
+              Intake Time
+            </Label>
+            <Input
+              className="col-8"
+              type="time"
+              id="inTakeTime"
+              />
+          </div>
+        </div>
+        </div>
       <section className="buttonSection mt-5">
       <Button color="info" className="button" onClick={() => {
-            props.history.push(`/sessionStep1`);
-          }}>Previous</Button>
+        props.history.push(`/sessionStep1`);
+      }}>Previous</Button>
         <Button color="info" className="button">Save</Button>
         <Button color="info" className="button">Submit</Button>
         <Button color="info" className="button" onClick={() => {
-            props.history.push(`/psychological_evaluation_family`);
-          }}>Next</Button>
+          props.history.push(`/psychological_evaluation_family`);
+        }}>Next</Button>
       </section>
+      </div>
     </>
   );
 }

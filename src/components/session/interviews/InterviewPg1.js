@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./interviews.css";
 import {
   Label,
   Input,
@@ -13,7 +12,8 @@ import {
   ModalBody,
   ModalFooter,
 } from "reactstrap";
-import Heading from '../../shared/PsychologicalHeading';
+
+import "./interviews.scss";
 
 
 function InterviewPg1(props) {
@@ -26,7 +26,6 @@ function InterviewPg1(props) {
 
   return (
     <>
-    <Heading />
       <section className="wrapContent mt-5">
         <div className="textWhite m-2 p-2">
           [Patient Name, First] [Patient Name, Last]

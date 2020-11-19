@@ -4,24 +4,20 @@
   background-size: cover;
 }
 
-.form-control{
-  width: 250px !important;
-  height: 50px !important;
-} 
-label{
-  width: 100px;
-}
+
 @media (max-width: 767px){
   .text-align{
   text-align: right;
   margin-right: 10px;
-  width: 100px;
+  width: 150px;
+  height: auto;
+
   }
   .loginAlignFields{
     justify-content: center;
     justify-items: left;
   }
-  .inputFieldSize{
+  .fieldSize{
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 8px !important;
@@ -33,12 +29,14 @@ label{
   .text-align{
     text-align: right;
     margin-right: 10px;
+    width: 150px;
+  height: auto;
   }
   .loginAlignFields{
     justify-content: left;
     text-align: center;
   }
-  .inputFieldSize{
+  .fieldSize{
     height: 50px !important;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -55,12 +53,14 @@ label{
   .text-align{
     text-align: right;
     margin-right: 10px;
+    width: 150px;
+    height: auto;
   }
   .loginAlignFields{
     justify-content: left;
     text-align: center;
   }
-  .inputFieldSize{
+  .fieldSize{
     height: 50px !important;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -68,8 +68,6 @@ label{
     border-radius: 8px !important;
     min-width:400px;
   }
-  label{
-    width: 100px;
-  }
+  
  
 }

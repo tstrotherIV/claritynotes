@@ -3,7 +3,7 @@
 
 body {
   background-image: url(../../media/blue_bg_clarity_HD.jpg);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -11,13 +11,30 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-width: 400px;
+  min-height: auto;
+}
+
+.wrapContent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .aligner{
   display: flex;
   align-items: center;
-  justify-content: center;
- 
+  justify-content: center; 
+}
+
+.jumbotron{
+  background-color: white;
+  padding: 0;
+}
+.jumboResp{
+  font-size: 4vw;
+  font-weight: bold;
 }
 
 .aligner-item{
@@ -32,8 +49,9 @@ code {
 body, h1, h2, h3, h4, p, Label{
   font-family: sans-serif;
 }
-Button{
+Button, Input{
   border-radius: 8px !important;
+
 }
 
 .loginBtn {
@@ -96,6 +114,11 @@ Button{
   font-size: 65px;
   text-align: center;
 }
+.header{
+  display: flex;
+  flex: wrap;
+  align-items: center !important;  
+}
 
 .formDiv {
   justify-content: flex-end;
@@ -128,4 +151,28 @@ Button{
     margin-right: 80px;
     border-radius: 8px !important;
 }
+}
+
+.textLarger{
+  font-size: 3em;
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.flexPatientInfo{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.patientP {
+  font-size:small;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }

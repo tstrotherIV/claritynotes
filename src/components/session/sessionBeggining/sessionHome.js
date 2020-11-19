@@ -1,5 +1,5 @@
 import React from "react";
-import "./sessionHome.css";
+import "./sessionHome.scss";
 import { Button } from "reactstrap";
 
 function SessionStep1(props) {
@@ -17,20 +17,18 @@ function SessionStep1(props) {
         <div className="textWhite m-2 p-2">Patient ID: [Patient ID]</div>
         <div className="textWhite m-2 p-2">Existing Patient: [Case #]</div>
       </section>
-      <div className="header">
-        `
+      <div className="shHeader">   
         <h1 className="textWhite">
           What would you like to do for {FirstName} {LastName}?
         </h1>
-        `
       </div>
-      <h4 className="d-flex justify-content-center textWhite">
+      <h4 className="flexCenter textWhite">
         Please select an option
       </h4>
-      
-      <section className="buttonSection mt-5">
+      <div className="container">
+      <section className="row text-center justify-content-center m-5">
         <Button
-          className="button"
+          className="col-md button2"
           color="light"
           onClick={() => {
             props.history.push(`/psychological_evaluation`);
@@ -39,7 +37,7 @@ function SessionStep1(props) {
           Psychological Evaluation
         </Button>
         <Button
-          className="button"
+          className="col-md button2"
           color="light"
           // onClick={() => {
           //   props.history.push(`/tourViewer/${props.tour.id}`);
@@ -47,9 +45,8 @@ function SessionStep1(props) {
         >
           Conclusion Report
         </Button>
-
         <Button
-          className="button"
+          className="col-md button2"
           color="light"
           // onClick={() => {
           //   props.history.push(`/tourViewer/${props.tour.id}`);
@@ -58,7 +55,9 @@ function SessionStep1(props) {
           Treatment Plan
         </Button>
       </section>
+    </div>
     </>
+
   );
 }
 

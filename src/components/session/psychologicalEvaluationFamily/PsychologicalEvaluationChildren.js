@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./psychologicalEvaluationFamily.css";
+import "./psychologicalEvaluationFamily.scss";
 import {
   Label,
   Input,
@@ -9,6 +9,8 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
+import Heading from '../../shared/PsychologicalHeading';
+
 
 function PsychologicalEvaluation_siblings(props) {
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
@@ -17,17 +19,7 @@ function PsychologicalEvaluation_siblings(props) {
 
   return (
     <>
-      <h1 className="titleFontSize whiteBgd d-flex justify-content-center">
-        Psychological Evaluation
-      </h1>
-      <section className="wrapContent mt-5">
-        <div className="textWhite m-2 p-2">
-          [Patient Name, First] [Patient Name, Last]
-        </div>
-        <div className="textWhite m-2 p-2">DOB: [Patient DOB]</div>
-        <div className="textWhite m-2 p-2">Patient ID: [Patient ID]</div>
-        <div className="textWhite m-2 p-2">Existing Patient: [Case #]</div>
-      </section>
+    <Heading />   
       <div className="header">
         <h1 className="textWhite">Please Confirm or Update Information</h1>
       </div>
@@ -100,7 +92,7 @@ function PsychologicalEvaluation_siblings(props) {
           <Button className="evalButton">Click to Add More Guardians</Button>
         </div>
       </section>
-      <section className="buttonSection mt-5" id="footer">
+      <section className="buttonSection mt-5" id="">
       <Button color="info" className="button" onClick={() => {
             props.history.push(`/psychological_evaluation_siblings`);
           }}>Previous</Button>

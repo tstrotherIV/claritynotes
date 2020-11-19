@@ -2,7 +2,7 @@ import React from 'react';
 import DropdownButton from "react-bootstrap/DropdownButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 
-const Footer = () => {
+const termOfParentalRights = () => {
     return(
         <section className="d-flex justify-content-center">
         <DropdownButton
@@ -115,4 +115,4 @@ const Footer = () => {
     )
 }
 
-export default Footer;
+export default termOfParentalRights;

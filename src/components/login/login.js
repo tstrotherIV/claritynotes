@@ -20,31 +20,31 @@ function Login(props) {
             Please login to continue
           </p>
         </div>
-        <div className="container justify-content-center m-0">
-            <div className="m-0">
-                <div className="d-flex flex-wrap align-items-center justify-content-center">
+        <div className="container d-flex flex-wrap justify-content-center m-0">
+            <div className="m-2">
+                <div className="d-flex justify-items-center align-items-center m-3">
                     <Label className="text-align" for="exampleEmail">
                       Email
                     </Label>
                     <Input 
-                      className="inputFieldSize"
+                      className="fieldSize"
                       type="email"
                       id="exampleEmail"
                       placeholder="email placeholder"
                     /> 
                 </div> 
-                <div className="d-flex flex-wrap align-items-center justify-content-center">        
+                <div className="d-flex justify-items-center align-items-center m-3">        
                     <Label className="text-align" for="examplePassword">
                       Password
                     </Label>
                     <Input
-                      className="inputFieldSize"
+                      className="fieldSize"
                       type="password"
                       id="examplePassword"
                       placeholder="password placeholder"
                     />
               </div>
-
+              <div className="">
                 <div className="d-flex justify-content-center">
                 <Button color="info" className="loginBtn"
                 onClick={() => {
@@ -58,6 +58,7 @@ function Login(props) {
                     props.history.push(`/createUser`);
                   }}
                 block>CREATE NEW USER</Button>
+              </div>
               </div>
         </div>
         </div>
