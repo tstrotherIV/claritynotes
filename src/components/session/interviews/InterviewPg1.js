@@ -13,7 +13,7 @@ import {
   ModalFooter,
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
-import TermOfParentalRights from '../../shared/TermOfParentalRights.js';
+import TermOfParentalRights from '../../shared/termOfParentalRights';
 import "./interviews.scss";
 
 
@@ -28,8 +28,8 @@ function InterviewPg1(props) {
   return (
     <>
     <div id="page-container">
-    <Heading />   
       <div id="content-wrap">
+    <Heading />   
         <div className="header">
           <h1 className="textWhite">Interviews</h1>
           <h5 className="textWhite">
