@@ -40,6 +40,7 @@ import FamilyPg15 from "./session/family/FamilyPg15";
 import PsychologicalEvaluationReportSummary from "./session/family/reportSummary/reportSummary";
 import HousingPg1 from "./session/housing/HousingPg1";
 import HousingPg2 from "./session/housing/HousingPg2";
+import HousingPg3 from "./session/housing/HousingPg3";
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -323,7 +324,14 @@ const ApplicationViews = (props) => {
           return <HousingPg2 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
-    <Footer />
+      <Route
+        exact
+        path="/housing_pg_3"
+        render={(props) => {
+          return <HousingPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+  
     </React.Fragment>
   </>
   );
