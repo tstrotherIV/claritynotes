@@ -1,43 +1,84 @@
+
 .siteBackground {
   background-image: url(../../media/blue_bg_clarity_HD.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 0%;
 }
 
-.centerText {
+
+.loginBtn {
+  border-radius: 10px !important;
+  height: 50px !important;
+  min-width: 200px;
+  max-width: 200px;
+  color:black !important; 
+  margin: 10px;
+}
+
+.whiteBtn {
+  background-color: white !important;
+}
+
+.form-control{
+  width: 250px !important;
+  height: 50px !important;
+} 
+label{
+  width: 100px;
+}
+@media (max-width: 767px){
+  .text-align{
   text-align: center;
-  margin: 5px;
+  margin: 0;
+  width: 200px;
+  }
+  .loginAlignFields{
+    justify-content: center;
+    justify-items: left;
+  }
 }
 
-.textWhite {
-  color: white;
+@media(min-width: 768px){
+  .text-align{
+    text-align: right;
+    margin-right: 10px;
+  }
+  .loginAlignFields{
+    justify-content: left;
+    text-align: center;
+  }
+  .inputFieldSize{
+    height: 50px !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 80px;
+    border-radius: 10px !important;
+    min-width:400px;
+  }
 }
 
-.titleFontSize {
-  font-size: 100px;
-  font-family: sans-serif;
-}
-
-.welcomeText {
-  font-size: 40px;
-  font-family: sans-serif;
-}
-
-.pleaseLoginText {
-  font-size: 25px;
-  font-family: sans-serif;
-}
-
-.titleSpacing {
-  margin-top: 10px;
-}
-
-.subHeaderFontSize {
-  font-size: 65px;
-  text-align: center;
-}
-
-.formDiv {
-  justify-content: flex-end;
+@media(min-width: 900px){
+  .title{
+    font-size: 4.5em;
+  }
+  .text-align{
+    text-align: right;
+    margin-right: 10px;
+  }
+  .loginAlignFields{
+    justify-content: left;
+    text-align: center;
+  }
+  .inputFieldSize{
+    height: 50px !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 80px;
+    border-radius: 10px !important;
+    min-width:400px;
+  }
+  label{
+    width: 100px;
+  }
+ 
 }

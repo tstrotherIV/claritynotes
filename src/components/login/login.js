@@ -1,98 +1,68 @@
 import React from "react";
 import "./login.css";
-import { Col, Label, Input, Container, Row, Button } from "reactstrap";
+import { Label, Input, Container, Button} from "reactstrap";
 
 function Login(props) {
   return (
-    <Container>
-      <Container>
-        <Row>
-          <Col>
-            <h1 className="textWhite titleFontSize d-flex justify-content-center">
-              CLARITYNOTES
-            </h1>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <h3 className="textWhite subHeaderFontSize d-flex justify-content-center">
-            Enhancing Perspective with Psychological Assessment
-            </h3>
-          </Col>
-        </Row>
-        <br></br>
-        <Row>
-          <Col>
-            <h2 className="textWhite d-flex justify-content-center">
-              Welcome to Claritynotes!
-            </h2>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <h4 className="textWhite d-flex justify-content-center">
-              Please login to continue
-            </h4>
-          </Col>
-        </Row>
-      </Container>
-      <br></br>
-      <div>
-        <Container>
-          <Row className="m-4" style={{ height: 50 }}>
-            <Col sm={{ size: 1, offset: 0 }}>
-              <Label className="textWhite" for="exampleEmail">
-                Email
-              </Label>
-            </Col>
-            <Col>
-              <Input
-                className="h-100"
-                type="email"
-                name="email"
-                id="exampleEmail"
-                placeholder="email placeholder"
-              />
-            </Col>
-          </Row>
-          <Row className="m-4" style={{ height: 50 }}>
-            <Col sm={{ size: 1, offset: 0 }}>
-              <Label className="textWhite" for="examplePassword">
-                Password
-              </Label>
-            </Col>
-            <Col>
-              <Input
-                className="h-100"
-                type="password"
-                name="password"
-                id="examplePassword"
-                placeholder="password placeholder"
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Button color="primary" 
-              onClick={() => {
-                  props.history.push(`/patient`);
-                }}
-              block>Login</Button>
-            </Col>
-          </Row>
-          <br></br>
-          <Row>
-            <Col>
-              <Button color="primary" 
-              onClick={() => {
-                  props.history.push(`/createUser`);
-                }}
-              block>CREATE NEW USER</Button>
-            </Col>
-          </Row>
+    <div className="mt-5 mb-5">
+      <Container className="mt-5">
+        <div className="text-center mt-5">
+          <h1 className="mt-5 title">
+            CLARITYNOTES
+          </h1>
+          <h2 className="">
+          Enhancing Perspective with Psychological Assessment
+          </h2>
+          <h3 className="mt-5 mb-0">
+            Welcome to Claritynotes!
+          </h3>
+          <p className="mb-1">
+            Please login to continue
+          </p>
+        </div>
+        <div className="container justify-content-center m-0">
+            <div className="m-0">
+                <div className="d-flex flex-wrap align-items-center justify-content-center">
+                    <Label className="text-align" for="exampleEmail">
+                      Email
+                    </Label>
+                    <Input 
+                      className="inputFieldSize"
+                      type="email"
+                      id="exampleEmail"
+                      placeholder="email placeholder"
+                    /> 
+                </div> 
+                <div className="d-flex flex-wrap align-items-center justify-content-center">        
+                    <Label className="text-align" for="examplePassword">
+                      Password
+                    </Label>
+                    <Input
+                      className="inputFieldSize"
+                      type="password"
+                      id="examplePassword"
+                      placeholder="password placeholder"
+                    />
+              </div>
+
+                <div className="d-flex justify-content-center">
+                <Button color="info" className="loginBtn"
+                onClick={() => {
+                    props.history.push(`/patient`);
+                  }}
+                block>Login</Button>
+                </div>
+                <div className="d-flex justify-content-center">
+                <Button className="loginBtn whiteBtn"
+                onClick={() => {
+                    props.history.push(`/createUser`);
+                  }}
+                block>CREATE NEW USER</Button>
+              </div>
+        </div>
+        </div>
         </Container>
       </div>
-    </Container>
   );
 }
 
