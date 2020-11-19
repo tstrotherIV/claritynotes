@@ -57,7 +57,7 @@ function PsychologicalEvaluation(props) {
             />
           </div>
           <div className="d-flex justify-items-center m-4">
-            <Label className="textWhite labelWidth col-2" for="dateOfBirth">
+            <Label className="textWhite labelWidth " for="dateOfBirth">
               DOB
             </Label>
             <Input
