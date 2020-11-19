@@ -5,23 +5,23 @@
   justify-content: space-around;
 }
 
-.header {
-  margin: 8px;
+.shHeader {
+  margin-top: 100px;
   display: flex;
   justify-content: center;
   flex: auto;
   text-align: center;
 }
-
-.buttonSection {
+.button2{
+  margin: 20px 10px;
+  padding: 15px 40px;
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-  justify-content: space-around;
+  font-size: 2.8vw;
+  width: 300px;
+  line-height: 1.1;
 }
 
-.button {
-  margin: 10px;
-  flex: auto;
-  height: 50px;
-}
+

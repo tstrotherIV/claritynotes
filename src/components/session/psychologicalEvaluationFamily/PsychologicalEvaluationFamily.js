@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./psychologicalEvaluationFamily.css";
+import "./psychologicalEvaluationFamily.scss";
 import {
   Label,
   Input,
@@ -9,6 +9,7 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
+import Heading from '../../shared/PsychologicalHeading';
 
 function PsychologicalEvaluation_family(props) {
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
@@ -17,85 +18,82 @@ function PsychologicalEvaluation_family(props) {
 
   return (
     <>
-      <h1 className="titleFontSize whiteBgd d-flex justify-content-center">
-        Psychological Evaluation
-      </h1>
-      <section className="wrapContent mt-5">
-        <div className="textWhite m-2 p-2">
-          [Patient Name, First] [Patient Name, Last]
-        </div>
-        <div className="textWhite m-2 p-2">DOB: [Patient DOB]</div>
-        <div className="textWhite m-2 p-2">Patient ID: [Patient ID]</div>
-        <div className="textWhite m-2 p-2">Existing Patient: [Case #]</div>
-      </section>
+      <Heading />   
+      <div className="minWidthContainer">  
       <div className="header">
-        <h1 className="textWhite">Please Confirm or Update Information</h1>
+        <h1 className="textWhite mt-2">Please Confirm or Update Information</h1>
       </div>
-      <section>
-        <div className="section1Fields">
-          <div className="line1">
-            <Label className="textWhite title" for="firstName">
+      <section className="row no-gutters d-flex justify-content-center align-content-center">
+          <div className="col-6">
+          <div className="d-flex m-4">
+            <Label className="textWhite labelWidth" for="firstName">
               Parents
             </Label>
             <Input
-              className="fieldData"
+              className="text-center col-8"
               type="text"
-              name="firstName"
               id="firstName"
               placeholder="Father First Name"
             />
           </div>
-          <div className="line1">
-            <Label className="textWhite title" for="caseNumber">
-              Other Guardians
-            </Label>
+          <div className="d-flex m-4">
+            <Label className="textWhite labelWidth" for=""></Label>
             <Input
-              className="fieldData"
+              className="text-center col-8"
               type="text"
-              name="caseNumber"
-              id="caseNumber"
-              placeholder="Guardian First Name"
-            />
-          </div>
-        </div>
-        <div className="section1Fields">
-          <div className="line1">
-            <Label className="textWhite title" for=""></Label>
-            <Input
-              className="fieldData"
-              type="text"
-              name="middleName"
               id="middleName"
               placeholder="Father Last Name"
             />
           </div>
-          <div className="line1">
-            <Label className="textWhite title" for="examplePassword"></Label>
+          <div className="d-flex m-4">
+            <Label className="textWhite labelWidth" for=""></Label>
             <Input
-              className="fieldData"
+              className="text-center col-8"
+              type="text"
+              id="dateOfBirth"
+              placeholder="Mother First Name"
+            />
+            </div>
+             <div className="d-flex m-4">
+            <Label className="textWhite labelWidth" for=""></Label>
+            <Input
+              className="text-center col-8"
+              type="text"
+              id="lastName"
+              placeholder="Mother Last Name"
+            />
+          </div>
+            </div>
+     
+{/* --------------------------------------------- */}    
+<div className="col-6">
+
+          <div className="d-flex m-4">
+            <Label className="textWhite labelWidth" for="caseNumber">
+              Other Guardians
+            </Label>
+            <Input
+              className="text-center col-8"
+              type="text"
+              id="caseNumber"
+              placeholder="Guardian First Name"
+            />
+          </div>
+          <div className="d-flex m-4">
+            <Label className="textWhite labelWidth" for="examplePassword"></Label>
+            <Input
+              className="text-center col-8"
               type="text"
               name="date"
               id="date"
               placeholder="Guardian Last Name"
-            />
+              />
           </div>
-        </div>
-        <div className="section1Fields">
-          <div className="line1">
-            <Label className="textWhite title" for=""></Label>
-            <Input
-              className="fieldData"
-              type="text"
-              name="dateOfBirth"
-              id="dateOfBirth"
-              placeholder="Mother First Name"
-            />
-          </div>
-          <div className="line1">
-            <Label className="textWhite title" for="examplePassword">
+          <div className="d-flex m-4">
+            <Label className="textWhite labelWidth" for="examplePassword">
               Gender
             </Label>
-            <Dropdown isOpen={dropdownOpen1} toggle={toggle1}>
+            <Dropdown isOpen={dropdownOpen1} toggle={toggle1} className="col-8">
               <DropdownToggle color="light" className="dropdown" caret>
                 Please Select
               </DropdownToggle>
@@ -110,25 +108,12 @@ function PsychologicalEvaluation_family(props) {
               </DropdownMenu>
             </Dropdown>
           </div>
-        </div>
-        <div className="section1Fields">
-          <div className="line1">
-            <Label className="textWhite title" for=""></Label>
-            <Input
-              className="fieldData"
-              type="text"
-              name="lastName"
-              id="lastName"
-              placeholder="Mother Last Name"
-            />
-          </div>
-          <div className="line1 evalDate">
-            <Label className="textWhite title" for=""></Label>
-            <Button className="evalButton">Click to Add More Guardians</Button>
+          <div className="text-center">
+            <div className="textWhite"><i class="fas fa-plus fa-lg mr-2"></i>Click to Add More Guardians</div>
           </div>
         </div>
-      </section>
-      <section className="buttonSection mt-5" id="footer">
+        </section>
+      <section className="buttonSection mt-5" id="">
       <Button color="info" className="button" onClick={() => {
             props.history.push(`/psychological_evaluation`);
           }}>Previous</Button>
@@ -142,6 +127,7 @@ function PsychologicalEvaluation_family(props) {
             props.history.push(`/psychological_evaluation_siblings`);
           }}>Next</Button>
       </section>
+      </div>
     </>
   );
 }

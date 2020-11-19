@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./interviews.css";
 import {
   Label,
   Input,
@@ -14,6 +13,7 @@ import {
   ModalFooter,
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
+import "./interviews.scss";
 
 
 function InterviewPg8(props) {
@@ -26,18 +26,9 @@ function InterviewPg8(props) {
   return (
     <>
       <Heading />
-      <section className="wrapContent mt-5">
-        <div className="textWhite m-2 p-2">
-          [Patient Name, First] [Patient Name, Last]
-        </div>
-        <div className="textWhite m-2 p-2">DOB: [Patient DOB]</div>
-        <div className="textWhite m-2 p-2">Patient ID: [Patient ID]</div>
-        <div className="textWhite m-2 p-2">Existing Patient: [Case #]</div>
-      </section>
       <div className="header">
         <h1 className="textWhite">Interviews</h1>
       </div>
-      
       <h4 className="textWhite centerItem">
       How have you served as the primary caretaker of your child(ren)?
       </h4>

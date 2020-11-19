@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./interviews.css";
 import {
   Label,
   Input,
@@ -13,9 +12,8 @@ import {
   ModalBody,
   ModalFooter,
 } from "reactstrap";
-
 import Heading from '../../shared/PsychologicalHeading';
-
+import "./interviews.scss";
 
 function Interview_Pg3(props) {
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
@@ -27,14 +25,6 @@ function Interview_Pg3(props) {
   return (
     <>
     <Heading />
-      <section className="wrapContent mt-5">
-        <div className="textWhite m-2 p-2">
-          [Patient Name, First] [Patient Name, Last]
-        </div>
-        <div className="textWhite m-2 p-2">DOB: [Patient DOB]</div>
-        <div className="textWhite m-2 p-2">Patient ID: [Patient ID]</div>
-        <div className="textWhite m-2 p-2">Existing Patient: [Case #]</div>
-      </section>
       <div className="header">
         <h1 className="textWhite">Interviews</h1>
       </div>
