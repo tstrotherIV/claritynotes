@@ -19,6 +19,8 @@ function PsychologicalEvaluation_children(props) {
 
   return (
     <>
+    <div id="page-container">
+    <div id="content-wrap">
     <Heading />   
       <div className="header">
         <h1 className="textWhite">Please Confirm or Update Information</h1>
@@ -55,7 +57,6 @@ function PsychologicalEvaluation_children(props) {
             placeholder="Sibling Last Name"
           />
         </div>
-        
         <div className="line1">
           <Label className="textWhite title" for="examplePassword">
             Gender
@@ -88,7 +89,9 @@ function PsychologicalEvaluation_children(props) {
             <div className="textWhite"><i class="fas fa-plus fa-lg mr-2"></i>Click to Add More Siblings</div>
           </div>
       </section>
-      <section className="buttonSection mt-5" id="">
+      </div>
+      <div id="footer">
+      <section className="buttonSection">
       <Button color="info" className="button" onClick={() => {
             props.history.push(`/psychological_evaluation_family`);
           }}>Previous</Button>
@@ -102,6 +105,8 @@ function PsychologicalEvaluation_children(props) {
             props.history.push(`/psychological_evaluation_children`);
           }}>Next</Button>
       </section>
+      </div>
+      </div>
     </>
   );
 }

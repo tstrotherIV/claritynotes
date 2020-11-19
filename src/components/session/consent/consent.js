@@ -4,7 +4,8 @@ import "./consent.css";
 
 function PsychologicalEvaluationConsent(props) {
   return (
-    <section className="fullpage">
+    <div id="page-container">
+    <div id="content-wrap" className="whiteBGD">
       <div className="whiteBGD">
         <section className="centerContent">
           <div className="d-flex justify-content-center mt-5">
@@ -33,7 +34,10 @@ function PsychologicalEvaluationConsent(props) {
             </Label>
           </div>
         </section>
-        <section className="buttonSection mt-5" id="">
+        </div>
+        </div>
+        <div id="footer">
+        <section className="buttonSection">
           <Button
             color="info"
             className="button"
@@ -60,7 +64,7 @@ function PsychologicalEvaluationConsent(props) {
           </Button>
         </section>
       </div>
-    </section>
+      </div>
   );
 }
 
