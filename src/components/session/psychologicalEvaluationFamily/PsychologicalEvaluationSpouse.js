@@ -13,8 +13,9 @@ import Heading from '../../shared/PsychologicalHeading';
 
 function PsychologicalEvaluation_spouse(props) {
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
-
+  const [dropdownOpen2, setDropdownOpen2] = useState(false);
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
+  const toggle2 = () => setDropdownOpen2((prevState) => !prevState);
 
   return (
     <>
@@ -32,36 +33,30 @@ function PsychologicalEvaluation_spouse(props) {
               Please Select
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem header>Header</DropdownItem>
-              <DropdownItem>Some Action</DropdownItem>
-              <DropdownItem disabled>Action (disabled)</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>Foo Action</DropdownItem>
-              <DropdownItem>Bar Action</DropdownItem>
-              <DropdownItem>Quo Action</DropdownItem>
+              <DropdownItem header>Married Status</DropdownItem>
+              <DropdownItem>Married</DropdownItem>
+              <DropdownItem>Divorced</DropdownItem>
+              <DropdownItem>Separated</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </div>
         <div className="line1">
-          <Label className="textWhite title" for="">
+          <Label className="textWhite title" for="spouseFirstName">
             Spouse
           </Label>
           <Input
-            className="fieldData"
-            type="text"
-            name=""
-            id=""
+            className="fieldData text-center"
+            id="spouseFirstName"
             placeholder="Spouse First Name"
           />
         </div>
         <div className="line1">
-          <Label className="textWhite title" for="firstName">
+          <Label className="textWhite title" for="spouseLastName">
           </Label>
           <Input
-            className="fieldData"
+            className="fieldData text-center"
             type="text"
-            name=""
-            id=""
+            id="spouseLastName"
             placeholder="Spouse Last Name"
           />
         </div>
@@ -70,37 +65,32 @@ function PsychologicalEvaluation_spouse(props) {
           <Label className="textWhite title" for="examplePassword">
             Gender
           </Label>
-          <Dropdown isOpen={dropdownOpen1} toggle={toggle1}>
+          <Dropdown isOpen={dropdownOpen2} toggle={toggle2}>
             <DropdownToggle color="light" className="dropdown" caret>
               Please Select
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem header>Header</DropdownItem>
-              <DropdownItem>Some Action</DropdownItem>
-              <DropdownItem disabled>Action (disabled)</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>Foo Action</DropdownItem>
-              <DropdownItem>Bar Action</DropdownItem>
-              <DropdownItem>Quo Action</DropdownItem>
+            <DropdownItem header>Gender</DropdownItem>
+              <DropdownItem>Male</DropdownItem>
+              <DropdownItem>Female</DropdownItem>
+              <DropdownItem>Unspecified</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </div>
-        <div className="line1">
+        <div className="line1 d-flex flex-wrap justify-content-center">
           <Label className="textWhite title" for="">DOB</Label>
           <Input
-            className="fieldData"
+            className="fieldData text-center col-8"
             type="date"
-            name="lastName"
             id="lastName"
             placeholder="Mother Last Name"
           />
         </div>
-        <div className="line1 evalDate">
-          <Label className="textWhite title" for=""></Label>
-          <Button className="evalButton">Click to Add More Guardians</Button>
-        </div>
+        <div className="d-flex justify-content-center">
+            <div className="textWhite"><i class="fas fa-plus fa-lg ml-5 mt-3 mr-2"></i>Click to Add Previous Spouses</div>
+          </div>
       </section>
-      <section className="buttonSection mt-5" id="footer">
+      <section className="buttonSection mt-5" id="">
       <Button color="info" className="button" onClick={() => {
             props.history.push(`/psychological_evaluation_children`);
           }}>Previous</Button>

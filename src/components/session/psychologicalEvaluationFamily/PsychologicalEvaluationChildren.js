@@ -24,36 +24,34 @@ function PsychologicalEvaluation_siblings(props) {
         <h1 className="textWhite">Please Confirm or Update Information</h1>
       </div>
       <section className="siblingsFields">
-        <div>
+        <div className="ml-5">
           <Input
             className=""
             type="checkbox"
-            id=""
+            id="noChildren"
           />
-          <Label className="textWhite title" for="">
+          <Label className="textWhite title ml-2" for="noChildren">
           Patient Has No Children
           </Label>
         </div>
         <div className="line1">
-          <Label className="textWhite title" for="">
+          <Label className="textWhite title" for="firstName">
             Children
           </Label>
           <Input
-            className="fieldData"
+            className="fieldData text-center"
             type="text"
-            name=""
-            id=""
+            id="firstName"
             placeholder="Child First Name"
           />
         </div>
         <div className="line1">
-          <Label className="textWhite title" for="firstName">
+          <Label className="textWhite title" for="lastName">
           </Label>
           <Input
-            className="fieldData"
+            className="fieldData text-center"
             type="text"
-            name=""
-            id=""
+            id="lastName"
             placeholder="Child Last Name"
           />
         </div>
@@ -67,30 +65,27 @@ function PsychologicalEvaluation_siblings(props) {
               Please Select
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem header>Header</DropdownItem>
-              <DropdownItem>Some Action</DropdownItem>
-              <DropdownItem disabled>Action (disabled)</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>Foo Action</DropdownItem>
-              <DropdownItem>Bar Action</DropdownItem>
-              <DropdownItem>Quo Action</DropdownItem>
+              <DropdownItem header>Gender</DropdownItem>
+              <DropdownItem>Male</DropdownItem>
+              <DropdownItem>Female</DropdownItem>
+              <DropdownItem>Unspecified</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </div>
-        <div className="line1">
+        <div className="line1 d-flex flex-wrap justify-content-center">
           <Label className="textWhite title" for="">DOB</Label>
           <Input
-            className="fieldData"
+            className="fieldData text-center col-8"
             type="date"
             name="lastName"
             id="lastName"
             placeholder="Mother Last Name"
           />
         </div>
-        <div className="line1 evalDate">
-          <Label className="textWhite title" for=""></Label>
-          <Button className="evalButton">Click to Add More Guardians</Button>
-        </div>
+        <div className="d-flex justify-content-center">
+            <div className="textWhite"><i class="fas fa-plus fa-lg ml-5 mt-3 mr-2"></i>Click to Add More Children</div>
+          </div>
+   
       </section>
       <section className="buttonSection mt-5" id="">
       <Button color="info" className="button" onClick={() => {

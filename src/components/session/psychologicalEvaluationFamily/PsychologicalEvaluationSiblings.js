@@ -75,13 +75,13 @@ function PsychologicalEvaluation_children(props) {
             </DropdownMenu>
           </Dropdown>
         </div>
-        <div className="line1">
-          <Label className="textWhite title" for="">DOB</Label>
+        <div className="line1 ">
+          <Label className="textWhite title" for="dob">DOB</Label>
           <Input
             className="text-center col-8"
             type="date"
-            id="lastName"
-            placeholder="Mother Last Name"
+            id="dob"
+            placeholder=""
           />
         </div>
         <div className="m-4">

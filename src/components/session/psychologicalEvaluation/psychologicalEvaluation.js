@@ -86,23 +86,23 @@ function PsychologicalEvaluation(props) {
             </Dropdown>
           </div>
           <div className="d-flex justify-items-center m-4">
-            <Label className="textWhite labelWidth" for="firstName">
+            <Label className="textWhite labelWidth" for="officeTime">
               Office Time
             </Label>
             <Input
               className="text-center col-8"
               type="time"
-              id="firstName"
+              id="officeTime"
             />
           </div>
           <div className="d-flex justify-items-center m-4">
-            <Label className="textWhite labelWidth" for="firstName">
+            <Label className="textWhite labelWidth" for="reportWriting">
               Report Writing
             </Label>
             <Input
               className="text-center col-8"
               type="text"
-              id="firstName"
+              id="reportWriting"
             />
           </div>
           </div>     
@@ -156,7 +156,7 @@ function PsychologicalEvaluation(props) {
               Interview Time
             </Label>
             <Input
-              className="col-8"
+              className="text-center col-8"
               type="time"
               id="intakeTime"
             />
@@ -166,7 +166,7 @@ function PsychologicalEvaluation(props) {
               Intake Time
             </Label>
             <Input
-              className="col-8"
+              className="text-center col-8"
               type="time"
               id="inTakeTime"
               />
