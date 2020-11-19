@@ -1,5 +1,5 @@
 import React from "react";
-import "./createUser.css";
+import "./createUser.scss";
 import { Col, Label, Input, Container, Row, Button } from "reactstrap";
 
 function CreateUser() {

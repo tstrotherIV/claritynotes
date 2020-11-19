@@ -1,5 +1,5 @@
 import React from "react";
-import "./patientHome.css";
+import "./patientHome.scss";
 import { Button, Container, Row, Col } from "reactstrap";
 
 function PatientHomePage(props) {
@@ -8,18 +8,18 @@ function PatientHomePage(props) {
 
   return (
     <>
-      <div className="d-flex flex-row justify-content-center mt-5">
-        <h1 className="textWhite">Welcome</h1> `<h1 className="textWhite">{USERNAME}</h1>`
+    <div className="container addMargin">
+      <div className="mt-5 aligner">
+        <h1 className="textWhite ">Welcome {USERNAME}!</h1>
       </div>
-      <h4 className="d-flex justify-content-center textWhite">
+      <p className="textWhite aligner">
         Please select an option
-      </h4>
-      <br></br>
+      </p>
       <Container>
         <Row>
-          <Col>
+          <Col className="col-6 aligner">
             <Button
-              // className="mr-2"
+              className="optionBtn"
               block
               color="light"
               onClick={() => {
@@ -29,9 +29,9 @@ function PatientHomePage(props) {
               New Patient
             </Button>
           </Col>
-          <Col>
+          <Col className="col-6 aligner">
             <Button
-              // className="mt-0 ml-2"
+              className="optionBtn"
               block
               color="light"
               // onClick={() => {
@@ -44,13 +44,13 @@ function PatientHomePage(props) {
         </Row>
         <Row>
           <Col>
-            
           </Col>
           <Col className="d-flex justify-content-center">
-            <h4 className="textWhite">Or Click Here to Browse all records</h4>
+            <p className="textWhite m-2">Or Click Here to Browse all records</p>
           </Col>
         </Row>
       </Container>
+      </div>
     </>
   );
 }

@@ -37,7 +37,7 @@ function InterviewPg8(props) {
       <div className="header">
         <h1 className="textWhite">Interviews</h1>
       </div>
-      <br></br>
+      
       <h4 className="textWhite centerItem">
       How have you served as the primary caretaker of your child(ren)?
       </h4>
@@ -54,7 +54,7 @@ function InterviewPg8(props) {
         </div>
       </section>
       
-      <br></br>
+      
       <section>
         <div className="section1Fields">
           <div className="in1">

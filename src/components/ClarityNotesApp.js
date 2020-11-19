@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ApplicationViews from "./ApplicationViews";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "./ClarityNotes.css"
+import "./ClarityNotesApp.scss"
 
 const ClarityNotes = (props) => {
   const isAuthenticated = () => sessionStorage.getItem("loggedUser") !== null;
@@ -14,10 +13,10 @@ const ClarityNotes = (props) => {
     setHasUser(isAuthenticated());
   };
 
-  const clearUser = () => {
-    sessionStorage.clear();
-    setHasUser(isAuthenticated());
-  };
+  // const clearUser = () => {
+  //   sessionStorage.clear();
+  //   setHasUser(isAuthenticated());
+  // };
 
   return (
     <>

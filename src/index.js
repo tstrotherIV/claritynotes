@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './components/styles/index.css';
+import './components/styles/index.scss';
 import ClarityNotes from './components/ClarityNotesApp';
 import { BrowserRouter as Router } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 ReactDOM.render(
   <Router>

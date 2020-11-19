@@ -1,9 +1,9 @@
 import React from "react";
 import "./sessionHome.css";
-import { Button, Container, Row, Col } from "reactstrap";
+import { Button } from "reactstrap";
 
 function SessionStep1(props) {
-  let USERNAME = "Chris";
+  // let USERNAME = "Chris";
   let FirstName = "John";
   let LastName = "Doe";
 
@@ -27,7 +27,7 @@ function SessionStep1(props) {
       <h4 className="d-flex justify-content-center textWhite">
         Please select an option
       </h4>
-      <br></br>
+      
       <section className="buttonSection mt-5">
         <Button
           className="button"

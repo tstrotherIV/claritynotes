@@ -23,7 +23,7 @@ function Interview_Pg9(props) {
       <div className="header">
         <h1 className="textWhite">Interviews</h1>
       </div>
-      <br></br>
+      
       <h4 className="textWhite centerItem">
         What do you think you need to work on?
       </h4>
@@ -40,7 +40,7 @@ function Interview_Pg9(props) {
         </div>
       </section>
 
-      <br></br>
+      
       <section>
         <div className="section1Fields">
           <div className="in2">
@@ -56,7 +56,7 @@ function Interview_Pg9(props) {
           </div>
         </div>
       </section>
-      <br></br>
+      
       <div className="textWhite centerItem">
       and she appropriately groomed. (Write details! Was she malodourous, had greasy/unbrushed hair, unbathed, etc.? Notate the appearance and add to behavioral observations.)
       </div>

@@ -25,7 +25,7 @@ function FamilyPg11(props) {
           />
         </div>
       </section>
-      <br></br>
+      
       <h4 className="textWhite centerItem">
       How do you want the memories of your children to be different?
       </h4>
@@ -41,7 +41,7 @@ function FamilyPg11(props) {
           />
         </div>
       </section>
-      <br></br>
+      
       <h4 className="textWhite centerItem">How do you do this?</h4>
       <section className="interview_section1">
         <div className="interview_line1">

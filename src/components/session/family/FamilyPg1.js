@@ -15,7 +15,7 @@ function FamilyPg1(props) {
         <div className="textWhite m-2 p-2">Patient ID: [Patient ID]</div>
         <div className="textWhite m-2 p-2">Existing Patient: [Case #]</div>
       </section> */}
-      <br></br>
+      
       <section>
         <div className="section1Fields">
           <div className="in2">
@@ -41,7 +41,7 @@ function FamilyPg1(props) {
           </div>
         </div>
       </section>
-      <br></br>
+      
       <section className="in3">
         <div className="textWhite centerItem">[Patient Name, First] had</div>
         <div className="interview_line2">
@@ -53,7 +53,7 @@ function FamilyPg1(props) {
         </div>
         <div className="textWhite centerItem">brothers and sisters.</div>
       </section>
-      <br></br>
+      
       <h4 className="textWhite centerItem">
         Who raised you from birth until you moved out of the home?
       </h4>
@@ -70,7 +70,7 @@ function FamilyPg1(props) {
           />
         </div>
       </section>
-      <br></br>
+      
       <h4 className="textWhite centerItem">What are their names?</h4>
       <section className="interview_section1">
         <div className="interview_line1">

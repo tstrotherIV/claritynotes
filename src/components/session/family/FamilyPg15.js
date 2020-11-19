@@ -10,7 +10,7 @@ function FamilyPg15(props) {
       <div className="header">
         <h1 className="textWhite">Family</h1>
       </div>
-      <br></br>
+      
       <h4 className="textWhite centerItem">
       What are your values and goals?
       </h4>
@@ -26,7 +26,7 @@ function FamilyPg15(props) {
           />
         </div>
       </section>
-      <br></br>
+      
       <h4 className="textWhite centerItem">
       How did your leaving home occur? How old were you? Was it on positive terms?
       </h4>

@@ -1,0 +1,18 @@
+@import '../../components/styles/index.scss';
+
+.optionBtn {
+    height: 50px !important;
+    color:black !important; 
+    margin: 10px;
+    width: 300px;
+    font-size: 1.75em;
+  }
+
+.addMargin{
+    margin-top: 150px !important;
+    margin-bottom: 150px;
+}
+
+.container{
+    min-width: 375px;
+}

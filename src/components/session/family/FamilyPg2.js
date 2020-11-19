@@ -12,7 +12,7 @@ function FamilyPg2(props) {
         <h1 className="textWhite">Family</h1>
       </div>
      
-      <br></br>
+      
       <h4 className="textWhite centerItem">
       Were different people involved?
       </h4>
@@ -44,7 +44,7 @@ function FamilyPg2(props) {
           />
         </div>
       </section>
-      <br></br>
+      
       <h4 className="textWhite centerItem">What city or town did you grow up in?</h4>
       <section className="interview_section1">
         <div className="interview_line1">
