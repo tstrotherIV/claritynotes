@@ -2,10 +2,13 @@ import React from "react";
 import "./interviews.css";
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
+import TermOfParentalRights from '../../shared/termOfParentalRights';
 
 function FamilyPg14(props) {
   return (
     <>
+    <div id="page-container">
+      <div id="content-wrap">
     <Heading /> 
       <div className="header">
         <h1 className="textWhite">Family</h1>
@@ -25,7 +28,6 @@ function FamilyPg14(props) {
           />
         </div>
       </section>
-      
       <h4 className="textWhite centerItem">
         What do you want people to say about you someday? How do you want to be
         remembered?
@@ -41,8 +43,7 @@ function FamilyPg14(props) {
             id=""
           />
         </div>
-      </section>
-      
+      </section>    
       <h4 className="textWhite centerItem ">
         How do you reach toward your potential each day?
       </h4>
@@ -54,12 +55,13 @@ function FamilyPg14(props) {
           <Input
             className="interview_fieldData"
             type="text"
-            name=""
             id=""
           />
         </div>
       </section>
-      <section className="buttonSection mt-6" id="">
+      </div>
+      <div id="footer">
+      <section className="buttonSection">
         <Button
           color="info"
           className="button"
@@ -89,6 +91,9 @@ function FamilyPg14(props) {
           <div>Patient ID: [Patient ID]</div>
         </section>
       </section>
+      <TermOfParentalRights />
+      </div>
+    </div>
     </>
   );
 }

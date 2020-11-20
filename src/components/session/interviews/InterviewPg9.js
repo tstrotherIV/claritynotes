@@ -5,16 +5,18 @@ import {
   Button,
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
+import TermOfParentalRights from '../../shared/termOfParentalRights';
 import "./interviews.scss";
 
 function Interview_Pg9(props) {
   return (
     <>
+      <div id="page-container">
+      <div id="content-wrap">
     <Heading /> 
       <div className="header">
         <h1 className="textWhite">Interviews</h1>
       </div>
-      
       <h4 className="textWhite centerItem">
         What do you think you need to work on?
       </h4>
@@ -30,8 +32,6 @@ function Interview_Pg9(props) {
           />
         </div>
       </section>
-
-      
       <section>
         <div className="section1Fields">
           <div className="in2">
@@ -43,11 +43,9 @@ function Interview_Pg9(props) {
               type="text"
               id="caseNumber"
             />
-            <div></div>
           </div>
         </div>
       </section>
-      
       <div className="textWhite centerItem">
       and she appropriately groomed. (Write details! Was she malodourous, had greasy/unbrushed hair, unbathed, etc.? Notate the appearance and add to behavioral observations.)
       </div>
@@ -60,7 +58,9 @@ function Interview_Pg9(props) {
           />
         </div>
       </section>
-      <section className="buttonSection mt-6" id="">
+      </div>
+      <div id="footer">
+      <section className="buttonSection">
         <Button
           color="info"
           className="button"
@@ -86,6 +86,9 @@ function Interview_Pg9(props) {
           Next
         </Button>
       </section>
+      <TermOfParentalRights />
+      </div>
+    </div>
     </>
   );
 }

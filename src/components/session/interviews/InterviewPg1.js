@@ -16,7 +16,6 @@ import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/termOfParentalRights';
 import "./interviews.scss";
 
-
 function InterviewPg1(props) {
 
   const [dropdownOpen1, setDropdownOpen1] = useState(false);

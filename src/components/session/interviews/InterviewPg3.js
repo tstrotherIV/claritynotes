@@ -13,6 +13,7 @@ import {
   ModalFooter,
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
+import TermOfParentalRights from '../../shared/termOfParentalRights';
 import "./interviews.scss";
 
 function Interview_Pg3(props) {
@@ -24,11 +25,12 @@ function Interview_Pg3(props) {
 
   return (
     <>
+    <div id="page-container">
+    <div id="content-wrap">
     <Heading />
       <div className="header">
         <h1 className="textWhite">Interviews</h1>
       </div>
-      
       <h4 className="textWhite centerItem">What grains of truth are there in DHR allegations?</h4>
       <section className="interview_section1">
         <div className="interview_line1">
@@ -123,7 +125,9 @@ function Interview_Pg3(props) {
           </div>
         </div>
       </section>
-      <section className="buttonSection mt-5" id="">
+      </div>
+      <div id="footer">
+      <section className="buttonSection">
         <Button
           color="info"
           className="button"
@@ -149,6 +153,9 @@ function Interview_Pg3(props) {
           Next
         </Button>
       </section>
+      <TermOfParentalRights />
+      </div>
+    </div>
     </>
   );
 }

@@ -13,6 +13,7 @@ import {
   ModalFooter,
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
+import TermOfParentalRights from '../../shared/termOfParentalRights';
 import "./interviews.scss";
 
 
@@ -25,6 +26,8 @@ function InterviewPg8(props) {
 
   return (
     <>
+     <div id="page-container">
+      <div id="content-wrap">
       <Heading />
       <div className="header">
         <h1 className="textWhite">Interviews</h1>
@@ -44,8 +47,6 @@ function InterviewPg8(props) {
           />
         </div>
       </section>
-      
-      
       <section>
         <div className="section1Fields">
           <div className="in1">
@@ -192,7 +193,9 @@ function InterviewPg8(props) {
           </div>
         </div>
       </section>
-      <section className="buttonSection mt-6" id="">
+      </div>
+      <div id="footer">
+      <section className="buttonSection">
         <Button
           color="info"
           className="button"
@@ -218,6 +221,9 @@ function InterviewPg8(props) {
           Next
         </Button>
       </section>
+      <TermOfParentalRights />
+      </div>
+    </div>
     </>
   );
 }

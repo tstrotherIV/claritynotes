@@ -4,6 +4,8 @@ import "./reportSummary.css";
 
 function PsychologicalEvaluationReportSummary(props) {
   return (
+    <div id="page-container">
+    <div id="content-wrap">
     <section className="fullpage">
       <div className="whiteBGD">
         <section className="centerContent">
@@ -39,9 +41,9 @@ function PsychologicalEvaluationReportSummary(props) {
             </div>
           </div>
         </section>
-        
-
-        <section className="buttonSection mt-6" id="">
+        </div>
+      <div id="footer">
+        <section className="buttonSection">
           <Button
             color="info"
             className="button"
@@ -66,13 +68,15 @@ function PsychologicalEvaluationReportSummary(props) {
           >
             Next
           </Button>
-          <section className="p-3">
+          <section className="p-3 textWhite">
             <div>Existing Patient: [Case #]</div>
             <div>Patient ID: [Patient ID]</div>
           </section>
         </section>
       </div>
     </section>
+    </div>
+    </div>
   );
 }
 
