@@ -9,14 +9,14 @@ function SessionStep1(props) {
 
   return (
     <>
-      <section className="wrapContent mt-5">
+      <div className="wrapContent mt-5">
         <div className="textWhite m-2 p-2">
           [Patient Name, First] [Patient Name, Last]
         </div>
         <div className="textWhite m-2 p-2">DOB: [Patient DOB]</div>
         <div className="textWhite m-2 p-2">Patient ID: [Patient ID]</div>
         <div className="textWhite m-2 p-2">Existing Patient: [Case #]</div>
-      </section>
+      </div>
       <div className="shHeader">   
         <h1 className="textWhite">
           What would you like to do for {FirstName} {LastName}?
@@ -26,7 +26,7 @@ function SessionStep1(props) {
         Please select an option
       </h4>
       <div className="container">
-      <section className="row text-center justify-content-center m-5">
+      <div className="row text-center justify-content-center m-5">
         <Button
           className="col-md button2"
           color="light"
@@ -54,7 +54,7 @@ function SessionStep1(props) {
         >
           Treatment Plan
         </Button>
-      </section>
+      </div>
     </div>
     </>
 

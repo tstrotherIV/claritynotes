@@ -38,7 +38,7 @@ function InterviewPg5(props) {
       <h4 className="textWhite centerItem">
       How many times have you been involved with DHR in Alabama?
       </h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
@@ -65,11 +65,11 @@ function InterviewPg5(props) {
             </Dropdown>
           </div>
         </div>
-      </section>
+      </div>
       <h4 className="textWhite centerItem">
       How many times have you been involved with other child protective agencies in other states/countries/territories?
       </h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
@@ -96,9 +96,9 @@ function InterviewPg5(props) {
             </Dropdown>
           </div>
         </div>
-      </section>
-      <section>
-        <div className="section1Fields">
+      </div>
+      <div>
+        <div className="div1Fields">
           <div className="in1">
             <Label className="textWhite mr-2" for="firstName">
               [User Name, First]’s Inference and Observations:
@@ -164,10 +164,10 @@ function InterviewPg5(props) {
             </div>
           </div>
         </div>
-      </section>
+      </div>
       </div>
       <div id="footer">
-      <section className="buttonSection">
+      <div className="buttonSection">
         <Button
           color="info"
           className="button"
@@ -192,7 +192,7 @@ function InterviewPg5(props) {
         >
           Next
         </Button>
-      </section>
+      </div>
       <TermOfParentalRights />
       </div>
       </div>

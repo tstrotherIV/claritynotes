@@ -34,7 +34,7 @@ function InterviewPg7(props) {
       <h4 className="textWhite centerItem">
       How do you typically discipline your child when they misbehave?
       </h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
@@ -45,11 +45,11 @@ function InterviewPg7(props) {
             id=""
           />
         </div>
-      </section>
+      </div>
       <h4 className="textWhite centerItem">
       How are you a good fit interpersonally (give and take, interactive, relationship style)?
       </h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
@@ -60,9 +60,9 @@ function InterviewPg7(props) {
             id=""
           />
         </div>
-      </section>
-      <section>
-        <div className="section1Fields">
+      </div>
+      <div>
+        <div className="div1Fields">
           <div className="in1">
             <h3 className="textWhite">Responsiveness</h3>
             <div className="textWhite containText">
@@ -137,10 +137,10 @@ function InterviewPg7(props) {
             </div>
           </div>
         </div>
-      </section>
+      </div>
          </div>
       <div id="footer">
-      <section className="buttonSection">
+      <div className="buttonSection">
         <Button
           color="info"
           className="button"
@@ -165,7 +165,7 @@ function InterviewPg7(props) {
         >
           Next
         </Button>
-      </section>
+      </div>
       <TermOfParentalRights />
       </div>
     </div>

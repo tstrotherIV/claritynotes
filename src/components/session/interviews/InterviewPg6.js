@@ -35,7 +35,7 @@ function InterviewPg6(props) {
       <h4 className="textWhite centerItem">
         What steps have you taken with DHR already?
       </h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
@@ -46,11 +46,11 @@ function InterviewPg6(props) {
             id=""
           />
         </div>
-      </section>
+      </div>
       <h4 className="textWhite centerItem">
         What is your understanding of why you are here today?
       </h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
@@ -61,10 +61,10 @@ function InterviewPg6(props) {
             id=""
           />
         </div>
-      </section>
+      </div>
       
-      <section>
-        <div className="section1Fields">
+      <div>
+        <div className="div1Fields">
           <div className="in1">
             <h3 className="textWhite">Responsiveness</h3>
             <div className="textWhite containText">
@@ -139,10 +139,10 @@ function InterviewPg6(props) {
             </div>
           </div>
         </div>
-      </section>
+      </div>
       </div>
       <div id="footer">
-      <section className="buttonSection">
+      <div className="buttonSection">
         <Button
           color="info"
           className="button"
@@ -167,7 +167,7 @@ function InterviewPg6(props) {
         >
           Next
         </Button>
-      </section>
+      </div>
       <TermOfParentalRights />
       </div>
     </div>

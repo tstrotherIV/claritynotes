@@ -25,7 +25,7 @@ function PsychologicalEvaluation_siblings(props) {
       <div className="header">
         <h1 className="textWhite">Please Confirm or Update Information</h1>
       </div>
-      <section className="siblingsFields">
+      <div className="siblingsFields">
         <div className="ml-5">
           <Input
             className=""
@@ -88,10 +88,10 @@ function PsychologicalEvaluation_siblings(props) {
             <div className="textWhite"><i class="fas fa-plus fa-lg ml-5 mt-3 mr-2"></i>Click to Add More Children</div>
           </div>
    
-      </section>
+      </div>
       </div>
       <div id="footer">
-      <section className="buttonSection">
+      <div className="buttonSection">
       <Button color="info" className="button" onClick={() => {
             props.history.push(`/psychological_evaluation_siblings`);
           }}>Previous</Button>
@@ -104,7 +104,7 @@ function PsychologicalEvaluation_siblings(props) {
         <Button color="info" className="button" onClick={() => {
             props.history.push(`/psychological_evaluation_spouse`);
           }}>Next</Button>
-      </section>
+      </div>
       </div>
       </div>
     </>

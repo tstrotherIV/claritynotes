@@ -1,8 +1,9 @@
 import React from "react";
-import "./housing.css";
+import "./housing.scss";
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/termOfParentalRights';
+  // pdf page 40
 
 function HousingPg1(props) {
   return (
@@ -10,8 +11,9 @@ function HousingPg1(props) {
       <div id="page-container">
       <div id="content-wrap">
     <Heading />
+    <h2 className="textWhite text-center mb-4">Housing</h2>
       <h4 className="textWhite centerItem">Do you live alone?</h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="hs-live-alone">
             [Patient Name, First] said:
@@ -22,9 +24,9 @@ function HousingPg1(props) {
             id="hs-live-alone"
           />
         </div>
-      </section>
+      </div>
       <h4 className="textWhite centerItem">Who do you live with?</h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="hs-live-with">
             [Patient Name, First] said:
@@ -35,9 +37,9 @@ function HousingPg1(props) {
             id="hs-live-with"
           />
         </div>
-      </section>
+      </div>
       <h4 className="textWhite centerItem ">Who pays your rent or mortgage?</h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="hs-who-pays">
             [Patient Name, First] said:
@@ -48,10 +50,10 @@ function HousingPg1(props) {
             id="hs-who-pays" 
           />
         </div>
-      </section>
+      </div>
       </div>
       <div id="footer">
-      <section className="buttonSection">
+      <div className="buttonSection">
         <Button
           color="info"
           className="button"
@@ -76,11 +78,11 @@ function HousingPg1(props) {
         >
           Next
         </Button>
-        <section className="textWhite p-3">
+        <div className="idBox textWhite p-3">
           <div>Existing Patient: [Case #]</div>
           <div>Patient ID: [Patient ID]</div>
-        </section>
-      </section>
+        </div>
+      </div>
       <TermOfParentalRights />
       </div>
     </div>

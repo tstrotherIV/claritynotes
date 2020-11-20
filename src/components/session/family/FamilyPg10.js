@@ -1,5 +1,5 @@
 import React from "react";
-import "./interviews.css";
+import "./interviews.scss";
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/termOfParentalRights';
@@ -16,7 +16,7 @@ function FamilyPg10(props) {
       <h4 className="textWhite centerItem">
         What is your least favorite childhood memory?
       </h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
@@ -28,8 +28,8 @@ function FamilyPg10(props) {
             id=""
           />
         </div>
-      </section>
-      <section className="interview_section3">
+      </div>
+      <div className="interview_div3">
         <h3 className="textWhite">Protective</h3>
         <div className="interview_line3">
           <h4 className="textWhite centerItem containText">
@@ -50,10 +50,10 @@ function FamilyPg10(props) {
             />
           </div>
         </div>
-      </section>
+      </div>
       </div>
       <div id="footer">
-      <section className="buttonSection">
+      <div className="buttonSection">
         <Button
           color="info"
           className="button"
@@ -78,11 +78,11 @@ function FamilyPg10(props) {
         >
           Next
         </Button>
-        <section className="textWhite p-3">
+        <div className="idBox textWhite p-3">
           <div>Existing Patient: [Case #]</div>
           <div>Patient ID: [Patient ID]</div>
-        </section>
-      </section>
+        </div>
+      </div>
       <TermOfParentalRights />
       </div>
     </div>

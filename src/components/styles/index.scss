@@ -35,6 +35,7 @@ body {
 .jumboResp{
   font-size: 4vw;
   font-weight: bold;
+  height: 100%;
 }
 
 .aligner-item{
@@ -182,15 +183,49 @@ Button, Input{
 }
 
 #content-wrap {
-  padding-bottom: 10.5rem;    /* Footer height */
+  padding-bottom: 140px;    /* Footer height */
 }
 
 #footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 10.5rem;  
+  height: 100px;  
   margin-bottom: 70px; 
-  background-image: url('../../media/blue_bg_clarity_HD.jpg');         /* Footer height */
+  background-color: red;
 }
 
+.buttonSection{
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  background-image: url('../../media/blue_bg_clarity_HD.jpg');
+}
+
+.termBackground{
+  background-image: url('../../media/blue_bg_clarity_HD.jpg');
+  padding: 10px;
+}
+
+.button {
+  margin: clamp(2px, 8px, 10px) !important;
+  height: 50px;
+  min-width: 75px !important;
+  width: 20vw;
+}
+
+.idBox{
+  min-width: 200px !important;
+  padding: 3px;
+}
+
+.minReportHeight{
+
+}
+
+.questionsContainer{
+  max-width: 800px !important;
+  margin: auto;
+}

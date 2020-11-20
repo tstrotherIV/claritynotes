@@ -43,7 +43,7 @@ function InterviewPg1(props) {
             interacted with you?
           </h4>
         </div>
-        <section className="interview_section1">
+        <div className="interview_div1">
           <div className="interview_line1">
             <Label className="textWhite interview_title" for="">
               [Patient Name, First] said:
@@ -54,9 +54,9 @@ function InterviewPg1(props) {
               id=""
             />
           </div>
-        </section>
-        <section>
-          <div className="section1Fields">
+        </div>
+        <div>
+          <div className="div1Fields">
             <div className="in1">
               <Label className="textWhite mr-2" for="firstName">
                 [User Name, First]’s Inference and Observations:
@@ -124,7 +124,7 @@ function InterviewPg1(props) {
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </div>
       <div id="footer">
         <div className="buttonSection">

@@ -35,7 +35,7 @@ function InterviewPg8(props) {
       <h4 className="textWhite centerItem">
       How have you served as the primary caretaker of your child(ren)?
       </h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
@@ -46,9 +46,9 @@ function InterviewPg8(props) {
             id=""
           />
         </div>
-      </section>
-      <section>
-        <div className="section1Fields">
+      </div>
+      <div>
+        <div className="div1Fields">
           <div className="in1">
             <div className="textWhite containText">
             (PROTECTIVE: Has the parent shown any initiative to be the primary caretaker? If not, why? What are the encumbrances?)
@@ -119,9 +119,9 @@ function InterviewPg8(props) {
             </div>
           </div>
         </div>
-      </section>
-      <section>
-        <div className="section1Fields">
+      </div>
+      <div>
+        <div className="div1Fields">
           <div className="in1">
             <div className="textWhite containText">
             (MANAGING: Has the parent not been the primary caretaker because he/she cannot manage resources? If so, what got in the way? Is the client well dressed? Will he or she groom the child appropriately? Is the client motivated to look good today? If not, do they appear they will clean and teach their child to brush teeth, bathe, eat healthy?)
@@ -192,10 +192,10 @@ function InterviewPg8(props) {
             </div>
           </div>
         </div>
-      </section>
+      </div>
       </div>
       <div id="footer">
-      <section className="buttonSection">
+      <div className="buttonSection">
         <Button
           color="info"
           className="button"
@@ -220,7 +220,7 @@ function InterviewPg8(props) {
         >
           Next
         </Button>
-      </section>
+      </div>
       <TermOfParentalRights />
       </div>
     </div>

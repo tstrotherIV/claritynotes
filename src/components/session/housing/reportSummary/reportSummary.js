@@ -1,12 +1,12 @@
 import React from "react";
 import { Button } from "reactstrap";
-import "./reportSummary.css";
+import "./reportSummary.scss";
 
 function PsychologicalEvaluationReportSummary(props) {
   return (
-    <section className="fullpage">
+    <div className="fullpage">
       <div className="whiteBGD">
-        <section className="centerContent">
+        <div className="centerContent">
           <div className="d-flex justify-content-center mt-5">
             <h1>Psychological Evaluation</h1>
           </div>
@@ -38,10 +38,10 @@ function PsychologicalEvaluationReportSummary(props) {
               in [Location].
             </div>
           </div>
-        </section>
+        </div>
         
 
-        <section className="buttonSection mt-6" id="">
+        <div className="buttonSection mt-6" id="">
           <Button
             color="info"
             className="button"
@@ -66,13 +66,13 @@ function PsychologicalEvaluationReportSummary(props) {
           >
             Next
           </Button>
-          <section className="p-3">
+          <div className="p-3">
             <div>Existing Patient: [Case #]</div>
             <div>Patient ID: [Patient ID]</div>
-          </section>
-        </section>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }
 

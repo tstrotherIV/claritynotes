@@ -1,14 +1,14 @@
 import React from "react";
 import { Button } from "reactstrap";
-import "./additionalData.css";
+import "./additionalData.scss";
 
 function PsychologicalEvaluationAdditionalData(props) {
   return (
     <>
-    <div id="page-container">
+    <div id="page-container" className="sessionStepContainer">
     <div id="content-wrap" className="whiteBGD">
       <div className="whiteBGD">
-        <section className="centerContent">
+        <div className="centerContent">
           <div className="d-flex justify-content-center mt-5">
             <h1>Psychological Evaluation</h1>
           </div>
@@ -22,11 +22,11 @@ function PsychologicalEvaluationAdditionalData(props) {
               with []
             </div>
           </div>
-        </section>
+        </div>
         </div>
         </div>
         <div id="footer">
-        <section className="buttonSection">
+        <div className="buttonSection">
           <Button
             color="info"
             className="button"
@@ -51,7 +51,7 @@ function PsychologicalEvaluationAdditionalData(props) {
           >
             Next
           </Button>
-        </section>
+        </div>
         </div>
         </div>
     </>

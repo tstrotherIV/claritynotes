@@ -1,5 +1,5 @@
 import React from "react";
-import "./interviews.css";
+import "./interviews.scss";
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/termOfParentalRights';
@@ -16,7 +16,7 @@ function FamilyPg6(props) {
       <h4 className="textWhite centerItem">
         Was there a lot of drinking in the home growing up?
       </h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
@@ -27,9 +27,9 @@ function FamilyPg6(props) {
             id=""
           />
         </div>
-      </section>
+      </div>
       <h4 className="textWhite centerItem">If so, how did you cope?</h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
@@ -40,8 +40,8 @@ function FamilyPg6(props) {
             id=""
           />
         </div>
-      </section>
-      <section className="interview_section3">
+      </div>
+      <div className="interview_div3">
         <div className="interview_line3">
           <h4 className="textWhite centerItem">
             Responsive [User Name, First]’s Inference and Observations: Does the
@@ -56,10 +56,10 @@ function FamilyPg6(props) {
             id=""
           />
         </div>
-      </section>
+      </div>
       </div>
       <div id="footer">
-      <section className="buttonSection">
+      <div className="buttonSection">
         <Button
           color="info"
           className="button"
@@ -84,11 +84,11 @@ function FamilyPg6(props) {
         >
           Next
         </Button>
-        <section className="textWhite p-3">
+        <div className="idBox textWhite p-3">
           <div>Existing Patient: [Case #]</div>
           <div>Patient ID: [Patient ID]</div>
-        </section>
-      </section>
+        </div>
+      </div>
       <TermOfParentalRights />
       </div>
     </div>
