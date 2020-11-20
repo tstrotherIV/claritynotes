@@ -1,5 +1,5 @@
 import React from "react";
-import "./interviews.css";
+import "./interviews.scss";
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/termOfParentalRights';
@@ -14,8 +14,8 @@ function FamilyPg1(props) {
     <div className="header">
         <h1 className="textWhite">Family</h1>
       </div>
-      <section>
-        <div className="section1Fields">
+      <div>
+        <div className="div1Fields">
           <div className="in2">
             <Label className="textWhite title" for="caseNumber">
               [Patient Name, First] reported her
@@ -38,9 +38,9 @@ function FamilyPg1(props) {
             </div>
           </div>
         </div>
-      </section>
+      </div>
       
-      <section className="in3">
+      <div className="in3">
         <div className="textWhite centerItem">[Patient Name, First] had</div>
         <div className="interview_line2">
           <Input
@@ -50,12 +50,12 @@ function FamilyPg1(props) {
           />
         </div>
         <div className="textWhite centerItem">brothers and sisters.</div>
-      </section>
+      </div>
       
       <h4 className="textWhite centerItem">
         Who raised you from birth until you moved out of the home?
       </h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
@@ -67,24 +67,24 @@ function FamilyPg1(props) {
             id=""
           />
         </div>
-      </section>
-      <h4 className="textWhite centerItem">What are their names?</h4>
-      <section className="interview_section1">
-        <div className="interview_line1">
-          <Label className="textWhite interview_title" for="">
-            [Patient Name, First] said:
-          </Label>
-          <Input
-            className="interview_fieldData"
-            type="text"
-            name=""
-            id=""
-          />
-        </div>
-      </section>
       </div>
+      <h4 className="textWhite centerItem">What are their names?</h4>
+      <div className="interview_div1">
+        <div className="interview_line1">
+          <Label className="textWhite interview_title" for="">
+            [Patient Name, First] said:
+          </Label>
+          <Input
+            className="interview_fieldData"
+            type="text"
+            name=""
+            id=""
+          />
+        </div>
+      </div>
+      
       <div id="footer">
-      <section className="buttonSection">
+      <div className="buttonSection">
         <Button
           color="info"
           className="button"
@@ -109,13 +109,14 @@ function FamilyPg1(props) {
         >
           Next
         </Button>
-        <section className="textWhite p-3">
+        <div className="idBox textWhite p-3">
           <div>Existing Patient: [Case #]</div>
           <div>Patient ID: [Patient ID]</div>
-        </section>
-      </section>
+        </div>
+      </div>
       <TermOfParentalRights />
       </div>
+    </div>
     </div>
     </>
   );

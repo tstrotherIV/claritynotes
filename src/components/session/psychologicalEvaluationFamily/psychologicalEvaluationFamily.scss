@@ -1,4 +1,4 @@
-.section1Fields {
+.div1Fields {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -45,19 +45,6 @@
 .dropdown {
   width: 100%;
   max-width: 500px;
-}
-
-.buttonSection {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.button {
-  margin: 20px;
-  flex: auto;
-  height: 50px;
 }
 
 #content {

@@ -1,5 +1,5 @@
 import React from "react";
-import "./interviews.css";
+import "./interviews.scss";
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/termOfParentalRights';
@@ -18,7 +18,7 @@ function FamilyPg5(props) {
         Did you feel loved and accepted by each parent, even when you
         disappointed them?
       </h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
@@ -29,18 +29,18 @@ function FamilyPg5(props) {
             id=""
           />
         </div>
-      </section>
-      <section className="interview_section1">
+      </div>
+      <div className="interview_div1">
         <div className="interview_line1 textWhite">
             (IF THEY DO NOT OFFER MORE THAN “YES” OR “NO,” ASK THEM: “How did
             they show you they loved you and accepted you?” AND/OR “Tell me more
             about that.” GET AS MUCH INFO AS POSSIBLE.
         </div>
-      </section>   
+      </div>   
       <h4 className="textWhite centerItem">
         Do you remember a lot of fighting in the home growing up?
       </h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
@@ -51,10 +51,10 @@ function FamilyPg5(props) {
             id=""
           />
         </div>
-      </section>
+      </div>
       </div>
       <div id="footer">
-      <section className="buttonSection">
+      <div className="buttonSection">
         <Button
           color="info"
           className="button"
@@ -79,11 +79,11 @@ function FamilyPg5(props) {
         >
           Next
         </Button>
-        <section className="textWhite p-3">
+        <div className="idBox textWhite p-3">
           <div>Existing Patient: [Case #]</div>
           <div>Patient ID: [Patient ID]</div>
-        </section>
-      </section>
+        </div>
+      </div>
       <TermOfParentalRights />
       </div>
     </div>

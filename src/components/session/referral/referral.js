@@ -1,14 +1,14 @@
 import React from "react";
 import { Button } from "reactstrap";
-import "./referral.css";
+import "./referral.scss";
 
 function PsychologicalEvaluationReferral(props) {
   return (
     <div id="page-container">
     <div id="content-wrap" className="whiteBGD">
-    <section className="fullpage">
+    <div className="fullpage">
       <div className="whiteBGD">
-        <section className="centerContent">
+        <div className="centerContent">
           <div className="d-flex justify-content-center mt-5">
             <h1>Psychological Evaluation</h1>
           </div>
@@ -20,10 +20,10 @@ function PsychologicalEvaluationReferral(props) {
             [Patient Name, First][Patient Name, Last] is a [Patient Age] year old [Marital Status][Patient Gender] who was referred by the [Referral] for a psychological evaluation to determine [Patient Gender, pronoun] current cognitive, emotional, behavioral, and psychological status and make recommendations as to [Patient Gender, pronoun] ability to protect, provide for, and care for [Patient Gender, pronoun] [Patient Children, Ages] and maintain their placement in [Patient Gender, pronoun] home.
             </div>
           </div>
-        </section>
+        </div>
         </div>
         <div id="footer">
-        <section className="buttonSection">
+        <div className="buttonSection">
           <Button
             color="info"
             className="button"
@@ -48,9 +48,9 @@ function PsychologicalEvaluationReferral(props) {
           >
             Next
           </Button>
-        </section>
+        </div>
       </div>
-    </section>
+    </div>
     </div>
     </div>
   );

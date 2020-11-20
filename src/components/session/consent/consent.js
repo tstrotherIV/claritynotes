@@ -1,13 +1,13 @@
 import React from "react";
 import { Label, Input, Button } from "reactstrap";
-import "./consent.css";
+import "./consent.scss";
 
 function PsychologicalEvaluationConsent(props) {
   return (
     <div id="page-container">
     <div id="content-wrap" className="whiteBGD">
       <div className="whiteBGD">
-        <section className="centerContent">
+        <div className="centerContent">
           <div className="d-flex justify-content-center mt-5">
             <h1>Psychological Evaluation</h1>
           </div>
@@ -24,20 +24,20 @@ function PsychologicalEvaluationConsent(props) {
               participate in the evaluation and complied with requests.
             </div>
           </div>
-        </section>
+        </div>
         
-        <section className="siblingsFields">
+        <div className="siblingsFields">
           <div>
             <Input type="checkbox" name="" id="" />
             <Label className="title" for="firstName">
               Check Here to Confirm
             </Label>
           </div>
-        </section>
         </div>
         </div>
+        
         <div id="footer">
-        <section className="buttonSection">
+        <div className="buttonSection">
           <Button
             color="info"
             className="button"
@@ -62,7 +62,8 @@ function PsychologicalEvaluationConsent(props) {
           >
             Next
           </Button>
-        </section>
+        </div>
+      </div>
       </div>
       </div>
   );

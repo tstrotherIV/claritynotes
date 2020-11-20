@@ -1,5 +1,5 @@
 import React from "react";
-import "./interviews.css";
+import "./interviews.scss";
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/termOfParentalRights'; 
@@ -18,7 +18,7 @@ function FamilyPg7(props) {
         How was disapproval of your actions displayed by your parents/how were
         you punished when you acted out?s
       </h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
@@ -29,8 +29,8 @@ function FamilyPg7(props) {
             id=""
           />
         </div>
-      </section>
-      <section className="interview_section3">
+      </div>
+      <div className="interview_div3">
         <div className="interview_line3">
           <h4 className="textWhite centerItem">
             Discipline [User Name, First]’s Inference and Observations: Put
@@ -47,10 +47,10 @@ function FamilyPg7(props) {
             id=""
           />
         </div>
-      </section>
+      </div>
       </div>
       <div id="footer">
-      <section className="buttonSection">
+      <div className="buttonSection">
         <Button
           color="info"
           className="button"
@@ -75,11 +75,11 @@ function FamilyPg7(props) {
         >
           Next
         </Button>
-        <section className="textWhite p-3">
+        <div className="idBox textWhite p-3">
           <div>Existing Patient: [Case #]</div>
           <div>Patient ID: [Patient ID]</div>
-        </section>
-      </section>
+        </div>
+      </div>
       <TermOfParentalRights />
       </div>
     </div>

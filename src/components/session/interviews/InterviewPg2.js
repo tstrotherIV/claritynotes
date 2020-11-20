@@ -32,7 +32,7 @@ function Interview_Pg2(props) {
         <h1 className="textWhite">Interviews</h1>
       </div>
       <h4 className="textWhite centerItem">What has DHR alleged?</h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
@@ -43,9 +43,9 @@ function Interview_Pg2(props) {
             id=""
           />
         </div>
-      </section>
+      </div>
       <h4 className="textWhite centerItem">What has been misconstrued by DHR?</h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
@@ -56,9 +56,9 @@ function Interview_Pg2(props) {
             id=""
           />
         </div>
-      </section>
-      <section>
-        <div className="section1Fields">
+      </div>
+      <div>
+        <div className="div1Fields">
           <div className="in1">
             <Label className="textWhite mr-2" for="firstName">
               [User Name, First]’s Inference and Observations:
@@ -124,10 +124,10 @@ function Interview_Pg2(props) {
             </div>
           </div>
         </div>
-      </section>
+      </div>
       </div>
       <div id="footer">
-      <section className="buttonSection">
+      <div className="buttonSection">
         <Button
           color="info"
           className="button"
@@ -152,7 +152,7 @@ function Interview_Pg2(props) {
         >
           Next
         </Button>
-      </section>
+      </div>
       <TermOfParentalRights />
       </div>
       </div>

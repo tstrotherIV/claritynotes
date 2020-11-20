@@ -25,7 +25,7 @@ function PsychologicalEvaluation_family(props) {
       <div className="header">
         <h1 className="textWhite mt-2">Please Confirm or Update Information</h1>
       </div>
-      <section className="row no-gutters d-flex justify-content-center align-content-center">
+      <div className="row no-gutters d-flex justify-content-center align-content-center">
           <div className="col-6">
           <div className="d-flex m-4">
             <Label className="textWhite labelWidth" for="firstName">
@@ -114,10 +114,10 @@ function PsychologicalEvaluation_family(props) {
             <div className="textWhite"><i class="fas fa-plus fa-lg mr-2"></i>Click to Add More Guardians</div>
           </div>
         </div>
-        </section>
+        </div>
         </div>
       <div id="footer"> 
-      <section className="buttonSection">
+      <div className="buttonSection">
       <Button color="info" className="button" onClick={() => {
             props.history.push(`/psychological_evaluation`);
           }}>Previous</Button>
@@ -130,7 +130,7 @@ function PsychologicalEvaluation_family(props) {
         <Button color="info" className="button" onClick={() => {
             props.history.push(`/psychological_evaluation_siblings`);
           }}>Next</Button>
-      </section>
+      </div>
       </div>
       </div>
       </div>

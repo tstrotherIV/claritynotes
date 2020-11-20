@@ -20,7 +20,7 @@ function Interview_Pg9(props) {
       <h4 className="textWhite centerItem">
         What do you think you need to work on?
       </h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
@@ -31,9 +31,9 @@ function Interview_Pg9(props) {
             id=""
           />
         </div>
-      </section>
-      <section>
-        <div className="section1Fields">
+      </div>
+      <div>
+        <div className="div1Fields">
           <div className="in2">
             <Label className="textWhite title" for="caseNumber">
             [Patient Name, First] was dressed in
@@ -45,11 +45,11 @@ function Interview_Pg9(props) {
             />
           </div>
         </div>
-      </section>
+      </div>
       <div className="textWhite centerItem">
       and she appropriately groomed. (Write details! Was she malodourous, had greasy/unbrushed hair, unbathed, etc.? Notate the appearance and add to behavioral observations.)
       </div>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Input
             className="interview_fieldData"
@@ -57,10 +57,10 @@ function Interview_Pg9(props) {
             id=""
           />
         </div>
-      </section>
+      </div>
       </div>
       <div id="footer">
-      <section className="buttonSection">
+      <div className="buttonSection">
         <Button
           color="info"
           className="button"
@@ -85,7 +85,7 @@ function Interview_Pg9(props) {
         >
           Next
         </Button>
-      </section>
+      </div>
       <TermOfParentalRights />
       </div>
     </div>

@@ -1,8 +1,9 @@
 import React from "react";
-import "./housing.css";
+import "./housing.scss";
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/termOfParentalRights';
+// pdf page 42
 
 function HousingPg3(props) {
   return (
@@ -10,8 +11,10 @@ function HousingPg3(props) {
     <div id="page-container">
       <div id="content-wrap">
       <Heading />
-      <h4 className="textWhite centerItem">Housing pg 3</h4>
-        <section className="interview_section1">
+      <h2 className="textWhite text-center mb-4">Housing</h2>
+      <div className="questionsContainer">
+      <h4 className="textWhite centerItem">Have you ever spent the night in a car or had to stay with another person?</h4>
+        <div className="interview_div1">
           <div className="interview_line1">
             <Label className="textWhite interview_title" for="">
               [Patient Name, First] said:
@@ -22,9 +25,9 @@ function HousingPg3(props) {
               id=""
             />
         </div>
-      </section>
-      <h4 className="textWhite centerItem">How much is your rent or mortgage?</h4>
-      <section className="interview_section1">
+      </div>
+      <h4 className="textWhite centerItem">Is your residence an apartment, house, or trailer?</h4>
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="hs-housing-cost">
             [Patient Name, First] said:
@@ -35,28 +38,52 @@ function HousingPg3(props) {
             id="hs-housing-cost"
           />
         </div>
-      </section>
-      <h4 className="textWhite centerItem ">Have you ever experienced times without shelter?</h4>
-      <section className="interview_section1">
-        <div className="interview_line1">
-          <Label className="textWhite interview_title" for="hs-without-shelter">
-            [Patient Name, First] said:
+      </div>
+      <div>
+
+      </div>
+      <div className="row  m-auto text-center">
+        <div className="col-3"></div>
+        <div className="col-3">
+      <Label className="textWhite" for="">
+            Number of Bedrooms?
           </Label>
           <Input
-            className="interview_fieldData"
+            className="col-6 m-auto"
             type="text"
-            id="hs-without-shelter"
+            id=""
           />
-        </div>
-      </section>
+      </div>
+      <div className="col-3">
+      <Label className="textWhite" for="">
+            Number of Baths?
+          </Label>
+          <Input
+            className="col-6 m-auto"
+            type="text"
+            id=""
+          />
+      </div>
+      <div className="col-3">
+      <Label className="textWhite" for="">
+            How old is it?
+          </Label>
+          <Input
+            className="col-6 m-auto"
+            type="text"
+            id=""
+          />
+      </div>
+      </div>
+      </div>
       </div>
       <div id="footer">
-      <section className="buttonSection">
+      <div className="buttonSection">
         <Button
           color="info"
           className="button"
           onClick={() => {
-            props.history.push(`/psychological_evaluation_report_summary`);
+            props.history.push(`/housing_pg_2`);
           }}
         >
           Previous
@@ -71,16 +98,16 @@ function HousingPg3(props) {
           color="info"
           className="button"
           onClick={() => {
-            props.history.push(`/Housing_pg_3`);
+            props.history.push(`/employment_pg_1`);
           }}
         >
           Next
         </Button>
-        <section className="textWhite p-3">
+        <div className="idBox textWhite p-3">
           <div>Existing Patient: [Case #]</div>
           <div>Patient ID: [Patient ID]</div>
-        </section>
-      </section>
+        </div>
+      </div>
       <TermOfParentalRights />
       </div>
     </div>

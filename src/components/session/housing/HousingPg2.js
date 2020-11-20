@@ -1,8 +1,9 @@
 import React from "react";
-import "./housing.css";
+import "./housing.scss";
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/termOfParentalRights';
+// pdf page 41
 
 function HousingPg2(props) {
   return (
@@ -10,8 +11,9 @@ function HousingPg2(props) {
     <div id="page-container">
       <div id="content-wrap">
       <Heading />
+      <h2 className="textWhite text-center mb-4">Housing</h2>
       <h4 className="textWhite centerItem">All or part?</h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="hs-all-or-part">
             [Patient Name, First] said:
@@ -22,9 +24,9 @@ function HousingPg2(props) {
             id="hs-all-or-part"
           />
         </div>
-      </section>
+      </div>
       <h4 className="textWhite centerItem">How much is your rent or mortgage?</h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="hs-housing-cost">
             [Patient Name, First] said:
@@ -35,9 +37,9 @@ function HousingPg2(props) {
             id="hs-housing-cost"
           />
         </div>
-      </section>
+      </div>
       <h4 className="textWhite centerItem ">Have you ever experienced times without shelter?</h4>
-      <section className="interview_section1">
+      <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="hs-without-shelter">
             [Patient Name, First] said:
@@ -48,15 +50,15 @@ function HousingPg2(props) {
             id="hs-without-shelter"
           />
         </div>
-      </section>
+      </div>
       </div>
       <div id="footer">
-      <section className="buttonSection">
+      <div className="buttonSection">
         <Button
           color="info"
           className="button"
           onClick={() => {
-            props.history.push(`/psychological_evaluation_report_summary`);
+            props.history.push(`/housing_pg_1`);
           }}
         >
           Previous
@@ -76,11 +78,11 @@ function HousingPg2(props) {
         >
           Next
         </Button>
-        <section className="textWhite p-3">
+        <div className="idBox textWhite p-3">
           <div>Existing Patient: [Case #]</div>
           <div>Patient ID: [Patient ID]</div>
-        </section>
-      </section>
+        </div>
+      </div>
       <TermOfParentalRights />
       </div>
     </div>

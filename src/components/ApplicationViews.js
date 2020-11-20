@@ -3,7 +3,7 @@ import React from "react";
 import Login from "./login/login"
 import CreateUser from "./createUser/createUser"
 import PatientHomePage from "./patient/patientHome"
-import SessionStep1 from "./session/sessionBeggining/sessionHome"
+import SessionStep1 from "./session/sessionBeginning/sessionHome"
 import PsychologicalEvaluation from "./session/psychologicalEvaluation/psychologicalEvaluation"
 import PsychologicalEvaluationFamily from "./session/psychologicalEvaluationFamily/PsychologicalEvaluationFamily"
 import PsychologicalEvaluationSiblings from "./session/psychologicalEvaluationFamily/PsychologicalEvaluationSiblings"
@@ -40,6 +40,8 @@ import PsychologicalEvaluationReportSummary from "./session/family/reportSummary
 import HousingPg1 from "./session/housing/HousingPg1";
 import HousingPg2 from "./session/housing/HousingPg2";
 import HousingPg3 from "./session/housing/HousingPg3";
+import EmploymentPg1 from "./session/employment/EmploymentPg1";
+
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -328,6 +330,13 @@ const ApplicationViews = (props) => {
         path="/housing_pg_3"
         render={(props) => {
           return <HousingPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+         <Route
+        exact
+        path="/employment_pg_1"
+        render={(props) => {
+          return <EmploymentPg1 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
   
