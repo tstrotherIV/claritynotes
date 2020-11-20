@@ -13,6 +13,7 @@ import {
   ModalFooter,
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
+import TermOfParentalRights from '../../shared/termOfParentalRights';
 import "./interviews.scss"; 
 
 function InterviewPg6(props) {
@@ -24,6 +25,8 @@ function InterviewPg6(props) {
 
   return (
     <>
+    <div id="page-container">
+      <div id="content-wrap">
       <Heading />
       <div className="header">
         <h1 className="textWhite">Interviews</h1>
@@ -68,7 +71,7 @@ function InterviewPg6(props) {
               Is the parent sensitive to and has picked up on the child’s
               disposition, personality, spirit? Is the parent willing to be
               sensitive to the child’s subtle needs to ensure the child is a
-              success?)
+              success?
             </div>
           </div>
           <div className="in1">
@@ -137,7 +140,9 @@ function InterviewPg6(props) {
           </div>
         </div>
       </section>
-      <section className="buttonSection mt-5" id="">
+      </div>
+      <div id="footer">
+      <section className="buttonSection">
         <Button
           color="info"
           className="button"
@@ -163,7 +168,10 @@ function InterviewPg6(props) {
           Next
         </Button>
       </section>
-          </>
+      <TermOfParentalRights />
+      </div>
+    </div>
+    </>
   );
 }
 

@@ -2,10 +2,13 @@ import React from "react";
 import "./interviews.css";
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
+import TermOfParentalRights from '../../shared/termOfParentalRights';
 
 function FamilyPg5(props) {
   return (
     <>
+    <div id="page-container">
+    <div id="content-wrap">
     <Heading /> 
       <div className="header">
         <h1 className="textWhite">Family</h1>
@@ -33,8 +36,7 @@ function FamilyPg5(props) {
             they show you they loved you and accepted you?” AND/OR “Tell me more
             about that.” GET AS MUCH INFO AS POSSIBLE.
         </div>
-      </section>
-      
+      </section>   
       <h4 className="textWhite centerItem">
         Do you remember a lot of fighting in the home growing up?
       </h4>
@@ -50,8 +52,9 @@ function FamilyPg5(props) {
           />
         </div>
       </section>
-
-      <section className="buttonSection mt-6" id="">
+      </div>
+      <div id="footer">
+      <section className="buttonSection">
         <Button
           color="info"
           className="button"
@@ -81,6 +84,9 @@ function FamilyPg5(props) {
           <div>Patient ID: [Patient ID]</div>
         </section>
       </section>
+      <TermOfParentalRights />
+      </div>
+    </div>
     </>
   );
 }

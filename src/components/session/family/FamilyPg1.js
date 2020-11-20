@@ -2,20 +2,18 @@ import React from "react";
 import "./interviews.css";
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
+import TermOfParentalRights from '../../shared/termOfParentalRights';
+
 
 function FamilyPg1(props) {
   return (
     <>
-    <Heading />   
-      {/* <section className="wrapContent mt-5">
-        <div className="textWhite m-2 p-2">
-          [Patient Name, First] [Patient Name, Last]
-        </div>
-        <div className="textWhite m-2 p-2">DOB: [Patient DOB]</div>
-        <div className="textWhite m-2 p-2">Patient ID: [Patient ID]</div>
-        <div className="textWhite m-2 p-2">Existing Patient: [Case #]</div>
-      </section> */}
-      
+       <div id="page-container">
+      <div id="content-wrap">
+    <Heading />    
+    <div className="header">
+        <h1 className="textWhite">Family</h1>
+      </div>
       <section>
         <div className="section1Fields">
           <div className="in2">
@@ -70,7 +68,6 @@ function FamilyPg1(props) {
           />
         </div>
       </section>
-      
       <h4 className="textWhite centerItem">What are their names?</h4>
       <section className="interview_section1">
         <div className="interview_line1">
@@ -85,7 +82,9 @@ function FamilyPg1(props) {
           />
         </div>
       </section>
-      <section className="buttonSection mt-6" id="">
+      </div>
+      <div id="footer">
+      <section className="buttonSection">
         <Button
           color="info"
           className="button"
@@ -115,6 +114,9 @@ function FamilyPg1(props) {
           <div>Patient ID: [Patient ID]</div>
         </section>
       </section>
+      <TermOfParentalRights />
+      </div>
+    </div>
     </>
   );
 }
