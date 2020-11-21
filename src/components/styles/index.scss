@@ -221,10 +221,6 @@ Button, Input{
   padding: 3px;
 }
 
-.minReportHeight{
-
-}
-
 .questionsContainer{
   max-width: 800px !important;
   margin: auto;
@@ -233,4 +229,12 @@ Button, Input{
 .questionsContainer2{
   max-width: 900px !important;
   margin: auto;
+}
+
+.reportMinHeight{
+  height: 700px !important;
+}
+
+.reportMinHeight2{
+  height: 770px !important;
 }

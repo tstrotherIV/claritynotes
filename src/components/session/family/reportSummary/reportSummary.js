@@ -5,7 +5,7 @@ import "./reportSummary.scss";
 function PsychologicalEvaluationReportSummary(props) {
   return (
     <div id="page-container">
-    <div id="content-wrap">
+    <div id="content-wrap" className="reportMinHeight2">
     <div className="fullpage">
       <div className="whiteBGD">
         <div className="centerContent">

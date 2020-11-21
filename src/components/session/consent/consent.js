@@ -5,8 +5,8 @@ import "./consent.scss";
 function PsychologicalEvaluationConsent(props) {
   return (
     <div id="page-container">
-    <div id="content-wrap" className="whiteBGD">
-      <div className="whiteBGD">
+    <div id="content-wrap" className="whiteBGD reportMinHeight">
+      <div className="whiteBGD ">
         <div className="centerContent">
           <div className="d-flex justify-content-center mt-5">
             <h1>Psychological Evaluation</h1>
@@ -27,7 +27,7 @@ function PsychologicalEvaluationConsent(props) {
         </div>
         
         <div className="siblingsFields">
-          <div>
+          <div className="m-4">
             <Input type="checkbox" name="" id="" />
             <Label className="title" for="firstName">
               Check Here to Confirm
