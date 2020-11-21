@@ -59,7 +59,14 @@ import HistoryOfLegalPg9 from "./session/historyOfLegal/HistoryOfLegalPg9";
 import HistoryOfLegalPg10 from "./session/historyOfLegal/HistoryOfLegalPg10";
 import HistoryOfLegalPg11 from "./session/historyOfLegal/HistoryOfLegalPg11";
 import HistoryOfLegalPg12 from "./session/historyOfLegal/HistoryOfLegalPg12";
-
+import HistoryOfLegalPg13 from "./session/historyOfLegal/HistoryOfLegalPg13";
+import HistoryOfLegalPg14 from "./session/historyOfLegal/HistoryOfLegalPg14";
+import HistoryOfLegalPg15 from "./session/historyOfLegal/HistoryOfLegalPg15";
+import MentalHealthHistoryPg1 from "./session/mentalHealthHistory/MentalHealthHistoryPg1";
+import MentalHealthHistoryPg2 from "./session/mentalHealthHistory/MentalHealthHistoryPg2";
+import MentalHealthHistoryPg3  from "./session/mentalHealthHistory/MentalHealthHistoryPg3";
+import MentalHealthHistoryPg4  from "./session/mentalHealthHistory/MentalHealthHistoryPg4";
+import MedicalHistoryHealthConcernsLimitionsPg1 from "./session/medicalHistoryHealthConcernsLimitations/MedicalHistoryHealthConcernsLimitationsPg1"
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
   const setUser = props.setUser;
@@ -480,6 +487,62 @@ const ApplicationViews = (props) => {
         path="/history_of_legal_pg_12"
         render={(props) => {
           return <HistoryOfLegalPg12 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/history_of_legal_pg_13"
+        render={(props) => {
+          return <HistoryOfLegalPg13 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+       <Route
+        exact
+        path="/history_of_legal_pg_14"
+        render={(props) => {
+          return <HistoryOfLegalPg14 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/history_of_legal_pg_15"
+        render={(props) => {
+          return <HistoryOfLegalPg15 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/mental_health_history_pg_1"
+        render={(props) => {
+          return <MentalHealthHistoryPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/mental_health_history_pg_2"
+        render={(props) => {
+          return <MentalHealthHistoryPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/mental_health_history_pg_3"
+        render={(props) => {
+          return <MentalHealthHistoryPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/mental_health_history_pg_4"
+        render={(props) => {
+          return <MentalHealthHistoryPg4 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/medical_history_health_concerns_limitations_pg_1"
+        render={(props) => {
+          return <MedicalHistoryHealthConcernsLimitionsPg1 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       /> 
     </React.Fragment>

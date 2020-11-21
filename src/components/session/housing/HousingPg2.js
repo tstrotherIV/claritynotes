@@ -13,7 +13,7 @@ function HousingPg2(props) {
       <Heading />
       <h2 className="textWhite text-center mb-4">Housing</h2>
       <h4 className="textWhite centerItem">All or part?</h4>
-      <div className="questionsContainer2">
+      <div className="questionsContainerWide">
       <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title text-center" for="hs-all-or-part">
