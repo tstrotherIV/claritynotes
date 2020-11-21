@@ -2,7 +2,7 @@ import React from "react";
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/termOfParentalRights';
-// pdf page 42
+// pdf page 43
 
 function EmploymentPg1(props) {
   return (
@@ -132,7 +132,7 @@ function EmploymentPg1(props) {
               color="info"
               className="button"
               onClick={() => {
-                props.history.push(`/housing_pg_2`);
+                props.history.push(`/housing_pg_3`);
               }}
             >
               Previous
@@ -147,7 +147,7 @@ function EmploymentPg1(props) {
               color="info"
               className="button"
               onClick={() => {
-                props.history.push(`/Housing_pg_4`);
+                props.history.push(`/employment_pg_2`);
               }}
             >
               Next

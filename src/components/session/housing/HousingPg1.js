@@ -12,14 +12,15 @@ function HousingPg1(props) {
       <div id="content-wrap">
     <Heading />
     <h2 className="textWhite text-center mb-4">Housing</h2>
+    <div className="questionsContainer">
       <h4 className="textWhite centerItem">Do you live alone?</h4>
       <div className="interview_div1">
         <div className="interview_line1">
-          <Label className="textWhite interview_title" for="hs-live-alone">
+          <Label className="textWhite interview_title text-center" for="hs-live-alone">
             [Patient Name, First] said:
           </Label>
           <Input
-            className="interview_fieldData"
+            className=""
             type="text"
             id="hs-live-alone"
           />
@@ -28,11 +29,11 @@ function HousingPg1(props) {
       <h4 className="textWhite centerItem">Who do you live with?</h4>
       <div className="interview_div1">
         <div className="interview_line1">
-          <Label className="textWhite interview_title" for="hs-live-with">
+          <Label className="textWhite interview_title text-center" for="hs-live-with">
             [Patient Name, First] said:
           </Label>
           <Input
-            className="interview_fieldData"
+            className=""
             type="text"
             id="hs-live-with"
           />
@@ -41,15 +42,16 @@ function HousingPg1(props) {
       <h4 className="textWhite centerItem ">Who pays your rent or mortgage?</h4>
       <div className="interview_div1">
         <div className="interview_line1">
-          <Label className="textWhite interview_title" for="hs-who-pays">
+          <Label className="textWhite interview_title text-center" for="hs-who-pays">
             [Patient Name, First] said:
           </Label>
           <Input
-            className="interview_fieldData"
+            className=""
             type="text"
             id="hs-who-pays" 
           />
         </div>
+      </div>
       </div>
       </div>
       <div id="footer">
