@@ -2,9 +2,9 @@ import React from "react";
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/termOfParentalRights';
-// pdf page 50
+// pdf page 54
 
-function HistoryOfLegalPg1(props) {
+function HistoryOfLegalPg4(props) {
   return (
     <>  
     <div id="page-container">
@@ -12,7 +12,7 @@ function HistoryOfLegalPg1(props) {
         <Heading />
         <h2 className="textWhite text-center mb-4">History of Legal, Crime, and Conviction</h2>
         <div className="questionsContainer text-center">
-          <h4 className="textWhite centerItem">How many times have you been arrested?</h4>
+          <h4 className="textWhite centerItem">What did you and the District Attorney agree upon?</h4>
           <div className="interview_div1">
         <div className="interview_line1 mb-4">
           <Label className="textWhite interview_title" for="">
@@ -24,7 +24,7 @@ function HistoryOfLegalPg1(props) {
             id=""
           />
         </div>
-        <h4 className="textWhite centerItem">Were you ever found guilty of anything?</h4>
+        <h4 className="textWhite centerItem">How many times have you been on probation?</h4>
         <div className="interview_line1 mb-4">
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
@@ -54,7 +54,7 @@ function HistoryOfLegalPg1(props) {
               color="info"
               className="button"
               onClick={() => {
-                props.history.push(`/education_pg_4`);
+                props.history.push(`/history_of_legal_pg_3`);
               }}
             >
               Previous
@@ -69,7 +69,7 @@ function HistoryOfLegalPg1(props) {
               color="info"
               className="button"
               onClick={() => {
-                props.history.push(`/history_of_legal_pg_2`);
+                props.history.push(`/history_of_legal_pg_5`);
               }}
             >
               Next
@@ -87,4 +87,4 @@ function HistoryOfLegalPg1(props) {
   );
 }
 
-export default HistoryOfLegalPg1;
+export default HistoryOfLegalPg4;
