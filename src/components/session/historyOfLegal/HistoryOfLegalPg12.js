@@ -11,7 +11,7 @@ function HistoryOfLegalPg12(props) {
       <div id="content-wrap">
         <Heading />
         <h2 className="textWhite text-center mb-4">History of Legal, Crime, and Conviction</h2>
-        <div className="questionsContainer text-center">
+        <div className="questionsContainerWide text-center">
           <div className="m-auto d-flex align-items-center textWhite">
             <Label className="textWhite col-3 text-right" for="">
                 [Patient Name, First]

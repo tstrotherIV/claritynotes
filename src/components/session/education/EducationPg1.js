@@ -11,7 +11,7 @@ function EducationPg1(props) {
       <div id="content-wrap">
         <Heading />
         <h2 className="textWhite text-center mb-4 ">Education</h2>
-        <div className="questionsContainer2 row d-flex flex-wrap center-text justify-items-center align-items-end">
+        <div className="questionsContainerWide row d-flex flex-wrap center-text justify-items-center align-items-end">
         <Label className="textWhite col-4 text-center" for="">
             [Patient Name, First] said:
           </Label>
@@ -33,7 +33,7 @@ function EducationPg1(props) {
         </div>
         </div>
         {/* --------------LINE TWO------------------  */}
-        <div className="questionsContainer2 row d-flex flex-wrap center-text justify-items-center align-items-end pt-3">
+        <div className="questionsContainerWide row d-flex flex-wrap center-text justify-items-center align-items-end pt-3">
         <Label className="textWhite col-4 text-center" for="graduateHighSchool">
             [Patient Name, First] said:
           </Label>
