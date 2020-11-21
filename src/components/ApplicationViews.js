@@ -41,7 +41,13 @@ import HousingPg1 from "./session/housing/HousingPg1";
 import HousingPg2 from "./session/housing/HousingPg2";
 import HousingPg3 from "./session/housing/HousingPg3";
 import EmploymentPg1 from "./session/employment/EmploymentPg1";
-
+import EmploymentPg2 from "./session/employment/EmploymentPg2";
+import EmploymentPg3 from "./session/employment/EmploymentPg3";
+import EducationPg1 from "./session/education/EducationPg1";
+import EducationPg2 from "./session/education/EducationPg2";
+import EducationPg3 from "./session/education/EducationPg3";
+import EducationPg4 from "./session/education/EducationPg4";
+import HistoryOfLegalPg1 from "./session/historyOfLegal/HistoryOfLegalPg1";
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -339,7 +345,55 @@ const ApplicationViews = (props) => {
           return <EmploymentPg1 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
-  
+      <Route
+        exact
+        path="/employment_pg_2"
+        render={(props) => {
+          return <EmploymentPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/employment_pg_3"
+        render={(props) => {
+          return <EmploymentPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/education_pg_1"
+        render={(props) => {
+          return <EducationPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/education_pg_2"
+        render={(props) => {
+          return <EducationPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/education_pg_3"
+        render={(props) => {
+          return <EducationPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/education_pg_4"
+        render={(props) => {
+          return <EducationPg4 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/history_of_legal_pg_1"
+        render={(props) => {
+          return <HistoryOfLegalPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
     </React.Fragment>
   </>
   );

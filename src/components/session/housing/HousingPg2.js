@@ -13,13 +13,14 @@ function HousingPg2(props) {
       <Heading />
       <h2 className="textWhite text-center mb-4">Housing</h2>
       <h4 className="textWhite centerItem">All or part?</h4>
+      <div className="questionsContainer2">
       <div className="interview_div1">
         <div className="interview_line1">
-          <Label className="textWhite interview_title" for="hs-all-or-part">
+          <Label className="textWhite interview_title text-center" for="hs-all-or-part">
             [Patient Name, First] said:
           </Label>
           <Input
-            className="interview_fieldData"
+            className=""
             type="text"
             id="hs-all-or-part"
           />
@@ -28,11 +29,11 @@ function HousingPg2(props) {
       <h4 className="textWhite centerItem">How much is your rent or mortgage?</h4>
       <div className="interview_div1">
         <div className="interview_line1">
-          <Label className="textWhite interview_title" for="hs-housing-cost">
+          <Label className="textWhite interview_title text-center" for="hs-housing-cost">
             [Patient Name, First] said:
           </Label>
           <Input
-            className="interview_fieldData"
+            className="]"
             type="text"
             id="hs-housing-cost"
           />
@@ -41,14 +42,15 @@ function HousingPg2(props) {
       <h4 className="textWhite centerItem ">Have you ever experienced times without shelter?</h4>
       <div className="interview_div1">
         <div className="interview_line1">
-          <Label className="textWhite interview_title" for="hs-without-shelter">
+          <Label className="textWhite interview_title text-center" for="hs-without-shelter">
             [Patient Name, First] said:
           </Label>
           <Input
-            className="interview_fieldData"
+            className=""
             type="text"
             id="hs-without-shelter"
           />
+          </div>
         </div>
       </div>
       </div>
@@ -73,7 +75,7 @@ function HousingPg2(props) {
           color="info"
           className="button"
           onClick={() => {
-            props.history.push(`/Housing_pg_3`);
+            props.history.push(`/housing_pg_3`);
           }}
         >
           Next
