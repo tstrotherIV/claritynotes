@@ -57,6 +57,8 @@ import HistoryOfLegalPg7 from "./session/historyOfLegal/HistoryOfLegalPg7";
 import HistoryOfLegalPg8 from "./session/historyOfLegal/HistoryOfLegalPg8";
 import HistoryOfLegalPg9 from "./session/historyOfLegal/HistoryOfLegalPg9";
 import HistoryOfLegalPg10 from "./session/historyOfLegal/HistoryOfLegalPg10";
+import HistoryOfLegalPg11 from "./session/historyOfLegal/HistoryOfLegalPg11";
+import HistoryOfLegalPg12 from "./session/historyOfLegal/HistoryOfLegalPg12";
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -464,6 +466,20 @@ const ApplicationViews = (props) => {
         path="/history_of_legal_pg_10"
         render={(props) => {
           return <HistoryOfLegalPg10 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/history_of_legal_pg_11"
+        render={(props) => {
+          return <HistoryOfLegalPg11 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/history_of_legal_pg_12"
+        render={(props) => {
+          return <HistoryOfLegalPg12 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       /> 
     </React.Fragment>
