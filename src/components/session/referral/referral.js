@@ -5,7 +5,7 @@ import "./referral.scss";
 function PsychologicalEvaluationReferral(props) {
   return (
     <div id="page-container">
-    <div id="content-wrap" className="whiteBGD">
+    <div id="content-wrap" className="whiteBGD reportMinHeight">
     <div className="fullpage">
       <div className="whiteBGD">
         <div className="centerContent">

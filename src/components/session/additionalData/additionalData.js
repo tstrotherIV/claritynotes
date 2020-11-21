@@ -6,7 +6,7 @@ function PsychologicalEvaluationAdditionalData(props) {
   return (
     <>
     <div id="page-container" className="sessionStepContainer">
-    <div id="content-wrap" className="whiteBGD">
+    <div id="content-wrap" className="whiteBGD reportMinHeight">
       <div className="whiteBGD">
         <div className="centerContent">
           <div className="d-flex justify-content-center mt-5">
