@@ -52,6 +52,11 @@ import HistoryOfLegalPg2 from "./session/historyOfLegal/HistoryOfLegalPg2";
 import HistoryOfLegalPg3 from "./session/historyOfLegal/HistoryOfLegalPg3";
 import HistoryOfLegalPg4 from "./session/historyOfLegal/HistoryOfLegalPg4";
 import HistoryOfLegalPg5 from "./session/historyOfLegal/HistoryOfLegalPg5";
+import HistoryOfLegalPg6 from "./session/historyOfLegal/HistoryOfLegalPg6";
+import HistoryOfLegalPg7 from "./session/historyOfLegal/HistoryOfLegalPg7";
+import HistoryOfLegalPg8 from "./session/historyOfLegal/HistoryOfLegalPg8";
+import HistoryOfLegalPg9 from "./session/historyOfLegal/HistoryOfLegalPg9";
+import HistoryOfLegalPg10 from "./session/historyOfLegal/HistoryOfLegalPg10";
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -424,6 +429,41 @@ const ApplicationViews = (props) => {
         path="/history_of_legal_pg_5"
         render={(props) => {
           return <HistoryOfLegalPg5 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/history_of_legal_pg_6"
+        render={(props) => {
+          return <HistoryOfLegalPg6 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/history_of_legal_pg_7"
+        render={(props) => {
+          return <HistoryOfLegalPg7 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/history_of_legal_pg_8"
+        render={(props) => {
+          return <HistoryOfLegalPg8 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/history_of_legal_pg_9"
+        render={(props) => {
+          return <HistoryOfLegalPg9 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/history_of_legal_pg_10"
+        render={(props) => {
+          return <HistoryOfLegalPg10 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       /> 
     </React.Fragment>
