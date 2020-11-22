@@ -1,13 +1,14 @@
 import React from "react";
 import { Button } from "reactstrap";
 import "./reportSummary.scss";
+import EmptySpaceFooter from '../../../shared/EmptyFooterSpace';
 
 function PsychologicalEvaluationReportSummary(props) {
   return (
     <div id="page-container">
-    <div id="content-wrap" className="reportMinHeight2">
-    <div className="fullpage">
-      <div className="whiteBGD">
+    <div id="content-wrap" className="">
+    <div className="fullpage ">
+      <div className="whiteBGD reportMinHeight">
         <div className="centerContent">
           <div className="d-flex justify-content-center mt-5">
             <h1>Psychological Evaluation</h1>
@@ -73,6 +74,7 @@ function PsychologicalEvaluationReportSummary(props) {
             <div>Patient ID: [Patient ID]</div>
           </div>
         </div>
+        <EmptySpaceFooter />
       </div>
     </div>
     </div>

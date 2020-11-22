@@ -1,6 +1,8 @@
 import React from "react";
 import { Button } from "reactstrap";
+import EmptyFooterSpace from "../../shared/EmptyFooterSpace";
 import "./referral.scss";
+
 
 function PsychologicalEvaluationReferral(props) {
   return (
@@ -20,6 +22,8 @@ function PsychologicalEvaluationReferral(props) {
             [Patient Name, First][Patient Name, Last] is a [Patient Age] year old [Marital Status][Patient Gender] who was referred by the [Referral] for a psychological evaluation to determine [Patient Gender, pronoun] current cognitive, emotional, behavioral, and psychological status and make recommendations as to [Patient Gender, pronoun] ability to protect, provide for, and care for [Patient Gender, pronoun] [Patient Children, Ages] and maintain their placement in [Patient Gender, pronoun] home.
             </div>
           </div>
+        </div>
+        </div>
         </div>
         </div>
         <div id="footer">
@@ -48,9 +52,12 @@ function PsychologicalEvaluationReferral(props) {
           >
             Next
           </Button>
-        </div>
+          <div className="idBox textWhite p-3">
+              <div className="displayNone">Existing Patient: [Case #]</div>
+              <div className="displayNone">Patient ID: [Patient ID]</div>
       </div>
     </div>
+    <EmptyFooterSpace />
     </div>
     </div>
   );

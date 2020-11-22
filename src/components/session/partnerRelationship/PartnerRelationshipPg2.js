@@ -1,7 +1,7 @@
 import React from "react"; 
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
-import TermOfParentalRights from '../../shared/termOfParentalRights';
+import TermOfParentalRights from '../../shared/TermOfParentalRights';
 // pdf page 81
 
 function PartnerRelationshipPg2(props) {

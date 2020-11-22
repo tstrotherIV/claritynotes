@@ -1,15 +1,15 @@
 import React from "react"; 
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
-import TermOfParentalRights from '../../shared/termOfParentalRights';
+import TermOfParentalRights from '../../shared/TermOfParentalRights';
 // pdf page 89
 
 function PartnerRelationshipPg10(props) {
 return (
     <>  
     <div id="page-container">
-        <Heading />
       <div id="content-wrap">
+        <Heading />
         <h2 className="textWhite text-center mb-4">PARTNER RELATIONSHIP</h2>
         <div className="questionsContainer text-center">
           <h4 className="textWhite centerItem">Do you find yourself feeling more depressed or anxious than before this relationship?</h4>
@@ -35,8 +35,8 @@ return (
             id=""
           />
         </div>
-      </div>
         </div>
+      </div>
         <div id="footer">
           <div className="buttonSection">
             <Button

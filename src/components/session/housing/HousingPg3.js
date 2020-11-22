@@ -2,7 +2,7 @@ import React from "react";
 import "./housing.scss";
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
-import TermOfParentalRights from '../../shared/termOfParentalRights';
+import TermOfParentalRights from '../../shared/TermOfParentalRights';
 // pdf page 42
 
 function HousingPg3(props) {

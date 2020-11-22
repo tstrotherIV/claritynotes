@@ -1,7 +1,7 @@
 import React from "react";
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
-import TermOfParentalRights from '../../shared/termOfParentalRights';
+import TermOfParentalRights from '../../shared/TermOfParentalRights';
 // pdf page 80
 
 function PartnerRelationshipPg1(props) {
@@ -13,7 +13,7 @@ function PartnerRelationshipPg1(props) {
         <h2 className="textWhite text-center mb-4">PARTNER RELATIONSHIP</h2>
         <div className="text-center questionsContainerWide row d-flex flex-wrap justify-content-center">
         <h4 className="textWhite centerItem offset-2">How many times have things gotten a little out of control, more than to your liking?</h4>
-        <div className="mb-4 row d-flex flex-wrap justify-content-center">
+        <div className="mb-4 d-flex flex-wrap justify-content-center">
           <div className="textWhite d-flex flex-wrap align-content-end col-2 mb-2" for="">
             [Patient Name, First] said:
           </div>

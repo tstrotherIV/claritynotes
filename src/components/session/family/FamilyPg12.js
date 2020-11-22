@@ -2,7 +2,7 @@ import React from "react";
 import "./interviews.scss";
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
-import TermOfParentalRights from '../../shared/termOfParentalRights';
+import TermOfParentalRights from '../../shared/TermOfParentalRights';
 
 function FamilyPg12(props) {
   return (
