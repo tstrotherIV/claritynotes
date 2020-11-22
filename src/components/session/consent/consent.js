@@ -1,6 +1,7 @@
 import React from "react";
 import { Label, Input, Button } from "reactstrap";
 import "./consent.scss";
+import EmptyFooterSpace from "../../shared/EmptyFooterSpace";
 
 function PsychologicalEvaluationConsent(props) {
   return (
@@ -36,6 +37,7 @@ function PsychologicalEvaluationConsent(props) {
         </div>
         </div>
         
+          </div>
         <div id="footer">
         <div className="buttonSection">
           <Button
@@ -62,8 +64,12 @@ function PsychologicalEvaluationConsent(props) {
           >
             Next
           </Button>
-        </div>
+          <div className="idBox textWhite p-3">
+              <div className="displayNone">Existing Patient: [Case #]</div>
+              <div className="displayNone">Patient ID: [Patient ID]</div>
       </div>
+        </div>
+      <EmptyFooterSpace />
       </div>
       </div>
   );

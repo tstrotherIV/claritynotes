@@ -192,7 +192,7 @@ Button, Input{
   width: 100%;
   height: 100px;  
   margin-bottom: 70px; 
-  background-color: red;
+  background-image: url('../../media/blue_bg_clarity_HD.jpg') ;
 }
 
 .buttonSection{
@@ -231,10 +231,15 @@ Button, Input{
   margin: auto;
 }
 
-.reportMinHeight{
-  height: 700px !important;
+.reportMinHeight {
+  min-height: 100vh;
 }
 
-.reportMinHeight2{
-  height: 770px !important;
+.emptyFooterHeight{
+  min-height:  50px;
 }
+
+.displayNone{
+  display:None;
+}
+

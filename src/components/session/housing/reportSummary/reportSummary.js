@@ -4,9 +4,10 @@ import "./reportSummary.scss";
 
 function PsychologicalEvaluationReportSummary(props) {
   return (
-    <div className="fullpage">
-      <div className="whiteBGD">
-        <div className="centerContent">
+    <div className="page-container">
+      <div  id="content-wrap" className="whiteBGD reportMinHeight">
+        <div className="fullpage reportMinHeight">
+        <div className="centerContent whiteBGD">
           <div className="d-flex justify-content-center mt-5">
             <h1>Psychological Evaluation</h1>
           </div>
@@ -15,8 +16,9 @@ function PsychologicalEvaluationReportSummary(props) {
           </div>
           <div className="d-flex justify-content-center mt-5">
             <div className="centerText">
+              HELLOOOOOOO
               [Patient Name, First][Patient Name, Last] reported she has been
-              married since xx. She has son/s and daughter/s. [Patient Name,
+              married since. She has son/s and daughter/s. [Patient Name,
               First] said she currently lives with _ in [Location] 
               
               
@@ -39,7 +41,7 @@ function PsychologicalEvaluationReportSummary(props) {
             </div>
           </div>
         </div>
-        
+        </div>
 
         <div className="buttonSection mt-6" id="">
           <Button

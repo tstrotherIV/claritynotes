@@ -2,57 +2,52 @@ import React from "react";
 import "./interviews.scss";
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
-import TermOfParentalRights from '../../shared/termOfParentalRights';
+import TermOfParentalRights from '../../shared/TermOfParentalRights';
 
 
 function FamilyPg1(props) {
   return (
     <>
-       <div id="page-container">
-      <div id="content-wrap">
-    <Heading />    
-    <div className="header">
+    <div id="page-container">
+    <div id="content-wrap">
+      <Heading />    
+      <div className="header">
         <h1 className="textWhite">Family</h1>
       </div>
-      <div>
-        <div className="div1Fields">
-          <div className="in2">
-            <Label className="textWhite title" for="caseNumber">
-              [Patient Name, First] reported her
-            </Label>
-            <Input
-              className="fieldData2"
-              type="text"
-              id="caseNumber"
-            />
-
-            <div className="in2">
-              <Label className="textWhite title" for="caseNumber">
-                raised her in
+      <div className="questionsContainerWide d-flex flex-wrap justify-content-center align-items-baseline m-2">
+              <Label className="textWhite m-1" for="">
+              [Patient Name, First] his/her
               </Label>
               <Input
-                className="fieldData2"
+                className="col-2 m-0 p-0"
                 type="text"
-                id="caseNumber"
+                id=""
               />
-            </div>
-          </div>
-        </div>
+          <Label className="textWhite m-2" for="">
+          raised him/her in 
+              </Label>
+              <Input
+                    className="col-2 m-0 p-0"
+                    type="text"
+                    id=""
+                    placeholder=""
+                  /> 
+              <div className="textWhite ml-2">.</div>
+           
       </div>
-      
-      <div className="in3">
-        <div className="textWhite centerItem">[Patient Name, First] had</div>
-        <div className="interview_line2">
-          <Input
-            className="interview_fieldData1"
-            type="text"
-            id=""
-          />
-        </div>
-        <div className="textWhite centerItem">brothers and sisters.</div>
-      </div>
-      
-      <h4 className="textWhite centerItem">
+      <div className="questionsContainerWide d-flex flex-wrap justify-content-center align-items-baseline m-2">      
+              <Label className="textWhite ml-1 mr-1 mt-0 mb-0" for="">
+              [Patient Name, First] had
+              </Label>
+              <Input
+                className="col-2 m-0 p-0"
+                type="text"
+                id=""
+              />
+          <div className="textWhite ml-1 mr-1" for="">
+          brothers and sisters.</div>
+</div>
+     <h4 className="textWhite centerItem">
         Who raised you from birth until you moved out of the home?
       </h4>
       <div className="interview_div1">
@@ -67,7 +62,6 @@ function FamilyPg1(props) {
             id=""
           />
         </div>
-      </div>
       <h4 className="textWhite centerItem">What are their names?</h4>
       <div className="interview_div1">
         <div className="interview_line1">
@@ -82,7 +76,7 @@ function FamilyPg1(props) {
           />
         </div>
       </div>
-      
+      </div>
       <div id="footer">
       <div className="buttonSection">
         <Button

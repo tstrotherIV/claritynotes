@@ -13,7 +13,7 @@ import {
   ModalFooter,
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
-import TermOfParentalRights from '../../shared/termOfParentalRights';
+import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import "./interviews.scss";
 
 function InterviewPg5(props) {
@@ -192,6 +192,10 @@ function InterviewPg5(props) {
         >
           Next
         </Button>
+        <div className="idBox textWhite p-3">
+              <div className="displayNone">Existing Patient: [Case #]</div>
+              <div className="displayNone">Patient ID: [Patient ID]</div>
+            </div>
       </div>
       <TermOfParentalRights />
       </div>
