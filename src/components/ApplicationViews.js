@@ -67,6 +67,26 @@ import MentalHealthHistoryPg2 from "./session/mentalHealthHistory/MentalHealthHi
 import MentalHealthHistoryPg3  from "./session/mentalHealthHistory/MentalHealthHistoryPg3";
 import MentalHealthHistoryPg4  from "./session/mentalHealthHistory/MentalHealthHistoryPg4";
 import MedicalHistoryHealthConcernsLimitionsPg1 from "./session/medicalHistoryHealthConcernsLimitations/MedicalHistoryHealthConcernsLimitationsPg1"
+import NeglectAbuseTraumaLossPg1 from "./session/NeglectAbuseTraumaLoss/NeglectAbuseTraumaLossPg1"
+import NeglectAbuseTraumaLossPg2 from "./session/NeglectAbuseTraumaLoss/NeglectAbuseTraumaLossPg2"
+import NeglectAbuseTraumaLossPg3 from "./session/NeglectAbuseTraumaLoss/NeglectAbuseTraumaLossPg3"
+import NeglectAbuseTraumaLossPg4 from "./session/NeglectAbuseTraumaLoss/NeglectAbuseTraumaLossPg4"
+import NeglectAbuseTraumaLossPg5 from "./session/NeglectAbuseTraumaLoss/NeglectAbuseTraumaLossPg5"
+import PerpetratorOfNeglectAndAbusePg1 from "./session/PerpetratorOfNeglectAndAbuse/PerpetratorOfNeglectAndAbusePg1"
+import PerpetratorOfNeglectAndAbusePg2 from "./session/PerpetratorOfNeglectAndAbuse/PerpetratorOfNeglectAndAbusePg2"
+import PerpetratorOfNeglectAndAbusePg3 from "./session/PerpetratorOfNeglectAndAbuse/PerpetratorOfNeglectAndAbusePg3"
+import PerpetratorOfNeglectAndAbusePg4 from "./session/PerpetratorOfNeglectAndAbuse/PerpetratorOfNeglectAndAbusePg4"
+import PartnerRelationshipPg1 from "./session/partnerRelationship/PartnerRelationshipPg1"
+import PartnerRelationshipPg2 from "./session/partnerRelationship/PartnerRelationshipPg2"
+import PartnerRelationshipPg3 from "./session/partnerRelationship/PartnerRelationshipPg3"
+import PartnerRelationshipPg4 from "./session/partnerRelationship/PartnerRelationshipPg4"
+import PartnerRelationshipPg5 from "./session/partnerRelationship/PartnerRelationshipPg5"
+import PartnerRelationshipPg6 from "./session/partnerRelationship/PartnerRelationshipPg6"
+import PartnerRelationshipPg7 from "./session/partnerRelationship/PartnerRelationshipPg7"
+import PartnerRelationshipPg8 from "./session/partnerRelationship/PartnerRelationshipPg8"
+import PartnerRelationshipPg9 from "./session/partnerRelationship/PartnerRelationshipPg9"
+import PartnerRelationshipPg10 from "./session/partnerRelationship/PartnerRelationshipPg10"
+
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
   const setUser = props.setUser;
@@ -545,6 +565,139 @@ const ApplicationViews = (props) => {
           return <MedicalHistoryHealthConcernsLimitionsPg1 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       /> 
+      <Route
+        exact
+        path="/neglect_abuse_trauma_loss_pg_1"
+        render={(props) => {
+          return <NeglectAbuseTraumaLossPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/neglect_abuse_trauma_loss_pg_2"
+        render={(props) => {
+          return <NeglectAbuseTraumaLossPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/neglect_abuse_trauma_loss_pg_3"
+        render={(props) => {
+          return <NeglectAbuseTraumaLossPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/neglect_abuse_trauma_loss_pg_4"
+        render={(props) => {
+          return <NeglectAbuseTraumaLossPg4 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/neglect_abuse_trauma_loss_pg_5"
+        render={(props) => {
+          return <NeglectAbuseTraumaLossPg5 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />  
+      <Route
+        exact
+        path="/perpetrator_of_neglect_and_abuse_pg_1"
+        render={(props) => {
+          return <PerpetratorOfNeglectAndAbusePg1 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/perpetrator_of_neglect_and_abuse_pg_2"
+        render={(props) => {
+          return <PerpetratorOfNeglectAndAbusePg2 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/perpetrator_of_neglect_and_abuse_pg_3"
+        render={(props) => {
+          return <PerpetratorOfNeglectAndAbusePg3 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      /> 
+      <Route
+        exact
+        path="/perpetrator_of_neglect_and_abuse_pg_4"
+        render={(props) => {
+          return <PerpetratorOfNeglectAndAbusePg4 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/partner_relationship_pg_1"
+        render={(props) => {
+          return <PartnerRelationshipPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/partner_relationship_pg_2"
+        render={(props) => {
+          return <PartnerRelationshipPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/partner_relationship_pg_3"
+        render={(props) => {
+          return <PartnerRelationshipPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/partner_relationship_pg_4"
+        render={(props) => {
+          return <PartnerRelationshipPg4 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/partner_relationship_pg_5"
+        render={(props) => {
+          return <PartnerRelationshipPg5 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/partner_relationship_pg_6"
+        render={(props) => {
+          return <PartnerRelationshipPg6 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/partner_relationship_pg_7"
+        render={(props) => {
+          return <PartnerRelationshipPg7 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/partner_relationship_pg_8"
+        render={(props) => {
+          return <PartnerRelationshipPg8 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/partner_relationship_pg_9"
+        render={(props) => {
+          return <PartnerRelationshipPg9 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/partner_relationship_pg_10"
+        render={(props) => {
+          return <PartnerRelationshipPg10 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
     </React.Fragment>
   </>
   );
