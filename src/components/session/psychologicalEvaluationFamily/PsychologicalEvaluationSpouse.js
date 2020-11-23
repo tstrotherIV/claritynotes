@@ -88,12 +88,13 @@ function PsychologicalEvaluation_spouse(props) {
           />
         </div>
         <div className="d-flex justify-content-center">
-            <div className="textWhite"><i class="fas fa-plus fa-lg ml-5 mt-3 mr-2"></i>Click to Add Previous Spouses</div>
+            <div className="textWhite"><i className="fas fa-plus fa-lg ml-5 mt-3 mr-2"></i>Click to Add Previous Spouses</div>
           </div>
       </div>
       </div>
       <div id="footer">
       <div className="buttonSection">
+      <div className="idBox textWhite p-3"></div>
       <Button color="info" className="button" onClick={() => {
             props.history.push(`/psychological_evaluation_children`);
           }}>Previous</Button>
@@ -106,6 +107,7 @@ function PsychologicalEvaluation_spouse(props) {
         <Button color="info" className="button" onClick={() => {
             props.history.push(`/psychological_evaluation_consent`);
           }}>Next</Button>
+      <div className="idBox textWhite p-3"></div> 
       </div>
       </div>
       </div>

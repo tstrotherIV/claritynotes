@@ -111,13 +111,15 @@ function PsychologicalEvaluation_family(props) {
             </Dropdown>
           </div>
           <div className="text-center">
-            <div className="textWhite"><i class="fas fa-plus fa-lg mr-2"></i>Click to Add More Guardians</div>
+            <div className="textWhite"><i className="fas fa-plus fa-lg mr-2"></i>Click to Add More Guardians</div>
           </div>
         </div>
         </div>
         </div>
       <div id="footer"> 
       <div className="buttonSection">
+      <div className="idBox textWhite p-3">
+      </div>
       <Button color="info" className="button" onClick={() => {
             props.history.push(`/psychological_evaluation`);
           }}>Previous</Button>
@@ -129,7 +131,8 @@ function PsychologicalEvaluation_family(props) {
         </Button>
         <Button color="info" className="button" onClick={() => {
             props.history.push(`/psychological_evaluation_siblings`);
-          }}>Next</Button>
+        }}>Next</Button>
+      <div className="idBox textWhite p-3"></div>
       </div>
       </div>
       </div>

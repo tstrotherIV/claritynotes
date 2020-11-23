@@ -14,7 +14,7 @@ function PartnerRelationshipPg1(props) {
         <div className="text-center questionsContainerWide row d-flex flex-wrap justify-content-center">
         <h4 className="textWhite centerItem offset-2">How many times have things gotten a little out of control, more than to your liking?</h4>
         <div className="mb-4 d-flex flex-wrap justify-content-center">
-          <div className="textWhite d-flex flex-wrap align-content-end col-2 mb-2" for="">
+          <div className="textWhite d-flex flex-wrap align-content-end col-2 mb-2">
             [Patient Name, First] said:
           </div>
           <div className="col-3 d-flex flex-wrap align-items-end m-0 p-0">
@@ -75,6 +75,7 @@ function PartnerRelationshipPg1(props) {
         </div>
         <div id="footer">
           <div className="buttonSection">
+          <div className="idBox textWhite p-3"></div>
             <Button
               color="info"
               className="button"

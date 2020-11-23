@@ -44,7 +44,7 @@ function FamilyPg1(props) {
                 type="text"
                 id=""
               />
-          <div className="textWhite ml-1 mr-1" for="">
+          <div className="textWhite ml-1 mr-1">
           brothers and sisters.</div>
 </div>
      <h4 className="textWhite centerItem">
@@ -79,6 +79,7 @@ function FamilyPg1(props) {
       </div>
       <div id="footer">
       <div className="buttonSection">
+      <div className="idBox textWhite p-3"></div>
         <Button
           color="info"
           className="button"

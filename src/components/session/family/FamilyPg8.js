@@ -40,7 +40,7 @@ function FamilyPg8(props) {
             <Label className="textWhite" for="">
               [User Name, First]’s Inference and Observations:
             </Label>
-            <Input className="" type="text" name="" id="" />
+            <Input type="text" className="" id="" />
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@ function FamilyPg8(props) {
             <Label className="textWhite" for="">
               [User Name, First]’s Inference and Observations:
             </Label>
-            <Input className="" type="text" name="" id="" />
+            <Input type="text" name="" id="" />
           </div>
         </div>
       </div>
@@ -71,13 +71,14 @@ function FamilyPg8(props) {
             <Label className="textWhite" for="">
               [User Name, First]’s Inference and Observations:
             </Label>
-            <Input className="" type="text" name="" id="" />
+            <Input type="text" name="" id="" />
           </div>
         </div>
       </div>
       </div>
       <div className="footerHeight" id="footer">
       <div className="buttonSection">
+      <div className="idBox textWhite p-3"></div>
         <Button
           color="info"
           className="button"

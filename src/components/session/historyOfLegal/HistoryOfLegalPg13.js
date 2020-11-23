@@ -35,7 +35,7 @@ function HistoryOfLegalPg13(props) {
           />    
         </div>
         <div className="mb-4 d-flex flex-wrap justify-content-center">
-          <div className="textWhite d-flex flex-wrap align-content-end col-2 mb-2" for="">
+          <div className="textWhite d-flex flex-wrap align-content-end col-2 mb-2">
             [Patient Name, First] said:
           </div>
           <div className="col-4 d-flex flex-wrap align-items-end m-0 p-0">
@@ -72,6 +72,7 @@ function HistoryOfLegalPg13(props) {
         </div>
         <div id="footer">
           <div className="buttonSection">
+          <div className="idBox textWhite p-3"></div>
             <Button
               color="info"
               className="button"
