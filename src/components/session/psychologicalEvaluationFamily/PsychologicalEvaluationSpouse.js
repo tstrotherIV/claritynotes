@@ -94,6 +94,7 @@ function PsychologicalEvaluation_spouse(props) {
       </div>
       <div id="footer">
       <div className="buttonSection">
+      <div className="idBox textWhite p-3"></div>
       <Button color="info" className="button" onClick={() => {
             props.history.push(`/psychological_evaluation_children`);
           }}>Previous</Button>
@@ -106,6 +107,7 @@ function PsychologicalEvaluation_spouse(props) {
         <Button color="info" className="button" onClick={() => {
             props.history.push(`/psychological_evaluation_consent`);
           }}>Next</Button>
+      <div className="idBox textWhite p-3"></div> 
       </div>
       </div>
       </div>

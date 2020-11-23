@@ -45,6 +45,7 @@ function PsychologicalEvaluationReportSummary(props) {
         </div>
       <div id="footer">
         <div className="buttonSection">
+        <div className="idBox textWhite p-3"></div>
           <Button
             color="info"
             className="button"

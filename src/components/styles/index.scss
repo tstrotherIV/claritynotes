@@ -210,10 +210,10 @@ Button, Input{
 }
 
 .button {
-  margin: clamp(2px, 8px, 10px) !important;
+  margin: clamp(1px, 3px, 8px) !important;
   height: 50px;
   min-width: 75px !important;
-  width: 20vw;
+  width: 18vw;
 }
 
 .idBox{
