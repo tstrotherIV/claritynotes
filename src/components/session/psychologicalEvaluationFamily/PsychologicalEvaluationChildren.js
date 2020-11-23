@@ -85,7 +85,7 @@ function PsychologicalEvaluation_siblings(props) {
           />
         </div>
         <div className="d-flex justify-content-center">
-            <div className="textWhite"><i class="fas fa-plus fa-lg ml-5 mt-3 mr-2"></i>Click to Add More Children</div>
+            <div className="textWhite"><i className="fas fa-plus fa-lg ml-5 mt-3 mr-2"></i>Click to Add More Children</div>
           </div>
    
       </div>

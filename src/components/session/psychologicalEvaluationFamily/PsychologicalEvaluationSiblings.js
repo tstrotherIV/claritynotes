@@ -86,7 +86,7 @@ function PsychologicalEvaluation_children(props) {
           />
         </div>
         <div className="m-4">
-            <div className="textWhite"><i class="fas fa-plus fa-lg mr-2"></i>Click to Add More Siblings</div>
+            <div className="textWhite"><i className="fas fa-plus fa-lg mr-2"></i>Click to Add More Siblings</div>
           </div>
       </div>
       </div>
