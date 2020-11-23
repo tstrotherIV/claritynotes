@@ -14,7 +14,7 @@ function Interview_Pg9(props) {
       <div id="page-container">
       <div id="content-wrap">
     <Heading /> 
-      <div className="header">
+      <div className="header questionsContainerWide">
         <h1 className="textWhite">Interviews</h1>
       </div>
       <h4 className="textWhite centerItem">
@@ -86,10 +86,7 @@ function Interview_Pg9(props) {
         >
           Next
         </Button>
-        <div className="idBox textWhite p-3">
-              <div className="displayNone">Existing Patient: [Case #]</div>
-              <div className="displayNone">Patient ID: [Patient ID]</div>
-            </div>
+        <div className="idBox textWhite p-3"></div>
       </div>
       <TermOfParentalRights />
       </div>

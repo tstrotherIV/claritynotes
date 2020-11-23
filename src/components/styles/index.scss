@@ -218,7 +218,12 @@ Button, Input{
 
 .idBox{
   min-width: 200px !important;
-  padding: 3px;
+  min-height:74px !important;
+  padding: 0 !important;
+  text-align: center;
+  display: flex; 
+  
+
 }
 
 .questionsContainer{
@@ -240,6 +245,6 @@ Button, Input{
 }
 
 .displayNone{
-  display:None;
+  display: None;
 }
 
