@@ -86,11 +86,15 @@ import PartnerRelationshipPg7 from "./session/partnerRelationship/PartnerRelatio
 import PartnerRelationshipPg8 from "./session/partnerRelationship/PartnerRelationshipPg8";
 import PartnerRelationshipPg9 from "./session/partnerRelationship/PartnerRelationshipPg9";
 import PartnerRelationshipPg10 from "./session/partnerRelationship/PartnerRelationshipPg10";
+import ParentingPg1 from "./session/parenting/ParentingPg1";
+import ParentingPg2 from "./session/parenting/ParentingPg2";
+import ParentingPg3 from "./session/parenting/ParentingPg3";
+import PositiveRoleModelPg1 from "./session/positiveRoleModel/PositiveRoleModelPg1";
+import PositiveRoleModelPg2 from "./session/positiveRoleModel/PositiveRoleModelPg2";
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
   const setUser = props.setUser;
-
   // const userId = parseInt(props.userId);
 
   return (
@@ -696,6 +700,41 @@ const ApplicationViews = (props) => {
         path="/partner_relationship_pg_10"
         render={(props) => {
           return <PartnerRelationshipPg10 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/parenting_pg_1"
+        render={(props) => {
+          return <ParentingPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/parenting_pg_2"
+        render={(props) => {
+          return <ParentingPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/parenting_pg_3"
+        render={(props) => {
+          return <ParentingPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/positive_role_model_pg_1"
+        render={(props) => {
+          return <PositiveRoleModelPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+            <Route
+        exact
+        path="/positive_role_model_pg_2"
+        render={(props) => {
+          return <PositiveRoleModelPg2 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
     </React.Fragment>
