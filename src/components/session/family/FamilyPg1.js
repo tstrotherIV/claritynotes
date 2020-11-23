@@ -1,5 +1,4 @@
 import React from "react";
-import "./interviews.scss";
 import { Label, Input, Button } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -79,7 +78,7 @@ function FamilyPg1(props) {
       </div>
       <div id="footer">
       <div className="buttonSection">
-      <div className="idBox textWhite p-3"></div>
+      <div className="idBox textWhite"></div>
         <Button
           color="info"
           className="button"
@@ -104,7 +103,7 @@ function FamilyPg1(props) {
         >
           Next
         </Button>
-        <div className="idBox textWhite p-3">
+        <div className="idBox textWhite">
           <div>Existing Patient: [Case #]</div>
           <div>Patient ID: [Patient ID]</div>
         </div>
