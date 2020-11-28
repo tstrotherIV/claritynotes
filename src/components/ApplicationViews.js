@@ -94,6 +94,9 @@ import PositiveRoleModelPg2 from "./session/positiveRoleModel/PositiveRoleModelP
 import ParentKnowledgePg1 from "./session/parentKnowledge/ParentKnowledgePg1";
 import CognitiveSkillsPg1 from "./session/cognitiveSkills/CognitiveSkillsPg1";
 import MaterialResourcesPg1 from "./session/materialResources/MaterialResourcesPg1";
+import BehavioralObservationsAndTestingConditionsPg1 from "./session/behavioralObservationsAndTestingConditions/BehavioralObservationsAndTestingConditionsPg1";
+import BehavioralObservationsAndTestingConditionsPg2 from "./session/behavioralObservationsAndTestingConditions/BehavorialObservationsAndTestingConditionsPg2";
+
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
   const setUser = props.setUser;
@@ -758,6 +761,20 @@ const ApplicationViews = (props) => {
         path="/material_resources_pg_1"
         render={(props) => {
           return <MaterialResourcesPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/behavioral_observations_and_testing_conditions_pg_1"
+        render={(props) => {
+          return <BehavioralObservationsAndTestingConditionsPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/behavioral_observations_and_testing_conditions_pg_2"
+        render={(props) => {
+          return <BehavioralObservationsAndTestingConditionsPg2 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
     </React.Fragment>
