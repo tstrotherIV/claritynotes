@@ -80,9 +80,9 @@ function PositiveRoleModelPg2(props) {
           </div>
         </div>
       </div>
-      <h5 className="textWhite text-center offset-2">If they are unable to give THREE examples, add:</h5>
       <div className="siblingsFields">
-          <div className="m-1">
+      <div className="m-1">
+      <h5 className="textWhite text-center">If they are unable to give THREE examples, add:</h5>
             <Input type="checkbox" name="" id="" />
             <Label className="textWhite text-center" for="firstName">
             [Patient Name, First] appears to be lacking knowledge and examples which illustrates probable deficits in this area. 
@@ -114,7 +114,7 @@ function PositiveRoleModelPg2(props) {
               color="info"
               className="button"
               onClick={() => {
-                props.history.push(`/positive_role_model_pg_3`);
+                props.history.push(`/parent_knowledge_pg_1`);
               }}
             >
               Next
