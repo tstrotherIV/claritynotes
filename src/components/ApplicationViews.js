@@ -92,7 +92,8 @@ import ParentingPg3 from "./session/parenting/ParentingPg3";
 import PositiveRoleModelPg1 from "./session/positiveRoleModel/PositiveRoleModelPg1";
 import PositiveRoleModelPg2 from "./session/positiveRoleModel/PositiveRoleModelPg2";
 import ParentKnowledgePg1 from "./session/parentKnowledge/ParentKnowledgePg1";
-
+import CognitiveSkillsPg1 from "./session/cognitiveSkills/CognitiveSkillsPg1";
+import MaterialResourcesPg1 from "./session/materialResources/MaterialResourcesPg1";
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
   const setUser = props.setUser;
@@ -743,6 +744,20 @@ const ApplicationViews = (props) => {
         path="/parent_knowledge_pg_1"
         render={(props) => {
           return <ParentKnowledgePg1 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/cognitive_skills_pg_1"
+        render={(props) => {
+          return <CognitiveSkillsPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/material_resources_pg_1"
+        render={(props) => {
+          return <MaterialResourcesPg1 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
     </React.Fragment>
