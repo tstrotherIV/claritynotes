@@ -91,6 +91,7 @@ import ParentingPg2 from "./session/parenting/ParentingPg2";
 import ParentingPg3 from "./session/parenting/ParentingPg3";
 import PositiveRoleModelPg1 from "./session/positiveRoleModel/PositiveRoleModelPg1";
 import PositiveRoleModelPg2 from "./session/positiveRoleModel/PositiveRoleModelPg2";
+import ParentKnowledgePg1 from "./session/parentKnowledge/ParentKnowledgePg1";
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -730,11 +731,18 @@ const ApplicationViews = (props) => {
           return <PositiveRoleModelPg1 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
-            <Route
+      <Route
         exact
         path="/positive_role_model_pg_2"
         render={(props) => {
           return <PositiveRoleModelPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/parent_knowledge_pg_1"
+        render={(props) => {
+          return <ParentKnowledgePg1 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
     </React.Fragment>
