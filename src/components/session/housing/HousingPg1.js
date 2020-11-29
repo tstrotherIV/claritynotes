@@ -1,11 +1,15 @@
 import React from "react";
 import "./housing.scss";
-import { Label, Input, Button } from "reactstrap";
+import { Label, Input } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
+import ButtonNavigation from '../../shared/ButtonNavigation';
   // pdf page 40
 
 function HousingPg1(props) {
+
+  const next = "/housing_pg_2";
+
   return (
     <>
       <div id="page-container">
@@ -55,37 +59,7 @@ function HousingPg1(props) {
       </div>
       </div>
       <div id="footer">
-      <div className="buttonSection">
-      <div className="idBox textWhite p-3"></div>
-        <Button
-          color="info"
-          className="button"
-          onClick={() => {
-            props.history.push(`/psychological_evaluation_report_summary`);
-          }}
-        >
-          Previous
-        </Button>
-        <Button color="info" className="button">
-          Save
-        </Button>
-        <Button color="info" className="button">
-          Submit
-        </Button>
-        <Button
-          color="info"
-          className="button"
-          onClick={() => {
-            props.history.push(`/housing_pg_2`);
-          }}
-        >
-          Next
-        </Button>
-        <div className="idBox textWhite p-3">
-          <div>Existing Patient: [Case #]</div>
-          <div>Patient ID: [Patient ID]</div>
-        </div>
-      </div>
+      <ButtonNavigation next={next} />
       <TermOfParentalRights />
       </div>
     </div>

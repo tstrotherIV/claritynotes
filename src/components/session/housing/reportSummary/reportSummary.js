@@ -1,8 +1,13 @@
 import React from "react";
-import { Button } from "reactstrap";
-import "./reportSummary.scss";
+import ButtonNavigation from '../../shared/ButtonNavigation';
 
-function PsychologicalEvaluationReportSummary(props) {
+import "./reportSummary.scss";
+//pdf page 39
+
+function ReportSummary(props) {
+
+  const next = "/HousingPg_1";
+
   return (
     <div className="page-container">
       <div  id="content-wrap" className="whiteBGD reportMinHeight">
@@ -42,40 +47,10 @@ function PsychologicalEvaluationReportSummary(props) {
           </div>
         </div>
         </div>
-
-        <div className="buttonSection mt-6" id="">
-          <Button
-            color="info"
-            className="button"
-            onClick={() => {
-              props.history.push(`/family_pg_15`);
-            }}
-          >
-            Previous
-          </Button>
-          <Button color="info" className="button">
-            Save
-          </Button>
-          <Button color="info" className="button">
-            Submit
-          </Button>
-          <Button
-            color="info"
-            className="button"
-            onClick={() => {
-              props.history.push(`/HousingPg_1`);
-            }}
-          >
-            Next
-          </Button>
-          <div className="p-3">
-            <div>Existing Patient: [Case #]</div>
-            <div>Patient ID: [Patient ID]</div>
-          </div>
-        </div>
+        <ButtonNavigation next={next} />
       </div>
     </div>
   );
 }
 
-export default PsychologicalEvaluationReportSummary;
+export default ReportSummary;
