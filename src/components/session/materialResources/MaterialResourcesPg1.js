@@ -1,11 +1,14 @@
 import React, {useState} from "react";
-import { Label, Input, Button, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
+import { Label, Input, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
-// pdf page 97
+import ButtonNavigation from '../../shared/ButtonNavigation';
 
+// pdf page 97
+  const next = '/behavioral_observations_and_testing_conditions_pg_1';
 
 function MaterialResourcesPg1(props) {
+
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
   
@@ -104,37 +107,7 @@ function MaterialResourcesPg1(props) {
       </div>
         </div>
         <div id="footer">
-          <div className="buttonSection">
-          <div className="idBox textWhite p-3"></div>
-            <Button
-              color="info"
-              className="button"
-              onClick={() => {
-                props.history.push(`/cognitive_skills_pg_1`);
-              }}
-            >
-              Previous
-            </Button>
-            <Button color="info" className="button">
-              Save
-            </Button>
-            <Button color="info" className="button">
-              Submit
-            </Button>
-            <Button
-              color="info"
-              className="button"
-              onClick={() => {
-                props.history.push(`/behavioral_observations_and_testing_conditions_pg_1`);
-              }}
-            >
-              Next
-            </Button>
-            <div className="idBox textWhite p-3">
-              <div>Existing Patient: [Case #]</div>
-              <div>Patient ID: [Patient ID]</div>
-            </div>
-          </div>
+          <ButtonNavigation next={next} />
           <TermOfParentalRights />
         </div>
       </div>

@@ -1,10 +1,14 @@
 import React from "react";
-import { Label, Input, Button } from "reactstrap";
+import { Label, Input} from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
-// pdf page 98
+import ButtonNavigation from '../../shared/ButtonNavigation';
+// pdf page 99
 
 function BehavioralObservationsAndTestingConditionsPg2(props) {
+  
+  const next = "/behavioral_observations_and_testing_conditions_pg_3";  
+
   return (
     <>  
     <div id="page-container">
@@ -37,39 +41,8 @@ function BehavioralObservationsAndTestingConditionsPg2(props) {
           ></Input>
         </div>
         </div>
-       
         <div id="footer">
-          <div className="buttonSection">
-          <div className="idBox textWhite p-3"></div>
-            <Button
-              color="info"
-              className="button"
-              onClick={() => {
-                props.history.push(`/behavioral_observations_and_testing_conditions_pg_1`);
-              }}
-            >
-              Previous
-            </Button>
-            <Button color="info" className="button">
-              Save
-            </Button>
-            <Button color="info" className="button">
-              Submit
-            </Button>
-            <Button
-              color="info"
-              className="button"
-              onClick={() => {
-                props.history.push(`/behavioral_observations_and_testing_conditions_pg_3`);
-              }}
-            >
-              Next
-            </Button>
-            <div className="idBox textWhite p-3">
-              <div>Existing Patient: [Case #]</div>
-              <div>Patient ID: [Patient ID]</div>
-            </div>
-          </div>
+          <ButtonNavigation next={next}  />
           <TermOfParentalRights />
         </div>
       </div>
