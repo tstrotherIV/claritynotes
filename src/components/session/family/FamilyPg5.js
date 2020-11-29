@@ -1,19 +1,24 @@
 import React from "react";
-import { Label, Input, Button } from "reactstrap";
+import { Label, Input } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
+import ButtonNavigation from '../../shared/ButtonNavigation';
+//pdf page 28
 
 function FamilyPg5(props) {
+
+  const next = "/family_pg_6";
+
   return (
     <>
     <div id="page-container">
     <div id="content-wrap">
     <Heading /> 
       <div className="header">
-        <h1 className="textWhite">Family</h1>
+        <h2 className="textWhite">Family</h2>
       </div>
-      
-      <h4 className="textWhite centerItem">
+      <div className="questionsContainer mt-4">
+      <h4 className="textWhite text-center">
         Did you feel loved and accepted by each parent, even when you
         disappointed them?
       </h4>
@@ -36,7 +41,7 @@ function FamilyPg5(props) {
             about that.” GET AS MUCH INFO AS POSSIBLE.
         </div>
       </div>   
-      <h4 className="textWhite centerItem">
+      <h4 className="textWhite centerItem mt-4">
         Do you remember a lot of fighting in the home growing up?
       </h4>
       <div className="interview_div1">
@@ -52,38 +57,9 @@ function FamilyPg5(props) {
         </div>
       </div>
       </div>
-      <div id="footer">
-      <div className="buttonSection">
-      <div className="idBox textWhite p-3"></div>
-        <Button
-          color="info"
-          className="button"
-          onClick={() => {
-            props.history.push(`/family_pg_4`);
-          }}
-        >
-          Previous
-        </Button>
-        <Button color="info" className="button">
-          Save
-        </Button>
-        <Button color="info" className="button">
-          Submit
-        </Button>
-        <Button
-          color="info"
-          className="button"
-          onClick={() => {
-            props.history.push(`/family_pg_6`);
-          }}
-        >
-          Next
-        </Button>
-        <div className="idBox textWhite p-3">
-          <div>Existing Patient: [Case #]</div>
-          <div>Patient ID: [Patient ID]</div>
-        </div>
       </div>
+      <div id="footer">
+      <ButtonNavigation next={next} />
       <TermOfParentalRights />
       </div>
     </div>

@@ -1,9 +1,13 @@
 import React from "react";
-import { Label, Input, Button } from "reactstrap";
+import { Label, Input } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
+import ButtonNavigation from '../../shared/ButtonNavigation';
 
 function FamilyPg12(props) {
+
+  const next = "/family_pg_13";
+
   return (
     <>
      <div id="page-container">
@@ -57,37 +61,7 @@ function FamilyPg12(props) {
       </div>
       </div>
       <div id="footer">
-      <div className="buttonSection">
-      <div className="idBox textWhite p-3"></div>
-        <Button
-          color="info"
-          className="button"
-          onClick={() => {
-            props.history.push(`/family_pg_11`);
-          }}
-        >
-          Previous
-        </Button>
-        <Button color="info" className="button">
-          Save
-        </Button>
-        <Button color="info" className="button">
-          Submit
-        </Button>
-        <Button
-          color="info"
-          className="button"
-          onClick={() => {
-            props.history.push(`/family_pg_13`);
-          }}
-        >
-          Next
-        </Button>
-        <div className="idBox textWhite p-3">
-          <div>Existing Patient: [Case #]</div>
-          <div>Patient ID: [Patient ID]</div>
-        </div>
-      </div>
+      <ButtonNavigation next={next} />
       <TermOfParentalRights />
       </div>
     </div>
