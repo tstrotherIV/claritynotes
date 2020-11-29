@@ -1,10 +1,14 @@
 import React from "react";
-import { Label, Input, Button } from "reactstrap";
+import { Label, Input } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
+import ButtonNavigation from '../../shared/ButtonNavigation';
 // pdf page 57
 
 function HistoryOfLegalPg7(props) {
+
+  const next = "/history_of_legal_pg_8";
+
   return (
     <>  
     <div id="page-container">
@@ -64,37 +68,7 @@ function HistoryOfLegalPg7(props) {
           </div>
         </div>
         <div id="footer">
-          <div className="buttonSection">
-          <div className="idBox textWhite p-3"></div>
-            <Button
-              color="info"
-              className="button"
-              onClick={() => {
-                props.history.push(`/history_of_legal_pg_6`);
-              }}
-            >
-              Previous
-            </Button>
-            <Button color="info" className="button">
-              Save
-            </Button>
-            <Button color="info" className="button">
-              Submit
-            </Button>
-            <Button
-              color="info"
-              className="button"
-              onClick={() => {
-                props.history.push(`/history_of_legal_pg_8`);
-              }}
-            >
-              Next
-            </Button>
-            <div className="idBox textWhite p-3">
-              <div>Existing Patient: [Case #]</div>
-              <div>Patient ID: [Patient ID]</div>
-            </div>
-          </div>
+          <ButtonNavigation next={next} />
           <TermOfParentalRights />
         </div>
       </div>

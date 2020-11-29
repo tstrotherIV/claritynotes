@@ -1,15 +1,19 @@
 import React from "react"; 
-import { Label, Input, Button } from "reactstrap";
+import { Label, Input } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
+import ButtonNavigation from '../../shared/ButtonNavigation';
 // pdf page 75
 
 function NeglectAbuseTraumaLossPg5(props) {
+
+  const next = "/perpetrator_of_neglect_and_abuse_pg_1";
+
   return (
     <>  
     <div id="page-container">
-        <Heading />
       <div id="content-wrap">
+        <Heading />
         <h2 className="textWhite text-center mb-4">NEGLECT <span>&#183;</span> ABUSE <span>&#183;</span> TRAUMA <span>&#183;</span> LOSS</h2>
         <div className="questionsContainer text-center">
           <h4 className="textWhite centerItem">Are there concerns, allegations, or assertions your child(ren) have been sexually abused, now or in the past?</h4>
@@ -49,37 +53,7 @@ function NeglectAbuseTraumaLossPg5(props) {
       </div>
         </div>
         <div id="footer">
-          <div className="buttonSection">
-          <div className="idBox textWhite p-3"></div>
-            <Button
-              color="info"
-              className="button"
-              onClick={() => {
-                props.history.push(`/neglect_abuse_trauma_loss_pg_4`);
-              }}
-            >
-              Previous
-            </Button>
-            <Button color="info" className="button">
-              Save
-            </Button>
-            <Button color="info" className="button">
-              Submit
-            </Button>
-            <Button
-              color="info"
-              className="button"
-              onClick={() => {
-                props.history.push(`/perpetrator_of_neglect_and_abuse_pg_1`);
-              }}
-            >
-              Next
-            </Button>
-            <div className="idBox textWhite p-3">
-              <div>Existing Patient: [Case #]</div>
-              <div>Patient ID: [Patient ID]</div>
-            </div>
-          </div>
+          <ButtonNavigation next={next} />
           <TermOfParentalRights />
         </div>
       </div>
