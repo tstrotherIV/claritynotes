@@ -1,14 +1,14 @@
 import React from "react";
-import {
-  Label,
-  Input,
-  Button,
-} from "reactstrap";
+import { Label, Input } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
+import ButtonNavigation from '../../shared/ButtonNavigation';
 import "./interviews.scss";
 
 function Interview_Pg9(props) {
+
+  const next = "/family_pg_1";
+
   return (
     <>
       <div id="page-container">
@@ -60,34 +60,7 @@ function Interview_Pg9(props) {
       </div>
       </div>
       <div id="footer">
-      <div className="buttonSection">
-      <div className="idBox textWhite p-3"></div>
-        <Button
-          color="info"
-          className="button"
-          onClick={() => {
-            props.history.push(`/interview_pg_8`);
-          }}
-        >
-          Previous
-        </Button>
-        <Button color="info" className="button">
-          Save
-        </Button>
-        <Button color="info" className="button">
-          Submit
-        </Button>
-        <Button
-          color="info"
-          className="button"
-          onClick={() => {
-            props.history.push(`/family_pg_1`);
-          }}
-        >
-          Next
-        </Button>
-        <div className="idBox textWhite p-3"></div>
-      </div>
+      <ButtonNavigation next={next} />
       <TermOfParentalRights />
       </div>
     </div>

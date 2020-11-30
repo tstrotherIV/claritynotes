@@ -14,11 +14,12 @@ function FamilyPg13(props) {
       <div id="content-wrap">
     <Heading />       
       <div className="header">
-        <h1 className="textWhite">Family</h1>
+        <h2 className="textWhite">Family</h2>
       </div>
-      <h4 className="textWhite centerItem">
+      <div className="questionsContainerWide">
+      <h5 className="textWhite centerItem mt-4">
       How did they shape your view of the world?
-      </h4>
+      </h5>
       <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
@@ -32,9 +33,9 @@ function FamilyPg13(props) {
           />
         </div>
       </div>
-      <h4 className="textWhite centerItem">
+      <h5 className="textWhite centerItem mt-4">
       Was there ever anyone that was more important to you than your biological family?
-      </h4>
+      </h5>
       <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
@@ -47,7 +48,7 @@ function FamilyPg13(props) {
           />
         </div>
       </div>
-      <h4 className="textWhite centerItem ">If so, who and why?</h4>
+      <h5 className="textWhite centerItem mt-4">If so, who and why?</h5>
       <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
@@ -61,6 +62,7 @@ function FamilyPg13(props) {
         </div>
       </div>
       </div>
+      </div> 
       <div id="footer">
       <ButtonNavigation next={next} />
       <TermOfParentalRights />

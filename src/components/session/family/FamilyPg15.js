@@ -15,11 +15,11 @@ function FamilyPg15(props) {
       <div id="content-wrap">
     <Heading /> 
       <div className="header">
-        <h1 className="textWhite">Family</h1>
+        <h2 className="textWhite">Family</h2>
       </div>
-      <h4 className="textWhite centerItem">
+      <h5 className="textWhite centerItem mt-4">
       What are your values and goals?
-      </h4>
+      </h5>
       <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
@@ -32,9 +32,9 @@ function FamilyPg15(props) {
           />
         </div>
       </div>     
-      <h4 className="textWhite centerItem">
+      <h5 className="textWhite centerItem mt-4">
       How did your leaving home occur? How old were you? Was it on positive terms?
-      </h4>
+      </h5>
       <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
