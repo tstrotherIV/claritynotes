@@ -15,7 +15,7 @@ function Interview_Pg9(props) {
       <div id="content-wrap">
     <Heading /> 
       <div className="header questionsContainerWide">
-        <h1 className="textWhite">Interviews</h1>
+        <h2 className="textWhite">Interviews</h2>
       </div>
       <h4 className="textWhite centerItem">
         What do you think you need to work on?

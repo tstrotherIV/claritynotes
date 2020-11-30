@@ -14,7 +14,7 @@ function FamilyPg1(props) {
     <div id="content-wrap">
       <Heading />    
       <div className="header">
-        <h1 className="textWhite">Family</h1>
+        <h2 className="textWhite">Family</h2>
       </div>
       <div className="questionsContainerWide d-flex flex-wrap justify-content-center align-items-baseline m-2">
               <Label className="textWhite m-1" for="">

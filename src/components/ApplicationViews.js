@@ -4,7 +4,6 @@ import Login from "./login/login"
 import CreateUser from "./createUser/createUser";
 import PatientHomePage from "./patient/patientHome";
 import SessionStep1 from "./session/sessionBeginning/sessionHome";
-
 import PsychologicalEvaluation from "./session/psychologicalEvaluation/psychologicalEvaluation";
 import PsychologicalEvaluationFamily from "./session/psychologicalEvaluationFamily/PsychologicalEvaluationFamily";
 import PsychologicalEvaluationSiblings from "./session/psychologicalEvaluationFamily/PsychologicalEvaluationSiblings";

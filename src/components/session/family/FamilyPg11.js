@@ -3,21 +3,17 @@ import { Label, Input } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
-import AdditionalNotes from '../../shared/AdditionalNotes';
+import TextareaAutosize from 'react-textarea-autosize';
 
 function FamilyPg11(props) {
 
   const next = "/family_pg_12";
   
-
   return (
     <>
       <div id="page-container">
-      <div id="content-wrap">
-      
+      <div id="content-wrap">      
     <Heading /> 
-
-    
       <div className="header">
         <h2 className="textWhite">Family</h2>
       </div>
@@ -58,15 +54,13 @@ function FamilyPg11(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <AdditionalNotes />
-          <textarea
+          <TextareaAutosize
             className="interview_fieldData"
             type="text"
             id=""
           />
         </div>
-      </div>
-      
+      </div>      
       </div>
       </div>
       <div id="footer">

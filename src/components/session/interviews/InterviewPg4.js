@@ -13,11 +13,13 @@ import {
   ModalFooter,
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
-
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
+import ButtonNavigation from '../../shared/ButtonNavigation';
 import "./interviews.scss";
 
 function InterviewPg4(props) {
+  const next = "/family_pg_5";
+
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const [modal, setModal] = useState(false);
 
@@ -30,7 +32,7 @@ function InterviewPg4(props) {
     <div id="content-wrap">
       <Heading />
       <div className="header">
-        <h1 className="textWhite">Interviews</h1>
+        <h2 className="textWhite">Interviews</h2>
       </div>
 
       <h4 className="textWhite centerItem">What steps have you taken with DHR already?</h4>
@@ -127,37 +129,7 @@ function InterviewPg4(props) {
           </div>
       </div>
       <div id="footer">
-      <div className="buttonSection">
-      <div className="idBox textWhite p-3"></div>
-        <Button
-          color="info"
-          className="button"
-          onClick={() => {
-            props.history.push(`/interview_pg_3`);
-          }}
-        >
-          Previous
-        </Button>
-        <Button color="info" className="button">
-          Save
-        </Button>
-        <Button color="info" className="button">
-          Submit
-        </Button>
-        <Button
-          color="info"
-          className="button"
-          onClick={() => {
-            props.history.push(`/interview_pg_5`);
-          }}
-        >
-          Next
-        </Button>
-        <div className="idBox textWhite p-3">
-              <div className="displayNone">Existing Patient: [Case #]</div>
-              <div className="displayNone">Patient ID: [Patient ID]</div>
-            </div>
-      </div>
+      <ButtonNavigation next={next} />
       <TermOfParentalRights />
       </div>
       </div> 

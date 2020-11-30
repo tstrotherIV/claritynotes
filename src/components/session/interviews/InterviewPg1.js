@@ -14,9 +14,12 @@ import {
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
+import ButtonNavigation from '../../shared/ButtonNavigation';
 import "./interviews.scss";
 
 function InterviewPg1(props) {
+
+  const next = "/family_pg_2";
 
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const [modal, setModal] = useState(false);
@@ -30,7 +33,7 @@ function InterviewPg1(props) {
       <div id="content-wrap">
     <Heading />   
         <div className="header">
-          <h1 className="textWhite">Interviews</h1>
+          <h2 className="textWhite">Interviews</h2>
           <h5 className="textWhite">
             Perspective from [Patient Name, First] [Patient Name, Last]:
           </h5>
@@ -127,38 +130,8 @@ function InterviewPg1(props) {
         </div>
       </div>
       <div id="footer">
-        <div className="buttonSection">
-        <div className="idBox textWhite p-3"></div>
-          <Button
-            color="info"
-            className="button"
-            onClick={() => {
-              props.history.push(`/psychological_evaluation_additional_data`);
-            }}
-          >
-            Previous
-          </Button>
-          <Button color="info" className="button">
-            Save
-          </Button>
-          <Button color="info" className="button">
-            Submit
-          </Button>
-          <Button
-            color="info"
-            className="button"
-            onClick={() => {
-              props.history.push(`/interview_pg_2`);
-            }}
-          >
-            Next
-          </Button>
-          <div className="idBox textWhite p-3">
-              <div className="displayNone">Existing Patient: [Case #]</div>
-              <div className="displayNone">Patient ID: [Patient ID]</div>
-            </div>
-        </div>
-        <TermOfParentalRights />
+      <ButtonNavigation next={next} />
+      <TermOfParentalRights />
       </div>
     </div>
     </>

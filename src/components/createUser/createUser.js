@@ -5,9 +5,9 @@ import { Col, Label, Input, Container, Row, Button } from "reactstrap";
 function CreateUser() {
   return (
     <>
-      <h1 className="titleFontSize whiteBgd d-flex justify-content-center">
+      <h2 className="titleFontSize whiteBgd d-flex justify-content-center">
         New User Creation
-      </h1>
+      </h2>
       <Container>
         <Row xs="2" className="" >
           <Col className="">

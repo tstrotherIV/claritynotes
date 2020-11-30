@@ -14,7 +14,7 @@ function FamilyPg2(props) {
   <div id="content-wrap">
       <Heading /> 
       <div className="header">
-        <h1 className="textWhite">Family</h1>
+        <h2 className="textWhite">Family</h2>
       </div>
       <h4 className="textWhite centerItem">
       Were different people involved?

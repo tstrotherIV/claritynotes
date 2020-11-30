@@ -14,9 +14,13 @@ import {
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
+import ButtonNavigation from '../../shared/ButtonNavigation';
 import "./interviews.scss";
 
 function Interview_Pg2(props) {
+
+  const next = "/family_pg_3";
+
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const [modal, setModal] = useState(false);
 
@@ -29,7 +33,7 @@ function Interview_Pg2(props) {
       <div id="content-wrap">
       <Heading />
       <div className="header">
-        <h1 className="textWhite">Interviews</h1>
+        <h2 className="textWhite">Interviews</h2>
       </div>
       <h4 className="textWhite centerItem">What has DHR alleged?</h4>
       <div className="interview_div1">
@@ -127,37 +131,7 @@ function Interview_Pg2(props) {
       </div>
       </div>
       <div id="footer">
-      <div className="buttonSection">
-      <div className="idBox textWhite p-3"></div>
-        <Button
-          color="info"
-          className="button"
-          onClick={() => {
-            props.history.push(`/interview_pg_1`);
-          }}
-        >
-          Previous
-        </Button>
-        <Button color="info" className="button">
-          Save
-        </Button>
-        <Button color="info" className="button">
-          Submit
-        </Button>
-        <Button
-          color="info"
-          className="button"
-          onClick={() => {
-            props.history.push(`/interview_pg_3`);
-          }}
-        >
-          Next
-        </Button>
-        <div className="idBox textWhite p-3">
-              <div className="displayNone">Existing Patient: [Case #]</div>
-              <div className="displayNone">Patient ID: [Patient ID]</div>
-            </div>
-      </div>
+      <ButtonNavigation next={next} />  
       <TermOfParentalRights />
       </div>
       </div>

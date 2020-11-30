@@ -3,19 +3,23 @@ import "./psychologicalEvaluationFamily.scss";
 import {
   Label,
   Input,
-  Button,
   Dropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
+import ButtonNavigation from '../../shared/ButtonNavigation';
 
 function PsychologicalEvaluation_spouse(props) {
+
+  const next = "/psychological_evaluation_consent";
+
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const [dropdownOpen2, setDropdownOpen2] = useState(false);
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
   const toggle2 = () => setDropdownOpen2((prevState) => !prevState);
+  
 
   return (
     <>
@@ -93,22 +97,7 @@ function PsychologicalEvaluation_spouse(props) {
       </div>
       </div>
       <div id="footer">
-      <div className="buttonSection">
-      <div className="idBox textWhite p-3"></div>
-      <Button color="info" className="button" onClick={() => {
-            props.history.push(`/psychological_evaluation_children`);
-          }}>Previous</Button>
-        <Button color="info" className="button">
-          Save
-        </Button>
-        <Button color="info" className="button">
-          Submit
-        </Button>
-        <Button color="info" className="button" onClick={() => {
-            props.history.push(`/psychological_evaluation_consent`);
-          }}>Next</Button>
-      <div className="idBox textWhite p-3"></div> 
-      </div>
+      <ButtonNavigation next={next} />
       </div>
       </div>
     </>

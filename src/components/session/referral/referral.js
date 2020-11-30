@@ -1,10 +1,12 @@
 import React from "react";
-import { Button } from "reactstrap";
 import EmptyFooterSpace from "../../shared/EmptyFooterSpace";
 import "./referral.scss";
-
+import ButtonNavigation from '../../shared/ButtonNavigation';
 
 function PsychologicalEvaluationReferral(props) {
+
+  const next = "/psychological_evaluation_additional_data";
+
   return (
     <div id="page-container">
     <div id="content-wrap" className="whiteBGD reportMinHeight">
@@ -27,38 +29,8 @@ function PsychologicalEvaluationReferral(props) {
         </div>
         </div>
         <div id="footer">
-        <div className="buttonSection">
-        <div className="idBox textWhite p-3"></div>
-          <Button
-            color="info"
-            className="button"
-            onClick={() => {
-              props.history.push(`/psychological_evaluation_consent`);
-            }}
-          >
-            Previous
-          </Button>
-          <Button color="info" className="button">
-            Save
-          </Button>
-          <Button color="info" className="button">
-            Submit
-          </Button>
-          <Button
-            color="info"
-            className="button"
-            onClick={() => {
-              props.history.push(`/psychological_evaluation_additional_data`);
-            }}
-          >
-            Next
-          </Button>
-          <div className="idBox textWhite p-3">
-              <div className="displayNone">Existing Patient: [Case #]</div>
-              <div className="displayNone">Patient ID: [Patient ID]</div>
-      </div>
-    </div>
-    <EmptyFooterSpace />
+        <ButtonNavigation next={next} />
+        <EmptyFooterSpace />
     </div>
     </div>
   );

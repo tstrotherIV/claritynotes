@@ -1,9 +1,11 @@
 import React from "react";
-import { Button } from "reactstrap";
 import EmptyFooterSpace from '../../shared/EmptyFooterSpace';
+import ButtonNavigation from '../../shared/ButtonNavigation';
 import "./additionalData.scss";
 
 function PsychologicalEvaluationAdditionalData(props) {
+
+  const next = "/family_pg_1";
   return (
     <>
     <div id="page-container" className="sessionStepContainer">
@@ -11,7 +13,7 @@ function PsychologicalEvaluationAdditionalData(props) {
       <div className="whiteBGD">
         <div className="centerContent">
           <div className="d-flex justify-content-center mt-5">
-            <h1>Psychological Evaluation</h1>
+            <h2>Psychological Evaluation</h2>
           </div>
           <div className="d-flex justify-content-center mt-5">
             <h2>Additional Data</h2>
@@ -27,37 +29,7 @@ function PsychologicalEvaluationAdditionalData(props) {
         </div>
         </div>
         <div id="footer">
-        <div className="buttonSection">
-        <div className="idBox textWhite p-3"></div>
-          <Button
-            color="info"
-            className="button"
-            onClick={() => {
-              props.history.push(`/psychological_evaluation_referral`);
-            }}
-          >
-            Previous
-          </Button>
-          <Button color="info" className="button">
-            Save
-          </Button>
-          <Button color="info" className="button">
-            Submit
-          </Button>
-          <Button
-            color="info"
-            className="button"
-            onClick={() => {
-              props.history.push(`/interview_pg_1`);
-            }}
-          >
-            Next
-          </Button>
-          <div className="idBox textWhite p-3">
-              <div className="displayNone">Existing Patient: [Case #]</div>
-              <div className="displayNone">Patient ID: [Patient ID]</div>
-            </div>
-        </div>
+        <ButtonNavigation next={next} />  
         <EmptyFooterSpace />
         </div>
         </div>
