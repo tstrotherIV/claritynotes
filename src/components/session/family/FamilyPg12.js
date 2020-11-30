@@ -14,11 +14,12 @@ function FamilyPg12(props) {
       <div id="content-wrap">
     <Heading /> 
       <div className="header">
-        <h1 className="textWhite">Family</h1>
+        <h2 className="textWhite">Family</h2>
       </div>
-      <h4 className="textWhite centerItem">
+      <div className="questionsContainerWide">
+      <h5 className="textWhite centerItem mt-4">
       How do these memories impact your parenting?
-      </h4>
+      </h5>
       <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
@@ -31,9 +32,9 @@ function FamilyPg12(props) {
           />
         </div>
       </div> 
-      <h4 className="textWhite centerItem">
+      <h5 className="textWhite text-center mt-4">
       Tell me about your most serious relationship that did not result in cohabitation; which can include non-sexual friendships with the same or opposite sex.
-      </h4>
+      </h5>
       <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
@@ -46,7 +47,7 @@ function FamilyPg12(props) {
           />
         </div>
       </div>      
-      <h4 className="textWhite centerItem ">Tell me more about relationships with children, teachers, supervisors, schoolmates, bosses, or workmates of any importance.</h4>
+      <h5 className="textWhite centerItem text-center mt-4">Tell me more about relationships with children, teachers, supervisors, schoolmates, bosses, or workmates of any importance.</h5>
       <div className="interview_div1">
         <div className="interview_line1">
           <Label className="textWhite interview_title" for="">
@@ -58,6 +59,7 @@ function FamilyPg12(props) {
             id=""
           />
         </div>
+      </div>
       </div>
       </div>
       <div id="footer">
