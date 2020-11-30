@@ -14,7 +14,7 @@ function FamilyPg6(props) {
       <div id="content-wrap">
     <Heading /> 
       <div className="header">
-        <h1 className="textWhite">Family</h1>
+        <h2 className="textWhite">Family</h2>
       </div>
       <h4 className="textWhite centerItem">
         Was there a lot of drinking in the home growing up?

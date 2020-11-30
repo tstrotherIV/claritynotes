@@ -13,8 +13,9 @@ function FamilyPg10(props) {
     <div id="page-container">
     <div id="content-wrap">
     <Heading /> 
+    <div className="questionsContainerWide">
       <div className="header">
-        <h1 className="textWhite">Family</h1>
+        <h2 className="textWhite">Family</h2>
       </div>
       <h4 className="textWhite centerItem">
         What is your least favorite childhood memory?
@@ -53,6 +54,7 @@ function FamilyPg10(props) {
             />
           </div>
         </div>
+      </div>
       </div>
       </div>
       <div id="footer">

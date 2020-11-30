@@ -3,15 +3,19 @@ import "./psychologicalEvaluationFamily.scss";
 import {
   Label,
   Input,
-  Button,
   Dropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
+import ButtonNavigation from '../../shared/ButtonNavigation';
+
 
 function PsychologicalEvaluation_family(props) {
+
+  const next = "/psychological_evaluation_siblings";
+
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
 
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
@@ -117,23 +121,7 @@ function PsychologicalEvaluation_family(props) {
         </div>
         </div>
       <div id="footer"> 
-      <div className="buttonSection">
-      <div className="idBox textWhite p-3">
-      </div>
-      <Button color="info" className="button" onClick={() => {
-            props.history.push(`/psychological_evaluation`);
-          }}>Previous</Button>
-        <Button color="info" className="button">
-          Save
-        </Button>
-        <Button color="info" className="button">
-          Submit
-        </Button>
-        <Button color="info" className="button" onClick={() => {
-            props.history.push(`/psychological_evaluation_siblings`);
-        }}>Next</Button>
-      <div className="idBox textWhite p-3"></div>
-      </div>
+      <ButtonNavigation next={next} />
       </div>
       </div>
       </div>

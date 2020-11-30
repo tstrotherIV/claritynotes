@@ -14,6 +14,7 @@ import {
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
+import ButtonNavigation from '../../shared/ButtonNavigation';
 import "./interviews.scss";
 
 function InterviewPg7(props) {
@@ -23,13 +24,15 @@ function InterviewPg7(props) {
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
   const toggle3 = () => setModal(!modal);
 
+  const next = "/family_pg_8";
+
   return (
     <>
        <div id="page-container">
       <div id="content-wrap">
       <Heading />
       <div className="header">
-        <h1 className="textWhite">Interviews</h1>
+        <h2 className="textWhite">Interviews</h2>
       </div>
       <h4 className="textWhite centerItem">
       How do you typically discipline your child when they misbehave?
@@ -140,37 +143,7 @@ function InterviewPg7(props) {
       </div>
          </div>
       <div id="footer">
-      <div className="buttonSection">
-      <div className="idBox textWhite p-3"></div>
-        <Button
-          color="info"
-          className="button"
-          onClick={() => {
-            props.history.push(`/interview_pg_5`);
-          }}
-        >
-          Previous
-        </Button>
-        <Button color="info" className="button">
-          Save
-        </Button>
-        <Button color="info" className="button">
-          Submit
-        </Button>
-        <Button
-          color="info"
-          className="button"
-          onClick={() => {
-            props.history.push(`/interview_pg_8`);
-          }}
-        >
-          Next
-        </Button>
-        <div className="idBox textWhite p-3">
-              <div className="displayNone">Existing Patient: [Case #]</div>
-              <div className="displayNone">Patient ID: [Patient ID]</div>
-            </div>
-      </div>
+      <ButtonNavigation next={next} />
       <TermOfParentalRights />
       </div>
     </div>

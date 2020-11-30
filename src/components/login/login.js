@@ -7,9 +7,9 @@ function Login(props) {
     <div className="textWhite mt-5 mb-5">
       <Container className="mt-5">
         <div className="text-center mt-5">
-          <h1 className="mt-5 loginTitle">
+          <h2 className="mt-5 loginTitle">
             CLARITYNOTES
-          </h1>
+          </h2>
           <h2 className="">
           Enhancing Perspective with Psychological Assessment
           </h2>

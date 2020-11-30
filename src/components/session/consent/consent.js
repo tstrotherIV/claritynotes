@@ -1,16 +1,20 @@
 import React from "react";
-import { Label, Input, Button } from "reactstrap";
+import { Label, Input } from "reactstrap";
 import "./consent.scss";
+import ButtonNavigation from '../../shared/ButtonNavigation';
 import EmptyFooterSpace from "../../shared/EmptyFooterSpace";
 
 function PsychologicalEvaluationConsent(props) {
+
+  const next = "/psychological_evaluation_referral";
+
   return (
     <div id="page-container">
     <div id="content-wrap" className="whiteBGD reportMinHeight">
       <div className="whiteBGD ">
         <div className="centerContent">
           <div className="d-flex justify-content-center mt-5">
-            <h1>Psychological Evaluation</h1>
+            <h2>Psychological Evaluation</h2>
           </div>
           <div className="d-flex justify-content-center mt-5">
             <h2>Consent</h2>
@@ -39,37 +43,7 @@ function PsychologicalEvaluationConsent(props) {
         
           </div>
         <div id="footer">
-        <div className="buttonSection">
-        <div className="idBox textWhite p-3"></div>
-          <Button
-            color="info"
-            className="button"
-            onClick={() => {
-              props.history.push(`/psychological_evaluation_spouse`);
-            }}
-          >
-            Previous
-          </Button>
-          <Button color="info" className="button">
-            Save
-          </Button>
-          <Button color="info" className="button">
-            Submit
-          </Button>
-          <Button
-            color="info"
-            className="button"
-            onClick={() => {
-              props.history.push(`/psychological_evaluation_referral`);
-            }}
-          >
-            Next
-          </Button>
-          <div className="idBox textWhite p-3">
-              <div className="displayNone">Existing Patient: [Case #]</div>
-              <div className="displayNone">Patient ID: [Patient ID]</div>
-      </div>
-        </div>
+      <ButtonNavigation next={next} />
       <EmptyFooterSpace />
       </div>
       </div>

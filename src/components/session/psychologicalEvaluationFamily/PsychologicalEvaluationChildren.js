@@ -3,16 +3,18 @@ import "./psychologicalEvaluationFamily.scss";
 import {
   Label,
   Input,
-  Button,
   Dropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
-
+import ButtonNavigation from '../../shared/ButtonNavigation';
 
 function PsychologicalEvaluation_siblings(props) {
+
+  const next = "/psychological_evaluation_spouse";
+
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
 
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
@@ -87,27 +89,10 @@ function PsychologicalEvaluation_siblings(props) {
         <div className="d-flex justify-content-center">
             <div className="textWhite"><i className="fas fa-plus fa-lg ml-5 mt-3 mr-2"></i>Click to Add More Children</div>
           </div>
-   
       </div>
       </div>
       <div id="footer">
-      <div className="buttonSection">
-      <div className="idBox textWhite p-3"></div>
-      <Button color="info" className="button" onClick={() => {
-            props.history.push(`/psychological_evaluation_siblings`);
-          }}>Previous</Button>
-        <Button color="info" className="button">
-          Save
-        </Button>
-        <Button color="info" className="button">
-          Submit
-        </Button>
-        <Button color="info" className="button" onClick={() => {
-            props.history.push(`/psychological_evaluation_spouse`);
-          }}>Next</Button>          
-          <div className="idBox textWhite p-3"></div>
-
-      </div>
+      <ButtonNavigation next={next} />
       </div>
       </div>
     </>

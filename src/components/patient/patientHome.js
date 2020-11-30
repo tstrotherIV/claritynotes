@@ -10,7 +10,7 @@ function PatientHomePage(props) {
     <>
     <div className="container addMargin">
       <div className="mt-5 aligner">
-        <h1 className="textWhite textLarger">Welcome {USERNAME}!</h1>
+        <h2 className="textWhite textLarger">Welcome {USERNAME}!</h2>
       </div>
       <p className="textWhite aligner mb-5">
         Please select an option
