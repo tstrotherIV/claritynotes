@@ -3,6 +3,8 @@ import { Label, Input } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
+
 // pdf page 69
 
 function MentalHealthHistoryPg4(props) {
@@ -22,8 +24,8 @@ function MentalHealthHistoryPg4(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
           />
@@ -33,8 +35,8 @@ function MentalHealthHistoryPg4(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
           />
@@ -44,8 +46,8 @@ function MentalHealthHistoryPg4(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
           />
@@ -55,7 +57,10 @@ function MentalHealthHistoryPg4(props) {
         </div>
         <div className="siblingsFields">
           <div className="m-1">
-            <Input type="checkbox" name="" id="" />
+            <Input 
+            type="checkbox" 
+            className="" 
+            id="" />
             <Label className="textWhite" for="firstName">
             [Patient Name, First] denied any current intent or plan.
             </Label>

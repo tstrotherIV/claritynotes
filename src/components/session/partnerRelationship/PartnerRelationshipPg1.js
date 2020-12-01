@@ -1,8 +1,10 @@
 import React from "react";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
+
 // pdf page 80
 
 function PartnerRelationshipPg1(props) {
@@ -24,8 +26,8 @@ function PartnerRelationshipPg1(props) {
           <div className="col-3 d-flex flex-wrap align-items-end m-0 p-0">
           <Label className="textWhite">
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
           />
@@ -33,8 +35,8 @@ function PartnerRelationshipPg1(props) {
           <div className="col-3 d-flex flex-wrap align-items-end ml-2 justify-content-center align-content-end">
           <Label className="textWhite" for="">
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
             />
@@ -42,8 +44,8 @@ function PartnerRelationshipPg1(props) {
         <div className="col-3 d-flex flex-wrap align-items-end justify-content-center ml-2 p-0 align-content-end">
           <Label className="textWhite" for="">
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
             />
@@ -58,19 +60,19 @@ function PartnerRelationshipPg1(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
           />
         </div>
         <h4 className="textWhite centerItem">Are you currently married/in a relationship?</h4>
         <div className="interview_line1 mb-4">
-          <Label className="textWhite">
+          <Label className="textWhite interview_title">
             [Patient Name, First] said:        
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
           />    

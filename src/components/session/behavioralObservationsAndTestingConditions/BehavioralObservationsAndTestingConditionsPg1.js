@@ -1,8 +1,10 @@
 import React from "react";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
+import TextareaAutosize from 'react-textarea-autosize';
+
 // pdf page 98
 
 function BehavioralObservationsPg1(props) {
@@ -22,21 +24,21 @@ function BehavioralObservationsPg1(props) {
           <Label className="text-white text-center">
           How did they express emotions?
           </Label>
-          <Input 
-          className=""
+          <TextareaAutosize  
+          className="fieldData"
           type="text"
           id=""
-          ></Input>
+          />
           </div>
           <div className="d-flex flex-wrap col-6 justify-content-center">     
           <Label className="text-white text-center">
           What was the person's conduct in the office?
           </Label>
-          <Input 
-          className=""
+          <TextareaAutosize  
+          className="fieldData"
           type="text"
           id=""
-          ></Input>
+          />
           </div>
           </div>
           <div className="row mt-5">
@@ -45,22 +47,22 @@ function BehavioralObservationsPg1(props) {
           What was the person's conduct in the office?
           Withdrawn, Hoodie Shirt, Clingy, Needy, Aggressive, Frightening
           </Label>
-          <Input 
-          className=""
+          <TextareaAutosize  
+          className="fieldData"
           type="text"
           id=""
-          ></Input>
+          />
           </div>
           <div className="d-flex flex-wrap col-6 justify-content-center align-items-end">     
           <Label className="textWhite d-flex text-center align-items-end m-0 p-0">
           Are they able to focus?
           </Label>
-          <Input 
-          className="m-0 p-0"
+          <TextareaAutosize  
+          className="fieldData"
           type="text"
           id=""
           placeholder=""
-          ></Input>
+          />
           </div>
           </div>
 
@@ -69,22 +71,22 @@ function BehavioralObservationsPg1(props) {
           <Label className="text-white text-center mt-2 mb-2">
          Able to synthesize information presented?
           </Label>
-          <Input 
-          className=""
+          <TextareaAutosize  
+          className="fieldData"
           type="text"
           id=""
-          ></Input>
+          />
           </div>
           <div className="d-flex flex-wrap col-6 justify-content-center align-items-end">     
           <Label className="textWhite d-flex text-center align-items-end m-0 p-0">
           How do they observe the office and people around them?
           </Label>
-          <Input 
-          className="m-0 p-0"
+          <TextareaAutosize  
+          className="fieldData"
           type="text"
           id=""
           placeholder=""
-          ></Input>
+          />
           </div>
           </div>
 

@@ -1,8 +1,10 @@
 import React from "react";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
+
 // pdf page 93
 
 function PositiveRoleModelPg1(props) {
@@ -23,8 +25,8 @@ function PositiveRoleModelPg1(props) {
               [Patient Name, First]
           </Label>
           <div className="m-2">he/she</div>
-          <Input
-              className="col-2 mr-2 mb-2"
+          <TextareaAutosize              
+              className="col-2 mr-2 mb-2 fieldData"
               type="text"
               id=""
               placeholder="does/does not"
@@ -36,15 +38,15 @@ function PositiveRoleModelPg1(props) {
               [Patient Name, First]
           </Label>
           <div className="m-2">he/she</div>
-          <Input
-              className="col-2 mr-2 mb-2"
+          <TextareaAutosize              
+              className="col-2 mr-2 mb-2 fieldData"
               type="text"
               id=""
               placeholder="does/does not"
             />
             drink alcohol and  
-            <Input
-              className="col-2 mr-2 ml-2 mb-2"
+            <TextareaAutosize              
+              className="col-2 mr-2 ml-2 mb-2 fieldData"
               type="text"
               id=""
               placeholder="confirms/denies"
@@ -55,8 +57,8 @@ function PositiveRoleModelPg1(props) {
         <Label className="textWhite col-3 text-right" for="">
             [Patient Name, First]
         </Label> 
-        <Input
-              className="col-2 mr-2 ml-2 mb-2"
+        <TextareaAutosize              
+              className="col-2 mr-2 ml-2 mb-2 fieldData"
               type=""
               id=""
               placeholder="confirms/denies"
@@ -67,8 +69,8 @@ function PositiveRoleModelPg1(props) {
         <Label className="textWhite col-3 text-right" for="">
             [Patient Name, First]
         </Label> 
-        <Input
-              className="col-2 mr-2 ml-2 mb-2"
+        <TextareaAutosize              
+              className="col-2 mr-2 ml-2 mb-2 fieldData"
               type=""
               id=""
               placeholder="confirms/denies"
@@ -79,8 +81,8 @@ function PositiveRoleModelPg1(props) {
         <Label className="textWhite col-3 text-right" for="">
             [Patient Name, First]
         </Label> 
-        <Input
-              className="col-2 mr-2 ml-2 mb-2"
+        <TextareaAutosize              
+              className="col-2 mr-2 ml-2 mb-2 fieldData"
               type=""
               id=""
               placeholder="confirms/denies"
@@ -91,8 +93,8 @@ function PositiveRoleModelPg1(props) {
         <Label className="textWhite col-3 text-right" for="">
             [Patient Name, First]
         </Label> 
-        <Input
-              className="col-2 mr-2 ml-2 mb-2"
+        <TextareaAutosize               
+              className="col-2 mr-2 ml-2 mb-2 fieldData"
               type=""
               id=""
               placeholder="confirms/denies"
@@ -107,8 +109,8 @@ function PositiveRoleModelPg1(props) {
           <div className="col-3 d-flex flex-wrap align-items-end m-0 p-0">
           <Label className="textWhite">
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
           />
@@ -116,8 +118,8 @@ function PositiveRoleModelPg1(props) {
           <div className="col-3 d-flex flex-wrap align-items-end ml-2 justify-content-center align-content-end">
           <Label className="textWhite" for="">
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
             />
@@ -125,8 +127,8 @@ function PositiveRoleModelPg1(props) {
         <div className="col-3 d-flex flex-wrap align-items-end justify-content-center ml-2 p-0 align-content-end">
           <Label className="textWhite" for="">
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
             />

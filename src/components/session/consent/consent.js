@@ -1,8 +1,8 @@
 import React from "react";
 import { Label, Input } from "reactstrap";
-import "./consent.scss";
 import ButtonNavigation from '../../shared/ButtonNavigation';
 import EmptyFooterSpace from "../../shared/EmptyFooterSpace";
+import "./consent.scss";
 
 function PsychologicalEvaluationConsent(props) {
 

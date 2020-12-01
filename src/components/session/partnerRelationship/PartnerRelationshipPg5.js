@@ -1,8 +1,10 @@
 import React from "react"; 
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
+
 // pdf page 84
 
 function PartnerRelationshipPg5(props) {
@@ -22,8 +24,8 @@ function PartnerRelationshipPg5(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
           />
@@ -34,8 +36,8 @@ function PartnerRelationshipPg5(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
           />
@@ -45,8 +47,8 @@ function PartnerRelationshipPg5(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
           />

@@ -1,8 +1,9 @@
 import React from "react";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
 // pdf page 44
 
 function EducationPg1(props) {
@@ -21,16 +22,16 @@ function EducationPg1(props) {
           </Label>
           <div className="d-flex flex-wrap justify-content-center col-4">
           <p className="textWhite">Did you quit school?</p>
-          <Input
-            className="col-10"
+          <TextareaAutosize            
+            className="col-10 fieldData"
             type="text"
             id="quitSchool"
           />  
         </div>
           <div className="d-flex flex-wrap justify-content-center col-4">
           <p className="textWhite">Last grade completed:</p>
-          <Input
-            className="col-10"
+          <TextareaAutosize            
+            className="col-10 fieldData"
             type="text"
             id="lastGrade"
           />  
@@ -43,16 +44,16 @@ function EducationPg1(props) {
           </Label>
           <div className="d-flex flex-wrap justify-content-center text-center col-4">
           <p className="textWhite">Did you graduate from high school?</p>
-          <Input
-            className="col-10"
+          <TextareaAutosize            
+            className="col-10 fieldData"
             type="text"
             id="graduateHighSchool"
           />  
         </div>
           <div className="d-flex flex-wrap justify-content-center text-center col-4">
           <p className="textWhite">Earned GED in:</p>
-          <Input
-            className="col-10"
+          <TextareaAutosize            
+            className="col-10 fieldData"
             type="text"
             id="earnGed"
           />  
@@ -64,8 +65,8 @@ function EducationPg1(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
-            className="col-6"
+          <TextareaAutosize           
+            className="col-6 fieldData"
             type="text"
             id="specialEducation"
           />

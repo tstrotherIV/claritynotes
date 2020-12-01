@@ -1,8 +1,10 @@
 import React from "react";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
+
 // pdf page 63
 
 function HistoryOfLegalPg13(props) {
@@ -21,33 +23,33 @@ function HistoryOfLegalPg13(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
           />
         </div>
-        <h4 className="textWhite centerItem">How many times have you ever had to use more than alcohol to get the same buzz? What about drugs?</h4>
+        <h4 className="textWhite centerItem mt-4">How many times have you ever had to use more than alcohol to get the same buzz? What about drugs?</h4>
         <div className="interview_line1 mb-4">
           <Label className="textWhite interview_title ">
             [Patient Name, First] said:        
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
           />    
         </div>
-        <div className="mb-4 d-flex flex-wrap justify-content-center">
+        <div className="mb-4 d-flex flex-wrap justify-content-center mb-4">
           <div className="textWhite d-flex flex-wrap align-content-end col-2 mb-2">
             [Patient Name, First] said:
           </div>
           <div className="col-4 d-flex flex-wrap align-items-end m-0 p-0">
-          <Label className="textWhite interview_title ">
+          <Label className="textWhite interview_title">
           How many times have you completed or left a substance abuse outpatient, inpatient, or residential program?
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
           />
@@ -56,8 +58,8 @@ function HistoryOfLegalPg13(props) {
           <Label className="textWhite" for="">
           Rehabilitation Program Location
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
             />
@@ -66,8 +68,8 @@ function HistoryOfLegalPg13(props) {
           <Label className="textWhite" for="">
           Date of Rehab
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
             />

@@ -1,8 +1,10 @@
 import React from "react";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
+
 
 // pdf page 95
 
@@ -24,8 +26,8 @@ function ParentKnowledgePg1(props) {
               [Patient Name, First]
           </Label>
           <div className="m-2"> reported [her children go] to </div>
-          <Input
-              className="col-2 mr-2 mb-2"
+          <TextareaAutosize              
+            className="col-2 mr-2 mb-2 fieldData"
               type="text"
               id=""
               placeholder=""
@@ -37,8 +39,8 @@ function ParentKnowledgePg1(props) {
               [Patient Name, First]
           </Label>
           <div className="m-2">reported [her children go]</div>
-          <Input
-              className="col-2 mr-2 mb-2"
+          <TextareaAutosize              
+              className="col-2 mr-2 mb-2 fieldData"
               type="text"
               id=""
               placeholder=""
@@ -51,8 +53,8 @@ function ParentKnowledgePg1(props) {
               [Patient Name, First]
           </Label>
           <div className="m-2">said</div>
-          <Input
-              className="col-2 mr-2 mb-2"
+          <TextareaAutosize             
+              className="col-2 mr-2 mb-2 fieldData"
               type="text"
               id=""
               placeholder=""
@@ -65,8 +67,8 @@ function ParentKnowledgePg1(props) {
             [Patient Name, First]
         </Label> 
         <div className="m-2">reported [her child(ren)] wear</div>
-        <Input
-              className="col-2 mr-2 ml-2 mb-2"
+        <TextareaAutosize              
+              className="col-2 mr-2 ml-2 mb-2 fieldData"
               type=""
               id=""
               placeholder=""
@@ -78,8 +80,8 @@ function ParentKnowledgePg1(props) {
             [Patient Name, First]
         </Label> 
         <div className="m-2">reported [her child(ren)] favorite color is </div>
-        <Input
-              className="col-2 mr-2 ml-2 mb-2"
+        <TextareaAutosize              
+              className="col-2 mr-2 ml-2 mb-2 fieldData"
               type=""
               id=""
               placeholder=""
@@ -90,8 +92,8 @@ function ParentKnowledgePg1(props) {
         <Label className="textWhite col-3 text-right" for="">
             [Patient Name, First]
         </Label> 
-        <Input
-              className="col-2 mr-2 ml-2 mb-2 text-center"
+        <TextareaAutosize              
+              className="col-2 mr-2 ml-2 mb-2 text-center fieldData"
               type=""
               id=""
               placeholder="are/are not"
@@ -103,8 +105,8 @@ function ParentKnowledgePg1(props) {
             [Patient Name, First]
         </Label>
         <div className="m-2">reported she attended </div> 
-        <Input
-              className="col-1 mr-2 ml-1 mb-2"
+        <TextareaAutosize              
+              className="col-1 mr-2 ml-1 mb-2 fieldData"
               type=""
               id=""
               placeholder=""
@@ -116,8 +118,8 @@ function ParentKnowledgePg1(props) {
             [Patient Name, First]
         </Label>
         <div className="questionLabelWidth m-2">reported she attended </div> 
-        <Input
-              className="col-1 ml-1 mb-2 mr-2"
+        <TextareaAutosize              
+              className="col-1 ml-1 mb-2 mr-2 fieldData"
               type=""
               id=""
               placeholder=""
@@ -128,17 +130,14 @@ function ParentKnowledgePg1(props) {
         <Label className="textWhite col-3 text-right" for="">
             [Patient Name, First]
         </Label> 
-        <Input
-              className="col-3 mr-2 ml-2 mb-2 text-center"
+        <TextareaAutosize               
+              className="col-3 mr-2 ml-2 mb-2 fieldData"
               type=""
               id=""
               placeholder="knew/did not know"
             />  
             the name(s) of her child's teacher(s).
         </div> 
-     
-      
-
       </div>
         </div>
         <div id="footer">

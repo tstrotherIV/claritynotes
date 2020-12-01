@@ -3,6 +3,7 @@ import { Label, Input } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
 
 // pdf page 94
 
@@ -26,8 +27,8 @@ function PositiveRoleModelPg2(props) {
           <div className="col-3 d-flex flex-wrap align-items-end m-0 p-0">
           <Label className="textWhite">
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
           />
@@ -35,8 +36,8 @@ function PositiveRoleModelPg2(props) {
           <div className="col-3 d-flex flex-wrap align-items-end ml-2 justify-content-center align-content-end">
           <Label className="textWhite" for="">
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
             />
@@ -44,8 +45,8 @@ function PositiveRoleModelPg2(props) {
         <div className="col-3 d-flex flex-wrap align-items-end justify-content-center ml-2 p-0 align-content-end">
           <Label className="textWhite" for="">
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
             />
@@ -59,8 +60,8 @@ function PositiveRoleModelPg2(props) {
           <div className="col-3 d-flex flex-wrap align-items-end m-0 p-0">
           <Label className="textWhite">
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
           />
@@ -68,8 +69,8 @@ function PositiveRoleModelPg2(props) {
           <div className="col-3 d-flex flex-wrap align-items-end ml-2 justify-content-center align-content-end">
           <Label className="textWhite" for="">
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
             />
@@ -77,8 +78,8 @@ function PositiveRoleModelPg2(props) {
         <div className="col-3 d-flex flex-wrap align-items-end justify-content-center ml-2 p-0 align-content-end">
           <Label className="textWhite" for="">
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
             />

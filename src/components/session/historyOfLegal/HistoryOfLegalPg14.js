@@ -1,8 +1,10 @@
 import React from "react";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
+
 // pdf page 64
 
 function HistoryOfLegalPg14(props) {
@@ -21,19 +23,19 @@ function HistoryOfLegalPg14(props) {
               <Label className="textWhite interview_title" for="">
                 [Patient Name, First] said:
               </Label>
-              <Input
-                className=""
+              <TextareaAutosize                
+                className="fieldData mb-2"
                 type="text"
                 id=""
               />
             </div>   
-            <h4 className="textWhite centerItem">Who do you call when you have a craving?</h4>
+            <h4 className="textWhite centerItem mt-2">Who do you call when you have a craving?</h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
                 [Patient Name, First] said:
               </Label>
-              <Input
-                className=""
+              <TextareaAutosize                
+                className="fieldData"
                 type="text"
                 id=""
               />
@@ -43,8 +45,8 @@ function HistoryOfLegalPg14(props) {
               <Label className="textWhite interview_title" for="">
                 [Patient Name, First] said:
               </Label>
-              <Input
-                className=""
+              <TextareaAutosize                
+                className="fieldData"
                 type="text"
                 id=""
               />

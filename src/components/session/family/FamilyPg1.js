@@ -1,8 +1,9 @@
 import React from "react";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
 
 function FamilyPg1(props) {
 
@@ -20,16 +21,16 @@ function FamilyPg1(props) {
               <Label className="textWhite m-1" for="">
               [Patient Name, First] his/her
               </Label>
-              <Input
-                className="col-2 m-0 p-0"
+              <TextareaAutosize                
+                className="fieldData col-2"
                 type="text"
                 id=""
               />
           <Label className="textWhite m-2" for="">
           raised him/her in 
               </Label>
-              <Input
-                    className="col-2 m-0 p-0"
+              <TextareaAutosize                     
+                    className="fieldData col-2"
                     type="text"
                     id=""
                     placeholder=""
@@ -41,8 +42,8 @@ function FamilyPg1(props) {
               <Label className="textWhite ml-1 mr-1 mt-0 mb-0" for="">
               [Patient Name, First] had
               </Label>
-              <Input
-                className="col-2 m-0 p-0"
+              <TextareaAutosize                
+                className="fieldData col-2"
                 type="text"
                 id=""
               />
@@ -57,7 +58,7 @@ function FamilyPg1(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
+          <TextareaAutosize            
             className="interview_fieldData"
             type="text"
             name=""
@@ -70,7 +71,7 @@ function FamilyPg1(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
+          <TextareaAutosize            
             className="interview_fieldData"
             type="text"
             name=""

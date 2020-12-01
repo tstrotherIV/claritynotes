@@ -1,8 +1,10 @@
 import React from "react";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
+
 
 function FamilyPg12(props) {
 
@@ -25,7 +27,7 @@ function FamilyPg12(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
+          <TextareaAutosize            
             className="interview_fieldData"
             type="text"
             id=""
@@ -40,7 +42,7 @@ function FamilyPg12(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
+          <TextareaAutosize            
             className="interview_fieldData"
             type="text"
             id=""
@@ -53,7 +55,7 @@ function FamilyPg12(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
+          <TextareaAutosize            
             className="interview_fieldData"
             type="text"
             id=""

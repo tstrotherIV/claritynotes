@@ -1,8 +1,9 @@
 import React from "react";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
 
 function FamilyPg8(props) {
 
@@ -25,8 +26,8 @@ function FamilyPg8(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
-            className="interview_fieldData"
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
           />
@@ -44,7 +45,10 @@ function FamilyPg8(props) {
             <Label className="textWhite" for="">
               [User Name, First]’s Inference and Observations:
             </Label>
-            <Input type="text" className="" id="" />
+            <TextareaAutosize  
+            type="text" 
+            className="fieldData" 
+            id="" />
           </div>
         </div>
       </div>
@@ -60,7 +64,10 @@ function FamilyPg8(props) {
             <Label className="textWhite" for="">
               [User Name, First]’s Inference and Observations:
             </Label>
-            <Input type="text" name="" id="" />
+            <TextareaAutosize  
+            type="text" 
+            className="fieldData" 
+            id="" />
           </div>
         </div>
       </div>
@@ -75,7 +82,11 @@ function FamilyPg8(props) {
             <Label className="textWhite" for="">
               [User Name, First]’s Inference and Observations:
             </Label>
-            <Input type="text" name="" id="" />
+            <TextareaAutosize  
+            type="text" 
+            className="fieldData" 
+            id="" 
+            />
           </div>
         </div>
       </div>

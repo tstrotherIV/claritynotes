@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   Label,
-  Input,
   Button,
   Dropdown,
   DropdownToggle,
@@ -15,7 +14,8 @@ import {
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
-import "./interviews.scss";
+import TextareaAutosize from 'react-textarea-autosize';
+
 
 
 function InterviewPg8(props) {
@@ -43,7 +43,7 @@ function InterviewPg8(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
+          <TextareaAutosize            
             className="interview_fieldData"
             type="text"
             id=""
@@ -85,7 +85,7 @@ function InterviewPg8(props) {
             <Label className="textWhite title" for="caseNumber">
               Additional Notes:
             </Label>
-            <Input
+            <TextareaAutosize              
               className="fieldData2"
               type="text"
               id="caseNumber"
@@ -102,7 +102,7 @@ function InterviewPg8(props) {
                       <Label className=" title" for="caseNumber">
                         Additional Notes:
                       </Label>
-                      <Input
+                      <TextareaAutosize                        
                         type="text"
                         name="caseNumber"
                         id="caseNumber"
@@ -158,7 +158,7 @@ function InterviewPg8(props) {
             <Label className="textWhite title" for="caseNumber">
               Additional Notes:
             </Label>
-            <Input
+            <TextareaAutosize              
               className="fieldData2"
               type="text"
               id="caseNumber"
@@ -175,7 +175,7 @@ function InterviewPg8(props) {
                       <Label className=" title" for="caseNumber">
                         Additional Notes:
                       </Label>
-                      <Input
+                      <TextareaAutosize                        
                         className=""
                         type="text"
                         id="caseNumber"

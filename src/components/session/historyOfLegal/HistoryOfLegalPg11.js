@@ -1,8 +1,10 @@
 import React from "react";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
+
 // pdf page 61
 
 function HistoryOfLegalPg11(props) {
@@ -22,8 +24,8 @@ function HistoryOfLegalPg11(props) {
               <Label className="textWhite interview_title" for="">
                 [Patient Name, First] said:
               </Label>
-              <Input
-                className=""
+              <TextareaAutosize                
+                className="fieldData"
                 type="text"
                 id=""
               />
@@ -35,8 +37,8 @@ function HistoryOfLegalPg11(props) {
               <Label className="textWhite interview_title" for="">
                 [Patient Name, First] said:
               </Label>
-              <Input
-                className=""
+              <TextareaAutosize                
+                className="fieldData"
                 type="text"
                 id=""
               />
@@ -47,8 +49,8 @@ function HistoryOfLegalPg11(props) {
                 [Patient Name, First]
             </Label>
             reported she started smoking marijuana at age 
-          <Input
-                className="col-4 mr-2 ml-2 mb-2"
+          <TextareaAutosize                
+            className="col-4 mr-2 ml-2 mb-2 fieldData"
                 type=""
                 id=""
                 placeholder=""
@@ -59,8 +61,8 @@ function HistoryOfLegalPg11(props) {
                 [Patient Name, First]
             </Label>
             noted smoking 
-            <Input
-                className="col-2 mr-2 ml-2 mb-2"
+            <TextareaAutosize                
+                className="col-2 mr-2 ml-2 mb-2 fieldData"
                 type="text"
                 id=""
                 placeholder=""
@@ -72,8 +74,8 @@ function HistoryOfLegalPg11(props) {
                 [Patient Name, First]
             </Label>
             reported she started using cocaine at age
-            <Input
-                  className="col-4 mr-2 ml-2 mb-2"
+            <TextareaAutosize                 
+                  className="col-4 mr-2 ml-2 mb-2 fieldData"
                   type=""
                   id=""
                   placeholder=""
@@ -85,8 +87,8 @@ function HistoryOfLegalPg11(props) {
                 [Patient Name, First]
             </Label>
             noted the last time she used cocaine was
-            <Input
-                  className="col-4 mr-2 ml-2 mb-2"
+            <TextareaAutosize                  
+                  className="col-4 mr-2 ml-2 mb-2 fieldData"
                   type=""
                   id=""
                   placeholder=""

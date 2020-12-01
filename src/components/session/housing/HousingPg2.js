@@ -1,9 +1,11 @@
 import React from "react";
 import "./housing.scss";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
+
 // pdf page 41
 
 function HousingPg2(props) {
@@ -22,8 +24,8 @@ function HousingPg2(props) {
           <Label className="textWhite interview_title text-center" for="hs-all-or-part">
             [Patient Name, First] said:
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+          className="fieldData"
             type="text"
             id="hs-all-or-part"
           />
@@ -35,8 +37,8 @@ function HousingPg2(props) {
           <Label className="textWhite interview_title text-center" for="hs-housing-cost">
             [Patient Name, First] said:
           </Label>
-          <Input
-            className="]"
+          <TextareaAutosize            
+          className="fieldData"
             type="text"
             id="hs-housing-cost"
           />
@@ -48,8 +50,8 @@ function HousingPg2(props) {
           <Label className="textWhite interview_title text-center" for="hs-without-shelter">
             [Patient Name, First] said:
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id="hs-without-shelter"
           />

@@ -1,8 +1,9 @@
 import React from "react";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
 // pdf page 99
 
 function BehavioralObservationsAndTestingConditionsPg2(props) {
@@ -20,13 +21,15 @@ function BehavioralObservationsAndTestingConditionsPg2(props) {
         <Label className="">
           (Cognitive Style) Is their attire conforming or non-conforming?
           </Label>
-          <Input 
-          className=""
+          <TextareaAutosize  
+          className="fieldData col-12"
           type="text"
           id=""
-          ></Input>
+          />
+          <div>
           Impoverished, Circumstantial, Distracted, Naive, Flighty, Expansive, Mistrustful, non-conforming, Dogmatic,
            Fatalistic, Diffident, Cynical, Vacillating, Constricted, Scattered
+           </div>
         </div>
         </div>
         <div className="questionsContainer text-center textWhite d-flex justify-content-center">
@@ -34,11 +37,11 @@ function BehavioralObservationsAndTestingConditionsPg2(props) {
         <Label className="">
           How? Describe the person!
           </Label>
-          <Input 
-          className=""
+          <TextareaAutosize  
+          className="fieldData "
           type="text"
           id=""
-          ></Input>
+          />
         </div>
         </div>
         <div id="footer">
