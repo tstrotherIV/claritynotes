@@ -6,8 +6,8 @@ import ButtonNavigation from '../../shared/ButtonNavigation';
 import TextareaAutosize from 'react-textarea-autosize';
 // pdf page 95
 
-function BehaviorObservationsAndTestingConditionsPg3(props) {
-  const next = "/behavioral_observations_and_testing_conditions_pg_4";  
+function BehaviorObservationsAndTestingConditionsPg4(props) {
+  const next = "/behavioral_observations_and_testing_conditions_pg_5";  
   return (
     <>  
     <div id="page-container">
@@ -21,118 +21,87 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
           <Label className="textWhite col-3 text-right" for="">
               [Patient Name, First]
           </Label>
-          <div className="m-2"> reported [her children go] to </div>
+          <div className="m-2 col-2">mood was</div>
           <TextareaAutosize              
-              className="col-2 mr-2 mb-2 fieldData"
+              className="col-4 mr-2 mb-2 fieldData"
               type="text"
               id=""
-              placeholder=""
-            />
-            for medical care.  
+              placeholder="depressed/anxious/irritable"
+            /> 
         </div>
         <div className="m-auto d-flex align-items-center textWhite">
           <Label className="textWhite col-3 text-right" for="">
               [Patient Name, First]
           </Label>
-          <div className="m-2">reported [her children go]</div>
+          <div className="m-2 col-4">was very hyperactive.</div>
           <TextareaAutosize              
               className="col-2 mr-2 mb-2 fieldData"
               type="text"
               id=""
-              placeholder=""
-            />
-            for dental care.  
+              placeholder="yes/no"
+            /> 
         </div> 
 
         <div className="m-auto d-flex align-items-center textWhite">
           <Label className="textWhite col-3 text-right" for="">
               [Patient Name, First]
           </Label>
-          <div className="m-2">said</div>
+          <div className="m-2 col-4">was irritable.</div>
           <TextareaAutosize              
               className="col-2 mr-2 mb-2 fieldData"
               type="text"
               id=""
-              placeholder=""
+              placeholder="yes/no"
             />
-            takes [them] to [their] appointments.  
         </div>
         
         <div className="m-auto d-flex align-items-center textWhite">
         <Label className="textWhite col-3 text-right" for="">
             [Patient Name, First]
         </Label> 
-        <div className="m-2">reported [her child(ren)] wear</div>
+        <div className="m-2 col-4">was withdrawn.</div>
         <TextareaAutosize              
               className="col-2 mr-2 ml-2 mb-2 fieldData"
               type=""
               id=""
-              placeholder=""
-            />  
-            size clothes.
+              placeholder="yes/no"
+            />
         </div> 
         <div className="m-auto d-flex align-items-center textWhite">
         <Label className="textWhite col-3 text-right" for="">
             [Patient Name, First]
         </Label> 
-        <div className="m-2">reported [her child(ren)] favorite color is </div>
+        <div className="m-2 col-4">’s eye contact was strong. </div>
         <TextareaAutosize              
               className="col-2 mr-2 ml-2 mb-2 fieldData"
               type=""
               id=""
-              placeholder=""
-            />  
-            .
+              placeholder="yes/no"
+            />
         </div> 
         <div className="m-auto d-flex align-items-center textWhite">
         <Label className="textWhite col-3 text-right" for="">
             [Patient Name, First]
         </Label> 
+        <div className="m-2 col-4">was circumspect in her answers.</div>
         <TextareaAutosize              
               className="col-2 mr-2 ml-2 mb-2 fieldData"
               type=""
               id=""
-              placeholder="are/are not"
-            />  
-            old enough to attend school.
+              placeholder="yes/no"
+            /> 
         </div> 
         <div className="m-auto d-flex align-items-center textWhite">
         <Label className="textWhite col-3 text-right" for="">
             [Patient Name, First]
         </Label>
-        <div className="m-2">reported she attended </div> 
+        <div className="m-2 col-4">offered information readily </div> 
         <TextareaAutosize              
-              className="col-1 mr-2 ml-1 mb-2 fieldData"
+              className="col-2 mr-2 ml-1 mb-2 fieldData"
               type=""
               id=""
-              placeholder=""
-            />  
-            teacher conferences this past school year.
-        </div>
-        <div className="m-auto d-flex align-items-center textWhite">
-        <Label className="textWhite col-3 text-right" for="">
-            [Patient Name, First]
-        </Label>
-        <div className="questionLabelWidth m-2">reported she attended </div> 
-        <TextareaAutosize              
-              className="col-1 ml-1 mb-2 mr-2 fieldData"
-              type=""
-              id=""
-              placeholder=""
-            />  
-            <div className="col-5 p-0">extracurricular activites this past school year.</div>
-        </div>
-        <div className="m-auto d-flex align-items-center textWhite">
-        <Label className="textWhite col-3 text-right" for="">
-            [Patient Name, First]
-        </Label> 
-        <TextareaAutosize              
-              className="col-3 mr-2 ml-2 mb-2 fieldData"
-              type=""
-              id=""
-              placeholder="knew/did not know"
-            />  
-            the name(s) of her child's teacher(s).
+              placeholder="yes/no"
+            /> 
         </div>
         </div>
         </div>
@@ -146,4 +115,4 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
   );
 }
 
-export default BehaviorObservationsAndTestingConditionsPg3;
+export default BehaviorObservationsAndTestingConditionsPg4;
