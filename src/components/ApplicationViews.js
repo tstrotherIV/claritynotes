@@ -98,6 +98,7 @@ import BehavioralObservationsAndTestingConditionsPg1 from "./session/behavioralO
 import BehavioralObservationsAndTestingConditionsPg2 from "./session/behavioralObservationsAndTestingConditions/BehavorialObservationsAndTestingConditionsPg2";
 import BehavioralObservationsAndTestingConditionsPg3 from "./session/behavioralObservationsAndTestingConditions/BehavorialObservationsAndTestingConditionsPg3";
 import BehavioralObservationsAndTestingConditionsPg4 from "./session/behavioralObservationsAndTestingConditions/BehavorialObservationsAndTestingConditionsPg4";
+import BehavioralObservationsAndTestingConditionsPg5 from "./session/behavioralObservationsAndTestingConditions/BehavorialObservationsAndTestingConditionsPg5";
 
 
 const ApplicationViews = (props) => {
@@ -792,6 +793,13 @@ const ApplicationViews = (props) => {
         path="/behavioral_observations_and_testing_conditions_pg_4"
         render={(props) => {
           return <BehavioralObservationsAndTestingConditionsPg4 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/behavioral_observations_and_testing_conditions_pg_5"
+        render={(props) => {
+          return <BehavioralObservationsAndTestingConditionsPg5 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
     </Switch>
