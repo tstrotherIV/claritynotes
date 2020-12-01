@@ -1,8 +1,9 @@
 import React from "react"; 
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
 
 // pdf page 96
 
@@ -23,8 +24,8 @@ function CognitiveSkillsPg1(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
           />
@@ -36,8 +37,8 @@ function CognitiveSkillsPg1(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
           />
@@ -49,8 +50,8 @@ function CognitiveSkillsPg1(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
           />
@@ -60,8 +61,8 @@ function CognitiveSkillsPg1(props) {
               [Patient Name, First]
           </Label>
           <div className="m-2">'s language skills</div>
-          <Input
-              className="col-2 mr-2 mb-2 text-center"
+          <TextareaAutosize              
+              className="col-2 mr-2 mb-2 fieldData"
               type="text"
               id=""
               placeholder="were/were not"

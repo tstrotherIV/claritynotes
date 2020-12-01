@@ -1,8 +1,10 @@
 import React from "react";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
+
 // pdf page 62
 
 function HistoryOfLegalPg12(props) {
@@ -21,8 +23,8 @@ function HistoryOfLegalPg12(props) {
                 [Patient Name, First]
             </Label>
             reported she started using methamphetamines at age 
-            <Input
-              className="col-4 mr-2 ml-2 mb-2"
+            <TextareaAutosize              
+              className="col-4 mr-2 ml-2 mb-2 fieldData"
               type=""
               id=""
               placeholder=""
@@ -33,8 +35,8 @@ function HistoryOfLegalPg12(props) {
                 [Patient Name, First]
             </Label>
             noted the last time she used methamphetamines was 
-            <Input
-              className="col-4 mr-2 ml-2 mb-2"
+            <TextareaAutosize              
+              className="col-4 mr-2 ml-2 mb-2 fieldData"
               type=""
               id=""
               placeholder=""
@@ -45,8 +47,8 @@ function HistoryOfLegalPg12(props) {
                 [Patient Name, First]
             </Label>
             reported she started abusing opiates at age 
-            <Input
-              className="col-4 mr-2 ml-2 mb-2"
+            <TextareaAutosize              
+              className="col-4 mr-2 ml-2 mb-2 fieldData"
               type=""
               id=""
               placeholder=""
@@ -57,8 +59,8 @@ function HistoryOfLegalPg12(props) {
                 [Patient Name, First]
             </Label>
             noted the last time she ever used opiates was 
-            <Input
-              className="col-4 mr-2 ml-2 mb-2"
+            <TextareaAutosize              
+              className="col-4 mr-2 ml-2 mb-2 fieldData"
               type=""
               id=""
               placeholder=""
@@ -69,8 +71,8 @@ function HistoryOfLegalPg12(props) {
                 [Patient Name, First]
             </Label>
             reported she started using heroin at age 
-            <Input
-              className="col-4 mr-2 ml-2 mb-2"
+            <TextareaAutosize              
+              className="col-4 mr-2 ml-2 mb-2 fieldData"
               type=""
               id=""
               placeholder=""
@@ -81,8 +83,8 @@ function HistoryOfLegalPg12(props) {
                 [Patient Name, First]
             </Label>
             She reported the last time she used heroin was
-            <Input
-              className="col-4 mr-2 ml-2 mb-2"
+            <TextareaAutosize              
+              className="col-4 mr-2 ml-2 mb-2 fieldData"
               type=""
               id=""
               placeholder=""
@@ -94,8 +96,8 @@ function HistoryOfLegalPg12(props) {
               <Label className="textWhite interview_title" for="">
                 [Patient Name, First] said:
               </Label>
-              <Input
-                className=""
+              <TextareaAutosize                
+                className="fieldData"
                 type="text"
                 id=""
               />

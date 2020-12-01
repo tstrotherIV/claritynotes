@@ -1,9 +1,11 @@
 import React from "react";
 import "./housing.scss";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
+
 // pdf page 42
 
 function HousingPg3(props) {
@@ -23,7 +25,7 @@ function HousingPg3(props) {
             <Label className="textWhite interview_title" for="">
               [Patient Name, First] said:
             </Label>
-            <Input
+            <TextareaAutosize              
               className="interview_fieldData"
               type="text"
               id=""
@@ -36,7 +38,7 @@ function HousingPg3(props) {
           <Label className="textWhite interview_title" for="hs-housing-cost">
             [Patient Name, First] said:
           </Label>
-          <Input
+          <TextareaAutosize            
             className="interview_fieldData"
             type="text"
             id="hs-housing-cost"
@@ -52,8 +54,8 @@ function HousingPg3(props) {
       <Label className="textWhite" for="">
             Number of Bedrooms?
           </Label>
-          <Input
-            className="col-6 m-auto"
+          <TextareaAutosize            
+            className="col-6 m-auto fieldData"
             type="text"
             id=""
           />
@@ -62,8 +64,8 @@ function HousingPg3(props) {
       <Label className="textWhite" for="">
             Number of Baths?
           </Label>
-          <Input
-            className="col-6 m-auto"
+          <TextareaAutosize            
+            className="col-6 m-auto fieldData"
             type="text"
             id=""
           />
@@ -72,8 +74,8 @@ function HousingPg3(props) {
       <Label className="textWhite" for="">
             How old is it?
           </Label>
-          <Input
-            className="col-6 m-auto"
+          <TextareaAutosize            
+          className="col-6 m-auto fieldData"
             type="text"
             id=""
           />

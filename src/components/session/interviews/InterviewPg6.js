@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   Label,
-  Input,
   Button,
   Dropdown,
   DropdownToggle,
@@ -15,6 +14,8 @@ import {
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
+
 import "./interviews.scss"; 
 
 function InterviewPg6(props) {
@@ -43,8 +44,7 @@ function InterviewPg6(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
-            className="interview_fieldData"
+          <TextareaAutosize            className="interview_fieldData"
             type="text"
             id=""
           />
@@ -58,8 +58,7 @@ function InterviewPg6(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
-            className="interview_fieldData"
+          <TextareaAutosize            className="interview_fieldData"
             type="text"
             id=""
           />
@@ -105,8 +104,7 @@ function InterviewPg6(props) {
             <Label className="textWhite title" for="caseNumber">
               Additional Notes:
             </Label>
-            <Input
-              className="fieldData2"
+            <TextareaAutosize              className="fieldData2"
               type="text"
               id="caseNumber"
             />
@@ -122,8 +120,7 @@ function InterviewPg6(props) {
                       <Label className=" title" for="caseNumber">
                         Additional Notes:
                       </Label>
-                      <Input
-                        className=""
+                      <TextareaAutosize                        className=""
                         type="text"
                         id="caseNumber"
                       />

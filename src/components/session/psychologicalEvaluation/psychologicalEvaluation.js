@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   Label,
-  Input,
   Button,
   Dropdown,
   DropdownToggle,
@@ -9,6 +8,8 @@ import {
   DropdownItem,
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading.js';
+import TextareaAutosize from 'react-textarea-autosize';
+
 import "./psychologicalEvaluation.scss";
 
 function PsychologicalEvaluation(props) {
@@ -33,8 +34,8 @@ function PsychologicalEvaluation(props) {
             <Label className="textWhite labelWidth" for="firstName">
               Name
             </Label>
-            <Input
-              className="text-center col-8"
+            <TextareaAutosize              
+              className="fieldData col-8"
               type="text"
               id="firstName"
               placeholder="First Name"
@@ -42,8 +43,8 @@ function PsychologicalEvaluation(props) {
           </div>
           <div className="d-flex m-4">
             <Label className="textWhite labelWidth" for="middleName"></Label>
-            <Input
-              className="text-center col-8"
+            <TextareaAutosize              
+              className="fieldData col-8"
               type="text"
               id="middleName"
               placeholder="Middle Name"
@@ -51,8 +52,8 @@ function PsychologicalEvaluation(props) {
           </div>
           <div className="d-flex justify-items-center m-4">
             <Label className="textWhite labelWidth" for="lastName"></Label>
-            <Input
-              className="text-center col-8"
+            <TextareaAutosize              
+              className="fieldData col-8"
               type="text"
               id="lastName"
               placeholder="Last Name"
@@ -62,8 +63,8 @@ function PsychologicalEvaluation(props) {
             <Label className="textWhite labelWidth " for="dateOfBirth">
               DOB
             </Label>
-            <Input
-              className="text-center col-8"
+            <TextareaAutosize              
+              className="fieldData col-8"
               type="date"
               id="dateOfBirth"
             />
@@ -91,8 +92,8 @@ function PsychologicalEvaluation(props) {
             <Label className="textWhite labelWidth" for="officeTime">
               Office Time
             </Label>
-            <Input
-              className="text-center col-8"
+            <TextareaAutosize              
+              className="fieldData col-8"
               type="time"
               id="officeTime"
             />
@@ -101,8 +102,8 @@ function PsychologicalEvaluation(props) {
             <Label className="textWhite labelWidth" for="reportWriting">
               Report Writing
             </Label>
-            <Input
-              className="text-center col-8"
+            <TextareaAutosize              
+              className="fieldData col-8"
               type="text"
               id="reportWriting"
             />
@@ -114,8 +115,8 @@ function PsychologicalEvaluation(props) {
             <Label className="textWhite labelWidth" for="caseNumber">
               Case #
             </Label>
-            <Input
-              className="text-center col-8"
+            <TextareaAutosize              
+              className="fieldData col-8"
               type="text"
               id="caseNumber"
               placeholder="Case Number"
@@ -126,12 +127,14 @@ function PsychologicalEvaluation(props) {
             <Label className="textWhite labelWidth" for="examplePassword">
               Eval 1 Date
             </Label>
-            <Input
-              className="text-center col-5"
+            <div>
+            <TextareaAutosize               
+              className="fieldData col-5"
               type="date"
               id="date"
             />          
-              <Button className="col-3 ml-2">Add Eval Date</Button>
+              <Button className="col-6 m-2">Add Eval Date</Button>
+              </div>
           </div>
         </div>
           <div className="textWhite d-flex justify-items-center m-4">
@@ -157,8 +160,8 @@ function PsychologicalEvaluation(props) {
             <Label className="labelWidth" for="intakeTime">
               Interview Time
             </Label>
-            <Input
-              className="text-center col-8"
+            <TextareaAutosize              
+              className="fieldData col-8"
               type="time"
               id="intakeTime"
             />
@@ -167,8 +170,8 @@ function PsychologicalEvaluation(props) {
             <Label className="textWhite labelWidth" for="inTakeTime">
               Intake Time
             </Label>
-            <Input
-              className="text-center col-8"
+            <TextareaAutosize              
+              className="fieldData col-8"
               type="time"
               id="inTakeTime"
               />

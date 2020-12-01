@@ -1,8 +1,10 @@
 import React from "react";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
+
 
 function FamilyPg6(props) {
 
@@ -16,6 +18,7 @@ function FamilyPg6(props) {
       <div className="header">
         <h2 className="textWhite">Family</h2>
       </div>
+      <div className="questionsContainerWide">
       <h4 className="textWhite centerItem">
         Was there a lot of drinking in the home growing up?
       </h4>
@@ -24,7 +27,7 @@ function FamilyPg6(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
+          <TextareaAutosize            
             className="interview_fieldData"
             type="text"
             id=""
@@ -37,28 +40,30 @@ function FamilyPg6(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
+          <TextareaAutosize            
             className="interview_fieldData"
             type="text"
             id=""
           />
         </div>
       </div>
-      <div className="interview_div3">
-        <div className="interview_line3">
-          <h4 className="textWhite centerItem">
-            Responsive [User Name, First]’s Inference and Observations: Does the
-            parent think it is OK
-          </h4>
+      <div className="row m-5">
+        <div className="row col-5 m-0 p-0">
+          <div className="col-6 d-flex flex-wrap"></div>
+          <h4 className="row col-6 d-flex justify-content-center align-content-end textWhite mr-3 "> Responsive</h4>
+          <p className="row col-12 textWhite d-flex justify-content-end align-content-midline m-0">Does the parent think it is OK</p>
+          </div>
+        <div className="col-6 text-center m-0 p-0">
           <Label className="textWhite interview_title" for="">
-            [Patient Name, First] said:
+            [Patient Name, First]'s Inference and Observations:
           </Label>
-          <Input
-            className="interview_fieldData"
+          <TextareaAutosize            
+            className="fieldData col-12"
             type="text"
             id=""
           />
         </div>
+      </div>
       </div>
       </div>
       <div id="footer">

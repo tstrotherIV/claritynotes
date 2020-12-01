@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./psychologicalEvaluationFamily.scss";
 import {
   Label,
-  Input,
   Dropdown,
   DropdownToggle,
   DropdownMenu,
@@ -10,6 +9,8 @@ import {
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
+
 
 function PsychologicalEvaluation_spouse(props) {
 
@@ -50,7 +51,7 @@ function PsychologicalEvaluation_spouse(props) {
           <Label className="textWhite title" for="spouseFirstName">
             Spouse
           </Label>
-          <Input
+          <TextareaAutosize            
             className="fieldData text-center"
             id="spouseFirstName"
             placeholder="Spouse First Name"
@@ -59,7 +60,7 @@ function PsychologicalEvaluation_spouse(props) {
         <div className="line1">
           <Label className="textWhite title" for="spouseLastName">
           </Label>
-          <Input
+          <TextareaAutosize            
             className="fieldData text-center"
             type="text"
             id="spouseLastName"
@@ -84,11 +85,11 @@ function PsychologicalEvaluation_spouse(props) {
         </div>
         <div className="line1 d-flex flex-wrap justify-content-center">
           <Label className="textWhite title" for="">DOB</Label>
-          <Input
+          <TextareaAutosize            
             className="fieldData text-center col-8"
             type="date"
             id="lastName"
-            placeholder="Mother Last Name"
+            placeholder="Date of Birth"
           />
         </div>
         <div className="d-flex justify-content-center">

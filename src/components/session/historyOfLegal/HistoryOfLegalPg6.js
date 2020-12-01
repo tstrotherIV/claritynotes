@@ -1,8 +1,10 @@
 import React from "react";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
+
 // pdf page 56
 
 function HistoryOfLegalPg6(props) {
@@ -22,8 +24,8 @@ function HistoryOfLegalPg6(props) {
               <Label className="textWhite interview_title" for="">
                 [Patient Name, First] said:
               </Label>
-              <Input
-                className=""
+              <TextareaAutosize                
+                className="fieldData"
                 type="text"
                 id=""
               />

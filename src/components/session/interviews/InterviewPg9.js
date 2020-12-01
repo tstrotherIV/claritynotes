@@ -1,8 +1,10 @@
 import React from "react";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
+
 import "./interviews.scss";
 
 function Interview_Pg9(props) {
@@ -25,7 +27,7 @@ function Interview_Pg9(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
+          <TextareaAutosize            
             className="interview_fieldData"
             type="text"
             id=""
@@ -38,7 +40,7 @@ function Interview_Pg9(props) {
             <Label className="textWhite title" for="caseNumber">
             [Patient Name, First] was dressed in
             </Label>
-            <Input
+            <TextareaAutosize              
               className="fieldData2"
               type="text"
               id="caseNumber"
@@ -51,7 +53,7 @@ function Interview_Pg9(props) {
       </div>
       <div className="interview_div1">
         <div className="interview_line1">
-          <Input
+          <TextareaAutosize            
             className="interview_fieldData"
             type="text"
             id=""

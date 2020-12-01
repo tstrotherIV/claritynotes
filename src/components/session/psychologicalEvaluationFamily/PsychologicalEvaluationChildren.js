@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./psychologicalEvaluationFamily.scss";
 import {
-  Label,
   Input,
+  Label,
   Dropdown,
   DropdownToggle,
   DropdownMenu,
@@ -10,6 +10,8 @@ import {
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
+
 
 function PsychologicalEvaluation_siblings(props) {
 
@@ -29,7 +31,7 @@ function PsychologicalEvaluation_siblings(props) {
       </div>
       <div className="siblingsFields">
         <div className="ml-5">
-          <Input
+          <Input            
             className=""
             type="checkbox"
             id="noChildren"
@@ -42,7 +44,7 @@ function PsychologicalEvaluation_siblings(props) {
           <Label className="textWhite title" for="firstName">
             Children
           </Label>
-          <Input
+          <TextareaAutosize            
             className="fieldData text-center"
             type="text"
             id="firstName"
@@ -52,7 +54,7 @@ function PsychologicalEvaluation_siblings(props) {
         <div className="line1">
           <Label className="textWhite title" for="lastName">
           </Label>
-          <Input
+          <TextareaAutosize            
             className="fieldData text-center"
             type="text"
             id="lastName"
@@ -78,12 +80,12 @@ function PsychologicalEvaluation_siblings(props) {
         </div>
         <div className="line1 d-flex flex-wrap justify-content-center">
           <Label className="textWhite title" for="">DOB</Label>
-          <Input
+          <TextareaAutosize            
             className="fieldData text-center col-8"
             type="date"
             name="lastName"
             id="lastName"
-            placeholder="Mother Last Name"
+            placeholder="Date of Birth"
           />
         </div>
         <div className="d-flex justify-content-center">

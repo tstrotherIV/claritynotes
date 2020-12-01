@@ -253,10 +253,9 @@ Button, Input{
 }
 
 textarea{
-  border-radius: 10px;
+  border-radius: 7px;
   width: 600px;
 }
-
 
 .text-editor{
   background-color: white; 
@@ -303,6 +302,24 @@ textarea{
   clear: none !important;
 }
 
-.interview_fieldData{
+.interview_fieldData {
   min-height: 50px;
+}
+
+.fieldData {
+  padding: 7px;
+  text-align: center;
+}
+
+.labelWidth{
+  width: 120px;
+  text-align: right;
+  margin-right: 10px;
+  
+}
+
+
+.minWidthContainer{
+  min-width: 500px;
+  margin: 20px;
 }

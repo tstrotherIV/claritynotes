@@ -1,8 +1,16 @@
-import React, {useState} from "react";
-import { Label, Input, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
+import React, { useState } from "react";
+import { 
+  Label, 
+  Dropdown, 
+  DropdownToggle, 
+  DropdownMenu, 
+  DropdownItem 
+} from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
+
 
 // pdf page 97
   const next = '/behavioral_observations_and_testing_conditions_pg_1';
@@ -30,8 +38,8 @@ function MaterialResourcesPg1(props) {
           <div className="col-3 d-flex flex-wrap justify-content-center align-items-end p-1">
           <Label className="textWhite">
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize             
+            className="fieldData"
             type="text"
             id=""
           />
@@ -39,8 +47,8 @@ function MaterialResourcesPg1(props) {
           <div className="col-3 d-flex flex-wrap align-items-end justify-content-center p-1 align-content-end">
           <Label className="textWhite" for="">
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize           
+            className="fieldData"
             type="text"
             id=""
             />
@@ -48,8 +56,8 @@ function MaterialResourcesPg1(props) {
         <div className="col-3 d-flex flex-wrap align-items-end justify-content-center p-1 align-content-end">
           <Label className="textWhite" for="">
           </Label>
-          <Input
-            className=""
+          <TextareaAutosize            
+            className="fieldData"
             type="text"
             id=""
             />
@@ -63,8 +71,8 @@ function MaterialResourcesPg1(props) {
               [Patient Name, First]
           </Label>
           <div className="m-2">indicated [her]</div>
-          <Input
-              className="col-2 mr-2 mb-2"
+          <TextareaAutosize              
+              className="col-2 mr-2 mb-2 fieldData"
               type="text"
               id=""
               placeholder=""
@@ -96,8 +104,8 @@ function MaterialResourcesPg1(props) {
               [Patient Name, First]
           </Label>
           <div className="m-2">reported [she] attends </div>
-          <Input
-              className="col-3 mr-2 mb-2"
+          <TextareaAutosize              
+              className="col-3 mr-2 mb-2 fieldData"
               type="text"
               id=""
               placeholder=""

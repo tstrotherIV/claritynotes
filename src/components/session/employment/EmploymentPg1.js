@@ -1,8 +1,9 @@
 import React from "react";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
+import TextareaAutosize from 'react-textarea-autosize';
 // pdf page 43
 
 function EmploymentPg1(props) {
@@ -22,7 +23,7 @@ function EmploymentPg1(props) {
           <Label className="textWhite interview_title" for="">
             [Patient Name, First] said:
           </Label>
-          <Input
+          <TextareaAutosize            
             className="interview_fieldData"
             type="text"
             id=""
@@ -32,8 +33,8 @@ function EmploymentPg1(props) {
           <Label className="textWhite col-3 text-right" for="">
               [Patient Name, First]
           </Label>
-          <Input
-              className="col-2 mr-2 mb-2"
+          <TextareaAutosize              
+              className="col-2 mr-2 mb-2 fieldData"
               type="text"
               id=""
               placeholder="has/has never"
@@ -44,35 +45,35 @@ function EmploymentPg1(props) {
           <Label className="textWhite col-3 text-right" for="">
               [Patient Name, First]
           </Label>
-          <Input
-              className="col-2 mr-2 mb-2"
+          <TextareaAutosize              
+              className="col-2 mr-2 mb-2 fieldData"
               type="text"
               id=""
               placeholder="is/is not"
             />
             currently employed and 
-            <Input
-              className="col-2 mr-2 ml-2 mb-2"
+            <TextareaAutosize              
+              className="col-2 mr-2 ml-2 mb-2 fieldData"
               type="text"
               id=""
               placeholder="has/has no"
             />  
             income.
         </div>
-        <div className="m-auto d-flex align-items-center textWhite">
-          <Label className="textWhite col-3 text-right" for="">
+        <div className="m-auto d-flex align-items-center textWhite fieldData">
+          <Label className="textWhite col-3 text-right " for="">
               [Patient Name, First]
           </Label>
         last work at 
-        <Input
-              className="col-2 mr-2 ml-2 mb-2"
+        <TextareaAutosize              
+              className="col-2 mr-2 ml-2 mb-2 fieldData"
               type="text"
               id=""
               placeholder=""
             />  
         for
-        <Input
-              className="col-2 mr-2 ml-2 mb-2"
+        <TextareaAutosize              
+              className="col-3 mr-2 ml-2 mb-2 fieldData"
               type=""
               id=""
               placeholder="select time"
@@ -85,8 +86,8 @@ function EmploymentPg1(props) {
               [Patient Name, First]
           </Label>
         left this job because 
-        <Input
-              className="col-4 mr-2 ml-2 mb-2"
+        <TextareaAutosize              
+              className="col-4 mr-2 ml-2 mb-2 fieldData"
               type=""
               id=""
               placeholder=""
@@ -99,15 +100,15 @@ function EmploymentPg1(props) {
               [Patient Name, First]
           </Label>
         reported [he/she] worked at 
-        <Input
-              className="col-3 mr-2 ml-2 mb-2"
+        <TextareaAutosize              
+              className="fieldData col-3 mr-2 ml-2 mb-2"
               type=""
               id=""
               placeholder=""
             />  
             as
-            <Input
-              className="col-2 mr-2 ml-2 mb-2"
+            <TextareaAutosize              
+              className="col-2 mr-2 ml-2 mb-2 fieldData"
               type=""
               id=""
               placeholder=""
@@ -120,8 +121,8 @@ function EmploymentPg1(props) {
               [Patient Name, First]
           </Label>
           has been there 
-        <Input
-              className="col-4 mr-2 ml-2 mb-2"
+        <TextareaAutosize              
+              className="col-4 mr-2 ml-2 mb-2 fieldData"
               type=""
               id=""
               placeholder=""

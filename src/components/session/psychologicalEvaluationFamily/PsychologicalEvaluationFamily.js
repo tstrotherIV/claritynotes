@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./psychologicalEvaluationFamily.scss";
 import {
   Label,
-  Input,
   Dropdown,
   DropdownToggle,
   DropdownMenu,
@@ -10,7 +9,7 @@ import {
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import ButtonNavigation from '../../shared/ButtonNavigation';
-
+import TextareaAutosize from 'react-textarea-autosize';
 
 function PsychologicalEvaluation_family(props) {
 
@@ -35,8 +34,8 @@ function PsychologicalEvaluation_family(props) {
             <Label className="textWhite labelWidth" for="firstName">
               Parents
             </Label>
-            <Input
-              className="text-center col-8"
+            <TextareaAutosize              
+              className="fieldData col-8"
               type="text"
               id="firstName"
               placeholder="Father First Name"
@@ -44,8 +43,8 @@ function PsychologicalEvaluation_family(props) {
           </div>
           <div className="d-flex m-4">
             <Label className="textWhite labelWidth" for=""></Label>
-            <Input
-              className="text-center col-8"
+            <TextareaAutosize              
+              className="fieldData col-8"
               type="text"
               id="middleName"
               placeholder="Father Last Name"
@@ -53,8 +52,8 @@ function PsychologicalEvaluation_family(props) {
           </div>
           <div className="d-flex m-4">
             <Label className="textWhite labelWidth" for=""></Label>
-            <Input
-              className="text-center col-8"
+            <TextareaAutosize              
+              className="fieldData col-8"
               type="text"
               id="dateOfBirth"
               placeholder="Mother First Name"
@@ -62,8 +61,8 @@ function PsychologicalEvaluation_family(props) {
             </div>
              <div className="d-flex m-4">
             <Label className="textWhite labelWidth" for=""></Label>
-            <Input
-              className="text-center col-8"
+            <TextareaAutosize              
+              className="fieldData col-8"
               type="text"
               id="lastName"
               placeholder="Mother Last Name"
@@ -78,8 +77,8 @@ function PsychologicalEvaluation_family(props) {
             <Label className="textWhite labelWidth" for="caseNumber">
               Other Guardians
             </Label>
-            <Input
-              className="text-center col-8"
+            <TextareaAutosize              
+              className="fieldData col-8"
               type="text"
               id="caseNumber"
               placeholder="Guardian First Name"
@@ -87,8 +86,8 @@ function PsychologicalEvaluation_family(props) {
           </div>
           <div className="d-flex m-4">
             <Label className="textWhite labelWidth" for="examplePassword"></Label>
-            <Input
-              className="text-center col-8"
+            <TextareaAutosize              
+              className="fieldData col-8"
               type="text"
               name="date"
               id="date"
@@ -100,7 +99,8 @@ function PsychologicalEvaluation_family(props) {
               Gender
             </Label>
             <Dropdown isOpen={dropdownOpen1} toggle={toggle1} className="col-8">
-              <DropdownToggle color="light" className="dropdown" caret>
+              <DropdownToggle color="light" 
+                className="dropdown" caret>
                 Please Select
               </DropdownToggle>
               <DropdownMenu>
