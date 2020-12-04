@@ -99,9 +99,13 @@ import BehavioralObservationsAndTestingConditionsPg2 from "./session/behavioralO
 import BehavioralObservationsAndTestingConditionsPg3 from "./session/behavioralObservationsAndTestingConditions/BehavorialObservationsAndTestingConditionsPg3";
 import BehavioralObservationsAndTestingConditionsPg4 from "./session/behavioralObservationsAndTestingConditions/BehavorialObservationsAndTestingConditionsPg4";
 import BehavioralObservationsAndTestingConditionsPg5 from "./session/behavioralObservationsAndTestingConditions/BehavorialObservationsAndTestingConditionsPg5";
-import WasiII from "./session/testResults/Wasi-ii";
-
 import ProceduresAdministedPg1 from "./session/proceduresAdministered/ProceduresAdministeredPg1";
+import WasiII from "./session/testResults/Wasi-ii";
+import WechslerAdultIntelligenceScaleIV from "./session/testResults/WechslerAdultIntelligenceScale-IV";
+import ShipleyIntelligenceAssessment2 from "./session/testResults/ShipleyIntelligenceAssessment2";
+
+
+
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
   const setUser = props.setUser;
@@ -815,6 +819,20 @@ const ApplicationViews = (props) => {
         path="/wasi-ii"
         render={(props) => {
           return <WasiII setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/wechsler_adult_intelligence_scale_IV"
+        render={(props) => {
+          return <WechslerAdultIntelligenceScaleIV setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/shipley_intelligence_assessment_2"
+        render={(props) => {
+          return <ShipleyIntelligenceAssessment2 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
     </Switch>
