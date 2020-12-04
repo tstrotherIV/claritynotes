@@ -4,6 +4,7 @@ import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
 import TextareaAutosize from 'react-textarea-autosize';
+
 // pdf page 43
 
 function EmploymentPg1(props) {
@@ -60,8 +61,8 @@ function EmploymentPg1(props) {
             />  
             income.
         </div>
-        <div className="m-auto d-flex align-items-center textWhite fieldData">
-          <Label className="textWhite col-3 text-right " for="">
+        <div className="m-auto d-flex align-items-center textWhite">
+          <Label className="textWhite text-right col-3" for="">
               [Patient Name, First]
           </Label>
         last work at 
@@ -72,9 +73,9 @@ function EmploymentPg1(props) {
               placeholder=""
             />  
         for
-        <TextareaAutosize              
+        <input              
               className="col-3 mr-2 ml-2 mb-2 fieldData"
-              type=""
+              type="time"
               id=""
               placeholder="select time"
             />  

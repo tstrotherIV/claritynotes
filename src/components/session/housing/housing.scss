@@ -114,24 +114,11 @@
   width: 100% !important;
 }
 
-.checkBoxRow {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex: auto;
-}
-
 .checkBoxSection {
   display: flex;
   flex-direction: row;
   flex: 1 0;
   margin: 5px;
-}
-
-
-.checkItem {
-  margin-top: 8px;
-  margin-bottom: 8px;
 }
 
 .check {
