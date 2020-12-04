@@ -343,3 +343,71 @@ textarea{
 .checkItem {
   margin: 0 !important;
 }
+
+.tableHeader{
+  background-color:#17a2b8;
+  border: solid 1px rgb(21, 21, 21) !important;
+  width: 300px !important;
+  height: auto;
+}
+.tableBorder{
+  border: solid 1px rgb(21, 21, 21) !important;
+}
+
+Table, tr, th, td{
+  border: solid 1px rgb(21, 21, 21) !important;
+  margin: 0 !important;
+  padding: 3 !important;
+}
+
+tbody{
+   background-color: white;
+ }
+
+ .tdHeaderWidth{
+  width: 150px !important;
+}
+
+.thWidth{ 
+  width: 80px;
+}
+.tdWidth{
+  width: 150px !important;
+}
+.rowHeight{
+ height: 60px;
+}
+
+th, td {
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+
+
+
+
+
+//Adding Scroll bar to pages where content runs off page
+// /* width */
+// ::-webkit-scrollbar {
+//   width: 10px;
+// }
+
+// /* Track */
+// ::-webkit-scrollbar-track {
+//   background: #f1f1f1;
+// }
+
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   background: rgb(138, 209, 230);
+//   border-radius: 10px;
+  
+// }
+
+// /* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//   background: #555;
+//   border-radius: 10px;
+// }

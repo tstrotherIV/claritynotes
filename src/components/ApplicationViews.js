@@ -99,8 +99,9 @@ import BehavioralObservationsAndTestingConditionsPg2 from "./session/behavioralO
 import BehavioralObservationsAndTestingConditionsPg3 from "./session/behavioralObservationsAndTestingConditions/BehavorialObservationsAndTestingConditionsPg3";
 import BehavioralObservationsAndTestingConditionsPg4 from "./session/behavioralObservationsAndTestingConditions/BehavorialObservationsAndTestingConditionsPg4";
 import BehavioralObservationsAndTestingConditionsPg5 from "./session/behavioralObservationsAndTestingConditions/BehavorialObservationsAndTestingConditionsPg5";
+import WasiII from "./session/testResults/Wasi-ii";
 
-
+import ProceduresAdministedPg1 from "./session/proceduresAdministered/ProceduresAdministeredPg1";
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
   const setUser = props.setUser;
@@ -800,6 +801,20 @@ const ApplicationViews = (props) => {
         path="/behavioral_observations_and_testing_conditions_pg_5"
         render={(props) => {
           return <BehavioralObservationsAndTestingConditionsPg5 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/procedures_administered_pg_1"
+        render={(props) => {
+          return <ProceduresAdministedPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/wasi-ii"
+        render={(props) => {
+          return <WasiII setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
     </Switch>
