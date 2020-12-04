@@ -17,23 +17,23 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
         <div className="questionsContainer">
           <div className="interview_div1">
 
-        <div className="m-auto d-flex align-items-center textWhite">
-          <Label className="textWhite col-3 text-right" for="">
+        <div className="d-flex align-items-center textWhite m-2">
+          <Label className="textWhite col-3 text-right p-0 m-0" for="">
               [Patient Name, First]
           </Label>
-          <div className="m-2 col-2">mood was</div>
+          <div className="ml-2 p-0 mr-2">mood was</div>
           <TextareaAutosize              
-              className="col-4 mr-2 mb-2 fieldData"
+              className="mb-2 fieldData"
               type="text"
               id=""
               placeholder="depressed/anxious/irritable"
             /> 
         </div>
-        <div className="m-auto d-flex align-items-center textWhite">
-          <Label className="textWhite col-3 text-right" for="">
+        <div className="d-flex align-items-center textWhite m-2">
+          <Label className="textWhite col-3 text-right p-0 m-0" for="">
               [Patient Name, First]
           </Label>
-          <div className="m-2 col-4">was very hyperactive.</div>
+          <div className="ml-2 p-0 col-4">was very hyperactive.</div>
           <TextareaAutosize              
               className="col-2 mr-2 mb-2 fieldData"
               type="text"
@@ -42,11 +42,11 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
             /> 
         </div> 
 
-        <div className="m-auto d-flex align-items-center textWhite">
-          <Label className="textWhite col-3 text-right" for="">
+        <div className="d-flex align-items-center textWhite m-2">
+          <Label className="textWhite col-3 text-right p-0 m-0" for="">
               [Patient Name, First]
           </Label>
-          <div className="m-2 col-4">was irritable.</div>
+          <div className="ml-2 p-0 col-4">was irritable.</div>
           <TextareaAutosize              
               className="col-2 mr-2 mb-2 fieldData"
               type="text"
@@ -55,49 +55,49 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
             />
         </div>
         
-        <div className="m-auto d-flex align-items-center textWhite">
-        <Label className="textWhite col-3 text-right" for="">
+        <div className="d-flex align-items-center textWhite m-2">
+        <Label className="textWhite col-3 text-right p-0 m-0" for="">
             [Patient Name, First]
         </Label> 
-        <div className="m-2 col-4">was withdrawn.</div>
+        <div className="ml-2 p-0 col-4">was withdrawn.</div>
         <TextareaAutosize              
-              className="col-2 mr-2 ml-2 mb-2 fieldData"
+              className="col-2 mr-2 mb-2 fieldData"
               type=""
               id=""
               placeholder="yes/no"
             />
         </div> 
-        <div className="m-auto d-flex align-items-center textWhite">
-        <Label className="textWhite col-3 text-right" for="">
+        <div className="d-flex align-items-center textWhite m-2">
+        <Label className="textWhite col-3 text-right p-0 m-0" for="">
             [Patient Name, First]
         </Label> 
-        <div className="m-2 col-4">’s eye contact was strong. </div>
+        <div className="ml-1 p-0 col-4">’s eye contact was strong. </div>
         <TextareaAutosize              
-              className="col-2 mr-2 ml-2 mb-2 fieldData"
+              className="col-2 mr-2 mb-2 fieldData ml-1"
               type=""
               id=""
               placeholder="yes/no"
             />
         </div> 
-        <div className="m-auto d-flex align-items-center textWhite">
-        <Label className="textWhite col-3 text-right" for="">
+        <div className="d-flex align-items-center textWhite m-2">
+        <Label className="textWhite col-3 text-right p-0 m-0" for="">
             [Patient Name, First]
         </Label> 
-        <div className="m-2 col-4">was circumspect in her answers.</div>
+        <div className="ml-2 p-0 col-4">was circumspect in her answers.</div>
         <TextareaAutosize              
-              className="col-2 mr-2 ml-2 mb-2 fieldData"
+              className="col-2 mr-2 mb-2 fieldData"
               type=""
               id=""
               placeholder="yes/no"
             /> 
         </div> 
-        <div className="m-auto d-flex align-items-center textWhite">
-        <Label className="textWhite col-3 text-right" for="">
+        <div className="d-flex align-items-center textWhite m-2">
+        <Label className="textWhite col-3 text-right p-0 m-0" for="">
             [Patient Name, First]
         </Label>
-        <div className="m-2 col-4">offered information readily </div> 
+        <div className="ml-2 p-0 col-4">offered information readily. </div> 
         <TextareaAutosize              
-              className="col-2 mr-2 ml-1 mb-2 fieldData"
+              className="col-2 mr-2 mb-2 fieldData"
               type=""
               id=""
               placeholder="yes/no"

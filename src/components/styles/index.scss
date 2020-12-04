@@ -318,8 +318,28 @@ textarea{
   
 }
 
-
 .minWidthContainer{
   min-width: 500px;
   margin: 20px;
+}
+
+.checkBoxRow {
+  display: flex;
+  flex-direction: row;
+  flex: auto;
+  margin: 0;
+  padding: 0;
+}
+.checkBoxdiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  flex: auto;
+  align-items: center;
+  margin: 4px;
+  padding: 0px;
+}
+
+.checkItem {
+  margin: 0 !important;
 }
