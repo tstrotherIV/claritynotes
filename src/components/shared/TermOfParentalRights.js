@@ -20,7 +20,7 @@ const TermOfParentalRights = () => {
               <h4>Termination of Parental Rights Criteria</h4>
             </div>
             <div className="checkBoxRow">
-              <div className="checkBoxdiv col-4">
+              <div className="checkBoxdiv col-4 ">
                 <input type="checkbox" className="check"></input>
                 <div className="checkItem">Unforeseeable Future Change</div>
               </div>
