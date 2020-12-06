@@ -4,11 +4,10 @@ import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 
-// pdf page 106
+// pdf page 112
 
-function ShipleyIntelligenceAssessment2(props) {
-    const next = "/rait_pg_1"
-
+function WideRangeAchievementTest5(props) {
+    const next = "/aimsweb_plus_achievement_test_pg_1"
     return (
         <>
         <div id="page-container">
@@ -17,60 +16,57 @@ function ShipleyIntelligenceAssessment2(props) {
           <div className="ml-5 mr-5 mt-3">
             <div className="d-flex flex-wrap text-white align-items-baseline">
                 <h3 className=" mb-1 col-2">Test Results</h3>
-                <h4>Shipley Intelligence Assessment 2</h4>
+                <h4>Wide Range Achievement Test-5</h4>
             </div>
             <div className="m-5 d-flex flex-wrap justify-content-around">
-                <p className="col-4 text-white"> Shipley Intelligence Assessment 2, [Patient Name, First]
-                achieved a Full Scale IQ of [Score Result] which falls into the [Score Result Descriptor Correlation] 
-                range of intelligence. </p>
-           <div className="">
+           <div className="col-6">
             <Table>
             <thead className="tableHeader text-center" >
                 <tr className="tableBorder">
-                <th className="tdHeaderWidth">Composite</th>
+                <th className="tdHeaderWidth"></th>
                 <th className="tdWidth">Score</th>
-                <th className="tdWidth">Range</th>
+                <th className="tdWidth">%</th>
+                <th className="tdWidth">Grade Equivalent</th>
                 </tr>
             </thead>
-            <tbody className="text-center">
+            <tbody className="text-center col-6">
                 <tr>
-                <th scope="row" className="rowHeight">Vocabulary</th>
+                <th scope="row" className="rowHeight">Math Computation</th>
                 <td>1</td>
                 <td>2</td>
-                </tr>
-                <tr>
-                <th scope="row" className="rowHeight">Abstraction</th>
                 <td>3</td>
-                <td>4</td>
                 </tr>
                 <tr>
-                <th scope="row" className="rowHeight">Block Design</th>
+                <th scope="row" className="rowHeight">Spelling</th>
+                <td>4</td>
                 <td>5</td>
                 <td>6</td>
                 </tr>
                 <tr>
-                <th scope="row" className="rowHeight p-0">
-                    <div>Composite A</div>
-                    <div>(Vocabulary + Abstraction)</div>
-                    </th>
+                <th scope="row" className="rowHeight">Word Reading</th>
                 <td>7</td>
                 <td>8</td>
-                </tr>
-                <tr>
-                <th scope="row" className="rowHeight p-0">
-                    <div>Composite B</div>
-                    <div>(Vocabulary + Block Design)</div>
-                    </th>
                 <td>9</td>
-                <td>10</td>
                 </tr>
                 <tr>
-                <th scope="row" className="rowHeight">Full Scale IQ</th>
+                <th scope="row" className="rowHeight">Sentence Comprehension</th>
+                <td>10</td>
                 <td>11</td>
                 <td>12</td>
                 </tr>
+                <tr>
+                <th scope="row" className="rowHeight">Reading Comprehension</th>  
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                </tr>
             </tbody>
             </Table>
+            </div>  
+            <div className="col-6 text-white">
+            <h5>Results:</h5>
+            <p className="text-white"> On the Wide Range Achievement Test-Revision 5 (WRAT-5). [Patient Name, First] [Patient Name, Last]'s math computation
+            standard scores fell on a [Result Grade Level] grade level, spelling on a [Result Grade Level] grade level, and sentence comprehension on a [Result Grade Level] grade level.</p>
             </div>
             </div>
         </div>
@@ -85,4 +81,4 @@ function ShipleyIntelligenceAssessment2(props) {
     );
 }
 
-export default ShipleyIntelligenceAssessment2;
+export default WideRangeAchievementTest5;
