@@ -377,7 +377,9 @@ tbody{
 .rowHeight{
  height: 60px;
 }
-
+.inputHeight{
+  height: 40px;
+}
 th, td {
   text-align: center !important;
   vertical-align: middle !important;
@@ -387,8 +389,22 @@ th, td {
   width: 200px;
 }
 
+.customPadding{
+  padding: 2px !important;
+}
 
+.customSelect{
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 
+.domainScoreWidth{
+  width: 140px !important;
+}
+.pauhasInput{
+  min-height: 150px !important;
+}
 
 //Adding Scroll bar to pages where content runs off page
 // /* width */
