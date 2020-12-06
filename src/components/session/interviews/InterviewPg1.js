@@ -52,7 +52,8 @@ function InterviewPg1(props) {
             <Label className="textWhite interview_title" for="">
               [Patient Name, First] said:
             </Label>
-            <TextareaAutosize              className="interview_fieldData"
+            <TextareaAutosize              
+              className="interview_fieldData"
               type="text"
               id=""
             />

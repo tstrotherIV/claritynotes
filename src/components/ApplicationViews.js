@@ -101,10 +101,17 @@ import BehavioralObservationsAndTestingConditionsPg4 from "./session/behavioralO
 import BehavioralObservationsAndTestingConditionsPg5 from "./session/behavioralObservationsAndTestingConditions/BehavorialObservationsAndTestingConditionsPg5";
 import ProceduresAdministedPg1 from "./session/proceduresAdministered/ProceduresAdministeredPg1";
 import WasiII from "./session/testResults/Wasi-ii";
-import WechslerAdultIntelligenceScaleIV from "./session/testResults/WechslerAdultIntelligenceScale-IV";
+import WechslerAdultIntelligenceScaleIV from "./session/testResults/WechslerAdultIntelligenceScaleIV";
 import ShipleyIntelligenceAssessment2 from "./session/testResults/ShipleyIntelligenceAssessment2";
-
-
+import RAITpg1 from "./session/testResults/RAITpg1";
+import RAITpg2 from "./session/testResults/RAITpg2";
+import RAITpg3 from "./session/testResults/RAITpg3";
+import WechslerAdultIntelligenceScaleIVpg2 from "./session/testResults/WechslerAdultIntelligenceScaleIVpg2";
+import WideRangeAchievementTest5 from "./session/testResults/WideRangeAchievementTest5";
+import AimswebPlusAchievementTestPg1 from "./session/testResults/AimswebPlusAchievementTestPg1";
+import AimswebPlusAchievementTestPg2 from "./session/testResults/AimswebPlusAchievementTestPg2";
+import AimswebPlusAchievementTestPg3 from "./session/testResults/AimswebPlusAchievementTestPg3";
+import AimswebPlusAchievementTestPg4 from "./session/testResults/AimswebPlusAchievementTestPg4";
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -833,6 +840,69 @@ const ApplicationViews = (props) => {
         path="/shipley_intelligence_assessment_2"
         render={(props) => {
           return <ShipleyIntelligenceAssessment2 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/rait_pg_1"
+        render={(props) => {
+          return <RAITpg1 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/rait_pg_2"
+        render={(props) => {
+          return <RAITpg2 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/rait_pg_3"
+        render={(props) => {
+          return <RAITpg3 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/wechsler_adult_intelligence_scale_IV_pg_2"
+        render={(props) => {
+          return <WechslerAdultIntelligenceScaleIVpg2 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/wide_range_achievement_test_5"
+        render={(props) => {
+          return <WideRangeAchievementTest5 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/aimsweb_plus_achievement_test_pg_1"
+        render={(props) => {
+          return <AimswebPlusAchievementTestPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/aimsweb_plus_achievement_test_pg_2"
+        render={(props) => {
+          return <AimswebPlusAchievementTestPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/aimsweb_plus_achievement_test_pg_3"
+        render={(props) => {
+          return <AimswebPlusAchievementTestPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/aimsweb_plus_achievement_test_pg_4"
+        render={(props) => {
+          return <AimswebPlusAchievementTestPg4 setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
     </Switch>
