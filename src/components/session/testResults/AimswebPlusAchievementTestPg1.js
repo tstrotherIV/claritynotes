@@ -6,7 +6,7 @@ import ButtonNavigation from "../../shared/ButtonNavigation";
 
 // pdf page 112
 
-function AimswebPlusAchievementTest(props) {
+function AimswebPlusAchievementTestPg1(props) {
     const next = "/aimsweb_plus_achievement_test_pg_2"
     return (
         <>
@@ -100,4 +100,4 @@ function AimswebPlusAchievementTest(props) {
     );
 }
 
-export default AimswebPlusAchievementTest;
+export default AimswebPlusAchievementTestPg1;

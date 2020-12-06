@@ -112,6 +112,10 @@ import AimswebPlusAchievementTestPg1 from "./session/testResults/AimswebPlusAchi
 import AimswebPlusAchievementTestPg2 from "./session/testResults/AimswebPlusAchievementTestPg2";
 import AimswebPlusAchievementTestPg3 from "./session/testResults/AimswebPlusAchievementTestPg3";
 import AimswebPlusAchievementTestPg4 from "./session/testResults/AimswebPlusAchievementTestPg4";
+import ContinuousPerformanceTest3rdEd from "./session/testResults/ContinuousPerformanceTest3rdEd";
+import ComputerizedNeurocognitiveAssessment from "./session/testResults/ComputerizedNeurocognitiveAssessment";
+import PaulasDeceptionScale from "./session/testResults/PaulhasDeceptionScale";
+
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -903,6 +907,27 @@ const ApplicationViews = (props) => {
         path="/aimsweb_plus_achievement_test_pg_4"
         render={(props) => {
           return <AimswebPlusAchievementTestPg4 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/continous_performance_test_3rd_ed"
+        render={(props) => {
+          return <ContinuousPerformanceTest3rdEd setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/computerized_performance_neurocognitive_assessment"
+        render={(props) => {
+          return <ComputerizedNeurocognitiveAssessment setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/paulhus_deception_scale"
+        render={(props) => {
+          return <PaulasDeceptionScale setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
     </Switch>
