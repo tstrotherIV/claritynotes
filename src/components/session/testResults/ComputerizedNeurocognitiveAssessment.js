@@ -4,7 +4,7 @@ import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 
-// pdf page 115
+// pdf page 117
 
 function ComputerizedNeurocognitiveAssessment(props) {
     const next = "/paulhus_deception_scale"

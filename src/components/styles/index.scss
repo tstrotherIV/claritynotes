@@ -308,7 +308,7 @@ textarea{
 
 .fieldData {
   padding: 7px;
-  text-align: center;
+  text-align: left;
 }
 
 .labelWidth{
@@ -405,7 +405,9 @@ th, td {
 .pauhasInput{
   min-height: 150px !important;
 }
-
+.textTeal{
+  color: #64c9d8;
+}
 //Adding Scroll bar to pages where content runs off page
 // /* width */
 // ::-webkit-scrollbar {

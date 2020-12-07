@@ -115,7 +115,9 @@ import AimswebPlusAchievementTestPg4 from "./session/testResults/AimswebPlusAchi
 import ContinuousPerformanceTest3rdEd from "./session/testResults/ContinuousPerformanceTest3rdEd";
 import ComputerizedNeurocognitiveAssessment from "./session/testResults/ComputerizedNeurocognitiveAssessment";
 import PaulasDeceptionScale from "./session/testResults/PaulhasDeceptionScale";
-
+import MinnesotaMultiphasicPersonalityInventory2 from "./session/testResults/MinnesotaMultiphasicPersonalityInventory2";
+import SubstanceAbuseSubtleScreeningInventory4 from "./session/testResults/SubstanceAbuseSubtleScreeningInventory4";
+import IowaGamblingTask from "./session/testResults/IowaGamblingTask";
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -928,6 +930,27 @@ const ApplicationViews = (props) => {
         path="/paulhus_deception_scale"
         render={(props) => {
           return <PaulasDeceptionScale setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/minnesota_multiphasic_personality_inventory_2"
+        render={(props) => {
+          return <MinnesotaMultiphasicPersonalityInventory2 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/substance_abuse_subtle_screening_inventory_4"
+        render={(props) => {
+          return <SubstanceAbuseSubtleScreeningInventory4 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/iowa_gambling_task"
+        render={(props) => {
+          return <IowaGamblingTask setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
     </Switch>

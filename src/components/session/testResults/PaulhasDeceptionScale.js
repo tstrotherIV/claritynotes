@@ -5,10 +5,10 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from 'react-textarea-autosize';
 
-//pdf page 116
+//pdf page 118
 
 function PaulasDeceptionScale(props) {
-    const next = "/computerized_performance_neurocognitive_assessment"
+    const next = "/substance_abuse_subtle_screening_inventory_4"
 
     return(
 <>
