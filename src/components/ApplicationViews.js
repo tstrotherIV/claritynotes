@@ -118,6 +118,10 @@ import PaulasDeceptionScale from "./session/testResults/PaulhasDeceptionScale";
 import MinnesotaMultiphasicPersonalityInventory2 from "./session/testResults/MinnesotaMultiphasicPersonalityInventory2";
 import SubstanceAbuseSubtleScreeningInventory4 from "./session/testResults/SubstanceAbuseSubtleScreeningInventory4";
 import IowaGamblingTask from "./session/testResults/IowaGamblingTask";
+import MillonClinicalMultiaxialInventoryIVPg1 from "./session/testResults/MillonClinicalMultiaxialInventoryIVPg1";
+import MillonClinicalMultiaxialInventoryIVPg2 from "./session/testResults/MillonClinicalMultiaxialInventoryIVPg2";
+import RorschPerformanceAssessmentSystem from "./session/testResults/RorschPerformanceAssessmentSystem";
+import ThematicApperceptionsTest from "./session/testResults/ThematicApperceptionsTest";
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -951,6 +955,34 @@ const ApplicationViews = (props) => {
         path="/iowa_gambling_task"
         render={(props) => {
           return <IowaGamblingTask setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/millon_clinical_multiaxial_inventory_iv_pg_1"
+        render={(props) => {
+          return <MillonClinicalMultiaxialInventoryIVPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/millon_clinical_multiaxial_inventory_iv_pg_2"
+        render={(props) => {
+          return <MillonClinicalMultiaxialInventoryIVPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/rorschach_performance_assessment_system"
+        render={(props) => {
+          return <RorschPerformanceAssessmentSystem setUser={setUser} hasUser={hasUser} {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/thematic_apperceptions_test"
+        render={(props) => {
+          return <ThematicApperceptionsTest setUser={setUser} hasUser={hasUser} {...props} />;
         }}
       />
     </Switch>

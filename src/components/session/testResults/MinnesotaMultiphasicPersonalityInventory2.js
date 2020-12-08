@@ -1,14 +1,14 @@
 import React from "react";
-import { Label } from "reactstrap";
+import { Input, Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 
 //pdf page 118
 
-function PaulhasDeceptionScale(props) {
-    const next = "/minnesota_multiphasic_personality_inventory_2"
-    
+function MinnesotaMultiphasicPersonalityInventory2(props) {
+    const next = "/millon_clinical_multiaxial_inventory_iv_pg_1"
+
     return(
 <>
         <div id="page-container">
@@ -28,14 +28,14 @@ function PaulhasDeceptionScale(props) {
                 <Label className="mt-3 textTeal" for="">***Interpret Top 2-3 Highest Scores And Paste In/Personalize</Label>
                 </div>
                 <div>
-                <input
+                <Input
                 className="inputHeight m-2 col-6"
                 type="text"
                 id=""
                 />
                 </div>
             <div className="mt-3">
-                <input
+                <Input
                 className=""
                     type="checkbox"
                     id=""
@@ -58,4 +58,4 @@ function PaulhasDeceptionScale(props) {
 
 }
 
-export default PaulhasDeceptionScale;
+export default MinnesotaMultiphasicPersonalityInventory2;
