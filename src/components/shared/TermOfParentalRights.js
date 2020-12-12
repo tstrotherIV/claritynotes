@@ -135,7 +135,15 @@ const TermOfParentalRights = () => {
                           <Label className="inputBoldText" for="">Surprise</Label>
                           <p className="m-0">Opened mouth. Raised eyebrows. Widened eyes.</p>
                         </div>
-                      </div>                
+                        
+                      </div> 
+                      <div className="checkBoxRow">
+                      <div className="col-4">
+                          <Input type="checkbox" className=""id=""></Input>
+                          <Label className="inputBoldText" for="">Anger</Label>
+                          <p className="m-0">Lips pressed together. Corners of lips flat or turned down. Eyebrows slanted in, lowered in middle of forehead. Widened eyes (brief stare).</p>
+                        </div>   
+                        </div>            
                 </div>
             </Tab>
 
