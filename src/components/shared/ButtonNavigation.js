@@ -1,13 +1,16 @@
 import React from "react";
 import { Button } from "reactstrap";
 import history from "../../helpers/history";
+import TermOfParentalRights from "./TermOfParentalRights";
 
 function ButtonNavigation(props) {
 
     
 return(
 <div className="buttonSection">
-          <div className="idBox textWhite p-3"></div>
+          <div className="idBox textWhite d-flex flex-wrap justify-content-center">
+          <TermOfParentalRights />
+          </div>
             <Button
               color="info"
               className="button"

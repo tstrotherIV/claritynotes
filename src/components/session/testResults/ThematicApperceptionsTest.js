@@ -22,7 +22,7 @@ function ThematicApperceptionsTest(props) {
         </div>
         <div className="text-white d-flex flex-wrap justify-content-center">
             <div className="mt-5 col-8">
-            <p>Thematic Appreceptions Test (TAT) is a projective psychological test. Proponents of the technique
+            <p>The Thematic Appreceptions Test (TAT) is a projective psychological test. Proponents of the technique
                 assert that subjects' responses, in the narratives they make up about ambiguous pictures of people, reveal
                 their underlying motives, concerns, and the way they see the social world.
             </p>
@@ -40,7 +40,6 @@ function ThematicApperceptionsTest(props) {
 
             <div className="ml-3">
             </div> 
-
         </div>
         </div>
         </div>
