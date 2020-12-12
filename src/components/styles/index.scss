@@ -206,10 +206,7 @@ Button, Input{
   background-image: url('../../media/blue_bg_clarity_HD.jpg');
 }
 
-.termBackground{
-  background-image: url('../../media/blue_bg_clarity_HD.jpg');
-  padding: 10px;
-}
+
 
 .button {
   margin: clamp(1px, 3px, 8px) !important;
@@ -440,3 +437,81 @@ th, td {
 //   background: #555;
 //   border-radius: 10px;
 // }
+
+.dropdown-menu{
+  background-color: transparentize($color: #000000, $amount: 1);
+  padding: 0 !important;
+  border: none !important;
+  min-width: 100vw !important;
+}
+
+.active{
+  background-color: white !important;
+}
+
+#uncontrolled-tab-tab-term{
+  background-color: rgba(143, 143, 143, 0.879);
+  color: black;
+  width: 36vw;
+  display: flex;
+  justify-content: center;
+}
+#uncontrolled-tab-tab-behavioral{
+  background-color: rgba(143, 143, 143, 0.879);
+  color: black;
+  width: 36vw;
+  display: flex;
+  justify-content: center;
+}
+
+#uncontrolled-tab-tab-IQ{
+  background-color: rgba(143, 143, 143, 0.879);
+  color: black;
+  width: 10vw;
+  display: flex;
+  justify-content: center;
+}
+
+#uncontrolled-tab-tab-domains{
+  background-color: rgba(143, 143, 143, 0.879);
+  color: black;
+  width: 15vw;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-item{
+  margin: 3px;
+  height: 35px;
+  border-radius: 8px 8px 0px 0px !important;
+}
+
+.termBackground{
+  width: 30px;
+}
+ 
+.dropdown-toggle{
+  font-size: 15px;
+  border-radius: 4px !important;
+}
+
+.terminationButton{
+  border-width: 10px;
+  border-bottom-width: 0;
+}
+
+.contents{
+  border-radius: 8px !important;
+  padding: 10px;
+  min-height: 200px;
+}
+
+.nav-tabs{
+  border: none !important;
+  
+}
+.inputBoldText{
+  font-weight: bolder;
+  margin: 0;
+}
+
