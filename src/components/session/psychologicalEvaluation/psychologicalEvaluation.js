@@ -9,6 +9,7 @@ import {
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading.js';
 import TextareaAutosize from 'react-textarea-autosize';
+import EmptyFooterSpace from './../../shared/EmptyFooterSpace';
 
 import "./psychologicalEvaluation.scss";
 
@@ -194,6 +195,7 @@ function PsychologicalEvaluation(props) {
         <div className="idBox textWhite p-3">
       </div>
       </div>
+      <EmptyFooterSpace />
       </div>
       </div>
       </div>

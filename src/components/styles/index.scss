@@ -1,6 +1,5 @@
-@import '_variables.scss';
+  @import '_variables.scss';
 @import '~bootstrap/dist/css/bootstrap.min.css';
-
 
 
 body {
@@ -203,7 +202,7 @@ Button, Input{
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
-  background-image: url('../../media/blue_bg_clarity_HD.jpg');
+  background-color: rgb(16, 30, 38);
 }
 
 
@@ -487,7 +486,10 @@ th, td {
 }
 
 .termBackground{
-  width: 30px;
+  width: 100vw;
+  height: 100vh;
+  // background-color: rgb(9, 30, 43);
+  background-color: rgb(16, 30, 38);
 }
  
 .dropdown-toggle{

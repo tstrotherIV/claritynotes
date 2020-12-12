@@ -11,6 +11,7 @@ import {
 import Heading from '../../shared/PsychologicalHeading';
 import ButtonNavigation from '../../shared/ButtonNavigation';
 import TextareaAutosize from 'react-textarea-autosize';
+import EmptyFooterSpace from './../../shared/EmptyFooterSpace';
 
 
 function PsychologicalEvaluation_children(props) {
@@ -96,7 +97,9 @@ function PsychologicalEvaluation_children(props) {
       </div>
       <div id="footer">
       <ButtonNavigation next={next} />
+      <EmptyFooterSpace />
       </div>
+
       </div>
     </>
   );
