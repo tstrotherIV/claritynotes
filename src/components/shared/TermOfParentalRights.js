@@ -12,7 +12,7 @@ const domains =<p className="domainWidth">Domains</p>;
 const TermOfParentalRights = () => {
  
     return(
-      <div className="dropdown_button">
+      <div className="dropdown_button termBackground">
         <div className="d-flex justify-content-center">
         <DropdownButton
           as={ButtonGroup}
@@ -23,7 +23,7 @@ const TermOfParentalRights = () => {
           className="terminationButton p-1"
           title="Patient Notes"
         >
-          <ButtonGroup/>
+         
           <div className="checkBoxContainer">
           <Tabs defaultActiveKey="term" id="uncontrolled-tab" className="d-flex flex-wrap justify-content-between" >
             <Tab eventKey="term" title={termTitle} className="contents">

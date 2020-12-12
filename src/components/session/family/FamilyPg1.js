@@ -17,8 +17,8 @@ function FamilyPg1(props) {
       <div className="header">
         <h2 className="textWhite">Family</h2>
       </div>
-      <div className="questionsContainerWide d-flex flex-wrap justify-content-center align-items-baseline m-2">
-              <Label className="textWhite m-1" for="">
+      <div className="d-flex flex-wrap justify-content-center align-items-baseline m-2">
+              <Label className="textWhite m-4" for="">
               [Patient Name, First] his/her
               </Label>
               <TextareaAutosize                
@@ -26,7 +26,7 @@ function FamilyPg1(props) {
                 type="text"
                 id=""
               />
-          <Label className="textWhite m-2" for="">
+          <Label className="textWhite m-4" for="">
           raised him/her in 
               </Label>
               <TextareaAutosize                     
@@ -38,7 +38,7 @@ function FamilyPg1(props) {
               <div className="textWhite ml-2">.</div>
            
       </div>
-      <div className="questionsContainerWide d-flex flex-wrap justify-content-center align-items-baseline m-2">      
+      <div className="d-flex flex-wrap justify-content-center align-items-baseline m-2">      
               <Label className="textWhite ml-1 mr-1 mt-0 mb-0" for="">
               [Patient Name, First] had
               </Label>
