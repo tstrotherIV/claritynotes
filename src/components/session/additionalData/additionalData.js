@@ -5,7 +5,7 @@ import "./additionalData.scss";
 
 function PsychologicalEvaluationAdditionalData(props) {
 
-  const next = "/family_pg_1";
+  const next = "/interview_pg_1";
   return (
     <>
     <div id="page-container" className="sessionStepContainer">
