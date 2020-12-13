@@ -1,4 +1,4 @@
-import React, {  useState, useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import {
   Label,
   Button,
@@ -6,7 +6,6 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  Form
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading.js';
 import TextareaAutosize from 'react-textarea-autosize';
@@ -15,7 +14,11 @@ import EmptyFooterSpace from './../../shared/EmptyFooterSpace';
 import "./psychologicalEvaluation.scss";
 
 
-function PsychologicalEvaluation(props) {
+
+
+const MAX_MESSAGE_LENGTH = 200 
+
+function PsychologicalEvaluation(props, { takeFocus, date} ) {
 
 
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
@@ -24,50 +27,28 @@ function PsychologicalEvaluation(props) {
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
   const toggle2 = () => setDropdownOpen2((prevState) => !prevState);
 
+  const storageKey = makeNewPostKey(date)
+  const [message, setMessage] = useState(getLocalStorageValue(storageKey) || "")
+  const messageTooLong = message.length > MAX_MESSAGE_LENGTH
  
-  const PATIENT_INFO = localStorage.getItem('patient')
-  ? JSON.parse(localStorage.getItem('patient'))
-  : []
-
-  
-
-  const [patient, setPatient] = useState(PATIENT_INFO)
-
-  const [firstName, setFirstName] = useState('')
-  const [middleName, setMiddleName] = useState('')
-  const [lastName, setLastName] = useState('')
-
- 
-  function handleFirstNameChange(event) {
-    console.log('firstName', event.target.value)
-    setFirstName(event.target.value)
+  function handleMessageChange(event) {
+    setMessage(event.target.value)
   }
 
-  function handleMiddleNameChange(event) {
-    console.log('middleName', event.target.value)
-    setMiddleName(event.target.value)
-  }
-
-  function handleLastNameChange(event) {
-    console.log('lastName', event.target.value)
-    setLastName(event.target.value)
-  }
-
-  const handleSubmitForm = event => {
-    event.preventDefault()
-  const patient = {firstName, middleName } 
-
-  setPatient([...patient])
-  }
-
+  // Save the message for this date as its value changes.
   useEffect(() => {
-    localStorage.setItem('patient', JSON.stringify(patient))
-  }, [patient])
+    setLocalStorage(storageKey, message)
+  }, [storageKey, message])
 
- 
+  const messageRef = useRef()
+
+    // Automatically focus the <textarea> if it should take focus.
+    useEffect(() => {
+      if (takeFocus) messageRef.current.focus()
+    }, [takeFocus, message])
+
   return (
-
-<div>
+    <div className={"NewPost" + (messageTooLong ? " NewPost_error" : "")}>
   <div id="page-container">
   <div id="content-wrap">
   <Heading /> 
@@ -75,7 +56,6 @@ function PsychologicalEvaluation(props) {
       <div className="header">
         <h2 className="textWhite mt-2">Please Confirm or Update Information</h2>
       </div>
-      <Form onSubmit={handleSubmitForm}>
      <div className="row no-gutters text-center d-flex justify-content-center minWidthContainer">
         <div className="col-6">
           <div className="d-flex m-4">
@@ -87,20 +67,20 @@ function PsychologicalEvaluation(props) {
               type="text"
               id="firstName"
               placeholder="First Name"
-              value={firstName}
-              onChange={handleFirstNameChange}
-
+              value=''
+              onChange=''
             />
           </div>
           <div className="d-flex m-4">
             <Label className="textWhite labelWidth" for="middleName"></Label>
-            <TextareaAutosize             
+            <TextareaAutosize        
+              ref={messageRef}      
               className="fieldData col-8"
               type="text"
               id="middleName"
               placeholder="Middle Name"
-              value={middleName}
-              onChange={handleMiddleNameChange}
+              value={message}
+              onChange={handleMessageChange}
             />
           </div>
           <div className="d-flex justify-items-center m-4">
@@ -109,9 +89,7 @@ function PsychologicalEvaluation(props) {
               className="fieldData col-8"
               type="text"
               id="lastName"
-              placeholder="lastName"
-              value={lastName}
-              onChange={handleLastNameChange}
+              placeholder="Last Name"
             />
           </div>
           <div className="d-flex justify-items-center m-4">
@@ -233,7 +211,6 @@ function PsychologicalEvaluation(props) {
           </div>
         </div>
         </div>
-     </Form>
         </div>
       <div id="footer">
       <div className="buttonSection">
@@ -243,7 +220,7 @@ function PsychologicalEvaluation(props) {
         props.history.push(`/sessionStep1`);
       }}>Previous</Button>
         <Button color="info" className="button">Save</Button>
-        <Button color="info" className="button" type="submit">Submit</Button>
+        <Button color="info" className="button">Submit</Button>
         <Button color="info" className="button" onClick={() => {
           props.history.push(`/psychological_evaluation_family`);
         }}>Next</Button>
@@ -258,6 +235,24 @@ function PsychologicalEvaluation(props) {
   )
 }
 
+function makeNewPostKey(date) {
+  return `newPost:${date}`
+}
 
+
+function getLocalStorageValue(key) {
+  const val = localStorage.getItem(key)
+  if (!val) return null
+  try {
+    return JSON.parse(val)
+  } catch (e) {
+    return null
+  }
+}
+
+
+function setLocalStorage(key, value) {
+  localStorage.setItem(key, JSON.stringify(value))
+}
 
 export default PsychologicalEvaluation;
