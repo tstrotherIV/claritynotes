@@ -3,31 +3,37 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import { Tab, Tabs } from "react-bootstrap";
 import { Input, Label } from "reactstrap";
+import AdditionalNotes from "./AdditionalNotes";
+import './ps.scss';
 
 const termTitle = <p className="term">Termination of Parental Rights Criteria</p>;
 const behavioral = <p className="behavioral">Behavioral Observations and Testing Conditions</p>;
 const IQ = <p className="IQWidth">IQ</p>;
 const domains =<p className="domainWidth">Domains</p>;
+const generalNotes=<p className="generalNotes">General Notes</p>
 
 const TermOfParentalRights = () => {
  
     return(
-      <div className="dropdown_button termBackground">
-        <div className="d-flex justify-content-center">
+      <div className="dropdown_button termBackground ">
+        <div className="d-flex justify-content-center termMenu">
         <DropdownButton
           as={ButtonGroup}
           key="up"
           id=""
           drop="up"
           variant="light"
-          className="terminationButton p-1"
+          className="terminationButton p-1 "
           title="Patient Notes"
         >
          
           <div className="checkBoxContainer">
-          <Tabs defaultActiveKey="term" id="uncontrolled-tab" className="d-flex flex-wrap justify-content-between" >
-            <Tab eventKey="term" title={termTitle} className="contents">
-              <div className="pt-3 pl-3">
+          <Tabs defaultActiveKey="generalNotes" id="uncontrolled-tab" className="d-flex flex-wrap justify-content-between" >
+          <Tab eventKey="generalNotes" title={generalNotes} className="contents">
+          <AdditionalNotes />         
+          </Tab>
+            <Tab eventKey="term" title={termTitle} className="contents termMenu"> 
+              <div className="pt-3 pl-3 termMenu">
                       <div className="checkBoxRow">
                         <div className="col-4">
                           <Input type="checkbox" className="" id=""></Input>
@@ -201,11 +207,11 @@ const TermOfParentalRights = () => {
 
             </Tab>
             <Tab eventKey="domains" title={domains} className="contents">
-            <div className="pt-3 pl-3">Add table here</div>
+            <div className="pt-3 pl-3">
+          
+            </div>
             </Tab>
-          </Tabs>
-
-       
+          </Tabs> 
           </div>
         </DropdownButton>
       </div>

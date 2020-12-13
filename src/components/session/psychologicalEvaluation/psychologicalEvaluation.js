@@ -1,4 +1,4 @@
-import React, {  useState, useEffect } from "react";
+import React, {  useState,  } from "react";
 import {
   Label,
   Button,
@@ -11,6 +11,7 @@ import {
 import Heading from '../../shared/PsychologicalHeading.js';
 import TextareaAutosize from 'react-textarea-autosize';
 import EmptyFooterSpace from './../../shared/EmptyFooterSpace';
+import DatePicker from 'react-date-picker';
 
 import "./psychologicalEvaluation.scss";
 
@@ -25,13 +26,6 @@ function PsychologicalEvaluation(props) {
   const toggle2 = () => setDropdownOpen2((prevState) => !prevState);
 
  
-  const PATIENT_INFO = localStorage.getItem('patient')
-  ? JSON.parse(localStorage.getItem('patient'))
-  : []
-
-  
-
-  const [patient, setPatient] = useState(PATIENT_INFO)
 
   const [firstName, setFirstName] = useState('')
   const [middleName, setMiddleName] = useState('')
@@ -52,20 +46,11 @@ function PsychologicalEvaluation(props) {
     console.log('lastName', event.target.value)
     setLastName(event.target.value)
   }
-
-  const handleSubmitForm = event => {
-    event.preventDefault()
-  const patient = {firstName, middleName } 
-
-  setPatient([...patient])
-  }
-
-  useEffect(() => {
-    localStorage.setItem('patient', JSON.stringify(patient))
-  }, [patient])
-
  
+  const [DOBvalue, onChange] = useState(new Date());
+
   return (
+  
 
 <div>
   <div id="page-container">
@@ -75,7 +60,7 @@ function PsychologicalEvaluation(props) {
       <div className="header">
         <h2 className="textWhite mt-2">Please Confirm or Update Information</h2>
       </div>
-      <Form onSubmit={handleSubmitForm}>
+      <Form>
      <div className="row no-gutters text-center d-flex justify-content-center minWidthContainer">
         <div className="col-6">
           <div className="d-flex m-4">
@@ -118,10 +103,11 @@ function PsychologicalEvaluation(props) {
             <Label className="textWhite labelWidth " for="dateOfBirth">
               DOB
             </Label>
-            <TextareaAutosize              
-              className="fieldData col-8"
-              type="date"
+            <DatePicker              
+              className=" col-3 dateField"
               id="dateOfBirth"
+              onChange={onChange}
+              value={DOBvalue}
             />
           </div>
           <div className="d-flex justify-items-center m-4">

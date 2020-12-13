@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./psychologicalEvaluationFamily.scss";
 import {
   Label,
   Dropdown,

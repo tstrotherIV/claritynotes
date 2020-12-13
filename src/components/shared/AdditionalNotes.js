@@ -1,9 +1,6 @@
 import React from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import 'react-quill/dist/quill.bubble.css';
-import "katex/dist/katex.css";
-import "highlight.js/styles/atom-one-light.css";
 
 /*
  * Custom "star" icon for the toolbar using an Octicon
@@ -38,10 +35,6 @@ const CustomToolbar = () => (
     <span className="ql-formats">
       <select className="ql-color"></select>
       <select className="ql-background"></select>
-    </span>
-    <span className="ql-formats">
-      <button className="ql-script" value="sub"></button>
-      <button className="ql-script" value="super"></button>
     </span>
     <span className="ql-formats">
       <button className="ql-header" value="1"></button>
