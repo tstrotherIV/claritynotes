@@ -25,7 +25,7 @@ function InterviewPg8(props) {
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
   const toggle3 = () => setModal(!modal);
 
-  const next = "/family_pg_9";
+  const next = "/interview_pg_9";
 
   return (
     <>

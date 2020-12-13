@@ -20,7 +20,7 @@ import "./interviews.scss";
 
 function Interview_Pg2(props) {
 
-  const next = "/family_pg_3";
+  const next = "/interview_pg_3";
 
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const [modal, setModal] = useState(false);
