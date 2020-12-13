@@ -1,0 +1,94 @@
+
+.termMenu {
+  
+  .dropdown-menu{
+  background-color: transparentize($color: #000000, $amount: 1);
+  padding: 0 !important;
+  border: none !important;
+  min-width: 100vw !important;
+}
+.active{
+  background-color: white !important;
+}
+
+#uncontrolled-tab-tab-generalNotes{
+  background-color: rgba(143, 143, 143, 0.879);
+  color: black;
+  width: 12vw;
+  display: flex;
+  justify-content: center;
+}
+
+#uncontrolled-tab-tab-term{
+  background-color: rgba(143, 143, 143, 0.879);
+  color: black;
+  width: 28vw;
+  display: flex;
+  justify-content: center;
+}
+#uncontrolled-tab-tab-behavioral{
+  background-color: rgba(143, 143, 143, 0.879);
+  color: black;
+  width: 32vw;
+  display: flex;
+  justify-content: center;
+}
+
+#uncontrolled-tab-tab-IQ{
+  background-color: rgba(143, 143, 143, 0.879);
+  color: black;
+  width: 10vw;
+  display: flex;
+  justify-content: center;
+}
+
+#uncontrolled-tab-tab-domains{
+  background-color: rgba(143, 143, 143, 0.879);
+  color: black;
+  width: 15vw;
+  display: flex;
+  justify-content: center;
+
+}
+.dropdown-toggle{
+  font-size: 15px;
+  border-radius: 4px !important;
+}
+
+.nav-tabs{
+  border: none !important;
+  
+}
+.nav-item{
+  height: 35px;
+  border-radius: 8px 8px 0px 0px !important;
+}
+}
+
+.contents{
+  border-radius: 0px 0px 8px 8px !important;
+  padding: 10px;
+  min-height: 250px;
+}
+
+.inputBoldText{
+  font-weight: bolder;
+  margin: 0;
+}
+
+.terminationButton{
+  border-width: 10px;
+  border-bottom-width: 0;
+}
+
+.termBackground{
+  width: 100vw;
+  height: 100vh;
+  //background-color: rgb(9, 30, 43);
+   background-color: rgb(16, 30, 38);
+}
+
+.inputBoldText{
+  font-weight: bolder;
+  margin: 0;
+}

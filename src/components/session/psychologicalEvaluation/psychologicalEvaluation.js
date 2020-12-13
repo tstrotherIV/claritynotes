@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {  useState,  } from "react";
 import {
   Label,
   Button,
@@ -6,22 +6,53 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
+  Form
 } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading.js';
 import TextareaAutosize from 'react-textarea-autosize';
 import EmptyFooterSpace from './../../shared/EmptyFooterSpace';
+import DatePicker from 'react-date-picker';
 
 import "./psychologicalEvaluation.scss";
 
+
 function PsychologicalEvaluation(props) {
+
+
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const [dropdownOpen2, setDropdownOpen2] = useState(false);
 
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
   const toggle2 = () => setDropdownOpen2((prevState) => !prevState);
 
+ 
+
+  const [firstName, setFirstName] = useState('')
+  const [middleName, setMiddleName] = useState('')
+  const [lastName, setLastName] = useState('')
+
+ 
+  function handleFirstNameChange(event) {
+    console.log('firstName', event.target.value)
+    setFirstName(event.target.value)
+  }
+
+  function handleMiddleNameChange(event) {
+    console.log('middleName', event.target.value)
+    setMiddleName(event.target.value)
+  }
+
+  function handleLastNameChange(event) {
+    console.log('lastName', event.target.value)
+    setLastName(event.target.value)
+  }
+ 
+  const [DOBvalue, onChange] = useState(new Date());
+
   return (
-    <>
+  
+
+<div>
   <div id="page-container">
   <div id="content-wrap">
   <Heading /> 
@@ -29,6 +60,7 @@ function PsychologicalEvaluation(props) {
       <div className="header">
         <h2 className="textWhite mt-2">Please Confirm or Update Information</h2>
       </div>
+      <Form>
      <div className="row no-gutters text-center d-flex justify-content-center minWidthContainer">
         <div className="col-6">
           <div className="d-flex m-4">
@@ -40,15 +72,20 @@ function PsychologicalEvaluation(props) {
               type="text"
               id="firstName"
               placeholder="First Name"
+              value={firstName}
+              onChange={handleFirstNameChange}
+
             />
           </div>
           <div className="d-flex m-4">
             <Label className="textWhite labelWidth" for="middleName"></Label>
-            <TextareaAutosize              
+            <TextareaAutosize             
               className="fieldData col-8"
               type="text"
               id="middleName"
               placeholder="Middle Name"
+              value={middleName}
+              onChange={handleMiddleNameChange}
             />
           </div>
           <div className="d-flex justify-items-center m-4">
@@ -57,17 +94,20 @@ function PsychologicalEvaluation(props) {
               className="fieldData col-8"
               type="text"
               id="lastName"
-              placeholder="Last Name"
+              placeholder="lastName"
+              value={lastName}
+              onChange={handleLastNameChange}
             />
           </div>
           <div className="d-flex justify-items-center m-4">
             <Label className="textWhite labelWidth " for="dateOfBirth">
               DOB
             </Label>
-            <TextareaAutosize              
-              className="fieldData col-8"
-              type="date"
+            <DatePicker              
+              className=" col-3 dateField"
               id="dateOfBirth"
+              onChange={onChange}
+              value={DOBvalue}
             />
           </div>
           <div className="d-flex justify-items-center m-4">
@@ -179,6 +219,7 @@ function PsychologicalEvaluation(props) {
           </div>
         </div>
         </div>
+     </Form>
         </div>
       <div id="footer">
       <div className="buttonSection">
@@ -188,7 +229,7 @@ function PsychologicalEvaluation(props) {
         props.history.push(`/sessionStep1`);
       }}>Previous</Button>
         <Button color="info" className="button">Save</Button>
-        <Button color="info" className="button">Submit</Button>
+        <Button color="info" className="button" type="submit">Submit</Button>
         <Button color="info" className="button" onClick={() => {
           props.history.push(`/psychological_evaluation_family`);
         }}>Next</Button>
@@ -199,8 +240,10 @@ function PsychologicalEvaluation(props) {
       </div>
       </div>
       </div>
-    </>
-  );
+    </div>
+  )
 }
+
+
 
 export default PsychologicalEvaluation;
