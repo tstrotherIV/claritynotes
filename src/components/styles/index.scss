@@ -417,6 +417,9 @@ th, td {
   min-height: 180px !important;
  
 }
+.ql-container{
+  border: none !important;
+}
 .dateField{
   background-color: white;
   margin: 0;
@@ -463,6 +466,7 @@ html, body {
   overflow: auto;
   background-color: rgb(255, 255, 255);
   height: 180px;
+  border: solid 2px rgb(205, 205, 205) !important;
 }
 
 .ql-container {
