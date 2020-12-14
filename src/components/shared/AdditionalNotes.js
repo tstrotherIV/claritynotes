@@ -2,6 +2,7 @@ import React from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
+
 /*
  * Custom "star" icon for the toolbar using an Octicon
  * https://octicons.github.io
@@ -78,8 +79,6 @@ class AdditionalNotes extends React.Component {
     this.setState({ editorHtml: html });
   }
 
-
-
   render() {
     return (
       <div className="text-editor">
@@ -90,6 +89,7 @@ class AdditionalNotes extends React.Component {
           modules={AdditionalNotes.modules}
           formats={AdditionalNotes.formats}
           theme={"snow"} // pass false to use minimal theme
+          className="scroll-container"
         />
       </div>
     );
@@ -111,8 +111,6 @@ AdditionalNotes.modules = {
       
     }
   };
- 
-
 
 /* 
  * Quill editor formats
