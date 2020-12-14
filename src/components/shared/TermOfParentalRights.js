@@ -30,7 +30,7 @@ const TermOfParentalRights = () => {
           <div className="checkBoxContainer">
           <Tabs defaultActiveKey="generalNotes" id="uncontrolled-tab" className="d-flex flex-wrap justify-content-between" >
           <Tab eventKey="generalNotes" title={generalNotes} className="contents">
-          <AdditionalNotes />         
+          <AdditionalNotes  />         
           </Tab>
             <Tab eventKey="term" title={termTitle} className="contents termMenu"> 
               <div className="pt-3 pl-3 termMenu">
