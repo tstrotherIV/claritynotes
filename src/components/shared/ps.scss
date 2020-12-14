@@ -17,6 +17,7 @@
   width: 12vw;
   display: flex;
   justify-content: center;
+  padding: 5px;
 }
 
 #uncontrolled-tab-tab-term{
@@ -25,6 +26,7 @@
   width: 28vw;
   display: flex;
   justify-content: center;
+  padding: 5px;
 }
 #uncontrolled-tab-tab-behavioral{
   background-color: rgba(143, 143, 143, 0.879);
@@ -32,7 +34,7 @@
   width: 32vw;
   display: flex;
   justify-content: center;
-}
+  padding: 5px;}
 
 #uncontrolled-tab-tab-IQ{
   background-color: rgba(143, 143, 143, 0.879);
@@ -40,7 +42,7 @@
   width: 10vw;
   display: flex;
   justify-content: center;
-}
+  padding: 5px;}
 
 #uncontrolled-tab-tab-domains{
   background-color: rgba(143, 143, 143, 0.879);
@@ -48,8 +50,9 @@
   width: 15vw;
   display: flex;
   justify-content: center;
-
+  padding: 5px;
 }
+
 .dropdown-toggle{
   font-size: 15px;
   border-radius: 4px !important;
@@ -57,11 +60,12 @@
 
 .nav-tabs{
   border: none !important;
-  
 }
 .nav-item{
-  height: 35px;
+  padding: none !important;
   border-radius: 8px 8px 0px 0px !important;
+  height: 48px;
+  text-align: center;
 }
 }
 
