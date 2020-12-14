@@ -430,25 +430,47 @@ th, td {
   border: 0px !important;
 }
 
-//Adding Scroll bar to pages where content runs off page
-// /* width */
-// ::-webkit-scrollbar {
-//   width: 10px;
-// }
+Adding Scroll bar to pages where content runs off page
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
-// /* Track */
-// ::-webkit-scrollbar-track {
-//   background: #f1f1f1;
-// }
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
 
-// /* Handle */
-// ::-webkit-scrollbar-thumb {
-//   background: rgb(138, 209, 230);
-//   border-radius: 10px;
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(138, 209, 230);
+  border-radius: 10px;
   
-// }
+}
 
-// /* Handle on hover */
-// ::-webkit-scrollbar-thumb:hover {
-//   background: #555;
-//   border-radius: 10px
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  border-radius: 10px
+}
+
+html, body { 
+  height: 100vh;
+  overflow: scroll!important;
+}
+
+.scroll-container {
+  overflow: auto;
+  background-color: rgb(255, 255, 255);
+  height: 180px;
+}
+
+.ql-container {
+  border: 1px solid lightgray;
+  font-family: unset !important;
+  font-size: unset !important;
+}
+
+.ql-container .ql-editor {
+  overflow: visible;
+}
