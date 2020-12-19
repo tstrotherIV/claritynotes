@@ -1,8 +1,35 @@
-import React from "react";
+import React, { useRef } from "react";
+import { Label, Input, Container, Button, Form } from "reactstrap";
+import useSimpleAuth from "../hooks/ui/useSimpleAuth";
 import "./login.scss";
-import { Label, Input, Container, Button} from "reactstrap";
 
 function Login(props) {
+
+  const userEmail = useRef()
+  const password = useRef()
+  const { login } = useSimpleAuth()
+
+      // Simplistic handler for login submit
+      const handleLogin = (e) => {
+        e.preventDefault()
+
+        /*
+            For now, just store the username and password that
+            the customer enters into local storage.
+        */
+        const credentials = {
+            "username": userEmail.current.value,
+            "password": password.current.value
+        }
+
+        login(credentials)
+            .then(() => {
+                props.history.push({
+                    pathname: "/"
+                })
+            })
+    }
+
   return (
     <div className="textWhite mt-5 mb-5">
       <Container className="mt-5">
@@ -21,26 +48,28 @@ function Login(props) {
           </p>
         </div>
         <div className="container d-flex flex-wrap justify-content-center m-0">
-            <div className="m-2">
+            <Form className="m-2" onSubmit={handleLogin}>
                 <div className="d-flex justify-items-center align-items-center m-3">
-                    <Label className="text-align" for="exampleEmail">
+                    <Label className="text-align" htmlFor="inputUserEmail">
                       Email
                     </Label>
                     <Input 
+                      ref={userEmail}
                       className="fieldSize"
                       type="email"
-                      id="exampleEmail"
-                      placeholder="email placeholder"
+                      id="userEmail"
+                      placeholder="Enter Email"
                     /> 
                 </div> 
                 <div className="d-flex justify-items-center align-items-center m-3">        
-                    <Label className="text-align" for="examplePassword">
+                    <Label className="text-align" htmlFor="inputPassword">
                       Password
                     </Label>
                     <Input
+                      ref={password}
                       className="fieldSize"
                       type="password"
-                      id="examplePassword"
+                      id="password"
                       placeholder="password placeholder"
                     />
               </div>
@@ -60,7 +89,7 @@ function Login(props) {
                 >CREATE NEW USER</Button>
               </div>
               </div>
-        </div>
+        </Form>
         </div>
         </Container>
       </div>
