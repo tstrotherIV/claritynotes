@@ -50,14 +50,14 @@ function Login(props) {
                 onClick={() => {
                     props.history.push(`/patient`);
                   }}
-                block>Login</Button>
+                >Login</Button>
                 </div>
                 <div className="d-flex justify-content-center">
                 <Button className="loginBtn whiteBtn"
                 onClick={() => {
                     props.history.push(`/createUser`);
                   }}
-                block>CREATE NEW USER</Button>
+                >CREATE NEW USER</Button>
               </div>
               </div>
         </div>
