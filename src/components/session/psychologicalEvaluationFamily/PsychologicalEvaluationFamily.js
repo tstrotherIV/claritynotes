@@ -14,11 +14,23 @@ import EmptyFooterSpace from './../../shared/EmptyFooterSpace';
 
 function PsychologicalEvaluation_family(props) {
 
+const [patientParents, setPatientParents] = useState({
+  patient_father_first_name: "",
+  patient_father_last_name: "",
+  patient_mother_first_name: "",
+  patient_mother_last_name: "",
+  patient_guardian_first_name: "",
+  patient_guardian_last_name: "",
+  patient_guardian_gender: "",
+})
+
   const next = "/psychological_evaluation_siblings";
-
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
-
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
+
+const handleFieldChange = (e) => {
+  setPatientParents({ ...patientParents, [e.target.name]: e.target.value});
+}
 
   return (
     <>
@@ -38,8 +50,11 @@ function PsychologicalEvaluation_family(props) {
             <TextareaAutosize              
               className="fieldData col-8"
               type="text"
-              id="firstName"
+              id="patient_father_first_name"
+              name="patient_father_first_name"
+              onChange={handleFieldChange}
               placeholder="Father First Name"
+              value={patientParents.patient_father_first_name}
             />
           </div>
           <div className="d-flex m-4">
@@ -47,8 +62,11 @@ function PsychologicalEvaluation_family(props) {
             <TextareaAutosize              
               className="fieldData col-8"
               type="text"
-              id="middleName"
+              id="patient_father_last_name"
+              name="patient_father_last_name"
+              onChange={handleFieldChange}
               placeholder="Father Last Name"
+              value={patientParents.patient_father_last_name}
             />
           </div>
           <div className="d-flex m-4">
@@ -56,8 +74,11 @@ function PsychologicalEvaluation_family(props) {
             <TextareaAutosize              
               className="fieldData col-8"
               type="text"
-              id="dateOfBirth"
+              id="patient_mother_first_name"
+              name="patient_mother_first_name"
+              onChange={handleFieldChange}
               placeholder="Mother First Name"
+              value={patientParents.patient_mother_first_name}
             />
             </div>
              <div className="d-flex m-4">
@@ -65,8 +86,11 @@ function PsychologicalEvaluation_family(props) {
             <TextareaAutosize              
               className="fieldData col-8"
               type="text"
-              id="lastName"
+              id="patient_mother_last_name"
+              name="patient_mother_last_name"
+              onChange={handleFieldChange}
               placeholder="Mother Last Name"
+              value={patientParents.patient_mother_last_name}
             />
           </div>
             </div>
@@ -81,8 +105,11 @@ function PsychologicalEvaluation_family(props) {
             <TextareaAutosize              
               className="fieldData col-8"
               type="text"
-              id="caseNumber"
+              id="patient_guardian_first_name"
+              name="patient_guardian_first_name"
+              onChange={handleFieldChange}
               placeholder="Guardian First Name"
+              value={patientParents.patient_guardian_first_name}
             />
           </div>
           <div className="d-flex m-4">
@@ -90,9 +117,11 @@ function PsychologicalEvaluation_family(props) {
             <TextareaAutosize              
               className="fieldData col-8"
               type="text"
-              name="date"
-              id="date"
+              id="patient_guardian_last_name"
+              name="patient_guardian_last_name"
+              onChange={handleFieldChange}
               placeholder="Guardian Last Name"
+              value={patientParents.patient_guardian_last_name}
               />
           </div>
           <div className="d-flex m-4">
@@ -104,7 +133,11 @@ function PsychologicalEvaluation_family(props) {
                 className="dropdown" caret>
                 Please Select
               </DropdownToggle>
-              <DropdownMenu>
+              <DropdownMenu 
+                id="patient_guardian_gender"
+                name="patient_guardian_gender"
+                onChange={handleFieldChange}
+                value={patientParents.patient_guardian_gender}>
                 <DropdownItem header>Header</DropdownItem>
                 <DropdownItem>Some Action</DropdownItem>
                 <DropdownItem disabled>Action (disabled)</DropdownItem>
