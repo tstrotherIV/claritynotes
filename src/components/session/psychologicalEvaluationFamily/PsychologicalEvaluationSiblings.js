@@ -17,9 +17,7 @@ import EmptyFooterSpace from './../../shared/EmptyFooterSpace';
 function PsychologicalEvaluation_children(props) {
 
   const next = "/psychological_evaluation_children";
-
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
-
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
 
   return (
