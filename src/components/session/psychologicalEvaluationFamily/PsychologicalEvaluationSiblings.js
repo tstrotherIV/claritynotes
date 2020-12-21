@@ -16,9 +16,22 @@ import EmptyFooterSpace from './../../shared/EmptyFooterSpace';
 
 function PsychologicalEvaluation_children(props) {
 
+  const [patientSiblings, setPatientSiblings] = useState({
+    patient_only_child: false,
+    sibling_first_name: "",
+    sibling_last_name: "",
+    sibling_gender: "",
+    sibling_dob: "",
+    patient_id: "",
+  })
+
   const next = "/psychological_evaluation_children";
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
+
+  const handleFieldChange = (e) => {
+    setPatientSiblings({ ...patientSiblings, [e.target.name]: e.target.value});
+  }
 
   return (
     <>
@@ -34,6 +47,8 @@ function PsychologicalEvaluation_children(props) {
             className=""
             type="checkbox"
             id="onlyChild"
+            checked={patientSiblings.patient_only_child}
+            onChange={(e)=> {setPatientSiblings(e.target.checked)}}
           />
           <Label className="textWhite title" for="onlyChild">
           Patient is an Only Child
@@ -46,7 +61,10 @@ function PsychologicalEvaluation_children(props) {
           <TextareaAutosize            
             className="fieldData col-8"
             type="text"
-            id="sibFirstName"
+            id="sibling_first_name"
+            name="sibling_first_name"
+            onChange={handleFieldChange}
+            value={patientSiblings.sibling_first_name}
             placeholder="Sibling First Name"
           />
         </div>
@@ -56,7 +74,10 @@ function PsychologicalEvaluation_children(props) {
           <TextareaAutosize            
             className="fieldData col-8"
             type="text"
-            id="sibLastName"
+            id="sibling_last_name"
+            name="sibling_last_name"
+            onChange={handleFieldChange}
+            value={patientSiblings.sibling_last_name}
             placeholder="Sibling Last Name"
           />
         </div>
@@ -68,7 +89,11 @@ function PsychologicalEvaluation_children(props) {
             <DropdownToggle color="light" className="dropdown" caret>
               Please Select
             </DropdownToggle>
-            <DropdownMenu>
+            <DropdownMenu
+              id="sibling_gender"
+              name="sibling_gender"
+              onChange={handleFieldChange}
+              value={patientSiblings.sibling_gender}>
               <DropdownItem header>Header</DropdownItem>
               <DropdownItem>Some Action</DropdownItem>
               <DropdownItem disabled>Action (disabled)</DropdownItem>

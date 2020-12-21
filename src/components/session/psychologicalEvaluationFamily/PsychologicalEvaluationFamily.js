@@ -14,15 +14,15 @@ import EmptyFooterSpace from './../../shared/EmptyFooterSpace';
 
 function PsychologicalEvaluation_family(props) {
 
-const [patientParents, setPatientParents] = useState({
-  patient_father_first_name: "",
-  patient_father_last_name: "",
-  patient_mother_first_name: "",
-  patient_mother_last_name: "",
-  patient_guardian_first_name: "",
-  patient_guardian_last_name: "",
-  patient_guardian_gender: "",
-})
+  const [patientParents, setPatientParents] = useState({
+    patient_father_first_name: "",
+    patient_father_last_name: "",
+    patient_mother_first_name: "",
+    patient_mother_last_name: "",
+    patient_guardian_first_name: "",
+    patient_guardian_last_name: "",
+    patient_guardian_gender: "",
+  })
 
   const next = "/psychological_evaluation_siblings";
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
@@ -53,8 +53,8 @@ const handleFieldChange = (e) => {
               id="patient_father_first_name"
               name="patient_father_first_name"
               onChange={handleFieldChange}
-              placeholder="Father First Name"
               value={patientParents.patient_father_first_name}
+              placeholder="Father First Name"
             />
           </div>
           <div className="d-flex m-4">
@@ -65,8 +65,8 @@ const handleFieldChange = (e) => {
               id="patient_father_last_name"
               name="patient_father_last_name"
               onChange={handleFieldChange}
-              placeholder="Father Last Name"
               value={patientParents.patient_father_last_name}
+              placeholder="Father Last Name"
             />
           </div>
           <div className="d-flex m-4">
@@ -77,8 +77,8 @@ const handleFieldChange = (e) => {
               id="patient_mother_first_name"
               name="patient_mother_first_name"
               onChange={handleFieldChange}
-              placeholder="Mother First Name"
               value={patientParents.patient_mother_first_name}
+              placeholder="Mother First Name"
             />
             </div>
              <div className="d-flex m-4">
@@ -89,8 +89,8 @@ const handleFieldChange = (e) => {
               id="patient_mother_last_name"
               name="patient_mother_last_name"
               onChange={handleFieldChange}
-              placeholder="Mother Last Name"
               value={patientParents.patient_mother_last_name}
+              placeholder="Mother Last Name"
             />
           </div>
             </div>
@@ -108,8 +108,8 @@ const handleFieldChange = (e) => {
               id="patient_guardian_first_name"
               name="patient_guardian_first_name"
               onChange={handleFieldChange}
-              placeholder="Guardian First Name"
               value={patientParents.patient_guardian_first_name}
+              placeholder="Guardian First Name"
             />
           </div>
           <div className="d-flex m-4">
@@ -120,8 +120,8 @@ const handleFieldChange = (e) => {
               id="patient_guardian_last_name"
               name="patient_guardian_last_name"
               onChange={handleFieldChange}
-              placeholder="Guardian Last Name"
               value={patientParents.patient_guardian_last_name}
+              placeholder="Guardian Last Name"
               />
           </div>
           <div className="d-flex m-4">
