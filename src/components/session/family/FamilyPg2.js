@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -7,7 +7,17 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function FamilyPg2(props) {
 
+  const [patientFamily_pg2, setPatientFamily_pg2] = useState({
+    familiy_pg2_a: "",
+    familiy_pg2_b: "",
+    familiy_pg2_c: "",
+  })
+
   const next = "/family_pg_3";
+
+  const handleFieldChange = (e) => {
+    setPatientFamily_pg2({ ...patientFamily_pg2, [e.target.name]: e.target.value});
+  }
 
   return (
     <> 
@@ -28,7 +38,10 @@ function FamilyPg2(props) {
           <TextareaAutosize            
             className="interview_fieldData"
             type="text"
-            id=""
+            id="family_pg2_a"
+            name="family_pg2_a"
+            onChange={handleFieldChange}
+            value={patientFamily_pg2.family_pg2_a}
           />
         </div>
       </div>
@@ -43,8 +56,10 @@ function FamilyPg2(props) {
           <TextareaAutosize            
             className="interview_fieldData"
             type="text"
-            name=""
-            id=""
+            id="family_pg2_b"
+            name="family_pg2_b"
+            onChange={handleFieldChange}
+            value={patientFamily_pg2.family_pg2_b}
           />
         </div>
       </div>
@@ -57,7 +72,10 @@ function FamilyPg2(props) {
           <TextareaAutosize            
             className="interview_fieldData"
             type="text"
-            id=""
+            id="family_pg2_c"
+            name="family_pg2_c"
+            onChange={handleFieldChange}
+            value={patientFamily_pg2.family_pg2_c}
           />
         </div>
       </div>
