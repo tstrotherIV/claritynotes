@@ -68,7 +68,10 @@ function PsychologicalEvaluation_siblings(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id="lastName"
+            id="child_last_name"
+            name="child_last_name"
+            onChange={handleFieldChange}
+            value={patientChildren.child_last_name}
             placeholder="Child Last Name"
           />
         </div>
@@ -77,8 +80,8 @@ function PsychologicalEvaluation_siblings(props) {
           <Form.Control 
           as="select" 
           className="col-6" 
-          // defaultValue={}
-          // onChange={handleFieldChange}
+          defaultValue={patientChildren.child_gender}
+          onChange={handleFieldChange}
           >
             <option>Please Select</option>
             <option value="Male">Male</option>
@@ -93,8 +96,10 @@ function PsychologicalEvaluation_siblings(props) {
           <Input           
             className="fieldData text-center col-8"
             type="date"
-            name="lastName"
-            id="lastName"
+            id="child_dob"
+            name="child_dob"
+            onChange={handleFieldChange}
+            value={patientChildren.child_dob}
             placeholder="Date of Birth"
           />
         </div>
