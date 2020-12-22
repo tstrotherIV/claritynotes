@@ -20,6 +20,12 @@ import "./interviews.scss";
 
 function InterviewPg1(props) {
 
+  const [patientInterview_pg1, setPatientInterview_pg1] = useState({
+    interview_pg1_a: "",
+    interview_pg1_b: "",
+    aditional_notes: "",
+  })
+
   const next = "/interview_pg_2";
 
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
@@ -27,6 +33,10 @@ function InterviewPg1(props) {
 
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
   const toggle3 = () => setModal(!modal);
+
+  const handleFieldChange = (e) => {
+    setPatientInterview_pg1({ ...patientInterview_pg1, [e.target.name]: e.target.value});
+  }
 
   return (
     <>
@@ -55,7 +65,10 @@ function InterviewPg1(props) {
             <TextareaAutosize              
               className="interview_fieldData"
               type="text"
-              id=""
+              id="interview_pg1_a"
+              name="interview_pg1_a"
+              onChange={handleFieldChange}
+              value={patientInterview_pg1.interview_pg1_a}
             />
           </div>
         </div>
@@ -69,7 +82,12 @@ function InterviewPg1(props) {
                 <DropdownToggle color="light" className="dropdown" caret>
                   Please Select
                 </DropdownToggle>
-                <DropdownMenu>
+                <DropdownMenu
+                id="interview_pg1_b"
+                name="interview_pg1_b"
+                defaultValue={patientInterview_pg1.interview_pg1_b}
+                onChange={handleFieldChange}
+                  >
                   <DropdownItem header>Header</DropdownItem>
                   <DropdownItem>Some Action</DropdownItem>
                   <DropdownItem disabled>Action (disabled)</DropdownItem>
@@ -112,7 +130,9 @@ function InterviewPg1(props) {
                     <TextareaAutosize                      
                     className=""
                       type="text"
-                      id="caseNumber"
+                      id="aditional_notes"
+                      name="aditional_notes"
+                      onChange={handleFieldChange}
                     />
                   </div>
                   </ModalBody>

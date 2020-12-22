@@ -9,8 +9,20 @@ import "./psychologicalEvaluationFamily.scss";
 
 function PsychologicalEvaluationSpouse(props) {
 
+  const [patientSpouse, setPatientSpouse] = useState({
+    patient_married: "",
+    spouse_first_name: "",
+    spouse_last_name: "",
+    spouse_gender: "",
+    spouse_dob: "",
+    patient_id: "",
+  })
+
   const next = "/psychological_evaluation_consent";
   
+  const handleFieldChange = (e) => {
+    setPatientSpouse({ ...patientSpouse, [e.target.name]: e.target.value});
+  }
 
   return (
     <>
@@ -26,8 +38,9 @@ function PsychologicalEvaluationSpouse(props) {
           <Form.Control 
           as="select" 
           className="fieldData col-6" 
-          // defaultValue={patientSiblings.sibling_gender}
-          // onChange={handleFieldChange}
+          name="patient_married"
+          defaultValue={patientSpouse.patient_married}
+          onChange={handleFieldChange}
           >
             <option value="null">Please Select</option>
             <option value="Single">Single</option>
@@ -42,7 +55,10 @@ function PsychologicalEvaluationSpouse(props) {
           </Label>
           <TextareaAutosize            
             className="fieldData"
-            id="spouseFirstName"
+            id="spouse_first_name"
+            name="spouse_first_name"
+            onChange={handleFieldChange}
+            value={patientSpouse.spouse_first_name}
             placeholder="Spouse First Name"
           />
         </div>
@@ -52,7 +68,10 @@ function PsychologicalEvaluationSpouse(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id="spouseLastName"
+            id="spouse_last_name"
+            name="spouse_last_name"
+            onChange={handleFieldChange}
+            value={patientSpouse.spouse_last_name}
             placeholder="Spouse Last Name"
           />
         </div>
@@ -61,8 +80,10 @@ function PsychologicalEvaluationSpouse(props) {
           <Form.Control 
           as="select" 
           className="fieldData col-6" 
-          // defaultValue={patientSiblings.sibling_gender}
-          // onChange={handleFieldChange}
+          id="spouse_gender"
+          name="spouse_gender"
+          defaultValue={patientSpouse.spouse_gender}
+          onChange={handleFieldChange}
           >
             <option value="null">Please Select</option>
             <option value="Male">Male</option>
@@ -75,7 +96,10 @@ function PsychologicalEvaluationSpouse(props) {
           <Input            
             className="fieldData text-center col-8"
             type="date"
-            id="lastName"
+            id="spouse_dob"
+            name="spouse_dob"
+            onChange={handleFieldChange}
+            value={patientSpouse.spouse_dob}
             placeholder="Date of Birth"
           />
         </div>

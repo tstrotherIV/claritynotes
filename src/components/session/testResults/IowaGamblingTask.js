@@ -39,7 +39,7 @@ function IowaGamblingTask(props) {
                 <div className="col-2"></div>
                     <div className="text-right col-2">
                         <div className="">  
-                            <Label>T-Score</Label> 
+                            <Label>T-Score: </Label> 
                             <input 
                             className="m-3 col-4 inputHeight"
                             type="text"
@@ -47,7 +47,7 @@ function IowaGamblingTask(props) {
                             />
                         </div>
                         <div className="text-white">  
-                            <Label>Percentile th:</Label> 
+                            <Label>Percentile:</Label> 
                             <input 
                             className="m-3 col-4 inputHeight"
                             type="text"

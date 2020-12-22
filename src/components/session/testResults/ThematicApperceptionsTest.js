@@ -29,7 +29,7 @@ function ThematicApperceptionsTest(props) {
             </div>
             <div className="m-5 d-flex flex-wrap">
                 <div className="">
-                    <Label className="align-top mr-2 mt-2">Past Paragraph here: </Label>
+                    <Label className="align-top mr-2 mt-2">Paste Paragraph here: </Label>
                     <TextareaAutosize
                     className="fieldData pauhasInput"
                     type="text"

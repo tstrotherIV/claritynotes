@@ -38,7 +38,8 @@ function PsychologicalEvaluationSiblings(props) {
           <Input            
             className=""
             type="checkbox"
-            id="onlyChild"
+            id="patient_only_child"
+            name="patient_only_child"
             checked={patientSiblings.patient_only_child}
             onChange={(e)=> {setPatientSiblings(e.target.checked)}}
           />

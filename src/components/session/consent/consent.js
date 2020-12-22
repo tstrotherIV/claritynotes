@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Label, Input } from "reactstrap";
 import ButtonNavigation from '../../shared/ButtonNavigation';
 import EmptyFooterSpace from "../../shared/EmptyFooterSpace";
@@ -6,7 +6,15 @@ import "./consent.scss";
 
 function PsychologicalEvaluationConsent(props) {
 
+  const [patientConsent, setPatientConsent] = useState({
+    patient_consent: false,
+  })
+
   const next = "/psychological_evaluation_referral";
+
+  const handleFieldChange = (e) => {
+    setPatientConsent({ ...patientConsent, [e.target.name]: e.target.value});
+  }
 
   return (
     <div id="page-container">
@@ -33,8 +41,14 @@ function PsychologicalEvaluationConsent(props) {
         
         <div className="siblingsFields">
           <div className="m-4">
-            <Input type="checkbox" name="" id="" />
-            <Label className="title" for="firstName">
+            <Input 
+            type="checkbox" 
+            id="patient_only_child"
+            name="patient_consent"
+            checked={patientConsent.patient_consent}
+            onChange={(e)=> {setPatientConsent(e.target.checked)}}
+            />
+            <Label className="title">
               Check Here to Confirm
             </Label>
           </div>

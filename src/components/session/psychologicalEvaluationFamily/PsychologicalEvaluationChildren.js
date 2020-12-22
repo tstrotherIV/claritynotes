@@ -10,7 +10,22 @@ import "./psychologicalEvaluationFamily.scss";
 
 function PsychologicalEvaluation_siblings(props) {
 
+  const [patientChildren, setPatientChildren] = useState({
+    patient_has_children: false,
+    child_first_name: "",
+    child_last_name: "",
+    child_gender: "",
+    child_dob: "",
+    patient_id: "",
+  })
+
   const next = "/psychological_evaluation_spouse";
+  const [dropdownOpen1, setDropdownOpen1] = useState(false);
+  const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
+
+  const handleFieldChange = (e) => {
+    setPatientChildren({ ...patientChildren, [e.target.name]: e.target.value});
+  }
 
   return (
     <>
@@ -25,7 +40,9 @@ function PsychologicalEvaluation_siblings(props) {
           <Input            
             className=""
             type="checkbox"
-            id="noChildren"
+            id="patient_has_children"
+            checked={patientChildren.patient_has_children}
+            onChange={(e)=> {setPatientChildren(e.target.checked)}}
           />
           <Label className="textWhite title ml-2" for="noChildren">
           Patient Has No Children
@@ -38,7 +55,10 @@ function PsychologicalEvaluation_siblings(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id="firstName"
+            id="child_first_name"
+            name="child_first_name"
+            onChange={handleFieldChange}
+            value={patientChildren.child_first_name}
             placeholder="Child First Name"
           />
         </div>
@@ -48,7 +68,10 @@ function PsychologicalEvaluation_siblings(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id="lastName"
+            id="child_last_name"
+            name="child_last_name"
+            onChange={handleFieldChange}
+            value={patientChildren.child_last_name}
             placeholder="Child Last Name"
           />
         </div>
@@ -57,8 +80,8 @@ function PsychologicalEvaluation_siblings(props) {
           <Form.Control 
           as="select" 
           className="col-6" 
-          // defaultValue={}
-          // onChange={handleFieldChange}
+          defaultValue={patientChildren.child_gender}
+          onChange={handleFieldChange}
           >
             <option>Please Select</option>
             <option value="Male">Male</option>
@@ -73,8 +96,10 @@ function PsychologicalEvaluation_siblings(props) {
           <Input           
             className="fieldData text-center col-8"
             type="date"
-            name="lastName"
-            id="lastName"
+            id="child_dob"
+            name="child_dob"
+            onChange={handleFieldChange}
+            value={patientChildren.child_dob}
             placeholder="Date of Birth"
           />
         </div>

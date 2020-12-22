@@ -6,6 +6,11 @@ import ButtonNavigation from "../../shared/ButtonNavigation";
 
 // pdf page 117
 
+//NOTES:
+//Change standard score column to numerical input
+//Percentile column to numerical input
+//LEAVE Functional Range as is
+
 function ComputerizedNeurocognitiveAssessment(props) {
     const next = "/paulhus_deception_scale"
     return (
@@ -534,7 +539,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
         </div>
         <div id="footer">
          <ButtonNavigation next={next}  />
-          <TermOfParentalRights />
+            <TermOfParentalRights />
         </div>
     </div>
     </>
