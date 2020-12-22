@@ -1,26 +1,16 @@
 import React, { useState } from "react";
-import "./psychologicalEvaluationFamily.scss";
-import {
-  Input,
-  Label,
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-} from "reactstrap";
+import { Form } from "react-bootstrap";
+import { Input, Label } from "reactstrap";
+
 import Heading from '../../shared/PsychologicalHeading';
 import ButtonNavigation from '../../shared/ButtonNavigation';
 import TextareaAutosize from 'react-textarea-autosize';
 import EmptyFooterSpace from './../../shared/EmptyFooterSpace';
-
+import "./psychologicalEvaluationFamily.scss";
 
 function PsychologicalEvaluation_siblings(props) {
 
   const next = "/psychological_evaluation_spouse";
-
-  const [dropdownOpen1, setDropdownOpen1] = useState(false);
-
-  const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
 
   return (
     <>
@@ -46,7 +36,7 @@ function PsychologicalEvaluation_siblings(props) {
             Children
           </Label>
           <TextareaAutosize            
-            className="fieldData text-center"
+            className="fieldData"
             type="text"
             id="firstName"
             placeholder="Child First Name"
@@ -56,32 +46,31 @@ function PsychologicalEvaluation_siblings(props) {
           <Label className="textWhite title" for="lastName">
           </Label>
           <TextareaAutosize            
-            className="fieldData text-center"
+            className="fieldData"
             type="text"
             id="lastName"
             placeholder="Child Last Name"
           />
         </div>
-        
+        <div className="line1 d-flex flex-wrap">
+          <Form.Label className="textWhite title">Gender </Form.Label>
+          <Form.Control 
+          as="select" 
+          className="col-6" 
+          // defaultValue={}
+          // onChange={handleFieldChange}
+          >
+            <option>Please Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Unspecified">Unspecified</option>
+          </Form.Control>
+          </div>
+
+
         <div className="line1">
-          <Label className="textWhite title" for="examplePassword">
-            Gender
-          </Label>
-          <Dropdown isOpen={dropdownOpen1} toggle={toggle1}>
-            <DropdownToggle color="light" className="dropdown" caret>
-              Please Select
-            </DropdownToggle>
-            <DropdownMenu>
-              <DropdownItem header>Gender</DropdownItem>
-              <DropdownItem>Male</DropdownItem>
-              <DropdownItem>Female</DropdownItem>
-              <DropdownItem>Unspecified</DropdownItem>
-            </DropdownMenu>
-          </Dropdown>
-        </div>
-        <div className="line1 d-flex flex-wrap justify-content-center">
           <Label className="textWhite title" for="">DOB</Label>
-          <TextareaAutosize            
+          <Input           
             className="fieldData text-center col-8"
             type="date"
             name="lastName"
