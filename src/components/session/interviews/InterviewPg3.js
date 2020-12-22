@@ -20,6 +20,11 @@ import "./interviews.scss";
 
 function Interview_Pg3(props) {
 
+  const [patientInterview_pg3, setPatientInterview_pg3] = useState({
+    interview_pg3_a: "",
+    interview_pg3_b: "",
+  })
+
   const next = "/interview_pg_4";
 
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
@@ -27,6 +32,10 @@ function Interview_Pg3(props) {
 
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
   const toggle3 = () => setModal(!modal);
+
+  const handleFieldChange = (e) => {
+    setPatientInterview_pg3({ ...patientInterview_pg3, [e.target.name]: e.target.value});
+  }
 
   return (
     <>
@@ -44,7 +53,10 @@ function Interview_Pg3(props) {
           </Label>
           <TextareaAutosize            className="interview_fieldData"
             type="text"
-            id=""
+            id="interview_pg3_a"
+            name="interview_pg3_a"
+            onChange={handleFieldChange}
+            value={patientInterview_pg3.interview_pg3_a}
           />
         </div>
       </div>
@@ -56,7 +68,10 @@ function Interview_Pg3(props) {
           </Label>
           <TextareaAutosize            className="interview_fieldData"
             type="text"
-            id=""
+            id="interview_pg3_b"
+            name="interview_pg3_b"
+            onChange={handleFieldChange}
+            value={patientInterview_pg3.interview_pg3_b}
           />
         </div>
       </div>
