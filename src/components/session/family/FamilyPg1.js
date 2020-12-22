@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -7,7 +7,19 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function FamilyPg1(props) {
 
+  const [patientFamily_pg1, setPatientFamily_pg1] = useState({
+    familiy_pg1_a: "",
+    familiy_pg1_b: "",
+    familiy_pg1_c: "",
+    familiy_pg1_d: "",
+    familiy_pg1_e: "",
+  })
+
   const next = "/family_pg_2";
+
+  const handleFieldChange = (e) => {
+    setPatientFamily_pg1({ ...patientFamily_pg1, [e.target.name]: e.target.value});
+  }
 
   return (
     <>
@@ -24,7 +36,10 @@ function FamilyPg1(props) {
               <TextareaAutosize                
                 className="fieldData col-2"
                 type="text"
-                id=""
+                id="family_pg1_a"
+                name="family_pg1_a"
+                onChange={handleFieldChange}
+                value={patientFamily_pg1.family_pg1_a}
               />
           <Label className="textWhite m-4" for="">
           raised him/her in 
@@ -32,8 +47,10 @@ function FamilyPg1(props) {
               <TextareaAutosize                     
                     className="fieldData col-2"
                     type="text"
-                    id=""
-                    placeholder=""
+                    id="family_pg1_b"
+                    name="family_pg1_b"
+                    onChange={handleFieldChange}
+                    value={patientFamily_pg1.family_pg1_b}
                   /> 
               <div className="textWhite ml-2">.</div>
            
@@ -45,7 +62,10 @@ function FamilyPg1(props) {
               <TextareaAutosize                
                 className="fieldData col-2"
                 type="text"
-                id=""
+                id="family_pg1_c"
+                name="family_pg1_c"
+                onChange={handleFieldChange}
+                value={patientFamily_pg1.family_pg1_c}
               />
           <div className="textWhite ml-1 mr-1">
           brothers and sisters.</div>
@@ -62,7 +82,10 @@ function FamilyPg1(props) {
             className="interview_fieldData"
             type="text"
             name=""
-            id=""
+            id="family_pg1_d"
+            name="family_pg1_d"
+            onChange={handleFieldChange}
+            value={patientFamily_pg1.family_pg1_d}
           />
         </div>
       <h4 className="textWhite centerItem">What are their names?</h4>
@@ -75,7 +98,10 @@ function FamilyPg1(props) {
             className="interview_fieldData"
             type="text"
             name=""
-            id=""
+            id="family_pg1_e"
+            name="family_pg1_e"
+            onChange={handleFieldChange}
+            value={patientFamily_pg1.family_pg1_e}
           />
         </div>
       </div>

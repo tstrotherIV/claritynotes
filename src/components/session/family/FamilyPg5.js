@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,16 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function FamilyPg5(props) {
 
+  const [patientFamily_pg5, setPatientFamily_pg5] = useState({
+    familiy_pg5_a: "",
+    familiy_pg5_b: "",
+  })
+
   const next = "/family_pg_6";
+
+  const handleFieldChange = (e) => {
+    setPatientFamily_pg5({ ...patientFamily_pg5, [e.target.name]: e.target.value});
+  }
 
   return (
     <>
@@ -32,7 +41,10 @@ function FamilyPg5(props) {
           <TextareaAutosize            
             className="interview_fieldData"
             type="text"
-            id=""
+            id="family_pg5_a"
+            name="family_pg5_a"
+            onChange={handleFieldChange}
+            value={patientFamily_pg5.family_pg5_a}
           />
         </div>
       </div>
@@ -40,7 +52,7 @@ function FamilyPg5(props) {
         <div className="interview_line1 textWhite">
             (IF THEY DO NOT OFFER MORE THAN “YES” OR “NO,” ASK THEM: “How did
             they show you they loved you and accepted you?” AND/OR “Tell me more
-            about that.” GET AS MUCH INFO AS POSSIBLE.
+            about that.” GET AS MUCH INFO AS POSSIBLE.)
         </div>
       </div>   
       <h4 className="textWhite centerItem mt-4">
@@ -54,7 +66,10 @@ function FamilyPg5(props) {
           <TextareaAutosize            
             className="interview_fieldData"
             type="text"
-            id=""
+            id="family_pg5_b"
+            name="family_pg5_b"
+            onChange={handleFieldChange}
+            value={patientFamily_pg5.family_pg5_b}
           />
         </div>
       </div>
