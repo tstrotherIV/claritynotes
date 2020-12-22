@@ -1,20 +1,14 @@
 import React, { useState } from "react";
 import "./psychologicalEvaluationFamily.scss";
-import {
-  Input,
-  Label,
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-} from "reactstrap";
+import { Input, Label } from "reactstrap";
+import { Form } from "react-bootstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import ButtonNavigation from '../../shared/ButtonNavigation';
 import TextareaAutosize from 'react-textarea-autosize';
 import EmptyFooterSpace from './../../shared/EmptyFooterSpace';
 
 
-function PsychologicalEvaluation_children(props) {
+function PsychologicalEvaluationSiblings(props) {
 
   const [patientSiblings, setPatientSiblings] = useState({
     patient_only_child: false,
@@ -26,8 +20,6 @@ function PsychologicalEvaluation_children(props) {
   })
 
   const next = "/psychological_evaluation_children";
-  const [dropdownOpen1, setDropdownOpen1] = useState(false);
-  const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
 
   const handleFieldChange = (e) => {
     setPatientSiblings({ ...patientSiblings, [e.target.name]: e.target.value});
@@ -82,35 +74,26 @@ function PsychologicalEvaluation_children(props) {
           />
         </div>
         <div className="line1">
-          <Label className="textWhite title" for="examplePassword">
-            Gender
-          </Label>
-          <Dropdown isOpen={dropdownOpen1} toggle={toggle1} className="col-8">
-            <DropdownToggle color="light" className="dropdown" caret>
-              Please Select
-            </DropdownToggle>
-            <DropdownMenu
-              id="sibling_gender"
-              name="sibling_gender"
-              onChange={handleFieldChange}
-              value={patientSiblings.sibling_gender}>
-              <DropdownItem header>Header</DropdownItem>
-              <DropdownItem>Some Action</DropdownItem>
-              <DropdownItem disabled>Action (disabled)</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>Foo Action</DropdownItem>
-              <DropdownItem>Bar Action</DropdownItem>
-              <DropdownItem>Quo Action</DropdownItem>
-            </DropdownMenu>
-          </Dropdown>
-        </div>
-        <div className="line1 ">
+          <Form.Label className="textWhite title fieldData">Gender </Form.Label>
+          <Form.Control 
+          as="select" 
+          className="fieldData col-6" 
+          defaultValue={patientSiblings.sibling_gender}
+          onChange={handleFieldChange}
+          >
+            <option value="null">Please Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Unspecified">Unspecified</option>
+          </Form.Control>
+          </div>
+        <div className="line1 d-flex flex-wrap">
           <Label className="textWhite title" for="dob">DOB</Label>
-          <TextareaAutosize            
-            className="fieldData col-8"
+          <Input         
+            className="fieldData col-6 text-center"
             type="date"
             id="dob"
-            placeholder=""
+    
           />
         </div>
         <div className="m-4">
@@ -128,4 +111,4 @@ function PsychologicalEvaluation_children(props) {
   );
 }
 
-export default PsychologicalEvaluation_children;
+export default PsychologicalEvaluationSiblings;

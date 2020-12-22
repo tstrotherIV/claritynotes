@@ -1,11 +1,7 @@
 import React, { useState } from "react";
-import {
-  Label,
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-} from "reactstrap";
+import { Label } from "reactstrap";
+import { Form } from "react-bootstrap";
+
 import Heading from '../../shared/PsychologicalHeading';
 import ButtonNavigation from '../../shared/ButtonNavigation';
 import TextareaAutosize from 'react-textarea-autosize';
@@ -25,12 +21,10 @@ function PsychologicalEvaluation_family(props) {
   })
 
   const next = "/psychological_evaluation_siblings";
-  const [dropdownOpen1, setDropdownOpen1] = useState(false);
-  const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
 
-const handleFieldChange = (e) => {
-  setPatientParents({ ...patientParents, [e.target.name]: e.target.value});
-}
+  const handleFieldChange = (e) => {
+    setPatientParents({ ...patientParents, [e.target.name]: e.target.value});
+  }
 
   return (
     <>
@@ -97,7 +91,6 @@ const handleFieldChange = (e) => {
      
 {/* --------------------------------------------- */}    
 <div className="col-6">
-
           <div className="d-flex m-4">
             <Label className="textWhite labelWidth" for="caseNumber">
               Other Guardians
@@ -124,29 +117,19 @@ const handleFieldChange = (e) => {
               placeholder="Guardian Last Name"
               />
           </div>
-          <div className="d-flex m-4">
-            <Label className="textWhite labelWidth" for="examplePassword">
-              Gender
-            </Label>
-            <Dropdown isOpen={dropdownOpen1} toggle={toggle1} className="col-8">
-              <DropdownToggle color="light" 
-                className="dropdown" caret>
-                Please Select
-              </DropdownToggle>
-              <DropdownMenu 
-                id="patient_guardian_gender"
-                name="patient_guardian_gender"
-                onChange={handleFieldChange}
-                value={patientParents.patient_guardian_gender}>
-                <DropdownItem header>Header</DropdownItem>
-                <DropdownItem>Some Action</DropdownItem>
-                <DropdownItem disabled>Action (disabled)</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Foo Action</DropdownItem>
-                <DropdownItem>Bar Action</DropdownItem>
-                <DropdownItem>Quo Action</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
+          <div className="d-flex m-4 flex-wrap">
+          <Form.Label className="textWhite m-1 col-2 text-right">Gender: </Form.Label>
+          <Form.Control 
+          as="select" 
+          className="col-3" 
+          defaultValue={patientParents.patient_guardian_gender}
+          onChange={handleFieldChange}
+          >
+            <option>Please Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Unspecified">Unspecified</option>
+          </Form.Control>
           </div>
           <div className="text-center">
             <div className="textWhite"><i className="fas fa-plus fa-lg mr-2"></i>Click to Add More Guardians</div>

@@ -1,26 +1,15 @@
 import React, { useState } from "react";
-import "./psychologicalEvaluationFamily.scss";
-import {
-  Label,
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-} from "reactstrap";
+import { Label, Input } from "reactstrap";
+import { Form } from "react-bootstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import ButtonNavigation from '../../shared/ButtonNavigation';
 import TextareaAutosize from 'react-textarea-autosize';
 import EmptyFooterSpace from './../../shared/EmptyFooterSpace';
+import "./psychologicalEvaluationFamily.scss";
 
-
-function PsychologicalEvaluation_spouse(props) {
+function PsychologicalEvaluationSpouse(props) {
 
   const next = "/psychological_evaluation_consent";
-
-  const [dropdownOpen1, setDropdownOpen1] = useState(false);
-  const [dropdownOpen2, setDropdownOpen2] = useState(false);
-  const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
-  const toggle2 = () => setDropdownOpen2((prevState) => !prevState);
   
 
   return (
@@ -32,28 +21,27 @@ function PsychologicalEvaluation_spouse(props) {
         <h1 className="textWhite">Please Confirm or Update Information</h1>
       </div>
       <div className="siblingsFields">
-        <div className="line1">
-        <Label className="textWhite title" for="examplePassword">
-        Marital Status
-          </Label>
-          <Dropdown isOpen={dropdownOpen1} toggle={toggle1}>
-            <DropdownToggle color="light" className="dropdown" caret>
-              Please Select
-            </DropdownToggle>
-            <DropdownMenu>
-              <DropdownItem header>Married Status</DropdownItem>
-              <DropdownItem>Married</DropdownItem>
-              <DropdownItem>Divorced</DropdownItem>
-              <DropdownItem>Separated</DropdownItem>
-            </DropdownMenu>
-          </Dropdown>
-        </div>
+      <div className="line1">
+          <Form.Label className="textWhite title">Marital Status </Form.Label>
+          <Form.Control 
+          as="select" 
+          className="fieldData col-6" 
+          // defaultValue={patientSiblings.sibling_gender}
+          // onChange={handleFieldChange}
+          >
+            <option value="null">Please Select</option>
+            <option value="Single">Single</option>
+            <option value="Married">Married</option>
+            <option value="Divorced">Divorced</option>
+            <option value="Separated">Separated</option>
+          </Form.Control>
+          </div>
         <div className="line1">
           <Label className="textWhite title" for="spouseFirstName">
             Spouse
           </Label>
           <TextareaAutosize            
-            className="fieldData text-center"
+            className="fieldData"
             id="spouseFirstName"
             placeholder="Spouse First Name"
           />
@@ -62,31 +50,29 @@ function PsychologicalEvaluation_spouse(props) {
           <Label className="textWhite title" for="spouseLastName">
           </Label>
           <TextareaAutosize            
-            className="fieldData text-center"
+            className="fieldData"
             type="text"
             id="spouseLastName"
             placeholder="Spouse Last Name"
           />
         </div>
         <div className="line1">
-          <Label className="textWhite title" for="examplePassword">
-            Gender
-          </Label>
-          <Dropdown isOpen={dropdownOpen2} toggle={toggle2}>
-            <DropdownToggle color="light" className="dropdown" caret>
-              Please Select
-            </DropdownToggle>
-            <DropdownMenu>
-            <DropdownItem header>Gender</DropdownItem>
-              <DropdownItem>Male</DropdownItem>
-              <DropdownItem>Female</DropdownItem>
-              <DropdownItem>Unspecified</DropdownItem>
-            </DropdownMenu>
-          </Dropdown>
-        </div>
-        <div className="line1 d-flex flex-wrap justify-content-center">
+          <Form.Label className="textWhite title fieldData">Gender </Form.Label>
+          <Form.Control 
+          as="select" 
+          className="fieldData col-6" 
+          // defaultValue={patientSiblings.sibling_gender}
+          // onChange={handleFieldChange}
+          >
+            <option value="null">Please Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Unspecified">Unspecified</option>
+          </Form.Control>
+          </div>
+        <div className="line1">
           <Label className="textWhite title" for="">DOB</Label>
-          <TextareaAutosize            
+          <Input            
             className="fieldData text-center col-8"
             type="date"
             id="lastName"
@@ -108,4 +94,4 @@ function PsychologicalEvaluation_spouse(props) {
   );
 }
 
-export default PsychologicalEvaluation_spouse;
+export default PsychologicalEvaluationSpouse;
