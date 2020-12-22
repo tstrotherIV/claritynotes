@@ -31,7 +31,7 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
                 <Label>[Patient Name, First] completed the Substance Abuse Subtle Screening Inventory-4 (SASSI-4)</Label>
                 <p>The results indicated the Low/High Probability of [Patient Name, First] having a Substance Dependence disorder.</p>
                 
-                <Label className="mt-3 textTeal col-7" for=""> Past all results with a bold heading from the third page and formate liek the following example
+                <Label className="mt-3 textTeal col-7" for=""> Paste all results with a bold heading from the third page and formate liek the following example
                     (make sure to replace "the client" with their name!):</Label>
                 <div>
                 <TextareaAutosize
