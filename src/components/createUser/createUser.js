@@ -10,15 +10,15 @@ function CreateUser(props) {
 
   const toggle = () => setDropdownOpen(prevState => !prevState);
 
-  const email = useRef
-  const employeeNumber = useRef
-  const firstName = useRef
-  const middleName = useRef
-  const lastName = useRef 
-  const password = useRef
-  const roleTitle = useRef
-  const admin = useRef
-  const { register } = useSimpleAuth
+  const email = useRef()
+  const employeeNumber = useRef()
+  const firstName = useRef()
+  const middleName = useRef()
+  const lastName = useRef()
+  const password = useRef()
+  const roleTitle = useRef()
+  const admin = useRef()
+  const { register } = useSimpleAuth()
 
   const handleRegister = (e) => {
     e.preventDefault()

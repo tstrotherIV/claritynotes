@@ -10,25 +10,25 @@ function Login(props) {
   const { login } = useSimpleAuth()
 
       // Simplistic handler for login submit
-      const handleLogin = (e) => {
-        e.preventDefault()
+  const handleLogin = (e) => {
+    e.preventDefault()
 
         /*
             For now, just store the username and password that
             the customer enters into local storage.
         */
-        const credentials = {
-            "username": userEmail.current.value,
-            "password": password.current.value
-        }
-
-        login(credentials)
-            .then(() => {
-                props.history.push({
-                    pathname: "/"
-                })
-            })
+    const credentials = {
+        "userEmail": userEmail.current.value,
+        "password": password.current.value
     }
+
+    login(credentials)
+        .then(() => {
+            props.history.push({
+                pathname: "/"
+             })
+        })
+  }
 
   return (
     <div className="textWhite mt-5 mb-5">

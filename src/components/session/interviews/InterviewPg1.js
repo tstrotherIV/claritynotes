@@ -109,7 +109,8 @@ function InterviewPg1(props) {
                     <Label className=" title" for="caseNumber">
                       Additional Notes:
                     </Label>
-                    <TextareaAutosize                      className=""
+                    <TextareaAutosize                      
+                    className=""
                       type="text"
                       id="caseNumber"
                     />
