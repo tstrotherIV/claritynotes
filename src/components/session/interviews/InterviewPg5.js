@@ -19,6 +19,14 @@ import TextareaAutosize from 'react-textarea-autosize';
 import "./interviews.scss";
 
 function InterviewPg5(props) {
+
+  const [patientInterview_pg5, setPatientInterview_pg5] = useState({
+    interview_pg5_a: "",
+    interview_pg5_b: "",
+    interview_pg5_c: "",
+    interview_pg5_d: "",
+  })
+
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const [dropdownOpen2, setDropdownOpen2] = useState(false);
   const [dropdownOpen4, setDropdownOpen4] = useState(false);
@@ -30,6 +38,10 @@ function InterviewPg5(props) {
   const toggle4 = () => setDropdownOpen4((prevState) => !prevState);
 
   const next = "/interview_pg_6";
+
+  const handleFieldChange = (e) => {
+    setPatientInterview_pg5({ ...patientInterview_pg5, [e.target.name]: e.target.value});
+  }
 
   return (
     <>
@@ -49,14 +61,22 @@ function InterviewPg5(props) {
           </Label>
           <TextareaAutosize            className="interview_fieldData"
             type="text"
-            id=""
+            id="interview_pg5_a"
+            name="interview_pg5_a"
+            onChange={handleFieldChange}
+            value={patientInterview_pg5.interview_pg5_a}
           />
           <div className="ml-1">
             <Dropdown isOpen={dropdownOpen2} toggle={toggle2}>
               <DropdownToggle color="light" className="dropdown" caret>
                 Please Select
               </DropdownToggle>
-              <DropdownMenu>
+              <DropdownMenu
+              id="interview_pg5_b"
+              name="interview_pg5_b"
+              onChange={handleFieldChange}
+              value={patientInterview_pg5.interview_pg5_b}
+              >
                 <DropdownItem header>Header</DropdownItem>
                 <DropdownItem>Some Action</DropdownItem>
                 <DropdownItem disabled>Action (disabled)</DropdownItem>
@@ -79,14 +99,21 @@ function InterviewPg5(props) {
           </Label>
           <TextareaAutosize            className="interview_fieldData"
             type="text"
-            id=""
+            id="interview_pg5_c"
+            name="interview_pg5_c"
+            onChange={handleFieldChange}
+            value={patientInterview_pg5.interview_pg5_c}
           />
           <div className="ml-1">
             <Dropdown isOpen={dropdownOpen4} toggle={toggle4}>
               <DropdownToggle color="light" className="dropdown" caret>
                 Please Select
               </DropdownToggle>
-              <DropdownMenu>
+              <DropdownMenu
+              id="interview_pg5_d"
+              name="interview_pg5_d"
+              onChange={handleFieldChange}
+              value={patientInterview_pg5.interview_pg5_d}>
                 <DropdownItem header>Header</DropdownItem>
                 <DropdownItem>Some Action</DropdownItem>
                 <DropdownItem disabled>Action (disabled)</DropdownItem>

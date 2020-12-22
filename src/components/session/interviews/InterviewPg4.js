@@ -19,6 +19,12 @@ import TextareaAutosize from 'react-textarea-autosize';
 import "./interviews.scss";
 
 function InterviewPg4(props) {
+
+  const [patientInterview_pg4, setPatientInterview_pg4] = useState({
+    interview_pg4_a: "",
+    interview_pg4_b: "",
+  })
+
   const next = "/interview_pg_5";
 
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
@@ -26,6 +32,10 @@ function InterviewPg4(props) {
 
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
   const toggle3 = () => setModal(!modal);
+
+  const handleFieldChange = (e) => {
+    setPatientInterview_pg4({ ...patientInterview_pg4, [e.target.name]: e.target.value});
+  }
 
   return (
     <>
@@ -44,7 +54,10 @@ function InterviewPg4(props) {
           </Label>
           <TextareaAutosize            className="interview_fieldData"
             type="text"
-            id=""
+            id="interview_pg4_a"
+            name="interview_pg4_a"
+            onChange={handleFieldChange}
+            value={patientInterview_pg4.interview_pg4_a}
           />
         </div>
       </div>
@@ -56,7 +69,10 @@ function InterviewPg4(props) {
           </Label>
           <TextareaAutosize            className="interview_fieldData"
             type="text"
-            id=""
+            id="interview_pg4_b"
+            name="interview_pg4_b"
+            onChange={handleFieldChange}
+            value={patientInterview_pg4.interview_pg4_b}
           />
         </div>
       </div>
