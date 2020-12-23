@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -8,7 +8,17 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function EducationPg2(props) {
 
+  const [patientEducation_pg2, setPatientEducation_pg2] = useState({
+    education_pg2_a: "",
+    education_pg2_b: "",
+    education_pg2_c: "",
+  })
+
   const next = "/education_pg_3";
+
+  const handleFieldChange = (e) => {
+    setPatientEducation_pg2({ ...patientEducation_pg2, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -26,7 +36,10 @@ function EducationPg2(props) {
           <TextareaAutosize            
           className="fieldData"
             type="text"
-            id=""
+            id="education_pg2_a"
+            name="education_pg2_a"
+            onChange={handleFieldChange}
+            value={patientEducation_pg2.education_pg2_a}
           />
         </div>
         <h4 className="textWhite centerItem">Did you repeat any grades?</h4>
@@ -37,7 +50,10 @@ function EducationPg2(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="education_pg2_b"
+            name="education_pg2_b"
+            onChange={handleFieldChange}
+            value={patientEducation_pg2.education_pg2_b}
           />
         </div>
         <h4 className="textWhite centerItem">Where you ever suspended?</h4>
@@ -48,7 +64,10 @@ function EducationPg2(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="education_pg2_c"
+            name="education_pg2_c"
+            onChange={handleFieldChange}
+            value={patientEducation_pg2.education_pg2_c}
           />
         </div>
       </div>

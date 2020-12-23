@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,17 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function EducationPg3(props) {
 
+  const [patientEducation_pg3, setPatientEducation_pg3] = useState({
+    education_pg3_a: "",
+    education_pg3_b: "",
+    education_pg3_c: "",
+  })
+
   const next = "/education_pg_4";
+
+  const handleFieldChange = (e) => {
+    setPatientEducation_pg3({ ...patientEducation_pg3, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -27,7 +37,10 @@ function EducationPg3(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="education_pg3_a"
+            name="education_pg3_a"
+            onChange={handleFieldChange}
+            value={patientEducation_pg3.education_pg3_a}
           />
         </div>
         <h4 className="textWhite centerItem">Any emotional problem while in school?</h4>
@@ -38,7 +51,10 @@ function EducationPg3(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="education_pg3_b"
+            name="education_pg3_b"
+            onChange={handleFieldChange}
+            value={patientEducation_pg3.education_pg3_b}
           />
         </div>
         <h4 className="textWhite centerItem">Any substance use in school?</h4>
@@ -49,7 +65,10 @@ function EducationPg3(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="education_pg3_c"
+            name="education_pg3_c"
+            onChange={handleFieldChange}
+            value={patientEducation_pg3.education_pg3_c}
           />
         </div>
       </div>

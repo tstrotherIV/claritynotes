@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -8,7 +8,17 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function EducationPg4(props) {
 
+  const [patientEducation_pg4, setPatientEducation_pg4] = useState({
+    education_pg4_a: "",
+    education_pg4_b: "",
+    education_pg4_c: "",
+  })
+
   const next = "/history_of_legal_pg_1";
+
+  const handleFieldChange = (e) => {
+    setPatientEducation_pg4({ ...patientEducation_pg4, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -26,7 +36,10 @@ function EducationPg4(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="education_pg4_a"
+            name="education_pg4_a"
+            onChange={handleFieldChange}
+            value={patientEducation_pg4.education_pg4_a}
           />
         </div>
         <h4 className="textWhite centerItem">Do you feel your substance use impacted your behavior in school?</h4>
@@ -37,7 +50,10 @@ function EducationPg4(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="education_pg4_b"
+            name="education_pg4_b"
+            onChange={handleFieldChange}
+            value={patientEducation_pg4.education_pg4_b}
           />
         </div>
         <h4 className="textWhite centerItem">Looking back, should you have tried harder?</h4>
@@ -48,7 +64,10 @@ function EducationPg4(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="education_pg4_c"
+            name="education_pg4_c"
+            onChange={handleFieldChange}
+            value={patientEducation_pg4.education_pg4_c}
           />
         </div>
       </div>
