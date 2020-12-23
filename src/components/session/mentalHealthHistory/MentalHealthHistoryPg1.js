@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,17 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function MentalHealthHistoryPg1(props) {
 
+  const [patientMentalHealthHistory_pg1, setPatientMentalHealthHistory_pg1] = useState({
+    mental_health_history_pg1_a: "",
+    mental_health_history_pg1_b: "",
+    mental_health_history_pg1_c: "",
+  })
+
   const next = "/mental_health_history_pg_2";
+
+  const handleFieldChange = (e) => {
+    setPatientMentalHealthHistory_pg1({ ...patientMentalHealthHistory_pg1, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -27,7 +37,10 @@ function MentalHealthHistoryPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="mental_health_history_pg1_a"
+            name="mental_health_history_pg1_a"
+            onChange={handleFieldChange}
+            value={patientMentalHealthHistory_pg1.mental_health_history_pg1_a}
           />
         </div>
         <h4 className="textWhite centerItem">Have you ever suspected that you may have a mental health diagnosis and what might this diagnosis be?</h4>
@@ -38,7 +51,10 @@ function MentalHealthHistoryPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="mental_health_history_pg1_b"
+            name="mental_health_history_pg1_b"
+            onChange={handleFieldChange}
+            value={patientMentalHealthHistory_pg1.mental_health_history_pg1_b}
           />
         </div>
         <h4 className="textWhite centerItem">What prescriptions/medications are you taking for your mental health?</h4>
@@ -49,7 +65,10 @@ function MentalHealthHistoryPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="mental_health_history_pg1_c"
+            name="mental_health_history_pg1_c"
+            onChange={handleFieldChange}
+            value={patientMentalHealthHistory_pg1.mental_health_history_pg1_c}
           />
         </div>
       </div>

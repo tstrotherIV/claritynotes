@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label, Input } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,18 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function MentalHealthHistoryPg4(props) {
 
+  const [patientMentalHealthHistory_pg4, setPatientMentalHealthHistory_pg4] = useState({
+    mental_health_history_pg4_a: "",
+    mental_health_history_pg4_b: "",
+    mental_health_history_pg4_c: "",
+    mental_health_history_pg4_d: false,
+  })
+
   const next = "/medical_history_health_concerns_limitations_pg_1";
+
+  const handleFieldChange = (e) => {
+    setPatientMentalHealthHistory_pg4({ ...patientMentalHealthHistory_pg4, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -27,7 +38,10 @@ function MentalHealthHistoryPg4(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="mental_health_history_pg4_a"
+            name="mental_health_history_pg4_a"
+            onChange={handleFieldChange}
+            value={patientMentalHealthHistory_pg4.mental_health_history_pg4_a}
           />
         </div>
         <h4 className="textWhite centerItem">Have you ever cut or deliberately injured yourself?</h4>
@@ -38,7 +52,10 @@ function MentalHealthHistoryPg4(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="mental_health_history_pg4_b"
+            name="mental_health_history_pg4_b"
+            onChange={handleFieldChange}
+            value={patientMentalHealthHistory_pg4.mental_health_history_pg4_b}
           />
         </div>
         <h4 className="textWhite centerItem">Have you ever thought about hurting yourself or anyone else?</h4>
@@ -49,7 +66,10 @@ function MentalHealthHistoryPg4(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="mental_health_history_pg4_c"
+            name="mental_health_history_pg4_c"
+            onChange={handleFieldChange}
+            value={patientMentalHealthHistory_pg4.mental_health_history_pg4_c}
           />
         </div>
       </div>
@@ -60,7 +80,12 @@ function MentalHealthHistoryPg4(props) {
             <Input 
             type="checkbox" 
             className="" 
-            id="" />
+            id="mental_health_history_pg4_d"
+            name="mental_health_history_pg4_d"
+            checked={patientMentalHealthHistory_pg4.mental_health_history_pg4_d}
+            onChange={(e)=> {setPatientMentalHealthHistory_pg4(e.target.checked)}}
+
+            />
             <Label className="textWhite" for="firstName">
             [Patient Name, First] denied any current intent or plan.
             </Label>

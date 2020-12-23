@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,17 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function NeglectAbuseTraumaLossPg1(props) {
 
+  const [patientNeglectAbuseTraumaLossPg1, setPatientNeglectAbuseTraumaLossPg1] = useState({
+    neglect_abuse_trauma_loss_pg1_a: "",
+    neglect_abuse_trauma_loss_pg1_b: "",
+    neglect_abuse_trauma_loss_pg1_c: "",
+  })
+
   const next = "/neglect_abuse_trauma_loss_pg_2";
+
+  const handleFieldChange = (e) => {
+    setPatientNeglectAbuseTraumaLossPg1({ ...patientNeglectAbuseTraumaLossPg1, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -27,7 +37,10 @@ function NeglectAbuseTraumaLossPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="neglect_abuse_trauma_loss_pg1_a"
+            name="neglect_abuse_trauma_loss_pg1_a"
+            onChange={handleFieldChange}
+            value={patientNeglectAbuseTraumaLossPg1.neglect_abuse_trauma_loss_pg1_a}
           />
         </div>
         <h4 className="textWhite centerItem">What is sexual abuse in your own words?</h4>
@@ -38,7 +51,10 @@ function NeglectAbuseTraumaLossPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="neglect_abuse_trauma_loss_pg1_b"
+            name="neglect_abuse_trauma_loss_pg1_b"
+            onChange={handleFieldChange}
+            value={patientNeglectAbuseTraumaLossPg1.neglect_abuse_trauma_loss_pg1_b}
           />
         </div>
         <h4 className="textWhite centerItem">What is your definition of economic coercive control?</h4>
@@ -49,7 +65,10 @@ function NeglectAbuseTraumaLossPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="neglect_abuse_trauma_loss_pg1_c"
+            name="neglect_abuse_trauma_loss_pg1_c"
+            onChange={handleFieldChange}
+            value={patientNeglectAbuseTraumaLossPg1.neglect_abuse_trauma_loss_pg1_c}
           />
         </div>
       </div>

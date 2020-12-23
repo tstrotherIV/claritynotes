@@ -1,4 +1,4 @@
-import React from "react"; 
+import React, {useState} from "react"; 
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -10,7 +10,15 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function PerpetratorOfNeglectAndAbusePg4(props) {
 
+  const [patientPerpetratorOfNeglectAndAbusePg4, setPatientPerpetratorOfNeglectAndAbusePg4] = useState({
+    perpetrator_of_neglect_and_abuse_pg4_a: "",
+  })
+
   const next = "/partner_relationship_pg_1";
+
+  const handleFieldChange = (e) => {
+    setPatientPerpetratorOfNeglectAndAbusePg4({ ...patientPerpetratorOfNeglectAndAbusePg4, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -28,7 +36,10 @@ function PerpetratorOfNeglectAndAbusePg4(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="perpetrator_of_neglect_and_abuse_pg4_a"
+            name="perpetrator_of_neglect_and_abuse_pg4_a"
+            onChange={handleFieldChange}
+            value={patientPerpetratorOfNeglectAndAbusePg4.perpetrator_of_neglect_and_abuse_pg4_a}
           />
         </div>
       </div>

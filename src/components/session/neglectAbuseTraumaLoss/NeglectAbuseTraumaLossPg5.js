@@ -1,4 +1,4 @@
-import React from "react"; 
+import React, {useState} from "react"; 
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,17 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function NeglectAbuseTraumaLossPg5(props) {
 
+  const [patientNeglectAbuseTraumaLossPg5, setPatientNeglectAbuseTraumaLossPg5] = useState({
+    neglect_abuse_trauma_loss_pg5_a: "",
+    neglect_abuse_trauma_loss_pg5_b: "",
+    neglect_abuse_trauma_loss_pg5_c: "",
+  })
+
   const next = "/perpetrator_of_neglect_and_abuse_pg_1";
+
+  const handleFieldChange = (e) => {
+    setPatientNeglectAbuseTraumaLossPg5({ ...patientNeglectAbuseTraumaLossPg5, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -27,7 +37,10 @@ function NeglectAbuseTraumaLossPg5(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="neglect_abuse_trauma_loss_pg5_a"
+            name="neglect_abuse_trauma_loss_pg5_a"
+            onChange={handleFieldChange}
+            value={patientNeglectAbuseTraumaLossPg5.neglect_abuse_trauma_loss_pg5_a}
           />
         </div>
         <h4 className="textWhite centerItem">Are there concerns, allegations, or assertions your child(ren) have been physically or emotionally abused, now or in the past?</h4>
@@ -38,7 +51,10 @@ function NeglectAbuseTraumaLossPg5(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="neglect_abuse_trauma_loss_pg5_b"
+            name="neglect_abuse_trauma_loss_pg5_b"
+            onChange={handleFieldChange}
+            value={patientNeglectAbuseTraumaLossPg5.neglect_abuse_trauma_loss_pg5_b}
           />
         </div>
         <h4 className="textWhite centerItem">Do you ever feel afraid for your life?</h4>
@@ -49,7 +65,10 @@ function NeglectAbuseTraumaLossPg5(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="neglect_abuse_trauma_loss_pg5_c"
+            name="neglect_abuse_trauma_loss_pg5_c"
+            onChange={handleFieldChange}
+            value={patientNeglectAbuseTraumaLossPg5.neglect_abuse_trauma_loss_pg5_c}
           />
         </div>
       </div>

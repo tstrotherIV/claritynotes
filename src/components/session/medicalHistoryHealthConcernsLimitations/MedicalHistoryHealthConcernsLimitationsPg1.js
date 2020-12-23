@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,18 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function MedicalHistoryHealthConcernsLimitationsPg1(props) {
 
+  const [patientMedicalHistoryHealthConcernsLimitationsPg1, setPatientMedicalHistoryHealthConcernsLimitationsPg1] = useState({
+    mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_a: "",
+    mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_b: "",
+    mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_c: "",
+    mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_d: "",
+  })
+
   const next = "/neglect_abuse_trauma_loss_pg_1";
+
+  const handleFieldChange = (e) => {
+    setPatientMedicalHistoryHealthConcernsLimitationsPg1({ ...patientMedicalHistoryHealthConcernsLimitationsPg1, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -27,7 +38,10 @@ function MedicalHistoryHealthConcernsLimitationsPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_a"
+            name="mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_a"
+            onChange={handleFieldChange}
+            value={patientMedicalHistoryHealthConcernsLimitationsPg1.mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_a}
           />
         </div>
         <h4 className="textWhite centerItem">Who is your physician?</h4>
@@ -38,7 +52,10 @@ function MedicalHistoryHealthConcernsLimitationsPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_b"
+            name="mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_b"
+            onChange={handleFieldChange}
+            value={patientMedicalHistoryHealthConcernsLimitationsPg1.mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_b}
           />
         </div>
         <h4 className="textWhite centerItem">What prescriptions are you taking?</h4>
@@ -49,7 +66,10 @@ function MedicalHistoryHealthConcernsLimitationsPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_c"
+            name="mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_c"
+            onChange={handleFieldChange}
+            value={patientMedicalHistoryHealthConcernsLimitationsPg1.mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_c}
           />
         </div>
         <h4 className="textWhite centerItem">How do these difficulties limit your ability to parent?</h4>
@@ -60,7 +80,10 @@ function MedicalHistoryHealthConcernsLimitationsPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_d"
+            name="mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_d"
+            onChange={handleFieldChange}
+            value={patientMedicalHistoryHealthConcernsLimitationsPg1.mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_d}
           />
         </div>
       </div>

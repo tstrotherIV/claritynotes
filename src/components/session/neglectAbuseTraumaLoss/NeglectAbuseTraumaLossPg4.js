@@ -1,4 +1,4 @@
-import React from "react"; 
+import React, {useState} from "react"; 
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,17 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function NeglectAbuseTraumaLossPg4(props) {
 
+  const [patientNeglectAbuseTraumaLossPg4, setPatientNeglectAbuseTraumaLossPg4] = useState({
+    neglect_abuse_trauma_loss_pg4_a: "",
+    neglect_abuse_trauma_loss_pg4_b: "",
+    neglect_abuse_trauma_loss_pg4_c: "",
+  })
+
   const next = "/neglect_abuse_trauma_loss_pg_5";
+
+  const handleFieldChange = (e) => {
+    setPatientNeglectAbuseTraumaLossPg4({ ...patientNeglectAbuseTraumaLossPg4, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -27,7 +37,10 @@ function NeglectAbuseTraumaLossPg4(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="neglect_abuse_trauma_loss_pg4_a"
+            name="neglect_abuse_trauma_loss_pg4_a"
+            onChange={handleFieldChange}
+            value={patientNeglectAbuseTraumaLossPg4.neglect_abuse_trauma_loss_pg4_a}
           />
         </div>
         <h4 className="textWhite centerItem">How do your life experiences shape your parenting style?</h4>
@@ -38,7 +51,10 @@ function NeglectAbuseTraumaLossPg4(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="neglect_abuse_trauma_loss_pg4_b"
+            name="neglect_abuse_trauma_loss_pg4_b"
+            onChange={handleFieldChange}
+            value={patientNeglectAbuseTraumaLossPg4.neglect_abuse_trauma_loss_pg4_b}
           />
         </div>
         <h4 className="textWhite centerItem">What is it like for you to sit and thing about these experiences?</h4>
@@ -49,7 +65,10 @@ function NeglectAbuseTraumaLossPg4(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="neglect_abuse_trauma_loss_pg4_c"
+            name="neglect_abuse_trauma_loss_pg4_c"
+            onChange={handleFieldChange}
+            value={patientNeglectAbuseTraumaLossPg4.neglect_abuse_trauma_loss_pg4_c}
           />
         </div>
         </div>
