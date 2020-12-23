@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,17 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function HistoryOfLegalPg8(props) {
 
+  const [patientHistoryOfLegal_pg8, setPatientHistoryOfLegal_pg8] = useState({
+    history_of_legal_pg8_a: "",
+    history_of_legal_pg8_b: "",
+    history_of_legal_pg8_c: "",
+  })
+
   const next = "/history_of_legal_pg_9";
+
+  const handleFieldChange = (e) => {
+    setPatientHistoryOfLegal_pg8({ ...patientHistoryOfLegal_pg8, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -27,7 +37,10 @@ function HistoryOfLegalPg8(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="history_of_legal_pg8_a"
+            name="history_of_legal_pg8_a"
+            onChange={handleFieldChange}
+            value={patientHistoryOfLegal_pg8.history_of_legal_pg8_a}
           />
         </div>
         <h4 className="textWhite centerItem">Have you ever tested positive for drugs in any way?</h4>
@@ -38,7 +51,10 @@ function HistoryOfLegalPg8(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="history_of_legal_pg8_b"
+            name="history_of_legal_pg8_b"
+            onChange={handleFieldChange}
+            value={patientHistoryOfLegal_pg8.history_of_legal_pg8_b}
           />
         </div>
         <h4 className="textWhite centerItem">Have you ever tested positive for alcohol in any way?</h4>
@@ -49,7 +65,10 @@ function HistoryOfLegalPg8(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="history_of_legal_pg8_c"
+            name="history_of_legal_pg8_c"
+            onChange={handleFieldChange}
+            value={patientHistoryOfLegal_pg8.history_of_legal_pg8_c}
           />
         </div>
       </div>

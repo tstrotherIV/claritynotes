@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,15 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function HistoryOfLegalPg15(props) {
 
+  const [patientHistoryOfLegal_pg15, setPatientHistoryOfLegal_pg15] = useState({
+    history_of_legal_pg15_a: "",
+  })
+
   const next = "/mental_health_history_pg_1";
+
+  const handleFieldChange = (e) => {
+    setPatientHistoryOfLegal_pg15({ ...patientHistoryOfLegal_pg15, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -27,7 +35,10 @@ function HistoryOfLegalPg15(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="history_of_legal_pg15_a"
+            name="history_of_legal_pg15_a"
+            onChange={handleFieldChange}
+            value={patientHistoryOfLegal_pg15.history_of_legal_pg15_a}
           />
         </div> 
       </div>

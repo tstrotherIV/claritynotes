@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,19 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function HistoryOfLegalPg13(props) {
 
+  const [patientHistoryOfLegal_pg13, setPatientHistoryOfLegal_pg13] = useState({
+    history_of_legal_pg13_a: "",
+    history_of_legal_pg13_b: "",
+    history_of_legal_pg13_c: "",
+    history_of_legal_pg13_d: "",
+    history_of_legal_pg13_e: "",
+  })
+
   const next = "/history_of_legal_pg_14";
+
+  const handleFieldChange = (e) => {
+    setPatientHistoryOfLegal_pg13({ ...patientHistoryOfLegal_pg13, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -26,7 +38,10 @@ function HistoryOfLegalPg13(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="history_of_legal_pg13_a"
+            name="history_of_legal_pg13_a"
+            onChange={handleFieldChange}
+            value={patientHistoryOfLegal_pg13.history_of_legal_pg13_a}
           />
         </div>
         <h4 className="textWhite centerItem mt-4">How many times have you ever had to use more than alcohol to get the same buzz? What about drugs?</h4>
@@ -37,7 +52,10 @@ function HistoryOfLegalPg13(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="history_of_legal_pg13_b"
+            name="history_of_legal_pg13_b"
+            onChange={handleFieldChange}
+            value={patientHistoryOfLegal_pg13.history_of_legal_pg13_b}
           />    
         </div>
         <div className="mb-4 d-flex flex-wrap justify-content-center mb-4">
@@ -51,7 +69,10 @@ function HistoryOfLegalPg13(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="history_of_legal_pg13_c"
+            name="history_of_legal_pg13_c"
+            onChange={handleFieldChange}
+            value={patientHistoryOfLegal_pg13.history_of_legal_pg13_c}
           />
           </div>
  <div className="col-2 d-flex flex-wrap align-items-end ml-2 justify-content-center align-content-end">
@@ -61,7 +82,10 @@ function HistoryOfLegalPg13(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="history_of_legal_pg13_d"
+            name="history_of_legal_pg13_d"
+            onChange={handleFieldChange}
+            value={patientHistoryOfLegal_pg13.history_of_legal_pg13_d}
             />
         </div>
  <div className="col-2 d-flex flex-wrap align-items-end justify-content-center ml-2 p-0 align-content-end">
@@ -71,7 +95,10 @@ function HistoryOfLegalPg13(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="history_of_legal_pg13_e"
+            name="history_of_legal_pg13_e"
+            onChange={handleFieldChange}
+            value={patientHistoryOfLegal_pg13.history_of_legal_pg13_e}
             />
         </div>
         </div>
