@@ -1,4 +1,4 @@
-import React from "react"; 
+import React, {useState} from "react"; 
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -10,7 +10,17 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function PartnerRelationshipPg8(props) {
 
+  const [patientPartnerRelationshipPg8, setPatientPartnerRelationshipPg8] = useState({
+    partner_relationship_pg8_a: "",
+    partner_relationship_pg8_b: "",
+    partner_relationship_pg8_c: "",
+  })
+
   const next = "/partner_relationship_pg_9";
+
+  const handleFieldChange = (e) => {
+    setPatientPartnerRelationshipPg8({ ...patientPartnerRelationshipPg8, [e.target.name]: e.target.value});
+  }
 
 return (
     <>  
@@ -28,7 +38,10 @@ return (
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="partner_relationship_pg8_a"
+            name="partner_relationship_pg8_a"
+            onChange={handleFieldChange}
+            value={patientPartnerRelationshipPg8.partner_relationship_pg8_a}
           />
         </div>
         <h4 className="textWhite centerItem">Did [NAME] exhibit demeaning name calling or comments towards you?</h4>
@@ -39,7 +52,10 @@ return (
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="partner_relationship_pg8_b"
+            name="partner_relationship_pg8_b"
+            onChange={handleFieldChange}
+            value={patientPartnerRelationshipPg8.partner_relationship_pg8_b}
           />
         </div>
         <h4 className="textWhite centerItem">Did [NAME] blame you for all conflicts?</h4>
@@ -50,7 +66,10 @@ return (
           <TextareaAutosize             
             className="fieldData"
             type="text"
-            id=""
+            id="partner_relationship_pg8_c"
+            name="partner_relationship_pg8_c"
+            onChange={handleFieldChange}
+            value={patientPartnerRelationshipPg8.partner_relationship_pg8_c}
           />
         </div>
       </div>

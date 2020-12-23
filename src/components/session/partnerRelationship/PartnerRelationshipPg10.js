@@ -1,4 +1,4 @@
-import React from "react"; 
+import React, {useState} from "react"; 
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,16 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function PartnerRelationshipPg10(props) {
 
+  const [patientPartnerRelationshipPg10, setPatientPartnerRelationshipPg10] = useState({
+    partner_relationship_pg10_a: "",
+    partner_relationship_pg10_b: "",
+  })
+
   const next = "/parenting_pg_1";
+
+  const handleFieldChange = (e) => {
+    setPatientPartnerRelationshipPg10({ ...patientPartnerRelationshipPg10, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -27,7 +36,10 @@ function PartnerRelationshipPg10(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="partner_relationship_pg10_a"
+            name="partner_relationship_pg10_a"
+            onChange={handleFieldChange}
+            value={patientPartnerRelationshipPg10.partner_relationship_pg10_a}
           />
         </div>
         <h4 className="textWhite centerItem">Do you find yourself isolated from friends and family now?</h4>
@@ -38,7 +50,10 @@ function PartnerRelationshipPg10(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="partner_relationship_pg10_b"
+            name="partner_relationship_pg10_b"
+            onChange={handleFieldChange}
+            value={patientPartnerRelationshipPg10.partner_relationship_pg10_b}
           />
         </div>
         </div>
