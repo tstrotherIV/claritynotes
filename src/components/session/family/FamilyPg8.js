@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -7,7 +7,18 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function FamilyPg8(props) {
 
+  const [patientFamily_pg8, setPatientFamily_pg8] = useState({
+    familiy_pg8_a: "",
+    familiy_pg8_b: "",
+    familiy_pg8_c: "",
+    familiy_pg8_d: "",
+  })
+
   const next = "/family_pg_9";
+
+  const handleFieldChange = (e) => {
+    setPatientFamily_pg8({ ...patientFamily_pg8, [e.target.name]: e.target.value});
+  }
   
   return (
     <>
@@ -29,7 +40,10 @@ function FamilyPg8(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="family_pg8_a"
+            name="family_pg8_a"
+            onChange={handleFieldChange}
+            value={patientFamily_pg8.family_pg8_a}
           />
         </div>
       </div>
@@ -48,7 +62,12 @@ function FamilyPg8(props) {
             <TextareaAutosize  
             type="text" 
             className="fieldData" 
-            id="" />
+            id="family_pg8_b"
+            name="family_pg8_b"
+            onChange={handleFieldChange}
+            value={patientFamily_pg8.family_pg8_b} 
+
+            />
           </div>
         </div>
       </div>
@@ -67,7 +86,12 @@ function FamilyPg8(props) {
             <TextareaAutosize  
             type="text" 
             className="fieldData" 
-            id="" />
+            id="family_pg8_c"
+            name="family_pg8_c"
+            onChange={handleFieldChange}
+            value={patientFamily_pg8.family_pg8_c}  
+
+            />
           </div>
         </div>
       </div>
@@ -85,7 +109,10 @@ function FamilyPg8(props) {
             <TextareaAutosize  
             type="text" 
             className="fieldData" 
-            id="" 
+            id="family_pg8_d"
+            name="family_pg8_d"
+            onChange={handleFieldChange}
+            value={patientFamily_pg8.family_pg8_d}  
             />
           </div>
         </div>

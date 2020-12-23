@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./housing.scss";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
@@ -10,7 +10,17 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function HousingPg1(props) {
 
+  const [patientHousing_pg1, setPatientHousing_pg1] = useState({
+    housing_pg1_a: "",
+    housing_pg1_b: "",
+    housing_pg1_c: "",
+  })
+
   const next = "/housing_pg_2";
+
+  const handleFieldChange = (e) => {
+    setPatientHousing_pg1({ ...patientHousing_pg1, [e.target.name]: e.target.value});
+  }
 
   return (
     <>
@@ -28,7 +38,10 @@ function HousingPg1(props) {
           <TextareaAutosize            
           className="fieldData"
             type="text"
-            id="hs-live-alone"
+            id="housing_pg1_a"
+            name="housing_pg1_a"
+            onChange={handleFieldChange}
+            value={patientHousing_pg1.housing_pg1_a}
           />
         </div>
       </div>
@@ -41,7 +54,10 @@ function HousingPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id="hs-live-with"
+            id="housing_pg1_b"
+            name="housing_pg1_b"
+            onChange={handleFieldChange}
+            value={patientHousing_pg1.housing_pg1_b}
           />
         </div>
       </div>
@@ -54,7 +70,10 @@ function HousingPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id="hs-who-pays" 
+            id="housing_pg1_c"
+            name="housing_pg1_c"
+            onChange={handleFieldChange}
+            value={patientHousing_pg1.housing_pg1_c}
           />
         </div>
       </div>

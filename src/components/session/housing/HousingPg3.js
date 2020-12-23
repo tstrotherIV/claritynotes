@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./housing.scss";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
@@ -10,7 +10,19 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function HousingPg3(props) {
 
+  const [patientHousing_pg3, setPatientHousing_pg3] = useState({
+    housing_pg3_a: "",
+    housing_pg3_b: "",
+    housing_pg3_c: "",
+    housing_pg3_d: "",
+    housing_pg3_e: "",
+  })
+
   const next = "/employment_pg_1"
+
+  const handleFieldChange = (e) => {
+    setPatientHousing_pg3({ ...patientHousing_pg3, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -28,7 +40,10 @@ function HousingPg3(props) {
             <TextareaAutosize              
               className="interview_fieldData"
               type="text"
-              id=""
+              id="housing_pg3_a"
+              name="housing_pg3_a"
+              onChange={handleFieldChange}
+              value={patientHousing_pg3.housing_pg3_a}
             />
         </div>
       </div>
@@ -41,7 +56,10 @@ function HousingPg3(props) {
           <TextareaAutosize            
             className="interview_fieldData"
             type="text"
-            id="hs-housing-cost"
+            id="housing_pg3_b"
+            name="housing_pg3_b"
+            onChange={handleFieldChange}
+            value={patientHousing_pg3.housing_pg3_b}
           />
         </div>
       </div>
@@ -57,7 +75,10 @@ function HousingPg3(props) {
           <TextareaAutosize            
             className="col-6 m-auto fieldData"
             type="text"
-            id=""
+            id="housing_pg3_c"
+            name="housing_pg3_c"
+            onChange={handleFieldChange}
+            value={patientHousing_pg3.housing_pg3_c}
           />
       </div>
       <div className="col-3">
@@ -67,7 +88,10 @@ function HousingPg3(props) {
           <TextareaAutosize            
             className="col-6 m-auto fieldData"
             type="text"
-            id=""
+            id="housing_pg3_d"
+            name="housing_pg3_d"
+            onChange={handleFieldChange}
+            value={patientHousing_pg3.housing_pg3_d}
           />
       </div>
       <div className="col-3">
@@ -77,7 +101,10 @@ function HousingPg3(props) {
           <TextareaAutosize            
           className="col-6 m-auto fieldData"
             type="text"
-            id=""
+            id="housing_pg3_e"
+            name="housing_pg3_e"
+            onChange={handleFieldChange}
+            value={patientHousing_pg3.housing_pg3_e}
           />
       </div>
       </div>
