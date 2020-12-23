@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,17 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function HistoryOfLegalPg2(props) {
 
+  const [patientHistoryOfLegal_pg2, setPatientHistoryOfLegal_pg2] = useState({
+    history_of_legal_pg2_a: "",
+    history_of_legal_pg2_b: "",
+    history_of_legal_pg2_c: "",
+  })
+
   const next = "/history_of_legal_pg_3";
+
+  const handleFieldChange = (e) => {
+    setPatientHistoryOfLegal_pg2({ ...patientHistoryOfLegal_pg2, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -27,7 +37,10 @@ function HistoryOfLegalPg2(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="history_of_legal_pg2_a"
+            name="history_of_legal_pg2_a"
+            onChange={handleFieldChange}
+            value={patientHistoryOfLegal_pg2.history_of_legal_pg2_a}
           />
         </div>
         <h4 className="textWhite centerItem">Did you take this matter to trial?</h4>
@@ -38,7 +51,10 @@ function HistoryOfLegalPg2(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="history_of_legal_pg2_b"
+            name="history_of_legal_pg2_b"
+            onChange={handleFieldChange}
+            value={patientHistoryOfLegal_pg2.history_of_legal_pg2_b}
           />
         </div>
         <h4 className="textWhite centerItem">How many times have you been falsely accused?</h4>
@@ -49,7 +65,10 @@ function HistoryOfLegalPg2(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="history_of_legal_pg2_c"
+            name="history_of_legal_pg2_c"
+            onChange={handleFieldChange}
+            value={patientHistoryOfLegal_pg2.history_of_legal_pg2_c}
           />
         </div>
       </div>

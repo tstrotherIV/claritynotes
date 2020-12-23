@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -8,7 +8,19 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function EducationPg1(props) {
 
+  const [patientEducation_pg1, setPatientEducation_pg1] = useState({
+    education_pg1_a: "",
+    education_pg1_b: "",
+    education_pg1_c: "",
+    education_pg1_d: "",
+    education_pg1_e: "",
+  })
+
   const next = "/education_pg_2";
+
+  const handleFieldChange = (e) => {
+    setPatientEducation_pg1({ ...patientEducation_pg1, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -25,7 +37,10 @@ function EducationPg1(props) {
           <TextareaAutosize            
             className="col-10 fieldData"
             type="text"
-            id="quitSchool"
+            id="education_pg1_a"
+            name="education_pg1_a"
+            onChange={handleFieldChange}
+            value={patientEducation_pg1.education_pg1_a}
           />  
         </div>
           <div className="d-flex flex-wrap justify-content-center col-4">
@@ -33,7 +48,10 @@ function EducationPg1(props) {
           <TextareaAutosize            
             className="col-10 fieldData"
             type="text"
-            id="lastGrade"
+            id="education_pg1_b"
+            name="education_pg1_b"
+            onChange={handleFieldChange}
+            value={patientEducation_pg1.education_pg1_b}
           />  
         </div>
         </div>
@@ -47,7 +65,10 @@ function EducationPg1(props) {
           <TextareaAutosize            
             className="col-10 fieldData"
             type="text"
-            id="graduateHighSchool"
+            id="education_pg1_c"
+            name="education_pg1_c"
+            onChange={handleFieldChange}
+            value={patientEducation_pg1.education_pg1_c}
           />  
         </div>
           <div className="d-flex flex-wrap justify-content-center text-center col-4">
@@ -55,7 +76,10 @@ function EducationPg1(props) {
           <TextareaAutosize            
             className="col-10 fieldData"
             type="text"
-            id="earnGed"
+            id="education_pg1_d"
+            name="education_pg1_d"
+            onChange={handleFieldChange}
+            value={patientEducation_pg1.education_pg1_d}
           />  
         </div>
         </div>
@@ -68,7 +92,10 @@ function EducationPg1(props) {
           <TextareaAutosize           
             className="col-6 fieldData"
             type="text"
-            id="specialEducation"
+            id="education_pg1_e"
+            name="education_pg1_e"
+            onChange={handleFieldChange}
+            value={patientEducation_pg1.education_pg1_e}
           />
         </div>
       </div>

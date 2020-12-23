@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,18 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function HistoryOfLegalPg7(props) {
 
+  const [patientHistoryOfLegal_pg7, setPatientHistoryOfLegal_pg7] = useState({
+    history_of_legal_pg7_a: "",
+    history_of_legal_pg7_b: "",
+    history_of_legal_pg7_c: "",
+    history_of_legal_pg7_d: "",
+  })
+
   const next = "/history_of_legal_pg_8";
+
+  const handleFieldChange = (e) => {
+    setPatientHistoryOfLegal_pg7({ ...patientHistoryOfLegal_pg7, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -26,8 +37,10 @@ function HistoryOfLegalPg7(props) {
           <TextareaAutosize                
                 className="col-4 mr-2 ml-2 mb-2 fieldData"
                 type=""
-                id=""
-                placeholder=""
+                id="history_of_legal_pg7_a"
+                name="history_of_legal_pg7_a"
+                onChange={handleFieldChange}
+                value={patientHistoryOfLegal_pg7.history_of_legal_pg7_a}
               />  
           </div> 
           <div className="m-auto d-flex align-items-center textWhite">
@@ -38,8 +51,10 @@ function HistoryOfLegalPg7(props) {
             <TextareaAutosize                
                 className="col-2 mr-2 ml-2 mb-2 fieldData"
                 type="text"
-                id=""
-                placeholder=""
+                id="history_of_legal_pg7_b"
+                name="history_of_legal_pg7_b"
+                onChange={handleFieldChange}
+                value={patientHistoryOfLegal_pg7.history_of_legal_pg7_b}
               />
               drinks per week.  
           </div>
@@ -50,8 +65,10 @@ function HistoryOfLegalPg7(props) {
             <TextareaAutosize                  
                   className="col-4 mr-2 ml-2 mb-2 fieldData"
                   type=""
-                  id=""
-                  placeholder=""
+                  id="history_of_legal_pg7_c"
+                  name="history_of_legal_pg7_c"
+                  onChange={handleFieldChange}
+                  value={patientHistoryOfLegal_pg7.history_of_legal_pg7_c}
                 />  
               
           </div> 
@@ -64,7 +81,10 @@ function HistoryOfLegalPg7(props) {
               <TextareaAutosize                
                 className="fieldData"
                 type="text"
-                id=""
+                id="history_of_legal_pg7_d"
+                name="history_of_legal_pg7_d"
+                onChange={handleFieldChange}
+                value={patientHistoryOfLegal_pg7.history_of_legal_pg7_d}
               />
             </div>
           </div>
