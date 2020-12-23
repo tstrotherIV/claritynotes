@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -7,8 +7,17 @@ import TextareaAutosize from 'react-textarea-autosize';
 // pdf page 45
 
 function EmploymentPg3(props) {
+  const [patientEmployment_pg3, setPatientEmployment_pg3] = useState({
+    employment_pg3_a: "",
+    employment_pg3_b: "",
+    employment_pg3_c: "",
+  })
 
   const next = "/education_pg_1"
+
+  const handleFieldChange = (e) => {
+    setPatientEmployment_pg3({ ...patientEmployment_pg3, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -26,7 +35,10 @@ function EmploymentPg3(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="employment_pg3_a"
+            name="employment_pg3_a"
+            onChange={handleFieldChange}
+            value={patientEmployment_pg3.employment_pg3_a}
           />
         </div>
         <h4 className="textWhite centerItem text-center">Do you receive a pension or disability income?</h4>
@@ -37,7 +49,10 @@ function EmploymentPg3(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="employment_pg3_b"
+            name="employment_pg3_b"
+            onChange={handleFieldChange}
+            value={patientEmployment_pg3.employment_pg3_b}
           />
         </div>
         <h4 className="textWhite centerItem text-center">Have you ever been very vulnerable to a partner who used money to control you?</h4>
@@ -48,7 +63,10 @@ function EmploymentPg3(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="employment_pg3_c"
+            name="employment_pg3_c"
+            onChange={handleFieldChange}
+            value={patientEmployment_pg3.employment_pg3_c}
           />
         </div>
       </div>

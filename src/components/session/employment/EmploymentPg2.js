@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -8,7 +8,17 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function EmploymentPg2(props) {
 
+  const [patientEmployment_pg2, setPatientEmployment_pg2] = useState({
+    employment_pg2_a: "",
+    employment_pg2_b: "",
+    employment_pg2_c: "",
+  })
+
   const next = "/employment_pg_3";
+
+  const handleFieldChange = (e) => {
+    setPatientEmployment_pg2({ ...patientEmployment_pg2, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -26,7 +36,10 @@ function EmploymentPg2(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="employment_pg2_a"
+            name="employment_pg2_a"
+            onChange={handleFieldChange}
+            value={patientEmployment_pg2.employment_pg2_a}
           />
         </div>
         <h4 className="textWhite centerItem">What is the longest you have worked at one company?</h4>
@@ -37,7 +50,10 @@ function EmploymentPg2(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="employment_pg2_b"
+            name="employment_pg2_b"
+            onChange={handleFieldChange}
+            value={patientEmployment_pg2.employment_pg2_b}
           />
         </div>
         <h4 className="textWhite centerItem">What do you think limits long-term stable employement?</h4>
@@ -48,7 +64,10 @@ function EmploymentPg2(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="employment_pg2_c"
+            name="employment_pg2_c"
+            onChange={handleFieldChange}
+            value={patientEmployment_pg2.employment_pg2_c}
           />
         </div>
 

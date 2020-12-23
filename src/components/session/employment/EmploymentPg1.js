@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,25 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function EmploymentPg1(props) {
 
+  const [patientEmployment_pg1, setPatientEmployment_pg1] = useState({
+    employment_pg1_a: "",
+    employment_pg1_b: "",
+    employment_pg1_c: "",
+    employment_pg1_d: "",
+    employment_pg1_e: "",
+    employment_pg1_f: "",
+    employment_pg1_g: "",
+    employment_pg1_h: "",
+    employment_pg1_i: "",
+    employment_pg1_j: "",
+    
+  })
+
   const next = "/employment_pg_2";
+
+  const handleFieldChange = (e) => {
+    setPatientEmployment_pg1({ ...patientEmployment_pg1, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -27,7 +45,10 @@ function EmploymentPg1(props) {
           <TextareaAutosize            
             className="interview_fieldData"
             type="text"
-            id=""
+            id="employment_pg1_a"
+            name="employment_pg1_a"
+            onChange={handleFieldChange}
+            value={patientEmployment_pg1.employment_pg1_a}
           />
         </div>
         <div className="m-auto d-flex align-items-center textWhite">
@@ -37,7 +58,10 @@ function EmploymentPg1(props) {
           <TextareaAutosize              
               className="col-2 mr-2 mb-2 fieldData"
               type="text"
-              id=""
+              id="employment_pg1_b"
+              name="employment_pg1_b"
+              onChange={handleFieldChange}
+              value={patientEmployment_pg1.employment_pg1_b}
               placeholder="has/has never"
             />
             been employed.  
@@ -49,14 +73,20 @@ function EmploymentPg1(props) {
           <TextareaAutosize              
               className="col-2 mr-2 mb-2 fieldData"
               type="text"
-              id=""
+              id="employment_pg1_c"
+              name="employment_pg1_c"
+              onChange={handleFieldChange}
+              value={patientEmployment_pg1.employment_pg1_c}
               placeholder="is/is not"
             />
             currently employed and 
             <TextareaAutosize              
               className="col-2 mr-2 ml-2 mb-2 fieldData"
               type="text"
-              id=""
+              id="employment_pg1_d"
+              name="employment_pg1_d"
+              onChange={handleFieldChange}
+              value={patientEmployment_pg1.employment_pg1_d}
               placeholder="has/has no"
             />  
             income.
@@ -69,14 +99,20 @@ function EmploymentPg1(props) {
         <TextareaAutosize              
               className="col-2 mr-2 ml-2 mb-2 fieldData"
               type="text"
-              id=""
+              id="employment_pg1_e"
+              name="employment_pg1_e"
+              onChange={handleFieldChange}
+              value={patientEmployment_pg1.employment_pg1_e}
               placeholder=""
             />  
         for
         <input              
               className="col-3 mr-2 ml-2 mb-2 fieldData"
               type="time"
-              id=""
+              id="employment_pg1_f"
+              name="employment_pg1_f"
+              onChange={handleFieldChange}
+              value={patientEmployment_pg1.employment_pg1_f}
               placeholder="select time"
             />  
             .
@@ -90,7 +126,10 @@ function EmploymentPg1(props) {
         <TextareaAutosize              
               className="col-4 mr-2 ml-2 mb-2 fieldData"
               type=""
-              id=""
+              id="employment_pg1_g"
+              name="employment_pg1_g"
+              onChange={handleFieldChange}
+              value={patientEmployment_pg1.employment_pg1_g}
               placeholder=""
             />  
             .
@@ -104,14 +143,20 @@ function EmploymentPg1(props) {
         <TextareaAutosize              
               className="fieldData col-3 mr-2 ml-2 mb-2"
               type=""
-              id=""
+              id="employment_pg1_h"
+              name="employment_pg1_h"
+              onChange={handleFieldChange}
+              value={patientEmployment_pg1.employment_pg1_h}
               placeholder=""
             />  
             as
             <TextareaAutosize              
               className="col-2 mr-2 ml-2 mb-2 fieldData"
               type=""
-              id=""
+              id="employment_pg1_i"
+              name="employment_pg1_i"
+              onChange={handleFieldChange}
+              value={patientEmployment_pg1.employment_pg1_i}
               placeholder=""
             />
             .  
@@ -125,7 +170,10 @@ function EmploymentPg1(props) {
         <TextareaAutosize              
               className="col-4 mr-2 ml-2 mb-2 fieldData"
               type=""
-              id=""
+              id="employment_pg1_j"
+              name="employment_pg1_j"
+              onChange={handleFieldChange}
+              value={patientEmployment_pg1.employment_pg1_j}
               placeholder=""
             />  
             .
