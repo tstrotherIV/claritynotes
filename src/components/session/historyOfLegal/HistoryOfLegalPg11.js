@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,20 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function HistoryOfLegalPg11(props) {
 
+  const [patientHistoryOfLegal_pg11, setPatientHistoryOfLegal_pg11] = useState({
+    history_of_legal_pg11_a: "",
+    history_of_legal_pg11_b: "",
+    history_of_legal_pg11_c: "",
+    history_of_legal_pg11_d: "",
+    history_of_legal_pg11_e: "",
+    history_of_legal_pg11_f: "",
+  })
+
   const next = "/history_of_legal_pg_12";
+
+  const handleFieldChange = (e) => {
+    setPatientHistoryOfLegal_pg11({ ...patientHistoryOfLegal_pg11, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -27,7 +40,10 @@ function HistoryOfLegalPg11(props) {
               <TextareaAutosize                
                 className="fieldData"
                 type="text"
-                id=""
+                id="history_of_legal_pg11_a"
+                name="history_of_legal_pg11_a"
+                onChange={handleFieldChange}
+                value={patientHistoryOfLegal_pg11.history_of_legal_pg11_a}
               />
             </div>
           </div>
@@ -40,7 +56,10 @@ function HistoryOfLegalPg11(props) {
               <TextareaAutosize                
                 className="fieldData"
                 type="text"
-                id=""
+                id="history_of_legal_pg11_b"
+                name="history_of_legal_pg11_b"
+                onChange={handleFieldChange}
+                value={patientHistoryOfLegal_pg11.history_of_legal_pg11_b}
               />
             </div>
           </div>
@@ -52,8 +71,10 @@ function HistoryOfLegalPg11(props) {
           <TextareaAutosize                
             className="col-4 mr-2 ml-2 mb-2 fieldData"
                 type=""
-                id=""
-                placeholder=""
+                id="history_of_legal_pg11_c"
+                name="history_of_legal_pg11_c"
+                onChange={handleFieldChange}
+                value={patientHistoryOfLegal_pg11.history_of_legal_pg11_c}
               />  
           </div> 
           <div className="m-auto d-flex align-items-center textWhite">
@@ -64,8 +85,10 @@ function HistoryOfLegalPg11(props) {
             <TextareaAutosize                
                 className="col-2 mr-2 ml-2 mb-2 fieldData"
                 type="text"
-                id=""
-                placeholder=""
+                id="history_of_legal_pg11_d"
+                name="history_of_legal_pg11_d"
+                onChange={handleFieldChange}
+                value={patientHistoryOfLegal_pg11.history_of_legal_pg11_d}
               />
               times per week.  
           </div>
@@ -77,8 +100,10 @@ function HistoryOfLegalPg11(props) {
             <TextareaAutosize                 
                   className="col-4 mr-2 ml-2 mb-2 fieldData"
                   type=""
-                  id=""
-                  placeholder=""
+                  id="history_of_legal_pg11_e"
+                  name="history_of_legal_pg11_e"
+                  onChange={handleFieldChange}
+                  value={patientHistoryOfLegal_pg11.history_of_legal_pg11_e}
                 />  
               
           </div> 
@@ -90,8 +115,10 @@ function HistoryOfLegalPg11(props) {
             <TextareaAutosize                  
                   className="col-4 mr-2 ml-2 mb-2 fieldData"
                   type=""
-                  id=""
-                  placeholder=""
+                  id="history_of_legal_pg11_f"
+                  name="history_of_legal_pg11_f"
+                  onChange={handleFieldChange}
+                  value={patientHistoryOfLegal_pg11.history_of_legal_pg11_f}
                 />  
               
           </div> 

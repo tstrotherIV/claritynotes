@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,17 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function HistoryOfLegalPg14(props) {
 
+  const [patientHistoryOfLegal_pg14, setPatientHistoryOfLegal_pg14] = useState({
+    history_of_legal_pg14_a: "",
+    history_of_legal_pg14_b: "",
+    history_of_legal_pg14_c: "",
+  })
+
   const next = "/history_of_legal_pg_15";
+
+  const handleFieldChange = (e) => {
+    setPatientHistoryOfLegal_pg14({ ...patientHistoryOfLegal_pg14, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -26,7 +36,10 @@ function HistoryOfLegalPg14(props) {
               <TextareaAutosize                
                 className="fieldData mb-2"
                 type="text"
-                id=""
+                id="history_of_legal_pg14_a"
+                name="history_of_legal_pg14_a"
+                onChange={handleFieldChange}
+                value={patientHistoryOfLegal_pg14.history_of_legal_pg14_a}
               />
             </div>   
             <h4 className="textWhite centerItem mt-2">Who do you call when you have a craving?</h4>
@@ -37,7 +50,10 @@ function HistoryOfLegalPg14(props) {
               <TextareaAutosize                
                 className="fieldData"
                 type="text"
-                id=""
+                id="history_of_legal_pg14_b"
+                name="history_of_legal_pg14_b"
+                onChange={handleFieldChange}
+                value={patientHistoryOfLegal_pg14.history_of_legal_pg14_b}
               />
               </div>
             <h4 className="textWhite centerItem">What do you make of the fact that DHR has concern about your use and you have had problems with employment and housing?</h4>
@@ -48,7 +64,10 @@ function HistoryOfLegalPg14(props) {
               <TextareaAutosize                
                 className="fieldData"
                 type="text"
-                id=""
+                id="history_of_legal_pg14_c"
+                name="history_of_legal_pg14_c"
+                onChange={handleFieldChange}
+                value={patientHistoryOfLegal_pg14.history_of_legal_pg14_c}
               />
             </div>
         </div>
