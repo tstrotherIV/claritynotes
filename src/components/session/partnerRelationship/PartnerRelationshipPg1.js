@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,19 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function PartnerRelationshipPg1(props) {
 
+  const [patientPartnerRelationshipPg1, setPatientPartnerRelationshipPg1] = useState({
+    partner_relationship_pg1_a: "",
+    partner_relationship_pg1_b: "",
+    partner_relationship_pg1_c: "",
+    partner_relationship_pg1_d: "",
+    partner_relationship_pg1_e: "",
+  })
+
   const next = "/partner_relationship_pg_2";
+
+  const handleFieldChange = (e) => {
+    setPatientPartnerRelationshipPg1({ ...patientPartnerRelationshipPg1, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -18,7 +30,7 @@ function PartnerRelationshipPg1(props) {
         <Heading />
         <h2 className="textWhite text-center mb-4">PARTNER RELATIONSHIP</h2>
         <div className="text-center questionsContainerWide row d-flex flex-wrap justify-content-center">
-        <h4 className="textWhite centerItem offset-2">How many times have things gotten a little out of control, more than to your liking?</h4>
+        <h4 className="textWhite centerItem offset-2">What are the names of your past three relationships?</h4>
         <div className="mb-4 d-flex flex-wrap justify-content-center">
           <div className="textWhite d-flex flex-wrap align-content-end col-2 mb-2">
             [Patient Name, First] said:
@@ -29,7 +41,10 @@ function PartnerRelationshipPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="partner_relationship_pg1_a"
+            name="partner_relationship_pg1_a"
+            onChange={handleFieldChange}
+            value={patientPartnerRelationshipPg1.partner_relationship_pg1_a}
           />
           </div>
           <div className="col-3 d-flex flex-wrap align-items-end ml-2 justify-content-center align-content-end">
@@ -38,7 +53,10 @@ function PartnerRelationshipPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="partner_relationship_pg1_b"
+            name="partner_relationship_pg1_b"
+            onChange={handleFieldChange}
+            value={patientPartnerRelationshipPg1.partner_relationship_pg1_b}
             />
         </div>
         <div className="col-3 d-flex flex-wrap align-items-end justify-content-center ml-2 p-0 align-content-end">
@@ -47,7 +65,10 @@ function PartnerRelationshipPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="partner_relationship_pg1_c"
+            name="partner_relationship_pg1_c"
+            onChange={handleFieldChange}
+            value={patientPartnerRelationshipPg1.partner_relationship_pg1_c}
             />
           </div>
         </div>
@@ -63,7 +84,10 @@ function PartnerRelationshipPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="partner_relationship_pg1_d"
+            name="partner_relationship_pg1_d"
+            onChange={handleFieldChange}
+            value={patientPartnerRelationshipPg1.partner_relationship_pg1_d}
           />
         </div>
         <h4 className="textWhite centerItem">Are you currently married/in a relationship?</h4>
@@ -74,7 +98,10 @@ function PartnerRelationshipPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="partner_relationship_pg1_e"
+            name="partner_relationship_pg1_e"
+            onChange={handleFieldChange}
+            value={patientPartnerRelationshipPg1.partner_relationship_pg1_e}
           />    
         </div>
         </div>

@@ -1,4 +1,4 @@
-import React from "react"; 
+import React, {useState} from "react"; 
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,17 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function PartnerRelationshipPg3(props) {
 
+  const [patientPartnerRelationshipPg3, setPatientPartnerRelationshipPg3] = useState({
+    partner_relationship_pg3_a: "",
+    partner_relationship_pg3_b: "",
+    partner_relationship_pg3_c: "",
+  })
+
   const next = "/partner_relationship_pg_4";
+
+  const handleFieldChange = (e) => {
+    setPatientPartnerRelationshipPg3({ ...patientPartnerRelationshipPg3, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -27,7 +37,10 @@ function PartnerRelationshipPg3(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="partner_relationship_pg3_a"
+            name="partner_relationship_pg3_a"
+            onChange={handleFieldChange}
+            value={patientPartnerRelationshipPg3.partner_relationship_pg3_a}
           />
         </div>
         <h4 className="textWhite centerItem">When you and [NAME] get into an argument or disagreement, how do you resolve it?</h4>
@@ -38,7 +51,10 @@ function PartnerRelationshipPg3(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="partner_relationship_pg3_b"
+            name="partner_relationship_pg3_b"
+            onChange={handleFieldChange}
+            value={patientPartnerRelationshipPg3.partner_relationship_pg3_b}
           />
         </div>
         <h4 className="textWhite centerItem">Does [NAME] drink frequently or use drugs?</h4>
@@ -49,7 +65,10 @@ function PartnerRelationshipPg3(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="partner_relationship_pg3_c"
+            name="partner_relationship_pg3_c"
+            onChange={handleFieldChange}
+            value={patientPartnerRelationshipPg3.partner_relationship_pg3_c}
           />
         </div>
       </div>
