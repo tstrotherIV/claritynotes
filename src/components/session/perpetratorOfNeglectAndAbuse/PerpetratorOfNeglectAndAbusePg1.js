@@ -1,4 +1,4 @@
-import React from "react"; 
+import React, {useState} from "react"; 
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,17 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function PerpetratorOfNeglectAndAbusePg1(props) {
 
+  const [patientPerpetratorOfNeglectAndAbusePg1, setPatientPerpetratorOfNeglectAndAbusePg1] = useState({
+    perpetrator_of_neglect_and_abuse_pg1_a: "",
+    perpetrator_of_neglect_and_abuse_pg1_b: "",
+    perpetrator_of_neglect_and_abuse_pg1_c: "",
+  })
+
   const next = "/perpetrator_of_neglect_and_abuse_pg_2";
+
+  const handleFieldChange = (e) => {
+    setPatientPerpetratorOfNeglectAndAbusePg1({ ...patientPerpetratorOfNeglectAndAbusePg1, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -27,7 +37,10 @@ function PerpetratorOfNeglectAndAbusePg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="perpetrator_of_neglect_and_abuse_pg1_a"
+            name="perpetrator_of_neglect_and_abuse_pg1_a"
+            onChange={handleFieldChange}
+            value={patientPerpetratorOfNeglectAndAbusePg1.perpetrator_of_neglect_and_abuse_pg1_a}
           />
         </div>
         <h4 className="textWhite centerItem">Have you ever filed a protection from abuse order?</h4>
@@ -38,7 +51,10 @@ function PerpetratorOfNeglectAndAbusePg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="perpetrator_of_neglect_and_abuse_pg1_b"
+            name="perpetrator_of_neglect_and_abuse_pg1_b"
+            onChange={handleFieldChange}
+            value={patientPerpetratorOfNeglectAndAbusePg1.perpetrator_of_neglect_and_abuse_pg1_b}
           />
         </div>
         <h4 className="textWhite centerItem">Has anyone ever filed a protection from abuse order against you?</h4>
@@ -49,7 +65,10 @@ function PerpetratorOfNeglectAndAbusePg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="perpetrator_of_neglect_and_abuse_pg1_c"
+            name="perpetrator_of_neglect_and_abuse_pg1_c"
+            onChange={handleFieldChange}
+            value={patientPerpetratorOfNeglectAndAbusePg1.perpetrator_of_neglect_and_abuse_pg1_c}
           />
         </div>
       </div>
