@@ -1,4 +1,4 @@
-import React from "react"; 
+import React, {useState} from "react"; 
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,16 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function ParentingPg3(props) {
 
+  const [patientParentingPg3, setPatientParentingPg3] = useState({
+    parenting_pg3_a: "",
+    parenting_pg3_b: "",
+  })
+
   const next = "/positive_role_model_pg_1";
+
+  const handleFieldChange = (e) => {
+    setPatientParentingPg3({ ...patientParentingPg3, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -27,7 +36,10 @@ function ParentingPg3(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="parenting_pg3_a"
+            name="parenting_pg3_a"
+            onChange={handleFieldChange}
+            value={patientParentingPg3.parenting_pg3_a}
           />
         </div>
       </div>
@@ -40,7 +52,10 @@ function ParentingPg3(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="parenting_pg3_b"
+            name="parenting_pg3_b"
+            onChange={handleFieldChange}
+            value={patientParentingPg3.parenting_pg3_b}
           />
         </div>
         </div>
