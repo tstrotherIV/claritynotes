@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
@@ -8,7 +8,21 @@ import ButtonNavigation from "../../shared/ButtonNavigation";
 
 function BehavioralObservationsPg5(props) {
 
+  const [patientBehavioralObservationsPg5, setPatientBehavioralObservationsPg5] = useState({
+    behavioral_observations_and_testing_conditions_pg5_a: false,
+    behavioral_observations_and_testing_conditions_pg5_b: false,
+    behavioral_observations_and_testing_conditions_pg5_c: false,
+    behavioral_observations_and_testing_conditions_pg5_d: false,
+    behavioral_observations_and_testing_conditions_pg5_e: false,
+    behavioral_observations_and_testing_conditions_pg5_f: false,
+    behavioral_observations_and_testing_conditions_pg5_g: false,
+  })
+
   const next = "/procedures_administered_pg_1";  
+
+  const handleFieldChange = (e) => {
+    setPatientBehavioralObservationsPg5({ ...patientBehavioralObservationsPg5, [e.target.name]: e.target.value});
+  }
 
     return (
     <div>
@@ -25,7 +39,10 @@ function BehavioralObservationsPg5(props) {
           <input  
           className="m-1"
           type="checkbox"
-          id=""
+          id="behavioral_observations_and_testing_conditions_pg5_a"
+          name="behavioral_observations_and_testing_conditions_pg5_a"
+          checked={patientBehavioralObservationsPg5.behavioral_observations_and_testing_conditions_pg5_a}
+          onChange={(e)=> {setPatientBehavioralObservationsPg5(e.target.checked)}}
           />
           <Label className="text-white m-0 p-0">
           Happiness
@@ -38,7 +55,10 @@ function BehavioralObservationsPg5(props) {
           <input  
           className="m-1"
           type="checkbox"
-          id=""
+          id="behavioral_observations_and_testing_conditions_pg5_b"
+          name="behavioral_observations_and_testing_conditions_pg5_b"
+          checked={patientBehavioralObservationsPg5.behavioral_observations_and_testing_conditions_pg5_b}
+          onChange={(e)=> {setPatientBehavioralObservationsPg5(e.target.checked)}}
           />
           <Label className="text-white  m-0 p-0">
           Contempt
@@ -53,7 +73,10 @@ function BehavioralObservationsPg5(props) {
           <input  
           className="m-1"
           type="checkbox"
-          id=""
+          id="behavioral_observations_and_testing_conditions_pg5_c"
+          name="behavioral_observations_and_testing_conditions_pg5_c"
+          checked={patientBehavioralObservationsPg5.behavioral_observations_and_testing_conditions_pg5_c}
+          onChange={(e)=> {setPatientBehavioralObservationsPg5(e.target.checked)}}
           />
           <Label className="text-white  m-0 p-0">
           Sadness
@@ -64,7 +87,10 @@ function BehavioralObservationsPg5(props) {
           <input  
           className="m-1"
           type="checkbox"
-          id=""
+          id="behavioral_observations_and_testing_conditions_pg5_d"
+          name="behavioral_observations_and_testing_conditions_pg5_d"
+          checked={patientBehavioralObservationsPg5.behavioral_observations_and_testing_conditions_pg5_d}
+          onChange={(e)=> {setPatientBehavioralObservationsPg5(e.target.checked)}}
           />
           <Label className="text-white m-0 p-0">
           Disgust
@@ -78,7 +104,10 @@ function BehavioralObservationsPg5(props) {
           <input  
           className="m-1"
           type="checkbox"
-          id=""
+          id="behavioral_observations_and_testing_conditions_pg5_e"
+          name="behavioral_observations_and_testing_conditions_pg5_e"
+          checked={patientBehavioralObservationsPg5.behavioral_observations_and_testing_conditions_pg5_e}
+          onChange={(e)=> {setPatientBehavioralObservationsPg5(e.target.checked)}}
           />
           <Label className="text-white  m-0 p-0">
           Anger
@@ -89,7 +118,10 @@ function BehavioralObservationsPg5(props) {
           <input  
           className="m-1"
           type="checkbox"
-          id=""
+          id="behavioral_observations_and_testing_conditions_pg5_f"
+          name="behavioral_observations_and_testing_conditions_pg5_f"
+          checked={patientBehavioralObservationsPg5.behavioral_observations_and_testing_conditions_pg5_f}
+          onChange={(e)=> {setPatientBehavioralObservationsPg5(e.target.checked)}}
           />
           <Label className="text-white  m-0 p-0">
           Surprise
@@ -103,7 +135,10 @@ function BehavioralObservationsPg5(props) {
           <input  
           className="m-1"
           type="checkbox"
-          id=""
+          id="behavioral_observations_and_testing_conditions_pg5_g"
+          name="behavioral_observations_and_testing_conditions_pg5_g"
+          checked={patientBehavioralObservationsPg5.behavioral_observations_and_testing_conditions_pg5_g}
+          onChange={(e)=> {setPatientBehavioralObservationsPg5(e.target.checked)}}
           />
           <Label className="text-white  m-0 p-0">
           Fear

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
@@ -9,7 +9,20 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function BehavioralObservationsPg1(props) {
 
+  const [patientBehavioralObservationsPg1, setPatientBehavioralObservationsPg1] = useState({
+    behavioral_observations_and_testing_conditions_pg1_a: "",
+    behavioral_observations_and_testing_conditions_pg1_b: "",
+    behavioral_observations_and_testing_conditions_pg1_c: "",
+    behavioral_observations_and_testing_conditions_pg1_d: "",
+    behavioral_observations_and_testing_conditions_pg1_e: "",
+    behavioral_observations_and_testing_conditions_pg1_f: "",
+  })
+
   const next = "/behavioral_observations_and_testing_conditions_pg_2";  
+
+  const handleFieldChange = (e) => {
+    setPatientBehavioralObservationsPg1({ ...patientBehavioralObservationsPg1, [e.target.name]: e.target.value});
+  }
 
     return (
     <div>
@@ -27,7 +40,10 @@ function BehavioralObservationsPg1(props) {
           <TextareaAutosize  
           className="fieldData"
           type="text"
-          id=""
+          id="behavioral_observations_and_testing_conditions_pg1_a"
+          name="behavioral_observations_and_testing_conditions_pg1_a"
+          onChange={handleFieldChange}
+          value={patientBehavioralObservationsPg1.behavioral_observations_and_testing_conditions_pg1_a}
           />
           </div>
           <div className="d-flex flex-wrap col-6 justify-content-center">     
@@ -37,7 +53,10 @@ function BehavioralObservationsPg1(props) {
           <TextareaAutosize  
           className="fieldData"
           type="text"
-          id=""
+          id="behavioral_observations_and_testing_conditions_pg1_b"
+          name="behavioral_observations_and_testing_conditions_pg1_b"
+          onChange={handleFieldChange}
+          value={patientBehavioralObservationsPg1.behavioral_observations_and_testing_conditions_pg1_b}
           />
           </div>
           </div>
@@ -50,7 +69,10 @@ function BehavioralObservationsPg1(props) {
           <TextareaAutosize  
           className="fieldData"
           type="text"
-          id=""
+          id="behavioral_observations_and_testing_conditions_pg1_c"
+          name="behavioral_observations_and_testing_conditions_pg1_c"
+          onChange={handleFieldChange}
+          value={patientBehavioralObservationsPg1.behavioral_observations_and_testing_conditions_pg1_c}
           />
           </div>
           <div className="d-flex flex-wrap col-6 justify-content-center align-items-end">     
@@ -60,7 +82,10 @@ function BehavioralObservationsPg1(props) {
           <TextareaAutosize  
           className="fieldData"
           type="text"
-          id=""
+          id="behavioral_observations_and_testing_conditions_pg1_d"
+          name="behavioral_observations_and_testing_conditions_pg1_d"
+          onChange={handleFieldChange}
+          value={patientBehavioralObservationsPg1.behavioral_observations_and_testing_conditions_pg1_d}
           placeholder=""
           />
           </div>
@@ -74,7 +99,10 @@ function BehavioralObservationsPg1(props) {
           <TextareaAutosize  
           className="fieldData"
           type="text"
-          id=""
+          id="behavioral_observations_and_testing_conditions_pg1_e"
+          name="behavioral_observations_and_testing_conditions_pg1_e"
+          onChange={handleFieldChange}
+          value={patientBehavioralObservationsPg1.behavioral_observations_and_testing_conditions_pg1_e}
           />
           </div>
           <div className="d-flex flex-wrap col-6 justify-content-center align-items-end">     
@@ -84,8 +112,10 @@ function BehavioralObservationsPg1(props) {
           <TextareaAutosize  
           className="fieldData"
           type="text"
-          id=""
-          placeholder=""
+          id="behavioral_observations_and_testing_conditions_pg1_f"
+          name="behavioral_observations_and_testing_conditions_pg1_f"
+          onChange={handleFieldChange}
+          value={patientBehavioralObservationsPg1.behavioral_observations_and_testing_conditions_pg1_f}
           />
           </div>
           </div>

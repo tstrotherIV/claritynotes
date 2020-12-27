@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -7,7 +7,23 @@ import TextareaAutosize from 'react-textarea-autosize';
 // pdf page 101
 
 function BehaviorObservationsAndTestingConditionsPg4(props) {
+
+  const [patientBehavioralObservationsPg4, setPatientBehavioralObservationsPg4] = useState({
+    behavioral_observations_and_testing_conditions_pg4_a: "",
+    behavioral_observations_and_testing_conditions_pg4_b: "",
+    behavioral_observations_and_testing_conditions_pg4_c: "",
+    behavioral_observations_and_testing_conditions_pg4_d: "",
+    behavioral_observations_and_testing_conditions_pg4_e: "",
+    behavioral_observations_and_testing_conditions_pg4_f: "",
+    behavioral_observations_and_testing_conditions_pg4_g: "",
+  })
+
   const next = "/behavioral_observations_and_testing_conditions_pg_5";  
+
+  const handleFieldChange = (e) => {
+    setPatientBehavioralObservationsPg4({ ...patientBehavioralObservationsPg4, [e.target.name]: e.target.value});
+  }
+
   return (
     <>  
     <div id="page-container">
@@ -25,7 +41,10 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
           <TextareaAutosize              
               className="mb-2 fieldData"
               type="text"
-              id=""
+              id="behavioral_observations_and_testing_conditions_pg4_a"
+              name="behavioral_observations_and_testing_conditions_pg4_a"
+              onChange={handleFieldChange}
+              value={patientBehavioralObservationsPg4.behavioral_observations_and_testing_conditions_pg4_a}
               placeholder="depressed/anxious/irritable"
             /> 
         </div>
@@ -37,7 +56,10 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
           <TextareaAutosize              
               className="col-2 mr-2 mb-2 fieldData"
               type="text"
-              id=""
+              id="behavioral_observations_and_testing_conditions_pg4_b"
+              name="behavioral_observations_and_testing_conditions_pg4_b"
+              onChange={handleFieldChange}
+              value={patientBehavioralObservationsPg4.behavioral_observations_and_testing_conditions_pg4_b}
               placeholder="yes/no"
             /> 
         </div> 
@@ -50,7 +72,10 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
           <TextareaAutosize              
               className="col-2 mr-2 mb-2 fieldData"
               type="text"
-              id=""
+              id="behavioral_observations_and_testing_conditions_pg4_c"
+              name="behavioral_observations_and_testing_conditions_pg4_c"
+              onChange={handleFieldChange}
+              value={patientBehavioralObservationsPg4.behavioral_observations_and_testing_conditions_pg4_c}
               placeholder="yes/no"
             />
         </div>
@@ -63,7 +88,10 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
         <TextareaAutosize              
               className="col-2 mr-2 mb-2 fieldData"
               type=""
-              id=""
+              id="behavioral_observations_and_testing_conditions_pg4_d"
+              name="behavioral_observations_and_testing_conditions_pg4_d"
+              onChange={handleFieldChange}
+              value={patientBehavioralObservationsPg4.behavioral_observations_and_testing_conditions_pg4_d}
               placeholder="yes/no"
             />
         </div> 
@@ -75,7 +103,10 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
         <TextareaAutosize              
               className="col-2 mr-2 mb-2 fieldData ml-1"
               type=""
-              id=""
+              id="behavioral_observations_and_testing_conditions_pg4_e"
+              name="behavioral_observations_and_testing_conditions_pg4_e"
+              onChange={handleFieldChange}
+              value={patientBehavioralObservationsPg4.behavioral_observations_and_testing_conditions_pg4_e}
               placeholder="yes/no"
             />
         </div> 
@@ -87,7 +118,10 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
         <TextareaAutosize              
               className="col-2 mr-2 mb-2 fieldData"
               type=""
-              id=""
+              id="behavioral_observations_and_testing_conditions_pg4_f"
+              name="behavioral_observations_and_testing_conditions_pg4_f"
+              onChange={handleFieldChange}
+              value={patientBehavioralObservationsPg4.behavioral_observations_and_testing_conditions_pg4_f}
               placeholder="yes/no"
             /> 
         </div> 
@@ -99,7 +133,10 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
         <TextareaAutosize              
               className="col-2 mr-2 mb-2 fieldData"
               type=""
-              id=""
+              id="behavioral_observations_and_testing_conditions_pg4_g"
+              name="behavioral_observations_and_testing_conditions_pg4_g"
+              onChange={handleFieldChange}
+              value={patientBehavioralObservationsPg4.behavioral_observations_and_testing_conditions_pg4_g}
               placeholder="yes/no"
             /> 
         </div>

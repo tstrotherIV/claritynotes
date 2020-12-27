@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
@@ -6,7 +6,20 @@ import ButtonNavigation from "../../shared/ButtonNavigation";
 //pdf page 116
 
 function ContinuousPerformanceTest3rdEd(props) {
+
+    const [patientContinuousPerformanceTest3rdEd, setPatientContinuousPerformanceTest3rdEd] = useState({
+        continous_performance_test_3rd_ed_a: "",
+        continous_performance_test_3rd_ed_b: false,
+        continous_performance_test_3rd_ed_c: false,
+        continous_performance_test_3rd_ed_d: false,
+      })
+
+
     const next = "/computerized_performance_neurocognitive_assessment"
+
+    const handleFieldChange = (e) => {
+        setPatientContinuousPerformanceTest3rdEd({ ...patientContinuousPerformanceTest3rdEd, [e.target.name]: e.target.value});
+      }
 
     return(
 <>
@@ -30,7 +43,10 @@ function ContinuousPerformanceTest3rdEd(props) {
                 <input 
                 className="fieldData m-3"
                 type="text"
-                id=""
+                id="continous_performance_test_3rd_ed_a"
+                name="continous_performance_test_3rd_ed_a"
+                onChange={handleFieldChange}
+                value={patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_a}
                 />
                 <h4>Results:</h4>
                 [XXXX]
@@ -48,7 +64,9 @@ function ContinuousPerformanceTest3rdEd(props) {
                 <input
                 className="m-2" 
                 type="checkbox"
-                id=""
+                id="continous_performance_test_3rd_ed_b"
+                checked={patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_b}
+                onChange={(e)=> {setPatientContinuousPerformanceTest3rdEd(e.target.checked)}}
                 />
                 <Label>Inattentiveness</Label>
                 </div>
@@ -56,7 +74,9 @@ function ContinuousPerformanceTest3rdEd(props) {
                 <input
                 className="m-2" 
                 type="checkbox"
-                id=""
+                id="continous_performance_test_3rd_ed_c"
+                checked={patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_c}
+                onChange={(e)=> {setPatientContinuousPerformanceTest3rdEd(e.target.checked)}}
                 />
                 <Label for="">Sustained Attention</Label>
                 </div>
@@ -64,7 +84,9 @@ function ContinuousPerformanceTest3rdEd(props) {
                 <input
                 className="m-2" 
                 type="checkbox"
-                id=""
+                id="continous_performance_test_3rd_ed_d"
+                checked={patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_d}
+                onChange={(e)=> {setPatientContinuousPerformanceTest3rdEd(e.target.checked)}}
                 />
                 <Label for="">Vigilance</Label> 
                 </div>

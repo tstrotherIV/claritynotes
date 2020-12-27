@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -9,7 +9,23 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function PositiveRoleModelPg1(props) {
 
+  const [patientPositiveRoleModelPg1, setPatientPositiveRoleModelPg1] = useState({
+    positive_role_model_pg1_a: "",
+    positive_role_model_pg1_b: "",
+    positive_role_model_pg1_c: "",
+    positive_role_model_pg1_d: "",
+    positive_role_model_pg1_e: "",
+    positive_role_model_pg1_f: "",
+    positive_role_model_pg1_g: "",
+    positive_role_model_pg1_h: "",
+    positive_role_model_pg1_i: "",
+  })
+
   const next = "/positive_role_model_pg_2";
+
+  const handleFieldChange = (e) => {
+    setPatientPositiveRoleModelPg1({ ...patientPositiveRoleModelPg1, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -28,7 +44,10 @@ function PositiveRoleModelPg1(props) {
           <TextareaAutosize              
               className="col-2 mr-2 mb-2 fieldData"
               type="text"
-              id=""
+              id="positive_role_model_pg1_a"
+              name="positive_role_model_pg1_a"
+              onChange={handleFieldChange}
+              value={patientPositiveRoleModelPg1.positive_role_model_pg1_a}
               placeholder="does/does not"
             />
             smokes cigarettes.  
@@ -41,14 +60,20 @@ function PositiveRoleModelPg1(props) {
           <TextareaAutosize              
               className="col-2 mr-2 mb-2 fieldData"
               type="text"
-              id=""
+              id="positive_role_model_pg1_b"
+              name="positive_role_model_pg1_b"
+              onChange={handleFieldChange}
+              value={patientPositiveRoleModelPg1.positive_role_model_pg1_b}
               placeholder="does/does not"
             />
-            drink alcohol and  
+            drinks alcohol and  
             <TextareaAutosize              
               className="col-2 mr-2 ml-2 mb-2 fieldData"
               type="text"
-              id=""
+              id="positive_role_model_pg1_c"
+              name="positive_role_model_pg1_c"
+              onChange={handleFieldChange}
+              value={patientPositiveRoleModelPg1.positive_role_model_pg1_c}
               placeholder="confirms/denies"
             />  
             abuse.
@@ -60,7 +85,10 @@ function PositiveRoleModelPg1(props) {
         <TextareaAutosize              
               className="col-2 mr-2 ml-2 mb-2 fieldData"
               type=""
-              id=""
+              id="positive_role_model_pg1_d"
+              name="positive_role_model_pg1_d"
+              onChange={handleFieldChange}
+              value={patientPositiveRoleModelPg1.positive_role_model_pg1_d}
               placeholder="confirms/denies"
             />  
             CURRENTLY using substances.
@@ -72,7 +100,10 @@ function PositiveRoleModelPg1(props) {
         <TextareaAutosize              
               className="col-2 mr-2 ml-2 mb-2 fieldData"
               type=""
-              id=""
+              id="positive_role_model_pg1_e"
+              name="positive_role_model_pg1_e"
+              onChange={handleFieldChange}
+              value={patientPositiveRoleModelPg1.positive_role_model_pg1_e}
               placeholder="confirms/denies"
             />  
             displaying profanity or prejudice.
@@ -84,7 +115,10 @@ function PositiveRoleModelPg1(props) {
         <TextareaAutosize              
               className="col-2 mr-2 ml-2 mb-2 fieldData"
               type=""
-              id=""
+              id="positive_role_model_pg1_f"
+              name="positive_role_model_pg1_f"
+              onChange={handleFieldChange}
+              value={patientPositiveRoleModelPg1.positive_role_model_pg1_f}
               placeholder="confirms/denies"
             />  
             bullying others.
@@ -96,7 +130,10 @@ function PositiveRoleModelPg1(props) {
         <TextareaAutosize               
               className="col-2 mr-2 ml-2 mb-2 fieldData"
               type=""
-              id=""
+              id="positive_role_model_pg1_g"
+              name="positive_role_model_pg1_g"
+              onChange={handleFieldChange}
+              value={patientPositiveRoleModelPg1.positive_role_model_pg1_g}
               placeholder="confirms/denies"
             />  
             exhibiting any implusivity or violence.
@@ -112,7 +149,10 @@ function PositiveRoleModelPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="positive_role_model_pg1_h"
+            name="positive_role_model_pg1_h"
+            onChange={handleFieldChange}
+            value={patientPositiveRoleModelPg1.positive_role_model_pg1_h}
           />
           </div>
           <div className="col-3 d-flex flex-wrap align-items-end ml-2 justify-content-center align-content-end">
@@ -121,7 +161,10 @@ function PositiveRoleModelPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="positive_role_model_pg1_i"
+            name="positive_role_model_pg1_i"
+            onChange={handleFieldChange}
+            value={patientPositiveRoleModelPg1.positive_role_model_pg1_i}
             />
         </div>
         <div className="col-3 d-flex flex-wrap align-items-end justify-content-center ml-2 p-0 align-content-end">
@@ -130,7 +173,10 @@ function PositiveRoleModelPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="positive_role_model_pg1_j"
+            name="positive_role_model_pg1_j"
+            onChange={handleFieldChange}
+            value={patientPositiveRoleModelPg1.positive_role_model_pg1_j}
             />
           </div>
         </div>

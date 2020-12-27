@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label, Input } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -8,8 +8,23 @@ import TextareaAutosize from 'react-textarea-autosize';
 // pdf page 94
 
 function PositiveRoleModelPg2(props) {
+  
+  const [patientPositiveRoleModelPg2, setPatientPositiveRoleModelPg2] = useState({
+    positive_role_model_pg2_a: "",
+    positive_role_model_pg2_b: "",
+    positive_role_model_pg2_c: "",
+    positive_role_model_pg2_d: "",
+    positive_role_model_pg2_e: "",
+    positive_role_model_pg2_f: "",
+    positive_role_model_pg2_g: false,
+    
+  })
 
   const next = "/parent_knowledge_pg_1";
+
+  const handleFieldChange = (e) => {
+    setPatientPositiveRoleModelPg2({ ...patientPositiveRoleModelPg2, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -30,7 +45,10 @@ function PositiveRoleModelPg2(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="positive_role_model_pg2_a"
+            name="positive_role_model_pg2_a"
+            onChange={handleFieldChange}
+            value={patientPositiveRoleModelPg2.positive_role_model_pg2_a}
           />
           </div>
           <div className="col-3 d-flex flex-wrap align-items-end ml-2 justify-content-center align-content-end">
@@ -39,7 +57,10 @@ function PositiveRoleModelPg2(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="positive_role_model_pg2_b"
+            name="positive_role_model_pg2_b"
+            onChange={handleFieldChange}
+            value={patientPositiveRoleModelPg2.positive_role_model_pg2_b}
             />
         </div>
         <div className="col-3 d-flex flex-wrap align-items-end justify-content-center ml-2 p-0 align-content-end">
@@ -48,7 +69,10 @@ function PositiveRoleModelPg2(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="positive_role_model_pg2_c"
+            name="positive_role_model_pg2_c"
+            onChange={handleFieldChange}
+            value={patientPositiveRoleModelPg2.positive_role_model_pg2_c}
             />
           </div>
         </div>
@@ -63,7 +87,10 @@ function PositiveRoleModelPg2(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="positive_role_model_pg2_d"
+            name="positive_role_model_pg2_d"
+            onChange={handleFieldChange}
+            value={patientPositiveRoleModelPg2.positive_role_model_pg2_d}
           />
           </div>
           <div className="col-3 d-flex flex-wrap align-items-end ml-2 justify-content-center align-content-end">
@@ -72,7 +99,10 @@ function PositiveRoleModelPg2(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="positive_role_model_pg2_e"
+            name="positive_role_model_pg2_e"
+            onChange={handleFieldChange}
+            value={patientPositiveRoleModelPg2.positive_role_model_pg2_e}
             />
         </div>
         <div className="col-3 d-flex flex-wrap align-items-end justify-content-center ml-2 p-0 align-content-end">
@@ -81,7 +111,10 @@ function PositiveRoleModelPg2(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="positive_role_model_pg2_f"
+            name="positive_role_model_pg2_f"
+            onChange={handleFieldChange}
+            value={patientPositiveRoleModelPg2.positive_role_model_pg2_f}
             />
           </div>
         </div>
@@ -89,7 +122,12 @@ function PositiveRoleModelPg2(props) {
       <div className="siblingsFields">
       <div className="m-1">
       <h5 className="textWhite text-center">If they are unable to give THREE examples, add:</h5>
-            <Input type="checkbox" name="" id="" />
+            <Input type="checkbox" 
+            name="positive_role_model_pg2_g" 
+            id="positive_role_model_pg2_g"
+            checked={patientPositiveRoleModelPg2.positive_role_model_pg2_g}
+            onChange={(e)=> {setPatientPositiveRoleModelPg2(e.target.checked)}} />
+
             <Label className="textWhite text-center" for="firstName">
             [Patient Name, First] appears to be lacking knowledge and examples which illustrates probable deficits in this area. 
             [Patient Name, First] will need this area to be further developed in therapy. She/he needs her/his goals and values developed in order to guide 

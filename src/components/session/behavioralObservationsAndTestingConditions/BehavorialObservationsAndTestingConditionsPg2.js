@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -7,8 +7,17 @@ import TextareaAutosize from 'react-textarea-autosize';
 // pdf page 99
 
 function BehavioralObservationsAndTestingConditionsPg2(props) {
+
+  const [patientBehavioralObservationsPg2, setPatientBehavioralObservationsPg2] = useState({
+    behavioral_observations_and_testing_conditions_pg2_a: "",
+    behavioral_observations_and_testing_conditions_pg2_b: "",
+  })
   
   const next = "/behavioral_observations_and_testing_conditions_pg_3";  
+
+  const handleFieldChange = (e) => {
+    setPatientBehavioralObservationsPg2({ ...patientBehavioralObservationsPg2, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -24,7 +33,10 @@ function BehavioralObservationsAndTestingConditionsPg2(props) {
           <TextareaAutosize  
           className="fieldData col-12"
           type="text"
-          id=""
+          id="behavioral_observations_and_testing_conditions_pg2_a"
+          name="behavioral_observations_and_testing_conditions_pg2_a"
+          onChange={handleFieldChange}
+          value={patientBehavioralObservationsPg2.behavioral_observations_and_testing_conditions_pg2_a}
           />
           <div>
           Impoverished, Circumstantial, Distracted, Naive, Flighty, Expansive, Mistrustful, non-conforming, Dogmatic,
@@ -40,7 +52,10 @@ function BehavioralObservationsAndTestingConditionsPg2(props) {
           <TextareaAutosize  
           className="fieldData "
           type="text"
-          id=""
+          id="behavioral_observations_and_testing_conditions_pg2_b"
+          name="behavioral_observations_and_testing_conditions_pg2_b"
+          onChange={handleFieldChange}
+          value={patientBehavioralObservationsPg2.behavioral_observations_and_testing_conditions_pg2_b}
           />
         </div>
         </div>

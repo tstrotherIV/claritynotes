@@ -17,10 +17,22 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function MaterialResourcesPg1(props) {
 
+  const [patientMaterialResourcesPg1, setPatientMaterialResourcesPg1] = useState({
+    material_resources_pg1_a: "",
+    material_resources_pg1_b: "",
+    material_resources_pg1_c: "",
+    material_resources_pg1_d: "",
+    material_resources_pg1_e: "",
+    material_resources_pg1_f: "",
+  })
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
   
     const toggle = () => setDropdownOpen(prevState => !prevState);
+
+    const handleFieldChange = (e) => {
+      setPatientMaterialResourcesPg1({ ...patientMaterialResourcesPg1, [e.target.name]: e.target.value});
+    }
     
   return (
     <>  
@@ -41,7 +53,10 @@ function MaterialResourcesPg1(props) {
           <TextareaAutosize             
             className="fieldData"
             type="text"
-            id=""
+            id="material_resources_pg1_a"
+            name="material_resources_pg1_a"
+            onChange={handleFieldChange}
+            value={patientMaterialResourcesPg1.material_resources_pg1_a}
           />
           </div>
           <div className="col-3 d-flex flex-wrap align-items-end justify-content-center p-1 align-content-end">
@@ -50,7 +65,10 @@ function MaterialResourcesPg1(props) {
           <TextareaAutosize           
             className="fieldData"
             type="text"
-            id=""
+            id="material_resources_pg1_b"
+            name="material_resources_pg1_b"
+            onChange={handleFieldChange}
+            value={patientMaterialResourcesPg1.material_resources_pg1_b}
             />
         </div>
         <div className="col-3 d-flex flex-wrap align-items-end justify-content-center p-1 align-content-end">
@@ -59,7 +77,10 @@ function MaterialResourcesPg1(props) {
           <TextareaAutosize            
             className="fieldData"
             type="text"
-            id=""
+            id="material_resources_pg1_c"
+            name="material_resources_pg1_c"
+            onChange={handleFieldChange}
+            value={patientMaterialResourcesPg1.material_resources_pg1_c}
             />
           </div>
         </div>
@@ -74,8 +95,10 @@ function MaterialResourcesPg1(props) {
           <TextareaAutosize              
               className="col-2 mr-2 mb-2 fieldData"
               type="text"
-              id=""
-              placeholder=""
+              id="material_resources_pg1_d"
+              name="material_resources_pg1_d"
+              onChange={handleFieldChange}
+              value={patientMaterialResourcesPg1.material_resources_pg1_d}
             />
             are available as a support system for [her].  
         </div>
@@ -86,7 +109,12 @@ function MaterialResourcesPg1(props) {
         <DropdownToggle caret>
           Dropdown
           </DropdownToggle>
-        <DropdownMenu  >
+        <DropdownMenu  
+          id="material_resources_pg1_e"
+          name="material_resources_pg1_e"
+          onChange={handleFieldChange}
+          value={patientMaterialResourcesPg1.material_resources_pg1_e}
+            >
         <DropdownItem header>Header</DropdownItem>
         <DropdownItem>Some Action</DropdownItem>
         <DropdownItem text>Dropdown Item Text</DropdownItem>
@@ -107,7 +135,10 @@ function MaterialResourcesPg1(props) {
           <TextareaAutosize              
               className="col-3 mr-2 mb-2 fieldData"
               type="text"
-              id=""
+              id="material_resources_pg1_f"
+              name="material_resources_pg1_f"
+              onChange={handleFieldChange}
+              value={patientMaterialResourcesPg1.material_resources_pg1_f}
               placeholder=""
             />
             church.  

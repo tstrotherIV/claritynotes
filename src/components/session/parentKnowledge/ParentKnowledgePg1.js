@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -10,7 +10,24 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 function ParentKnowledgePg1(props) {
 
+  const [patientParentKnowledgePg1, setPatientParentKnowledgePg1] = useState({
+    parent_knowledge_pg1_a: "",
+    parent_knowledge_pg1_b: "",
+    parent_knowledge_pg1_c: "",
+    parent_knowledge_pg1_d: "",
+    parent_knowledge_pg1_e: "",
+    parent_knowledge_pg1_f: "",
+    parent_knowledge_pg1_g: "",
+    parent_knowledge_pg1_h: "",
+    parent_knowledge_pg1_i: "",
+    
+  })
+
   const next = "/cognitive_skills_pg_1";  
+
+  const handleFieldChange = (e) => {
+    setPatientParentKnowledgePg1({ ...patientParentKnowledgePg1, [e.target.name]: e.target.value});
+  }
 
   return (
     <>  
@@ -29,8 +46,10 @@ function ParentKnowledgePg1(props) {
           <TextareaAutosize              
             className="col-2 mr-2 mb-2 fieldData"
               type="text"
-              id=""
-              placeholder=""
+              id="parent_knowledge_pg1_a"
+              name="parent_knowledge_pg1_a"
+              onChange={handleFieldChange}
+              value={patientParentKnowledgePg1.parent_knowledge_pg1_a}
             />
             for medical care.  
         </div>
@@ -42,8 +61,10 @@ function ParentKnowledgePg1(props) {
           <TextareaAutosize              
               className="col-2 mr-2 mb-2 fieldData"
               type="text"
-              id=""
-              placeholder=""
+              id="parent_knowledge_pg1_b"
+              name="parent_knowledge_pg1_b"
+              onChange={handleFieldChange}
+              value={patientParentKnowledgePg1.parent_knowledge_pg1_b}
             />
             for dental care.  
         </div> 
@@ -56,8 +77,10 @@ function ParentKnowledgePg1(props) {
           <TextareaAutosize             
               className="col-2 mr-2 mb-2 fieldData"
               type="text"
-              id=""
-              placeholder=""
+              id="parent_knowledge_pg1_c"
+              name="parent_knowledge_pg1_c"
+              onChange={handleFieldChange}
+              value={patientParentKnowledgePg1.parent_knowledge_pg1_c}
             />
             takes [them] to [their] appointments.  
         </div>
@@ -70,8 +93,10 @@ function ParentKnowledgePg1(props) {
         <TextareaAutosize              
               className="col-2 mr-2 ml-2 mb-2 fieldData"
               type=""
-              id=""
-              placeholder=""
+              id="parent_knowledge_pg1_d"
+              name="parent_knowledge_pg1_d"
+              onChange={handleFieldChange}
+              value={patientParentKnowledgePg1.parent_knowledge_pg1_d}
             />  
             size clothes.
         </div> 
@@ -83,8 +108,10 @@ function ParentKnowledgePg1(props) {
         <TextareaAutosize              
               className="col-2 mr-2 ml-2 mb-2 fieldData"
               type=""
-              id=""
-              placeholder=""
+              id="parent_knowledge_pg1_e"
+              name="parent_knowledge_pg1_e"
+              onChange={handleFieldChange}
+              value={patientParentKnowledgePg1.parent_knowledge_pg1_e}
             />  
             .
         </div> 
@@ -95,7 +122,10 @@ function ParentKnowledgePg1(props) {
         <TextareaAutosize              
               className="col-2 mr-2 ml-2 mb-2 text-center fieldData"
               type=""
-              id=""
+              id="parent_knowledge_pg1_f"
+              name="parent_knowledge_pg1_f"
+              onChange={handleFieldChange}
+              value={patientParentKnowledgePg1.parent_knowledge_pg1_f}
               placeholder="are/are not"
             />  
             old enough to attend school.
@@ -108,7 +138,10 @@ function ParentKnowledgePg1(props) {
         <TextareaAutosize              
               className="col-1 mr-2 ml-1 mb-2 fieldData"
               type=""
-              id=""
+              id="parent_knowledge_pg1_g"
+              name="parent_knowledge_pg1_g"
+              onChange={handleFieldChange}
+              value={patientParentKnowledgePg1.parent_knowledge_pg1_g}
               placeholder=""
             />  
             teacher conferences this past school year.
@@ -121,8 +154,10 @@ function ParentKnowledgePg1(props) {
         <TextareaAutosize              
               className="col-1 ml-1 mb-2 mr-2 fieldData"
               type=""
-              id=""
-              placeholder=""
+              id="parent_knowledge_pg1_h"
+              name="parent_knowledge_pg1_h"
+              onChange={handleFieldChange}
+              value={patientParentKnowledgePg1.parent_knowledge_pg1_h}
             />  
             <div className="col-5 p-0">extracurricular activites this past school year.</div>
         </div>
@@ -133,7 +168,10 @@ function ParentKnowledgePg1(props) {
         <TextareaAutosize               
               className="col-3 mr-2 ml-2 mb-2 fieldData"
               type=""
-              id=""
+              id="parent_knowledge_pg1_i"
+              name="parent_knowledge_pg1_i"
+              onChange={handleFieldChange}
+              value={patientParentKnowledgePg1.parent_knowledge_pg1_i}
               placeholder="knew/did not know"
             />  
             the name(s) of her child's teacher(s).
