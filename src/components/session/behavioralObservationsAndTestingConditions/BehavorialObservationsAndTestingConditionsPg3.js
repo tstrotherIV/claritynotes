@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
@@ -7,7 +7,25 @@ import TextareaAutosize from 'react-textarea-autosize';
 // pdf page 100
 
 function BehaviorObservationsAndTestingConditionsPg3(props) {
+
+  const [patientBehavioralObservationsPg3, setPatientBehavioralObservationsPg3] = useState({
+    behavioral_observations_and_testing_conditions_pg3_a: "",
+    behavioral_observations_and_testing_conditions_pg3_b: "",
+    behavioral_observations_and_testing_conditions_pg3_c: "",
+    behavioral_observations_and_testing_conditions_pg3_d: "",
+    behavioral_observations_and_testing_conditions_pg3_e: "",
+    behavioral_observations_and_testing_conditions_pg3_f: "",
+    behavioral_observations_and_testing_conditions_pg3_g: "",
+    behavioral_observations_and_testing_conditions_pg3_h: "",
+    behavioral_observations_and_testing_conditions_pg3_i: "",
+  })
+
   const next = "/behavioral_observations_and_testing_conditions_pg_4";  
+
+  const handleFieldChange = (e) => {
+    setPatientBehavioralObservationsPg3({ ...patientBehavioralObservationsPg3, [e.target.name]: e.target.value});
+  }
+
   return (
     <>  
     <div id="page-container">
@@ -25,8 +43,10 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
           <TextareaAutosize              
               className="col-2 mr-2 mb-2 fieldData"
               type="text"
-              id=""
-              placeholder=""
+              id="behavioral_observations_and_testing_conditions_pg3_a"
+              name="behavioral_observations_and_testing_conditions_pg3_a"
+              onChange={handleFieldChange}
+              value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_a}
             />
             for medical care.  
         </div>
@@ -38,8 +58,10 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
           <TextareaAutosize              
               className="col-2 mr-2 mb-2 fieldData"
               type="text"
-              id=""
-              placeholder=""
+              id="behavioral_observations_and_testing_conditions_pg3_b"
+              name="behavioral_observations_and_testing_conditions_pg3_b"
+              onChange={handleFieldChange}
+              value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_b}
             />
             for dental care.  
         </div> 
@@ -52,8 +74,10 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
           <TextareaAutosize              
               className="col-2 mr-2 mb-2 fieldData"
               type="text"
-              id=""
-              placeholder=""
+              id="behavioral_observations_and_testing_conditions_pg3_c"
+              name="behavioral_observations_and_testing_conditions_pg3_c"
+              onChange={handleFieldChange}
+              value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_c}
             />
             takes [them] to [their] appointments.  
         </div>
@@ -66,8 +90,10 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
         <TextareaAutosize              
               className="col-2 mr-2 ml-2 mb-2 fieldData"
               type=""
-              id=""
-              placeholder=""
+              id="behavioral_observations_and_testing_conditions_pg3_d"
+              name="behavioral_observations_and_testing_conditions_pg3_d"
+              onChange={handleFieldChange}
+              value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_d}
             />  
             size clothes.
         </div> 
@@ -79,8 +105,10 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
         <TextareaAutosize              
               className="col-2 mr-2 ml-2 mb-2 fieldData"
               type=""
-              id=""
-              placeholder=""
+              id="behavioral_observations_and_testing_conditions_pg3_e"
+              name="behavioral_observations_and_testing_conditions_pg3_e"
+              onChange={handleFieldChange}
+              value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_e}
             />  
             .
         </div> 
@@ -91,7 +119,10 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
         <TextareaAutosize              
               className="col-2 mr-2 ml-2 mb-2 fieldData"
               type=""
-              id=""
+              id="behavioral_observations_and_testing_conditions_pg3_f"
+              name="behavioral_observations_and_testing_conditions_pg3_f"
+              onChange={handleFieldChange}
+              value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_f}
               placeholder="are/are not"
             />  
             old enough to attend school.
@@ -104,8 +135,10 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
         <TextareaAutosize              
               className="col-1 mr-2 ml-1 mb-2 fieldData"
               type=""
-              id=""
-              placeholder=""
+              id="behavioral_observations_and_testing_conditions_pg3_g"
+              name="behavioral_observations_and_testing_conditions_pg3_g"
+              onChange={handleFieldChange}
+              value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_g}
             />  
             teacher conferences this past school year.
         </div>
@@ -117,8 +150,10 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
         <TextareaAutosize              
               className="col-1 ml-1 mb-2 mr-2 fieldData"
               type=""
-              id=""
-              placeholder=""
+              id="behavioral_observations_and_testing_conditions_pg3_h"
+              name="behavioral_observations_and_testing_conditions_pg3_h"
+              onChange={handleFieldChange}
+              value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_h}
             />  
             <div className="col-5 p-0">extracurricular activites this past school year.</div>
         </div>
@@ -129,7 +164,10 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
         <TextareaAutosize              
               className="col-3 mr-2 ml-2 mb-2 fieldData"
               type=""
-              id=""
+              id="behavioral_observations_and_testing_conditions_pg3_i"
+              name="behavioral_observations_and_testing_conditions_pg3_i"
+              onChange={handleFieldChange}
+              value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_i}
               placeholder="knew/did not know"
             />  
             the name(s) of her child's teacher(s).

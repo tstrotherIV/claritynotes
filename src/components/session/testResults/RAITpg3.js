@@ -1,11 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 // pdf page 109
 
 function RAITpg3(props) {
+
+  const [patientRAITpg3, setPatientRAITpg3] = useState({
+    rait_pg3_a: "",
+  })
+
     const next = "/wechsler_adult_intelligence_scale_IV_pg_2"
+
+    const handleFieldChange = (e) => {
+      setPatientRAITpg3({ ...patientRAITpg3, [e.target.name]: e.target.value});
+    }
 
     return (
         <>
@@ -32,7 +41,10 @@ function RAITpg3(props) {
                 <input 
                 className="fieldData m-3"
                 type="text"
-                id=""
+                id="rait_pg3_a"
+                name="rait_pg3_a"
+                onChange={handleFieldChange}
+                value={patientRAITpg3.rait_pg3_a}
                 />
                 <h4>Results:</h4>
                 <p>[Patient Name, First] earned a TBII of [TBII Score], which falls in the [Score Result Descriptor Correlation] range of intelligence. On the RAIT, this level of performance falls 

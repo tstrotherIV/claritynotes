@@ -1,10 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 // pdf page 108
 
 function RAITpg2(props) {
+
+    const [patientRAITpg2, setPatientRAITpg2] = useState({
+        rait_pg2_a: "",
+        rait_pg2_a: "",
+      })
+
     const next = "/rait_pg_3"
 
     return (
