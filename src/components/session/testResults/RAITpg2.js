@@ -8,10 +8,14 @@ function RAITpg2(props) {
 
     const [patientRAITpg2, setPatientRAITpg2] = useState({
         rait_pg2_a: "",
-        rait_pg2_a: "",
+        rait_pg2_b: "",
       })
 
     const next = "/rait_pg_3"
+
+    const handleFieldChange = (e) => {
+        setPatientRAITpg2({ ...patientRAITpg2, [e.target.name]: e.target.value});
+      }
 
     return (
         <>
@@ -37,7 +41,10 @@ function RAITpg2(props) {
                 <input 
                 className="fieldData m-3"
                 type="text"
-                id=""
+                id="rait_pg2_a"
+                name="rait_pg2_a"
+                onChange={handleFieldChange}
+                value={patientRAITpg2.rait_pg2_a}
                 />
                 <h4>Results:</h4>
                 <p>[Patient Name, First] earned a CII of [CII Score], which falls in the [Score Result Descriptor Correlation] range of intelligence. On the RAIT, this level of performance falls 
@@ -51,7 +58,10 @@ function RAITpg2(props) {
                 <input 
                 className="fieldData m-3"
                 type="text"
-                id=""
+                id="rait_pg2_b"
+                name="rait_pg2_b"
+                onChange={handleFieldChange}
+                value={patientRAITpg2.rait_pg2_b}
                 />
                 <h4>Results:</h4>
                 <p>[Patient Name, First] earned a FII of [FII Score], which falls in the [Score Result Descriptor Correlation] range of intelligence.  On the RAIT, this level of performance falls within the range

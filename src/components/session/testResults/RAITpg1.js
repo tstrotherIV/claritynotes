@@ -1,11 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 // pdf page 107
 
 function RAITpg1(props) {
+
+    const [patientRAITpg1, setPatientRAITpg1] = useState({
+        rait_pg1_a: "",
+        rait_pg1_b: "",
+      })
+
     const next = "/rait_pg_2"
+
+    const handleFieldChange = (e) => {
+        setPatientRAITpg1({ ...patientRAITpg1, [e.target.name]: e.target.value});
+      }
 
     return (
         <>
@@ -30,7 +40,10 @@ function RAITpg1(props) {
                 <input 
                 className="fieldData m-3"
                 type="text"
-                id=""
+                id="rait_pg1_a"
+                name="rait_pg1_a"
+                onChange={handleFieldChange}
+                value={patientRAITpg1.rait_pg1_a}
                 />
                 <h4>Results:</h4>
                 <p>[Patient Name, First] earned a TBII of [TBII Score], which falls in the [Score Result Descriptor Correlation] range of intelligence. On the RAIT, this level of performance falls 
@@ -44,7 +57,10 @@ function RAITpg1(props) {
                 <input 
                 className="fieldData m-3"
                 type="text"
-                id=""
+                id="rait_pg1_b"
+                name="rait_pg1_b"
+                onChange={handleFieldChange}
+                value={patientRAITpg1.rait_pg1_b}
                 />
                 <h4>Results:</h4>
                 <p>[Patient Name, First] earned a TII of [TII Score], which falls in the [Score Result Descriptor Correlation] range of intelligence.  On the RAIT, this level of performance falls within the range
