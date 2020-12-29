@@ -4,9 +4,11 @@ import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
 import TextareaAutosize from 'react-textarea-autosize';
+import lton from 'letter-to-number'
+
 
 function FamilyPg1(props) {
-
+  const [item, setItem] = useState("")
   const [patientFamily_pg1, setPatientFamily_pg1] = useState({
     familiy_pg1_a: "",
     familiy_pg1_b: "",
@@ -19,6 +21,20 @@ function FamilyPg1(props) {
 
   const handleFieldChange = (e) => {
     setPatientFamily_pg1({ ...patientFamily_pg1, [e.target.name]: e.target.value});
+  }
+
+  const convertID = (e) => {
+    const questionId = e.target.name.split('').map(y => {
+      if (y % 1 === 0) {
+        return String.fromCharCode(y + 10) 
+      }
+      return y
+    }).filter(x => {
+      return x != "_"
+      }
+    )
+    const convertedQuestionID = lton(questionId.join('').toUpperCase())
+    setItem(convertedQuestionID)
   }
 
   return (
@@ -36,10 +52,12 @@ function FamilyPg1(props) {
               <TextareaAutosize                
                 className="fieldData col-2"
                 type="text"
-                id="family_pg1_a"
+                id={item}
                 name="family_pg1_a"
                 onChange={handleFieldChange}
                 value={patientFamily_pg1.family_pg1_a}
+                onClick={convertID}
+                placeholder={item}
               />
           <Label className="textWhite m-4" for="">
           raised him/her in 
@@ -51,6 +69,7 @@ function FamilyPg1(props) {
                     name="family_pg1_b"
                     onChange={handleFieldChange}
                     value={patientFamily_pg1.family_pg1_b}
+                    onClick={convertID}
                   /> 
               <div className="textWhite ml-2">.</div>
            
@@ -66,6 +85,7 @@ function FamilyPg1(props) {
                 name="family_pg1_c"
                 onChange={handleFieldChange}
                 value={patientFamily_pg1.family_pg1_c}
+                onClick={convertID}
               />
           <div className="textWhite ml-1 mr-1">
           brothers and sisters.</div>
@@ -108,7 +128,7 @@ function FamilyPg1(props) {
       </div>
       <div id="footer">
       <ButtonNavigation next={next} />
-      <TermOfParentalRights />
+      <TermOfParentalRights item={item}/>
       </div>
     </div>
     </div>
