@@ -1,13 +1,17 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { Label } from "reactstrap";
 import Heading from '../../shared/PsychologicalHeading';
 import TermOfParentalRights from '../../shared/TermOfParentalRights';
 import ButtonNavigation from '../../shared/ButtonNavigation';
 import TextareaAutosize from 'react-textarea-autosize';
 import lton from 'letter-to-number'
+import DataManager from '../../../api_module/DataManager'
 
 
 function FamilyPg1(props) {
+
+  let patientId = 30
+
   const [item, setItem] = useState("")
   const [patientFamily_pg1, setPatientFamily_pg1] = useState({
     familiy_pg1_a: "",
@@ -37,6 +41,14 @@ function FamilyPg1(props) {
     setItem(convertedQuestionID)
   }
 
+
+  useEffect(() => {
+    DataManager.getPatient(patientId).then((patientInfo) => {
+      setPatientFamily_pg1(patientInfo)
+      // console.log(patientInfo)
+    });
+  }, [])
+
   return (
     <>
     <div id="page-container">
@@ -57,7 +69,7 @@ function FamilyPg1(props) {
                 onChange={handleFieldChange}
                 value={patientFamily_pg1.family_pg1_a}
                 onClick={convertID}
-                placeholder={item}
+                placeholder={patientFamily_pg1.family_pg1_a}
               />
           <Label className="textWhite m-4" for="">
           raised him/her in 
@@ -128,7 +140,7 @@ function FamilyPg1(props) {
       </div>
       <div id="footer">
       <ButtonNavigation next={next} />
-      <TermOfParentalRights item={item}/>
+      <TermOfParentalRights questionId={item} patientId={patientId}/>
       </div>
     </div>
     </div>
