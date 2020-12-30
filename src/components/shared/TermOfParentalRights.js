@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import DropdownButton from "react-bootstrap/DropdownButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import { Tab, Tabs } from "react-bootstrap";
 import { Input, Label } from "reactstrap";
 import AdditionalNotes from "./AdditionalNotes";
+import DataManager from "../../api_module/DataManager"
 import './ps.scss';
 
 const termTitle = <p className="term">Termination of Parental Rights Criteria</p>;
@@ -12,7 +13,25 @@ const IQ = <p className="IQWidth">IQ</p>;
 const domains =<p className="domainWidth">Domains</p>;
 const generalNotes=<p className="generalNotes">General Notes</p>
 
-const TermOfParentalRights = () => {
+const TermOfParentalRights = (props) => {
+
+  const [patientNotes, setPatientNotes] = useState([])
+
+  const handleFieldChange = (e) => {
+    setPatientNotes({ ...patientNotes, [e.target.name]: e.target.value});
+  }
+
+  const getData = () => {
+    DataManager.getQuestionPatientNotes(props.patientId, props.questionId).then((patientNotesResponses) => {
+    setPatientNotes(patientNotesResponses[0])
+    });
+  };
+
+  console.log("getting the patient notes", patientNotes)
+
+  useEffect(() => {
+    props.questionId ? getData() : console.log("nothing here")
+  }, [props.questionId])
  
     return(
       <div className="dropdown_button termBackground ">
@@ -36,15 +55,31 @@ const TermOfParentalRights = () => {
               <div className="pt-3 pl-3 termMenu">
                       <div className="checkBoxRow">
                         <div className="col-4">
-                          <Input type="checkbox" className="" id=""></Input>
+                          <Input type="checkbox" 
+                          className="" 
+                          id="t2a"
+                          name="t2a"
+                          checked={patientNotes.t2a}
+                          onChange={(e)=> {setPatientNotes(e.target.checked)}}
+                          ></Input>
                           <Label for="">Unforeseeable Future Change</Label>
                         </div>
                         <div className="col-4">
-                          <Input type="checkbox" className="" id=""></Input>
+                          <Input type="checkbox" className="" 
+                          id="t2b"
+                          name="t2b"
+                          checked={patientNotes.t2b}
+                          onChange={(e)=> {setPatientNotes(e.target.checked)}}
+                          ></Input>
                           <Label className="" for="">Rehabilitation Failure</Label>
                         </div>  
                         <div className="col-4">
-                          <Input type="checkbox" className="" id=""></Input>
+                          <Input type="checkbox" className="" 
+                          id="t2c"
+                          name="t2c"
+                          checked={patientNotes.t2c}
+                          onChange={(e)=> {setPatientNotes(e.target.checked)}}
+                          ></Input>
                           <Label className="" for="">Failure to Maintain Material Needs</Label>
                         </div>
                       </div>
