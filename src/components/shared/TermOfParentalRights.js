@@ -4,7 +4,7 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import { Tab, Tabs } from "react-bootstrap";
 import { Input, Label } from "reactstrap";
 import AdditionalNotes from "./AdditionalNotes";
-import DataManager from "../../api_module/DataManager"
+import DataManager from "../../data_module/DataManager"
 import './ps.scss';
 
 const termTitle = <p className="term">Termination of Parental Rights Criteria</p>;
@@ -27,7 +27,6 @@ const TermOfParentalRights = (props) => {
     });
   };
 
-  console.log("getting the patient notes", patientNotes)
 
   useEffect(() => {
     props.questionId ? getData() : console.log("nothing here")
