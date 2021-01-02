@@ -15,10 +15,51 @@ const generalNotes=<p className="generalNotes">General Notes</p>
 
 const TermOfParentalRights = (props) => {
 
-  const [patientNotes, setPatientNotes] = useState([])
+  const [patientNotes, setPatientNotes] = useState({
+      "t2a": false,
+      "t2b": false,
+      "t2c": false,
+      "t2d": false,
+      "t2e": false,
+      "t2f": false,
+      "t2g": false,
+      "t2h": false,
+      "t2i": false,
+      "t2j": false,
+      "t2k": false,
+      "t2l": false,
+      "t2m": false
+  })
 
   const handleFieldChange = (e) => {
-    setPatientNotes({ ...patientNotes, [e.target.name]: e.target.value});
+
+    const target = e.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    setPatientNotes({ ...patientNotes, [name]: value});
+
+
+    const editedNote = {
+        id: patientNotes.id,
+        "t2a": !patientNotes.t2a,
+        "t2b": patientNotes.t2b,
+        "t2c": patientNotes.t2c,
+        "t2d": patientNotes.t2d,
+        "t2e": patientNotes.t2e,
+        "t2f": patientNotes.t2f,
+        "t2g": patientNotes.t2g,
+        "t2h": patientNotes.t2h,
+        "t2i": patientNotes.t2i,
+        "t2j": patientNotes.t2j,
+        "t2k": patientNotes.t2k,
+        "t2l": patientNotes.t2l,
+        "t2m": patientNotes.t2m,
+        
+        };
+    
+      DataManager.update("patientNotes", editedNote).then(() => {
+        console.log(editedNote)
+      })
   }
 
   const getData = () => {
@@ -26,7 +67,6 @@ const TermOfParentalRights = (props) => {
     setPatientNotes(patientNotesResponses[0])
     });
   };
-
 
   useEffect(() => {
     props.questionId ? getData() : console.log("nothing here")
@@ -59,7 +99,7 @@ const TermOfParentalRights = (props) => {
                           id="t2a"
                           name="t2a"
                           checked={patientNotes.t2a}
-                          onChange={(e)=> {setPatientNotes(e.target.checked)}}
+                          onChange={handleFieldChange}
                           ></Input>
                           <Label for="">Unforeseeable Future Change</Label>
                         </div>
@@ -68,7 +108,7 @@ const TermOfParentalRights = (props) => {
                           id="t2b"
                           name="t2b"
                           checked={patientNotes.t2b}
-                          onChange={(e)=> {setPatientNotes(e.target.checked)}}
+                          onChange={handleFieldChange}
                           ></Input>
                           <Label className="" for="">Rehabilitation Failure</Label>
                         </div>  
@@ -77,7 +117,7 @@ const TermOfParentalRights = (props) => {
                           id="t2c"
                           name="t2c"
                           checked={patientNotes.t2c}
-                          onChange={(e)=> {setPatientNotes(e.target.checked)}}
+                          onChange={handleFieldChange}
                           ></Input>
                           <Label className="" for="">Failure to Maintain Material Needs</Label>
                         </div>
