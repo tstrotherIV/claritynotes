@@ -1,4 +1,5 @@
 import React from "react";
+import DataManager from "../../data_module/DataManager";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
@@ -76,8 +77,26 @@ class AdditionalNotes extends React.Component {
   }
 
   handleChange(html) {
-    this.setState({ editorHtml: html });
+    
+    const editedGeneralNotes = {
+      id: this.props.patientNotes.id,
+      t1a: html
+    };
+    DataManager.update("patientNotes", editedGeneralNotes);
+
+    // this.setState({ editorHtml: html });
   }
+
+  // handleFieldChange = (props, html) => {
+    
+  //   const editedNote = {
+  //     id: this.props.patientNotes.id,
+  //     t1a: this.html
+  //   };
+
+  //   DataManager.update("patientNotes", editedNote);
+
+  // };
 
   render() {
     return (
@@ -85,11 +104,13 @@ class AdditionalNotes extends React.Component {
         <CustomToolbar />
         <ReactQuill
           onChange={this.handleChange}
-          placeholder={this.props.placeholder}
+          placeholder=""
           modules={AdditionalNotes.modules}
           formats={AdditionalNotes.formats}
           theme={"snow"} // pass false to use minimal theme
           className="scroll-container"
+          id="t1a"
+          value={this.props.patientNotes.t1a}
         />
       </div>
     );
