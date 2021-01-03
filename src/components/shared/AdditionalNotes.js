@@ -87,17 +87,6 @@ class AdditionalNotes extends React.Component {
     // this.setState({ editorHtml: html });
   }
 
-  // handleFieldChange = (props, html) => {
-    
-  //   const editedNote = {
-  //     id: this.props.patientNotes.id,
-  //     t1a: this.html
-  //   };
-
-  //   DataManager.update("patientNotes", editedNote);
-
-  // };
-
   render() {
     return (
       <div className="text-editor">

@@ -107,6 +107,7 @@ function FamilyPg1(props) {
               name="family_pg1_c"
               onChange={handleFieldChange}
               value={patientFamily_pg1.family_pg1_c}
+              onClick={convertIDfunc}
             />
             <div className="textWhite ml-1 mr-1">brothers and sisters.</div>
           </div>
@@ -126,6 +127,7 @@ function FamilyPg1(props) {
                 name="family_pg1_d"
                 onChange={handleFieldChange}
                 value={patientFamily_pg1.family_pg1_d}
+                onClick={convertIDfunc}
               />
             </div>
             <h4 className="textWhite centerItem">What are their names?</h4>
@@ -142,6 +144,7 @@ function FamilyPg1(props) {
                   name="family_pg1_e"
                   onChange={handleFieldChange}
                   value={patientFamily_pg1.family_pg1_e}
+                  onClick={convertIDfunc}
                 />
               </div>
             </div>
