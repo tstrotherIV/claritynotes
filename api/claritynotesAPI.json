@@ -6,11 +6,11 @@
       "patient_middle_name": "Henry",
       "patient_last_name": "Smith",
       "patient_Date_of_Birth": "1977-03-11",
-      "family_pg1_a": "Update 1",
-      "family_pg1_b": "Update 2",
-      "family_pg1_c": "Answer THREE works",
-      "family_pg1_d": "Answer FOUR works",
-      "family_pg1_e": "Answer FIVE works"
+      "family_pg1_a": "Field 1",
+      "family_pg1_b": "Field 2",
+      "family_pg1_c": "Field 3",
+      "family_pg1_d": "Field 4",
+      "family_pg1_e": "Field 5"
     },
     {
       "id": 31,
@@ -42,28 +42,30 @@
       "id": 20,
       "patientId": 30,
       "questionId": "32893197199928",
-      "t1a": "General Notes is working",
-      "t2a": false,
+      "t1a": "<p>Test</p>",
+      "t2a": true,
       "t2b": false,
-      "t2c": false,
-      "t2d": true,
+      "t2c": true,
+      "t2d": false,
       "t2e": true,
-      "t2f": true,
+      "t2f": false,
       "t2g": true,
-      "t2h": true,
+      "t2h": false,
       "t2i": true,
-      "t2j": true,
+      "t2j": false,
       "t2k": true,
-      "t2l": true,
-      "t2m": true
+      "t2l": false,
+      "t2m": true,
+      "t2n": false,
+      "t2o": true
     },
     {
       "id": 21,
       "patientId": 30,
       "questionId": "32893197199929",
-      "t1a": "General Notes is working",
-      "t2a": false,
-      "t2b": false,
+      "t1a": "<p>NOTES TWO!</p>",
+      "t2a": true,
+      "t2b": true,
       "t2c": true,
       "t2d": true,
       "t2e": true,
@@ -74,7 +76,9 @@
       "t2j": true,
       "t2k": true,
       "t2l": true,
-      "t2m": true
+      "t2m": true,
+      "t2n": true,
+      "t2o": true
     }
   ]
 }

@@ -85,7 +85,7 @@ const TermOfParentalRights = (props) => {
                 title={generalNotes}
                 className="contents"
               >
-                <AdditionalNotes />
+                <AdditionalNotes patientNotes={patientNotes}/>
               </Tab>
               <Tab
                 eventKey="term"
@@ -134,20 +134,38 @@ const TermOfParentalRights = (props) => {
                   </div>
                   <div className="checkBoxRow">
                     <div className="col-4">
-                      <Input type="checkbox" className="" id=""></Input>
+                      <Input type="checkbox" 
+                      className="" 
+                      id="t2d"
+                      name="t2d"
+                      checked={patientNotes.t2d}
+                      onChange={handleFieldChange}
+                      ></Input>
                       <Label className="" for="">
                         Conviction and Imprisonment of Felony
                       </Label>
                     </div>
                     <div className="col-4">
-                      <Input type="checkbox" className="" id=""></Input>
+                      <Input type="checkbox" 
+                      className="" 
+                      id="t2e"
+                      name="t2e"
+                      checked={patientNotes.t2e}
+                      onChange={handleFieldChange}
+                      ></Input>
                       <Label className="" for="">
                         {" "}
                         Serious Physical Injury to child{" "}
                       </Label>
                     </div>
                     <div className="col-4">
-                      <Input type="checkbox" className="" id=""></Input>
+                      <Input type="checkbox" 
+                      className="" 
+                      id="t2f"
+                      name="t2f"
+                      checked={patientNotes.t2f}
+                      onChange={handleFieldChange}
+                      ></Input>
                       <Label className="" for="">
                         Failure to Maintain Consistent Contact
                       </Label>
@@ -155,20 +173,38 @@ const TermOfParentalRights = (props) => {
                   </div>
                   <div className="checkBoxRow">
                     <div className="col-4">
-                      <Input type="checkbox" className="" id=""></Input>
+                      <Input type="checkbox" 
+                      className="" 
+                      id="t2g"
+                      name="t2g"
+                      checked={patientNotes.t2g}
+                      onChange={handleFieldChange}
+                      ></Input>
                       <Label className="" for="">
                         {" "}
                         Emotional Illness and mental deficiency
                       </Label>
                     </div>
                     <div className="col-4">
-                      <Input type="checkbox" className="" id=""></Input>
+                      <Input type="checkbox" 
+                      className="" 
+                      id="t2h"
+                      name="t2h"
+                      checked={patientNotes.t2h}
+                      onChange={handleFieldChange}
+                      ></Input>
                       <Label className="" for="">
                         Willful Neglect/Abandonment
                       </Label>
                     </div>
                     <div className="col-4">
-                      <Input type="checkbox" className="" id=""></Input>
+                      <Input type="checkbox" 
+                      className="" 
+                      id="t2i"
+                      name="t2i"
+                      checked={patientNotes.t2i}
+                      onChange={handleFieldChange}
+                      ></Input>
                       <Label className="" for="">
                         Parent has tortured, abused, cruelly beaten, or
                       </Label>
@@ -176,19 +212,37 @@ const TermOfParentalRights = (props) => {
                   </div>
                   <div className="checkBoxRow">
                     <div className="col-4">
-                      <Input type="checkbox" className="" id=""></Input>
+                      <Input type="checkbox" 
+                      className="" 
+                      id="t2j"
+                      name="t2j"
+                      checked={patientNotes.t2j}
+                      onChange={handleFieldChange}
+                      ></Input>
                       <Label className="" for="">
                         Unable to Discharge Childcare Responsibilities
                       </Label>
                     </div>
                     <div className="col-4">
-                      <Input type="checkbox" className="" id=""></Input>
+                      <Input type="checkbox" 
+                      className="" 
+                      id="t2k"
+                      name="t2k"
+                      checked={patientNotes.t2k}
+                      onChange={handleFieldChange}
+                      ></Input>
                       <Label className="" for="">
                         Loss of Custody of Other Child(ren){" "}
                       </Label>
                     </div>
                     <div className="col-4">
-                      <Input type="checkbox" className="" id=""></Input>
+                      <Input type="checkbox" 
+                      className="" 
+                      id="t2l"
+                      name="t2l"
+                      checked={patientNotes.t2l}
+                      onChange={handleFieldChange}
+                      ></Input>
                       <Label className="" for="">
                         otherwise maltreated the child
                       </Label>
@@ -196,19 +250,37 @@ const TermOfParentalRights = (props) => {
                   </div>
                   <div className="checkBoxRow">
                     <div className="col-4">
-                      <Input type="checkbox" className="" id=""></Input>
+                      <Input type="checkbox" 
+                      className="" 
+                      id="t2m"
+                      name="t2m"
+                      checked={patientNotes.t2m}
+                      onChange={handleFieldChange}
+                      ></Input>
                       <Label className="" for="">
                         Excessive Use of a Controlled Substance{" "}
                       </Label>
                     </div>
                     <div className="col-4">
-                      <Input type="checkbox" className="" id=""></Input>
+                      <Input type="checkbox" 
+                      className="" 
+                      id="t2n"
+                      name="t2n"
+                      checked={patientNotes.t2n}
+                      onChange={handleFieldChange}
+                      ></Input>
                       <Label className="" for="">
                         Serious Bodily Injury of Child
                       </Label>
                     </div>
                     <div className="col-4">
-                      <Input type="checkbox" className="" id=""></Input>
+                      <Input type="checkbox" 
+                      className="" 
+                      id="t2o"
+                      name="t2o"
+                      checked={patientNotes.t2o}
+                      onChange={handleFieldChange}
+                      ></Input>
                       <Label className="" for="">
                         Lack of Effort to Adjust to His/Her Circumstances
                       </Label>
