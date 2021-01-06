@@ -54,7 +54,6 @@ function PsychologicalEvaluation_family(props) {
     };
 
     DataManager.update("patients", editedPatient).then(() => {
-      console.log(editedPatient);
     });
   };
 

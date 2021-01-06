@@ -2,7 +2,7 @@
   "patients": [
     {
       "id": 30,
-      "patient_first_name": "Jim Database",
+      "patient_first_name": "Jim fixed",
       "patient_middle_name": "Henry Database",
       "patient_last_name": "Smith Database",
       "patient_Date_of_Birth": "1981-06-24",
@@ -19,13 +19,18 @@
       "family_pg1_c": "Field 3",
       "family_pg1_d": "Field 4",
       "family_pg1_e": "Field 5",
-      "patient_father_first_name": "Jordan",
-      "patient_father_last_name": "Malloy",
+      "patient_father_first_name": "Jordans",
+      "patient_father_last_name": "Hemsworth",
       "patient_mother_first_name": "Susan",
       "patient_mother_last_name": "Malloy",
-      "patient_guardian_first_name": "Uncle Fester",
+      "patient_guardian_first_name": "Uncle Mennis",
       "patient_guardian_last_name": "Malloy",
-      "patient_guardian_gender": "Male"
+      "patient_guardian_gender": "Male",
+      "sibling_first_name": "Sibling is 2",
+      "sibling_last_name": "Test Sibling Last Name",
+      "sibling_gender": "Other",
+      "patient_only_child": false,
+      "sibling_dob": "2018-02-14"
     },
     {
       "id": 31,
