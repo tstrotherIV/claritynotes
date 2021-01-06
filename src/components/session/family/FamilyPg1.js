@@ -150,7 +150,12 @@ function FamilyPg1(props) {
             </div>
           </div>
           <div id="footer">
-            <ButtonNavigation next={next} updatePatient={updatePatient} patient={patientId} patientFamily_pg1={patientFamily_pg1}/>
+            <ButtonNavigation 
+            next={next} 
+            updatePatient={updatePatient} 
+            patient={patientId} 
+            patientFamily_pg1={patientFamily_pg1}
+            />
             <TermOfParentalRights questionId={item} patientId={patientId} />
           </div>
         </div>

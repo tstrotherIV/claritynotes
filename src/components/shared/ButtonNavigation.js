@@ -22,9 +22,7 @@ return(
             <Button color="info" 
             className="button"
             onClick={() => {
-              props.updatePatient(props.patient, props.patientFamily_pg1)
-              console.log(props.patient)
-              console.log(props.patientFamily_pg1)
+              props.updatePatient(props.patient, props.patientNotes)
             }}>
               Submit
             </Button>
