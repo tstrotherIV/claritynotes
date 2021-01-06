@@ -17,7 +17,7 @@ import DataManager from "../../../data_module/DataManager";
 import convertID from "../../../helpers/formFieldIdConverter";
 
 function PsychologicalEvaluationSiblings(props) {
-  const [item, setItem] = useState("");
+
   const [patientSiblings, setPatientSiblings] = useState({
     patient_only_child: false,
     sibling_first_name: "",
@@ -32,24 +32,11 @@ function PsychologicalEvaluationSiblings(props) {
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
 
-  // const handleFieldChange = (e) => {
-  //   setPatientSiblings({ ...patientSiblings, [e.target.name]: e.target.value });
-  // };
-
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
-    setItem(fieldID);
-  };
 
   const handleFieldChange = (e) => {
     const target = e.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
-
-    // const editedNote = {
-    //   id: props.userId,
-    //   [name]: value,
-    // };
 
     setPatientSiblings({ ...patientSiblings, [name]: value });
   };
@@ -194,7 +181,7 @@ function PsychologicalEvaluationSiblings(props) {
                 </div>
               </section>
             ) : (
-              console.log("nope")
+              console.log("")
             )}
           </div>
         </div>

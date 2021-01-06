@@ -1,118 +1,197 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
-import { Input, Label } from "reactstrap";
+import {
+  Input,
+  Label,
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from "reactstrap";
 
-import Heading from '../../shared/PsychologicalHeading';
-import ButtonNavigation from '../../shared/ButtonNavigation';
-import TextareaAutosize from 'react-textarea-autosize';
-import EmptyFooterSpace from './../../shared/EmptyFooterSpace';
+import Heading from "../../shared/PsychologicalHeading";
+import ButtonNavigation from "../../shared/ButtonNavigation";
+import TextareaAutosize from "react-textarea-autosize";
+import EmptyFooterSpace from "./../../shared/EmptyFooterSpace";
 import "./psychologicalEvaluationFamily.scss";
+import DataManager from "../../../data_module/DataManager";
+import convertID from "../../../helpers/formFieldIdConverter";
 
 function PsychologicalEvaluation_siblings(props) {
-
   const [patientChildren, setPatientChildren] = useState({
     patient_has_children: false,
     child_first_name: "",
     child_last_name: "",
     child_gender: "",
     child_dob: "",
-    patient_id: "",
-  })
+  });
 
   const next = "/psychological_evaluation_spouse";
+
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
 
   const handleFieldChange = (e) => {
-    setPatientChildren({ ...patientChildren, [e.target.name]: e.target.value});
-  }
+    const target = e.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name = target.name;
+
+    setPatientChildren({ ...patientChildren, [name]: value });
+  };
+
+  const updatePatient = () => {
+    const editedPatient = {
+      id: props.userId,
+      patient_has_children: patientChildren.patient_has_children,
+      child_first_name: patientChildren.child_first_name,
+      child_last_name: patientChildren.child_last_name,
+      child_gender: patientChildren.child_gender,
+      child_dob: patientChildren.child_dob,
+    };
+
+    DataManager.update("patients", editedPatient).then(() => {});
+  };
+
+  //CRUD Function END
+
+  useEffect(() => {
+    DataManager.getPatient(props.userId).then((patientInfo) => {
+      setPatientChildren(patientInfo);
+    });
+  }, []);
 
   return (
     <>
-     <div id="page-container">
-    <div id="content-wrap">
-    <Heading />   
-      <div className="header">
-        <h1 className="textWhite">Please Confirm or Update Information</h1>
-      </div>
-      <div className="siblingsFields">
-        <div className="ml-5">
-          <Input            
-            className=""
-            type="checkbox"
-            id="patient_has_children"
-            checked={patientChildren.patient_has_children}
-            onChange={(e)=> {setPatientChildren(e.target.checked)}}
-          />
-          <Label className="textWhite title ml-2" for="noChildren">
-          Patient Has No Children
-          </Label>
-        </div>
-        <div className="line1">
-          <Label className="textWhite title" for="firstName">
-            Children
-          </Label>
-          <TextareaAutosize            
-            className="fieldData"
-            type="text"
-            id="child_first_name"
-            name="child_first_name"
-            onChange={handleFieldChange}
-            value={patientChildren.child_first_name}
-            placeholder="Child First Name"
-          />
-        </div>
-        <div className="line1">
-          <Label className="textWhite title" for="lastName">
-          </Label>
-          <TextareaAutosize            
-            className="fieldData"
-            type="text"
-            id="child_last_name"
-            name="child_last_name"
-            onChange={handleFieldChange}
-            value={patientChildren.child_last_name}
-            placeholder="Child Last Name"
-          />
-        </div>
-        <div className="line1 d-flex flex-wrap">
-          <Form.Label className="textWhite title">Gender </Form.Label>
-          <Form.Control 
-          as="select" 
-          className="col-6" 
-          defaultValue={patientChildren.child_gender}
-          onChange={handleFieldChange}
-          >
-            <option>Please Select</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Unspecified">Unspecified</option>
-          </Form.Control>
+      <div id="page-container">
+        <div id="content-wrap">
+          <Heading />
+          <div className="header">
+            <h1 className="textWhite">Please Confirm or Update Information</h1>
           </div>
+          <div className="siblingsFields">
+            <div className="ml-5">
+              <Input
+                className=""
+                type="checkbox"
+                name="patient_has_children"
+                id="patient_has_children"
+                checked={patientChildren.patient_has_children}
+                onChange={handleFieldChange}
+              />
+              <Label className="textWhite title ml-2" for="noChildren">
+                Patient Has No Children
+              </Label>
+            </div>
+            {!patientChildren.patient_has_children ? (
+              <section>
+                <div className="line1">
+                  <Label className="textWhite title" for="firstName">
+                    Children
+                  </Label>
+                  <TextareaAutosize
+                    className="fieldData"
+                    type="text"
+                    id="child_first_name"
+                    name="child_first_name"
+                    onChange={handleFieldChange}
+                    value={patientChildren.child_first_name}
+                    placeholder="Child First Name"
+                  />
+                </div>
+                <div className="line1">
+                  <Label className="textWhite title" for="lastName"></Label>
+                  <TextareaAutosize
+                    className="fieldData"
+                    type="text"
+                    id="child_last_name"
+                    name="child_last_name"
+                    onChange={handleFieldChange}
+                    value={patientChildren.child_last_name}
+                    placeholder="Child Last Name"
+                  />
+                </div>
+                <div className="line1 d-flex flex-wrap">
+                  <Dropdown
+                    isOpen={dropdownOpen1}
+                    toggle={toggle1}
+                    className=""
+                  >
+                    <DropdownToggle
+                      color="light"
+                      className="dropdown text-center"
+                      caret
+                      value={patientChildren.child_gender}
+                    >
+                      {patientChildren.child_gender}
+                    </DropdownToggle>
+                    <DropdownMenu>
+                      <DropdownItem
+                        onClick={handleFieldChange}
+                        name="child_gender"
+                        value="None Selected"
+                      >
+                        None Selected
+                      </DropdownItem>
+                      <DropdownItem
+                        onClick={handleFieldChange}
+                        name="child_gender"
+                        value="Female"
+                      >
+                        Female
+                      </DropdownItem>
+                      <DropdownItem
+                        onClick={handleFieldChange}
+                        name="child_gender"
+                        value="Male"
+                      >
+                        Male
+                      </DropdownItem>
+                      <DropdownItem
+                        onClick={handleFieldChange}
+                        name="child_gender"
+                        value="Other"
+                      >
+                        Other
+                      </DropdownItem>
+                    </DropdownMenu>
+                  </Dropdown>
+                </div>
 
-
-        <div className="line1">
-          <Label className="textWhite title" for="">DOB</Label>
-          <Input           
-            className="fieldData text-center col-8"
-            type="date"
-            id="child_dob"
-            name="child_dob"
-            onChange={handleFieldChange}
-            value={patientChildren.child_dob}
-            placeholder="Date of Birth"
-          />
-        </div>
-        <div className="d-flex justify-content-center">
-            <div className="textWhite"><i className="fas fa-plus fa-lg ml-5 mt-3 mr-2"></i>Click to Add More Children</div>
+                <div className="line1">
+                  <Label className="textWhite title" for="">
+                    DOB
+                  </Label>
+                  <Input
+                    className="fieldData text-center col-8"
+                    type="date"
+                    id="child_dob"
+                    name="child_dob"
+                    onChange={handleFieldChange}
+                    value={patientChildren.child_dob}
+                    placeholder="Date of Birth"
+                  />
+                </div>
+                <div className="d-flex justify-content-center">
+                  <div className="textWhite">
+                    <i className="fas fa-plus fa-lg ml-5 mt-3 mr-2"></i>Click to
+                    Add More Children
+                  </div>
+                </div>
+              </section>
+            ) : (
+              console.log("")
+            )}
           </div>
-      </div>
-      </div>
-      <div id="footer">
-      <ButtonNavigation next={next} />
-      <EmptyFooterSpace />
-
-      </div>
+        </div>
+        <div id="footer">
+          <ButtonNavigation
+            next={next}
+            updatePatient={updatePatient}
+            patient={props.userId}
+            patientNotes={patientChildren}
+          />
+          <EmptyFooterSpace />
+        </div>
       </div>
     </>
   );
