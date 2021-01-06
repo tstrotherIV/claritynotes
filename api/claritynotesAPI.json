@@ -28,9 +28,14 @@
       "patient_guardian_gender": "Male",
       "sibling_first_name": "Sibling is 2",
       "sibling_last_name": "Test Sibling Last Name",
-      "sibling_gender": "Other",
+      "sibling_gender": "Female",
       "patient_only_child": false,
-      "sibling_dob": "2018-02-14"
+      "sibling_dob": "2018-02-14",
+      "child_first_name": "Child First Name",
+      "child_last_name": "Child Last Name",
+      "child_gender": "Female",
+      "child_dob": "2021-01-19",
+      "patient_has_children": false
     },
     {
       "id": 31,
