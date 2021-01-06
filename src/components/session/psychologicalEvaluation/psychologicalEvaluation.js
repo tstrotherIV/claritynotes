@@ -19,7 +19,7 @@ import convertID from "../../../helpers/formFieldIdConverter";
 import "./psychologicalEvaluation.scss";
 
 function PsychologicalEvaluation(props) {
-  let patientId = 30;
+
 
   const [item, setItem] = useState("");
   const [
@@ -64,7 +64,7 @@ function PsychologicalEvaluation(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: patientId,
+      id: props.userId,
       patient_first_name: patientPsychological_Evaluation.patient_first_name,
       patient_middle_name: patientPsychological_Evaluation.patient_middle_name,
       patient_last_name: patientPsychological_Evaluation.patient_last_name,
@@ -91,7 +91,7 @@ function PsychologicalEvaluation(props) {
   //CRUD Function END
 
   useEffect(() => {
-    DataManager.getPatient(patientId).then((patientInfo) => {
+    DataManager.getPatient(props.userId).then((patientInfo) => {
       setPatientPsychological_Evaluation(patientInfo);
     });
   }, []);
@@ -349,7 +349,7 @@ function PsychologicalEvaluation(props) {
             <ButtonNavigation
               next={next}
               updatePatient={updatePatient}
-              patient={patientId}
+              patient={props.userId}
               patientNotes={patientPsychological_Evaluation}
             />
           </div>

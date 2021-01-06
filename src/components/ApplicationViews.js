@@ -126,7 +126,7 @@ import ThematicApperceptionsTest from "./session/testResults/ThematicApperceptio
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
   const setUser = props.setUser;
-  // const userId = parseInt(props.userId);
+  const userId = parseInt(props.userId);
 
   return (
     <>
@@ -134,7 +134,7 @@ const ApplicationViews = (props) => {
           exact
           path="/"
           render={(props) => {
-            return <Login setUser={setUser} hasUser={hasUser} {...props} />;
+            return <Login setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
           }}
         />
     <Switch>
@@ -142,847 +142,847 @@ const ApplicationViews = (props) => {
         exact
         path="/createUser"
         render={(props) => {
-          return <CreateUser setUser={setUser} hasUser={hasUser} {...props} />;
+          return <CreateUser setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/patient"
         render={(props) => {
-          return <PatientHomePage setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PatientHomePage setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/sessionStep1"
         render={(props) => {
-          return <SessionStep1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <SessionStep1 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/psychological_evaluation"
         render={(props) => {
-          return <PsychologicalEvaluation setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PsychologicalEvaluation setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/psychological_evaluation_family"
         render={(props) => {
-          return <PsychologicalEvaluationFamily setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PsychologicalEvaluationFamily setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/psychological_evaluation_siblings"
         render={(props) => {
-          return <PsychologicalEvaluationSiblings setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PsychologicalEvaluationSiblings setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/psychological_evaluation_children"
         render={(props) => {
-          return <PsychologicalEvaluationChildren setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PsychologicalEvaluationChildren setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/psychological_evaluation_spouse"
         render={(props) => {
-          return <PsychologicalEvaluationSpouse setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PsychologicalEvaluationSpouse setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/psychological_evaluation_consent"
         render={(props) => {
-          return <PsychologicalEvaluationConsent setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PsychologicalEvaluationConsent setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/psychological_evaluation_referral"
         render={(props) => {
-          return <PsychologicalEvaluationReferral setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PsychologicalEvaluationReferral setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/psychological_evaluation_additional_data"
         render={(props) => {
-          return <PsychologicalEvaluationAdditionalData setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PsychologicalEvaluationAdditionalData setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/interview_pg_1"
         render={(props) => {
-          return <InterviewPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <InterviewPg1 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/interview_pg_2"
         render={(props) => {
-          return <InterviewPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <InterviewPg2 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/interview_pg_3"
         render={(props) => {
-          return <InterviewPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <InterviewPg3 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/interview_pg_4"
         render={(props) => {
-          return <InterviewPg4 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <InterviewPg4 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/interview_pg_5"
         render={(props) => {
-          return <InterviewPg5 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <InterviewPg5 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/interview_pg_6"
         render={(props) => {
-          return <InterviewPg6 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <InterviewPg6 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/interview_pg_7"
         render={(props) => {
-          return <InterviewPg7 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <InterviewPg7 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/interview_pg_8"
         render={(props) => {
-          return <InterviewPg8 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <InterviewPg8 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/interview_pg_9"
         render={(props) => {
-          return <InterviewPg9 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <InterviewPg9 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_1"
         render={(props) => {
-          return <FamilyPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg1 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_2"
         render={(props) => {
-          return <FamilyPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg2 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_3"
         render={(props) => {
-          return <FamilyPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg3 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_4"
         render={(props) => {
-          return <FamilyPg4 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg4 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_5"
         render={(props) => {
-          return <FamilyPg5 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg5 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_6"
         render={(props) => {
-          return <FamilyPg6 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg6 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_7"
         render={(props) => {
-          return <FamilyPg7 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg7 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_8"
         render={(props) => {
-          return <FamilyPg8 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg8 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_9"
         render={(props) => {
-          return <FamilyPg9 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg9 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_10"
         render={(props) => {
-          return <FamilyPg10 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg10 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_11"
         render={(props) => {
-          return <FamilyPg11 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg11 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_12"
         render={(props) => {
-          return <FamilyPg12 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg12 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_13"
         render={(props) => {
-          return <FamilyPg13 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg13 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_14"
         render={(props) => {
-          return <FamilyPg14 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg14 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/family_pg_15"
         render={(props) => {
-          return <FamilyPg15 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <FamilyPg15 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/psychological_evaluation_report_summary"
         render={(props) => {
-          return <PsychologicalEvaluationReportSummary setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PsychologicalEvaluationReportSummary setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/housing_pg_1"
         render={(props) => {
-          return <HousingPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <HousingPg1 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/housing_pg_2"
         render={(props) => {
-          return <HousingPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <HousingPg2 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/housing_pg_3"
         render={(props) => {
-          return <HousingPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <HousingPg3 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
          <Route
         exact
         path="/employment_pg_1"
         render={(props) => {
-          return <EmploymentPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <EmploymentPg1 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/employment_pg_2"
         render={(props) => {
-          return <EmploymentPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <EmploymentPg2 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/employment_pg_3"
         render={(props) => {
-          return <EmploymentPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <EmploymentPg3 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/education_pg_1"
         render={(props) => {
-          return <EducationPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <EducationPg1 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/education_pg_2"
         render={(props) => {
-          return <EducationPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <EducationPg2 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/education_pg_3"
         render={(props) => {
-          return <EducationPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <EducationPg3 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/education_pg_4"
         render={(props) => {
-          return <EducationPg4 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <EducationPg4 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/history_of_legal_pg_1"
         render={(props) => {
-          return <HistoryOfLegalPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <HistoryOfLegalPg1 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/history_of_legal_pg_2"
         render={(props) => {
-          return <HistoryOfLegalPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <HistoryOfLegalPg2 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/history_of_legal_pg_3"
         render={(props) => {
-          return <HistoryOfLegalPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <HistoryOfLegalPg3 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/history_of_legal_pg_4"
         render={(props) => {
-          return <HistoryOfLegalPg4 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <HistoryOfLegalPg4 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/history_of_legal_pg_5"
         render={(props) => {
-          return <HistoryOfLegalPg5 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <HistoryOfLegalPg5 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/history_of_legal_pg_6"
         render={(props) => {
-          return <HistoryOfLegalPg6 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <HistoryOfLegalPg6 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/history_of_legal_pg_7"
         render={(props) => {
-          return <HistoryOfLegalPg7 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <HistoryOfLegalPg7 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/history_of_legal_pg_8"
         render={(props) => {
-          return <HistoryOfLegalPg8 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <HistoryOfLegalPg8 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/history_of_legal_pg_9"
         render={(props) => {
-          return <HistoryOfLegalPg9 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <HistoryOfLegalPg9 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/history_of_legal_pg_10"
         render={(props) => {
-          return <HistoryOfLegalPg10 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <HistoryOfLegalPg10 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/history_of_legal_pg_11"
         render={(props) => {
-          return <HistoryOfLegalPg11 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <HistoryOfLegalPg11 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/history_of_legal_pg_12"
         render={(props) => {
-          return <HistoryOfLegalPg12 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <HistoryOfLegalPg12 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/history_of_legal_pg_13"
         render={(props) => {
-          return <HistoryOfLegalPg13 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <HistoryOfLegalPg13 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
        <Route
         exact
         path="/history_of_legal_pg_14"
         render={(props) => {
-          return <HistoryOfLegalPg14 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <HistoryOfLegalPg14 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/history_of_legal_pg_15"
         render={(props) => {
-          return <HistoryOfLegalPg15 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <HistoryOfLegalPg15 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/mental_health_history_pg_1"
         render={(props) => {
-          return <MentalHealthHistoryPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <MentalHealthHistoryPg1 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/mental_health_history_pg_2"
         render={(props) => {
-          return <MentalHealthHistoryPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <MentalHealthHistoryPg2 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/mental_health_history_pg_3"
         render={(props) => {
-          return <MentalHealthHistoryPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <MentalHealthHistoryPg3 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/mental_health_history_pg_4"
         render={(props) => {
-          return <MentalHealthHistoryPg4 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <MentalHealthHistoryPg4 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/medical_history_health_concerns_limitations_pg_1"
         render={(props) => {
-          return <MedicalHistoryHealthConcernsLimitionsPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <MedicalHistoryHealthConcernsLimitionsPg1 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/neglect_abuse_trauma_loss_pg_1"
         render={(props) => {
-          return <NeglectAbuseTraumaLossPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <NeglectAbuseTraumaLossPg1 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/neglect_abuse_trauma_loss_pg_2"
         render={(props) => {
-          return <NeglectAbuseTraumaLossPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <NeglectAbuseTraumaLossPg2 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/neglect_abuse_trauma_loss_pg_3"
         render={(props) => {
-          return <NeglectAbuseTraumaLossPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <NeglectAbuseTraumaLossPg3 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/neglect_abuse_trauma_loss_pg_4"
         render={(props) => {
-          return <NeglectAbuseTraumaLossPg4 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <NeglectAbuseTraumaLossPg4 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/neglect_abuse_trauma_loss_pg_5"
         render={(props) => {
-          return <NeglectAbuseTraumaLossPg5 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <NeglectAbuseTraumaLossPg5 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />  
       <Route
         exact
         path="/perpetrator_of_neglect_and_abuse_pg_1"
         render={(props) => {
-          return <PerpetratorOfNeglectAndAbusePg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PerpetratorOfNeglectAndAbusePg1 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/perpetrator_of_neglect_and_abuse_pg_2"
         render={(props) => {
-          return <PerpetratorOfNeglectAndAbusePg2 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PerpetratorOfNeglectAndAbusePg2 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/perpetrator_of_neglect_and_abuse_pg_3"
         render={(props) => {
-          return <PerpetratorOfNeglectAndAbusePg3 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PerpetratorOfNeglectAndAbusePg3 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       /> 
       <Route
         exact
         path="/perpetrator_of_neglect_and_abuse_pg_4"
         render={(props) => {
-          return <PerpetratorOfNeglectAndAbusePg4 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PerpetratorOfNeglectAndAbusePg4 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/partner_relationship_pg_1"
         render={(props) => {
-          return <PartnerRelationshipPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PartnerRelationshipPg1 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/partner_relationship_pg_2"
         render={(props) => {
-          return <PartnerRelationshipPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PartnerRelationshipPg2 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/partner_relationship_pg_3"
         render={(props) => {
-          return <PartnerRelationshipPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PartnerRelationshipPg3 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/partner_relationship_pg_4"
         render={(props) => {
-          return <PartnerRelationshipPg4 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PartnerRelationshipPg4 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/partner_relationship_pg_5"
         render={(props) => {
-          return <PartnerRelationshipPg5 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PartnerRelationshipPg5 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/partner_relationship_pg_6"
         render={(props) => {
-          return <PartnerRelationshipPg6 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PartnerRelationshipPg6 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/partner_relationship_pg_7"
         render={(props) => {
-          return <PartnerRelationshipPg7 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PartnerRelationshipPg7 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/partner_relationship_pg_8"
         render={(props) => {
-          return <PartnerRelationshipPg8 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PartnerRelationshipPg8 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/partner_relationship_pg_9"
         render={(props) => {
-          return <PartnerRelationshipPg9 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PartnerRelationshipPg9 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/partner_relationship_pg_10"
         render={(props) => {
-          return <PartnerRelationshipPg10 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PartnerRelationshipPg10 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/parenting_pg_1"
         render={(props) => {
-          return <ParentingPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <ParentingPg1 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/parenting_pg_2"
         render={(props) => {
-          return <ParentingPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <ParentingPg2 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/parenting_pg_3"
         render={(props) => {
-          return <ParentingPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <ParentingPg3 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/positive_role_model_pg_1"
         render={(props) => {
-          return <PositiveRoleModelPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PositiveRoleModelPg1 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/positive_role_model_pg_2"
         render={(props) => {
-          return <PositiveRoleModelPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PositiveRoleModelPg2 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/parent_knowledge_pg_1"
         render={(props) => {
-          return <ParentKnowledgePg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <ParentKnowledgePg1 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/cognitive_skills_pg_1"
         render={(props) => {
-          return <CognitiveSkillsPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <CognitiveSkillsPg1 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/material_resources_pg_1"
         render={(props) => {
-          return <MaterialResourcesPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <MaterialResourcesPg1 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/behavioral_observations_and_testing_conditions_pg_1"
         render={(props) => {
-          return <BehavioralObservationsAndTestingConditionsPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <BehavioralObservationsAndTestingConditionsPg1 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/behavioral_observations_and_testing_conditions_pg_2"
         render={(props) => {
-          return <BehavioralObservationsAndTestingConditionsPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <BehavioralObservationsAndTestingConditionsPg2 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/behavioral_observations_and_testing_conditions_pg_3"
         render={(props) => {
-          return <BehavioralObservationsAndTestingConditionsPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <BehavioralObservationsAndTestingConditionsPg3 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/behavioral_observations_and_testing_conditions_pg_4"
         render={(props) => {
-          return <BehavioralObservationsAndTestingConditionsPg4 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <BehavioralObservationsAndTestingConditionsPg4 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/behavioral_observations_and_testing_conditions_pg_5"
         render={(props) => {
-          return <BehavioralObservationsAndTestingConditionsPg5 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <BehavioralObservationsAndTestingConditionsPg5 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/procedures_administered_pg_1"
         render={(props) => {
-          return <ProceduresAdministedPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <ProceduresAdministedPg1 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/wasi-ii"
         render={(props) => {
-          return <WasiII setUser={setUser} hasUser={hasUser} {...props} />;
+          return <WasiII setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/wechsler_adult_intelligence_scale_IV"
         render={(props) => {
-          return <WechslerAdultIntelligenceScaleIV setUser={setUser} hasUser={hasUser} {...props} />;
+          return <WechslerAdultIntelligenceScaleIV setUser={setUser} hasUser={hasUser} userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/shipley_intelligence_assessment_2"
         render={(props) => {
-          return <ShipleyIntelligenceAssessment2 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <ShipleyIntelligenceAssessment2 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/rait_pg_1"
         render={(props) => {
-          return <RAITpg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <RAITpg1 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/rait_pg_2"
         render={(props) => {
-          return <RAITpg2 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <RAITpg2 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/rait_pg_3"
         render={(props) => {
-          return <RAITpg3 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <RAITpg3 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/wechsler_adult_intelligence_scale_IV_pg_2"
         render={(props) => {
-          return <WechslerAdultIntelligenceScaleIVpg2 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <WechslerAdultIntelligenceScaleIVpg2 setUser={setUser} hasUser={hasUser}  userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/wide_range_achievement_test_5"
         render={(props) => {
-          return <WideRangeAchievementTest5 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <WideRangeAchievementTest5 setUser={setUser} hasUser={hasUser} userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/aimsweb_plus_achievement_test_pg_1"
         render={(props) => {
-          return <AimswebPlusAchievementTestPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <AimswebPlusAchievementTestPg1 setUser={setUser} hasUser={hasUser} userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/aimsweb_plus_achievement_test_pg_2"
         render={(props) => {
-          return <AimswebPlusAchievementTestPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <AimswebPlusAchievementTestPg2 setUser={setUser} hasUser={hasUser} userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/aimsweb_plus_achievement_test_pg_3"
         render={(props) => {
-          return <AimswebPlusAchievementTestPg3 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <AimswebPlusAchievementTestPg3 setUser={setUser} hasUser={hasUser} userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/aimsweb_plus_achievement_test_pg_4"
         render={(props) => {
-          return <AimswebPlusAchievementTestPg4 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <AimswebPlusAchievementTestPg4 setUser={setUser} hasUser={hasUser} userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/continous_performance_test_3rd_ed"
         render={(props) => {
-          return <ContinuousPerformanceTest3rdEd setUser={setUser} hasUser={hasUser} {...props} />;
+          return <ContinuousPerformanceTest3rdEd setUser={setUser} hasUser={hasUser} userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/computerized_performance_neurocognitive_assessment"
         render={(props) => {
-          return <ComputerizedNeurocognitiveAssessment setUser={setUser} hasUser={hasUser} {...props} />;
+          return <ComputerizedNeurocognitiveAssessment setUser={setUser} hasUser={hasUser} userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/paulhus_deception_scale"
         render={(props) => {
-          return <PaulasDeceptionScale setUser={setUser} hasUser={hasUser} {...props} />;
+          return <PaulasDeceptionScale setUser={setUser} hasUser={hasUser} userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/minnesota_multiphasic_personality_inventory_2"
         render={(props) => {
-          return <MinnesotaMultiphasicPersonalityInventory2 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <MinnesotaMultiphasicPersonalityInventory2 setUser={setUser} hasUser={hasUser} userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/substance_abuse_subtle_screening_inventory_4"
         render={(props) => {
-          return <SubstanceAbuseSubtleScreeningInventory4 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <SubstanceAbuseSubtleScreeningInventory4 setUser={setUser} hasUser={hasUser} userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/iowa_gambling_task"
         render={(props) => {
-          return <IowaGamblingTask setUser={setUser} hasUser={hasUser} {...props} />;
+          return <IowaGamblingTask setUser={setUser} hasUser={hasUser} userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/millon_clinical_multiaxial_inventory_iv_pg_1"
         render={(props) => {
-          return <MillonClinicalMultiaxialInventoryIVPg1 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <MillonClinicalMultiaxialInventoryIVPg1 setUser={setUser} hasUser={hasUser} userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/millon_clinical_multiaxial_inventory_iv_pg_2"
         render={(props) => {
-          return <MillonClinicalMultiaxialInventoryIVPg2 setUser={setUser} hasUser={hasUser} {...props} />;
+          return <MillonClinicalMultiaxialInventoryIVPg2 setUser={setUser} hasUser={hasUser} userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/rorschach_performance_assessment_system"
         render={(props) => {
-          return <RorschPerformanceAssessmentSystem setUser={setUser} hasUser={hasUser} {...props} />;
+          return <RorschPerformanceAssessmentSystem setUser={setUser} hasUser={hasUser} userId={userId} {...props} />;
         }}
       />
       <Route
         exact
         path="/thematic_apperceptions_test"
         render={(props) => {
-          return <ThematicApperceptionsTest setUser={setUser} hasUser={hasUser} {...props} />;
+          return <ThematicApperceptionsTest setUser={setUser} hasUser={hasUser} userId={userId} {...props} />;
         }}
       />
     </Switch>

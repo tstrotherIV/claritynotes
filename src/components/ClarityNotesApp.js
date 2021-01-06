@@ -4,8 +4,10 @@ import "./ClarityNotesApp.scss"
 
 const ClarityNotes = (props) => {
   const isAuthenticated = () => sessionStorage.getItem("loggedUser") !== null;
-  const loggedUserId = sessionStorage.getItem("loggedUser");
+  // const loggedUserId = sessionStorage.getItem("loggedUser");
+  const loggedUserId = 30;
 
+  // const [hasUser, setHasUser] = useState(isAuthenticated());
   const [hasUser, setHasUser] = useState(isAuthenticated());
 
   const setUser = (user) => {
@@ -13,10 +15,11 @@ const ClarityNotes = (props) => {
     setHasUser(isAuthenticated());
   };
 
-  // const clearUser = () => {
-  //   sessionStorage.clear();
-  //   setHasUser(isAuthenticated());
-  // };
+  const clearUser = () => {
+    sessionStorage.clear();
+    setHasUser(isAuthenticated());
+  };
+
 
   return (
     <>

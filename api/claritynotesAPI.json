@@ -18,7 +18,14 @@
       "family_pg1_b": "Field 2",
       "family_pg1_c": "Field 3",
       "family_pg1_d": "Field 4",
-      "family_pg1_e": "Field 5"
+      "family_pg1_e": "Field 5",
+      "patient_father_first_name": "Jordan",
+      "patient_father_last_name": "Malloy",
+      "patient_mother_first_name": "Susan",
+      "patient_mother_last_name": "Malloy",
+      "patient_guardian_first_name": "Uncle Fester",
+      "patient_guardian_last_name": "Malloy",
+      "patient_guardian_gender": "Male"
     },
     {
       "id": 31,
