@@ -19,14 +19,12 @@ import convertID from "../../../helpers/formFieldIdConverter";
 import "./psychologicalEvaluation.scss";
 
 function PsychologicalEvaluation(props) {
-
-
   const [item, setItem] = useState("");
   const [
     patientPsychological_Evaluation,
     setPatientPsychological_Evaluation,
   ] = useState({
-    patient_fist_name: "",
+    patient_first_name: "",
     patient_middle_name: "",
     patient_last_name: "",
     patient_Date_of_Birth: "",
@@ -64,7 +62,7 @@ function PsychologicalEvaluation(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.userId,
+      id: props.patientId,
       patient_first_name: patientPsychological_Evaluation.patient_first_name,
       patient_middle_name: patientPsychological_Evaluation.patient_middle_name,
       patient_last_name: patientPsychological_Evaluation.patient_last_name,
@@ -90,10 +88,39 @@ function PsychologicalEvaluation(props) {
 
   //CRUD Function END
 
-  useEffect(() => {
-    DataManager.getPatient(props.userId).then((patientInfo) => {
-      setPatientPsychological_Evaluation(patientInfo);
+  const getData = () => {
+    DataManager.getPatient(props.patientId).then((patientInfo) => {
+      const raw = {
+        ...patientInfo,
+      };
+
+      const allowed = [
+        "patient_first_name",
+        "patient_middle_name",
+        "patient_last_name",
+        "patient_Date_of_Birth",
+        "patient_referral",
+        "patient_office_time",
+        "patient_report_writing",
+        "patient_case_number",
+        "patient_evaluation_Date",
+        "patient_county",
+        "patient_interview_time",
+        "patient_intake_time",
+      ];
+      const filtered = Object.keys(raw)
+        .filter((key) => allowed.includes(key))
+        .reduce((obj, key) => {
+          obj[key] = raw[key];
+          return obj;
+        }, {});
+
+      setPatientPsychological_Evaluation(filtered);
     });
+  };
+
+  useEffect(() => {
+    getData();
   }, []);
 
   return (
@@ -197,10 +224,34 @@ function PsychologicalEvaluation(props) {
                         {patientPsychological_Evaluation.patient_referral}
                       </DropdownToggle>
                       <DropdownMenu>
-                        <DropdownItem onClick={handleFieldChange} name="patient_referral" value="No Referral">No Referral</DropdownItem>
-                        <DropdownItem onClick={handleFieldChange} name="patient_referral" value="Option 1">Option 1</DropdownItem>
-                        <DropdownItem onClick={handleFieldChange} name="patient_referral" value="Option 2">Option 2</DropdownItem>
-                        <DropdownItem onClick={handleFieldChange} name="patient_referral" value="Option 3">Option 3</DropdownItem>
+                        <DropdownItem
+                          onClick={handleFieldChange}
+                          name="patient_referral"
+                          value="No Referral"
+                        >
+                          No Referral
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={handleFieldChange}
+                          name="patient_referral"
+                          value="Option 1"
+                        >
+                          Option 1
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={handleFieldChange}
+                          name="patient_referral"
+                          value="Option 2"
+                        >
+                          Option 2
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={handleFieldChange}
+                          name="patient_referral"
+                          value="Option 3"
+                        >
+                          Option 3
+                        </DropdownItem>
                       </DropdownMenu>
                     </Dropdown>
                   </div>
@@ -302,10 +353,34 @@ function PsychologicalEvaluation(props) {
                         {patientPsychological_Evaluation.patient_county}
                       </DropdownToggle>
                       <DropdownMenu>
-                        <DropdownItem onClick={handleFieldChange} name="patient_county" value="Select County">Select County</DropdownItem>
-                        <DropdownItem onClick={handleFieldChange} name="patient_county" value="Option 1">Option 1</DropdownItem>
-                        <DropdownItem onClick={handleFieldChange} name="patient_county" value="Option 2">Option 2</DropdownItem>
-                        <DropdownItem onClick={handleFieldChange} name="patient_county" value="Option 3">Option 3</DropdownItem>
+                        <DropdownItem
+                          onClick={handleFieldChange}
+                          name="patient_county"
+                          value="Select County"
+                        >
+                          Select County
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={handleFieldChange}
+                          name="patient_county"
+                          value="Option 1"
+                        >
+                          Option 1
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={handleFieldChange}
+                          name="patient_county"
+                          value="Option 2"
+                        >
+                          Option 2
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={handleFieldChange}
+                          name="patient_county"
+                          value="Option 3"
+                        >
+                          Option 3
+                        </DropdownItem>
                       </DropdownMenu>
                     </Dropdown>
                   </div>
@@ -349,7 +424,7 @@ function PsychologicalEvaluation(props) {
             <ButtonNavigation
               next={next}
               updatePatient={updatePatient}
-              patient={props.userId}
+              patient={props.patientId}
               patientNotes={patientPsychological_Evaluation}
             />
           </div>

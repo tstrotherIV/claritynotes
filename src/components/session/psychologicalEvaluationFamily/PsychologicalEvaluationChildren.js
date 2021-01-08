@@ -15,7 +15,6 @@ import TextareaAutosize from "react-textarea-autosize";
 import EmptyFooterSpace from "./../../shared/EmptyFooterSpace";
 import "./psychologicalEvaluationFamily.scss";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 function PsychologicalEvaluation_siblings(props) {
   const [patientChildren, setPatientChildren] = useState({
@@ -41,7 +40,7 @@ function PsychologicalEvaluation_siblings(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.userId,
+      id: props.patientId,
       patient_has_children: patientChildren.patient_has_children,
       child_first_name: patientChildren.child_first_name,
       child_last_name: patientChildren.child_last_name,
@@ -54,10 +53,31 @@ function PsychologicalEvaluation_siblings(props) {
 
   //CRUD Function END
 
-  useEffect(() => {
-    DataManager.getPatient(props.userId).then((patientInfo) => {
-      setPatientChildren(patientInfo);
+  const getData = () => {
+    DataManager.getPatient(props.patientId).then((patientInfo) => {
+      
+      const raw = {
+        ...patientInfo
+      };
+      
+      const allowed = ['patient_has_children',
+        'child_first_name',
+        'child_last_name',
+        'child_gender',
+        'child_dob'];
+      const filtered = Object.keys(raw)
+        .filter((key) => allowed.includes(key))
+        .reduce((obj, key) => {
+          obj[key] = raw[key];
+          return obj;
+        }, {});
+
+        setPatientChildren(filtered);
     });
+  };
+
+  useEffect(() => {
+    getData();
   }, []);
 
   return (
@@ -187,7 +207,7 @@ function PsychologicalEvaluation_siblings(props) {
           <ButtonNavigation
             next={next}
             updatePatient={updatePatient}
-            patient={props.userId}
+            patient={props.patientId}
             patientNotes={patientChildren}
           />
           <EmptyFooterSpace />

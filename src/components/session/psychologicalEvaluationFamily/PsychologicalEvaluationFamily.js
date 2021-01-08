@@ -43,7 +43,7 @@ function PsychologicalEvaluation_family(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.userId,
+      id: props.patientId,
       patient_father_first_name: patientParents.patient_father_first_name,
       patient_father_last_name: patientParents.patient_father_last_name,
       patient_mother_first_name: patientParents.patient_mother_first_name,
@@ -59,10 +59,33 @@ function PsychologicalEvaluation_family(props) {
 
   //CRUD Function END
 
-  useEffect(() => {
-    DataManager.getPatient(props.userId).then((patientInfo) => {
-      setPatientParents(patientInfo);
+  const getData = () => {
+    DataManager.getPatient(props.patientId).then((patientInfo) => {
+      
+      const raw = {
+        ...patientInfo
+      };
+      
+      const allowed = ['patient_father_first_name',
+        'patient_father_last_name',
+        'patient_mother_first_name',
+        'patient_mother_last_name',
+        'patient_guardian_first_name',
+        'patient_guardian_last_name',
+        'patient_guardian_gender'];
+      const filtered = Object.keys(raw)
+        .filter((key) => allowed.includes(key))
+        .reduce((obj, key) => {
+          obj[key] = raw[key];
+          return obj;
+        }, {});
+
+        setPatientParents(filtered);
     });
+  };
+
+  useEffect(() => {
+    getData();
   }, []);
 
   return (
@@ -226,7 +249,7 @@ function PsychologicalEvaluation_family(props) {
             <ButtonNavigation
               next={next}
               updatePatient={updatePatient}
-              patient={props.userId}
+              patient={props.patientId}
               patientNotes={patientParents}
             />
             <EmptyFooterSpace />

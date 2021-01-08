@@ -8,7 +8,6 @@ import DataManager from "../../../data_module/DataManager";
 import convertID from "../../../helpers/formFieldIdConverter";
 
 function FamilyPg1(props) {
-  let patientId = 30;
 
   const [item, setItem] = useState("");
   const [patientFamily_pg1, setPatientFamily_pg1] = useState({
@@ -29,35 +28,52 @@ function FamilyPg1(props) {
   };
 
   const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e)
-    setItem(fieldID)
-    console.log("input clicked")
+    const fieldID = convertID.convertID(e);
+    setItem(fieldID);
+    console.log("input clicked");
   };
 
   //CRUD Function Start
 
   const updatePatient = () => {
-
-  const editedPatient = {
-    id: patientId,
-    family_pg1_a: patientFamily_pg1.family_pg1_a,
-    family_pg1_b: patientFamily_pg1.family_pg1_b,
-    family_pg1_c: patientFamily_pg1.family_pg1_c,
-    family_pg1_d: patientFamily_pg1.family_pg1_d,
-    family_pg1_e: patientFamily_pg1.family_pg1_e,
+    const editedPatient = {
+      id: props.patientId,
+      family_pg1_a: patientFamily_pg1.family_pg1_a,
+      family_pg1_b: patientFamily_pg1.family_pg1_b,
+      family_pg1_c: patientFamily_pg1.family_pg1_c,
+      family_pg1_d: patientFamily_pg1.family_pg1_d,
+      family_pg1_e: patientFamily_pg1.family_pg1_e,
     };
 
-  DataManager.update("patients", editedPatient).then(() => {
-    console.log(editedPatient)
-  })
-  }
+    DataManager.update("patients", editedPatient).then(() => {});
+  };
 
   //CRUD Function END
 
-  useEffect(() => {
-    DataManager.getPatient(patientId).then((patientInfo) => {
-      setPatientFamily_pg1(patientInfo);
+  const getData = () => {
+    DataManager.getPatient(props.patientId).then((patientInfo) => {
+      const raw = {
+        ...patientInfo,
+      };
+
+      const allowed = ['family_pg1_a',
+        'family_pg1_b',
+        'family_pg1_c',
+        'family_pg1_d',
+        'family_pg1_e',];
+      const filtered = Object.keys(raw)
+        .filter((key) => allowed.includes(key))
+        .reduce((obj, key) => {
+          obj[key] = raw[key];
+          return obj;
+        }, {});
+
+        setPatientFamily_pg1(filtered);
     });
+  };
+
+  useEffect(() => {
+    getData();
   }, []);
 
   return (
@@ -150,13 +166,13 @@ function FamilyPg1(props) {
             </div>
           </div>
           <div id="footer">
-            <ButtonNavigation 
-            next={next} 
-            updatePatient={updatePatient} 
-            patient={patientId} 
-            patientFamily_pg1={patientFamily_pg1}
+            <ButtonNavigation
+              next={next}
+              updatePatient={updatePatient}
+              patient={props.patientId}
+              patientFamily_pg1={patientFamily_pg1}
             />
-            <TermOfParentalRights questionId={item} patientId={patientId} />
+            <TermOfParentalRights questionId={item} patientId={props.patientId} />
           </div>
         </div>
       </div>

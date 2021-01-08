@@ -43,7 +43,7 @@ function PsychologicalEvaluationSiblings(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.userId,
+      id: props.patientId,
       patient_only_child: patientSiblings.patient_only_child,
       sibling_first_name: patientSiblings.sibling_first_name,
       sibling_last_name: patientSiblings.sibling_last_name,
@@ -56,10 +56,31 @@ function PsychologicalEvaluationSiblings(props) {
 
   //CRUD Function END
 
-  useEffect(() => {
-    DataManager.getPatient(props.userId).then((patientInfo) => {
-      setPatientSiblings(patientInfo);
+  const getData = () => {
+    DataManager.getPatient(props.patientId).then((patientInfo) => {
+      
+      const raw = {
+        ...patientInfo
+      };
+      
+      const allowed = ['patient_only_child',
+        'sibling_first_name',
+        'sibling_last_name',
+        'sibling_gender',
+        'sibling_dob'];
+      const filtered = Object.keys(raw)
+        .filter((key) => allowed.includes(key))
+        .reduce((obj, key) => {
+          obj[key] = raw[key];
+          return obj;
+        }, {});
+
+        setPatientSiblings(filtered);
     });
+  };
+
+  useEffect(() => {
+    getData();
   }, []);
 
   return (
@@ -189,7 +210,7 @@ function PsychologicalEvaluationSiblings(props) {
           <ButtonNavigation
             next={next}
             updatePatient={updatePatient}
-            patient={props.userId}
+            patient={props.patientId}
             patientNotes={patientSiblings}
           />
           <EmptyFooterSpace />
