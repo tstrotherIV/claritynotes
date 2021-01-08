@@ -1,90 +1,146 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import { Label } from "reactstrap";
-import Heading from '../../shared/PsychologicalHeading';
-import TermOfParentalRights from '../../shared/TermOfParentalRights';
-import ButtonNavigation from '../../shared/ButtonNavigation';
-import TextareaAutosize from 'react-textarea-autosize';
+import Heading from "../../shared/PsychologicalHeading";
+import TermOfParentalRights from "../../shared/TermOfParentalRights";
+import ButtonNavigation from "../../shared/ButtonNavigation";
+import TextareaAutosize from "react-textarea-autosize";
+import DataManager from "../../../data_module/DataManager";
+import convertID from "../../../helpers/formFieldIdConverter";
 
 function FamilyPg4(props) {
-
+  const [item, setItem] = useState("");
   const [patientFamily_pg4, setPatientFamily_pg4] = useState({
-    familiy_pg4_a: "",
-    familiy_pg4_b: "",
-    familiy_pg4_c: "",
-  })
+    family_pg4_a: "",
+    family_pg4_b: "",
+    family_pg4_c: "",
+  });
 
   const next = "/family_pg_5";
 
   const handleFieldChange = (e) => {
-    setPatientFamily_pg4({ ...patientFamily_pg4, [e.target.name]: e.target.value});
-  }
+    setPatientFamily_pg4({
+      ...patientFamily_pg4,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const convertIDfunc = (e) => {
+    const fieldID = convertID.convertID(e);
+    setItem(fieldID);
+    console.log("input clicked");
+  };
+
+  //CRUD Function Start
+
+  const updatePatient = () => {
+    const editedPatient = {
+      id: props.patientId,
+      family_pg4_a: patientFamily_pg4.family_pg4_a,
+      family_pg4_b: patientFamily_pg4.family_pg4_b,
+      family_pg4_c: patientFamily_pg4.family_pg4_c,
+    };
+
+    DataManager.update("patients", editedPatient).then(() => {});
+  };
+
+  //CRUD Function END
+
+  const getData = () => {
+    DataManager.getPatient(props.patientId).then((patientInfo) => {
+      const raw = {
+        ...patientInfo,
+      };
+
+      const allowed = ["family_pg4_a", "family_pg4_b", "family_pg4_c"];
+      const filtered = Object.keys(raw)
+        .filter((key) => allowed.includes(key))
+        .reduce((obj, key) => {
+          obj[key] = raw[key];
+          return obj;
+        }, {});
+
+      setPatientFamily_pg4(filtered);
+    });
+  };
+  
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <>
-    <div id="page-container">
-      <div id="content-wrap">
-    <Heading /> 
-      <div className="header">
-        <h2 className="textWhite mb-4">Family</h2>
-      </div>
-      <h4 className="textWhite centerItem">
-      What kind of a person was your grandmother (maternal or paternal) when you were growing up?
-      </h4>
-      <div className="interview_div1">
-        <div className="interview_line1">
-          <Label className="textWhite interview_title" for="">
-            [Patient Name, First] said:
-          </Label>
-          <TextareaAutosize            
-            className="interview_fieldData"
-            type="text"
-            id="family_pg4_a"
-            name="family_pg4_a"
-            onChange={handleFieldChange}
-            value={patientFamily_pg4.family_pg4_a}
+      <div id="page-container">
+        <div id="content-wrap">
+          <Heading />
+          <div className="header">
+            <h2 className="textWhite mb-4">Family</h2>
+          </div>
+          <h4 className="textWhite centerItem">
+            What kind of a person was your grandmother (maternal or paternal)
+            when you were growing up?
+          </h4>
+          <div className="interview_div1">
+            <div className="interview_line1">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                id={item}
+                name="family_pg4_a"
+                onChange={handleFieldChange}
+                value={patientFamily_pg4.family_pg4_a}
+              />
+            </div>
+          </div>
+          <h4 className="textWhite centerItem">
+            What kind of a person was your grandfather when you were growing up?
+          </h4>
+          <div className="interview_div1">
+            <div className="interview_line1">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                id={item}
+                name="family_pg4_b"
+                onChange={handleFieldChange}
+                value={patientFamily_pg4.family_pg4_b}
+              />
+            </div>
+          </div>
+          <h4 className="textWhite centerItem">
+            Did you experience a sudden loss or death?
+          </h4>
+          <div className="interview_div1">
+            <div className="interview_line1">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                id={item}
+                name="family_pg4_c"
+                onChange={handleFieldChange}
+                value={patientFamily_pg4.family_pg4_c}
+              />
+            </div>
+          </div>
+        </div>
+        <div id="footer">
+          <ButtonNavigation
+            next={next}
+            updatePatient={updatePatient}
+            patient={props.patientId}
+            patientNotes={patientFamily_pg4}
           />
+          <TermOfParentalRights />
         </div>
       </div>
-      <h4 className="textWhite centerItem">
-      What kind of a person was your grandfather when you were growing up?
-      </h4>
-      <div className="interview_div1">
-        <div className="interview_line1">
-          <Label className="textWhite interview_title" for="">
-            [Patient Name, First] said:
-          </Label>
-          <TextareaAutosize            
-            className="interview_fieldData"
-            type="text"
-            id="family_pg4_b"
-            name="family_pg4_b"
-            onChange={handleFieldChange}
-            value={patientFamily_pg4.family_pg4_b}
-          />
-        </div>
-      </div>
-      <h4 className="textWhite centerItem">Did you experience a sudden loss or death?</h4>
-      <div className="interview_div1">
-        <div className="interview_line1">
-          <Label className="textWhite interview_title" for="">
-            [Patient Name, First] said:
-          </Label>
-          <TextareaAutosize            
-            className="interview_fieldData"
-            type="text"
-            id="family_pg4_c"
-            name="family_pg4_c"
-            onChange={handleFieldChange}
-            value={patientFamily_pg4.family_pg4_c}
-          />
-        </div>
-      </div>
-      </div>
-      <div id="footer">
-      <ButtonNavigation next={next} />
-      <TermOfParentalRights />
-      </div>
-    </div>
     </>
   );
 }

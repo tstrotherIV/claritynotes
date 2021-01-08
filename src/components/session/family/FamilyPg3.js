@@ -143,7 +143,7 @@ function FamilyPg3(props) {
             next={next}
             updatePatient={updatePatient}
             patient={props.patientId}
-            patientFamily_pg1={patientFamily_pg3}
+            patientNotes={patientFamily_pg3}
           />
           <TermOfParentalRights />
         </div>
