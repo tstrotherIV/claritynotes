@@ -1,11 +1,27 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import EmptySpaceFooter from '../../../shared/EmptyFooterSpace';
 import ButtonNavigation from '../../../shared/ButtonNavigation';
 import "./reportSummary.scss";
+import DataManager from "../../../../data_module/DataManager"
+
+
 //pdf page 39
 function FamilyReportSummary(props) {
 
+  const [patient, setPatient] = useState("")
+
   const next = "housing_pg_1";
+
+  const getData = () => {
+    DataManager.getPatient(props.patientId).then((patientInfo) => {
+      
+      setPatient(patientInfo);
+    });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <div id="page-container">
@@ -21,14 +37,12 @@ function FamilyReportSummary(props) {
           </div>
           <div className="d-flex flex-wrap text-center justify-content-center mt-5 mr-auto">
             <div className="col-10">
-              [Patient Name, First][Patient Name, Last] reported she has been
-              married since xx. She has son/s and daughter/s. [Patient Name,
-              First] said she currently lives with _ in [Location] 
+              {patient.patient_first_name} {patient.patient_last_name} reported she has been
+              married since xx. She has son/s and daughter/s. {patient.patient_first_name} said she currently lives with _ in [Location] 
             </div>
               <div className="col-10 mb-5">
-              [Patient
-              Name, First] reported she has been married _ times. She has son/s
-              and daughter/s. [Patient Name, First] and her current spouse have
+              {patient.patient_first_name} reported she has been married _ times. She has son/s
+              and daughter/s. {patient.patient_first_name} and her current spouse have
               been married for _ years. She said she currently lives with _ in
               [Location]. 
               </div>
@@ -39,9 +53,8 @@ function FamilyReportSummary(props) {
                or 
                </div>
                <div className="col-10 mb-3">
-              [Patient Name, First]
-              reported she has never been married. She has _son/s and
-              _daughter/s. [Patient Name, First] said she currently lives with _
+               {patient.patient_first_name} reported she has never been married. She has _son/s and
+              _daughter/s. {patient.patient_first_name} said she currently lives with _
               in [Location].
             
             </div>

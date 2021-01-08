@@ -214,7 +214,7 @@ function InterviewPg7(props) {
             next={next}
             updatePatient={updatePatient}
             patient={props.patientId}
-            patientFamily_pg1={patientInterview_pg7}
+            patientNotes={patientInterview_pg7}
           />
           <TermOfParentalRights />
         </div>

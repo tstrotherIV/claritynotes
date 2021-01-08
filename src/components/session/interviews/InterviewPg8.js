@@ -268,7 +268,7 @@ function InterviewPg8(props) {
             next={next}
             updatePatient={updatePatient}
             patient={props.patientId}
-            patientFamily_pg1={patientInterview_pg8}
+            patientNotes={patientInterview_pg8}
           />
           <TermOfParentalRights />
         </div>
