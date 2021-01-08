@@ -1,80 +1,112 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Label,
-  Button,
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
 } from "reactstrap";
-import Heading from '../../shared/PsychologicalHeading';
-import TermOfParentalRights from '../../shared/TermOfParentalRights';
-import ButtonNavigation from '../../shared/ButtonNavigation';
-import TextareaAutosize from 'react-textarea-autosize';
+import Heading from "../../shared/PsychologicalHeading";
+import TermOfParentalRights from "../../shared/TermOfParentalRights";
+import ButtonNavigation from "../../shared/ButtonNavigation";
+import TextareaAutosize from "react-textarea-autosize";
+import DataManager from "../../../data_module/DataManager";
+import convertID from "../../../helpers/formFieldIdConverter";
+// import GoldNotes from "../../shared/GoldNotes";
 
 import "./interviews.scss";
 
 function InterviewPg1(props) {
-
+  const [item, setItem] = useState("");
   const [patientInterview_pg1, setPatientInterview_pg1] = useState({
     interview_pg1_a: "",
-    interview_pg1_b: "",
-    aditional_notes: "",
-  })
+  });
 
   const next = "/interview_pg_2";
 
-  const [dropdownOpen1, setDropdownOpen1] = useState(false);
-  const [modal, setModal] = useState(false);
-
-  const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
-  const toggle3 = () => setModal(!modal);
-
   const handleFieldChange = (e) => {
-    setPatientInterview_pg1({ ...patientInterview_pg1, [e.target.name]: e.target.value});
-  }
+    setPatientInterview_pg1({
+      ...patientInterview_pg1,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const convertIDfunc = (e) => {
+    const fieldID = convertID.convertID(e);
+    setItem(fieldID);
+    console.log("input clicked");
+  };
+
+  //CRUD Function Start
+
+  const updatePatient = () => {
+    const editedPatient = {
+      id: props.patientId,
+      interview_pg1_a: patientInterview_pg1.interview_pg1_a,
+    };
+
+    DataManager.update("patients", editedPatient).then(() => {});
+  };
+
+  //CRUD Function END
+
+  const getData = () => {
+    DataManager.getPatient(props.patientId).then((patientInfo) => {
+      
+      const raw = {
+        ...patientInfo
+      };
+      
+      const allowed = ['interview_pg1_a'];
+      const filtered = Object.keys(raw)
+        .filter((key) => allowed.includes(key))
+        .reduce((obj, key) => {
+          obj[key] = raw[key];
+          return obj;
+        }, {});
+
+        setPatientInterview_pg1(filtered);
+    });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <>
-    <div id="page-container">
-      <div id="content-wrap">
-    <Heading />   
-        <div className="header">
-          <h2 className="textWhite">Interviews</h2>
-          <h5 className="textWhite">
-            Perspective from [Patient Name, First] [Patient Name, Last]:
-          </h5>
-          <h4 className="textWhite">
-            The following is from [Patient Name, First]’s perspective unless
-            otherwise noted.
-          </h4>
-          <h4 className="textWhite">
-            [Patient Name, First], how many times has DHR directly or indirectly
-            interacted with you?
-          </h4>
-        </div>
-        <div className="interview_div1">
-          <div className="interview_line1">
-            <Label className="textWhite interview_title" for="">
-              [Patient Name, First] said:
-            </Label>
-            <TextareaAutosize              
-              className="interview_fieldData"
-              type="text"
-              id="interview_pg1_a"
-              name="interview_pg1_a"
-              onChange={handleFieldChange}
-              value={patientInterview_pg1.interview_pg1_a}
-            />
+      <div id="page-container">
+        <div id="content-wrap">
+          <Heading />
+          <div className="header">
+            <h2 className="textWhite">Interviews</h2>
+            <h5 className="textWhite">
+              Perspective from [Patient Name, First] [Patient Name, Last]:
+            </h5>
+            <h4 className="textWhite">
+              The following is from [Patient Name, First]’s perspective unless
+              otherwise noted.
+            </h4>
+            <h4 className="textWhite">
+              [Patient Name, First], how many times has DHR directly or
+              indirectly interacted with you?
+            </h4>
           </div>
-        </div>
-        <div>
-          <div className="div1Fields">
-            <div className="in1">
+          <div className="interview_div1">
+            <div className="interview_line1">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                id={item}
+                name="interview_pg1_a"
+                onChange={handleFieldChange}
+                onClick={convertIDfunc}
+                value={patientInterview_pg1.interview_pg1_a}
+              />
+            </div>
+          </div>
+          <div>
+            <div className="div1Fields">
+              {/* <div className="in1">
               <Label className="textWhite mr-2" for="firstName">
                 [User Name, First]’s Inference and Observations:
               </Label>
@@ -102,59 +134,22 @@ function InterviewPg1(props) {
                   Edit List
                 </Button>
               </div>
-            </div>
-            <div className="in1">
-              <Label className="textWhite title" for="caseNumber">
-                Additional Notes:
-              </Label>
-              <TextareaAutosize                
-              sclassName="fieldData2"
-                type="text"
-                id="caseNumber"
-              />
-              <div className="m-3">
-                <Button color="light" onClick={toggle3}>
-                  Add Notes to Gold
-                </Button>
-                <Modal
-                  isOpen={modal}
-                  fade={false}
-                  toggle={toggle3}
-                >
-                  <ModalHeader toggle={toggle3}>Add Notes to Gold</ModalHeader>
-                  <ModalBody>
-                  <div className="in1">
-                    <Label className=" title" for="caseNumber">
-                      Additional Notes:
-                    </Label>
-                    <TextareaAutosize                      
-                    className=""
-                      type="text"
-                      id="aditional_notes"
-                      name="aditional_notes"
-                      onChange={handleFieldChange}
-                    />
-                  </div>
-                  </ModalBody>
-                  <ModalFooter>
-                    <Button color="info" onClick={toggle3}>
-                      Cancel
-                    </Button>{" "}
-                    <Button color="info" onClick={toggle3}>
-                      Save
-                    </Button>
-                  </ModalFooter>
-                </Modal>
-              </div>
+            </div> */}
+
+              {/* <GoldNotes /> */}
             </div>
           </div>
         </div>
+        <div id="footer">
+          <ButtonNavigation
+            next={next}
+            updatePatient={updatePatient}
+            patient={props.patientId}
+            patientFamily_pg1={patientInterview_pg1}
+          />
+          <TermOfParentalRights />
+        </div>
       </div>
-      <div id="footer">
-      <ButtonNavigation next={next} />
-      <TermOfParentalRights />
-      </div>
-    </div>
     </>
   );
 }

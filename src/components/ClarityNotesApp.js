@@ -5,7 +5,8 @@ import "./ClarityNotesApp.scss"
 const ClarityNotes = (props) => {
   const isAuthenticated = () => sessionStorage.getItem("loggedUser") !== null;
   // const loggedUserId = sessionStorage.getItem("loggedUser");
-  const loggedUserId = 30;
+  const loggedUserId = 5;
+  const currentPatientId = 30;
 
   // const [hasUser, setHasUser] = useState(isAuthenticated());
   const [hasUser, setHasUser] = useState(isAuthenticated());
@@ -27,6 +28,7 @@ const ClarityNotes = (props) => {
         hasUser={hasUser}
         setUser={setUser}
         userId={loggedUserId}
+        currentPatientId={currentPatientId}
       />
     </>
   );
