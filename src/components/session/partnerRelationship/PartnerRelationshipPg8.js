@@ -1,85 +1,160 @@
-import React, {useState} from "react"; 
+import React, { useState, useEffect } from "react";
 import { Label } from "reactstrap";
-import Heading from '../../shared/PsychologicalHeading';
-import TermOfParentalRights from '../../shared/TermOfParentalRights';
-import ButtonNavigation from '../../shared/ButtonNavigation';
-import TextareaAutosize from 'react-textarea-autosize';
-
+import Heading from "../../shared/PsychologicalHeading";
+import TermOfParentalRights from "../../shared/TermOfParentalRights";
+import ButtonNavigation from "../../shared/ButtonNavigation";
+import TextareaAutosize from "react-textarea-autosize";
+import DataManager from "../../../data_module/DataManager";
+import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 87
 
 function PartnerRelationshipPg8(props) {
-
-  const [patientPartnerRelationshipPg8, setPatientPartnerRelationshipPg8] = useState({
+  const [item, setItem] = useState("");
+  const [
+    patientPartnerRelationshipPg8,
+    setPatientPartnerRelationshipPg8,
+  ] = useState({
     partner_relationship_pg8_a: "",
     partner_relationship_pg8_b: "",
     partner_relationship_pg8_c: "",
-  })
+  });
 
   const next = "/partner_relationship_pg_9";
 
   const handleFieldChange = (e) => {
-    setPatientPartnerRelationshipPg8({ ...patientPartnerRelationshipPg8, [e.target.name]: e.target.value});
-  }
+    setPatientPartnerRelationshipPg8({
+      ...patientPartnerRelationshipPg8,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-return (
-    <>  
-    <div id="page-container">
+  const convertIDfunc = (e) => {
+    const fieldID = convertID.convertID(e);
+    setItem(fieldID);
+  };
+
+  //CRUD Function Start
+
+  const updatePatient = () => {
+    const editedPatient = {
+      id: props.patientId,
+      partner_relationship_pg8_a:
+        patientPartnerRelationshipPg8.partner_relationship_pg8_a,
+      partner_relationship_pg8_b:
+        patientPartnerRelationshipPg8.partner_relationship_pg8_b,
+      partner_relationship_pg8_c:
+        patientPartnerRelationshipPg8.partner_relationship_pg8_c,
+    };
+
+    DataManager.update("patients", editedPatient).then(() => {});
+  };
+
+  //CRUD Function END
+
+  const getData = () => {
+    DataManager.getPatient(props.patientId).then((patientInfo) => {
+      const raw = {
+        ...patientInfo,
+      };
+
+      const allowed = [
+        "partner_relationship_pg8_a",
+        "partner_relationship_pg8_b",
+        "partner_relationship_pg8_c",
+      ];
+      const filtered = Object.keys(raw)
+        .filter((key) => allowed.includes(key))
+        .reduce((obj, key) => {
+          obj[key] = raw[key];
+          return obj;
+        }, {});
+
+      setPatientPartnerRelationshipPg8(filtered);
+    });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  return (
+    <>
+      <div id="page-container">
         <Heading />
-      <div id="content-wrap">
-        <h2 className="textWhite text-center mb-4">PARTNER RELATIONSHIP</h2>
-        <div className="questionsContainer text-center">
-          <h4 className="textWhite centerItem">Did [NAME] check or control your cell phone, emails, or text messages?</h4>
-          <div className="interview_div1">
-        <div className="interview_line1 mb-4">
-          <Label className="textWhite interview_title" for="">
-            [Patient Name, First] said:
-          </Label>
-          <TextareaAutosize            
-            className="fieldData"
-            type="text"
-            id="partner_relationship_pg8_a"
-            name="partner_relationship_pg8_a"
-            onChange={handleFieldChange}
-            value={patientPartnerRelationshipPg8.partner_relationship_pg8_a}
-          />
-        </div>
-        <h4 className="textWhite centerItem">Did [NAME] exhibit demeaning name calling or comments towards you?</h4>
-        <div className="interview_line1 mb-4">
-          <Label className="textWhite interview_title" for="">
-            [Patient Name, First] said:
-          </Label>
-          <TextareaAutosize            
-            className="fieldData"
-            type="text"
-            id="partner_relationship_pg8_b"
-            name="partner_relationship_pg8_b"
-            onChange={handleFieldChange}
-            value={patientPartnerRelationshipPg8.partner_relationship_pg8_b}
-          />
-        </div>
-        <h4 className="textWhite centerItem">Did [NAME] blame you for all conflicts?</h4>
-        <div className="interview_line1 mb-4">
-          <Label className="textWhite interview_title" for="">
-            [Patient Name, First] said:
-          </Label>
-          <TextareaAutosize             
-            className="fieldData"
-            type="text"
-            id="partner_relationship_pg8_c"
-            name="partner_relationship_pg8_c"
-            onChange={handleFieldChange}
-            value={patientPartnerRelationshipPg8.partner_relationship_pg8_c}
-          />
+        <div id="content-wrap">
+          <h2 className="textWhite text-center mb-4">PARTNER RELATIONSHIP</h2>
+          <div className="questionsContainer text-center">
+            <h4 className="textWhite centerItem">
+              Did [NAME] check or control your cell phone, emails, or text
+              messages?
+            </h4>
+            <div className="interview_div1">
+              <div className="interview_line1 mb-4">
+                <Label className="textWhite interview_title" for="">
+                  [Patient Name, First] said:
+                </Label>
+                <TextareaAutosize
+                  className="fieldData"
+                  type="text"
+                  id="partner_relationship_pg8_a"
+                  name="partner_relationship_pg8_a"
+                  onChange={handleFieldChange}
+                  value={
+                    patientPartnerRelationshipPg8.partner_relationship_pg8_a
+                  }
+                />
+              </div>
+              <h4 className="textWhite centerItem">
+                Did [NAME] exhibit demeaning name calling or comments towards
+                you?
+              </h4>
+              <div className="interview_line1 mb-4">
+                <Label className="textWhite interview_title" for="">
+                  [Patient Name, First] said:
+                </Label>
+                <TextareaAutosize
+                  className="fieldData"
+                  type="text"
+                  id="partner_relationship_pg8_b"
+                  name="partner_relationship_pg8_b"
+                  onChange={handleFieldChange}
+                  value={
+                    patientPartnerRelationshipPg8.partner_relationship_pg8_b
+                  }
+                />
+              </div>
+              <h4 className="textWhite centerItem">
+                Did [NAME] blame you for all conflicts?
+              </h4>
+              <div className="interview_line1 mb-4">
+                <Label className="textWhite interview_title" for="">
+                  [Patient Name, First] said:
+                </Label>
+                <TextareaAutosize
+                  className="fieldData"
+                  type="text"
+                  id="partner_relationship_pg8_c"
+                  name="partner_relationship_pg8_c"
+                  onChange={handleFieldChange}
+                  value={
+                    patientPartnerRelationshipPg8.partner_relationship_pg8_c
+                  }
+                />
+              </div>
+            </div>
+          </div>
+          <div id="footer">
+            <ButtonNavigation
+              next={next}
+              updatePatient={updatePatient}
+              patient={props.patientId}
+              patientNotes={patientPartnerRelationshipPg8}
+            />
+            <TermOfParentalRights />
+          </div>
         </div>
       </div>
-        </div>
-        <div id="footer">
-          <ButtonNavigation next={next}  />
-          <TermOfParentalRights />
-        </div>
-      </div>
-    </div>
     </>
   );
 }
