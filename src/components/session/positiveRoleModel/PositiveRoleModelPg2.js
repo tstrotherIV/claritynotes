@@ -233,7 +233,6 @@ function PositiveRoleModelPg2(props) {
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientPositiveRoleModelPg2}
-            />{" "}
             />
             <TermOfParentalRights />
           </div>
