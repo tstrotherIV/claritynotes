@@ -1,270 +1,2258 @@
-
-import React from "react";
-import { Table } from 'reactstrap';
-import Heading from '../../shared/PsychologicalHeading';
+import React, { useState, useEffect } from "react";
+import { Table } from "reactstrap";
+import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
+import DataManager from "../../../data_module/DataManager";
+import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 117
 
 function MillonClinicalMultiaxialInventoryIVPg2(props) {
-    const next = "/rorschach_performance_assessment_system"
-    return (
-        <>
-        <div id="page-container">
-          <div id="content-wrap">
-          <Heading />
-      <div className="ml-5 mr-5 mt-3">
-        <div className="d-flex flex-wrap text-white align-items-baseline">
-                <h3 className="mb-1 col-2">Test Results</h3>
-                <h4 className="mb-3">Millon Clinical Multiaxial Inventory-IV (MCMI-IV) </h4>
-        </div>
-        <div className="text-white d-flex flex-wrap justify-content-center">
-            <div className="col-2">
-            <p>The Millon Clinical Multiaxial Inventory-IV (MCMI-IV) was administered to assess [Patient Name, First] [Patient Name, Last]'s
-            general psychological functioning.
-            </p>
-            </div>
-            <div className="ml-3">
-            <Table>
-            <thead className="tableHeader text-center" >
-                <tr>
-                <th></th>
-                <th className="millonWideWidth"></th>
-                <th className="m-0 customPadding millonWidth">Raw</th>
-                <th className="m-0 customPadding millonWidth">PR</th>
-                <th className="m-0 customPadding millonWidth">BR</th>
-                </tr>
-            </thead>
-            <tbody className="">
-                <tr>
-                    <th scope="row" className="m-0 customPadding millonWidth">6B</th>
-                    <td className="m-0 p-0"><strong>Sadistic</strong></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">6B.1</th>
-                    <td className="m-0 p-0">Expressively Precipitate</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">6B.2</th>
-                    <td className="m-0 p-0">Interpersonally Abrasive</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">6B.3</th>
-                    <td className="m-0 p-0">Eruptive Architecture</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">7</th>
-                    <td className="m-0 p-0"><strong>Complusive</strong></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">7.1</th>
-                    <td className="m-0 p-0">Expressively Disciplined</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">7.2</th>
-                    <td className="m-0 p-0">Cognitively Constricted</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">7.3</th>
-                    <td className="m-0 p-0">Reliable Self Image</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">8A</th>
-                    <td className="m-0 p-0"><strong>Negativistic</strong></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">8A.1</th>
-                    <td className="m-0 p-0">Expressively Embittered</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">8A.2</th>
-                    <td className="m-0 p-0">Discontented Self Image</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">8A.3</th>
-                    <td className="m-0 p-0">Temperamentally Irrational</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">8B</th>
-                    <td className="m-0 p-0"><strong>Masochistic</strong></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">8B.1</th>
-                    <td className="m-0 p-0">Underserving Self Image</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">8B.2</th>
-                    <td className="m-0 p-0">Inverted Architecture</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">8B.3</th>
-                    <td className="m-0 p-0">Temperamentally Dysphoric</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>       
-            </tbody>
-            </Table>
-            </div> 
-            <div className="ml-3">
-            <Table>
-            <thead className="tableHeader text-center" >
-                <tr>
-                <th></th>
-                <th className="millonWideWidth"></th>
-                <th className="m-0 customPadding millonWidth">Raw</th>
-                <th className="m-0 customPadding millonWidth">PR</th>
-                <th className="m-0 customPadding millonWidth">BR</th>
-                </tr>
-            </thead>
-            <tbody className="">
-                <tr>
-                    <th scope="row" className="m-0 customPadding millonWidth">S</th>
-                    <td className="m-0 p-0"><strong>Schizotypal</strong></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">S.1</th>
-                    <td className="m-0 p-0">Cognitively Circumstantial</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">S.2</th>
-                    <td className="m-0 p-0">Estranged Self Image</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">S.3</th>
-                    <td className="m-0 p-0">Chaotic Content</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">C</th>
-                    <td className="m-0 p-0"><strong>Bordeline</strong></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">C.1</th>
-                    <td className="m-0 p-0">Uncertain Self Image</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">C.2</th>
-                    <td className="m-0 p-0">Split Architecture</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">C.3</th>
-                    <td className="m-0 p-0">Temperamentally Labile</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">P</th>
-                    <td className="m-0 p-0"><strong>Paranoid</strong></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">P.1</th>
-                    <td className="m-0 p-0">Expressively</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">P.2</th>
-                    <td className="m-0 p-0">Cognitively Mistrustful</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                <tr>
-                    <th scope="row" className="m-0 customPadding">P.3</th>
-                    <td className="m-0 p-0">Projection Dynamics</td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                    <td className="m-0 p-0"></td>
-                </tr>
-                
-                   
-            </tbody>
-            </Table>
-            </div> 
+  const [item, setItem] = useState("");
+  const [
+    patientMillonClinicalMultiaxialInventoryIVPg2,
+    setPatientMillonClinicalMultiaxialInventoryIVPg2,
+  ] = useState({
+    millon_clinical_multiaxial_inventory_iv_pg2_a: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_b: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_c: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_d: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_e: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_f: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_g: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_h: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_i: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_j: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_k: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_l: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_m: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_n: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_o: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_p: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_q: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_r: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_s: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_t: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_u: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_v: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_w: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_x: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_y: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_z: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_aa: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_bb: false,
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_a: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_b: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_c: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_d: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_e: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_f: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_g: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_h: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_i: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_j: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_k: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_l: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_m: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_n: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_o: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_p: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_q: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_r: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_s: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_t: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_u: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_v: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_w: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_x: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_y: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_z: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_aa: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_Raw_bb: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_a: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_b: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_c: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_d: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_e: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_f: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_g: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_h: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_i: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_j: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_k: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_l: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_m: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_n: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_o: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_p: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_q: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_r: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_s: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_t: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_u: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_v: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_w: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_x: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_y: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_z: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_aa: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_PR_bb: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_a: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_b: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_c: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_d: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_e: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_f: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_g: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_h: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_i: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_j: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_k: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_l: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_m: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_n: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_o: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_p: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_q: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_r: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_s: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_t: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_u: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_v: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_w: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_x: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_y: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_z: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_aa: "",
+    millon_clinical_multiaxial_inventory_iv_pg2_BR_bb: "",
+  });
 
-        </div>
-        </div>
+  const next = "/rorschach_performance_assessment_system";
+
+  const handleFieldChange = (e) => {
+    const target = e.target;
+
+    setPatientMillonClinicalMultiaxialInventoryIVPg2({
+      ...patientMillonClinicalMultiaxialInventoryIVPg2,
+      [e.target.name]:
+        e.target.type === "number"
+          ? parseInt(e.target.value)
+          : target.type === "checkbox"
+          ? target.checked
+          : target.value,
+    });
+  };
+
+  const convertIDfunc = (e) => {
+    const fieldID = convertID.convertID(e);
+    setItem(fieldID);
+  };
+
+  //CRUD Function Start
+
+  const updatePatient = () => {
+    const editedPatient = {
+      id: props.patientId,
+      millon_clinical_multiaxial_inventory_iv_pg2_a:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_a,
+      millon_clinical_multiaxial_inventory_iv_pg2_b:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_b,
+      millon_clinical_multiaxial_inventory_iv_pg2_c:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_c,
+      millon_clinical_multiaxial_inventory_iv_pg2_d:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_d,
+      millon_clinical_multiaxial_inventory_iv_pg2_e:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_e,
+      millon_clinical_multiaxial_inventory_iv_pg2_f:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_f,
+      millon_clinical_multiaxial_inventory_iv_pg2_g:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_g,
+      millon_clinical_multiaxial_inventory_iv_pg2_h:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_h,
+      millon_clinical_multiaxial_inventory_iv_pg2_i:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_i,
+      millon_clinical_multiaxial_inventory_iv_pg2_j:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_j,
+      millon_clinical_multiaxial_inventory_iv_pg2_k:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_k,
+      millon_clinical_multiaxial_inventory_iv_pg2_l:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_l,
+      millon_clinical_multiaxial_inventory_iv_pg2_m:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_m,
+      millon_clinical_multiaxial_inventory_iv_pg2_n:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_n,
+      millon_clinical_multiaxial_inventory_iv_pg2_o:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_o,
+      millon_clinical_multiaxial_inventory_iv_pg2_p:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_p,
+      millon_clinical_multiaxial_inventory_iv_pg2_q:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_q,
+      millon_clinical_multiaxial_inventory_iv_pg2_r:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_r,
+      millon_clinical_multiaxial_inventory_iv_pg2_s:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_s,
+      millon_clinical_multiaxial_inventory_iv_pg2_t:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_t,
+      millon_clinical_multiaxial_inventory_iv_pg2_u:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_u,
+      millon_clinical_multiaxial_inventory_iv_pg2_v:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_v,
+      millon_clinical_multiaxial_inventory_iv_pg2_w:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_w,
+      millon_clinical_multiaxial_inventory_iv_pg2_x:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_x,
+      millon_clinical_multiaxial_inventory_iv_pg2_y:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_y,
+      millon_clinical_multiaxial_inventory_iv_pg2_z:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_z,
+      millon_clinical_multiaxial_inventory_iv_pg2_aa:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_aa,
+      millon_clinical_multiaxial_inventory_iv_pg2_bb:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_bb,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_a:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_a,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_b:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_b,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_c:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_c,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_d:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_d,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_e:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_e,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_f:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_f,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_g:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_g,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_h:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_h,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_i:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_i,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_j:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_j,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_k:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_k,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_l:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_l,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_m:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_m,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_n:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_n,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_o:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_o,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_p:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_p,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_q:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_q,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_r:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_r,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_s:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_s,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_t:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_t,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_u:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_u,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_v:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_v,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_w:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_w,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_x:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_x,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_y:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_y,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_z:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_z,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_aa:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_aa,
+      millon_clinical_multiaxial_inventory_iv_pg2_Raw_bb:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_bb,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_a:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_a,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_b:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_b,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_c:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_c,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_d:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_d,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_e:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_e,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_f:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_f,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_g:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_g,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_h:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_h,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_i:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_i,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_j:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_j,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_k:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_k,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_l:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_l,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_m:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_m,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_n:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_n,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_o:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_o,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_p:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_p,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_q:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_q,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_r:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_r,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_s:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_s,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_t:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_t,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_u:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_u,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_v:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_v,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_w:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_w,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_x:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_x,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_y:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_y,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_z:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_z,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_aa:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_aa,
+      millon_clinical_multiaxial_inventory_iv_pg2_PR_bb:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_bb,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_a:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_a,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_b:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_b,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_c:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_c,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_d:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_d,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_e:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_e,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_f:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_f,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_g:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_g,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_h:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_h,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_i:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_i,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_j:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_j,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_k:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_k,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_l:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_l,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_m:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_m,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_n:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_n,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_o:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_o,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_p:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_p,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_q:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_q,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_r:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_r,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_s:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_s,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_t:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_t,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_u:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_u,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_v:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_v,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_w:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_w,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_x:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_x,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_y:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_y,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_z:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_z,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_aa:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_aa,
+      millon_clinical_multiaxial_inventory_iv_pg2_BR_bb:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_bb,
+    };
+
+    DataManager.update("patients", editedPatient).then(() => {});
+  };
+
+  //CRUD Function END
+
+  const getData = () => {
+    DataManager.getPatient(props.patientId).then((patientInfo) => {
+      const raw = {
+        ...patientInfo,
+      };
+
+      const allowed = [
+        "millon_clinical_multiaxial_inventory_iv_pg2_a",
+        "millon_clinical_multiaxial_inventory_iv_pg2_b",
+        "millon_clinical_multiaxial_inventory_iv_pg2_c",
+        "millon_clinical_multiaxial_inventory_iv_pg2_d",
+        "millon_clinical_multiaxial_inventory_iv_pg2_e",
+        "millon_clinical_multiaxial_inventory_iv_pg2_f",
+        "millon_clinical_multiaxial_inventory_iv_pg2_g",
+        "millon_clinical_multiaxial_inventory_iv_pg2_h",
+        "millon_clinical_multiaxial_inventory_iv_pg2_i",
+        "millon_clinical_multiaxial_inventory_iv_pg2_j",
+        "millon_clinical_multiaxial_inventory_iv_pg2_k",
+        "millon_clinical_multiaxial_inventory_iv_pg2_l",
+        "millon_clinical_multiaxial_inventory_iv_pg2_m",
+        "millon_clinical_multiaxial_inventory_iv_pg2_n",
+        "millon_clinical_multiaxial_inventory_iv_pg2_o",
+        "millon_clinical_multiaxial_inventory_iv_pg2_p",
+        "millon_clinical_multiaxial_inventory_iv_pg2_q",
+        "millon_clinical_multiaxial_inventory_iv_pg2_r",
+        "millon_clinical_multiaxial_inventory_iv_pg2_s",
+        "millon_clinical_multiaxial_inventory_iv_pg2_t",
+        "millon_clinical_multiaxial_inventory_iv_pg2_u",
+        "millon_clinical_multiaxial_inventory_iv_pg2_v",
+        "millon_clinical_multiaxial_inventory_iv_pg2_w",
+        "millon_clinical_multiaxial_inventory_iv_pg2_x",
+        "millon_clinical_multiaxial_inventory_iv_pg2_y",
+        "millon_clinical_multiaxial_inventory_iv_pg2_z",
+        "millon_clinical_multiaxial_inventory_iv_pg2_aa",
+        "millon_clinical_multiaxial_inventory_iv_pg2_bb",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_a",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_b",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_c",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_d",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_e",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_f",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_g",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_h",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_i",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_j",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_k",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_l",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_m",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_n",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_o",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_p",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_q",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_r",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_s",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_t",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_u",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_v",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_w",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_x",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_y",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_z",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_aa",
+        "millon_clinical_multiaxial_inventory_iv_pg2_Raw_bb",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_a",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_b",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_c",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_d",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_e",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_f",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_g",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_h",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_i",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_j",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_k",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_l",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_m",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_n",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_o",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_p",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_q",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_r",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_s",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_t",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_u",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_v",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_w",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_x",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_y",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_z",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_aa",
+        "millon_clinical_multiaxial_inventory_iv_pg2_PR_bb",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_a",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_b",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_c",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_d",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_e",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_f",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_g",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_h",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_i",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_j",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_k",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_l",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_m",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_n",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_o",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_p",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_q",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_r",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_s",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_t",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_u",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_v",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_w",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_x",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_y",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_z",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_aa",
+        "millon_clinical_multiaxial_inventory_iv_pg2_BR_bb",
+      ];
+      const filtered = Object.keys(raw)
+        .filter((key) => allowed.includes(key))
+        .reduce((obj, key) => {
+          obj[key] = raw[key];
+          return obj;
+        }, {});
+
+      setPatientMillonClinicalMultiaxialInventoryIVPg2(filtered);
+    });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  return (
+    <>
+      <div id="page-container">
+        <div id="content-wrap">
+          <Heading />
+          <div className="ml-5 mr-5 mt-3">
+            <div className="d-flex flex-wrap text-white align-items-baseline">
+              <h3 className="mb-1 col-2">Test Results</h3>
+              <h4 className="mb-3">
+                Millon Clinical Multiaxial Inventory-IV (MCMI-IV){" "}
+              </h4>
+            </div>
+            <div className="text-white d-flex flex-wrap justify-content-center">
+              <div className="col-2">
+                <p>
+                  The Millon Clinical Multiaxial Inventory-IV (MCMI-IV) was
+                  administered to assess [Patient Name, First] [Patient Name,
+                  Last]'s general psychological functioning.
+                </p>
+              </div>
+              <div className="ml-3">
+                <Table>
+                  <thead className="tableHeader text-center">
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      <th className="millonWideWidth"></th>
+                      <th className="m-0 customPadding millonWidth">Raw</th>
+                      <th className="m-0 customPadding millonWidth">PR</th>
+                      <th className="m-0 customPadding millonWidth">BR</th>
+                    </tr>
+                  </thead>
+                  <tbody className="">
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_a"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_a
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding millonWidth">
+                        6B
+                      </th>
+                      <td className="m-0 p-0">
+                        <strong>Sadistic</strong>
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_a"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_a
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_a"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_a
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_a"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_a
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_b"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_b
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        6B.1
+                      </th>
+                      <td className="m-0 p-0">Expressively Precipitate</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_b"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_b
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_b"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_b
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_b"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_b
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_c"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_c
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        6B.2
+                      </th>
+                      <td className="m-0 p-0">Interpersonally Abrasive</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_c"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_c
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_c"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_c
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_c"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_c
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_d"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_d
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        6B.3
+                      </th>
+                      <td className="m-0 p-0">Eruptive Architecture</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_d"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_d
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_d"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_d
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_d"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_d
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_e"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_e
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        7
+                      </th>
+                      <td className="m-0 p-0">
+                        <strong>Complusive</strong>
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_e"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_e
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_e"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_e
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_e"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_e
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_f"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_f
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        7.1
+                      </th>
+                      <td className="m-0 p-0">Expressively Disciplined</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_f"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_f
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_f"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_f
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_f"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_f
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_g"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_g
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        7.2
+                      </th>
+                      <td className="m-0 p-0">Cognitively Constricted</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_g"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_g
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_g"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_g
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_g"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_g
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_h"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_h
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        7.3
+                      </th>
+                      <td className="m-0 p-0">Reliable Self Image</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_h"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_h
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_h"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_h
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_h"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_h
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_i"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_i
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        8A
+                      </th>
+                      <td className="m-0 p-0">
+                        <strong>Negativistic</strong>
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_i"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_i
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_i"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_i
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_i"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_i
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_j"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_j
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        8A.1
+                      </th>
+                      <td className="m-0 p-0">Expressively Embittered</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_j"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_j
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_j"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_j
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_j"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_j
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_k"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_k
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        8A.2
+                      </th>
+                      <td className="m-0 p-0">Discontented Self Image</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_k"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_k
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_k"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_k
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_k"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_k
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_l"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_l
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        8A.3
+                      </th>
+                      <td className="m-0 p-0">Temperamentally Irrational</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_l"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_l
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_l"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_l
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_l"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_l
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_m"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_m
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        8B
+                      </th>
+                      <td className="m-0 p-0">
+                        <strong>Masochistic</strong>
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_m"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_m
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_m"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_m
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_m"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_m
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_n"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_n
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        8B.1
+                      </th>
+                      <td className="m-0 p-0">Underserving Self Image</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_n"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_n
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_n"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_n
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_n"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_n
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_o"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_o
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        8B.2
+                      </th>
+                      <td className="m-0 p-0">Inverted Architecture</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_o"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_o
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_o"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_o
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_o"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_o
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_p"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_p
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        8B.3
+                      </th>
+                      <td className="m-0 p-0">Temperamentally Dysphoric</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_p"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_p
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_p"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_p
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_p"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_p
+                          }
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </Table>
+              </div>
+              <div className="ml-3">
+                <Table>
+                  <thead className="tableHeader text-center">
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      <th className="millonWideWidth"></th>
+                      <th className="m-0 customPadding millonWidth">Raw</th>
+                      <th className="m-0 customPadding millonWidth">PR</th>
+                      <th className="m-0 customPadding millonWidth">BR</th>
+                    </tr>
+                  </thead>
+                  <tbody className="">
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_q"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_q
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding millonWidth">
+                        S
+                      </th>
+                      <td className="m-0 p-0">
+                        <strong>Schizotypal</strong>
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_q"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_q
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_q"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_q
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_q"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_q
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_r"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_r
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        S.1
+                      </th>
+                      <td className="m-0 p-0">Cognitively Circumstantial</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_r"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_r
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_r"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_r
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_r"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_r
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_s"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_s
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        S.2
+                      </th>
+                      <td className="m-0 p-0">Estranged Self Image</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_s"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_s
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_s"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_s
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_s"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_s
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_t"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_t
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        S.3
+                      </th>
+                      <td className="m-0 p-0">Chaotic Content</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_t"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_t
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_t"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_t
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_t"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_t
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_u"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_u
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        C
+                      </th>
+                      <td className="m-0 p-0">
+                        <strong>Bordeline</strong>
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_u"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_u
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_u"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_u
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_u"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_u
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_v"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_v
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        C.1
+                      </th>
+                      <td className="m-0 p-0">Uncertain Self Image</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_v"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_v
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_v"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_v
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_v"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_v
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_w"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_w
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        C.2
+                      </th>
+                      <td className="m-0 p-0">Split Architecture</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_w"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_w
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_w"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_w
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_w"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_w
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_x"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_x
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        C.3
+                      </th>
+                      <td className="m-0 p-0">Temperamentally Labile</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_x"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_x
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_x"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_x
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_x"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_x
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_y"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_y
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        P
+                      </th>
+                      <td className="m-0 p-0">
+                        <strong>Paranoid</strong>
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_y"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_y
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_y"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_y
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_y"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_y
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_z"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_z
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        P.1
+                      </th>
+                      <td className="m-0 p-0">Expressively</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_z"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_z
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_z"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_z
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_z"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_z
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_aa"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_aa
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        P.2
+                      </th>
+                      <td className="m-0 p-0">Cognitively Mistrustful</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_aa"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_aa
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_aa"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_aa
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_aa"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_aa
+                          }
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <input
+                          type="checkbox"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_bb"
+                          checked={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_bb
+                          }
+                          onChange={handleFieldChange}
+                        />
+                      </th>
+                      <th scope="row" className="m-0 customPadding">
+                        P.3
+                      </th>
+                      <td className="m-0 p-0">Projection Dynamics</td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_bb"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_Raw_bb
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_PR_bb"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_PR_bb
+                          }
+                        />
+                      </td>
+                      <td className="m-0 p-0">
+                        <input
+                          className="form-control"
+                          min={0}
+                          max={10}
+                          type="number"
+                          id={item}
+                          name="millon_clinical_multiaxial_inventory_iv_pg2_BR_bb"
+                          onChange={handleFieldChange}
+                          value={
+                            patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_bb
+                          }
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </Table>
+              </div>
+            </div>
+          </div>
         </div>
         <div id="footer">
-         <ButtonNavigation next={next}  />
+          <ButtonNavigation
+            next={next}
+            updatePatient={updatePatient}
+            patient={props.patientId}
+            patientNotes={patientMillonClinicalMultiaxialInventoryIVPg2}
+          />
           <TermOfParentalRights />
         </div>
-    </div>
+      </div>
     </>
-
-    );
+  );
 }
 
 export default MillonClinicalMultiaxialInventoryIVPg2;
