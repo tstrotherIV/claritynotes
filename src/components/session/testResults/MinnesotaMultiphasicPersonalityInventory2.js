@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Input, Label } from "reactstrap";
 import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
-
+import DataManager from "../../../data_module/DataManager";
+import convertID from "../../../helpers/formFieldIdConverter";
 //pdf page 118
 
 function MinnesotaMultiphasicPersonalityInventory2(props) {
+  const [item, setItem] = useState("");
   const [
     patientMinnesotaMultiphasicPersonalityInventory2,
     setPatientMinnesotaMultiphasicPersonalityInventory2,
@@ -18,11 +20,62 @@ function MinnesotaMultiphasicPersonalityInventory2(props) {
   const next = "/millon_clinical_multiaxial_inventory_iv_pg_1";
 
   const handleFieldChange = (e) => {
+    const target = e.target;
+
     setPatientMinnesotaMultiphasicPersonalityInventory2({
       ...patientMinnesotaMultiphasicPersonalityInventory2,
-      [e.target.name]: e.target.value,
+      [e.target.name]:
+        e.target.type === "number"
+          ? parseInt(e.target.value)
+          : target.type === "checkbox"
+          ? target.checked
+          : target.value,
     });
   };
+
+  const convertIDfunc = (e) => {
+    const fieldID = convertID.convertID(e);
+    setItem(fieldID);
+  };
+
+  //CRUD Function Start
+
+  const updatePatient = () => {
+    const editedPatient = {
+      id: props.patientId,
+      minnesota_multiphasic_personality_inventory_2_a: patientMinnesotaMultiphasicPersonalityInventory2.minnesota_multiphasic_personality_inventory_2_a,
+      minnesota_multiphasic_personality_inventory_2_b: patientMinnesotaMultiphasicPersonalityInventory2.minnesota_multiphasic_personality_inventory_2_b,
+    };
+
+    DataManager.update("patients", editedPatient).then(() => {});
+  };
+
+  //CRUD Function END
+
+  const getData = () => {
+    DataManager.getPatient(props.patientId).then((patientInfo) => {
+      const raw = {
+        ...patientInfo,
+      };
+
+      const allowed = [
+        "minnesota_multiphasic_personality_inventory_2_a",
+        "minnesota_multiphasic_personality_inventory_2_b",
+      ];
+      const filtered = Object.keys(raw)
+        .filter((key) => allowed.includes(key))
+        .reduce((obj, key) => {
+          obj[key] = raw[key];
+          return obj;
+        }, {});
+
+        setPatientMinnesotaMultiphasicPersonalityInventory2(filtered);
+    });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <>
@@ -51,7 +104,7 @@ function MinnesotaMultiphasicPersonalityInventory2(props) {
                   <Input
                     className="inputHeight m-2 col-6"
                     type="text"
-                    id="minnesota_multiphasic_personality_inventory_2_a"
+                    id={item}
                     name="minnesota_multiphasic_personality_inventory_2_a"
                     onChange={handleFieldChange}
                     value={
@@ -63,16 +116,12 @@ function MinnesotaMultiphasicPersonalityInventory2(props) {
                   <Input
                     className=""
                     type="checkbox"
-                    id="minnesota_multiphasic_personality_inventory_2_b"
+                    id={item}
                     name="minnesota_multiphasic_personality_inventory_2_b"
                     checked={
                       patientMinnesotaMultiphasicPersonalityInventory2.minnesota_multiphasic_personality_inventory_2_b
                     }
-                    onChange={(e) => {
-                      setPatientMinnesotaMultiphasicPersonalityInventory2(
-                        e.target.checked
-                      );
-                    }}
+                    onChange={handleFieldChange}
                   />
                   <Label for="" className="mt-3 ml-3">
                     <h5>L-Scale Was High</h5>
@@ -89,7 +138,12 @@ function MinnesotaMultiphasicPersonalityInventory2(props) {
             </div>
           </div>
           <div id="footer">
-            <ButtonNavigation next={next} />
+            <ButtonNavigation
+              next={next}
+              updatePatient={updatePatient}
+              patient={props.patientId}
+              patientNotes={patientMinnesotaMultiphasicPersonalityInventory2}
+            />
             <TermOfParentalRights />
           </div>
         </div>

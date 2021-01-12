@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Label } from "reactstrap";
 import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
+import DataManager from "../../../data_module/DataManager";
+import convertID from "../../../helpers/formFieldIdConverter";
 
 //pdf page 120
 
 function IowaGamblingTask(props) {
-    
+  const [item, setItem] = useState("");
   const [patientIowaGamblingTask, setPatientIowaGamblingTask] = useState({
     iowa_gambling_task_a: "",
     iowa_gambling_task_b: "",
@@ -17,11 +19,67 @@ function IowaGamblingTask(props) {
   const next = "/minnesota_multiphasic_personality_inventory_2";
 
   const handleFieldChange = (e) => {
+    const target = e.target;
+
     setPatientIowaGamblingTask({
       ...patientIowaGamblingTask,
-      [e.target.name]: e.target.value,
+      [e.target.name]:
+        e.target.type === "number"
+          ? parseInt(e.target.value)
+          : target.type === "checkbox"
+          ? target.checked
+          : target.value,
     });
   };
+
+  const convertIDfunc = (e) => {
+    const fieldID = convertID.convertID(e);
+    setItem(fieldID);
+  };
+
+  //CRUD Function Start
+
+  const updatePatient = () => {
+    const editedPatient = {
+      id: props.patientId,
+      iowa_gambling_task_a:
+      patientIowaGamblingTask.iowa_gambling_task_a,
+        iowa_gambling_task_b:
+        patientIowaGamblingTask.iowa_gambling_task_b,
+        iowa_gambling_task_c:
+        patientIowaGamblingTask.iowa_gambling_task_c
+    };
+
+    DataManager.update("patients", editedPatient).then(() => {});
+  };
+
+  //CRUD Function END
+
+  const getData = () => {
+    DataManager.getPatient(props.patientId).then((patientInfo) => {
+      const raw = {
+        ...patientInfo,
+      };
+
+      const allowed = [
+        "iowa_gambling_task_a",
+        "iowa_gambling_task_b",
+        "iowa_gambling_task_c"
+      ];
+      const filtered = Object.keys(raw)
+        .filter((key) => allowed.includes(key))
+        .reduce((obj, key) => {
+          obj[key] = raw[key];
+          return obj;
+        }, {});
+
+        setPatientIowaGamblingTask(filtered);
+    });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <>
@@ -51,7 +109,7 @@ function IowaGamblingTask(props) {
                   <select
                     className="m-1"
                     required
-                    id="iowa_gambling_task_a"
+                    id={item}
                     name="iowa_gambling_task_a"
                     onChange={handleFieldChange}
                     value={patientIowaGamblingTask.iowa_gambling_task_a}
@@ -71,8 +129,8 @@ function IowaGamblingTask(props) {
                   <Label>T-Score: </Label>
                   <input
                     className="m-3 col-4 inputHeight"
-                    type="text"
-                    id="iowa_gambling_task_b"
+                    type="number"
+                    id={item}
                     name="iowa_gambling_task_b"
                     onChange={handleFieldChange}
                     value={patientIowaGamblingTask.iowa_gambling_task_b}
@@ -82,8 +140,8 @@ function IowaGamblingTask(props) {
                   <Label>Percentile:</Label>
                   <input
                     className="m-3 col-4 inputHeight"
-                    type="text"
-                    id="iowa_gambling_task_c"
+                    type="number"
+                    id={item}
                     name="iowa_gambling_task_c"
                     onChange={handleFieldChange}
                     value={patientIowaGamblingTask.iowa_gambling_task_c}
@@ -108,7 +166,12 @@ function IowaGamblingTask(props) {
             </div>
           </div>
           <div id="footer">
-            <ButtonNavigation next={next} />
+            <ButtonNavigation
+              next={next}
+              updatePatient={updatePatient}
+              patient={props.patientId}
+              patientNotes={patientIowaGamblingTask}
+            />
             <TermOfParentalRights />
           </div>
         </div>
