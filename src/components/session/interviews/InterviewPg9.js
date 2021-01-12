@@ -29,7 +29,6 @@ function Interview_Pg9(props) {
   const convertIDfunc = (e) => {
     const fieldID = convertID.convertID(e);
     setItem(fieldID);
-    console.log("input clicked");
   };
 
   //CRUD Function Start

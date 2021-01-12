@@ -82,7 +82,6 @@ function PsychologicalEvaluation(props) {
     };
 
     DataManager.update("patients", editedPatient).then(() => {
-      console.log(editedPatient);
     });
   };
 
@@ -428,37 +427,6 @@ function PsychologicalEvaluation(props) {
               patientNotes={patientPsychological_Evaluation}
             />
           </div>
-          {/* <div id="footer">
-            <div className="buttonSection">
-              <div className="idBox textWhite p-3"></div>
-              <Button
-                color="info"
-                className="button"
-                onClick={() => {
-                  props.history.push(`/sessionStep1`);
-                }}
-              >
-                Previous
-              </Button>
-              <Button color="info" className="button">
-                Save
-              </Button>
-              <Button color="info" className="button" type="submit">
-                Submit
-              </Button>
-              <Button
-                color="info"
-                className="button"
-                onClick={() => {
-                  props.history.push(`/psychological_evaluation_family`);
-                }}
-              >
-                Next
-              </Button>
-              <div className="idBox textWhite p-3"></div>
-            </div>
-            <EmptyFooterSpace />
-          </div> */}
         </div>
       </div>
     </div>
