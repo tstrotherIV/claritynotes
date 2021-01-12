@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Label, Input } from "reactstrap";
 import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
+import DataManager from "../../../data_module/DataManager";
+import convertID from "../../../helpers/formFieldIdConverter";
 
 //pdf page 119
 
 function SubstanceAbuseSubtleScreeningInventory4(props) {
+  const [item, setItem] = useState("");
   const [
     patientSubstanceAbuseSubtleScreeningInventory4,
     setPatientSubstanceAbuseSubtleScreeningInventory4,
@@ -21,11 +24,70 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
   const next = "/iowa_gambling_task";
 
   const handleFieldChange = (e) => {
+    const target = e.target;
+
     setPatientSubstanceAbuseSubtleScreeningInventory4({
       ...patientSubstanceAbuseSubtleScreeningInventory4,
-      [e.target.name]: e.target.value,
+      [e.target.name]:
+        e.target.type === "number"
+          ? parseInt(e.target.value)
+          : target.type === "checkbox"
+          ? target.checked
+          : target.value,
     });
   };
+
+  const convertIDfunc = (e) => {
+    const fieldID = convertID.convertID(e);
+    setItem(fieldID);
+  };
+
+  //CRUD Function Start
+
+  const updatePatient = () => {
+    const editedPatient = {
+      id: props.patientId,
+      substance_abuse_subtle_screening_inventory_4_a:
+        patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_a,
+      substance_abuse_subtle_screening_inventory_4_b:
+        patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_b,
+      substance_abuse_subtle_screening_inventory_4_c:
+        patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_c,
+      substance_abuse_subtle_screening_inventory_4_d:
+        patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_d,
+    };
+
+    DataManager.update("patients", editedPatient).then(() => {});
+  };
+
+  //CRUD Function END
+
+  const getData = () => {
+    DataManager.getPatient(props.patientId).then((patientInfo) => {
+      const raw = {
+        ...patientInfo,
+      };
+
+      const allowed = [
+        "substance_abuse_subtle_screening_inventory_4_a",
+        "substance_abuse_subtle_screening_inventory_4_b",
+        "substance_abuse_subtle_screening_inventory_4_c",
+        "substance_abuse_subtle_screening_inventory_4_d",
+      ];
+      const filtered = Object.keys(raw)
+        .filter((key) => allowed.includes(key))
+        .reduce((obj, key) => {
+          obj[key] = raw[key];
+          return obj;
+        }, {});
+
+      setPatientSubstanceAbuseSubtleScreeningInventory4(filtered);
+    });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <>
@@ -43,16 +105,12 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
                 <Input
                   className=""
                   type="checkbox"
-                  id="substance_abuse_subtle_screening_inventory_4_a"
+                  id={item}
                   name="substance_abuse_subtle_screening_inventory_4_a"
                   checked={
                     patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_a
                   }
-                  onChange={(e) => {
-                    setPatientSubstanceAbuseSubtleScreeningInventory4(
-                      e.target.checked
-                    );
-                  }}
+                  onChange={handleFieldChange}
                 />
                 <Label>
                   [Patient Name, First] completed the Substance Abuse Subtle
@@ -73,11 +131,11 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
                   <TextareaAutosize
                     className="m-2 col-6 fieldData"
                     type="text"
-                    id="paulhus_deception_scale_b"
-                    name="paulhus_deception_scale_b"
+                    id={item}
+                    name="substance_abuse_subtle_screening_inventory_4_b"
                     onChange={handleFieldChange}
                     value={
-                        patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_b
+                      patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_b
                     }
                   />
                 </div>
@@ -85,16 +143,12 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
                   <Input
                     className=""
                     type="checkbox"
-                    id="substance_abuse_subtle_screening_inventory_4_c"
+                    id={item}
                     name="substance_abuse_subtle_screening_inventory_4_c"
                     checked={
                       patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_c
                     }
-                    onChange={(e) => {
-                      setPatientSubstanceAbuseSubtleScreeningInventory4(
-                        e.target.checked
-                      );
-                    }}
+                    onChange={handleFieldChange}
                   />
                   <Label className="col-10" for="">
                     [Patient Name, First] invalidated this instrument. [She]
@@ -108,16 +162,12 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
                   <Input
                     className=""
                     type="checkbox"
-                    id="substance_abuse_subtle_screening_inventory_4_d"
+                    id={item}
                     name="substance_abuse_subtle_screening_inventory_4_d"
                     checked={
                       patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_d
                     }
-                    onChange={(e) => {
-                      setPatientSubstanceAbuseSubtleScreeningInventory4(
-                        e.target.checked
-                      );
-                    }}
+                    onChange={handleFieldChange}
                   />
                   <Label className="col-10" for="">
                     [Patient Name, First] showed a significant level of
@@ -138,7 +188,13 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
             </div>
           </div>
           <div id="footer">
-            <ButtonNavigation next={next} />
+            <ButtonNavigation
+              next={next}
+              updatePatient={updatePatient}
+              patient={props.patientId}
+              patientNotes={patientSubstanceAbuseSubtleScreeningInventory4}
+            />{" "}
+            />
             <TermOfParentalRights />
           </div>
         </div>
