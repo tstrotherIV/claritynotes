@@ -18,6 +18,27 @@ export default {
   },
 
 
+  //Get all Patient Children
+  async getChildren(patientId) {
+    return fetch(`${remoteURL}/children?patientId=${patientId}`).then((result) =>
+      result.json()
+    );
+  },
+
+  //Get all Patient Siblings
+  async getSiblings(patientId) {
+    return fetch(`${remoteURL}/siblings?patientId=${patientId}`).then((result) =>
+      result.json()
+    );
+  },
+
+  //Get all Patient Guardians
+  async getGuardians(patientId) {
+    return fetch(`${remoteURL}/guardians?patientId=${patientId}`).then((result) =>
+      result.json()
+    );
+  },
+
 // ALL CREATE METHODS
 
 // Method that will allow the creation of any element in the database

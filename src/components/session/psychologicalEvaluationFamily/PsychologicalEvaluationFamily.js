@@ -5,6 +5,8 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
+  Button,
+  CardDeck
 } from "reactstrap";
 
 import Heading from "../../shared/PsychologicalHeading";
@@ -13,9 +15,12 @@ import TextareaAutosize from "react-textarea-autosize";
 import EmptyFooterSpace from "./../../shared/EmptyFooterSpace";
 import DataManager from "../../../data_module/DataManager";
 import convertID from "../../../helpers/formFieldIdConverter";
+import GuardianCard from "../../guardians/guardians"
 
 function PsychologicalEvaluation_family(props) {
   const [item, setItem] = useState("");
+  const [newGuardian, setNewGuardian] = useState("");
+  const [patientGuardians, setPatientGuardians] = useState([]);
   const [patientParents, setPatientParents] = useState({
     patient_father_first_name: "",
     patient_father_last_name: "",
@@ -31,7 +36,6 @@ function PsychologicalEvaluation_family(props) {
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
 
-
   const convertIDfunc = (e) => {
     const fieldID = convertID.convertID(e);
     setItem(fieldID);
@@ -39,6 +43,32 @@ function PsychologicalEvaluation_family(props) {
 
   const handleFieldChange = (e) => {
     setPatientParents({ ...patientParents, [e.target.name]: e.target.value });
+  };
+
+  const handleGuardianChange = (e) => {
+    const target = e.target;
+    const value = target.value;
+    const name = target.name;
+
+    setNewGuardian({ ...newGuardian, [name]: value });
+  };
+
+  const addGuaridan = () => {
+    const editedGuardian = {
+      patientId: props.patientId,
+      patient_guardian_first_name: newGuardian.patient_guardian_first_name,
+      patient_guardian_last_name: newGuardian.patient_guardian_last_name,
+      patient_guardian_gender: newGuardian.patient_guardian_gender,
+    };
+    DataManager.post("guardians", editedGuardian).then(() => {
+      getGuardians();
+    });
+  };
+
+  const getGuardians = () => {
+    DataManager.getGuardians(props.patientId).then((guardian) => {
+      setPatientGuardians(guardian);
+    });
   };
 
   const updatePatient = () => {
@@ -53,26 +83,26 @@ function PsychologicalEvaluation_family(props) {
       patient_guardian_gender: patientParents.patient_guardian_gender,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {
-    });
+    DataManager.update("patients", editedPatient).then(() => {});
   };
 
   //CRUD Function END
 
   const getData = () => {
     DataManager.getPatient(props.patientId).then((patientInfo) => {
-      
       const raw = {
-        ...patientInfo
+        ...patientInfo,
       };
-      
-      const allowed = ['patient_father_first_name',
-        'patient_father_last_name',
-        'patient_mother_first_name',
-        'patient_mother_last_name',
-        'patient_guardian_first_name',
-        'patient_guardian_last_name',
-        'patient_guardian_gender'];
+
+      const allowed = [
+        "patient_father_first_name",
+        "patient_father_last_name",
+        "patient_mother_first_name",
+        "patient_mother_last_name",
+        "patient_guardian_first_name",
+        "patient_guardian_last_name",
+        "patient_guardian_gender",
+      ];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
         .reduce((obj, key) => {
@@ -80,12 +110,13 @@ function PsychologicalEvaluation_family(props) {
           return obj;
         }, {});
 
-        setPatientParents(filtered);
+      setPatientParents(filtered);
     });
   };
 
   useEffect(() => {
     getData();
+    getGuardians();
   }, []);
 
   return (
@@ -168,8 +199,7 @@ function PsychologicalEvaluation_family(props) {
                     type="text"
                     id={item}
                     name="patient_guardian_first_name"
-                    onChange={handleFieldChange}
-                    value={patientParents.patient_guardian_first_name}
+                    onChange={handleGuardianChange}
                     placeholder="Guardian First Name"
                     onClick={convertIDfunc}
                   />
@@ -184,8 +214,7 @@ function PsychologicalEvaluation_family(props) {
                     type="text"
                     id={item}
                     name="patient_guardian_last_name"
-                    onChange={handleFieldChange}
-                    value={patientParents.patient_guardian_last_name}
+                    onChange={handleGuardianChange}
                     placeholder="Guardian Last Name"
                     onClick={convertIDfunc}
                   />
@@ -200,34 +229,33 @@ function PsychologicalEvaluation_family(props) {
                       color="light"
                       className="dropdown text-center"
                       caret
-                      value={patientParents.patient_guardian_gender}
                     >
-                      {patientParents.patient_guardian_gender}
+                      {newGuardian.patient_guardian_gender}
                     </DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem
-                        onClick={handleFieldChange}
+                        onClick={handleGuardianChange}
                         name="patient_guardian_gender"
                         value="None Selected"
                       >
                         None Selected
                       </DropdownItem>
                       <DropdownItem
-                        onClick={handleFieldChange}
+                        onClick={handleGuardianChange}
                         name="patient_guardian_gender"
                         value="Female"
                       >
                         Female
                       </DropdownItem>
                       <DropdownItem
-                        onClick={handleFieldChange}
+                        onClick={handleGuardianChange}
                         name="patient_guardian_gender"
                         value="Male"
                       >
                         Male
                       </DropdownItem>
                       <DropdownItem
-                        onClick={handleFieldChange}
+                        onClick={handleGuardianChange}
                         name="patient_guardian_gender"
                         value="Other"
                       >
@@ -238,12 +266,21 @@ function PsychologicalEvaluation_family(props) {
                 </div>
                 <div className="text-center">
                   <div className="textWhite">
-                    <i className="fas fa-plus fa-lg mr-2"></i>Click to Add More
-                    Guardians
+                  <Button onClick={addGuaridan}>Add Guardian</Button>
                   </div>
                 </div>
               </div>
             </div>
+            <CardDeck className="guardianContainer mt-3">
+              {patientGuardians.map((guardian) => (
+                <GuardianCard
+                  key={guardian.id}
+                  guardian={guardian}
+                  getGuardians={getGuardians}
+                  {...props}
+                />
+              ))}
+            </CardDeck>
           </div>
           <div id="footer">
             <ButtonNavigation
