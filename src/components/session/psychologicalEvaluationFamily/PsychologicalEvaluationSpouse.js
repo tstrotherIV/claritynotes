@@ -6,6 +6,8 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
+  CardDeck,
+  Button,
 } from "reactstrap";
 import Heading from "../../shared/PsychologicalHeading";
 import ButtonNavigation from "../../shared/ButtonNavigation";
@@ -13,16 +15,12 @@ import TextareaAutosize from "react-textarea-autosize";
 import EmptyFooterSpace from "./../../shared/EmptyFooterSpace";
 import "./psychologicalEvaluationFamily.scss";
 import DataManager from "../../../data_module/DataManager";
+import SpouseCard from "../../spouse/spouse";
 
 function PsychologicalEvaluationSpouse(props) {
-  const [patientSpouse, setPatientSpouse] = useState({
-    patient_married: "",
-    spouse_first_name: "",
-    spouse_last_name: "",
-    spouse_gender: "",
-    spouse_dob: "",
-    patient_id: "",
-  });
+  const [newSpouse, setNewSpouse] = useState("");
+  const [patientSpouse, setPatientSpouse] = useState([]);
+  const [relationshipStatus, setrelationshipStatus] = useState(false);
 
   const next = "/psychological_evaluation_consent";
 
@@ -37,36 +35,51 @@ function PsychologicalEvaluationSpouse(props) {
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
 
-    setPatientSpouse({ ...patientSpouse, [name]: value });
+    setNewSpouse({ ...newSpouse, [name]: value });
   };
 
-  const updatePatient = () => {
+  const handleRelationshipChange = (e) => {
+    const target = e.target;
+    const value = target.value;
+    const name = target.name;
+
     const editedPatient = {
       id: props.patientId,
-      patient_married: patientSpouse.patient_married,
-      spouse_first_name: patientSpouse.spouse_first_name,
-      spouse_last_name: patientSpouse.spouse_last_name,
-      spouse_gender: patientSpouse.spouse_gender,
-      spouse_dob: patientSpouse.spouse_dob,
+      [name]: value,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient);
+
+    setrelationshipStatus({ ...relationshipStatus, [name]: value });
   };
 
-  //CRUD Function END
+  const addSpouse = () => {
+    const editedSpouse = {
+      patientId: props.patientId,
+      spouse_first_name: newSpouse.spouse_first_name,
+      spouse_last_name: newSpouse.spouse_last_name,
+      spouse_gender: newSpouse.spouse_gender,
+      spouse_dob: newSpouse.spouse_dob,
+    };
+
+    DataManager.post("spouses", editedSpouse).then(() => {
+      getSpouses();
+    });
+  };
+
+  const getSpouses = () => {
+    DataManager.getSpouses(props.patientId).then((spouse) => {
+      setPatientSpouse(spouse);
+    });
+  };
 
   const getData = () => {
     DataManager.getPatient(props.patientId).then((patientInfo) => {
-      
       const raw = {
-        ...patientInfo
+        ...patientInfo,
       };
-      
-      const allowed = ['patient_married',
-        'spouse_first_name',
-        'spouse_last_name',
-        'spouse_gender',
-        'spouse_dob'];
+
+      const allowed = ["patient_married"];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
         .reduce((obj, key) => {
@@ -74,12 +87,15 @@ function PsychologicalEvaluationSpouse(props) {
           return obj;
         }, {});
 
-        setPatientSpouse(filtered);
+      setrelationshipStatus(filtered);
     });
   };
 
+  const updatePatient = () => {};
+
   useEffect(() => {
     getData();
+    getSpouses();
   }, []);
 
   return (
@@ -97,34 +113,33 @@ function PsychologicalEvaluationSpouse(props) {
                   color="light"
                   className="dropdown text-center"
                   caret
-                  value={patientSpouse.patient_married}
                 >
-                  {patientSpouse.patient_married}
+                  {relationshipStatus.patient_married}
                 </DropdownToggle>
                 <DropdownMenu>
                   <DropdownItem
-                    onClick={handleFieldChange}
+                    onClick={handleRelationshipChange}
                     name="patient_married"
                     value="Married"
                   >
                     Married
                   </DropdownItem>
                   <DropdownItem
-                    onClick={handleFieldChange}
+                    onClick={handleRelationshipChange}
                     name="patient_married"
                     value="Single"
                   >
                     Single
                   </DropdownItem>
                   <DropdownItem
-                    onClick={handleFieldChange}
+                    onClick={handleRelationshipChange}
                     name="patient_married"
                     value="Divorced"
                   >
                     Divorced
                   </DropdownItem>
                   <DropdownItem
-                    onClick={handleFieldChange}
+                    onClick={handleRelationshipChange}
                     name="patient_married"
                     value="Seperated"
                   >
@@ -133,94 +148,116 @@ function PsychologicalEvaluationSpouse(props) {
                 </DropdownMenu>
               </Dropdown>
             </div>
-            <div className="line1">
-              <Label className="textWhite title" for="spouseFirstName">
-                Spouse
-              </Label>
-              <TextareaAutosize
-                className="fieldData"
-                id="spouse_first_name"
-                name="spouse_first_name"
-                onChange={handleFieldChange}
-                value={patientSpouse.spouse_first_name}
-                placeholder="Spouse First Name"
-              />
-            </div>
-            <div className="line1">
-              <Label className="textWhite title" for="spouseLastName"></Label>
-              <TextareaAutosize
-                className="fieldData"
-                type="text"
-                id="spouse_last_name"
-                name="spouse_last_name"
-                onChange={handleFieldChange}
-                value={patientSpouse.spouse_last_name}
-                placeholder="Spouse Last Name"
-              />
-            </div>
-            <div className="line1">
-              <Dropdown isOpen={dropdownOpen2} toggle={toggle2} className="">
-                <DropdownToggle
-                  color="light"
-                  className="dropdown text-center"
-                  caret
-                  value={patientSpouse.spouse_gender}
-                >
-                  {patientSpouse.spouse_gender}
-                </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem
-                    onClick={handleFieldChange}
-                    name="spouse_gender"
-                    value="None Selected"
+            {relationshipStatus.patient_married !== "Single" ? (
+              <section>
+                <div className="line1">
+                  <Label className="textWhite title" for="spouseFirstName">
+                    Spouse
+                  </Label>
+                  <TextareaAutosize
+                    className="fieldData"
+                    id="spouse_first_name"
+                    name="spouse_first_name"
+                    onChange={handleFieldChange}
+                    placeholder="Spouse First Name"
+                  />
+                </div>
+                <div className="line1">
+                  <Label
+                    className="textWhite title"
+                    for="spouseLastName"
+                  ></Label>
+                  <TextareaAutosize
+                    className="fieldData"
+                    type="text"
+                    id="spouse_last_name"
+                    name="spouse_last_name"
+                    onChange={handleFieldChange}
+                    placeholder="Spouse Last Name"
+                  />
+                </div>
+                <div className="line1">
+                  <Dropdown
+                    isOpen={dropdownOpen2}
+                    toggle={toggle2}
+                    className=""
                   >
-                    None Selected
-                  </DropdownItem>
-                  <DropdownItem
-                    onClick={handleFieldChange}
-                    name="spouse_gender"
-                    value="Female"
-                  >
-                    Female
-                  </DropdownItem>
-                  <DropdownItem
-                    onClick={handleFieldChange}
-                    name="spouse_gender"
-                    value="Male"
-                  >
-                    Male
-                  </DropdownItem>
-                  <DropdownItem
-                    onClick={handleFieldChange}
-                    name="spouse_gender"
-                    value="Other"
-                  >
-                    Other
-                  </DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
-            </div>
-            <div className="line1">
-              <Label className="textWhite title" for="">
-                DOB
-              </Label>
-              <Input
-                className="fieldData text-center col-8"
-                type="date"
-                id="spouse_dob"
-                name="spouse_dob"
-                onChange={handleFieldChange}
-                value={patientSpouse.spouse_dob}
-                placeholder="Date of Birth"
-              />
-            </div>
-            <div className="d-flex justify-content-center">
-              <div className="textWhite">
-                <i className="fas fa-plus fa-lg ml-5 mt-3 mr-2"></i>Click to Add
-                Previous Spouses
-              </div>
-            </div>
+                    <DropdownToggle
+                      color="light"
+                      className="dropdown text-center"
+                      caret
+                    >
+                      {newSpouse.spouse_gender}
+                    </DropdownToggle>
+                    <DropdownMenu>
+                      <DropdownItem
+                        onClick={handleFieldChange}
+                        name="spouse_gender"
+                        value="None Selected"
+                      >
+                        None Selected
+                      </DropdownItem>
+                      <DropdownItem
+                        onClick={handleFieldChange}
+                        name="spouse_gender"
+                        value="Female"
+                      >
+                        Female
+                      </DropdownItem>
+                      <DropdownItem
+                        onClick={handleFieldChange}
+                        name="spouse_gender"
+                        value="Male"
+                      >
+                        Male
+                      </DropdownItem>
+                      <DropdownItem
+                        onClick={handleFieldChange}
+                        name="spouse_gender"
+                        value="Other"
+                      >
+                        Other
+                      </DropdownItem>
+                    </DropdownMenu>
+                  </Dropdown>
+                </div>
+                <div className="line1">
+                  <Label className="textWhite title" for="">
+                    DOB
+                  </Label>
+                  <Input
+                    className="fieldData text-center col-8"
+                    type="date"
+                    id="spouse_dob"
+                    name="spouse_dob"
+                    onChange={handleFieldChange}
+                    placeholder="Date of Birth"
+                  />
+                </div>
+                <div className="d-flex justify-content-center">
+                  <div className="textWhite">
+                    <Button onClick={addSpouse}>Add Spouse</Button>
+                  </div>
+                </div>
+              </section>
+            ) : (
+              console.log("")
+            )}
           </div>
+          {relationshipStatus.patient_married !== "Single" ? (
+            <CardDeck className="childContainer mt-3">
+              {patientSpouse.map((spouse) => (
+                <SpouseCard
+                  key={spouse.id}
+                  spouse={spouse}
+                  getSpouses={getSpouses}
+                  {...props}
+                />
+              ))}
+            </CardDeck>
+          ) : (
+            console.log("")
+          )}
         </div>
         <div id="footer">
           <ButtonNavigation

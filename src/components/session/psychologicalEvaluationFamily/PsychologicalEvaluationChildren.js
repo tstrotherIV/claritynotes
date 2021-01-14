@@ -64,7 +64,6 @@ function PsychologicalEvaluation_siblings(props) {
     });
   };
 
-  //CRUD Function END
 
   const getChildren = () => {
     DataManager.getChildren(props.patientId).then((children) => {

@@ -36,7 +36,7 @@
       "spouse_last_name": "Malloy",
       "spouse_gender": "Female",
       "spouse_dob": "2021-01-14",
-      "patient_married": "Single",
+      "patient_married": "Seperated",
       "patient_consent": true,
       "interview_pg1_a": "question 1",
       "interview_pg2_a": "question 1",
@@ -947,6 +947,24 @@
       "patient_guardian_first_name": "Hanna",
       "patient_guardian_last_name": "Smith",
       "patient_guardian_gender": "Female",
+      "id": 2
+    }
+  ],
+  "spouses": [
+    {
+      "patientId": 30,
+      "spouse_first_name": "Nina",
+      "spouse_last_name": "Malloy",
+      "spouse_gender": "Female",
+      "spouse_dob": "2021-01-28",
+      "id": 1
+    },
+    {
+      "patientId": 30,
+      "spouse_first_name": "A",
+      "spouse_last_name": "B",
+      "spouse_gender": "Male",
+      "spouse_dob": "2018-06-19",
       "id": 2
     }
   ]
