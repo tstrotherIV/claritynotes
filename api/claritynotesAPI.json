@@ -31,10 +31,6 @@
       "sibling_gender": "Female",
       "patient_only_child": false,
       "sibling_dob": "2018-02-14",
-      "child_first_name": "Nicole",
-      "child_last_name": "Malloy",
-      "child_gender": "Female",
-      "child_dob": "2021-01-19",
       "patient_has_children": false,
       "spouse_first_name": "Nancy",
       "spouse_last_name": "Malloy",
@@ -694,11 +690,7 @@
       "sibling_last_name": "Smith",
       "sibling_gender": "Female",
       "sibling_dob": "2017-02-08",
-      "patient_has_children": false,
-      "child_first_name": "Richard",
-      "child_last_name": "Smith",
-      "child_gender": "Male",
-      "child_dob": "2018-05-23"
+      "patient_has_children": false
     },
     {
       "patient_first_name": "Mark",
@@ -904,6 +896,58 @@
       "t4g": true,
       "t4h": true,
       "t4i": true
+    }
+  ],
+  "children": [
+    {
+      "patientId": 30,
+      "child_first_name": "Jared",
+      "child_last_name": "Smith",
+      "child_gender": "Male",
+      "child_dob": "2021-01-19",
+      "id": 1
+    },
+    {
+      "patientId": 30,
+      "child_first_name": "Melissa",
+      "child_last_name": "Smith",
+      "child_gender": "Female",
+      "child_dob": "2021-01-28",
+      "id": 2
+    }
+  ],
+  "siblings": [
+    {
+      "patientId": 30,
+      "sibling_first_name": "Jared",
+      "sibling_last_name": "Smith",
+      "sibling_gender": "Male",
+      "sibling_dob": "2021-01-19",
+      "id": 1
+    },
+    {
+      "patientId": 30,
+      "sibling_first_name": "Anna",
+      "sibling_last_name": "Smith",
+      "sibling_gender": "Male",
+      "sibling_dob": "2021-01-20",
+      "id": 2
+    }
+  ],
+  "guardians": [
+    {
+      "patientId": 30,
+      "patient_guardian_first_name": "Micah",
+      "patient_guardian_last_name": "Smith",
+      "patient_guardian_gender": "Male",
+      "id": 1
+    },
+    {
+      "patientId": 30,
+      "patient_guardian_first_name": "Hanna",
+      "patient_guardian_last_name": "Smith",
+      "patient_guardian_gender": "Female",
+      "id": 2
     }
   ]
 }

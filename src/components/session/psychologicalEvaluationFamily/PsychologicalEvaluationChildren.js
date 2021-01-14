@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Form } from "react-bootstrap";
 import {
   Input,
   Label,
@@ -7,6 +6,8 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
+  CardDeck,
+  Button,
 } from "reactstrap";
 
 import Heading from "../../shared/PsychologicalHeading";
@@ -15,15 +16,12 @@ import TextareaAutosize from "react-textarea-autosize";
 import EmptyFooterSpace from "./../../shared/EmptyFooterSpace";
 import "./psychologicalEvaluationFamily.scss";
 import DataManager from "../../../data_module/DataManager";
+import ChildrenCard from "../../children/child";
 
 function PsychologicalEvaluation_siblings(props) {
-  const [patientChildren, setPatientChildren] = useState({
-    patient_has_children: false,
-    child_first_name: "",
-    child_last_name: "",
-    child_gender: "",
-    child_dob: "",
-  });
+  const [newChild, setNewChild] = useState("");
+  const [patientChildren, setPatientChildren] = useState([]);
+  const [checkbox, setCheckbox] = useState(false);
 
   const next = "/psychological_evaluation_spouse";
 
@@ -35,36 +33,52 @@ function PsychologicalEvaluation_siblings(props) {
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
 
-    setPatientChildren({ ...patientChildren, [name]: value });
+    setNewChild({ ...newChild, [name]: value });
   };
 
-  const updatePatient = () => {
+  const handleCheckBoxChange = (e) => {
+    const target = e.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name = target.name;
+
     const editedPatient = {
       id: props.patientId,
-      patient_has_children: patientChildren.patient_has_children,
-      child_first_name: patientChildren.child_first_name,
-      child_last_name: patientChildren.child_last_name,
-      child_gender: patientChildren.child_gender,
-      child_dob: patientChildren.child_dob,
+      [name]: value,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient);
+
+    setCheckbox({ ...checkbox, [name]: value });
+  };
+
+  const addChild = () => {
+    const editedChild = {
+      patientId: props.patientId,
+      child_first_name: newChild.child_first_name,
+      child_last_name: newChild.child_last_name,
+      child_gender: newChild.child_gender,
+      child_dob: newChild.child_dob,
+    };
+    DataManager.post("children", editedChild).then(() => {
+      getChildren();
+    });
   };
 
   //CRUD Function END
 
+  const getChildren = () => {
+    DataManager.getChildren(props.patientId).then((children) => {
+      setPatientChildren(children);
+    });
+  };
+
   const getData = () => {
     DataManager.getPatient(props.patientId).then((patientInfo) => {
-      
       const raw = {
-        ...patientInfo
+        ...patientInfo,
       };
-      
-      const allowed = ['patient_has_children',
-        'child_first_name',
-        'child_last_name',
-        'child_gender',
-        'child_dob'];
+
+      const allowed = ["patient_has_children"];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
         .reduce((obj, key) => {
@@ -72,12 +86,17 @@ function PsychologicalEvaluation_siblings(props) {
           return obj;
         }, {});
 
-        setPatientChildren(filtered);
+      setCheckbox(filtered);
     });
   };
 
+  const updatePatient = () => {
+
+  }
+
   useEffect(() => {
     getData();
+    getChildren();
   }, []);
 
   return (
@@ -94,15 +113,15 @@ function PsychologicalEvaluation_siblings(props) {
                 className=""
                 type="checkbox"
                 name="patient_has_children"
-                id="patient_has_children"
-                checked={patientChildren.patient_has_children}
-                onChange={handleFieldChange}
+                id={"patient_has_children"}
+                checked={checkbox.patient_has_children}
+                onChange={handleCheckBoxChange}
               />
               <Label className="textWhite title ml-2" for="noChildren">
                 Patient Has No Children
               </Label>
             </div>
-            {!patientChildren.patient_has_children ? (
+            {!checkbox.patient_has_children ? (
               <section>
                 <div className="line1">
                   <Label className="textWhite title" for="firstName">
@@ -114,7 +133,6 @@ function PsychologicalEvaluation_siblings(props) {
                     id="child_first_name"
                     name="child_first_name"
                     onChange={handleFieldChange}
-                    value={patientChildren.child_first_name}
                     placeholder="Child First Name"
                   />
                 </div>
@@ -126,7 +144,6 @@ function PsychologicalEvaluation_siblings(props) {
                     id="child_last_name"
                     name="child_last_name"
                     onChange={handleFieldChange}
-                    value={patientChildren.child_last_name}
                     placeholder="Child Last Name"
                   />
                 </div>
@@ -140,9 +157,8 @@ function PsychologicalEvaluation_siblings(props) {
                       color="light"
                       className="dropdown text-center"
                       caret
-                      value={patientChildren.child_gender}
                     >
-                      {patientChildren.child_gender}
+                      {newChild.child_gender}
                     </DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem
@@ -187,14 +203,12 @@ function PsychologicalEvaluation_siblings(props) {
                     id="child_dob"
                     name="child_dob"
                     onChange={handleFieldChange}
-                    value={patientChildren.child_dob}
                     placeholder="Date of Birth"
                   />
                 </div>
                 <div className="d-flex justify-content-center">
                   <div className="textWhite">
-                    <i className="fas fa-plus fa-lg ml-5 mt-3 mr-2"></i>Click to
-                    Add More Children
+                    <Button onClick={addChild}>Add Child</Button>
                   </div>
                 </div>
               </section>
@@ -202,6 +216,20 @@ function PsychologicalEvaluation_siblings(props) {
               console.log("")
             )}
           </div>
+          {!checkbox.patient_has_children ? (
+            <CardDeck className="childContainer mt-3">
+              {patientChildren.map((child) => (
+                <ChildrenCard
+                  key={child.id}
+                  child={child}
+                  getChildren={getChildren}
+                  {...props}
+                />
+              ))}
+            </CardDeck>
+          ) : (
+            console.log("")
+          )}
         </div>
         <div id="footer">
           <ButtonNavigation
