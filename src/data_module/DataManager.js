@@ -38,6 +38,13 @@ export default {
       result.json()
     );
   },
+  
+  //Get all Patient Spouses
+  async getSpouses(patientId) {
+    return fetch(`${remoteURL}/spouses?patientId=${patientId}`).then((result) =>
+      result.json()
+    );
+  },
 
 // ALL CREATE METHODS
 
