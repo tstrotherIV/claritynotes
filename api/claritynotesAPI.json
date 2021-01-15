@@ -660,7 +660,8 @@
       "millon_clinical_multiaxial_inventory_iv_pg2_BR_aa": 3,
       "millon_clinical_multiaxial_inventory_iv_pg2_BR_bb": 3,
       "rorschach_performance_assessment_system_pg1_a": "question 1",
-      "thematic_apperceptions_test_pg1_a": "question 1"
+      "thematic_apperceptions_test_pg1_a": "question 1",
+      "patient_gender": "Male"
     },
     {
       "id": 31,
@@ -904,7 +905,7 @@
       "child_first_name": "Jared",
       "child_last_name": "Smith",
       "child_gender": "Male",
-      "child_dob": "2021-01-19",
+      "child_dob": "2015-01-19",
       "id": 1
     },
     {
@@ -912,8 +913,24 @@
       "child_first_name": "Melissa",
       "child_last_name": "Smith",
       "child_gender": "Female",
-      "child_dob": "2021-01-28",
+      "child_dob": "2009-01-28",
       "id": 2
+    },
+    {
+      "patientId": 30,
+      "child_first_name": "Richard",
+      "child_last_name": "Smith",
+      "child_gender": "Male",
+      "child_dob": "2010-01-28",
+      "id": 3
+    },
+    {
+      "patientId": 30,
+      "child_first_name": "Harrold",
+      "child_last_name": "Smith",
+      "child_gender": "Male",
+      "child_dob": "1989-01-28",
+      "id": 4
     }
   ],
   "siblings": [

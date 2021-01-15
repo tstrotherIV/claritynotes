@@ -36,13 +36,16 @@ function PsychologicalEvaluation(props) {
     patient_county: "",
     patient_interview_time: "",
     patient_intake_time: "",
+    patient_gender: "",
   });
 
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const [dropdownOpen2, setDropdownOpen2] = useState(false);
+  const [dropdownOpen3, setDropdownOpen3] = useState(false);
 
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
   const toggle2 = () => setDropdownOpen2((prevState) => !prevState);
+  const toggle3 = () => setDropdownOpen3((prevState) => !prevState);
 
   const next = "/psychological_evaluation_family";
 
@@ -79,6 +82,7 @@ function PsychologicalEvaluation(props) {
       patient_interview_time:
         patientPsychological_Evaluation.patient_interview_time,
       patient_intake_time: patientPsychological_Evaluation.patient_intake_time,
+      patient_gender: patientPsychological_Evaluation.patient_gender,
     };
 
     DataManager.update("patients", editedPatient).then(() => {
@@ -106,6 +110,7 @@ function PsychologicalEvaluation(props) {
         "patient_county",
         "patient_interview_time",
         "patient_intake_time",
+        "patient_gender",
       ];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
@@ -305,7 +310,6 @@ function PsychologicalEvaluation(props) {
                       }
                       onClick={convertIDfunc}
                     />
-                    />
                   </div>
                   <div>
                     <div className="d-flex justify-items-center m-4">
@@ -415,6 +419,52 @@ function PsychologicalEvaluation(props) {
                       onClick={convertIDfunc}
                     />
                   </div>
+                  <div className="line1 d-flex flex-wrap">
+                  <Dropdown
+                    isOpen={dropdownOpen3}
+                    toggle={toggle3}
+                    className=""
+                  >
+                    <DropdownToggle
+                      color="light"
+                      className="dropdown text-center"
+                      caret
+                      value={patientPsychological_Evaluation.patient_gender}
+                    >
+                      {patientPsychological_Evaluation.patient_gender ? patientPsychological_Evaluation.patient_gender : "Select Gender"} 
+                    </DropdownToggle>
+                    <DropdownMenu>
+                      <DropdownItem
+                        onClick={handleFieldChange}
+                        name="patient_gender"
+                        value="None Selected"
+                      >
+                        None Selected
+                      </DropdownItem>
+                      <DropdownItem
+                        onClick={handleFieldChange}
+                        name="patient_gender"
+                        value="Female"
+                      >
+                        Female
+                      </DropdownItem>
+                      <DropdownItem
+                        onClick={handleFieldChange}
+                        name="patient_gender"
+                        value="Male"
+                      >
+                        Male
+                      </DropdownItem>
+                      <DropdownItem
+                        onClick={handleFieldChange}
+                        name="patient_gender"
+                        value="Other"
+                      >
+                        Other
+                      </DropdownItem>
+                    </DropdownMenu>
+                  </Dropdown>
+                </div>
                 </div>
               </div>
             </Form>
