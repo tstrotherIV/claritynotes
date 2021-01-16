@@ -1,15 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { Label, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Button, Modal, ModalBody, ModalHeader, ModalFooter  } from "reactstrap";
+import {
+  Label,
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  Button,
+  Modal,
+  ModalBody,
+  ModalHeader,
+  ModalFooter,
+} from "reactstrap";
 import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import "./interviews.scss";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 function InterviewPg4(props) {
   const [item, setItem] = useState("");
+  const [patientNotes, setPatientNotes] = useState("");
   const [patientInterview_pg4, setPatientInterview_pg4] = useState({
     interview_pg4_a: "",
     interview_pg4_b: "",
@@ -30,11 +41,73 @@ function InterviewPg4(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
-    setItem(fieldID);
+  const handlePatientNotesChange = (e) => {
+    const target = e.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name = target.name;
+
+    const editedNote = {
+      id: patientNotes.id,
+      [name]: value,
+    };
+
+    DataManager.update("patientNotes", editedNote);
+
+    setPatientNotes({ ...patientNotes, [name]: value });
   };
 
+  const createResponse = (e) => {
+    const fieldID = e.target.name;
+    DataManager.getQuestionPatientNotes(props.patientId, fieldID).then(
+      (patientNotesResponses) => {
+        if (patientNotesResponses[0] === undefined) {
+          const newNote = {
+            patientId: props.patientId,
+            questionId: fieldID,
+            t1a: "",
+            t2a: false,
+            t2b: false,
+            t2c: false,
+            t2d: false,
+            t2e: false,
+            t2f: false,
+            t2g: false,
+            t2h: false,
+            t2i: false,
+            t2j: false,
+            t2k: false,
+            t2l: false,
+            t2m: false,
+            t2n: false,
+            t2o: false,
+            t3a: false,
+            t3b: false,
+            t3c: false,
+            t3d: false,
+            t3e: false,
+            t3f: false,
+            t3g: false,
+            t4a: false,
+            t4b: false,
+            t4c: false,
+            t4d: false,
+            t4e: false,
+            t4f: false,
+            t4g: false,
+            t4h: false,
+            t4i: false,
+          };
+          DataManager.post("patientNotes", newNote).then((data) => {
+            setPatientNotes(data);
+            setItem(fieldID);
+          });
+        } else {
+          setPatientNotes(patientNotesResponses[0]);
+          setItem(fieldID);
+        }
+      }
+    );
+  };
   //CRUD Function Start
 
   const updatePatient = () => {
@@ -51,13 +124,11 @@ function InterviewPg4(props) {
 
   const getData = () => {
     DataManager.getPatient(props.patientId).then((patientInfo) => {
-      
       const raw = {
-        ...patientInfo
+        ...patientInfo,
       };
-      
-      const allowed = ['interview_pg4_a',
-        'interview_pg4_b'];
+
+      const allowed = ["interview_pg4_a", "interview_pg4_b"];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
         .reduce((obj, key) => {
@@ -65,7 +136,7 @@ function InterviewPg4(props) {
           return obj;
         }, {});
 
-        setPatientInterview_pg4(filtered);
+      setPatientInterview_pg4(filtered);
     });
   };
 
@@ -96,6 +167,7 @@ function InterviewPg4(props) {
                 id="interview_pg4_a"
                 name="interview_pg4_a"
                 onChange={handleFieldChange}
+                onClick={createResponse}
                 value={patientInterview_pg4.interview_pg4_a}
               />
             </div>
@@ -114,75 +186,80 @@ function InterviewPg4(props) {
                 id="interview_pg4_b"
                 name="interview_pg4_b"
                 onChange={handleFieldChange}
+                onClick={createResponse}
                 value={patientInterview_pg4.interview_pg4_b}
               />
             </div>
           </div>
           <div>
             <div className="div1Fields">
-          <div className="in1">
-              <Label className="textWhite mr-2" for="firstName">
-                [User Name, First]’s Inference and Observations:
-              </Label>
-              <Dropdown isOpen={dropdownOpen1} toggle={toggle1}>
-                <DropdownToggle color="light" className="dropdown" caret>
-                  Please Select
-                </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem header>Header</DropdownItem>
-                  <DropdownItem>Some Action</DropdownItem>
-                  <DropdownItem disabled>Action (disabled)</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Foo Action</DropdownItem>
-                  <DropdownItem>Bar Action</DropdownItem>
-                  <DropdownItem>Quo Action</DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
-              <div>
-                <Button color="light" className="m-3">
-                  Edit List
-                </Button>
+              <div className="in1">
+                <Label className="textWhite mr-2" for="firstName">
+                  [User Name, First]’s Inference and Observations:
+                </Label>
+                <Dropdown isOpen={dropdownOpen1} toggle={toggle1}>
+                  <DropdownToggle color="light" className="dropdown" caret>
+                    Please Select
+                  </DropdownToggle>
+                  <DropdownMenu>
+                    <DropdownItem header>Header</DropdownItem>
+                    <DropdownItem>Some Action</DropdownItem>
+                    <DropdownItem disabled>Action (disabled)</DropdownItem>
+                    <DropdownItem divider />
+                    <DropdownItem>Foo Action</DropdownItem>
+                    <DropdownItem>Bar Action</DropdownItem>
+                    <DropdownItem>Quo Action</DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+                <div>
+                  <Button color="light" className="m-3">
+                    Edit List
+                  </Button>
+                </div>
+              </div>
+              <div className="in1">
+                <Label className="textWhite title" for="caseNumber">
+                  Additional Notes:
+                </Label>
+                <TextareaAutosize
+                  className="fieldData2"
+                  type="text"
+                  id="caseNumber"
+                />
+                <div>
+                  <div className="m-3">
+                    <Button color="light" onClick={toggle3}>
+                      Add Notes to Gold
+                    </Button>
+                    <Modal isOpen={modal} fade={false} toggle={toggle3}>
+                      <ModalHeader toggle={toggle3}>
+                        Add Notes to Gold
+                      </ModalHeader>
+                      <ModalBody>
+                        <div className="in1">
+                          <Label className=" title" for="caseNumber">
+                            Additional Notes:
+                          </Label>
+                          <TextareaAutosize
+                            className=""
+                            type="text"
+                            id="caseNumber"
+                          />
+                        </div>
+                      </ModalBody>
+                      <ModalFooter>
+                        <Button color="info" onClick={toggle3}>
+                          Cancel
+                        </Button>{" "}
+                        <Button color="info" onClick={toggle3}>
+                          Save
+                        </Button>
+                      </ModalFooter>
+                    </Modal>
+                  </div>
+                </div>
               </div>
             </div>
-          <div className="in1">
-            <Label className="textWhite title" for="caseNumber">
-              Additional Notes:
-            </Label>
-            <TextareaAutosize              className="fieldData2"
-              type="text"
-              id="caseNumber"
-            />
-              <div>
-              <div className="m-3">
-                <Button color="light" onClick={toggle3}>
-                  Add Notes to Gold
-                </Button>
-                <Modal isOpen={modal} fade={false} toggle={toggle3}>
-                  <ModalHeader toggle={toggle3}>Add Notes to Gold</ModalHeader>
-                  <ModalBody>
-                    <div className="in1">
-                      <Label className=" title" for="caseNumber">
-                        Additional Notes:
-                      </Label>
-                      <TextareaAutosize                        className=""
-                        type="text"
-                        id="caseNumber"
-                      />
-                    </div>
-                  </ModalBody>
-                  <ModalFooter>
-                    <Button color="info" onClick={toggle3}>
-                      Cancel
-                    </Button>{" "}
-                    <Button color="info" onClick={toggle3}>
-                      Save
-                    </Button>
-                  </ModalFooter>
-                </Modal>
-              </div>  
-            </div>
-          </div>
-      </div>
             <div id="footer">
               <ButtonNavigation
                 next={next}
@@ -190,7 +267,12 @@ function InterviewPg4(props) {
                 patient={props.patientId}
                 patientNotes={patientInterview_pg4}
               />
-              <TermOfParentalRights />
+              <TermOfParentalRights
+                questionId={item}
+                patientId={props.patientId}
+                notesData={patientNotes}
+                handlePatientNotesChange={handlePatientNotesChange}
+              />
             </div>
           </div>
         </div>

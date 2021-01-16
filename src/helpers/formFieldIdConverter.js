@@ -5,7 +5,7 @@ export default {
 
   convertID(e) {
     const questionId = e.target.name.split('').map(y => {
-      if (y % 1 === 0) {
+      if (y / 1 === y) {
         return String.fromCharCode(y + 10) 
       }
       return y

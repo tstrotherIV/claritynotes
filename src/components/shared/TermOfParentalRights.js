@@ -18,35 +18,6 @@ const domains = <p className="domainWidth">Domains</p>;
 const generalNotes = <p className="generalNotes">General Notes</p>;
 
 const TermOfParentalRights = (props) => {
-  // const [noteChanged, setNoteChanged] = useState(false)
-  const [patientNotes, setPatientNotes] = useState({});
-
-  const handleFieldChange = (e) => {
-    const target = e.target;
-    const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = target.name;
-
-    const editedNote = {
-      id: patientNotes.id,
-      [name]: value,
-    };
-
-    DataManager.update("patientNotes", editedNote);
-
-    setPatientNotes({ ...patientNotes, [name]: value });
-  };
-
-  const getData = () => {
-    DataManager.getQuestionPatientNotes(props.patientId, props.questionId).then(
-      (patientNotesResponses) => {
-        setPatientNotes(patientNotesResponses[0]);
-      }
-    );
-  };
-
-  useEffect(() => {
-    props.questionId ? getData() : console.log();
-  }, [props.questionId]);
 
   return (
     <div className="dropdown_button termBackground ">
@@ -71,7 +42,7 @@ const TermOfParentalRights = (props) => {
                 title={generalNotes}
                 className="contents"
               >
-                <AdditionalNotes patientNotes={patientNotes} />
+                <AdditionalNotes patientNotes={props.notesData} />
               </Tab>
               <Tab
                 eventKey="term"
@@ -86,8 +57,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t2a"
                         name="t2a"
-                        checked={patientNotes.t2a}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t2a}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label for="">Unforeseeable Future Change</Label>
                     </div>
@@ -97,8 +68,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t2b"
                         name="t2b"
-                        checked={patientNotes.t2b}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t2b}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         Rehabilitation Failure
@@ -110,8 +81,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t2c"
                         name="t2c"
-                        checked={patientNotes.t2c}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t2c}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         Failure to Maintain Material Needs
@@ -125,8 +96,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t2d"
                         name="t2d"
-                        checked={patientNotes.t2d}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t2d}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         Conviction and Imprisonment of Felony
@@ -138,8 +109,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t2e"
                         name="t2e"
-                        checked={patientNotes.t2e}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t2e}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         {" "}
@@ -152,8 +123,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t2f"
                         name="t2f"
-                        checked={patientNotes.t2f}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t2f}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         Failure to Maintain Consistent Contact
@@ -167,8 +138,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t2g"
                         name="t2g"
-                        checked={patientNotes.t2g}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t2g}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         {" "}
@@ -181,8 +152,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t2h"
                         name="t2h"
-                        checked={patientNotes.t2h}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t2h}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         Willful Neglect/Abandonment
@@ -194,8 +165,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t2i"
                         name="t2i"
-                        checked={patientNotes.t2i}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t2i}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         Parent has tortured, abused, cruelly beaten, or
@@ -209,8 +180,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t2j"
                         name="t2j"
-                        checked={patientNotes.t2j}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t2j}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         Unable to Discharge Childcare Responsibilities
@@ -222,8 +193,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t2k"
                         name="t2k"
-                        checked={patientNotes.t2k}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t2k}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         Loss of Custody of Other Child(ren){" "}
@@ -235,8 +206,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t2l"
                         name="t2l"
-                        checked={patientNotes.t2l}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t2l}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         otherwise maltreated the child
@@ -250,8 +221,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t2m"
                         name="t2m"
-                        checked={patientNotes.t2m}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t2m}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         Excessive Use of a Controlled Substance{" "}
@@ -263,8 +234,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t2n"
                         name="t2n"
-                        checked={patientNotes.t2n}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t2n}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         Serious Bodily Injury of Child
@@ -276,8 +247,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t2o"
                         name="t2o"
-                        checked={patientNotes.t2o}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t2o}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         Lack of Effort to Adjust to His/Her Circumstances
@@ -300,8 +271,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t3a"
                         name="t3a"
-                        checked={patientNotes.t3a}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t3a}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="inputBoldText" for="">
                         Happiness
@@ -317,8 +288,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t3b"
                         name="t3b"
-                        checked={patientNotes.t3b}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t3b}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="inputBoldText" for="">
                         Fear
@@ -334,8 +305,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t3c"
                         name="t3c"
-                        checked={patientNotes.t3c}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t3c}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="inputBoldText" for="">
                         Disgust
@@ -350,8 +321,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t3d"
                         name="t3d"
-                        checked={patientNotes.t3d}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t3d}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="inputBoldText" for="">
                         Sadness
@@ -367,8 +338,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t3e"
                         name="t3e"
-                        checked={patientNotes.t3e}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t3e}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="inputBoldText" for="">
                         Contempt
@@ -383,8 +354,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t3f"
                         name="t3f"
-                        checked={patientNotes.t3f}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t3f}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="inputBoldText" for="">
                         Surprise
@@ -401,8 +372,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t3g"
                         name="t3g"
-                        checked={patientNotes.t3g}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t3g}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="inputBoldText" for="">
                         Anger
@@ -426,8 +397,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t4a"
                         name="t4a"
-                        checked={patientNotes.t4a}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t4a}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         Highly Gifted (140-160)
@@ -439,8 +410,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t4b"
                         name="t4b"
-                        checked={patientNotes.t4b}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t4b}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         Low Average (86-90) Mild Concern
@@ -454,8 +425,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t4c"
                         name="t4c"
-                        checked={patientNotes.t4c}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t4c}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         Gifted (130-139)
@@ -467,8 +438,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t4d"
                         name="t4d"
-                        checked={patientNotes.t4d}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t4d}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         Borderline (71-85) Moderate to Elevated Concern
@@ -482,8 +453,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t4e"
                         name="t4e"
-                        checked={patientNotes.t4e}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t4e}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         High Above Average (115-129)
@@ -495,8 +466,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t4f"
                         name="t4f"
-                        checked={patientNotes.t4f}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t4f}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         Intellectual Disability, Mild (56-70) Profound Concern
@@ -510,8 +481,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t4g"
                         name="t4g"
-                        checked={patientNotes.t4g}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t4g}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         High Average (110-114)
@@ -523,8 +494,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t4h"
                         name="t4h"
-                        checked={patientNotes.t4h}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t4h}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         Intellectual Disability, Moderate (36-55)
@@ -538,8 +509,8 @@ const TermOfParentalRights = (props) => {
                         className=""
                         id="t4i"
                         name="t4i"
-                        checked={patientNotes.t4i}
-                        onChange={handleFieldChange}
+                        checked={props.notesData.t4i}
+                        onChange={props.handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
                         Average (91-109)
