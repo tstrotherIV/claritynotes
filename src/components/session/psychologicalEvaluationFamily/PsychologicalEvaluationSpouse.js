@@ -141,9 +141,9 @@ function PsychologicalEvaluationSpouse(props) {
                   <DropdownItem
                     onClick={handleRelationshipChange}
                     name="patient_married"
-                    value="Seperated"
+                    value="Separated"
                   >
-                    Seperated
+                    Separated
                   </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
