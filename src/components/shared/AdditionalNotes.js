@@ -72,7 +72,7 @@ const CustomToolbar = () => (
 class AdditionalNotes extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { editorHtml: "" };
+    // this.state = { editorHtml: "" };
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -84,7 +84,7 @@ class AdditionalNotes extends React.Component {
     };
     DataManager.update("patientNotes", editedGeneralNotes);
 
-    // this.setState({ editorHtml: html });
+    // this.setState({ t1a: html });
   }
 
   render() {
@@ -93,13 +93,13 @@ class AdditionalNotes extends React.Component {
         <CustomToolbar />
         <ReactQuill
           onChange={this.handleChange}
-          placeholder=""
           modules={AdditionalNotes.modules}
           formats={AdditionalNotes.formats}
           theme={"snow"} // pass false to use minimal theme
           className="scroll-container"
           id="t1a"
           value={this.props.patientNotes.t1a}
+          type="text"
         />
       </div>
     );

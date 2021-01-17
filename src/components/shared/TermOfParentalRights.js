@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import { Tab, Tabs } from "react-bootstrap";
 import { Input, Label } from "reactstrap";
 import AdditionalNotes from "./AdditionalNotes";
-import DataManager from "../../data_module/DataManager";
 import "./ps.scss";
 
 const termTitle = (
@@ -18,7 +17,6 @@ const domains = <p className="domainWidth">Domains</p>;
 const generalNotes = <p className="generalNotes">General Notes</p>;
 
 const TermOfParentalRights = (props) => {
-
   return (
     <div className="dropdown_button termBackground ">
       <div className="d-flex justify-content-center termMenu">
@@ -42,7 +40,10 @@ const TermOfParentalRights = (props) => {
                 title={generalNotes}
                 className="contents"
               >
-                <AdditionalNotes patientNotes={props.notesData} />
+                <AdditionalNotes
+                  patientNotes={props.notesData}
+                  handlePatientNotesChange={props.handlePatientNotesChange}
+                />
               </Tab>
               <Tab
                 eventKey="term"

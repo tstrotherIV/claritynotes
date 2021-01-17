@@ -36,9 +36,9 @@ function FamilyPg6(props) {
       [name]: value,
     };
 
-    DataManager.update("patientNotes", editedNote);
-
-    setPatientNotes({ ...patientNotes, [name]: value });
+    DataManager.update("patientNotes", editedNote).then((data) => {
+      setPatientNotes(data);
+    });
   };
 
   const createResponse = (e) => {
