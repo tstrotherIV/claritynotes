@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 92
 
@@ -25,8 +24,8 @@ function ParentingPg3(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -88,6 +87,7 @@ function ParentingPg3(props) {
                   id="parenting_pg3_a"
                   name="parenting_pg3_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientParentingPg3.parenting_pg3_a}
                 />
               </div>
@@ -106,6 +106,7 @@ function ParentingPg3(props) {
                   id="parenting_pg3_b"
                   name="parenting_pg3_b"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientParentingPg3.parenting_pg3_b}
                 />
               </div>
@@ -118,7 +119,11 @@ function ParentingPg3(props) {
               patient={props.patientId}
               patientNotes={patientParentingPg3}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>
