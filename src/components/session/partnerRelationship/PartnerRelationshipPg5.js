@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 84
 
@@ -29,8 +28,8 @@ function PartnerRelationshipPg5(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -99,6 +98,7 @@ function PartnerRelationshipPg5(props) {
                   id="partner_relationship_pg5_a"
                   name="partner_relationship_pg5_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientPartnerRelationshipPg5.partner_relationship_pg5_a
                   }
@@ -119,6 +119,7 @@ function PartnerRelationshipPg5(props) {
                   id="partner_relationship_pg5_b"
                   name="partner_relationship_pg5_b"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientPartnerRelationshipPg5.partner_relationship_pg5_b
                   }
@@ -137,6 +138,7 @@ function PartnerRelationshipPg5(props) {
                   id="partner_relationship_pg5_c"
                   name="partner_relationship_pg5_c"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientPartnerRelationshipPg5.partner_relationship_pg5_c
                   }
@@ -151,7 +153,11 @@ function PartnerRelationshipPg5(props) {
               patient={props.patientId}
               patientNotes={patientPartnerRelationshipPg5}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>
