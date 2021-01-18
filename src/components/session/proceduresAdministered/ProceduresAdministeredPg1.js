@@ -4,7 +4,6 @@ import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
-
 //pdf page 103
 
 function ProceduresAdministeredPg1(props) {

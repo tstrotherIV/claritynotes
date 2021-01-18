@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-
 // pdf page 96
 
 function CognitiveSkillsPg1(props) {

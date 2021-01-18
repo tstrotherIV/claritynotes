@@ -14,7 +14,6 @@ import TextareaAutosize from "react-textarea-autosize";
 import EmptyFooterSpace from "./../../shared/EmptyFooterSpace";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 import "./psychologicalEvaluation.scss";
 
@@ -56,11 +55,6 @@ function PsychologicalEvaluation(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
-    setItem(fieldID);
-  };
-
   //CRUD Function Start
 
   const updatePatient = () => {
@@ -85,8 +79,7 @@ function PsychologicalEvaluation(props) {
       patient_gender: patientPsychological_Evaluation.patient_gender,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {
-    });
+    DataManager.update("patients", editedPatient).then(() => {});
   };
 
   //CRUD Function END
@@ -128,358 +121,374 @@ function PsychologicalEvaluation(props) {
   }, []);
 
   return (
-    <div>
-      <div id="page-container">
-        <div id="content-wrap">
-          <Heading />
-          <div className="minWidthContainer">
-            <div className="header">
-              <h2 className="textWhite mt-2">
-                Please Confirm or Update Information
-              </h2>
-            </div>
-            <Form>
-              <div className="row no-gutters text-center d-flex justify-content-center minWidthContainer">
-                <div className="col-6">
-                  <div className="d-flex m-4">
-                    <Label className="textWhite labelWidth" for="firstName">
-                      Name
-                    </Label>
-                    <TextareaAutosize
-                      className="fieldData col-8"
-                      type="text"
-                      placeholder="First Name"
-                      id={item}
-                      name="patient_first_name"
-                      onChange={handleFieldChange}
-                      value={patientPsychological_Evaluation.patient_first_name}
-                      onClick={convertIDfunc}
-                    />
-                  </div>
-                  <div className="d-flex m-4">
-                    <Label
-                      className="textWhite labelWidth"
-                      for="middleName"
-                    ></Label>
-                    <TextareaAutosize
-                      className="fieldData col-8"
-                      type="text"
-                      placeholder="Middle Name"
-                      id={item}
-                      name="patient_middle_name"
-                      onChange={handleFieldChange}
-                      value={
-                        patientPsychological_Evaluation.patient_middle_name
-                      }
-                      onClick={convertIDfunc}
-                    />
-                  </div>
-                  <div className="d-flex justify-items-center m-4">
-                    <Label
-                      className="textWhite labelWidth"
-                      for="lastName"
-                    ></Label>
-                    <TextareaAutosize
-                      className="fieldData col-8"
-                      type="text"
-                      placeholder="Last Name"
-                      id={item}
-                      name="patient_last_name"
-                      onChange={handleFieldChange}
-                      value={patientPsychological_Evaluation.patient_last_name}
-                      onClick={convertIDfunc}
-                    />
-                  </div>
-                  <div className="d-flex justify-items-center m-4">
-                    <Label className="textWhite labelWidth " for="dateOfBirth">
-                      DOB
-                    </Label>
-                    <Input
-                      type="date"
-                      className=" col-3 dateField p-3 text-center"
-                      id={item}
-                      name="patient_Date_of_Birth"
-                      onChange={handleFieldChange}
-                      value={
-                        patientPsychological_Evaluation.patient_Date_of_Birth
-                      }
-                      onClick={convertIDfunc}
-                    />
-                  </div>
-                  <div className="d-flex justify-items-center m-4">
-                    <Label
-                      className="textWhite labelWidth"
-                      for="examplePassword"
-                    >
-                      Referral
-                    </Label>
-
-                    <Dropdown
-                      isOpen={dropdownOpen1}
-                      toggle={toggle1}
-                      className="col-8"
-                    >
-                      <DropdownToggle
-                        color="light"
-                        className="dropdown text-center"
-                        caret
-                        value={patientPsychological_Evaluation.patient_referral}
+    <>
+      <div>
+        <div id="page-container">
+          <div id="content-wrap">
+            <Heading />
+            <div className="minWidthContainer">
+              <div className="header">
+                <h2 className="textWhite mt-2">
+                  Please Confirm or Update Information
+                </h2>
+              </div>
+              <Form>
+                <div className="row no-gutters text-center d-flex justify-content-center minWidthContainer">
+                  <div className="col-6">
+                    <div className="d-flex m-4">
+                      <Label className="textWhite labelWidth" for="firstName">
+                        Name
+                      </Label>
+                      <TextareaAutosize
+                        className="fieldData col-8"
+                        type="text"
+                        placeholder="First Name"
+                        id={item}
+                        name="patient_first_name"
+                        onChange={handleFieldChange}
+                        value={
+                          patientPsychological_Evaluation.patient_first_name
+                        }
+                        
+                      />
+                    </div>
+                    <div className="d-flex m-4">
+                      <Label
+                        className="textWhite labelWidth"
+                        for="middleName"
+                      ></Label>
+                      <TextareaAutosize
+                        className="fieldData col-8"
+                        type="text"
+                        placeholder="Middle Name"
+                        id={item}
+                        name="patient_middle_name"
+                        onChange={handleFieldChange}
+                        value={
+                          patientPsychological_Evaluation.patient_middle_name
+                        }
+                        
+                      />
+                    </div>
+                    <div className="d-flex justify-items-center m-4">
+                      <Label
+                        className="textWhite labelWidth"
+                        for="lastName"
+                      ></Label>
+                      <TextareaAutosize
+                        className="fieldData col-8"
+                        type="text"
+                        placeholder="Last Name"
+                        id={item}
+                        name="patient_last_name"
+                        onChange={handleFieldChange}
+                        value={
+                          patientPsychological_Evaluation.patient_last_name
+                        }
+                        
+                      />
+                    </div>
+                    <div className="d-flex justify-items-center m-4">
+                      <Label
+                        className="textWhite labelWidth "
+                        for="dateOfBirth"
                       >
-                        {patientPsychological_Evaluation.patient_referral}
-                      </DropdownToggle>
-                      <DropdownMenu>
-                        <DropdownItem
-                          onClick={handleFieldChange}
-                          name="patient_referral"
-                          value="No Referral"
-                        >
-                          No Referral
-                        </DropdownItem>
-                        <DropdownItem
-                          onClick={handleFieldChange}
-                          name="patient_referral"
-                          value="Option 1"
-                        >
-                          Option 1
-                        </DropdownItem>
-                        <DropdownItem
-                          onClick={handleFieldChange}
-                          name="patient_referral"
-                          value="Option 2"
-                        >
-                          Option 2
-                        </DropdownItem>
-                        <DropdownItem
-                          onClick={handleFieldChange}
-                          name="patient_referral"
-                          value="Option 3"
-                        >
-                          Option 3
-                        </DropdownItem>
-                      </DropdownMenu>
-                    </Dropdown>
-                  </div>
-                  <div className="d-flex justify-items-center m-4">
-                    <Label className="textWhite labelWidth" for="officeTime">
-                      Office Time
-                    </Label>
-                    <Input
-                      className="col-3 dateField p-3 text-center"
-                      type="time"
-                      id={item}
-                      name="patient_office_time"
-                      onChange={handleFieldChange}
-                      value={
-                        patientPsychological_Evaluation.patient_office_time
-                      }
-                      onClick={convertIDfunc}
-                    />
-                  </div>
-                  <div className="d-flex justify-items-center m-4">
-                    <Label className="textWhite labelWidth" for="reportWriting">
-                      Report Writing
-                    </Label>
-                    <TextareaAutosize
-                      className="fieldData col-8"
-                      type="text"
-                      id={item}
-                      name="patient_report_writing"
-                      onChange={handleFieldChange}
-                      value={
-                        patientPsychological_Evaluation.patient_report_writing
-                      }
-                      onClick={convertIDfunc}
-                    />
-                  </div>
-                </div>
-                {/* --------------------------------------------- */}
-                <div className="col-6">
-                  <div className="d-flex justify-items-center m-4">
-                    <Label className="textWhite labelWidth" for="caseNumber">
-                      Case #
-                    </Label>
-                    <TextareaAutosize
-                      className="fieldData col-8"
-                      type="text"
-                      placeholder="Case Number"
-                      id={item}
-                      name="patient_case_number"
-                      onChange={handleFieldChange}
-                      value={
-                        patientPsychological_Evaluation.patient_case_number
-                      }
-                      onClick={convertIDfunc}
-                    />
-                  </div>
-                  <div>
+                        DOB
+                      </Label>
+                      <Input
+                        type="date"
+                        className=" col-3 dateField p-3 text-center"
+                        id={item}
+                        name="patient_Date_of_Birth"
+                        onChange={handleFieldChange}
+                        value={
+                          patientPsychological_Evaluation.patient_Date_of_Birth
+                        }
+                        
+                      />
+                    </div>
                     <div className="d-flex justify-items-center m-4">
                       <Label
                         className="textWhite labelWidth"
                         for="examplePassword"
                       >
-                        Eval 1 Date
+                        Referral
                       </Label>
-                      <div>
-                        <Input
-                          className="fieldData p-3"
-                          type="date"
-                          id={item}
-                          name="patient_evaluation_Date"
-                          onChange={handleFieldChange}
+
+                      <Dropdown
+                        isOpen={dropdownOpen1}
+                        toggle={toggle1}
+                        className="col-8"
+                      >
+                        <DropdownToggle
+                          color="light"
+                          className="dropdown text-center"
+                          caret
                           value={
-                            patientPsychological_Evaluation.patient_evaluation_Date
+                            patientPsychological_Evaluation.patient_referral
                           }
-                          onClick={convertIDfunc}
-                        />
-                        <Button className="m-2">Add Eval Date</Button>
-                      </div>
+                        >
+                          {patientPsychological_Evaluation.patient_referral}
+                        </DropdownToggle>
+                        <DropdownMenu>
+                          <DropdownItem
+                            onClick={handleFieldChange}
+                            name="patient_referral"
+                            value="No Referral"
+                          >
+                            No Referral
+                          </DropdownItem>
+                          <DropdownItem
+                            onClick={handleFieldChange}
+                            name="patient_referral"
+                            value="Option 1"
+                          >
+                            Option 1
+                          </DropdownItem>
+                          <DropdownItem
+                            onClick={handleFieldChange}
+                            name="patient_referral"
+                            value="Option 2"
+                          >
+                            Option 2
+                          </DropdownItem>
+                          <DropdownItem
+                            onClick={handleFieldChange}
+                            name="patient_referral"
+                            value="Option 3"
+                          >
+                            Option 3
+                          </DropdownItem>
+                        </DropdownMenu>
+                      </Dropdown>
+                    </div>
+                    <div className="d-flex justify-items-center m-4">
+                      <Label className="textWhite labelWidth" for="officeTime">
+                        Office Time
+                      </Label>
+                      <Input
+                        className="col-3 dateField p-3 text-center"
+                        type="time"
+                        id={item}
+                        name="patient_office_time"
+                        onChange={handleFieldChange}
+                        value={
+                          patientPsychological_Evaluation.patient_office_time
+                        }
+                        
+                      />
+                    </div>
+                    <div className="d-flex justify-items-center m-4">
+                      <Label
+                        className="textWhite labelWidth"
+                        for="reportWriting"
+                      >
+                        Report Writing
+                      </Label>
+                      <TextareaAutosize
+                        className="fieldData col-8"
+                        type="text"
+                        id={item}
+                        name="patient_report_writing"
+                        onChange={handleFieldChange}
+                        value={
+                          patientPsychological_Evaluation.patient_report_writing
+                        }
+                        
+                      />
                     </div>
                   </div>
-                  <div className="textWhite d-flex justify-items-center m-4">
-                    <Label
-                      className="textWhite labelWidth"
-                      for="examplePassword"
-                    >
-                      County
-                    </Label>
-                    <Dropdown
-                      isOpen={dropdownOpen2}
-                      toggle={toggle2}
-                      className="col-8"
-                    >
-                      <DropdownToggle
-                        color="light"
-                        className="dropdown text-center"
-                        caret
-                        value={patientPsychological_Evaluation.patient_county}
+                  {/* --------------------------------------------- */}
+                  <div className="col-6">
+                    <div className="d-flex justify-items-center m-4">
+                      <Label className="textWhite labelWidth" for="caseNumber">
+                        Case #
+                      </Label>
+                      <TextareaAutosize
+                        className="fieldData col-8"
+                        type="text"
+                        placeholder="Case Number"
+                        id={item}
+                        name="patient_case_number"
+                        onChange={handleFieldChange}
+                        value={
+                          patientPsychological_Evaluation.patient_case_number
+                        }
+                        
+                      />
+                    </div>
+                    <div>
+                      <div className="d-flex justify-items-center m-4">
+                        <Label
+                          className="textWhite labelWidth"
+                          for="examplePassword"
+                        >
+                          Eval 1 Date
+                        </Label>
+                        <div>
+                          <Input
+                            className="fieldData p-3"
+                            type="date"
+                            id={item}
+                            name="patient_evaluation_Date"
+                            onChange={handleFieldChange}
+                            value={
+                              patientPsychological_Evaluation.patient_evaluation_Date
+                            }
+                            
+                          />
+                          <Button className="m-2">Add Eval Date</Button>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="textWhite d-flex justify-items-center m-4">
+                      <Label
+                        className="textWhite labelWidth"
+                        for="examplePassword"
                       >
-                        {patientPsychological_Evaluation.patient_county}
-                      </DropdownToggle>
-                      <DropdownMenu>
-                        <DropdownItem
-                          onClick={handleFieldChange}
-                          name="patient_county"
-                          value="Select County"
+                        County
+                      </Label>
+                      <Dropdown
+                        isOpen={dropdownOpen2}
+                        toggle={toggle2}
+                        className="col-8"
+                      >
+                        <DropdownToggle
+                          color="light"
+                          className="dropdown text-center"
+                          caret
+                          value={patientPsychological_Evaluation.patient_county}
                         >
-                          Select County
-                        </DropdownItem>
-                        <DropdownItem
-                          onClick={handleFieldChange}
-                          name="patient_county"
-                          value="Option 1"
+                          {patientPsychological_Evaluation.patient_county}
+                        </DropdownToggle>
+                        <DropdownMenu>
+                          <DropdownItem
+                            onClick={handleFieldChange}
+                            name="patient_county"
+                            value="Select County"
+                          >
+                            Select County
+                          </DropdownItem>
+                          <DropdownItem
+                            onClick={handleFieldChange}
+                            name="patient_county"
+                            value="Option 1"
+                          >
+                            Option 1
+                          </DropdownItem>
+                          <DropdownItem
+                            onClick={handleFieldChange}
+                            name="patient_county"
+                            value="Option 2"
+                          >
+                            Option 2
+                          </DropdownItem>
+                          <DropdownItem
+                            onClick={handleFieldChange}
+                            name="patient_county"
+                            value="Option 3"
+                          >
+                            Option 3
+                          </DropdownItem>
+                        </DropdownMenu>
+                      </Dropdown>
+                    </div>
+                    <div className="textWhite d-flex justify-items-center m-4">
+                      <Label className="labelWidth" for="intakeTime">
+                        Interview Time
+                      </Label>
+                      <Input
+                        className="fieldData col-4 p-3 text-center"
+                        type="time"
+                        id={item}
+                        name="patient_interview_time"
+                        onChange={handleFieldChange}
+                        value={
+                          patientPsychological_Evaluation.patient_interview_time
+                        }
+                        
+                      />
+                    </div>
+                    <div className="textWhite d-flex justify-items-center m-4">
+                      <Label className="textWhite labelWidth" for="inTakeTime">
+                        Intake Time
+                      </Label>
+                      <Input
+                        className="fieldData col-4 p-3 text-center"
+                        type="time"
+                        id={item}
+                        name="patient_intake_time"
+                        onChange={handleFieldChange}
+                        value={
+                          patientPsychological_Evaluation.patient_intake_time
+                        }
+                        
+                      />
+                    </div>
+                    <div className="line1 d-flex flex-wrap">
+                      <Dropdown
+                        isOpen={dropdownOpen3}
+                        toggle={toggle3}
+                        className=""
+                      >
+                        <DropdownToggle
+                          color="light"
+                          className="dropdown text-center"
+                          caret
+                          value={patientPsychological_Evaluation.patient_gender}
                         >
-                          Option 1
-                        </DropdownItem>
-                        <DropdownItem
-                          onClick={handleFieldChange}
-                          name="patient_county"
-                          value="Option 2"
-                        >
-                          Option 2
-                        </DropdownItem>
-                        <DropdownItem
-                          onClick={handleFieldChange}
-                          name="patient_county"
-                          value="Option 3"
-                        >
-                          Option 3
-                        </DropdownItem>
-                      </DropdownMenu>
-                    </Dropdown>
+                          {patientPsychological_Evaluation.patient_gender
+                            ? patientPsychological_Evaluation.patient_gender
+                            : "Select Gender"}
+                        </DropdownToggle>
+                        <DropdownMenu>
+                          <DropdownItem
+                            onClick={handleFieldChange}
+                            name="patient_gender"
+                            value="None Selected"
+                          >
+                            None Selected
+                          </DropdownItem>
+                          <DropdownItem
+                            onClick={handleFieldChange}
+                            name="patient_gender"
+                            value="Female"
+                          >
+                            Female
+                          </DropdownItem>
+                          <DropdownItem
+                            onClick={handleFieldChange}
+                            name="patient_gender"
+                            value="Male"
+                          >
+                            Male
+                          </DropdownItem>
+                          <DropdownItem
+                            onClick={handleFieldChange}
+                            name="patient_gender"
+                            value="Other"
+                          >
+                            Other
+                          </DropdownItem>
+                        </DropdownMenu>
+                      </Dropdown>
+                    </div>
                   </div>
-                  <div className="textWhite d-flex justify-items-center m-4">
-                    <Label className="labelWidth" for="intakeTime">
-                      Interview Time
-                    </Label>
-                    <Input
-                      className="fieldData col-4 p-3 text-center"
-                      type="time"
-                      id={item}
-                      name="patient_interview_time"
-                      onChange={handleFieldChange}
-                      value={
-                        patientPsychological_Evaluation.patient_interview_time
-                      }
-                      onClick={convertIDfunc}
-                    />
-                  </div>
-                  <div className="textWhite d-flex justify-items-center m-4">
-                    <Label className="textWhite labelWidth" for="inTakeTime">
-                      Intake Time
-                    </Label>
-                    <Input
-                      className="fieldData col-4 p-3 text-center"
-                      type="time"
-                      id={item}
-                      name="patient_intake_time"
-                      onChange={handleFieldChange}
-                      value={
-                        patientPsychological_Evaluation.patient_intake_time
-                      }
-                      onClick={convertIDfunc}
-                    />
-                  </div>
-                  <div className="line1 d-flex flex-wrap">
-                  <Dropdown
-                    isOpen={dropdownOpen3}
-                    toggle={toggle3}
-                    className=""
-                  >
-                    <DropdownToggle
-                      color="light"
-                      className="dropdown text-center"
-                      caret
-                      value={patientPsychological_Evaluation.patient_gender}
-                    >
-                      {patientPsychological_Evaluation.patient_gender ? patientPsychological_Evaluation.patient_gender : "Select Gender"} 
-                    </DropdownToggle>
-                    <DropdownMenu>
-                      <DropdownItem
-                        onClick={handleFieldChange}
-                        name="patient_gender"
-                        value="None Selected"
-                      >
-                        None Selected
-                      </DropdownItem>
-                      <DropdownItem
-                        onClick={handleFieldChange}
-                        name="patient_gender"
-                        value="Female"
-                      >
-                        Female
-                      </DropdownItem>
-                      <DropdownItem
-                        onClick={handleFieldChange}
-                        name="patient_gender"
-                        value="Male"
-                      >
-                        Male
-                      </DropdownItem>
-                      <DropdownItem
-                        onClick={handleFieldChange}
-                        name="patient_gender"
-                        value="Other"
-                      >
-                        Other
-                      </DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
                 </div>
-                </div>
-              </div>
-            </Form>
-          </div>
-          <div id="footer">
-            <ButtonNavigation
-              next={next}
-              updatePatient={updatePatient}
-              patient={props.patientId}
-              patientNotes={patientPsychological_Evaluation}
-            />
+              </Form>
+            </div>
+            <div id="footer">
+              <ButtonNavigation
+                next={next}
+                updatePatient={updatePatient}
+                patient={props.patientId}
+                patientNotes={patientPsychological_Evaluation}
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

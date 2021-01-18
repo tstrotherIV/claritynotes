@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Label } from "reactstrap";
+import { Label, Nav, Navbar } from "reactstrap";
 import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-
 // pdf page 76
 
 function PerpetratorOfNeglectAndAbusePg1(props) {
