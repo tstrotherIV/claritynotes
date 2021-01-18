@@ -10,7 +10,6 @@ import DataManager from "../../../data_module/DataManager";
 
 function EmploymentPg1(props) {
   const [item, setItem] = useState("");
-  const [patientNotes, setPatientNotes] = useState("");
   const [patientEmployment_pg1, setPatientEmployment_pg1] = useState({
     employment_pg1_a: "",
     employment_pg1_b: "",
@@ -33,72 +32,9 @@ function EmploymentPg1(props) {
     });
   };
 
-  const handlePatientNotesChange = (e) => {
-    const target = e.target;
-    const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = target.name;
-
-    const editedNote = {
-      id: patientNotes.id,
-      [name]: value,
-    };
-
-    DataManager.update("patientNotes", editedNote).then((data) => {
-      setPatientNotes(data);
-    });
-  };
-
-  const createResponse = (e) => {
+  const captureFieldName = (e) => {
     const fieldID = e.target.name;
-    DataManager.getQuestionPatientNotes(props.patientId, fieldID).then(
-      (patientNotesResponses) => {
-        if (patientNotesResponses[0] === undefined) {
-          const newNote = {
-            patientId: props.patientId,
-            questionId: fieldID,
-            t1a: "",
-            t2a: false,
-            t2b: false,
-            t2c: false,
-            t2d: false,
-            t2e: false,
-            t2f: false,
-            t2g: false,
-            t2h: false,
-            t2i: false,
-            t2j: false,
-            t2k: false,
-            t2l: false,
-            t2m: false,
-            t2n: false,
-            t2o: false,
-            t3a: false,
-            t3b: false,
-            t3c: false,
-            t3d: false,
-            t3e: false,
-            t3f: false,
-            t3g: false,
-            t4a: false,
-            t4b: false,
-            t4c: false,
-            t4d: false,
-            t4e: false,
-            t4f: false,
-            t4g: false,
-            t4h: false,
-            t4i: false,
-          };
-          DataManager.post("patientNotes", newNote).then((data) => {
-            setPatientNotes(data);
-            setItem(fieldID);
-          });
-        } else {
-          setPatientNotes(patientNotesResponses[0]);
-          setItem(fieldID);
-        }
-      }
-    );
+    setItem(fieldID);
   };
 
   //CRUD Function Start
@@ -177,7 +113,7 @@ function EmploymentPg1(props) {
                   id="employment_pg1_a"
                   name="employment_pg1_a"
                   onChange={handleFieldChange}
-                  onClick={createResponse}
+                  onClick={captureFieldName}
                   value={patientEmployment_pg1.employment_pg1_a}
                 />
               </div>
@@ -191,7 +127,7 @@ function EmploymentPg1(props) {
                   id="employment_pg1_b"
                   name="employment_pg1_b"
                   onChange={handleFieldChange}
-                  onClick={createResponse}
+                  onClick={captureFieldName}
                   value={patientEmployment_pg1.employment_pg1_b}
                   placeholder="has/has never"
                 />
@@ -207,7 +143,7 @@ function EmploymentPg1(props) {
                   id="employment_pg1_c"
                   name="employment_pg1_c"
                   onChange={handleFieldChange}
-                  onClick={createResponse}
+                  onClick={captureFieldName}
                   value={patientEmployment_pg1.employment_pg1_c}
                   placeholder="is/is not"
                 />
@@ -218,7 +154,7 @@ function EmploymentPg1(props) {
                   id="employment_pg1_d"
                   name="employment_pg1_d"
                   onChange={handleFieldChange}
-                  onClick={createResponse}
+                  onClick={captureFieldName}
                   value={patientEmployment_pg1.employment_pg1_d}
                   placeholder="has/has no"
                 />
@@ -235,7 +171,7 @@ function EmploymentPg1(props) {
                   id="employment_pg1_e"
                   name="employment_pg1_e"
                   onChange={handleFieldChange}
-                  onClick={createResponse}
+                  onClick={captureFieldName}
                   value={patientEmployment_pg1.employment_pg1_e}
                   placeholder=""
                 />
@@ -246,7 +182,7 @@ function EmploymentPg1(props) {
                   id="employment_pg1_f"
                   name="employment_pg1_f"
                   onChange={handleFieldChange}
-                  onClick={createResponse}
+                  onClick={captureFieldName}
                   value={patientEmployment_pg1.employment_pg1_f}
                   placeholder="select time"
                 />
@@ -264,7 +200,7 @@ function EmploymentPg1(props) {
                   id="employment_pg1_g"
                   name="employment_pg1_g"
                   onChange={handleFieldChange}
-                  onClick={createResponse}
+                  onClick={captureFieldName}
                   value={patientEmployment_pg1.employment_pg1_g}
                   placeholder=""
                 />
@@ -282,7 +218,7 @@ function EmploymentPg1(props) {
                   id="employment_pg1_h"
                   name="employment_pg1_h"
                   onChange={handleFieldChange}
-                  onClick={createResponse}
+                  onClick={captureFieldName}
                   value={patientEmployment_pg1.employment_pg1_h}
                   placeholder=""
                 />
@@ -293,7 +229,7 @@ function EmploymentPg1(props) {
                   id="employment_pg1_i"
                   name="employment_pg1_i"
                   onChange={handleFieldChange}
-                  onClick={createResponse}
+                  onClick={captureFieldName}
                   value={patientEmployment_pg1.employment_pg1_i}
                   placeholder=""
                 />
@@ -311,7 +247,7 @@ function EmploymentPg1(props) {
                   id="employment_pg1_j"
                   name="employment_pg1_j"
                   onChange={handleFieldChange}
-                  onClick={createResponse}
+                  onClick={captureFieldName}
                   value={patientEmployment_pg1.employment_pg1_j}
                   placeholder=""
                 />
@@ -329,8 +265,7 @@ function EmploymentPg1(props) {
             <TermOfParentalRights
               questionId={item}
               patientId={props.patientId}
-              notesData={patientNotes}
-              handlePatientNotesChange={handlePatientNotesChange}
+              item={item}
             />
           </div>
         </div>
