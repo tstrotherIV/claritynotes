@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 72
 
@@ -29,8 +28,8 @@ function NeglectAbuseTraumaLossPg2(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -61,7 +60,7 @@ function NeglectAbuseTraumaLossPg2(props) {
       const allowed = [
         "neglect_abuse_trauma_loss_pg2_a",
         "neglect_abuse_trauma_loss_pg2_b",
-        "neglect_abuse_trauma_loss_pg2_c"
+        "neglect_abuse_trauma_loss_pg2_c",
       ];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
@@ -102,6 +101,7 @@ function NeglectAbuseTraumaLossPg2(props) {
                   id="neglect_abuse_trauma_loss_pg2_a"
                   name="neglect_abuse_trauma_loss_pg2_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientNeglectAbuseTraumaLossPg2.neglect_abuse_trauma_loss_pg2_a
                   }
@@ -120,6 +120,7 @@ function NeglectAbuseTraumaLossPg2(props) {
                   id="neglect_abuse_trauma_loss_pg2_b"
                   name="neglect_abuse_trauma_loss_pg2_b"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientNeglectAbuseTraumaLossPg2.neglect_abuse_trauma_loss_pg2_b
                   }
@@ -138,6 +139,7 @@ function NeglectAbuseTraumaLossPg2(props) {
                   id="neglect_abuse_trauma_loss_pg2_c"
                   name="neglect_abuse_trauma_loss_pg2_c"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientNeglectAbuseTraumaLossPg2.neglect_abuse_trauma_loss_pg2_c
                   }
@@ -152,7 +154,11 @@ function NeglectAbuseTraumaLossPg2(props) {
               patient={props.patientId}
               patientNotes={patientNeglectAbuseTraumaLossPg2}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>

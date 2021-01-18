@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 70
 
@@ -34,8 +33,8 @@ function MedicalHistoryHealthConcernsLimitationsPg1(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -44,10 +43,14 @@ function MedicalHistoryHealthConcernsLimitationsPg1(props) {
   const updatePatient = () => {
     const editedPatient = {
       id: props.patientId,
-      mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_a:patientMedicalHistoryHealthConcernsLimitationsPg1.mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_a,
-      mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_b:patientMedicalHistoryHealthConcernsLimitationsPg1.mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_b,
-      mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_c:patientMedicalHistoryHealthConcernsLimitationsPg1.mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_c,
-      mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_d:patientMedicalHistoryHealthConcernsLimitationsPg1.mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_d,
+      mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_a:
+        patientMedicalHistoryHealthConcernsLimitationsPg1.mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_a,
+      mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_b:
+        patientMedicalHistoryHealthConcernsLimitationsPg1.mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_b,
+      mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_c:
+        patientMedicalHistoryHealthConcernsLimitationsPg1.mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_c,
+      mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_d:
+        patientMedicalHistoryHealthConcernsLimitationsPg1.mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_d,
     };
 
     DataManager.update("patients", editedPatient).then(() => {});
@@ -74,7 +77,7 @@ function MedicalHistoryHealthConcernsLimitationsPg1(props) {
           return obj;
         }, {});
 
-        setPatientMedicalHistoryHealthConcernsLimitationsPg1(filtered);
+      setPatientMedicalHistoryHealthConcernsLimitationsPg1(filtered);
     });
   };
 
@@ -106,6 +109,7 @@ function MedicalHistoryHealthConcernsLimitationsPg1(props) {
                   id="mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_a"
                   name="mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientMedicalHistoryHealthConcernsLimitationsPg1.mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_a
                   }
@@ -122,6 +126,7 @@ function MedicalHistoryHealthConcernsLimitationsPg1(props) {
                   id="mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_b"
                   name="mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_b"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientMedicalHistoryHealthConcernsLimitationsPg1.mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_b
                   }
@@ -140,6 +145,7 @@ function MedicalHistoryHealthConcernsLimitationsPg1(props) {
                   id="mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_c"
                   name="mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_c"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientMedicalHistoryHealthConcernsLimitationsPg1.mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_c
                   }
@@ -158,6 +164,7 @@ function MedicalHistoryHealthConcernsLimitationsPg1(props) {
                   id="mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_d"
                   name="mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_d"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientMedicalHistoryHealthConcernsLimitationsPg1.mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_d
                   }
@@ -172,7 +179,11 @@ function MedicalHistoryHealthConcernsLimitationsPg1(props) {
               patient={props.patientId}
               patientNotes={patientMedicalHistoryHealthConcernsLimitationsPg1}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>
