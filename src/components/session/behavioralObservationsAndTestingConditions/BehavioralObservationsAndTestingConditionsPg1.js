@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 98
 
@@ -32,8 +31,8 @@ function BehavioralObservationsPg1(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -82,7 +81,7 @@ function BehavioralObservationsPg1(props) {
           return obj;
         }, {});
 
-        setPatientBehavioralObservationsPg1(filtered);
+      setPatientBehavioralObservationsPg1(filtered);
     });
   };
 
@@ -113,6 +112,7 @@ function BehavioralObservationsPg1(props) {
                   id="behavioral_observations_and_testing_conditions_pg1_a"
                   name="behavioral_observations_and_testing_conditions_pg1_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientBehavioralObservationsPg1.behavioral_observations_and_testing_conditions_pg1_a
                   }
@@ -128,6 +128,7 @@ function BehavioralObservationsPg1(props) {
                   id="behavioral_observations_and_testing_conditions_pg1_b"
                   name="behavioral_observations_and_testing_conditions_pg1_b"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientBehavioralObservationsPg1.behavioral_observations_and_testing_conditions_pg1_b
                   }
@@ -146,6 +147,7 @@ function BehavioralObservationsPg1(props) {
                   id="behavioral_observations_and_testing_conditions_pg1_c"
                   name="behavioral_observations_and_testing_conditions_pg1_c"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientBehavioralObservationsPg1.behavioral_observations_and_testing_conditions_pg1_c
                   }
@@ -161,6 +163,7 @@ function BehavioralObservationsPg1(props) {
                   id="behavioral_observations_and_testing_conditions_pg1_d"
                   name="behavioral_observations_and_testing_conditions_pg1_d"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientBehavioralObservationsPg1.behavioral_observations_and_testing_conditions_pg1_d
                   }
@@ -180,6 +183,7 @@ function BehavioralObservationsPg1(props) {
                   id="behavioral_observations_and_testing_conditions_pg1_e"
                   name="behavioral_observations_and_testing_conditions_pg1_e"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientBehavioralObservationsPg1.behavioral_observations_and_testing_conditions_pg1_e
                   }
@@ -195,6 +199,7 @@ function BehavioralObservationsPg1(props) {
                   id="behavioral_observations_and_testing_conditions_pg1_f"
                   name="behavioral_observations_and_testing_conditions_pg1_f"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientBehavioralObservationsPg1.behavioral_observations_and_testing_conditions_pg1_f
                   }
@@ -210,7 +215,11 @@ function BehavioralObservationsPg1(props) {
             patient={props.patientId}
             patientNotes={patientBehavioralObservationsPg1}
           />
-          <TermOfParentalRights />
+          <TermOfParentalRights
+            questionId={item}
+            patientId={props.patientId}
+            item={item}
+          />
         </div>
       </div>
     </div>
