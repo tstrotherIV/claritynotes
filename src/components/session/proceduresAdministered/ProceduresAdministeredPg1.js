@@ -4,7 +4,6 @@ import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 //pdf page 103
 
@@ -42,8 +41,8 @@ function ProceduresAdministeredPg1(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -53,7 +52,7 @@ function ProceduresAdministeredPg1(props) {
     const editedPatient = {
       id: props.patientId,
       procedures_administered_pg1_a:
-      patientProceduresAdministeredPg1.procedures_administered_pg1_a,
+        patientProceduresAdministeredPg1.procedures_administered_pg1_a,
       procedures_administered_pg1_b:
         patientProceduresAdministeredPg1.procedures_administered_pg1_b,
       procedures_administered_pg1_c:
@@ -81,7 +80,7 @@ function ProceduresAdministeredPg1(props) {
       procedures_administered_pg1_n:
         patientProceduresAdministeredPg1.procedures_administered_pg1_n,
       procedures_administered_pg1_o:
-        patientProceduresAdministeredPg1.procedures_administered_pg1_o
+        patientProceduresAdministeredPg1.procedures_administered_pg1_o,
     };
 
     DataManager.update("patients", editedPatient).then(() => {});
@@ -119,7 +118,7 @@ function ProceduresAdministeredPg1(props) {
           return obj;
         }, {});
 
-        setPatientProceduresAdministeredPg1(filtered);
+      setPatientProceduresAdministeredPg1(filtered);
     });
   };
 
@@ -146,6 +145,7 @@ function ProceduresAdministeredPg1(props) {
                   patientProceduresAdministeredPg1.procedures_administered_pg1_a
                 }
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
               />
               <Label className="text-white m-0 p-0">
                 Wechsler Abbreviated Scale of Intelligence-Second Edition
@@ -162,6 +162,7 @@ function ProceduresAdministeredPg1(props) {
                   patientProceduresAdministeredPg1.procedures_administered_pg1_b
                 }
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
               />
               <Label className="text-white m-0 p-0">
                 Wechsler Adult Intelligence Scale-Fourth Edition (WAIS-IV)
@@ -177,6 +178,7 @@ function ProceduresAdministeredPg1(props) {
                   patientProceduresAdministeredPg1.procedures_administered_pg1_c
                 }
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
               />
               <Label className="text-white m-0 p-0">
                 Shipley Intelligence Assessment 2
@@ -192,6 +194,7 @@ function ProceduresAdministeredPg1(props) {
                   patientProceduresAdministeredPg1.procedures_administered_pg1_d
                 }
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
               />
               <Label className="text-white m-0 p-0">
                 Reynolds Adaptable Intelligence Test (RAIT)
@@ -207,6 +210,7 @@ function ProceduresAdministeredPg1(props) {
                   patientProceduresAdministeredPg1.procedures_administered_pg1_e
                 }
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
               />
               <Label className="text-white m-0 p-0">
                 Wide Range Achievement Test-Revision 5(WRAT-5)
@@ -222,6 +226,7 @@ function ProceduresAdministeredPg1(props) {
                   patientProceduresAdministeredPg1.procedures_administered_pg1_f
                 }
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
               />
               <Label className="text-white m-0 p-0">
                 Aimsweb Plus Achievement Test
@@ -237,6 +242,7 @@ function ProceduresAdministeredPg1(props) {
                   patientProceduresAdministeredPg1.procedures_administered_pg1_g
                 }
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
               />
               <Label className="text-white m-0 p-0">
                 Continuous Performance Test 3rd Edition (CPT 3)
@@ -252,6 +258,7 @@ function ProceduresAdministeredPg1(props) {
                   patientProceduresAdministeredPg1.procedures_administered_pg1_h
                 }
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
               />
               <Label className="text-white m-0 p-0">
                 Computerized Neurocognitive Assessment (CNS)
@@ -267,6 +274,7 @@ function ProceduresAdministeredPg1(props) {
                   patientProceduresAdministeredPg1.procedures_administered_pg1_i
                 }
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
               />
               <Label className="text-white m-0 p-0">
                 Paulhus Deception Scales (PDS)
@@ -282,6 +290,7 @@ function ProceduresAdministeredPg1(props) {
                   patientProceduresAdministeredPg1.procedures_administered_pg1_j
                 }
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
               />
               <Label className="text-white m-0 p-0">
                 Substance Abuse Subtle Screening Inventory-4 (SASSI-4)
@@ -297,6 +306,7 @@ function ProceduresAdministeredPg1(props) {
                   patientProceduresAdministeredPg1.procedures_administered_pg1_k
                 }
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
               />
               <Label className="text-white m-0 p-0">
                 Iowa Gambling Task (IGT)
@@ -312,6 +322,7 @@ function ProceduresAdministeredPg1(props) {
                   patientProceduresAdministeredPg1.procedures_administered_pg1_l
                 }
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
               />
               <Label className="text-white m-0 p-0">
                 Minnesota Multiphasic Personality Inventory-2 (MMPI-2)
@@ -327,6 +338,7 @@ function ProceduresAdministeredPg1(props) {
                   patientProceduresAdministeredPg1.procedures_administered_pg1_m
                 }
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
               />
               <Label className="text-white m-0 p-0">
                 Millon Clinical Multiaxial Inventory-IV (MCMI-IV)
@@ -342,6 +354,7 @@ function ProceduresAdministeredPg1(props) {
                   patientProceduresAdministeredPg1.procedures_administered_pg1_n
                 }
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
               />
               <Label className="text-white m-0 p-0">
                 Rorschach Performance Assessment System (R-PAS)
@@ -357,6 +370,7 @@ function ProceduresAdministeredPg1(props) {
                   patientProceduresAdministeredPg1.procedures_administered_pg1_o
                 }
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
               />
               <Label className="text-white m-0 p-0">
                 Thematic Apperceptions Test (TAT)
@@ -370,7 +384,11 @@ function ProceduresAdministeredPg1(props) {
               patient={props.patientId}
               patientNotes={patientProceduresAdministeredPg1}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>
