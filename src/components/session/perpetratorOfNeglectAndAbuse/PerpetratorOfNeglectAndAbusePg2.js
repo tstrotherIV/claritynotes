@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 77
 
@@ -29,8 +28,8 @@ function PerpetratorOfNeglectAndAbusePg2(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -102,6 +101,7 @@ function PerpetratorOfNeglectAndAbusePg2(props) {
                   id="perpetrator_of_neglect_and_abuse_pg2_a"
                   name="perpetrator_of_neglect_and_abuse_pg2_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientPerpetratorOfNeglectAndAbusePg2.perpetrator_of_neglect_and_abuse_pg2_a
                   }
@@ -120,6 +120,7 @@ function PerpetratorOfNeglectAndAbusePg2(props) {
                   id="perpetrator_of_neglect_and_abuse_pg2_b"
                   name="perpetrator_of_neglect_and_abuse_pg2_b"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientPerpetratorOfNeglectAndAbusePg2.perpetrator_of_neglect_and_abuse_pg2_b
                   }
@@ -139,6 +140,7 @@ function PerpetratorOfNeglectAndAbusePg2(props) {
                   id="perpetrator_of_neglect_and_abuse_pg2_c"
                   name="perpetrator_of_neglect_and_abuse_pg2_c"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientPerpetratorOfNeglectAndAbusePg2.perpetrator_of_neglect_and_abuse_pg2_c
                   }
@@ -153,7 +155,11 @@ function PerpetratorOfNeglectAndAbusePg2(props) {
               patient={props.patientId}
               patientNotes={patientPerpetratorOfNeglectAndAbusePg2}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>
