@@ -11,7 +11,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 97
 const next = "/behavioral_observations_and_testing_conditions_pg_1";
@@ -41,8 +40,8 @@ function MaterialResourcesPg1(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -51,12 +50,18 @@ function MaterialResourcesPg1(props) {
   const updatePatient = () => {
     const editedPatient = {
       id: props.patientId,
-      material_resources_pg1_a: patientMaterialResourcesPg1.material_resources_pg1_a,
-      material_resources_pg1_b: patientMaterialResourcesPg1.material_resources_pg1_b,
-      material_resources_pg1_c: patientMaterialResourcesPg1.material_resources_pg1_c,
-      material_resources_pg1_d: patientMaterialResourcesPg1.material_resources_pg1_d,
-      material_resources_pg1_e: patientMaterialResourcesPg1.material_resources_pg1_e,
-      material_resources_pg1_f: patientMaterialResourcesPg1.material_resources_pg1_f,
+      material_resources_pg1_a:
+        patientMaterialResourcesPg1.material_resources_pg1_a,
+      material_resources_pg1_b:
+        patientMaterialResourcesPg1.material_resources_pg1_b,
+      material_resources_pg1_c:
+        patientMaterialResourcesPg1.material_resources_pg1_c,
+      material_resources_pg1_d:
+        patientMaterialResourcesPg1.material_resources_pg1_d,
+      material_resources_pg1_e:
+        patientMaterialResourcesPg1.material_resources_pg1_e,
+      material_resources_pg1_f:
+        patientMaterialResourcesPg1.material_resources_pg1_f,
     };
 
     DataManager.update("patients", editedPatient).then(() => {});
@@ -85,7 +90,7 @@ function MaterialResourcesPg1(props) {
           return obj;
         }, {});
 
-        setPatientMaterialResourcesPg1(filtered);
+      setPatientMaterialResourcesPg1(filtered);
     });
   };
 
@@ -116,6 +121,7 @@ function MaterialResourcesPg1(props) {
                   id="material_resources_pg1_a"
                   name="material_resources_pg1_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientMaterialResourcesPg1.material_resources_pg1_a}
                 />
               </div>
@@ -127,6 +133,7 @@ function MaterialResourcesPg1(props) {
                   id="material_resources_pg1_b"
                   name="material_resources_pg1_b"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientMaterialResourcesPg1.material_resources_pg1_b}
                 />
               </div>
@@ -138,6 +145,7 @@ function MaterialResourcesPg1(props) {
                   id="material_resources_pg1_c"
                   name="material_resources_pg1_c"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientMaterialResourcesPg1.material_resources_pg1_c}
                 />
               </div>
@@ -158,6 +166,7 @@ function MaterialResourcesPg1(props) {
                   id="material_resources_pg1_d"
                   name="material_resources_pg1_d"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientMaterialResourcesPg1.material_resources_pg1_d}
                 />
                 are available as a support system for [her].
@@ -180,6 +189,7 @@ function MaterialResourcesPg1(props) {
                     id="material_resources_pg1_e"
                     name="material_resources_pg1_e"
                     onChange={handleFieldChange}
+                    onClick={captureFieldName}
                     value={patientMaterialResourcesPg1.material_resources_pg1_e}
                   >
                     <DropdownItem header>Header</DropdownItem>
@@ -208,6 +218,7 @@ function MaterialResourcesPg1(props) {
                   id="material_resources_pg1_f"
                   name="material_resources_pg1_f"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientMaterialResourcesPg1.material_resources_pg1_f}
                   placeholder=""
                 />
@@ -222,7 +233,11 @@ function MaterialResourcesPg1(props) {
               patient={props.patientId}
               patientNotes={patientMaterialResourcesPg1}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>

@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 96
 
@@ -27,8 +26,8 @@ function CognitiveSkillsPg1(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -96,6 +95,7 @@ function CognitiveSkillsPg1(props) {
                   id="cognitive_skills_pg1_a"
                   name="cognitive_skills_pg1_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientCognitiveSkillsPg1.cognitive_skills_pg1_a}
                 />
               </div>
@@ -114,6 +114,7 @@ function CognitiveSkillsPg1(props) {
                   id="cognitive_skills_pg1_b"
                   name="cognitive_skills_pg1_b"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientCognitiveSkillsPg1.cognitive_skills_pg1_b}
                 />
               </div>
@@ -132,6 +133,7 @@ function CognitiveSkillsPg1(props) {
                   id="cognitive_skills_pg1_c"
                   name="cognitive_skills_pg1_c"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientCognitiveSkillsPg1.cognitive_skills_pg1_c}
                 />
               </div>
@@ -146,6 +148,7 @@ function CognitiveSkillsPg1(props) {
                   id="cognitive_skills_pg1_d"
                   name="cognitive_skills_pg1_d"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientCognitiveSkillsPg1.cognitive_skills_pg1_d}
                   placeholder="were/were not"
                 />
@@ -160,7 +163,11 @@ function CognitiveSkillsPg1(props) {
               patient={props.patientId}
               patientNotes={patientCognitiveSkillsPg1}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>

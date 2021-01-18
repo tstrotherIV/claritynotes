@@ -4,7 +4,6 @@ import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 102
 
@@ -34,8 +33,8 @@ function BehavioralObservationsPg5(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -119,6 +118,7 @@ function BehavioralObservationsPg5(props) {
                     patientBehavioralObservationsPg5.behavioral_observations_and_testing_conditions_pg5_a
                   }
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                 />
                 <Label className="text-white m-0 p-0">Happiness</Label>
                 <div className="text-white col-12">
@@ -137,6 +137,7 @@ function BehavioralObservationsPg5(props) {
                     patientBehavioralObservationsPg5.behavioral_observations_and_testing_conditions_pg5_b
                   }
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                 />
                 <Label className="text-white  m-0 p-0">Contempt</Label>
                 <div className="text-white col-12 d-flex align-text-top">
@@ -156,6 +157,7 @@ function BehavioralObservationsPg5(props) {
                     patientBehavioralObservationsPg5.behavioral_observations_and_testing_conditions_pg5_c
                   }
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                 />
                 <Label className="text-white  m-0 p-0">Sadness</Label>
                 <div className="text-white col-12">
@@ -173,6 +175,7 @@ function BehavioralObservationsPg5(props) {
                     patientBehavioralObservationsPg5.behavioral_observations_and_testing_conditions_pg5_d
                   }
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                 />
                 <Label className="text-white m-0 p-0">Disgust</Label>
                 <div className="text-white col-12">
@@ -192,6 +195,7 @@ function BehavioralObservationsPg5(props) {
                     patientBehavioralObservationsPg5.behavioral_observations_and_testing_conditions_pg5_e
                   }
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                 />
                 <Label className="text-white  m-0 p-0">Anger</Label>
                 <div className="text-white col-12">
@@ -210,6 +214,7 @@ function BehavioralObservationsPg5(props) {
                     patientBehavioralObservationsPg5.behavioral_observations_and_testing_conditions_pg5_f
                   }
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                 />
                 <Label className="text-white  m-0 p-0">Surprise</Label>
                 <div className="text-white col-12">
@@ -228,6 +233,7 @@ function BehavioralObservationsPg5(props) {
                     patientBehavioralObservationsPg5.behavioral_observations_and_testing_conditions_pg5_g
                   }
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                 />
                 <Label className="text-white  m-0 p-0">Fear</Label>
                 <div className="text-white col-12">
@@ -244,7 +250,11 @@ function BehavioralObservationsPg5(props) {
             patient={props.patientId}
             patientNotes={patientBehavioralObservationsPg5}
           />
-          <TermOfParentalRights />
+          <TermOfParentalRights
+            questionId={item}
+            patientId={props.patientId}
+            item={item}
+          />
         </div>
       </div>
     </div>
