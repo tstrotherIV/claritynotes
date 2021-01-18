@@ -102,157 +102,175 @@ function EmploymentPg1(props) {
             <h4 className="textWhite centerItem">
               Currently, where are you employed?
             </h4>
-            <div className="interview_div1">
-              <div className="interview_line1">
-                <Label className="textWhite interview_title" for="">
-                  [Patient Name, First] said:
-                </Label>
-                <TextareaAutosize
-                  className="interview_fieldData"
-                  type="text"
-                  id="employment_pg1_a"
-                  name="employment_pg1_a"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientEmployment_pg1.employment_pg1_a}
-                />
-              </div>
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                <TextareaAutosize
-                  className="col-2 mr-2 mb-2 fieldData"
-                  type="text"
-                  id="employment_pg1_b"
-                  name="employment_pg1_b"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientEmployment_pg1.employment_pg1_b}
-                  placeholder="has/has never"
-                />
-                been employed.
-              </div>
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                <TextareaAutosize
-                  className="col-2 mr-2 mb-2 fieldData"
-                  type="text"
-                  id="employment_pg1_c"
-                  name="employment_pg1_c"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientEmployment_pg1.employment_pg1_c}
-                  placeholder="is/is not"
-                />
-                currently employed and
-                <TextareaAutosize
-                  className="col-2 mr-2 ml-2 mb-2 fieldData"
-                  type="text"
-                  id="employment_pg1_d"
-                  name="employment_pg1_d"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientEmployment_pg1.employment_pg1_d}
-                  placeholder="has/has no"
-                />
-                income.
-              </div>
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite text-right col-3" for="">
-                  [Patient Name, First]
-                </Label>
-                last work at
-                <TextareaAutosize
-                  className="col-2 mr-2 ml-2 mb-2 fieldData"
-                  type="text"
-                  id="employment_pg1_e"
-                  name="employment_pg1_e"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientEmployment_pg1.employment_pg1_e}
-                  placeholder=""
-                />
-                for
-                <input
-                  className="col-3 mr-2 ml-2 mb-2 fieldData"
-                  type="time"
-                  id="employment_pg1_f"
-                  name="employment_pg1_f"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientEmployment_pg1.employment_pg1_f}
-                  placeholder="select time"
-                />
-                .
-              </div>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                id="employment_pg1_a"
+                name="employment_pg1_a"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientEmployment_pg1.employment_pg1_a}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+              The patient (has/has never) been employed.
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                id="employment_pg1_b"
+                name="employment_pg1_b"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientEmployment_pg1.employment_pg1_b}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+              Is the patient is currently employed?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                id="employment_pg1_c"
+                name="employment_pg1_c"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientEmployment_pg1.employment_pg1_c}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+              Does the patient have income?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                id="employment_pg1_d"
+                name="employment_pg1_d"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientEmployment_pg1.employment_pg1_d}
+              />
+            </div>
 
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                left this job because
-                <TextareaAutosize
-                  className="col-4 mr-2 ml-2 mb-2 fieldData"
-                  type=""
-                  id="employment_pg1_g"
-                  name="employment_pg1_g"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientEmployment_pg1.employment_pg1_g}
-                  placeholder=""
-                />
-                .
-              </div>
+            <h4 className="textWhite centerItem">
+              Where did that patient last work?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                id="employment_pg1_e"
+                name="employment_pg1_e"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientEmployment_pg1.employment_pg1_e}
+              />
+            </div>
 
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                reported [he/she] worked at
-                <TextareaAutosize
-                  className="fieldData col-3 mr-2 ml-2 mb-2"
-                  type=""
-                  id="employment_pg1_h"
-                  name="employment_pg1_h"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientEmployment_pg1.employment_pg1_h}
-                  placeholder=""
-                />
-                as
-                <TextareaAutosize
-                  className="col-2 mr-2 ml-2 mb-2 fieldData"
-                  type=""
-                  id="employment_pg1_i"
-                  name="employment_pg1_i"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientEmployment_pg1.employment_pg1_i}
-                  placeholder=""
-                />
-                .
-              </div>
+            <h4 className="textWhite centerItem">
+              When did that patient last work at their previous job?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                id="employment_pg1_f"
+                name="employment_pg1_f"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientEmployment_pg1.employment_pg1_f}
+              />
+            </div>
 
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                has been there
-                <TextareaAutosize
-                  className="col-4 mr-2 ml-2 mb-2 fieldData"
-                  type=""
-                  id="employment_pg1_j"
-                  name="employment_pg1_j"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientEmployment_pg1.employment_pg1_j}
-                  placeholder=""
-                />
-                .
-              </div>
+            <h4 className="textWhite centerItem">
+              Why did the patient leave their last job?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                id="employment_pg1_g"
+                name="employment_pg1_g"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientEmployment_pg1.employment_pg1_g}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+              Where did the patient report they worked at?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                id="employment_pg1_h"
+                name="employment_pg1_h"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientEmployment_pg1.employment_pg1_h}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+              What work role did the patient report?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                id="employment_pg1_i"
+                name="employment_pg1_i"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientEmployment_pg1.employment_pg1_i}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+              How long has the patient been at their current job?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                id="employment_pg1_j"
+                name="employment_pg1_j"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientEmployment_pg1.employment_pg1_j}
+              />
             </div>
           </div>
           <div id="footer">

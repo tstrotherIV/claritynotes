@@ -66,6 +66,7 @@ const TermOfParentalRights = (props) => {
             t3e: false,
             t3f: false,
             t3g: false,
+            t3h: false,
             t4a: false,
             t4b: false,
             t4c: false,
@@ -461,6 +462,20 @@ const TermOfParentalRights = (props) => {
                         down. Eyebrows slanted in, lowered in middle of
                         forehead. Widened eyes (brief stare).
                       </p>
+                    </div>
+                    <div className="col-4">
+                      <Input
+                        type="checkbox"
+                        className=""
+                        id="t3h"
+                        name="t3h"
+                        checked={patientNotes.t3h}
+                        onChange={handlePatientNotesChange}
+                      ></Input>
+                      <Label className="inputBoldText" for="">
+                        Greasy/Unkempt Hair
+                      </Label>
+                      <p className="m-0"></p>
                     </div>
                   </div>
                 </div>
