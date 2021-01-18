@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 56
 
@@ -24,8 +23,8 @@ function HistoryOfLegalPg6(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -34,7 +33,7 @@ function HistoryOfLegalPg6(props) {
   const updatePatient = () => {
     const editedPatient = {
       id: props.patientId,
-      history_of_legal_pg6_a: patientHistoryOfLegal_pg6.history_of_legal_pg6_a
+      history_of_legal_pg6_a: patientHistoryOfLegal_pg6.history_of_legal_pg6_a,
     };
 
     DataManager.update("patients", editedPatient).then(() => {});
@@ -48,9 +47,7 @@ function HistoryOfLegalPg6(props) {
         ...patientInfo,
       };
 
-      const allowed = [
-        "history_of_legal_pg6_a"
-      ];
+      const allowed = ["history_of_legal_pg6_a"];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
         .reduce((obj, key) => {
@@ -90,6 +87,7 @@ function HistoryOfLegalPg6(props) {
                   id="history_of_legal_pg6_a"
                   name="history_of_legal_pg6_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientHistoryOfLegal_pg6.history_of_legal_pg6_a}
                 />
               </div>
@@ -102,7 +100,11 @@ function HistoryOfLegalPg6(props) {
               patient={props.patientId}
               patientNotes={patientHistoryOfLegal_pg6}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>

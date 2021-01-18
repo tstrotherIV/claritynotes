@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 61
 
@@ -29,8 +28,8 @@ function HistoryOfLegalPg11(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -39,12 +38,18 @@ function HistoryOfLegalPg11(props) {
   const updatePatient = () => {
     const editedPatient = {
       id: props.patientId,
-      history_of_legal_pg11_a: patientHistoryOfLegal_pg11.history_of_legal_pg11_a,
-      history_of_legal_pg11_b: patientHistoryOfLegal_pg11.history_of_legal_pg11_b,
-      history_of_legal_pg11_c: patientHistoryOfLegal_pg11.history_of_legal_pg11_c,
-      history_of_legal_pg11_d: patientHistoryOfLegal_pg11.history_of_legal_pg11_d,
-      history_of_legal_pg11_e: patientHistoryOfLegal_pg11.history_of_legal_pg11_e,
-      history_of_legal_pg11_f: patientHistoryOfLegal_pg11.history_of_legal_pg11_f
+      history_of_legal_pg11_a:
+        patientHistoryOfLegal_pg11.history_of_legal_pg11_a,
+      history_of_legal_pg11_b:
+        patientHistoryOfLegal_pg11.history_of_legal_pg11_b,
+      history_of_legal_pg11_c:
+        patientHistoryOfLegal_pg11.history_of_legal_pg11_c,
+      history_of_legal_pg11_d:
+        patientHistoryOfLegal_pg11.history_of_legal_pg11_d,
+      history_of_legal_pg11_e:
+        patientHistoryOfLegal_pg11.history_of_legal_pg11_e,
+      history_of_legal_pg11_f:
+        patientHistoryOfLegal_pg11.history_of_legal_pg11_f,
     };
 
     DataManager.update("patients", editedPatient).then(() => {});
@@ -64,7 +69,7 @@ function HistoryOfLegalPg11(props) {
         "history_of_legal_pg11_c",
         "history_of_legal_pg11_d",
         "history_of_legal_pg11_e",
-        "history_of_legal_pg11_f"
+        "history_of_legal_pg11_f",
       ];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
@@ -105,6 +110,7 @@ function HistoryOfLegalPg11(props) {
                   id="history_of_legal_pg11_a"
                   name="history_of_legal_pg11_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientHistoryOfLegal_pg11.history_of_legal_pg11_a}
                 />
               </div>
@@ -123,6 +129,7 @@ function HistoryOfLegalPg11(props) {
                   id="history_of_legal_pg11_b"
                   name="history_of_legal_pg11_b"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientHistoryOfLegal_pg11.history_of_legal_pg11_b}
                 />
               </div>
@@ -138,6 +145,7 @@ function HistoryOfLegalPg11(props) {
                 id="history_of_legal_pg11_c"
                 name="history_of_legal_pg11_c"
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
                 value={patientHistoryOfLegal_pg11.history_of_legal_pg11_c}
               />
             </div>
@@ -152,6 +160,7 @@ function HistoryOfLegalPg11(props) {
                 id="history_of_legal_pg11_d"
                 name="history_of_legal_pg11_d"
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
                 value={patientHistoryOfLegal_pg11.history_of_legal_pg11_d}
               />
               times per week.
@@ -167,6 +176,7 @@ function HistoryOfLegalPg11(props) {
                 id="history_of_legal_pg11_e"
                 name="history_of_legal_pg11_e"
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
                 value={patientHistoryOfLegal_pg11.history_of_legal_pg11_e}
               />
             </div>
@@ -181,6 +191,7 @@ function HistoryOfLegalPg11(props) {
                 id="history_of_legal_pg11_f"
                 name="history_of_legal_pg11_f"
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
                 value={patientHistoryOfLegal_pg11.history_of_legal_pg11_f}
               />
             </div>
@@ -192,7 +203,11 @@ function HistoryOfLegalPg11(props) {
               patient={props.patientId}
               patientNotes={patientHistoryOfLegal_pg11}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>
