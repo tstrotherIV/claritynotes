@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 95
 
@@ -32,8 +31,8 @@ function ParentKnowledgePg1(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -42,24 +41,15 @@ function ParentKnowledgePg1(props) {
   const updatePatient = () => {
     const editedPatient = {
       id: props.patientId,
-      parent_knowledge_pg1_a:
-      patientParentKnowledgePg1.parent_knowledge_pg1_a,
-      parent_knowledge_pg1_b:
-      patientParentKnowledgePg1.parent_knowledge_pg1_b,
-      parent_knowledge_pg1_c:
-      patientParentKnowledgePg1.parent_knowledge_pg1_c,
-      parent_knowledge_pg1_d:
-      patientParentKnowledgePg1.parent_knowledge_pg1_d,
-      parent_knowledge_pg1_e:
-      patientParentKnowledgePg1.parent_knowledge_pg1_e,
-      parent_knowledge_pg1_f:
-      patientParentKnowledgePg1.parent_knowledge_pg1_f,
-      parent_knowledge_pg1_g:
-      patientParentKnowledgePg1.parent_knowledge_pg1_g,
-      parent_knowledge_pg1_h:
-      patientParentKnowledgePg1.parent_knowledge_pg1_h,
-      parent_knowledge_pg1_i:
-      patientParentKnowledgePg1.parent_knowledge_pg1_i,
+      parent_knowledge_pg1_a: patientParentKnowledgePg1.parent_knowledge_pg1_a,
+      parent_knowledge_pg1_b: patientParentKnowledgePg1.parent_knowledge_pg1_b,
+      parent_knowledge_pg1_c: patientParentKnowledgePg1.parent_knowledge_pg1_c,
+      parent_knowledge_pg1_d: patientParentKnowledgePg1.parent_knowledge_pg1_d,
+      parent_knowledge_pg1_e: patientParentKnowledgePg1.parent_knowledge_pg1_e,
+      parent_knowledge_pg1_f: patientParentKnowledgePg1.parent_knowledge_pg1_f,
+      parent_knowledge_pg1_g: patientParentKnowledgePg1.parent_knowledge_pg1_g,
+      parent_knowledge_pg1_h: patientParentKnowledgePg1.parent_knowledge_pg1_h,
+      parent_knowledge_pg1_i: patientParentKnowledgePg1.parent_knowledge_pg1_i,
     };
 
     DataManager.update("patients", editedPatient).then(() => {});
@@ -91,7 +81,7 @@ function ParentKnowledgePg1(props) {
           return obj;
         }, {});
 
-        setPatientParentKnowledgePg1(filtered);
+      setPatientParentKnowledgePg1(filtered);
     });
   };
 
@@ -118,6 +108,7 @@ function ParentKnowledgePg1(props) {
                   id="parent_knowledge_pg1_a"
                   name="parent_knowledge_pg1_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientParentKnowledgePg1.parent_knowledge_pg1_a}
                 />
                 for medical care.
@@ -133,6 +124,7 @@ function ParentKnowledgePg1(props) {
                   id="parent_knowledge_pg1_b"
                   name="parent_knowledge_pg1_b"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientParentKnowledgePg1.parent_knowledge_pg1_b}
                 />
                 for dental care.
@@ -149,6 +141,7 @@ function ParentKnowledgePg1(props) {
                   id="parent_knowledge_pg1_c"
                   name="parent_knowledge_pg1_c"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientParentKnowledgePg1.parent_knowledge_pg1_c}
                 />
                 takes [them] to [their] appointments.
@@ -165,6 +158,7 @@ function ParentKnowledgePg1(props) {
                   id="parent_knowledge_pg1_d"
                   name="parent_knowledge_pg1_d"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientParentKnowledgePg1.parent_knowledge_pg1_d}
                 />
                 size clothes.
@@ -182,6 +176,7 @@ function ParentKnowledgePg1(props) {
                   id="parent_knowledge_pg1_e"
                   name="parent_knowledge_pg1_e"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientParentKnowledgePg1.parent_knowledge_pg1_e}
                 />
                 .
@@ -196,6 +191,7 @@ function ParentKnowledgePg1(props) {
                   id="parent_knowledge_pg1_f"
                   name="parent_knowledge_pg1_f"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientParentKnowledgePg1.parent_knowledge_pg1_f}
                   placeholder="are/are not"
                 />
@@ -212,6 +208,7 @@ function ParentKnowledgePg1(props) {
                   id="parent_knowledge_pg1_g"
                   name="parent_knowledge_pg1_g"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientParentKnowledgePg1.parent_knowledge_pg1_g}
                   placeholder=""
                 />
@@ -230,6 +227,7 @@ function ParentKnowledgePg1(props) {
                   id="parent_knowledge_pg1_h"
                   name="parent_knowledge_pg1_h"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientParentKnowledgePg1.parent_knowledge_pg1_h}
                 />
                 <div className="col-5 p-0">
@@ -246,6 +244,7 @@ function ParentKnowledgePg1(props) {
                   id="parent_knowledge_pg1_i"
                   name="parent_knowledge_pg1_i"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientParentKnowledgePg1.parent_knowledge_pg1_i}
                   placeholder="knew/did not know"
                 />
@@ -260,7 +259,11 @@ function ParentKnowledgePg1(props) {
               patient={props.patientId}
               patientNotes={patientParentKnowledgePg1}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>

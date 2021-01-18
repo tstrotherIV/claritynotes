@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 94
 
@@ -35,8 +34,8 @@ function PositiveRoleModelPg2(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -120,6 +119,7 @@ function PositiveRoleModelPg2(props) {
                     id="positive_role_model_pg2_a"
                     name="positive_role_model_pg2_a"
                     onChange={handleFieldChange}
+                    onClick={captureFieldName}
                     value={
                       patientPositiveRoleModelPg2.positive_role_model_pg2_a
                     }
@@ -133,6 +133,7 @@ function PositiveRoleModelPg2(props) {
                     id="positive_role_model_pg2_b"
                     name="positive_role_model_pg2_b"
                     onChange={handleFieldChange}
+                    onClick={captureFieldName}
                     value={
                       patientPositiveRoleModelPg2.positive_role_model_pg2_b
                     }
@@ -146,6 +147,7 @@ function PositiveRoleModelPg2(props) {
                     id="positive_role_model_pg2_c"
                     name="positive_role_model_pg2_c"
                     onChange={handleFieldChange}
+                    onClick={captureFieldName}
                     value={
                       patientPositiveRoleModelPg2.positive_role_model_pg2_c
                     }
@@ -168,6 +170,7 @@ function PositiveRoleModelPg2(props) {
                     id="positive_role_model_pg2_d"
                     name="positive_role_model_pg2_d"
                     onChange={handleFieldChange}
+                    onClick={captureFieldName}
                     value={
                       patientPositiveRoleModelPg2.positive_role_model_pg2_d
                     }
@@ -181,6 +184,7 @@ function PositiveRoleModelPg2(props) {
                     id="positive_role_model_pg2_e"
                     name="positive_role_model_pg2_e"
                     onChange={handleFieldChange}
+                    onClick={captureFieldName}
                     value={
                       patientPositiveRoleModelPg2.positive_role_model_pg2_e
                     }
@@ -194,6 +198,7 @@ function PositiveRoleModelPg2(props) {
                     id="positive_role_model_pg2_f"
                     name="positive_role_model_pg2_f"
                     onChange={handleFieldChange}
+                    onClick={captureFieldName}
                     value={
                       patientPositiveRoleModelPg2.positive_role_model_pg2_f
                     }
@@ -214,6 +219,7 @@ function PositiveRoleModelPg2(props) {
                     patientPositiveRoleModelPg2.positive_role_model_pg2_g
                   }
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                 />
 
                 <Label className="textWhite text-center" for="firstName">
@@ -234,7 +240,11 @@ function PositiveRoleModelPg2(props) {
               patient={props.patientId}
               patientNotes={patientPositiveRoleModelPg2}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>

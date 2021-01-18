@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 // pdf page 93
 
 function PositiveRoleModelPg1(props) {
@@ -35,8 +34,8 @@ function PositiveRoleModelPg1(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -63,8 +62,8 @@ function PositiveRoleModelPg1(props) {
         patientPositiveRoleModelPg1.positive_role_model_pg1_h,
       positive_role_model_pg1_i:
         patientPositiveRoleModelPg1.positive_role_model_pg1_i,
-        positive_role_model_pg1_j:
-        patientPositiveRoleModelPg1.positive_role_model_pg1_j
+      positive_role_model_pg1_j:
+        patientPositiveRoleModelPg1.positive_role_model_pg1_j,
     };
 
     DataManager.update("patients", editedPatient).then(() => {});
@@ -78,7 +77,18 @@ function PositiveRoleModelPg1(props) {
         ...patientInfo,
       };
 
-      const allowed = ["positive_role_model_pg1_a", "positive_role_model_pg1_b", "positive_role_model_pg1_c", "positive_role_model_pg1_d", "positive_role_model_pg1_e", "positive_role_model_pg1_f", "positive_role_model_pg1_g", "positive_role_model_pg1_h", "positive_role_model_pg1_i", "positive_role_model_pg1_j"];
+      const allowed = [
+        "positive_role_model_pg1_a",
+        "positive_role_model_pg1_b",
+        "positive_role_model_pg1_c",
+        "positive_role_model_pg1_d",
+        "positive_role_model_pg1_e",
+        "positive_role_model_pg1_f",
+        "positive_role_model_pg1_g",
+        "positive_role_model_pg1_h",
+        "positive_role_model_pg1_i",
+        "positive_role_model_pg1_j",
+      ];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
         .reduce((obj, key) => {
@@ -113,6 +123,7 @@ function PositiveRoleModelPg1(props) {
                   id="positive_role_model_pg1_a"
                   name="positive_role_model_pg1_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientPositiveRoleModelPg1.positive_role_model_pg1_a}
                   placeholder="does/does not"
                 />
@@ -129,6 +140,7 @@ function PositiveRoleModelPg1(props) {
                   id="positive_role_model_pg1_b"
                   name="positive_role_model_pg1_b"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientPositiveRoleModelPg1.positive_role_model_pg1_b}
                   placeholder="does/does not"
                 />
@@ -139,6 +151,7 @@ function PositiveRoleModelPg1(props) {
                   id="positive_role_model_pg1_c"
                   name="positive_role_model_pg1_c"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientPositiveRoleModelPg1.positive_role_model_pg1_c}
                   placeholder="confirms/denies"
                 />
@@ -154,6 +167,7 @@ function PositiveRoleModelPg1(props) {
                   id="positive_role_model_pg1_d"
                   name="positive_role_model_pg1_d"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientPositiveRoleModelPg1.positive_role_model_pg1_d}
                   placeholder="confirms/denies"
                 />
@@ -169,6 +183,7 @@ function PositiveRoleModelPg1(props) {
                   id="positive_role_model_pg1_e"
                   name="positive_role_model_pg1_e"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientPositiveRoleModelPg1.positive_role_model_pg1_e}
                   placeholder="confirms/denies"
                 />
@@ -184,6 +199,7 @@ function PositiveRoleModelPg1(props) {
                   id="positive_role_model_pg1_f"
                   name="positive_role_model_pg1_f"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientPositiveRoleModelPg1.positive_role_model_pg1_f}
                   placeholder="confirms/denies"
                 />
@@ -199,6 +215,7 @@ function PositiveRoleModelPg1(props) {
                   id="positive_role_model_pg1_g"
                   name="positive_role_model_pg1_g"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientPositiveRoleModelPg1.positive_role_model_pg1_g}
                   placeholder="confirms/denies"
                 />
@@ -220,6 +237,7 @@ function PositiveRoleModelPg1(props) {
                     id="positive_role_model_pg1_h"
                     name="positive_role_model_pg1_h"
                     onChange={handleFieldChange}
+                    onClick={captureFieldName}
                     value={
                       patientPositiveRoleModelPg1.positive_role_model_pg1_h
                     }
@@ -233,6 +251,7 @@ function PositiveRoleModelPg1(props) {
                     id="positive_role_model_pg1_i"
                     name="positive_role_model_pg1_i"
                     onChange={handleFieldChange}
+                    onClick={captureFieldName}
                     value={
                       patientPositiveRoleModelPg1.positive_role_model_pg1_i
                     }
@@ -246,6 +265,7 @@ function PositiveRoleModelPg1(props) {
                     id="positive_role_model_pg1_j"
                     name="positive_role_model_pg1_j"
                     onChange={handleFieldChange}
+                    onClick={captureFieldName}
                     value={
                       patientPositiveRoleModelPg1.positive_role_model_pg1_j
                     }
@@ -261,7 +281,11 @@ function PositiveRoleModelPg1(props) {
               patient={props.patientId}
               patientNotes={patientPositiveRoleModelPg1}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>
