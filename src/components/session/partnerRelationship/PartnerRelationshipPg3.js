@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 82
 
@@ -29,8 +28,8 @@ function PartnerRelationshipPg3(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -44,7 +43,7 @@ function PartnerRelationshipPg3(props) {
       partner_relationship_pg3_b:
         patientPartnerRelationshipPg3.partner_relationship_pg3_b,
       partner_relationship_pg3_c:
-        patientPartnerRelationshipPg3.partner_relationship_pg3_c
+        patientPartnerRelationshipPg3.partner_relationship_pg3_c,
     };
 
     DataManager.update("patients", editedPatient).then(() => {});
@@ -99,6 +98,7 @@ function PartnerRelationshipPg3(props) {
                   id="partner_relationship_pg3_a"
                   name="partner_relationship_pg3_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientPartnerRelationshipPg3.partner_relationship_pg3_a
                   }
@@ -118,6 +118,7 @@ function PartnerRelationshipPg3(props) {
                   id="partner_relationship_pg3_b"
                   name="partner_relationship_pg3_b"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientPartnerRelationshipPg3.partner_relationship_pg3_b
                   }
@@ -136,6 +137,7 @@ function PartnerRelationshipPg3(props) {
                   id="partner_relationship_pg3_c"
                   name="partner_relationship_pg3_c"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientPartnerRelationshipPg3.partner_relationship_pg3_c
                   }
@@ -150,7 +152,11 @@ function PartnerRelationshipPg3(props) {
               patient={props.patientId}
               patientNotes={patientPartnerRelationshipPg3}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>

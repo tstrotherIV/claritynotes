@@ -5,8 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
-
 
 // pdf page 80
 
@@ -32,8 +30,8 @@ function PartnerRelationshipPg1(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -42,12 +40,16 @@ function PartnerRelationshipPg1(props) {
   const updatePatient = () => {
     const editedPatient = {
       id: props.patientId,
-      partner_relationship_pg1_a: patientPartnerRelationshipPg1.partner_relationship_pg1_a,
-      partner_relationship_pg1_b: patientPartnerRelationshipPg1.partner_relationship_pg1_b,
-      partner_relationship_pg1_c: patientPartnerRelationshipPg1.partner_relationship_pg1_c,
-      partner_relationship_pg1_d: patientPartnerRelationshipPg1.partner_relationship_pg1_d,
-      partner_relationship_pg1_e: patientPartnerRelationshipPg1.partner_relationship_pg1_e,
-      
+      partner_relationship_pg1_a:
+        patientPartnerRelationshipPg1.partner_relationship_pg1_a,
+      partner_relationship_pg1_b:
+        patientPartnerRelationshipPg1.partner_relationship_pg1_b,
+      partner_relationship_pg1_c:
+        patientPartnerRelationshipPg1.partner_relationship_pg1_c,
+      partner_relationship_pg1_d:
+        patientPartnerRelationshipPg1.partner_relationship_pg1_d,
+      partner_relationship_pg1_e:
+        patientPartnerRelationshipPg1.partner_relationship_pg1_e,
     };
 
     DataManager.update("patients", editedPatient).then(() => {});
@@ -61,7 +63,13 @@ function PartnerRelationshipPg1(props) {
         ...patientInfo,
       };
 
-      const allowed = ["partner_relationship_pg1_a", "partner_relationship_pg1_b", "partner_relationship_pg1_c","partner_relationship_pg1_d","partner_relationship_pg1_e"];
+      const allowed = [
+        "partner_relationship_pg1_a",
+        "partner_relationship_pg1_b",
+        "partner_relationship_pg1_c",
+        "partner_relationship_pg1_d",
+        "partner_relationship_pg1_e",
+      ];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
         .reduce((obj, key) => {
@@ -69,7 +77,7 @@ function PartnerRelationshipPg1(props) {
           return obj;
         }, {});
 
-        setPatientPartnerRelationshipPg1(filtered);
+      setPatientPartnerRelationshipPg1(filtered);
     });
   };
 
@@ -99,6 +107,7 @@ function PartnerRelationshipPg1(props) {
                   id="partner_relationship_pg1_a"
                   name="partner_relationship_pg1_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientPartnerRelationshipPg1.partner_relationship_pg1_a
                   }
@@ -112,6 +121,7 @@ function PartnerRelationshipPg1(props) {
                   id="partner_relationship_pg1_b"
                   name="partner_relationship_pg1_b"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientPartnerRelationshipPg1.partner_relationship_pg1_b
                   }
@@ -125,6 +135,7 @@ function PartnerRelationshipPg1(props) {
                   id="partner_relationship_pg1_c"
                   name="partner_relationship_pg1_c"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientPartnerRelationshipPg1.partner_relationship_pg1_c
                   }
@@ -146,6 +157,7 @@ function PartnerRelationshipPg1(props) {
                   id="partner_relationship_pg1_d"
                   name="partner_relationship_pg1_d"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientPartnerRelationshipPg1.partner_relationship_pg1_d
                   }
@@ -164,6 +176,7 @@ function PartnerRelationshipPg1(props) {
                   id="partner_relationship_pg1_e"
                   name="partner_relationship_pg1_e"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientPartnerRelationshipPg1.partner_relationship_pg1_e
                   }
@@ -178,7 +191,11 @@ function PartnerRelationshipPg1(props) {
               patient={props.patientId}
               patientNotes={patientPartnerRelationshipPg1}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>

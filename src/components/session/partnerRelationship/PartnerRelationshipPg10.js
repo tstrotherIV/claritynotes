@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 89
 
@@ -28,8 +27,8 @@ function PartnerRelationshipPg10(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -41,7 +40,7 @@ function PartnerRelationshipPg10(props) {
       partner_relationship_pg10_a:
         patientPartnerRelationshipPg10.partner_relationship_pg10_a,
       partner_relationship_pg10_b:
-        patientPartnerRelationshipPg10.partner_relationship_pg10_b
+        patientPartnerRelationshipPg10.partner_relationship_pg10_b,
     };
 
     DataManager.update("patients", editedPatient).then(() => {});
@@ -96,6 +95,7 @@ function PartnerRelationshipPg10(props) {
                   id="partner_relationship_pg10_a"
                   name="partner_relationship_pg10_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientPartnerRelationshipPg10.partner_relationship_pg10_a
                   }
@@ -114,6 +114,7 @@ function PartnerRelationshipPg10(props) {
                   id="partner_relationship_pg10_b"
                   name="partner_relationship_pg10_b"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientPartnerRelationshipPg10.partner_relationship_pg10_b
                   }
@@ -128,7 +129,11 @@ function PartnerRelationshipPg10(props) {
               patient={props.patientId}
               patientNotes={patientPartnerRelationshipPg10}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>
