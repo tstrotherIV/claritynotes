@@ -8,7 +8,6 @@ import DataManager from "../../../data_module/DataManager";
 
 function FamilyPg12(props) {
   const [item, setItem] = useState("");
-  const [patientNotes, setPatientNotes] = useState("");
   const [patientFamily_pg12, setPatientFamily_pg12] = useState({
     familiy_pg12_a: "",
     familiy_pg12_b: "",
@@ -24,72 +23,9 @@ function FamilyPg12(props) {
     });
   };
 
-  const handlePatientNotesChange = (e) => {
-    const target = e.target;
-    const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = target.name;
-
-    const editedNote = {
-      id: patientNotes.id,
-      [name]: value,
-    };
-
-    DataManager.update("patientNotes", editedNote).then((data) => {
-      setPatientNotes(data);
-    });
-  };
-
-  const createResponse = (e) => {
+  const captureFieldName = (e) => {
     const fieldID = e.target.name;
-    DataManager.getQuestionPatientNotes(props.patientId, fieldID).then(
-      (patientNotesResponses) => {
-        if (patientNotesResponses[0] === undefined) {
-          const newNote = {
-            patientId: props.patientId,
-            questionId: fieldID,
-            t1a: "",
-            t2a: false,
-            t2b: false,
-            t2c: false,
-            t2d: false,
-            t2e: false,
-            t2f: false,
-            t2g: false,
-            t2h: false,
-            t2i: false,
-            t2j: false,
-            t2k: false,
-            t2l: false,
-            t2m: false,
-            t2n: false,
-            t2o: false,
-            t3a: false,
-            t3b: false,
-            t3c: false,
-            t3d: false,
-            t3e: false,
-            t3f: false,
-            t3g: false,
-            t4a: false,
-            t4b: false,
-            t4c: false,
-            t4d: false,
-            t4e: false,
-            t4f: false,
-            t4g: false,
-            t4h: false,
-            t4i: false,
-          };
-          DataManager.post("patientNotes", newNote).then((data) => {
-            setPatientNotes(data);
-            setItem(fieldID);
-          });
-        } else {
-          setPatientNotes(patientNotesResponses[0]);
-          setItem(fieldID);
-        }
-      }
-    );
+    setItem(fieldID);
   };
 
   //CRUD Function Start
@@ -152,7 +88,7 @@ function FamilyPg12(props) {
                   id={item}
                   name="family_pg12_a"
                   onChange={handleFieldChange}
-                  onClick={createResponse}
+                  onClick={captureFieldName}
                   value={patientFamily_pg12.family_pg12_a}
                 />
               </div>
@@ -173,7 +109,7 @@ function FamilyPg12(props) {
                   id={item}
                   name="family_pg12_b"
                   onChange={handleFieldChange}
-                  onClick={createResponse}
+                  onClick={captureFieldName}
                   value={patientFamily_pg12.family_pg12_b}
                 />
               </div>
@@ -193,7 +129,7 @@ function FamilyPg12(props) {
                   id={item}
                   name="family_pg12_c"
                   onChange={handleFieldChange}
-                  onClick={createResponse}
+                  onClick={captureFieldName}
                   value={patientFamily_pg12.family_pg12_c}
                 />
               </div>
@@ -210,8 +146,7 @@ function FamilyPg12(props) {
           <TermOfParentalRights
             questionId={item}
             patientId={props.patientId}
-            notesData={patientNotes}
-            handlePatientNotesChange={handlePatientNotesChange}
+            item={item}
           />
         </div>
       </div>

@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 49
 
@@ -26,8 +25,8 @@ function EducationPg4(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -89,6 +88,7 @@ function EducationPg4(props) {
                   id="education_pg4_a"
                   name="education_pg4_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientEducation_pg4.education_pg4_a}
                 />
               </div>
@@ -105,6 +105,7 @@ function EducationPg4(props) {
                   id="education_pg4_b"
                   name="education_pg4_b"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientEducation_pg4.education_pg4_b}
                 />
               </div>
@@ -121,6 +122,7 @@ function EducationPg4(props) {
                   id="education_pg4_c"
                   name="education_pg4_c"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientEducation_pg4.education_pg4_c}
                 />
               </div>
@@ -133,7 +135,11 @@ function EducationPg4(props) {
               patient={props.patientId}
               patientNotes={patientEducation_pg4}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>
