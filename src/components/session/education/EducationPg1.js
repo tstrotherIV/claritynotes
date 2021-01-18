@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 44
 
@@ -29,7 +28,7 @@ function EducationPg1(props) {
   };
 
   const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -96,6 +95,7 @@ function EducationPg1(props) {
                 id="education_pg1_a"
                 name="education_pg1_a"
                 onChange={handleFieldChange}
+                onClick={convertIDfunc}
                 value={patientEducation_pg1.education_pg1_a}
               />
             </div>
@@ -107,6 +107,7 @@ function EducationPg1(props) {
                 id="education_pg1_b"
                 name="education_pg1_b"
                 onChange={handleFieldChange}
+                onClick={convertIDfunc}
                 value={patientEducation_pg1.education_pg1_b}
               />
             </div>
@@ -127,6 +128,7 @@ function EducationPg1(props) {
                 id="education_pg1_c"
                 name="education_pg1_c"
                 onChange={handleFieldChange}
+                onClick={convertIDfunc}
                 value={patientEducation_pg1.education_pg1_c}
               />
             </div>
@@ -138,6 +140,7 @@ function EducationPg1(props) {
                 id="education_pg1_d"
                 name="education_pg1_d"
                 onChange={handleFieldChange}
+                onClick={convertIDfunc}
                 value={patientEducation_pg1.education_pg1_d}
               />
             </div>
@@ -156,6 +159,7 @@ function EducationPg1(props) {
                 id="education_pg1_e"
                 name="education_pg1_e"
                 onChange={handleFieldChange}
+                onClick={convertIDfunc}
                 value={patientEducation_pg1.education_pg1_e}
               />
             </div>
@@ -167,7 +171,11 @@ function EducationPg1(props) {
               patient={props.patientId}
               patientNotes={patientEducation_pg1}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>
