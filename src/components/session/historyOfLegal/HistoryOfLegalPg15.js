@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 65
 
@@ -24,8 +23,8 @@ function HistoryOfLegalPg15(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -88,6 +87,7 @@ function HistoryOfLegalPg15(props) {
                   id="history_of_legal_pg15_a"
                   name="history_of_legal_pg15_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientHistoryOfLegal_pg15.history_of_legal_pg15_a}
                 />
               </div>
@@ -100,7 +100,11 @@ function HistoryOfLegalPg15(props) {
               patient={props.patientId}
               patientNotes={patientHistoryOfLegal_pg15}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>

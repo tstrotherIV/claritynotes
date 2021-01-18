@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 50
 
@@ -26,8 +25,8 @@ function HistoryOfLegalPg1(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -95,6 +94,7 @@ function HistoryOfLegalPg1(props) {
                   id="history_of_legal_pg1_a"
                   name="history_of_legal_pg1_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientHistoryOfLegal_pg1.history_of_legal_pg1_a}
                 />
               </div>
@@ -111,6 +111,7 @@ function HistoryOfLegalPg1(props) {
                   id="history_of_legal_pg1_b"
                   name="history_of_legal_pg1_b"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientHistoryOfLegal_pg1.history_of_legal_pg1_b}
                 />
               </div>
@@ -127,6 +128,7 @@ function HistoryOfLegalPg1(props) {
                   id="history_of_legal_pg1_c"
                   name="history_of_legal_pg1_c"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientHistoryOfLegal_pg1.history_of_legal_pg1_c}
                 />
               </div>
@@ -139,7 +141,11 @@ function HistoryOfLegalPg1(props) {
               patient={props.patientId}
               patientNotes={patientHistoryOfLegal_pg1}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>

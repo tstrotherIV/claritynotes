@@ -5,12 +5,11 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 62
 
 function HistoryOfLegalPg12(props) {
-  const [item, setItem] = useState("")
+  const [item, setItem] = useState("");
   const [patientHistoryOfLegal_pg12, setPatientHistoryOfLegal_pg12] = useState({
     history_of_legal_pg12_a: "",
     history_of_legal_pg12_b: "",
@@ -30,8 +29,8 @@ function HistoryOfLegalPg12(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -111,6 +110,7 @@ function HistoryOfLegalPg12(props) {
                 id="history_of_legal_pg12_a"
                 name="history_of_legal_pg12_a"
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
                 value={patientHistoryOfLegal_pg12.history_of_legal_pg12_a}
               />
             </div>
@@ -125,6 +125,7 @@ function HistoryOfLegalPg12(props) {
                 id="history_of_legal_pg12_b"
                 name="history_of_legal_pg12_b"
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
                 value={patientHistoryOfLegal_pg12.history_of_legal_pg12_b}
               />
             </div>
@@ -139,6 +140,7 @@ function HistoryOfLegalPg12(props) {
                 id="history_of_legal_pg12_c"
                 name="history_of_legal_pg12_c"
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
                 value={patientHistoryOfLegal_pg12.history_of_legal_pg12_c}
               />
             </div>
@@ -153,6 +155,7 @@ function HistoryOfLegalPg12(props) {
                 id="history_of_legal_pg12_d"
                 name="history_of_legal_pg12_d"
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
                 value={patientHistoryOfLegal_pg12.history_of_legal_pg12_d}
               />
             </div>
@@ -167,6 +170,7 @@ function HistoryOfLegalPg12(props) {
                 id="history_of_legal_pg12_e"
                 name="history_of_legal_pg12_e"
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
                 value={patientHistoryOfLegal_pg12.history_of_legal_pg12_e}
               />
             </div>
@@ -181,6 +185,7 @@ function HistoryOfLegalPg12(props) {
                 id="history_of_legal_pg12_f"
                 name="history_of_legal_pg12_f"
                 onChange={handleFieldChange}
+                onClick={captureFieldName}
                 value={patientHistoryOfLegal_pg12.history_of_legal_pg12_f}
               />
             </div>
@@ -199,6 +204,7 @@ function HistoryOfLegalPg12(props) {
                   id="history_of_legal_pg12_g"
                   name="history_of_legal_pg12_g"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientHistoryOfLegal_pg12.history_of_legal_pg12_g}
                 />
               </div>
@@ -211,7 +217,11 @@ function HistoryOfLegalPg12(props) {
               patient={props.patientId}
               patientNotes={patientHistoryOfLegal_pg12}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>
