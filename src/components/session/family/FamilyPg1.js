@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Label } from "reactstrap";
+import { Label, Navbar } from "reactstrap";
 import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
@@ -85,9 +85,7 @@ function FamilyPg1(props) {
           </div>
           {/* <div className="d-flex flex-wrap justify-content-center align-items-baseline m-2"> */}
           <div className="interview_div1">
-            <h4 className="textWhite centerItem">
-              Who raised you from?
-            </h4>
+            <h4 className="textWhite centerItem">Who raised you from?</h4>
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
                 [Patient Name, First] said:

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ApplicationViews from "./ApplicationViews";
-import "./ClarityNotesApp.scss"
+import "./ClarityNotesApp.scss";
+import NavBar from "./shared/sideNav/sideNav";
 
 const ClarityNotes = (props) => {
   const isAuthenticated = () => sessionStorage.getItem("loggedUser") !== null;
@@ -21,9 +22,9 @@ const ClarityNotes = (props) => {
     setHasUser(isAuthenticated());
   };
 
-
   return (
     <>
+      <NavBar />
       <ApplicationViews
         hasUser={hasUser}
         setUser={setUser}

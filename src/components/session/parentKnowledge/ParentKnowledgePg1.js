@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-
 // pdf page 95
 
 function ParentKnowledgePg1(props) {
@@ -218,7 +217,7 @@ function ParentKnowledgePg1(props) {
               />
             </div>
             <h4 className="textWhite centerItem">
-            How many extracurricular activites did you attend this past year?
+              How many extracurricular activites did you attend this past year?
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
