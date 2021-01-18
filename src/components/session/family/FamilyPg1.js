@@ -83,48 +83,65 @@ function FamilyPg1(props) {
           <div className="header">
             <h2 className="textWhite">Family</h2>
           </div>
-          <div className="d-flex flex-wrap justify-content-center align-items-baseline m-2">
-            <Label className="textWhite m-4" for="">
-              [Patient Name, First] his/her
-            </Label>
-            <TextareaAutosize
-              className="fieldData col-2"
-              type="text"
-              id={item}
-              name="family_pg1_a"
-              onChange={handleFieldChange}
-              value={patientFamily_pg1.family_pg1_a}
-              onClick={captureFieldName}
-              placeholder={patientFamily_pg1.family_pg1_a}
-            />
-            <Label className="textWhite m-4" for="">
-              raised him/her in
-            </Label>
-            <TextareaAutosize
-              className="fieldData col-2"
-              type="text"
-              id="family_pg1_b"
-              name="family_pg1_b"
-              onChange={handleFieldChange}
-              value={patientFamily_pg1.family_pg1_b}
-              onClick={captureFieldName}
-            />
-            <div className="textWhite ml-2">.</div>
+          {/* <div className="d-flex flex-wrap justify-content-center align-items-baseline m-2"> */}
+          <div className="interview_div1">
+            <h4 className="textWhite centerItem">
+              Who raised you from?
+            </h4>
+            <div className="interview_line1">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                name=""
+                id="family_pg1_a"
+                name="family_pg1_a"
+                onChange={handleFieldChange}
+                value={patientFamily_pg1.family_pg1_a}
+                onClick={captureFieldName}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+              What type of housing were you raised in?
+            </h4>
+            <div className="interview_line1">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                name=""
+                id="family_pg1_b"
+                name="family_pg1_b"
+                onChange={handleFieldChange}
+                value={patientFamily_pg1.family_pg1_b}
+                onClick={captureFieldName}
+              />
+            </div>
           </div>
-          <div className="d-flex flex-wrap justify-content-center align-items-baseline m-2">
-            <Label className="textWhite ml-1 mr-1 mt-0 mb-0" for="">
-              [Patient Name, First] had
-            </Label>
-            <TextareaAutosize
-              className="fieldData col-2"
-              type="text"
-              id="family_pg1_c"
-              name="family_pg1_c"
-              onChange={handleFieldChange}
-              value={patientFamily_pg1.family_pg1_c}
-              onClick={captureFieldName}
-            />
-            <div className="textWhite ml-1 mr-1">brothers and sisters.</div>
+          {/* </div> */}
+          <h4 className="textWhite centerItem">
+            How many brothers and/or sisters did you have?
+          </h4>
+          <div className="interview_div1">
+            <div className="interview_line1">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                name=""
+                id="family_pg1_c"
+                name="family_pg1_c"
+                onChange={handleFieldChange}
+                value={patientFamily_pg1.family_pg1_c}
+                onClick={captureFieldName}
+              />
+            </div>
           </div>
           <h4 className="textWhite centerItem">
             Who raised you from birth until you moved out of the home?

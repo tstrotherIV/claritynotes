@@ -95,7 +95,7 @@ function HistoryOfLegalPg13(props) {
               How many times have things gotten a little out of control, more
               than to your liking?
             </h4>
-            <div className="m-auto d-flex align-items-center textWhite">
+            <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
                 [Patient Name, First] said:
               </Label>
@@ -127,53 +127,57 @@ function HistoryOfLegalPg13(props) {
                 value={patientHistoryOfLegal_pg13.history_of_legal_pg13_b}
               />
             </div>
-            <div className="mb-4 d-flex flex-wrap justify-content-center mb-4">
-              <div className="textWhite d-flex flex-wrap align-content-end col-2 mb-2">
+            <h4 className="textWhite centerItem mt-4">
+              How many times have you completed or left a substance abuse
+              outpatient, inpatient, or residential program?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title ">
                 [Patient Name, First] said:
-              </div>
-              <div className="col-4 d-flex flex-wrap align-items-end m-0 p-0">
-                <Label className="textWhite interview_title">
-                  How many times have you completed or left a substance abuse
-                  outpatient, inpatient, or residential program?
-                </Label>
-                <TextareaAutosize
-                  className="fieldData"
-                  type="text"
-                  id="history_of_legal_pg13_c"
-                  name="history_of_legal_pg13_c"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientHistoryOfLegal_pg13.history_of_legal_pg13_c}
-                />
-              </div>
-              <div className="col-2 d-flex flex-wrap align-items-end ml-2 justify-content-center align-content-end">
-                <Label className="textWhite" for="">
-                  Rehabilitation Program Location
-                </Label>
-                <TextareaAutosize
-                  className="fieldData"
-                  type="text"
-                  id="history_of_legal_pg13_d"
-                  name="history_of_legal_pg13_d"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientHistoryOfLegal_pg13.history_of_legal_pg13_d}
-                />
-              </div>
-              <div className="col-2 d-flex flex-wrap align-items-end justify-content-center ml-2 p-0 align-content-end">
-                <Label className="textWhite" for="">
-                  Date of Rehab
-                </Label>
-                <TextareaAutosize
-                  className="fieldData"
-                  type="text"
-                  id="history_of_legal_pg13_e"
-                  name="history_of_legal_pg13_e"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientHistoryOfLegal_pg13.history_of_legal_pg13_e}
-                />
-              </div>
+              </Label>
+              <TextareaAutosize
+                className="fieldData"
+                type="text"
+                id="history_of_legal_pg13_c"
+                name="history_of_legal_pg13_c"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientHistoryOfLegal_pg13.history_of_legal_pg13_c}
+              />
+            </div>
+            <h4 className="textWhite centerItem mt-4">
+              Where was the Rehabilitation Program location?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title ">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData"
+                type="text"
+                id="history_of_legal_pg13_d"
+                name="history_of_legal_pg13_d"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientHistoryOfLegal_pg13.history_of_legal_pg13_d}
+              />
+            </div>
+            <h4 className="textWhite centerItem mt-4">
+              What was the date of your rehab?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title ">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData"
+                type="text"
+                id="history_of_legal_pg13_e"
+                name="history_of_legal_pg13_e"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientHistoryOfLegal_pg13.history_of_legal_pg13_e}
+              />
             </div>
           </div>
           <div id="footer">

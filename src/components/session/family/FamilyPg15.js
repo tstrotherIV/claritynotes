@@ -15,7 +15,8 @@ function FamilyPg15(props) {
     familiy_pg15_b: "",
   });
 
-  const next = "/psychological_evaluation_report_summary";
+  // const next = "/psychological_evaluation_report_summary";
+  const next = "housing_pg_1";
 
   const handleFieldChange = (e) => {
     setPatientFamily_pg15({
