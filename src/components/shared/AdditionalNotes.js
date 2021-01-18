@@ -3,7 +3,6 @@ import DataManager from "../../data_module/DataManager";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-
 /*
  * Custom "star" icon for the toolbar using an Octicon
  * https://octicons.github.io
@@ -24,7 +23,7 @@ function insertStar() {
  */
 const CustomToolbar = () => (
   <div id="toolbar">
-       <span className="ql-formats">
+    <span className="ql-formats">
       <select className="ql-font"></select>
       <select className="ql-size"></select>
     </span>
@@ -58,7 +57,6 @@ const CustomToolbar = () => (
       <button className="ql-link"></button>
       <button className="ql-image"></button>
       <button className="ql-video"></button>
-      
     </span>
     <span className="ql-formats">
       <button className="ql-clean"></button>
@@ -66,7 +64,7 @@ const CustomToolbar = () => (
   </div>
 );
 
-/* 
+/*
  * Editor component with custom toolbar and content containers
  */
 class AdditionalNotes extends React.Component {
@@ -77,14 +75,11 @@ class AdditionalNotes extends React.Component {
   }
 
   handleChange(html) {
-    
     const editedGeneralNotes = {
       id: this.props.patientNotes.id,
-      t1a: html
+      t1a: html,
     };
     DataManager.update("patientNotes", editedGeneralNotes);
-
-    // this.setState({ t1a: html });
   }
 
   render() {
@@ -106,23 +101,22 @@ class AdditionalNotes extends React.Component {
   }
 }
 
-/* 
+/*
  * Quill modules to attach to editor
  * See https://quilljs.com/docs/modules/ for complete options
  */
 AdditionalNotes.modules = {
-    toolbar: {
-      syntax: true,
-      container: "#toolbar",
+  toolbar: {
+    syntax: true,
+    container: "#toolbar",
 
-      handlers: {
-        insertStar: insertStar
-      }
-      
-    }
-  };
+    handlers: {
+      insertStar: insertStar,
+    },
+  },
+};
 
-/* 
+/*
  * Quill editor formats
  * See https://quilljs.com/docs/formats/
  */
@@ -140,7 +134,7 @@ AdditionalNotes.formats = [
   "indent",
   "link",
   "image",
-  "color"
+  "color",
 ];
 
 export default AdditionalNotes;
