@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 // pdf page 75
 
 function NeglectAbuseTraumaLossPg5(props) {
@@ -28,8 +27,8 @@ function NeglectAbuseTraumaLossPg5(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -102,6 +101,7 @@ function NeglectAbuseTraumaLossPg5(props) {
                   id="neglect_abuse_trauma_loss_pg5_a"
                   name="neglect_abuse_trauma_loss_pg5_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientNeglectAbuseTraumaLossPg5.neglect_abuse_trauma_loss_pg5_a
                   }
@@ -121,6 +121,7 @@ function NeglectAbuseTraumaLossPg5(props) {
                   id="neglect_abuse_trauma_loss_pg5_b"
                   name="neglect_abuse_trauma_loss_pg5_b"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientNeglectAbuseTraumaLossPg5.neglect_abuse_trauma_loss_pg5_b
                   }
@@ -139,6 +140,7 @@ function NeglectAbuseTraumaLossPg5(props) {
                   id="neglect_abuse_trauma_loss_pg5_c"
                   name="neglect_abuse_trauma_loss_pg5_c"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientNeglectAbuseTraumaLossPg5.neglect_abuse_trauma_loss_pg5_c
                   }
@@ -153,7 +155,11 @@ function NeglectAbuseTraumaLossPg5(props) {
               patient={props.patientId}
               patientNotes={patientNeglectAbuseTraumaLossPg5}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>

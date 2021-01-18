@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 71
 
@@ -29,8 +28,8 @@ function NeglectAbuseTraumaLossPg1(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -40,10 +39,10 @@ function NeglectAbuseTraumaLossPg1(props) {
     const editedPatient = {
       id: props.patientId,
       neglect_abuse_trauma_loss_pg1_a:
-      patientNeglectAbuseTraumaLossPg1.neglect_abuse_trauma_loss_pg1_a,
-        neglect_abuse_trauma_loss_pg1_b:
+        patientNeglectAbuseTraumaLossPg1.neglect_abuse_trauma_loss_pg1_a,
+      neglect_abuse_trauma_loss_pg1_b:
         patientNeglectAbuseTraumaLossPg1.neglect_abuse_trauma_loss_pg1_b,
-        neglect_abuse_trauma_loss_pg1_c:
+      neglect_abuse_trauma_loss_pg1_c:
         patientNeglectAbuseTraumaLossPg1.neglect_abuse_trauma_loss_pg1_c,
     };
 
@@ -70,7 +69,7 @@ function NeglectAbuseTraumaLossPg1(props) {
           return obj;
         }, {});
 
-        setPatientNeglectAbuseTraumaLossPg1(filtered);
+      setPatientNeglectAbuseTraumaLossPg1(filtered);
     });
   };
 
@@ -102,6 +101,7 @@ function NeglectAbuseTraumaLossPg1(props) {
                   id="neglect_abuse_trauma_loss_pg1_a"
                   name="neglect_abuse_trauma_loss_pg1_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientNeglectAbuseTraumaLossPg1.neglect_abuse_trauma_loss_pg1_a
                   }
@@ -120,6 +120,7 @@ function NeglectAbuseTraumaLossPg1(props) {
                   id="neglect_abuse_trauma_loss_pg1_b"
                   name="neglect_abuse_trauma_loss_pg1_b"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientNeglectAbuseTraumaLossPg1.neglect_abuse_trauma_loss_pg1_b
                   }
@@ -138,6 +139,7 @@ function NeglectAbuseTraumaLossPg1(props) {
                   id="neglect_abuse_trauma_loss_pg1_c"
                   name="neglect_abuse_trauma_loss_pg1_c"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={
                     patientNeglectAbuseTraumaLossPg1.neglect_abuse_trauma_loss_pg1_c
                   }
@@ -152,7 +154,11 @@ function NeglectAbuseTraumaLossPg1(props) {
               patient={props.patientId}
               patientNotes={patientNeglectAbuseTraumaLossPg1}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>
