@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 90
 
@@ -26,8 +25,8 @@ function ParentingPg1(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -36,12 +35,9 @@ function ParentingPg1(props) {
   const updatePatient = () => {
     const editedPatient = {
       id: props.patientId,
-      parenting_pg1_a:
-      patientParentingPg1.parenting_pg1_a,
-      parenting_pg1_b:
-      patientParentingPg1.parenting_pg1_b,
-      parenting_pg1_c:
-      patientParentingPg1.parenting_pg1_c
+      parenting_pg1_a: patientParentingPg1.parenting_pg1_a,
+      parenting_pg1_b: patientParentingPg1.parenting_pg1_b,
+      parenting_pg1_c: patientParentingPg1.parenting_pg1_c,
     };
 
     DataManager.update("patients", editedPatient).then(() => {});
@@ -55,11 +51,7 @@ function ParentingPg1(props) {
         ...patientInfo,
       };
 
-      const allowed = [
-        "parenting_pg1_a",
-        "parenting_pg1_b",
-        "parenting_pg1_c",
-      ];
+      const allowed = ["parenting_pg1_a", "parenting_pg1_b", "parenting_pg1_c"];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
         .reduce((obj, key) => {
@@ -67,7 +59,7 @@ function ParentingPg1(props) {
           return obj;
         }, {});
 
-        setPatientParentingPg1(filtered);
+      setPatientParentingPg1(filtered);
     });
   };
 
@@ -96,6 +88,7 @@ function ParentingPg1(props) {
                   id="parenting_pg1_a"
                   name="parenting_pg1_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientParentingPg1.parenting_pg1_a}
                 />
               </div>
@@ -114,6 +107,7 @@ function ParentingPg1(props) {
                   id="parenting_pg1_b"
                   name="parenting_pg1_b"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientParentingPg1.parenting_pg1_b}
                 />
               </div>
@@ -132,6 +126,7 @@ function ParentingPg1(props) {
                   id="parenting_pg1_c"
                   name="parenting_pg1_c"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientParentingPg1.parenting_pg1_c}
                 />
               </div>
@@ -144,7 +139,11 @@ function ParentingPg1(props) {
               patient={props.patientId}
               patientNotes={patientParentingPg1}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>

@@ -5,7 +5,6 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 91
 
@@ -26,8 +25,8 @@ function ParentingPg2(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
+  const captureFieldName = (e) => {
+    const fieldID = e.target.name;
     setItem(fieldID);
   };
 
@@ -89,6 +88,7 @@ function ParentingPg2(props) {
                   id="parenting_pg2_a"
                   name="parenting_pg2_a"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientParentingPg2.parenting_pg2_a}
                 />
               </div>
@@ -107,6 +107,7 @@ function ParentingPg2(props) {
                   id="parenting_pg2_b"
                   name="parenting_pg2_b"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientParentingPg2.parenting_pg2_b}
                 />
               </div>
@@ -125,6 +126,7 @@ function ParentingPg2(props) {
                   id="parenting_pg2_c"
                   name="parenting_pg2_c"
                   onChange={handleFieldChange}
+                  onClick={captureFieldName}
                   value={patientParentingPg2.parenting_pg2_c}
                 />
               </div>
@@ -137,7 +139,11 @@ function ParentingPg2(props) {
               patient={props.patientId}
               patientNotes={patientParentingPg2}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>
