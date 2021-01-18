@@ -134,66 +134,81 @@ function HistoryOfLegalPg11(props) {
                 />
               </div>
             </div>
-            <div className="m-auto d-flex align-items-center textWhite">
-              <Label className="textWhite col-3 text-right" for="">
-                [Patient Name, First]
-              </Label>
-              reported she started smoking marijuana at age
-              <TextareaAutosize
-                className="col-4 mr-2 ml-2 mb-2 fieldData"
-                type=""
-                id="history_of_legal_pg11_c"
-                name="history_of_legal_pg11_c"
-                onChange={handleFieldChange}
-                onClick={captureFieldName}
-                value={patientHistoryOfLegal_pg11.history_of_legal_pg11_c}
-              />
+            <h4 className="mt-2 textWhite centerItem">
+             What age did you start smoking marijuana?
+            </h4>
+            <div className="interview_div1">
+              <div className="interview_line1 mb-4">
+                <Label className="textWhite interview_title" for="">
+                  [Patient Name, First] said:
+                </Label>
+                <TextareaAutosize
+                  className="fieldData"
+                  type="text"
+                  id="history_of_legal_pg11_c"
+                  name="history_of_legal_pg11_c"
+                  onChange={handleFieldChange}
+                  onClick={captureFieldName}
+                  value={patientHistoryOfLegal_pg11.history_of_legal_pg11_c}
+                />
+              </div>
             </div>
-            <div className="m-auto d-flex align-items-center textWhite">
-              <Label className="textWhite col-3 text-right" for="">
-                [Patient Name, First]
-              </Label>
-              noted smoking
-              <TextareaAutosize
-                className="col-2 mr-2 ml-2 mb-2 fieldData"
-                type="text"
-                id="history_of_legal_pg11_d"
-                name="history_of_legal_pg11_d"
-                onChange={handleFieldChange}
-                onClick={captureFieldName}
-                value={patientHistoryOfLegal_pg11.history_of_legal_pg11_d}
-              />
-              times per week.
+            <h4 className="mt-2 textWhite centerItem">
+              How many times per week do you smoke marijuana?
+            </h4>
+            <div className="interview_div1">
+              <div className="interview_line1 mb-4">
+                <Label className="textWhite interview_title" for="">
+                  [Patient Name, First] said:
+                </Label>
+                <TextareaAutosize
+                  className="fieldData"
+                  type="text"
+                  id="history_of_legal_pg11_d"
+                  name="history_of_legal_pg11_d"
+                  onChange={handleFieldChange}
+                  onClick={captureFieldName}
+                  value={patientHistoryOfLegal_pg11.history_of_legal_pg11_d}
+                />
+              </div>
             </div>
-            <div className="m-auto d-flex align-items-center textWhite">
-              <Label className="textWhite col-3 text-right" for="">
-                [Patient Name, First]
-              </Label>
-              reported she started using cocaine at age
-              <TextareaAutosize
-                className="col-4 mr-2 ml-2 mb-2 fieldData"
-                type=""
-                id="history_of_legal_pg11_e"
-                name="history_of_legal_pg11_e"
-                onChange={handleFieldChange}
-                onClick={captureFieldName}
-                value={patientHistoryOfLegal_pg11.history_of_legal_pg11_e}
-              />
+            <h4 className="mt-2 textWhite centerItem">
+              What age did you start using cocaine?
+            </h4>
+            <div className="interview_div1">
+              <div className="interview_line1 mb-4">
+                <Label className="textWhite interview_title" for="">
+                  [Patient Name, First] said:
+                </Label>
+                <TextareaAutosize
+                  className="fieldData"
+                  type="text"
+                  id="history_of_legal_pg11_e"
+                  name="history_of_legal_pg11_e"
+                  onChange={handleFieldChange}
+                  onClick={captureFieldName}
+                  value={patientHistoryOfLegal_pg11.history_of_legal_pg11_e}
+                />
+              </div>
             </div>
-            <div className="m-auto d-flex align-items-center textWhite">
-              <Label className="textWhite col-3 text-right" for="">
-                [Patient Name, First]
-              </Label>
-              noted the last time she used cocaine was
-              <TextareaAutosize
-                className="col-4 mr-2 ml-2 mb-2 fieldData"
-                type=""
-                id="history_of_legal_pg11_f"
-                name="history_of_legal_pg11_f"
-                onChange={handleFieldChange}
-                onClick={captureFieldName}
-                value={patientHistoryOfLegal_pg11.history_of_legal_pg11_f}
-              />
+            <h4 className="mt-2 textWhite centerItem">
+            How many times per week do you use cocaine?
+            </h4>
+            <div className="interview_div1">
+              <div className="interview_line1 mb-4">
+                <Label className="textWhite interview_title" for="">
+                  [Patient Name, First] said:
+                </Label>
+                <TextareaAutosize
+                  className="fieldData"
+                  type="text"
+                  id="history_of_legal_pg11_f"
+                  name="history_of_legal_pg11_f"
+                  onChange={handleFieldChange}
+                  onClick={captureFieldName}
+                  value={patientHistoryOfLegal_pg11.history_of_legal_pg11_f}
+                />
+              </div>
             </div>
           </div>
           <div id="footer">

@@ -86,7 +86,7 @@ function HistoryOfLegalPg14(props) {
             <h4 className="textWhite centerItem">
               What is your self-care routine/plan?
             </h4>
-            <div className="m-auto d-flex align-items-center textWhite">
+            <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
                 [Patient Name, First] said:
               </Label>

@@ -22,6 +22,9 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
     behavioral_observations_and_testing_conditions_pg3_g: "",
     behavioral_observations_and_testing_conditions_pg3_h: "",
     behavioral_observations_and_testing_conditions_pg3_i: "",
+    behavioral_observations_and_testing_conditions_pg3_j: "",
+    behavioral_observations_and_testing_conditions_pg3_k: "",
+    behavioral_observations_and_testing_conditions_pg3_l: "",
   });
 
   const next = "/behavioral_observations_and_testing_conditions_pg_4";
@@ -61,6 +64,12 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
         patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_h,
       behavioral_observations_and_testing_conditions_pg3_i:
         patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_i,
+      behavioral_observations_and_testing_conditions_pg3_j:
+        patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_j,
+      behavioral_observations_and_testing_conditions_pg3_k:
+        patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_k,
+      behavioral_observations_and_testing_conditions_pg3_l:
+        patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_l,
     };
 
     DataManager.update("patients", editedPatient).then(() => {});
@@ -84,6 +93,9 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
         "behavioral_observations_and_testing_conditions_pg3_g",
         "behavioral_observations_and_testing_conditions_pg3_h",
         "behavioral_observations_and_testing_conditions_pg3_i",
+        "behavioral_observations_and_testing_conditions_pg3_j",
+        "behavioral_observations_and_testing_conditions_pg3_k",
+        "behavioral_observations_and_testing_conditions_pg3_l",
       ];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
@@ -108,178 +120,212 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
           <h2 className="textWhite text-center mb-4">
             Behavioral Observations and Testing Conditions
           </h2>
-          <div className="questionsContainer">
-            <div className="interview_div1">
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                <div className="m-2"> reported [her children go] to </div>
-                <TextareaAutosize
-                  className="col-2 mr-2 mb-2 fieldData"
-                  type="text"
-                  id="behavioral_observations_and_testing_conditions_pg3_a"
-                  name="behavioral_observations_and_testing_conditions_pg3_a"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={
-                    patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_a
-                  }
-                />
-                for medical care.
-              </div>
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                <div className="m-2">reported [her children go]</div>
-                <TextareaAutosize
-                  className="col-2 mr-2 mb-2 fieldData"
-                  type="text"
-                  id="behavioral_observations_and_testing_conditions_pg3_b"
-                  name="behavioral_observations_and_testing_conditions_pg3_b"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={
-                    patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_b
-                  }
-                />
-                for dental care.
-              </div>
+          <div className="text-center questionsContainer">
+            <h4 className="textWhite centerItem">
+              What was the patients height?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="behavioral_observations_and_testing_conditions_pg3_a"
+                name="behavioral_observations_and_testing_conditions_pg3_a"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_a}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+            What was the patients weight?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="behavioral_observations_and_testing_conditions_pg3_b"
+                name="behavioral_observations_and_testing_conditions_pg3_b"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_b}
+              />
+            </div>
 
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                <div className="m-2">said</div>
-                <TextareaAutosize
-                  className="col-2 mr-2 mb-2 fieldData"
-                  type="text"
-                  id="behavioral_observations_and_testing_conditions_pg3_c"
-                  name="behavioral_observations_and_testing_conditions_pg3_c"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={
-                    patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_c
-                  }
-                />
-                takes [them] to [their] appointments.
-              </div>
+            <h4 className="textWhite centerItem">
+            What was the patients build?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="behavioral_observations_and_testing_conditions_pg3_c"
+                name="behavioral_observations_and_testing_conditions_pg3_c"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_c}
+              />
+            </div>
 
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                <div className="m-2">reported [her child(ren)] wear</div>
-                <TextareaAutosize
-                  className="col-2 mr-2 ml-2 mb-2 fieldData"
-                  type=""
-                  id="behavioral_observations_and_testing_conditions_pg3_d"
-                  name="behavioral_observations_and_testing_conditions_pg3_d"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={
-                    patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_d
-                  }
-                />
-                size clothes.
-              </div>
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                <div className="m-2">
-                  reported [her child(ren)] favorite color is{" "}
-                </div>
-                <TextareaAutosize
-                  className="col-2 mr-2 ml-2 mb-2 fieldData"
-                  type=""
-                  id="behavioral_observations_and_testing_conditions_pg3_e"
-                  name="behavioral_observations_and_testing_conditions_pg3_e"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={
-                    patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_e
-                  }
-                />
-                .
-              </div>
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                <TextareaAutosize
-                  className="col-2 mr-2 ml-2 mb-2 fieldData"
-                  type=""
-                  id="behavioral_observations_and_testing_conditions_pg3_f"
-                  name="behavioral_observations_and_testing_conditions_pg3_f"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={
-                    patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_f
-                  }
-                  placeholder="are/are not"
-                />
-                old enough to attend school.
-              </div>
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                <div className="m-2">reported she attended </div>
-                <TextareaAutosize
-                  className="col-1 mr-2 ml-1 mb-2 fieldData"
-                  type=""
-                  id="behavioral_observations_and_testing_conditions_pg3_g"
-                  name="behavioral_observations_and_testing_conditions_pg3_g"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={
-                    patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_g
-                  }
-                />
-                teacher conferences this past school year.
-              </div>
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                <div className="questionLabelWidth m-2">
-                  reported she attended{" "}
-                </div>
-                <TextareaAutosize
-                  className="col-1 ml-1 mb-2 mr-2 fieldData"
-                  type=""
-                  id="behavioral_observations_and_testing_conditions_pg3_h"
-                  name="behavioral_observations_and_testing_conditions_pg3_h"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={
-                    patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_h
-                  }
-                />
-                <div className="col-5 p-0">
-                  extracurricular activites this past school year.
-                </div>
-              </div>
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                <TextareaAutosize
-                  className="col-3 mr-2 ml-2 mb-2 fieldData"
-                  type=""
-                  id="behavioral_observations_and_testing_conditions_pg3_i"
-                  name="behavioral_observations_and_testing_conditions_pg3_i"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={
-                    patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_i
-                  }
-                  placeholder="knew/did not know"
-                />
-                the name(s) of her child's teacher(s).
-              </div>
+            <h4 className="textWhite centerItem">
+              Was the patient dressed and groomed appropriately?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="behavioral_observations_and_testing_conditions_pg3_d"
+                name="behavioral_observations_and_testing_conditions_pg3_d"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_d}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+              Did the patient display signs of difficulties with fine or gross motor skills?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="behavioral_observations_and_testing_conditions_pg3_e"
+                name="behavioral_observations_and_testing_conditions_pg3_e"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_e}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+              Were the patients hearing and vision within normal limits?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="behavioral_observations_and_testing_conditions_pg3_f"
+                name="behavioral_observations_and_testing_conditions_pg3_f"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_f}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+              Was the patient easily understood?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="behavioral_observations_and_testing_conditions_pg3_g"
+                name="behavioral_observations_and_testing_conditions_pg3_g"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_g}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+              Did the patient appear movtiavted or unmotivated to complete the testing presented?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="behavioral_observations_and_testing_conditions_pg3_h"
+                name="behavioral_observations_and_testing_conditions_pg3_h"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_h}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+              Did the patient attend to instructions appropriately?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="behavioral_observations_and_testing_conditions_pg3_i"
+                name="behavioral_observations_and_testing_conditions_pg3_i"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_i}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+              Did the patient show (good/poor) effort and persistence?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="behavioral_observations_and_testing_conditions_pg3_j"
+                name="behavioral_observations_and_testing_conditions_pg3_j"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_j}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+              Did the patient appear to have trouble concentrating?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="behavioral_observations_and_testing_conditions_pg3_k"
+                name="behavioral_observations_and_testing_conditions_pg3_k"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_k}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+              Are todays test results believed to be valid except where indicated?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="behavioral_observations_and_testing_conditions_pg3_l"
+                name="behavioral_observations_and_testing_conditions_pg3_l"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_l}
+              />
             </div>
           </div>
           <div id="footer">

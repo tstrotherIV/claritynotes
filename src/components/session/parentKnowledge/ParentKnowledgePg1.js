@@ -95,161 +95,161 @@ function ParentKnowledgePg1(props) {
         <div id="content-wrap">
           <Heading />
           <h2 className="textWhite text-center mb-4">PARENT KNOWLEDGE</h2>
-          <div className="questionsContainer">
-            <div className="interview_div1">
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                <div className="m-2"> reported [her children go] to </div>
-                <TextareaAutosize
-                  className="col-2 mr-2 mb-2 fieldData"
-                  type="text"
-                  id="parent_knowledge_pg1_a"
-                  name="parent_knowledge_pg1_a"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientParentKnowledgePg1.parent_knowledge_pg1_a}
-                />
-                for medical care.
-              </div>
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                <div className="m-2">reported [her children go]</div>
-                <TextareaAutosize
-                  className="col-2 mr-2 mb-2 fieldData"
-                  type="text"
-                  id="parent_knowledge_pg1_b"
-                  name="parent_knowledge_pg1_b"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientParentKnowledgePg1.parent_knowledge_pg1_b}
-                />
-                for dental care.
-              </div>
+          <div className="text-center questionsContainer">
+            <h4 className="textWhite centerItem">
+              Where do your children go for medical care?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="parent_knowledge_pg1_a"
+                name="parent_knowledge_pg1_a"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientParentKnowledgePg1.parent_knowledge_pg1_a}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+              Where do your children go for dental care?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="parent_knowledge_pg1_b"
+                name="parent_knowledge_pg1_b"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientParentKnowledgePg1.parent_knowledge_pg1_b}
+              />
+            </div>
 
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                <div className="m-2">said</div>
-                <TextareaAutosize
-                  className="col-2 mr-2 mb-2 fieldData"
-                  type="text"
-                  id="parent_knowledge_pg1_c"
-                  name="parent_knowledge_pg1_c"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientParentKnowledgePg1.parent_knowledge_pg1_c}
-                />
-                takes [them] to [their] appointments.
-              </div>
+            <h4 className="textWhite centerItem">
+              Who takes your children to their appointments?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="parent_knowledge_pg1_c"
+                name="parent_knowledge_pg1_c"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientParentKnowledgePg1.parent_knowledge_pg1_c}
+              />
+            </div>
 
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                <div className="m-2">reported [her child(ren)] wear</div>
-                <TextareaAutosize
-                  className="col-2 mr-2 ml-2 mb-2 fieldData"
-                  type=""
-                  id="parent_knowledge_pg1_d"
-                  name="parent_knowledge_pg1_d"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientParentKnowledgePg1.parent_knowledge_pg1_d}
-                />
-                size clothes.
-              </div>
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                <div className="m-2">
-                  reported [her child(ren)] favorite color is{" "}
-                </div>
-                <TextareaAutosize
-                  className="col-2 mr-2 ml-2 mb-2 fieldData"
-                  type=""
-                  id="parent_knowledge_pg1_e"
-                  name="parent_knowledge_pg1_e"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientParentKnowledgePg1.parent_knowledge_pg1_e}
-                />
-                .
-              </div>
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                <TextareaAutosize
-                  className="col-2 mr-2 ml-2 mb-2 text-center fieldData"
-                  type=""
-                  id="parent_knowledge_pg1_f"
-                  name="parent_knowledge_pg1_f"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientParentKnowledgePg1.parent_knowledge_pg1_f}
-                  placeholder="are/are not"
-                />
-                old enough to attend school.
-              </div>
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                <div className="m-2">reported she attended </div>
-                <TextareaAutosize
-                  className="col-1 mr-2 ml-1 mb-2 fieldData"
-                  type=""
-                  id="parent_knowledge_pg1_g"
-                  name="parent_knowledge_pg1_g"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientParentKnowledgePg1.parent_knowledge_pg1_g}
-                  placeholder=""
-                />
-                teacher conferences this past school year.
-              </div>
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                <div className="questionLabelWidth m-2">
-                  reported she attended{" "}
-                </div>
-                <TextareaAutosize
-                  className="col-1 ml-1 mb-2 mr-2 fieldData"
-                  type=""
-                  id="parent_knowledge_pg1_h"
-                  name="parent_knowledge_pg1_h"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientParentKnowledgePg1.parent_knowledge_pg1_h}
-                />
-                <div className="col-5 p-0">
-                  extracurricular activites this past school year.
-                </div>
-              </div>
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
-                </Label>
-                <TextareaAutosize
-                  className="col-3 mr-2 ml-2 mb-2 fieldData"
-                  type=""
-                  id="parent_knowledge_pg1_i"
-                  name="parent_knowledge_pg1_i"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={patientParentKnowledgePg1.parent_knowledge_pg1_i}
-                  placeholder="knew/did not know"
-                />
-                the name(s) of her child's teacher(s).
-              </div>
+            <h4 className="textWhite centerItem">
+              What size clothers do your children wear?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="parent_knowledge_pg1_d"
+                name="parent_knowledge_pg1_d"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientParentKnowledgePg1.parent_knowledge_pg1_d}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+              What is your child's favorite color?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="parent_knowledge_pg1_e"
+                name="parent_knowledge_pg1_e"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientParentKnowledgePg1.parent_knowledge_pg1_e}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+              Are your kids old enough to attend school?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="parent_knowledge_pg1_f"
+                name="parent_knowledge_pg1_f"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientParentKnowledgePg1.parent_knowledge_pg1_f}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+              How many parent teacher conferences did you attend this past year?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="parent_knowledge_pg1_g"
+                name="parent_knowledge_pg1_g"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientParentKnowledgePg1.parent_knowledge_pg1_g}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+            How many extracurricular activites did you attend this past year?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="parent_knowledge_pg1_h"
+                name="parent_knowledge_pg1_h"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientParentKnowledgePg1.parent_knowledge_pg1_h}
+              />
+            </div>
+            <h4 className="textWhite centerItem">
+              What are the names of your child's teacher(s)?
+            </h4>
+            <div className="interview_line1 mb-4">
+              <Label className="textWhite interview_title" for="">
+                [Patient Name, First] said:
+              </Label>
+              <TextareaAutosize
+                className="fieldData mb-2"
+                type="text"
+                id="parent_knowledge_pg1_i"
+                name="parent_knowledge_pg1_i"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientParentKnowledgePg1.parent_knowledge_pg1_i}
+              />
             </div>
           </div>
           <div id="footer">

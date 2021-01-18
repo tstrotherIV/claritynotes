@@ -36,7 +36,7 @@ import FamilyPg12 from "./session/family/FamilyPg12";
 import FamilyPg13 from "./session/family/FamilyPg13";
 import FamilyPg14 from "./session/family/FamilyPg14";
 import FamilyPg15 from "./session/family/FamilyPg15";
-import PsychologicalEvaluationReportSummary from "./session/family/reportSummary/reportSummary";
+// import PsychologicalEvaluationReportSummary from "./session/family/reportSummary/reportSummary";
 import HousingPg1 from "./session/housing/HousingPg1";
 import HousingPg2 from "./session/housing/HousingPg2";
 import HousingPg3 from "./session/housing/HousingPg3";
@@ -384,13 +384,13 @@ const ApplicationViews = (props) => {
           return <FamilyPg15 setUser={setUser} hasUser={hasUser}  patientId={patientId} {...props} />;
         }}
       />
-      <Route
+      {/* <Route
         exact
         path="/psychological_evaluation_report_summary"
         render={(props) => {
           return <PsychologicalEvaluationReportSummary setUser={setUser} hasUser={hasUser}  patientId={patientId} {...props} />;
         }}
-      />
+      /> */}
       <Route
         exact
         path="/housing_pg_1"
