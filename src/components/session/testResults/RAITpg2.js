@@ -14,6 +14,7 @@ function RAITpg2(props) {
   });
 
   const next = "/rait_pg_3";
+  const back = "/rait_pg_1";
 
   const handleFieldChange = (e) => {
     setPatientRAITpg2({
@@ -151,6 +152,7 @@ function RAITpg2(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientRAITpg2}

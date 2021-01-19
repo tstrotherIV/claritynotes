@@ -66,6 +66,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
   });
 
   const next = "/paulhus_deception_scale";
+  const back = "/continous_performance_test_3rd_ed";
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -1215,6 +1216,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
         <div id="footer">
           <ButtonNavigation
             next={next}
+            back={back}
             updatePatient={updatePatient}
             patient={props.patientId}
             patientNotes={patientComputerizedNeurocognitiveAssessment}

@@ -18,6 +18,7 @@ function EducationPg1(props) {
   });
 
   const next = "/education_pg_2";
+  const back = "/employment_pg_3";
 
   const handleFieldChange = (e) => {
     setPatientEducation_pg1({
@@ -26,7 +27,7 @@ function EducationPg1(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
+  const captureFieldName = (e) => {
     const fieldID = e.target.name;
     setItem(fieldID);
   };
@@ -94,7 +95,7 @@ function EducationPg1(props) {
                 id="education_pg1_a"
                 name="education_pg1_a"
                 onChange={handleFieldChange}
-                onClick={convertIDfunc}
+                onClick={captureFieldName}
                 value={patientEducation_pg1.education_pg1_a}
               />
             </div>
@@ -106,7 +107,7 @@ function EducationPg1(props) {
                 id="education_pg1_b"
                 name="education_pg1_b"
                 onChange={handleFieldChange}
-                onClick={convertIDfunc}
+                onClick={captureFieldName}
                 value={patientEducation_pg1.education_pg1_b}
               />
             </div>
@@ -127,7 +128,7 @@ function EducationPg1(props) {
                 id="education_pg1_c"
                 name="education_pg1_c"
                 onChange={handleFieldChange}
-                onClick={convertIDfunc}
+                onClick={captureFieldName}
                 value={patientEducation_pg1.education_pg1_c}
               />
             </div>
@@ -139,7 +140,7 @@ function EducationPg1(props) {
                 id="education_pg1_d"
                 name="education_pg1_d"
                 onChange={handleFieldChange}
-                onClick={convertIDfunc}
+                onClick={captureFieldName}
                 value={patientEducation_pg1.education_pg1_d}
               />
             </div>
@@ -158,7 +159,7 @@ function EducationPg1(props) {
                 id="education_pg1_e"
                 name="education_pg1_e"
                 onChange={handleFieldChange}
-                onClick={convertIDfunc}
+                onClick={captureFieldName}
                 value={patientEducation_pg1.education_pg1_e}
               />
             </div>
@@ -166,6 +167,7 @@ function EducationPg1(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientEducation_pg1}

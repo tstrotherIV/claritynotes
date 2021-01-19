@@ -8,6 +8,7 @@ import ButtonNavigation from "../../shared/ButtonNavigation";
 
 function AimswebPlusAchievementTestPg2(props) {
     const next = "/aimsweb_plus_achievement_test_pg_3"
+    const back = "/aimsweb_plus_achievement_test_pg_1"
     return (
         <>
         <div id="page-container">
@@ -87,7 +88,7 @@ function AimswebPlusAchievementTestPg2(props) {
         </div>
         </div>
         <div id="footer">
-         <ButtonNavigation next={next}  />
+         <ButtonNavigation next={next} back={back} />
           <TermOfParentalRights />
         </div>
     </div>

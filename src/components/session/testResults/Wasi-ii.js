@@ -8,6 +8,7 @@ import ButtonNavigation from "../../shared/ButtonNavigation";
 
 function WasiII(props) {
     const next = "/wechsler_adult_intelligence_scale_IV"
+    const back = "/procedures_administered_pg_1"
 
     return (
         <>
@@ -63,7 +64,7 @@ function WasiII(props) {
             </div>
         </div>
         <div id="footer">
-         <ButtonNavigation next={next}  />
+         <ButtonNavigation next={next} back={back}  />
           <TermOfParentalRights />
         </div>
       </div>

@@ -13,6 +13,7 @@ function RAITpg3(props) {
   });
 
   const next = "/wechsler_adult_intelligence_scale_IV_pg_2";
+  const back = "/rait_pg_2";
 
   const handleFieldChange = (e) => {
     setPatientRAITpg3({
@@ -123,6 +124,7 @@ function RAITpg3(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientRAITpg3}

@@ -22,6 +22,7 @@ function PaulasDeceptionScale(props) {
   });
 
   const next = "/substance_abuse_subtle_screening_inventory_4";
+  const back = "/computerized_performance_neurocognitive_assessment";
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -97,7 +98,7 @@ function PaulasDeceptionScale(props) {
           <div className="ml-5 mr-5 mt-3">
             <div className="d-flex flex-wrap text-white align-items-baseline">
               <h3 className=" mb-1 col-2">Test Results</h3>
-              <h4>Paulas Deception Scale</h4>
+              <h4>Paulhus Deception Scale</h4>
             </div>
             <div className="m-5 text-white">
               <input
@@ -179,6 +180,7 @@ function PaulasDeceptionScale(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientPaulasDeceptionScale}

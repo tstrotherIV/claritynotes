@@ -32,6 +32,8 @@ function PsychologicalEvaluation_family(props) {
   });
 
   const next = "/psychological_evaluation_siblings";
+  const back = "/psychological_evaluation";
+
 
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
@@ -285,6 +287,7 @@ function PsychologicalEvaluation_family(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientParents}

@@ -23,6 +23,7 @@ function PsychologicalEvaluationSpouse(props) {
   const [relationshipStatus, setrelationshipStatus] = useState(false);
 
   const next = "/psychological_evaluation_consent";
+  const back = "/psychological_evaluation_children";
 
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
@@ -262,6 +263,7 @@ function PsychologicalEvaluationSpouse(props) {
         <div id="footer">
           <ButtonNavigation
             next={next}
+            back={back}
             updatePatient={updatePatient}
             patient={props.patientId}
             patientNotes={patientSpouse}

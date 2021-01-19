@@ -30,6 +30,7 @@ function ProceduresAdministeredPg1(props) {
   });
 
   const next = "/wasi-ii";
+  const back = "/behavioral_observations_and_testing_conditions_pg_5";
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -379,6 +380,7 @@ function ProceduresAdministeredPg1(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientProceduresAdministeredPg1}

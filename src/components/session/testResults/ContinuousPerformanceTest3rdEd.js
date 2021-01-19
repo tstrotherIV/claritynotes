@@ -20,6 +20,7 @@ function ContinuousPerformanceTest3rdEd(props) {
   });
 
   const next = "/computerized_performance_neurocognitive_assessment";
+  const back = "/aimsweb_plus_achievement_test_pg_4";
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -179,6 +180,7 @@ function ContinuousPerformanceTest3rdEd(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientContinuousPerformanceTest3rdEd}

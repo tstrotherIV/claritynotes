@@ -8,6 +8,7 @@ import ButtonNavigation from "../../shared/ButtonNavigation";
 
 function ShipleyIntelligenceAssessment2(props) {
     const next = "/rait_pg_1"
+    const back = "/wechsler_adult_intelligence_scale_IV"
 
     return (
         <>
@@ -75,7 +76,7 @@ function ShipleyIntelligenceAssessment2(props) {
             </div>
         </div>
         <div id="footer">
-         <ButtonNavigation next={next}  />
+         <ButtonNavigation next={next} back={back} />
           <TermOfParentalRights />
         </div>
       </div>

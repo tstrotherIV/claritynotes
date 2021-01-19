@@ -33,6 +33,7 @@ function InterviewPg6(props) {
   const toggle3 = () => setModal(!modal);
 
   const next = "/interview_pg_7";
+  const back = "/interview_pg_5";
 
   const handleFieldChange = (e) => {
     setPatientInterview_pg6({
@@ -213,6 +214,7 @@ function InterviewPg6(props) {
         <div id="footer">
           <ButtonNavigation
             next={next}
+            back={back}
             updatePatient={updatePatient}
             patient={props.patientId}
             patientNotes={patientInterview_pg6}

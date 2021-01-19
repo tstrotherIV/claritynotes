@@ -14,6 +14,7 @@ import DataManager from "../../../data_module/DataManager";
 // pdf page 97
 
 const next = "/behavioral_observations_and_testing_conditions_pg_1";
+const back = "/cognitive_skills_pg_1";
 
 function MaterialResourcesPg1(props) {
   const [item, setItem] = useState("");
@@ -229,6 +230,7 @@ function MaterialResourcesPg1(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientMaterialResourcesPg1}

@@ -17,6 +17,7 @@ function EmploymentPg3(props) {
   });
 
   const next = "/education_pg_1";
+  const back = "/employment_pg_2";
 
   const handleFieldChange = (e) => {
     setPatientEmployment_pg3({
@@ -136,6 +137,7 @@ function EmploymentPg3(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientEmployment_pg3}

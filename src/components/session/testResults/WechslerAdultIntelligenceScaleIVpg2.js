@@ -8,6 +8,7 @@ import ButtonNavigation from "../../shared/ButtonNavigation";
 
 function WechslerAdultIntelligenceScaleIVpg2(props) {
     const next = "/wide_range_achievement_test_5"
+    const back = "/rait_pg_3"
 
     return (
         <>
@@ -63,7 +64,7 @@ function WechslerAdultIntelligenceScaleIVpg2(props) {
             </div>
         </div>
         <div id="footer">
-         <ButtonNavigation next={next}  />
+         <ButtonNavigation next={next} back={back}  />
           <TermOfParentalRights />
         </div>
       </div>

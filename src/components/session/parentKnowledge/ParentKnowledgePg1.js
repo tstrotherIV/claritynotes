@@ -22,6 +22,7 @@ function ParentKnowledgePg1(props) {
   });
 
   const next = "/cognitive_skills_pg_1";
+  const back = "/positive_role_model_pg_2";
 
   const handleFieldChange = (e) => {
     setPatientParentKnowledgePg1({
@@ -254,6 +255,7 @@ function ParentKnowledgePg1(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientParentKnowledgePg1}

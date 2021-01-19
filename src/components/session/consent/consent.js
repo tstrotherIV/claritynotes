@@ -11,6 +11,7 @@ function PsychologicalEvaluationConsent(props) {
   });
 
   const next = "/psychological_evaluation_referral";
+  const back = "/psychological_evaluation_spouse";
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -92,6 +93,7 @@ function PsychologicalEvaluationConsent(props) {
       <div id="footer">
         <ButtonNavigation
           next={next}
+          back={back}
           updatePatient={updatePatient}
           patient={props.patientId}
           patientNotes={patientConsent}

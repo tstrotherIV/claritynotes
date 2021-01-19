@@ -16,6 +16,7 @@ function HistoryOfLegalPg1(props) {
   });
 
   const next = "/history_of_legal_pg_2";
+  const back = "/education_pg_4";
 
   const handleFieldChange = (e) => {
     setPatientHistoryOfLegal_pg1({
@@ -136,6 +137,7 @@ function HistoryOfLegalPg1(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientHistoryOfLegal_pg1}
