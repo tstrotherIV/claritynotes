@@ -77,4 +77,22 @@ export default {
       method: "DELETE",
     }).then((deletedData) => deletedData.json());
   },
+
+  //Create User
+  async createNewUser(newUser) {
+    return fetch(`${remoteURL}/users/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newUser),
+    }).then((data) => data.json());
+  },
+
+  //Get User during Login
+  async getUser(username) {
+    return fetch(`${remoteURL}/users?q=${username}`).then((result) =>
+      result.json()
+    );
+  },
 };

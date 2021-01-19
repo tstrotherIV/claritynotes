@@ -1,34 +1,43 @@
-import React, { useRef } from "react";
+import React, {useState} from "react";
 import { Label, Input, Container, Button, Form } from "reactstrap";
-import useSimpleAuth from "../hooks/ui/useSimpleAuth";
 import "./login.scss";
+import DataManager from "../../data_module/DataManager"
 
 function Login(props) {
+  const [credentials, setCredentials] = useState({
+    email: "",
+    password: "",
+  });
 
-  const userEmail = useRef()
-  const password = useRef()
-  const { login } = useSimpleAuth()
+  // Update state whenever an input field is edited
+  const handleFieldChange = (evt) => {
+    const stateToChange = { ...credentials };
+    stateToChange[evt.target.id] = evt.target.value;
+    setCredentials(stateToChange);
+  };
 
-      // Simplistic handler for login submit
   const handleLogin = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    if (credentials.email === "" || credentials.password === "") {
+      window.alert("Please enter your Login Information below");
+    } else {
+      DataManager.getUser(credentials.email).then((user) => {
+        if (user.length < 1) {
+          window.alert("User Account doesn't exist, Please Create an account");
+        } else if (
+          user[0].email === credentials.email &&
+          user[0].password === parseInt(credentials.password)
+        ) {
+          sessionStorage.setItem("loggedUser", user[0].id);
+          sessionStorage.setItem("loggedUserName", user[0].firstName);
+          let loggedUser = sessionStorage.getItem(`loggedUser`);
+          props.setUser(loggedUser);
 
-        /*
-            For now, just store the username and password that
-            the customer enters into local storage.
-        */
-    const credentials = {
-        "userEmail": userEmail.current.value,
-        "password": password.current.value
+          props.history.push(`/patient`);
+        }
+      });
     }
-
-    login(credentials)
-        .then(() => {
-            props.history.push({
-                pathname: "/"
-             })
-        })
-  }
+  };
 
   return (
     <div className="textWhite mt-5 mb-5">
@@ -54,11 +63,11 @@ function Login(props) {
                       Email
                     </Label>
                     <Input 
-                      ref={userEmail}
                       className="fieldSize"
                       type="email"
-                      id="userEmail"
+                      id="email"
                       placeholder="Enter Email"
+                      onChange={handleFieldChange}
                     /> 
                 </div> 
                 <div className="d-flex justify-items-center align-items-center m-3">        
@@ -66,19 +75,17 @@ function Login(props) {
                       Password
                     </Label>
                     <Input
-                      ref={password}
                       className="fieldSize"
                       type="password"
                       id="password"
                       placeholder="password placeholder"
+                      onChange={handleFieldChange}
                     />
               </div>
               <div className="">
                 <div className="d-flex justify-content-center">
                 <Button color="info" className="loginBtn"
-                onClick={() => {
-                    props.history.push(`/patient`);
-                  }}
+                onClick={handleLogin}
                 >Login</Button>
                 </div>
                 <div className="d-flex justify-content-center">
