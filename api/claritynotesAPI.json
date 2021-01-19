@@ -1105,5 +1105,15 @@
       "spouse_dob": "2018-06-19",
       "id": 2
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Jake",
+      "lastName": "Decker",
+      "username": "Jake",
+      "password": 1234,
+      "email": "test@test.com"
+    }
   ]
 }
