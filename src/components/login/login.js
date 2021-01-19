@@ -85,7 +85,10 @@ function Login(props) {
               <div className="">
                 <div className="d-flex justify-content-center">
                 <Button color="info" className="loginBtn"
-                onClick={handleLogin}
+                // onClick={handleLogin}
+                onClick={() => {
+                    props.history.push(`/patient`);
+                  }}
                 >Login</Button>
                 </div>
                 <div className="d-flex justify-content-center">
