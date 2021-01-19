@@ -23,6 +23,7 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
   });
 
   const next = "/behavioral_observations_and_testing_conditions_pg_5";
+  const back = "/behavioral_observations_and_testing_conditions_pg_3";
 
   const handleFieldChange = (e) => {
     setPatientBehavioralObservationsPg4({
@@ -241,6 +242,7 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientBehavioralObservationsPg4}

@@ -24,6 +24,7 @@ function PsychologicalEvaluation_siblings(props) {
   const [checkbox, setCheckbox] = useState(false);
 
   const next = "/psychological_evaluation_spouse";
+  const back = "/psychological_evaluation_siblings";
 
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
@@ -233,6 +234,7 @@ function PsychologicalEvaluation_siblings(props) {
         <div id="footer">
           <ButtonNavigation
             next={next}
+            back={back}
             updatePatient={updatePatient}
             patient={props.patientId}
             patientNotes={patientChildren}

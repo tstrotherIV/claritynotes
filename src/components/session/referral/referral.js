@@ -12,6 +12,7 @@ function PsychologicalEvaluationReferral(props) {
   const [startItem, setStartItem] = useState([]);
 
   const next = "/psychological_evaluation_additional_data";
+  const back = "/psychological_evaluation_consent";
 
   let ageFromString = new AgeFromDateString(patient.patient_Date_of_Birth).age;
 
@@ -84,7 +85,7 @@ function PsychologicalEvaluationReferral(props) {
         </div>
       </div>
       <div id="footer">
-        <ButtonNavigation next={next} />
+        <ButtonNavigation next={next} back={back} />
         <EmptyFooterSpace />
       </div>
     </div>

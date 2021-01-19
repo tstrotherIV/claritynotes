@@ -24,6 +24,7 @@ function MedicalHistoryHealthConcernsLimitationsPg1(props) {
   });
 
   const next = "/neglect_abuse_trauma_loss_pg_1";
+  const back = "/mental_health_history_pg_4";
 
   const handleFieldChange = (e) => {
     setPatientMedicalHistoryHealthConcernsLimitationsPg1({
@@ -174,6 +175,7 @@ function MedicalHistoryHealthConcernsLimitationsPg1(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientMedicalHistoryHealthConcernsLimitationsPg1}

@@ -11,14 +11,12 @@ import {
 } from "reactstrap";
 import Heading from "../../shared/PsychologicalHeading.js";
 import TextareaAutosize from "react-textarea-autosize";
-import EmptyFooterSpace from "./../../shared/EmptyFooterSpace";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
 
 import "./psychologicalEvaluation.scss";
 
 function PsychologicalEvaluation(props) {
-  const [item, setItem] = useState("");
   const [
     patientPsychological_Evaluation,
     setPatientPsychological_Evaluation,
@@ -46,7 +44,6 @@ function PsychologicalEvaluation(props) {
   const toggle2 = () => setDropdownOpen2((prevState) => !prevState);
   const toggle3 = () => setDropdownOpen3((prevState) => !prevState);
 
-  const next = "/psychological_evaluation_family";
 
   const handleFieldChange = (e) => {
     setPatientPsychological_Evaluation({
@@ -120,6 +117,9 @@ function PsychologicalEvaluation(props) {
     getData();
   }, []);
 
+  const next = "/psychological_evaluation_family";
+  const back = "/sessionStep1";
+
   return (
     <>
       <div>
@@ -143,7 +143,7 @@ function PsychologicalEvaluation(props) {
                         className="fieldData col-8"
                         type="text"
                         placeholder="First Name"
-                        id={item}
+                        id="patient_first_name"
                         name="patient_first_name"
                         onChange={handleFieldChange}
                         value={
@@ -161,7 +161,7 @@ function PsychologicalEvaluation(props) {
                         className="fieldData col-8"
                         type="text"
                         placeholder="Middle Name"
-                        id={item}
+                        id="patient_middle_name"
                         name="patient_middle_name"
                         onChange={handleFieldChange}
                         value={
@@ -179,7 +179,7 @@ function PsychologicalEvaluation(props) {
                         className="fieldData col-8"
                         type="text"
                         placeholder="Last Name"
-                        id={item}
+                        id="patient_last_name"
                         name="patient_last_name"
                         onChange={handleFieldChange}
                         value={
@@ -198,7 +198,7 @@ function PsychologicalEvaluation(props) {
                       <Input
                         type="date"
                         className=" col-3 dateField p-3 text-center"
-                        id={item}
+                        id="patient_Date_of_Birth"
                         name="patient_Date_of_Birth"
                         onChange={handleFieldChange}
                         value={
@@ -269,7 +269,7 @@ function PsychologicalEvaluation(props) {
                       <Input
                         className="col-3 dateField p-3 text-center"
                         type="time"
-                        id={item}
+                        id="patient_office_time"
                         name="patient_office_time"
                         onChange={handleFieldChange}
                         value={
@@ -288,7 +288,7 @@ function PsychologicalEvaluation(props) {
                       <TextareaAutosize
                         className="fieldData col-8"
                         type="text"
-                        id={item}
+                        id="patient_report_writing"
                         name="patient_report_writing"
                         onChange={handleFieldChange}
                         value={
@@ -308,7 +308,7 @@ function PsychologicalEvaluation(props) {
                         className="fieldData col-8"
                         type="text"
                         placeholder="Case Number"
-                        id={item}
+                        id="patient_case_number"
                         name="patient_case_number"
                         onChange={handleFieldChange}
                         value={
@@ -329,7 +329,7 @@ function PsychologicalEvaluation(props) {
                           <Input
                             className="fieldData p-3"
                             type="date"
-                            id={item}
+                            id="patient_evaluation_Date"
                             name="patient_evaluation_Date"
                             onChange={handleFieldChange}
                             value={
@@ -400,7 +400,7 @@ function PsychologicalEvaluation(props) {
                       <Input
                         className="fieldData col-4 p-3 text-center"
                         type="time"
-                        id={item}
+                        id="patient_interview_time"
                         name="patient_interview_time"
                         onChange={handleFieldChange}
                         value={
@@ -416,7 +416,7 @@ function PsychologicalEvaluation(props) {
                       <Input
                         className="fieldData col-4 p-3 text-center"
                         type="time"
-                        id={item}
+                        id="patient_intake_time"
                         name="patient_intake_time"
                         onChange={handleFieldChange}
                         value={
@@ -480,6 +480,7 @@ function PsychologicalEvaluation(props) {
             <div id="footer">
               <ButtonNavigation
                 next={next}
+                back={back}
                 updatePatient={updatePatient}
                 patient={props.patientId}
                 patientNotes={patientPsychological_Evaluation}

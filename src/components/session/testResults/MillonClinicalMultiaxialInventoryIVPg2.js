@@ -129,6 +129,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
   });
 
   const next = "/rorschach_performance_assessment_system";
+  const back = "/millon_clinical_multiaxial_inventory_iv_pg_1";
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -2244,6 +2245,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
         <div id="footer">
           <ButtonNavigation
             next={next}
+            back={back}
             updatePatient={updatePatient}
             patient={props.patientId}
             patientNotes={patientMillonClinicalMultiaxialInventoryIVPg2}

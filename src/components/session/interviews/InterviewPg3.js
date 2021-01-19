@@ -15,6 +15,7 @@ function Interview_Pg3(props) {
   });
 
   const next = "/interview_pg_4";
+  const back = "/interview_pg_2";
 
   // const [dropdownOpen1, setDropdownOpen1] = useState(false);
   // const [modal, setModal] = useState(false);
@@ -184,6 +185,7 @@ function Interview_Pg3(props) {
         <div id="footer">
           <ButtonNavigation
             next={next}
+            back={back}
             updatePatient={updatePatient}
             patient={props.patientId}
             patientNotes={patientInterview_pg3}

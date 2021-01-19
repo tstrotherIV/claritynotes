@@ -8,6 +8,8 @@ import ButtonNavigation from "../../shared/ButtonNavigation";
 
 function WideRangeAchievementTest5(props) {
     const next = "/aimsweb_plus_achievement_test_pg_1"
+    const back = "/wechsler_adult_intelligence_scale_IV_pg_2"
+
     return (
         <>
         <div id="page-container">
@@ -71,7 +73,7 @@ function WideRangeAchievementTest5(props) {
             </div>
         </div>
         <div id="footer">
-         <ButtonNavigation next={next}  />
+         <ButtonNavigation next={next} back={back} />
           <TermOfParentalRights />
         </div>
       </div>

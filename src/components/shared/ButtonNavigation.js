@@ -6,7 +6,9 @@ function ButtonNavigation(props) {
   return (
     <div className="buttonSection">
       <div className="idBox textWhite d-flex flex-wrap justify-content-center"></div>
-      <Button color="info" className="button" onClick={history.goBack}>
+      <Button color="info" className="button" onClick={() => {
+          history.push(`${props.back}`);
+        }}>
         Previous
       </Button>
       <Button color="info" className="button">

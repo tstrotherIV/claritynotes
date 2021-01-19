@@ -17,6 +17,7 @@ function CognitiveSkillsPg1(props) {
   });
 
   const next = "/material_resources_pg_1";
+  const back = "/parent_knowledge_pg_1";
 
   const handleFieldChange = (e) => {
     setPatientCognitiveSkillsPg1({
@@ -158,6 +159,7 @@ function CognitiveSkillsPg1(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientCognitiveSkillsPg1}

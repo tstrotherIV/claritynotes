@@ -18,6 +18,7 @@ function MinnesotaMultiphasicPersonalityInventory2(props) {
   });
 
   const next = "/millon_clinical_multiaxial_inventory_iv_pg_1";
+  const back = "/iowa_gambling_task";
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -140,6 +141,7 @@ function MinnesotaMultiphasicPersonalityInventory2(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientMinnesotaMultiphasicPersonalityInventory2}

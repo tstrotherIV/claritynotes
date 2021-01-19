@@ -19,6 +19,7 @@ function PerpetratorOfNeglectAndAbusePg1(props) {
   });
 
   const next = "/perpetrator_of_neglect_and_abuse_pg_2";
+  const back = "/neglect_abuse_trauma_loss_pg_5";
 
   const handleFieldChange = (e) => {
     setPatientPerpetratorOfNeglectAndAbusePg1({
@@ -148,6 +149,7 @@ function PerpetratorOfNeglectAndAbusePg1(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientPerpetratorOfNeglectAndAbusePg1}

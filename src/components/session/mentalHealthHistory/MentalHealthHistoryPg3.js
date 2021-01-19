@@ -20,6 +20,7 @@ function MentalHealthHistoryPg3(props) {
   });
 
   const next = "/mental_health_history_pg_4";
+  const back = "/mental_health_history_pg_2";
 
   const handleFieldChange = (e) => {
     setPatientMentalHealthHistory_pg3({
@@ -146,6 +147,7 @@ function MentalHealthHistoryPg3(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientMentalHealthHistory_pg3}

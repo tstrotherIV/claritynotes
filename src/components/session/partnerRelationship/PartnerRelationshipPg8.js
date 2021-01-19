@@ -20,6 +20,7 @@ function PartnerRelationshipPg8(props) {
   });
 
   const next = "/partner_relationship_pg_9";
+  const back = "/partner_relationship_pg_7";
 
   const handleFieldChange = (e) => {
     setPatientPartnerRelationshipPg8({
@@ -149,6 +150,7 @@ function PartnerRelationshipPg8(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientPartnerRelationshipPg8}

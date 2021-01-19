@@ -39,6 +39,7 @@ function InterviewPg5(props) {
   const toggle4 = () => setDropdownOpen4((prevState) => !prevState);
 
   const next = "/interview_pg_6";
+  const back = "/interview_pg_4";
 
   const handleFieldChange = (e) => {
     setPatientInterview_pg5({
@@ -258,6 +259,7 @@ function InterviewPg5(props) {
         <div id="footer">
           <ButtonNavigation
             next={next}
+            back={back}
             updatePatient={updatePatient}
             patient={props.patientId}
             patientNotes={patientInterview_pg5}

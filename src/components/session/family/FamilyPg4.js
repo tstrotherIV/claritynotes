@@ -15,6 +15,7 @@ function FamilyPg4(props) {
   });
 
   const next = "/family_pg_5";
+  const back = "/family_pg_3";
 
   const handleFieldChange = (e) => {
     setPatientFamily_pg4({
@@ -135,6 +136,7 @@ function FamilyPg4(props) {
         <div id="footer">
           <ButtonNavigation
             next={next}
+            back={back}
             updatePatient={updatePatient}
             patient={props.patientId}
             patientNotes={patientFamily_pg4}

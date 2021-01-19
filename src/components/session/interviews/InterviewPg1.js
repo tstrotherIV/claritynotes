@@ -16,6 +16,7 @@ function InterviewPg1(props) {
   });
 
   const next = "/interview_pg_2";
+  const back = "/psychological_evaluation_additional_data";
 
   const handleFieldChange = (e) => {
     setPatientInterview_pg1({
@@ -136,6 +137,7 @@ function InterviewPg1(props) {
         <div id="footer">
           <ButtonNavigation
             next={next}
+            back={back}
             updatePatient={updatePatient}
             patient={props.patientId}
             patientNotes={patientInterview_pg1}

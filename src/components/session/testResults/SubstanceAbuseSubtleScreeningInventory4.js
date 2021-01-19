@@ -22,6 +22,7 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
   });
 
   const next = "/iowa_gambling_task";
+  const back = "/paulhus_deception_scale";
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -190,10 +191,10 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientSubstanceAbuseSubtleScreeningInventory4}
-            />{" "}
             />
             <TermOfParentalRights />
           </div>

@@ -19,6 +19,7 @@ function ThematicApperceptionsTest(props) {
   });
 
   const next = "/";
+  const back = "/rorschach_performance_assessment_system";
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -120,6 +121,7 @@ function ThematicApperceptionsTest(props) {
         <div id="footer">
           <ButtonNavigation
             next={next}
+            back={back}
             updatePatient={updatePatient}
             patient={props.patientId}
             patientNotes={patientThematicApperceptionsTest}

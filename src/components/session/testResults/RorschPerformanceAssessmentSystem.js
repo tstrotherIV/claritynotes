@@ -19,6 +19,7 @@ function RorschPerformanceAssessmentSystem(props) {
   });
 
   const next = "/thematic_apperceptions_test";
+  const back = "/millon_clinical_multiaxial_inventory_iv_pg_2";
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -127,6 +128,7 @@ function RorschPerformanceAssessmentSystem(props) {
         <div id="footer">
           <ButtonNavigation
             next={next}
+            back={back}
             updatePatient={updatePatient}
             patient={props.patientId}
             patientNotes={patientRorschPerformanceAssessmentSystem}

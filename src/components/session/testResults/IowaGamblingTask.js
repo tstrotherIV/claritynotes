@@ -17,6 +17,7 @@ function IowaGamblingTask(props) {
   });
 
   const next = "/minnesota_multiphasic_personality_inventory_2";
+  const back = "/substance_abuse_subtle_screening_inventory_4";
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -168,6 +169,7 @@ function IowaGamblingTask(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientIowaGamblingTask}

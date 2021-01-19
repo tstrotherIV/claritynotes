@@ -24,6 +24,7 @@ function PositiveRoleModelPg2(props) {
   });
 
   const next = "/parent_knowledge_pg_1";
+  const back = "/positive_role_model_pg_1";
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -236,6 +237,7 @@ function PositiveRoleModelPg2(props) {
           <div id="footer">
             <ButtonNavigation
               next={next}
+              back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={patientPositiveRoleModelPg2}
