@@ -4,7 +4,6 @@ import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 //pdf page 116
 
 function ContinuousPerformanceTest3rdEd(props) {
@@ -17,6 +16,11 @@ function ContinuousPerformanceTest3rdEd(props) {
     continous_performance_test_3rd_ed_b: false,
     continous_performance_test_3rd_ed_c: false,
     continous_performance_test_3rd_ed_d: false,
+    continous_performance_test_3rd_ed_e: false,
+    continous_performance_test_3rd_ed_f: false,
+    continous_performance_test_3rd_ed_g: false,
+    continous_performance_test_3rd_ed_h: false,
+    continous_performance_test_3rd_ed_i: false,
   });
 
   const next = "/computerized_performance_neurocognitive_assessment";
@@ -28,13 +32,12 @@ function ContinuousPerformanceTest3rdEd(props) {
     setPatientContinuousPerformanceTest3rdEd({
       ...patientContinuousPerformanceTest3rdEd,
       [e.target.name]:
-        e.target.type === "number" ? parseInt(e.target.value) : target.type === "checkbox" ? target.checked : target.value,
+        e.target.type === "number"
+          ? parseInt(e.target.value)
+          : target.type === "checkbox"
+          ? target.checked
+          : target.value,
     });
-  };
-
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
-    setItem(fieldID);
   };
 
   //CRUD Function Start
@@ -42,10 +45,24 @@ function ContinuousPerformanceTest3rdEd(props) {
   const updatePatient = () => {
     const editedPatient = {
       id: props.patientId,
-      continous_performance_test_3rd_ed_a: patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_a,
-      continous_performance_test_3rd_ed_b: patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_b,
-      continous_performance_test_3rd_ed_c: patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_c,
-      continous_performance_test_3rd_ed_d: patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_d,
+      continous_performance_test_3rd_ed_a:
+        patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_a,
+      continous_performance_test_3rd_ed_b:
+        patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_b,
+      continous_performance_test_3rd_ed_c:
+        patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_c,
+      continous_performance_test_3rd_ed_d:
+        patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_d,
+      continous_performance_test_3rd_ed_e:
+        patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_e,
+      continous_performance_test_3rd_ed_f:
+        patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_f,
+      continous_performance_test_3rd_ed_g:
+        patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_g,
+      continous_performance_test_3rd_ed_h:
+        patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_h,
+      continous_performance_test_3rd_ed_i:
+        patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_i,
     };
 
     DataManager.update("patients", editedPatient).then(() => {});
@@ -59,7 +76,17 @@ function ContinuousPerformanceTest3rdEd(props) {
         ...patientInfo,
       };
 
-      const allowed = ["continous_performance_test_3rd_ed_a", "continous_performance_test_3rd_ed_b", "continous_performance_test_3rd_ed_c", "continous_performance_test_3rd_ed_d"];
+      const allowed = [
+        "continous_performance_test_3rd_ed_a",
+        "continous_performance_test_3rd_ed_b",
+        "continous_performance_test_3rd_ed_c",
+        "continous_performance_test_3rd_ed_d",
+        "continous_performance_test_3rd_ed_e",
+        "continous_performance_test_3rd_ed_f",
+        "continous_performance_test_3rd_ed_g",
+        "continous_performance_test_3rd_ed_h",
+        "continous_performance_test_3rd_ed_i",
+      ];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
         .reduce((obj, key) => {
@@ -67,7 +94,7 @@ function ContinuousPerformanceTest3rdEd(props) {
           return obj;
         }, {});
 
-        setPatientContinuousPerformanceTest3rdEd(filtered);
+      setPatientContinuousPerformanceTest3rdEd(filtered);
     });
   };
 
@@ -110,7 +137,7 @@ function ContinuousPerformanceTest3rdEd(props) {
                   <input
                     className="fieldData m-3"
                     type="number"
-                    id={item}
+                    id="continous_performance_test_3rd_ed_a"
                     name="continous_performance_test_3rd_ed_a"
                     onChange={handleFieldChange}
                     value={
@@ -121,57 +148,189 @@ function ContinuousPerformanceTest3rdEd(props) {
                   [XXXX]
                   <div className="col-3 text-white"></div>
                 </div>
-                <div className="mt-5 text-white">
-                  <p>
-                    [Patient Name, First] has a total of [X] atypical T-scores,
-                    which falls is associated with a (very high [OR] moderate)
-                    likelihood of having a disorder characterized by attention
-                    deficits, such as ADHD. (Patient's name) profile of scores
-                    and response pattern indicate he/she may have issues related
-                    to:{" "}
-                  </p>
-                </div>
-              </div>
-              <div className="d-flex flex-wrap justify-content-center">
-                <div className="">
-                  <div className="text-white">
-                    <input
-                      className="m-2"
-                      type="checkbox"
-                      id={item}
-                      name="continous_performance_test_3rd_ed_b"
-                      checked={
-                        patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_b
-                      }
-                      onChange={handleFieldChange}
-                    />
-                    <Label>Inattentiveness</Label>
+
+                {/* Left section */}
+                <div className="d-flex flex-wrap">
+                  <div className="col-6 text-white">
+                    <p>
+                      [Patient Name, First] has a total of [X] atypical
+                      T-scores, which falls is associated with a (very high [OR]
+                      moderate) likelihood of having a disorder characterized by
+                      attention deficits, such as ADHD. (Patient's name) profile
+                      of scores and response pattern indicate he/she may have
+                      issues related to:{" "}
+                    </p>
+
+                    <div className="">
+                      <div className="text-white">
+                        <input
+                          className="m-2"
+                          type="checkbox"
+                          id="continous_performance_test_3rd_ed_b"
+                          name="continous_performance_test_3rd_ed_b"
+                          checked={
+                            patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_b
+                          }
+                          onChange={handleFieldChange}
+                        />
+                        <Label>Inattentiveness</Label>
+                      </div>
+                      <div className="text-white">
+                        <input
+                          className="m-2"
+                          type="checkbox"
+                          id={item}
+                          name="continous_performance_test_3rd_ed_c"
+                          checked={
+                            patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_c
+                          }
+                          onChange={handleFieldChange}
+                        />
+                        <Label for="">Sustained Attention</Label>
+                      </div>
+                      <div className="text-white">
+                        <input
+                          className="m-2"
+                          type="checkbox"
+                          id="continous_performance_test_3rd_ed_d"
+                          name="continous_performance_test_3rd_ed_d"
+                          checked={
+                            patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_d
+                          }
+                          onChange={handleFieldChange}
+                        />
+                        <Label for="">Vigilance</Label>
+                      </div>
+                    </div>
                   </div>
-                  <div className="text-white">
-                    <input
-                      className="m-2"
-                      type="checkbox"
-                      id={item}
-                      name="continous_performance_test_3rd_ed_c"
-                      checked={
-                        patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_c
-                      }
-                      onChange={handleFieldChange}
-                    />
-                    <Label for="">Sustained Attention</Label>
-                  </div>
-                  <div className="text-white">
-                    <input
-                      className="m-2"
-                      type="checkbox"
-                      id={item}
-                      name="continous_performance_test_3rd_ed_d"
-                      checked={
-                        patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_d
-                      }
-                      onChange={handleFieldChange}
-                    />
-                    <Label for="">Vigilance</Label>
+                  {/* Right section */}
+                  <div className="col-6 text-white">
+                    <div className="">
+                      <div className="text-white d-flex flex-row">
+                        <input
+                          className="m-2"
+                          type="checkbox"
+                          id="continous_performance_test_3rd_ed_e"
+                          name="continous_performance_test_3rd_ed_e"
+                          checked={
+                            patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_e
+                          }
+                          onChange={handleFieldChange}
+                        />
+                        <p>
+                          Patient does not meet ADHD criteria on this test.
+                          Check this box to add the following paragraph to the
+                          report: Although there is no pervasive pattern of
+                          atypical scores, (Patient’s name)’s response pattern
+                          indicates a possible issue with one or more specific
+                          dimensions of attention: Overall, the results do not
+                          suggest that (Patient’s Name) has a disorder
+                          characterized by attention deficits such as ADHD.
+                        </p>
+                      </div>
+                      <div>
+                        <div className="text-white d-flex flex-row">
+                          <input
+                            className="m-2"
+                            type="checkbox"
+                            id="continous_performance_test_3rd_ed_f"
+                            name="continous_performance_test_3rd_ed_f"
+                            checked={
+                              patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_f
+                            }
+                            onChange={handleFieldChange}
+                          />
+                          <p>
+                            Although there is no pervasive pattern of atypical
+                            scores, (Patient’s name)’s response pattern
+                            indicates a possible issue with one or more specific
+                            dimensions of attention:
+                            <div className="">
+                              <div className="text-white">
+                                <input
+                                  className="m-2"
+                                  type="checkbox"
+                                  id="continous_performance_test_3rd_ed_g"
+                                  name="continous_performance_test_3rd_ed_g"
+                                  checked={
+                                    patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_g
+                                  }
+                                  onChange={handleFieldChange}
+                                />
+                                <Label>Inattentiveness</Label>
+                              </div>
+                              <div className="text-white">
+                                <input
+                                  className="m-2"
+                                  type="checkbox"
+                                  id="continous_performance_test_3rd_ed_h"
+                                  name="continous_performance_test_3rd_ed_h"
+                                  checked={
+                                    patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_h
+                                  }
+                                  onChange={handleFieldChange}
+                                />
+                                <Label for="">Sustained Attention</Label>
+                              </div>
+                              <div className="text-white">
+                                <input
+                                  className="m-2"
+                                  type="checkbox"
+                                  id="continous_performance_test_3rd_ed_i"
+                                  name="continous_performance_test_3rd_ed_i"
+                                  checked={
+                                    patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_i
+                                  }
+                                  onChange={handleFieldChange}
+                                />
+                                <Label for="">Vigilance</Label>
+                              </div>
+                            </div>
+                          </p>
+                        </div>
+                      </div>
+                      {/* <div className="">
+                        <div className="text-white">
+                          <input
+                            className="m-2"
+                            type="checkbox"
+                            id="continous_performance_test_3rd_ed_g"
+                            name="continous_performance_test_3rd_ed_g"
+                            checked={
+                              patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_g
+                            }
+                            onChange={handleFieldChange}
+                          />
+                          <Label>Inattentiveness</Label>
+                        </div>
+                        <div className="text-white">
+                          <input
+                            className="m-2"
+                            type="checkbox"
+                            id="continous_performance_test_3rd_ed_h"
+                            name="continous_performance_test_3rd_ed_h"
+                            checked={
+                              patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_h
+                            }
+                            onChange={handleFieldChange}
+                          />
+                          <Label for="">Sustained Attention</Label>
+                        </div>
+                        <div className="text-white">
+                          <input
+                            className="m-2"
+                            type="checkbox"
+                            id="continous_performance_test_3rd_ed_i"
+                            name="continous_performance_test_3rd_ed_i"
+                            checked={
+                              patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_i
+                            }
+                            onChange={handleFieldChange}
+                          />
+                          <Label for="">Vigilance</Label>
+                        </div>
+                      </div> */}
+                    </div>
                   </div>
                 </div>
               </div>

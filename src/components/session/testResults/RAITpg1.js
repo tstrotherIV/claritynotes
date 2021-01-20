@@ -3,7 +3,6 @@ import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 // pdf page 107
 
 function RAITpg1(props) {
@@ -24,10 +23,7 @@ function RAITpg1(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
-    setItem(fieldID);
-  };
+
 
   //CRUD Function Start
 
