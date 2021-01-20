@@ -103,6 +103,9 @@ const NavBar = (props) => {
             <NavItem>
               <NavLink href="/procedures_administered_pg_1">Procedures Administered</NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink href="/wasi-ii">Test Section</NavLink>
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
