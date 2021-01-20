@@ -4,7 +4,6 @@ import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 117
 
@@ -80,11 +79,6 @@ function ComputerizedNeurocognitiveAssessment(props) {
           ? target.checked
           : target.value,
     });
-  };
-
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
-    setItem(fieldID);
   };
 
   //CRUD Function Start
@@ -316,9 +310,9 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         Domain Scores
                       </th>
                       <th className="m-0 customPadding tdWidth">
-                        Standard Score
+                        IQ
                       </th>
-                      <th className="m-0 customPadding tdWidth">Percentile</th>
+                      <th className="m-0 customPadding tdWidth">Better Than Percentile</th>
                       <th className="m-0 customPadding tdWidth">
                         Functional Range
                       </th>
