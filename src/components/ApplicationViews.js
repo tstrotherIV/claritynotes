@@ -5,6 +5,7 @@ import CreateUser from "./createUser/createUser";
 import PatientHomePage from "./patient/patientHome";
 import SessionStep1 from "./session/sessionBeginning/sessionHome";
 import PsychologicalEvaluation from "./session/psychologicalEvaluation/psychologicalEvaluation";
+import PsychologicalEvaluationInit from "./session/psychologicalEvaluation/psychologicalEvaluationInit";
 import PsychologicalEvaluationFamily from "./session/psychologicalEvaluationFamily/PsychologicalEvaluationFamily";
 import PsychologicalEvaluationSiblings from "./session/psychologicalEvaluationFamily/PsychologicalEvaluationSiblings";
 import PsychologicalEvaluationChildren from "./session/psychologicalEvaluationFamily/PsychologicalEvaluationChildren";
@@ -212,6 +213,20 @@ const ApplicationViews = (props) => {
         />
         <Route
           exact
+          path="/psychological_evaluationInit"
+          render={(props) => {
+            return (
+              <PsychologicalEvaluationInit
+                setUser={setUser}
+                hasUser={hasUser}
+                patientId={patientId}
+                {...props}
+              />
+            );
+          }}
+        />
+        <Route
+          exact
           path="/psychological_evaluation_family"
           render={(props) => {
             return (
@@ -303,6 +318,7 @@ const ApplicationViews = (props) => {
                 setUser={setUser}
                 hasUser={hasUser}
                 patientId={patientId}
+                userId={userId}
                 {...props}
               />
             );

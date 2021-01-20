@@ -201,8 +201,8 @@ Button, Input{
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-around;
-  background-color: rgb(16, 30, 38);
+  // justify-content: space-around;
+  background-color: rgba(16, 30, 38, 0);
 }
 
 
@@ -457,10 +457,10 @@ Adding Scroll bar to pages where content runs off page
   border-radius: 10px
 }
 
-html, body { 
-  height: 100vh;
-  overflow: scroll!important;
-}
+// html, body { 
+//   height: 100vh;
+//   overflow: scroll!important;
+// }
 
 .scroll-container {
   overflow: auto;
