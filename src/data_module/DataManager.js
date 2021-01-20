@@ -9,6 +9,19 @@ export default {
       result.json()
     );
   },
+  //Get the patient by ID
+  async getAllPatients() {
+    return fetch(`${remoteURL}/patients`).then((result) =>
+      result.json()
+    );
+  },
+
+  //Get the User by ID
+  async getUser(userId) {
+    return fetch(`${remoteURL}/users/${userId}`).then((result) =>
+      result.json()
+    );
+  },
 
   // Get Patient Response by Patient ID and questionID
   async getQuestionPatientNotes(patientId, questionId) {

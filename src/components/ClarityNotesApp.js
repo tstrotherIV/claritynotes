@@ -6,7 +6,7 @@ import NavBar from "./shared/sideNav/sideNav";
 const ClarityNotes = (props) => {
   const isAuthenticated = () => sessionStorage.getItem("loggedUser") !== null;
   // const loggedUserId = sessionStorage.getItem("loggedUser");
-  const loggedUserId = 5;
+  const loggedUserId = 107;
   const currentPatientId = 30;
 
   // const [hasUser, setHasUser] = useState(isAuthenticated());

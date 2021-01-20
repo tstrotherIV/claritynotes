@@ -85,7 +85,7 @@ function PsychologicalEvaluationReferral(props) {
         </div>
       </div>
       <div id="footer">
-        <ButtonNavigation next={next} back={back} />
+        <ButtonNavigation next={next} back={back} patient={props.patientId} />
         <EmptyFooterSpace />
       </div>
     </div>

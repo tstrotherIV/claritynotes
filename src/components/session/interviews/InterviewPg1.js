@@ -1,11 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { Label } from "reactstrap";
+import {
+  Label,
+  Dropdown,
+  DropdownToggle,
+  DropdownItem,
+  Button,
+  DropdownMenu,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Input,
+  Form,
+  FormGroup,
+} from "reactstrap";
 import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-// import GoldNotes from "../../shared/GoldNotes";
+import GoldNotes from "../../shared/GoldNotes";
 
 import "./interviews.scss";
 
@@ -17,6 +31,10 @@ function InterviewPg1(props) {
 
   const next = "/interview_pg_2";
   const back = "/psychological_evaluation_additional_data";
+
+  const [dropdownOpen1, setDropdownOpen1] = useState(false);
+
+  const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
 
   const handleFieldChange = (e) => {
     setPatientInterview_pg1({
@@ -59,6 +77,22 @@ function InterviewPg1(props) {
     });
   };
 
+  //Gold Notes Modal
+  const [goldNote, setGoldNote] = useState("");
+  const [modal, setModal] = useState(false);
+
+  const toggle3 = () => setModal(!modal);
+
+  const createGoldNote = () => {
+    const newGoldNote = {
+      patientId: props.patientId,
+      goldNotes_1a: goldNote.goldNotes_1a
+    }
+    DataManager.post("goldNotes", newGoldNote).then((data) => {
+      setGoldNote(data);
+    });
+  }
+
   useEffect(() => {
     getData();
   }, []);
@@ -98,41 +132,78 @@ function InterviewPg1(props) {
               />
             </div>
           </div>
-          <div>
+          {/* <div>
             <div className="div1Fields">
-              {/* <div className="in1">
-              <Label className="textWhite mr-2" for="firstName">
-                [User Name, First]’s Inference and Observations:
-              </Label>
-              <Dropdown isOpen={dropdownOpen1} toggle={toggle1}>
-                <DropdownToggle color="light" className="dropdown" caret>
-                  Please Select
-                </DropdownToggle>
-                <DropdownMenu
-                id="interview_pg1_b"
-                name="interview_pg1_b"
-                defaultValue={patientInterview_pg1.interview_pg1_b}
-                onChange={handleFieldChange}
+              <div className="in1">
+                <Label className="textWhite mr-2" for="firstName">
+                  [User Name, First]’s Inference and Observations:
+                </Label>
+                <Dropdown isOpen={dropdownOpen1} toggle={toggle1}>
+                  <DropdownToggle color="light" className="dropdown" caret>
+                    Please Select
+                  </DropdownToggle>
+                  <DropdownMenu
+                    id="interview_pg1_b"
+                    name="interview_pg1_b"
+                    defaultValue={patientInterview_pg1.interview_pg1_b}
+                    onChange={handleFieldChange}
                   >
-                  <DropdownItem header>Header</DropdownItem>
-                  <DropdownItem>Some Action</DropdownItem>
-                  <DropdownItem disabled>Action (disabled)</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Foo Action</DropdownItem>
-                  <DropdownItem>Bar Action</DropdownItem>
-                  <DropdownItem>Quo Action</DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
-              <div>
-                <Button color="light" className="m-3">
-                  Edit List
-                </Button>
+                    <DropdownItem header>Header</DropdownItem>
+                    <DropdownItem>Some Action</DropdownItem>
+                    <DropdownItem>Foo Action</DropdownItem>
+                    <DropdownItem>Bar Action</DropdownItem>
+                    <DropdownItem>Quo Action</DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+                <div>
+                  <Button color="light" className="m-3">
+                    Edit List
+                  </Button>
+                </div>
               </div>
-            </div> */}
 
-              {/* <GoldNotes /> */}
+              <div>
+                <Form inline onSubmit={(e) => e.preventDefault()}>
+                  <Button color="danger" onClick={toggle3}>
+                    Add Gold Notes
+                  </Button>
+                </Form>
+                <Modal
+                  isOpen={modal}
+                  toggle={toggle3}
+                  // className={className}
+                  backdrop="true"
+                  // keyboard={keyboard}
+                >
+                  <ModalHeader toggle={toggle3}>Gold Note</ModalHeader>
+                  <ModalBody>
+                    <div className="interview_line1">
+                      <Label className=" interview_title" for="">
+                        Give the note a Title: 
+                      </Label>
+                      <TextareaAutosize
+                        className="interview_fieldData"
+                        type="text"
+                        id="goldNotes_1a"
+                        name="goldNotes_1a"
+                        // onChange={handleFieldChange}
+                        // onClick={captureFieldName}
+                      />
+                    </div>
+                    <GoldNotes />
+                  </ModalBody>
+                  <ModalFooter>
+                    <Button color="primary" onClick={toggle3}>
+                      Save Note
+                    </Button>{" "}
+                    <Button color="secondary" onClick={toggle3}>
+                      Cancel
+                    </Button>
+                  </ModalFooter>
+                </Modal>
+              </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div id="footer">
           <ButtonNavigation

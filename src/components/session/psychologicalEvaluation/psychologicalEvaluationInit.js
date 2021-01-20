@@ -16,7 +16,7 @@ import DataManager from "../../../data_module/DataManager";
 
 import "./psychologicalEvaluation.scss";
 
-function PsychologicalEvaluation(props) {
+function PsychologicalEvaluationInit(props) {
   const [
     patientPsychological_Evaluation,
     setPatientPsychological_Evaluation,
@@ -117,7 +117,7 @@ function PsychologicalEvaluation(props) {
     getData();
   }, []);
 
-  const next = "/psychological_evaluation_family";
+  const next = "/sessionStep1";
   const back = "/patient";
 
   return (
@@ -129,7 +129,7 @@ function PsychologicalEvaluation(props) {
             <div className="minWidthContainer">
               <div className="header">
                 <h2 className="textWhite mt-2">
-                  Please Confirm or Update Information
+                  Enter Details for the New Patient
                 </h2>
               </div>
               <Form>
@@ -493,4 +493,4 @@ function PsychologicalEvaluation(props) {
   );
 }
 
-export default PsychologicalEvaluation;
+export default PsychologicalEvaluationInit;
