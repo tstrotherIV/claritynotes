@@ -129,7 +129,7 @@ const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
   const setUser = props.setUser;
   const userId = parseInt(props.userId);
-  const patientId = parseInt(props.currentPatientId);
+  const patientId = sessionStorage.getItem("currentPatientId");
 
   return (
     <>

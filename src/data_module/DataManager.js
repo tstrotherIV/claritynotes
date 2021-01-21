@@ -1,19 +1,19 @@
-const remoteURL = "http://localhost:5002";
+// const remoteURL = "http://localhost:5002";
+const remoteURL =
+  "https://pdp73mj2c8.execute-api.us-east-2.amazonaws.com/v1/claritynotes";
 
 export default {
   // ALL  GET METHODS
 
   //Get the patient by ID
   async getPatient(patientId) {
-    return fetch(`${remoteURL}/patients/${patientId}`).then((result) =>
+    return fetch(`${remoteURL}/patients?PK=${patientId}`).then((result) =>
       result.json()
     );
   },
   //Get the patient by ID
   async getAllPatients() {
-    return fetch(`${remoteURL}/patients`).then((result) =>
-      result.json()
-    );
+    return fetch(`${remoteURL}/patients`).then((result) => result.json());
   },
 
   //Get the User by ID
@@ -71,10 +71,21 @@ export default {
     }).then((postedData) => postedData.json());
   },
 
+  async createPatient(resource, newPatientData) {
+    return fetch(`${remoteURL}/${resource}`, {
+      mode: "cors",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newPatientData),
+    });
+  },
+
   // ALL UPDATED MEHTODS
 
   update(resource, editedData) {
-    return fetch(`${remoteURL}/${resource}/${editedData.id}`, {
+    return fetch(`${remoteURL}/${resource}?PK=${editedData.PK}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
