@@ -13,76 +13,53 @@ import Heading from "../../shared/PsychologicalHeading.js";
 import TextareaAutosize from "react-textarea-autosize";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
+import { v4 as uuidv4 } from "uuid";
 
 import "./psychologicalEvaluation.scss";
 
 function PsychologicalEvaluationInit(props) {
-  const [
-    patientPsychological_Evaluation,
-    setPatientPsychological_Evaluation,
-  ] = useState({
+  const [patient, setPatient] = useState({
     patient_first_name: "",
     patient_middle_name: "",
     patient_last_name: "",
     patient_Date_of_Birth: "",
-    patient_referral: "",
-    patient_office_time: "",
-    patient_report_writing: "",
-    patient_case_number: "",
-    patient_evaluation_Date: "",
-    patient_county: "",
-    patient_interview_time: "",
-    patient_intake_time: "",
     patient_gender: "",
   });
 
-  const [dropdownOpen1, setDropdownOpen1] = useState(false);
-  const [dropdownOpen2, setDropdownOpen2] = useState(false);
   const [dropdownOpen3, setDropdownOpen3] = useState(false);
 
-  const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
-  const toggle2 = () => setDropdownOpen2((prevState) => !prevState);
   const toggle3 = () => setDropdownOpen3((prevState) => !prevState);
 
-
   const handleFieldChange = (e) => {
-    setPatientPsychological_Evaluation({
-      ...patientPsychological_Evaluation,
+    setPatient({
+      ...patient,
       [e.target.name]: e.target.value,
     });
   };
 
-  //CRUD Function Start
-
-  const updatePatient = () => {
-    const editedPatient = {
-      id: props.patientId,
-      patient_first_name: patientPsychological_Evaluation.patient_first_name,
-      patient_middle_name: patientPsychological_Evaluation.patient_middle_name,
-      patient_last_name: patientPsychological_Evaluation.patient_last_name,
-      patient_Date_of_Birth:
-        patientPsychological_Evaluation.patient_Date_of_Birth,
-      patient_referral: patientPsychological_Evaluation.patient_referral,
-      patient_office_time: patientPsychological_Evaluation.patient_office_time,
-      patient_report_writing:
-        patientPsychological_Evaluation.patient_report_writing,
-      patient_case_number: patientPsychological_Evaluation.patient_case_number,
-      patient_evaluation_Date:
-        patientPsychological_Evaluation.patient_evaluation_Date,
-      patient_county: patientPsychological_Evaluation.patient_county,
-      patient_interview_time:
-        patientPsychological_Evaluation.patient_interview_time,
-      patient_intake_time: patientPsychological_Evaluation.patient_intake_time,
-      patient_gender: patientPsychological_Evaluation.patient_gender,
-    };
-
-    DataManager.update("patients", editedPatient).then(() => {});
+  const setUser = (user) => {
+    sessionStorage.setItem("currentPatientId", JSON.stringify(user));
   };
 
-  //CRUD Function END
+  const createNewPatient = () => {
+    const newPatient = {
+      // PK: uuidv4(),
+      patient_first_name: patient.patient_first_name,
+      patient_middle_name: patient.patient_middle_name,
+      patient_last_name: patient.patient_last_name,
+      patient_Date_of_Birth: patient.patient_Date_of_Birth,
+      patient_gender: patient.patient_gender,
+    };
 
-  const getData = () => {
-    DataManager.getPatient(props.patientId).then((patientInfo) => {
+    DataManager.createPatient("add_patient", newPatient).then((data) => {
+      // setUser(data.PK);
+      // setPatient(data);
+      console.log(data)
+    });
+  };
+
+  const getData = (PK) => {
+    DataManager.getPatient(PK).then((patientInfo) => {
       const raw = {
         ...patientInfo,
       };
@@ -92,15 +69,8 @@ function PsychologicalEvaluationInit(props) {
         "patient_middle_name",
         "patient_last_name",
         "patient_Date_of_Birth",
-        "patient_referral",
-        "patient_office_time",
-        "patient_report_writing",
-        "patient_case_number",
-        "patient_evaluation_Date",
-        "patient_county",
-        "patient_interview_time",
-        "patient_intake_time",
         "patient_gender",
+        "PK",
       ];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
@@ -109,12 +79,12 @@ function PsychologicalEvaluationInit(props) {
           return obj;
         }, {});
 
-      setPatientPsychological_Evaluation(filtered);
+      setPatient(filtered);
     });
   };
 
   useEffect(() => {
-    getData();
+    // getData();
   }, []);
 
   const next = "/sessionStep1";
@@ -146,10 +116,7 @@ function PsychologicalEvaluationInit(props) {
                         id="patient_first_name"
                         name="patient_first_name"
                         onChange={handleFieldChange}
-                        value={
-                          patientPsychological_Evaluation.patient_first_name
-                        }
-                        
+                        value={patient.patient_first_name}
                       />
                     </div>
                     <div className="d-flex m-4">
@@ -164,10 +131,7 @@ function PsychologicalEvaluationInit(props) {
                         id="patient_middle_name"
                         name="patient_middle_name"
                         onChange={handleFieldChange}
-                        value={
-                          patientPsychological_Evaluation.patient_middle_name
-                        }
-                        
+                        value={patient.patient_middle_name}
                       />
                     </div>
                     <div className="d-flex justify-items-center m-4">
@@ -182,10 +146,7 @@ function PsychologicalEvaluationInit(props) {
                         id="patient_last_name"
                         name="patient_last_name"
                         onChange={handleFieldChange}
-                        value={
-                          patientPsychological_Evaluation.patient_last_name
-                        }
-                        
+                        value={patient.patient_last_name}
                       />
                     </div>
                     <div className="d-flex justify-items-center m-4">
@@ -201,230 +162,10 @@ function PsychologicalEvaluationInit(props) {
                         id="patient_Date_of_Birth"
                         name="patient_Date_of_Birth"
                         onChange={handleFieldChange}
-                        value={
-                          patientPsychological_Evaluation.patient_Date_of_Birth
-                        }
-                        
+                        value={patient.patient_Date_of_Birth}
                       />
                     </div>
-                    <div className="d-flex justify-items-center m-4">
-                      <Label
-                        className="textWhite labelWidth"
-                        for="examplePassword"
-                      >
-                        Referral
-                      </Label>
 
-                      <Dropdown
-                        isOpen={dropdownOpen1}
-                        toggle={toggle1}
-                        className="col-8"
-                      >
-                        <DropdownToggle
-                          color="light"
-                          className="dropdown text-center"
-                          caret
-                          value={
-                            patientPsychological_Evaluation.patient_referral
-                          }
-                        >
-                          {patientPsychological_Evaluation.patient_referral}
-                        </DropdownToggle>
-                        <DropdownMenu>
-                          <DropdownItem
-                            onClick={handleFieldChange}
-                            name="patient_referral"
-                            value="No Referral"
-                          >
-                            No Referral
-                          </DropdownItem>
-                          <DropdownItem
-                            onClick={handleFieldChange}
-                            name="patient_referral"
-                            value="Option 1"
-                          >
-                            Option 1
-                          </DropdownItem>
-                          <DropdownItem
-                            onClick={handleFieldChange}
-                            name="patient_referral"
-                            value="Option 2"
-                          >
-                            Option 2
-                          </DropdownItem>
-                          <DropdownItem
-                            onClick={handleFieldChange}
-                            name="patient_referral"
-                            value="Option 3"
-                          >
-                            Option 3
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </Dropdown>
-                    </div>
-                    <div className="d-flex justify-items-center m-4">
-                      <Label className="textWhite labelWidth" for="officeTime">
-                        Office Time
-                      </Label>
-                      <Input
-                        className="col-3 dateField p-3 text-center"
-                        type="time"
-                        id="patient_office_time"
-                        name="patient_office_time"
-                        onChange={handleFieldChange}
-                        value={
-                          patientPsychological_Evaluation.patient_office_time
-                        }
-                        
-                      />
-                    </div>
-                    <div className="d-flex justify-items-center m-4">
-                      <Label
-                        className="textWhite labelWidth"
-                        for="reportWriting"
-                      >
-                        Report Writing
-                      </Label>
-                      <TextareaAutosize
-                        className="fieldData col-8"
-                        type="text"
-                        id="patient_report_writing"
-                        name="patient_report_writing"
-                        onChange={handleFieldChange}
-                        value={
-                          patientPsychological_Evaluation.patient_report_writing
-                        }
-                        
-                      />
-                    </div>
-                  </div>
-                  {/* --------------------------------------------- */}
-                  <div className="col-6">
-                    <div className="d-flex justify-items-center m-4">
-                      <Label className="textWhite labelWidth" for="caseNumber">
-                        Case #
-                      </Label>
-                      <TextareaAutosize
-                        className="fieldData col-8"
-                        type="text"
-                        placeholder="Case Number"
-                        id="patient_case_number"
-                        name="patient_case_number"
-                        onChange={handleFieldChange}
-                        value={
-                          patientPsychological_Evaluation.patient_case_number
-                        }
-                        
-                      />
-                    </div>
-                    <div>
-                      <div className="d-flex justify-items-center m-4">
-                        <Label
-                          className="textWhite labelWidth"
-                          for="examplePassword"
-                        >
-                          Eval 1 Date
-                        </Label>
-                        <div>
-                          <Input
-                            className="fieldData p-3"
-                            type="date"
-                            id="patient_evaluation_Date"
-                            name="patient_evaluation_Date"
-                            onChange={handleFieldChange}
-                            value={
-                              patientPsychological_Evaluation.patient_evaluation_Date
-                            }
-                            
-                          />
-                          <Button className="m-2">Add Eval Date</Button>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="textWhite d-flex justify-items-center m-4">
-                      <Label
-                        className="textWhite labelWidth"
-                        for="examplePassword"
-                      >
-                        County
-                      </Label>
-                      <Dropdown
-                        isOpen={dropdownOpen2}
-                        toggle={toggle2}
-                        className="col-8"
-                      >
-                        <DropdownToggle
-                          color="light"
-                          className="dropdown text-center"
-                          caret
-                          value={patientPsychological_Evaluation.patient_county}
-                        >
-                          {patientPsychological_Evaluation.patient_county}
-                        </DropdownToggle>
-                        <DropdownMenu>
-                          <DropdownItem
-                            onClick={handleFieldChange}
-                            name="patient_county"
-                            value="Select County"
-                          >
-                            Select County
-                          </DropdownItem>
-                          <DropdownItem
-                            onClick={handleFieldChange}
-                            name="patient_county"
-                            value="Option 1"
-                          >
-                            Option 1
-                          </DropdownItem>
-                          <DropdownItem
-                            onClick={handleFieldChange}
-                            name="patient_county"
-                            value="Option 2"
-                          >
-                            Option 2
-                          </DropdownItem>
-                          <DropdownItem
-                            onClick={handleFieldChange}
-                            name="patient_county"
-                            value="Option 3"
-                          >
-                            Option 3
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </Dropdown>
-                    </div>
-                    <div className="textWhite d-flex justify-items-center m-4">
-                      <Label className="labelWidth" for="intakeTime">
-                        Interview Time
-                      </Label>
-                      <Input
-                        className="fieldData col-4 p-3 text-center"
-                        type="time"
-                        id="patient_interview_time"
-                        name="patient_interview_time"
-                        onChange={handleFieldChange}
-                        value={
-                          patientPsychological_Evaluation.patient_interview_time
-                        }
-                        
-                      />
-                    </div>
-                    <div className="textWhite d-flex justify-items-center m-4">
-                      <Label className="textWhite labelWidth" for="inTakeTime">
-                        Intake Time
-                      </Label>
-                      <Input
-                        className="fieldData col-4 p-3 text-center"
-                        type="time"
-                        id="patient_intake_time"
-                        name="patient_intake_time"
-                        onChange={handleFieldChange}
-                        value={
-                          patientPsychological_Evaluation.patient_intake_time
-                        }
-                        
-                      />
-                    </div>
                     <div className="line1 d-flex flex-wrap">
                       <Dropdown
                         isOpen={dropdownOpen3}
@@ -435,10 +176,10 @@ function PsychologicalEvaluationInit(props) {
                           color="light"
                           className="dropdown text-center"
                           caret
-                          value={patientPsychological_Evaluation.patient_gender}
+                          value={patient.patient_gender}
                         >
-                          {patientPsychological_Evaluation.patient_gender
-                            ? patientPsychological_Evaluation.patient_gender
+                          {patient.patient_gender
+                            ? patient.patient_gender
                             : "Select Gender"}
                         </DropdownToggle>
                         <DropdownMenu>
@@ -481,9 +222,9 @@ function PsychologicalEvaluationInit(props) {
               <ButtonNavigation
                 next={next}
                 back={back}
-                updatePatient={updatePatient}
+                updatePatient={createNewPatient}
                 patient={props.patientId}
-                patientNotes={patientPsychological_Evaluation}
+                patientNotes={patient}
               />
             </div>
           </div>
