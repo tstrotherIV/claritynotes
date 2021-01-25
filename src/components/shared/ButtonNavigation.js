@@ -6,8 +6,10 @@ import DataManager from "../../data_module/DataManager";
 function ButtonNavigation(props) {
   const [patient, setPatient] = useState("");
 
+  const patientId = sessionStorage.getItem("currentPatientId");
+
   const getData = () => {
-    DataManager.getPatient(props.patient).then((patientInfo) => {
+    DataManager.getPatient(patientId).then((patientInfo) => {
       setPatient(patientInfo);
     });
   };

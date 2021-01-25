@@ -56,7 +56,7 @@ function PsychologicalEvaluation(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      PK: patientPsychological_Evaluation.PK,
+      id: props.patientId,
       patient_first_name: patientPsychological_Evaluation.patient_first_name,
       patient_middle_name: patientPsychological_Evaluation.patient_middle_name,
       patient_last_name: patientPsychological_Evaluation.patient_last_name,
@@ -101,8 +101,7 @@ function PsychologicalEvaluation(props) {
         "patient_county",
         "patient_interview_time",
         "patient_intake_time",
-        "patient_gender",
-        "PK"
+        "patient_gender"
       ];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
@@ -116,7 +115,7 @@ function PsychologicalEvaluation(props) {
   };
 
   useEffect(() => {
-    // getData();
+    getData();
   }, []);
 
   const next = "/psychological_evaluation_family";

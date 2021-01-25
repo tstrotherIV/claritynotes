@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import {
   Label,
-  Button,
   Dropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  Form,
   Input,
 } from "reactstrap";
 import Heading from "../../shared/PsychologicalHeading.js";
@@ -38,12 +36,12 @@ function PsychologicalEvaluationInit(props) {
   };
 
   const setUser = (user) => {
-    sessionStorage.setItem("currentPatientId", JSON.stringify(user));
+    sessionStorage.setItem("currentPatientId", user);
   };
 
   const createNewPatient = () => {
     const newPatient = {
-      // PK: uuidv4(),
+      id: uuidv4(),
       patient_first_name: patient.patient_first_name,
       patient_middle_name: patient.patient_middle_name,
       patient_last_name: patient.patient_last_name,
@@ -51,15 +49,14 @@ function PsychologicalEvaluationInit(props) {
       patient_gender: patient.patient_gender,
     };
 
-    DataManager.createPatient("add_patient", newPatient).then((data) => {
-      // setUser(data.PK);
-      // setPatient(data);
-      console.log(data)
+    DataManager.post("patients", newPatient).then((data) => {
+      setUser(data.id);
+      setPatient(data);
     });
   };
 
-  const getData = (PK) => {
-    DataManager.getPatient(PK).then((patientInfo) => {
+  const getData = () => {
+    DataManager.getPatient(props.patientId).then((patientInfo) => {
       const raw = {
         ...patientInfo,
       };
@@ -70,7 +67,6 @@ function PsychologicalEvaluationInit(props) {
         "patient_last_name",
         "patient_Date_of_Birth",
         "patient_gender",
-        "PK",
       ];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
@@ -84,7 +80,7 @@ function PsychologicalEvaluationInit(props) {
   };
 
   useEffect(() => {
-    // getData();
+    getData();
   }, []);
 
   const next = "/sessionStep1";
@@ -102,7 +98,7 @@ function PsychologicalEvaluationInit(props) {
                   Enter Details for the New Patient
                 </h2>
               </div>
-              <Form>
+              <section>
                 <div className="row no-gutters text-center d-flex justify-content-center minWidthContainer">
                   <div className="col-6">
                     <div className="d-flex m-4">
@@ -216,7 +212,7 @@ function PsychologicalEvaluationInit(props) {
                     </div>
                   </div>
                 </div>
-              </Form>
+              </section>
             </div>
             <div id="footer">
               <ButtonNavigation

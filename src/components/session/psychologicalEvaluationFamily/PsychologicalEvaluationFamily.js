@@ -92,6 +92,7 @@ function PsychologicalEvaluation_family(props) {
 
   const getData = () => {
     DataManager.getPatient(props.patientId).then((patientInfo) => {
+      patientInfo = patientInfo[0]
       const raw = {
         ...patientInfo,
       };

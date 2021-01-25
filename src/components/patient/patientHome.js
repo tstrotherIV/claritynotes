@@ -26,7 +26,7 @@ function PatientHomePage(props) {
     setPatientId(parseInt(e.target.value));
   };
 
-  const getData = (patients) => {
+  const getData = () => {
     DataManager.getAllPatients().then((patientInfo) => {
       // setPatient(patientInfo);
       const results = patientInfo.filter(
@@ -96,6 +96,8 @@ function PatientHomePage(props) {
                           />
                           {searchResults.map((item) => (
                             <DropdownItem
+                              id={item.id}
+                              key={item.id}
                               value={item.id}
                               onClick={handleFieldChange}
                               name="patientSelection"
