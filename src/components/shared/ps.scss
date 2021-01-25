@@ -6,6 +6,9 @@
   padding: 0 !important;
   border: none !important;
   min-width: 100vw !important;
+  position: fixed !important;
+  max-height: 400px;
+  overflow:scroll;
 }
 .active{
   background-color: white !important;
@@ -95,4 +98,9 @@
 .inputBoldText{
   font-weight: bolder;
   margin: 0;
+}
+
+.domainsTable {
+  display: flex;
+  justify-content: center;
 }
