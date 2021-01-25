@@ -6,6 +6,7 @@ import { Input, Label } from "reactstrap";
 import AdditionalNotes from "./AdditionalNotes";
 import "./ps.scss";
 import DataManager from "../../data_module/DataManager";
+import DomainsTable from "../shared/patient_notes_components/Domains";
 
 const termTitle = (
   <p className="term">Termination of Parental Rights Criteria</p>
@@ -614,7 +615,10 @@ const TermOfParentalRights = (props) => {
                 </div>
               </Tab>
               <Tab eventKey="domains" title={domains} className="contents">
-                <div className="pt-3 pl-3"></div>
+                <div className="domainsTable">
+                  <DomainsTable
+                  />
+                </div>
               </Tab>
             </Tabs>
           </div>
