@@ -126,14 +126,14 @@ function PsychologicalEvaluationReferral(props) {
               <div className="d-flex justify-content-center mt-5">
                 {!paragraphEnableEdit ? (
                   <>
-                    {/* <div className="m-4">
+                    <div className="m-4">
                       <Input
                         type="checkbox"
                         id="referral_paragraph_enable"
                         name="referral_paragraph_enable"
                         onChange={handleCheckBoxChange}
                       />
-                    </div> */}
+                    </div>
                     {patient.referral_paragraph_modified ? (
                       <div>{patient.referral_paragraph_modified}</div>
                     ) : (

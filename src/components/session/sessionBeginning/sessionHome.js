@@ -15,9 +15,8 @@ function SessionStep1(props) {
   });
 
   const getData = () => {
-    DataManager.getPatient(props.patientId.slice(1, -1)).then((patientInfo) => {
-      setPatient(patientInfo[0]);
-      console.log(patientInfo)
+    DataManager.getPatient(props.patientId).then((patientInfo) => {
+      setPatient(patientInfo);
     }); 
   };
 
