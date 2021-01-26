@@ -36,6 +36,76 @@ function PsychologicalEvaluation(props) {
     patient_gender: "",
   });
 
+  const alaCounties = [
+    "Autauga County",
+    "Baldwin County",
+    "Barbour County",
+    "Bibb County",
+    "Blount County",
+    "Bullock County",
+    "Butler County",
+    "Calhoun County",
+    "Chambers County",
+    "Cherokee County",
+    "Chilton County",
+    "Choctaw County",
+    "Clarke County",
+    "Clay County",
+    "Cleburne County",
+    "Coffee County",
+    "Colbert County",
+    "Conecuh County",
+    "Coosa County",
+    "Covington County",
+    "Crenshaw County",
+    "Cullman County",
+    "Dale County",
+    "Dallas County",
+    "DeKalb County",
+    "Elmore County",
+    "Escambia County",
+    "Etowah County",
+    "Fayette County",
+    "Franklin County",
+    "Geneva County",
+    "Greene County",
+    "Hale County",
+    "Henry County",
+    "Houston County",
+    "Jackson County",
+    "Jefferson County",
+    "Lamar County",
+    "Lauderdale County",
+    "Lawrence County",
+    "Lee County",
+    "Limestone County",
+    "Lowndes County",
+    "Macon County",
+    "Madison County",
+    "Marengo County",
+    "Marion County",
+    "Marshall County",
+    "Mobile County",
+    "Monroe County",
+    "Montgomery County",
+    "Morgan County",
+    "Perry County",
+    "Pickens County",
+    "Pike County",
+    "Randolph County",
+    "Russell County",
+    "St. Clair County",
+    "Shelby County",
+    "Sumter County",
+    "Talladega County",
+    "Tallapoosa County",
+    "Tuscaloosa County",
+    "Walker County",
+    "Washington County",
+    "Wilcox County",
+    "Winston County",
+  ];
+
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const [dropdownOpen2, setDropdownOpen2] = useState(false);
   const [dropdownOpen3, setDropdownOpen3] = useState(false);
@@ -43,7 +113,6 @@ function PsychologicalEvaluation(props) {
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
   const toggle2 = () => setDropdownOpen2((prevState) => !prevState);
   const toggle3 = () => setDropdownOpen3((prevState) => !prevState);
-
 
   const handleFieldChange = (e) => {
     setPatientPsychological_Evaluation({
@@ -75,15 +144,14 @@ function PsychologicalEvaluation(props) {
       patient_intake_time: patientPsychological_Evaluation.patient_intake_time,
       patient_gender: patientPsychological_Evaluation.patient_gender,
     };
-    DataManager.update("patients", editedPatient).then(() => {
-    });
+    DataManager.update("patients", editedPatient).then(() => {});
   };
 
   //CRUD Function END
 
   const getData = () => {
     DataManager.getPatient(props.patientId).then((patientInfo) => {
-      patientInfo = patientInfo[0]
+      patientInfo = patientInfo[0];
       const raw = {
         ...patientInfo,
       };
@@ -101,7 +169,7 @@ function PsychologicalEvaluation(props) {
         "patient_county",
         "patient_interview_time",
         "patient_intake_time",
-        "patient_gender"
+        "patient_gender",
       ];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
@@ -150,7 +218,6 @@ function PsychologicalEvaluation(props) {
                         value={
                           patientPsychological_Evaluation.patient_first_name
                         }
-                        
                       />
                     </div>
                     <div className="d-flex m-4">
@@ -168,7 +235,6 @@ function PsychologicalEvaluation(props) {
                         value={
                           patientPsychological_Evaluation.patient_middle_name
                         }
-                        
                       />
                     </div>
                     <div className="d-flex justify-items-center m-4">
@@ -186,7 +252,6 @@ function PsychologicalEvaluation(props) {
                         value={
                           patientPsychological_Evaluation.patient_last_name
                         }
-                        
                       />
                     </div>
                     <div className="d-flex justify-items-center m-4">
@@ -205,7 +270,6 @@ function PsychologicalEvaluation(props) {
                         value={
                           patientPsychological_Evaluation.patient_Date_of_Birth
                         }
-                        
                       />
                     </div>
                     <div className="d-flex justify-items-center m-4">
@@ -231,35 +295,18 @@ function PsychologicalEvaluation(props) {
                         >
                           {patientPsychological_Evaluation.patient_referral}
                         </DropdownToggle>
-                        <DropdownMenu>
-                          <DropdownItem
-                            onClick={handleFieldChange}
-                            name="patient_referral"
-                            value="No Referral"
-                          >
-                            No Referral
-                          </DropdownItem>
-                          <DropdownItem
-                            onClick={handleFieldChange}
-                            name="patient_referral"
-                            value="Option 1"
-                          >
-                            Option 1
-                          </DropdownItem>
-                          <DropdownItem
-                            onClick={handleFieldChange}
-                            name="patient_referral"
-                            value="Option 2"
-                          >
-                            Option 2
-                          </DropdownItem>
-                          <DropdownItem
-                            onClick={handleFieldChange}
-                            name="patient_referral"
-                            value="Option 3"
-                          >
-                            Option 3
-                          </DropdownItem>
+                        <DropdownMenu className="referralDropDown">
+                          <DropdownItem>Make a Selection</DropdownItem>
+                          {alaCounties.map((county) => (
+                            <DropdownItem
+                              id="patient_referral"
+                              name="patient_referral"
+                              value={county}
+                              onClick={handleFieldChange}
+                            >
+                              {county}
+                            </DropdownItem>
+                          ))}
                         </DropdownMenu>
                       </Dropdown>
                     </div>
@@ -276,7 +323,6 @@ function PsychologicalEvaluation(props) {
                         value={
                           patientPsychological_Evaluation.patient_office_time
                         }
-                        
                       />
                     </div>
                     <div className="d-flex justify-items-center m-4">
@@ -295,7 +341,6 @@ function PsychologicalEvaluation(props) {
                         value={
                           patientPsychological_Evaluation.patient_report_writing
                         }
-                        
                       />
                     </div>
                   </div>
@@ -315,7 +360,6 @@ function PsychologicalEvaluation(props) {
                         value={
                           patientPsychological_Evaluation.patient_case_number
                         }
-                        
                       />
                     </div>
                     <div>
@@ -336,7 +380,6 @@ function PsychologicalEvaluation(props) {
                             value={
                               patientPsychological_Evaluation.patient_evaluation_Date
                             }
-                            
                           />
                           <Button className="m-2">Add Eval Date</Button>
                         </div>
@@ -363,34 +406,19 @@ function PsychologicalEvaluation(props) {
                           {patientPsychological_Evaluation.patient_county}
                         </DropdownToggle>
                         <DropdownMenu>
-                          <DropdownItem
-                            onClick={handleFieldChange}
-                            name="patient_county"
-                            value="Select County"
-                          >
-                            Select County
-                          </DropdownItem>
-                          <DropdownItem
-                            onClick={handleFieldChange}
-                            name="patient_county"
-                            value="Option 1"
-                          >
-                            Option 1
-                          </DropdownItem>
-                          <DropdownItem
-                            onClick={handleFieldChange}
-                            name="patient_county"
-                            value="Option 2"
-                          >
-                            Option 2
-                          </DropdownItem>
-                          <DropdownItem
-                            onClick={handleFieldChange}
-                            name="patient_county"
-                            value="Option 3"
-                          >
-                            Option 3
-                          </DropdownItem>
+                          <DropdownMenu className="referralDropDown">
+                            <DropdownItem>Make a Selection</DropdownItem>
+                            {alaCounties.map((county) => (
+                              <DropdownItem
+                                id="patient_county"
+                                name="patient_county"
+                                value={county}
+                                onClick={handleFieldChange}
+                              >
+                                {county}
+                              </DropdownItem>
+                            ))}
+                          </DropdownMenu>
                         </DropdownMenu>
                       </Dropdown>
                     </div>
@@ -407,7 +435,6 @@ function PsychologicalEvaluation(props) {
                         value={
                           patientPsychological_Evaluation.patient_interview_time
                         }
-                        
                       />
                     </div>
                     <div className="textWhite d-flex justify-items-center m-4">
@@ -423,7 +450,6 @@ function PsychologicalEvaluation(props) {
                         value={
                           patientPsychological_Evaluation.patient_intake_time
                         }
-                        
                       />
                     </div>
                     <div className="line1 d-flex flex-wrap">
