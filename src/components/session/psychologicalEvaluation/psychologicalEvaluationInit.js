@@ -41,7 +41,7 @@ function PsychologicalEvaluationInit(props) {
 
   const createNewPatient = () => {
     const newPatient = {
-      id: uuidv4(),
+      // id: uuidv4(),
       patient_first_name: patient.patient_first_name,
       patient_middle_name: patient.patient_middle_name,
       patient_last_name: patient.patient_last_name,

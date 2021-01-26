@@ -32,7 +32,7 @@ function PatientHomePage(props) {
 
   const getData = () => {
     DataManager.getAllPatients().then((patientInfo) => {
-      // setPatient(patientInfo);
+      patientInfo = patientInfo.Items
       const results = patientInfo.filter(
         (person) =>
           person.patient_first_name

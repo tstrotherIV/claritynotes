@@ -151,7 +151,7 @@ function PsychologicalEvaluation(props) {
 
   const getData = () => {
     DataManager.getPatient(props.patientId).then((patientInfo) => {
-      patientInfo = patientInfo[0];
+      // patientInfo = patientInfo[0];
       const raw = {
         ...patientInfo,
       };
@@ -299,7 +299,7 @@ function PsychologicalEvaluation(props) {
                           <DropdownItem>Make a Selection</DropdownItem>
                           {alaCounties.map((county) => (
                             <DropdownItem
-                              id="patient_referral"
+                              id={`${county} DHR`}
                               name="patient_referral"
                               value={`${county} DHR`}
                               onClick={handleFieldChange}
@@ -410,7 +410,7 @@ function PsychologicalEvaluation(props) {
                             <DropdownItem>Make a Selection</DropdownItem>
                             {alaCounties.map((county) => (
                               <DropdownItem
-                                id="patient_county"
+                                id={county}
                                 name="patient_county"
                                 value={county}
                                 onClick={handleFieldChange}

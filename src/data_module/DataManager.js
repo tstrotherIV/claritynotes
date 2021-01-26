@@ -1,66 +1,66 @@
 import { data } from "jquery";
 
-const remoteURL = "http://localhost:5002";
+const remoteURL = "http://127.0.0.1:5000";
 
 export default {
   // ALL  GET METHODS
 
   //Get the patient by ID
   async getPatient(patientId) {
-    return fetch(`${remoteURL}/patients?id=${patientId}`).then((result) => 
+    return fetch(`${remoteURL}/patients/${patientId}`).then((result) =>
       result.json()
     );
   },
-  //Get the patient by ID
+  // Get the patient by ID
   async getAllPatients() {
     return fetch(`${remoteURL}/patients`).then((result) => result.json());
   },
 
-  //Get the User by ID
-  async getUser(userId) {
-    return fetch(`${remoteURL}/users/${userId}`).then((result) =>
-      result.json()
-    );
-  },
+  // //Get the User by ID
+  // async getUser(userId) {
+  //   return fetch(`${remoteURL}/users/${userId}`).then((result) =>
+  //     result.json()
+  //   );
+  // },
 
-  // Get Patient Response by Patient ID and questionID
-  async getQuestionPatientNotes(patientId, questionId) {
-    return fetch(
-      `${remoteURL}/patientNotes?patientId=${patientId}&questionId=${questionId}`
-    ).then((result) => result.json());
-  },
+  // // Get Patient Response by Patient ID and questionID
+  // async getQuestionPatientNotes(patientId, questionId) {
+  //   return fetch(
+  //     `${remoteURL}/patientNotes?patientId=${patientId}&questionId=${questionId}`
+  //   ).then((result) => result.json());
+  // },
 
-  //Get all Patient Children
-  async getChildren(patientId) {
-    return fetch(
-      `${remoteURL}/children?patientId=${patientId}`
-    ).then((result) => result.json());
-  },
+  // //Get all Patient Children
+  // async getChildren(patientId) {
+  //   return fetch(
+  //     `${remoteURL}/children?patientId=${patientId}`
+  //   ).then((result) => result.json());
+  // },
 
-  //Get all Patient Siblings
-  async getSiblings(patientId) {
-    return fetch(
-      `${remoteURL}/siblings?patientId=${patientId}`
-    ).then((result) => result.json());
-  },
+  // //Get all Patient Siblings
+  // async getSiblings(patientId) {
+  //   return fetch(
+  //     `${remoteURL}/siblings?patientId=${patientId}`
+  //   ).then((result) => result.json());
+  // },
 
-  //Get all Patient Guardians
-  async getGuardians(patientId) {
-    return fetch(
-      `${remoteURL}/guardians?patientId=${patientId}`
-    ).then((result) => result.json());
-  },
+  // //Get all Patient Guardians
+  // async getGuardians(patientId) {
+  //   return fetch(
+  //     `${remoteURL}/guardians?patientId=${patientId}`
+  //   ).then((result) => result.json());
+  // },
 
-  //Get all Patient Spouses
-  async getSpouses(patientId) {
-    return fetch(`${remoteURL}/spouses?patientId=${patientId}`).then((result) =>
-      result.json()
-    );
-  },
+  // //Get all Patient Spouses
+  // async getSpouses(patientId) {
+  //   return fetch(`${remoteURL}/spouses?patientId=${patientId}`).then((result) =>
+  //     result.json()
+  //   );
+  // },
 
-  // ALL CREATE METHODS
+  // // ALL CREATE METHODS
 
-  // Method that will allow the creation of any element in the database
+  // // Method that will allow the creation of any element in the database
   post(resource, newData) {
     return fetch(`${remoteURL}/${resource}/`, {
       method: "POST",
@@ -72,7 +72,6 @@ export default {
   },
 
   // ALL UPDATED MEHTODS
-
   update(resource, editedData) {
     return fetch(`${remoteURL}/${resource}/${editedData.id}`, {
       method: "PATCH",
@@ -83,32 +82,32 @@ export default {
     }).then((updatedData) => updatedData.json());
   },
 
-  // ALL DELETE METHODS
+  // // ALL DELETE METHODS
 
-  delete(resource, id) {
-    return fetch(`${remoteURL}/${resource}/${id}`, {
-      method: "DELETE",
-    }).then((deletedData) => deletedData.json());
-  },
+  // delete(resource, id) {
+  //   return fetch(`${remoteURL}/${resource}/${id}`, {
+  //     method: "DELETE",
+  //   }).then((deletedData) => deletedData.json());
+  // },
 
-  //Create User
-  createNewUser(newUser) {
-    return fetch(
-      `https://pdp73mj2c8.execute-api.us-east-2.amazonaws.com/v1/claritynotes/users/`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newUser),
-      }
-    );
-  },
+  // //Create User
+  // createNewUser(newUser) {
+  //   return fetch(
+  //     `https://pdp73mj2c8.execute-api.us-east-2.amazonaws.com/v1/claritynotes/users/`,
+  //     {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(newUser),
+  //     }
+  //   );
+  // },
 
-  //Get User during Login
-  async getUser(username) {
-    return fetch(`${remoteURL}/users?q=${username}`).then((result) =>
-      result.json()
-    );
-  },
+  // //Get User during Login
+  // async getUser(username) {
+  //   return fetch(`${remoteURL}/users?q=${username}`).then((result) =>
+  //     result.json()
+  //   );
+  // },
 };
