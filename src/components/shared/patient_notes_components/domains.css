@@ -1,10 +1,9 @@
 #domainTableContainer {
   width: 1500px;
-  
 }
 
 .domainsTable {
-  
+  cursor: pointer;
 }
 
 .lightorange {
