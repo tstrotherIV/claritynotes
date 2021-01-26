@@ -301,10 +301,10 @@ function PsychologicalEvaluation(props) {
                             <DropdownItem
                               id="patient_referral"
                               name="patient_referral"
-                              value={county}
+                              value={`${county} DHR`}
                               onClick={handleFieldChange}
                             >
-                              {county}
+                              {county} DHR
                             </DropdownItem>
                           ))}
                         </DropdownMenu>
