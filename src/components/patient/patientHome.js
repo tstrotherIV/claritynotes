@@ -16,6 +16,10 @@ import DataManager from "../../data_module/DataManager";
 function PatientHomePage(props) {
   let USERNAME = "Chris";
 
+  const patientList = [
+    
+  ]
+
   const [patient, setPatient] = useState([]);
   const [patientId, setPatientId] = useState("");
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
