@@ -34,6 +34,7 @@ function PsychologicalEvaluation(props) {
     patient_interview_time: "",
     patient_intake_time: "",
     patient_gender: "",
+    id: ""
   });
 
   const alaCounties = [
@@ -169,6 +170,7 @@ function PsychologicalEvaluation(props) {
         "patient_interview_time",
         "patient_intake_time",
         "patient_gender",
+        "id"
       ];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
@@ -508,7 +510,7 @@ function PsychologicalEvaluation(props) {
                 next={next}
                 back={back}
                 updatePatient={updatePatient}
-                patient={props.patientId}
+                patient={patientPsychological_Evaluation.id}
                 patientNotes={patientPsychological_Evaluation}
               />
             </div>

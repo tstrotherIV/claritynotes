@@ -68,6 +68,7 @@ function PsychologicalEvaluation_family(props) {
 
   const getGuardians = () => {
     DataManager.getGuardians(props.patientId).then((guardian) => {
+      console.log(guardian)
       setPatientGuardians(guardian.Items);
     });
   };
@@ -117,7 +118,7 @@ function PsychologicalEvaluation_family(props) {
 
   useEffect(() => {
     getData();
-    getGuardians();
+    // getGuardians();
   }, []);
 
   return (
@@ -272,7 +273,7 @@ function PsychologicalEvaluation_family(props) {
                 </div>
               </div>
             </div>
-            <CardDeck className="guardianContainer mt-3">
+            {/* <CardDeck className="guardianContainer mt-3">
               {patientGuardians.map((guardian) => (
                 <GuardianCard
                   key={guardian.id}
@@ -281,7 +282,7 @@ function PsychologicalEvaluation_family(props) {
                   {...props}
                 />
               ))}
-            </CardDeck>
+            </CardDeck> */}
           </div>
           <div id="footer">
             <ButtonNavigation

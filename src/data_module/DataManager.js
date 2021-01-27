@@ -1,6 +1,7 @@
 import { data } from "jquery";
 
-const remoteURL = "https://cq73ylztmi.execute-api.us-west-2.amazonaws.com/staging";
+// const remoteURL = "https://cq73ylztmi.execute-api.us-west-2.amazonaws.com/staging";
+const remoteURL = "http://127.0.0.1:5000";
 
 export default {
   // ALL  GET METHODS
@@ -17,11 +18,11 @@ export default {
   },
 
   // //Get the User by ID
-  // async getUser(userId) {
-  //   return fetch(`${remoteURL}/users/${userId}`).then((result) =>
-  //     result.json()
-  //   );
-  // },
+  async getUser(userId) {
+    return fetch(`${remoteURL}/users/${userId}`).then((result) =>
+      result.json()
+    );
+  },
 
   // // Get Patient Response by Patient ID and questionID
   // async getQuestionPatientNotes(patientId, questionId) {
@@ -45,11 +46,11 @@ export default {
   // },
 
   // //Get all Patient Guardians
-  async getGuardians(patientId) {
-    return fetch(
-      `${remoteURL}/guardians?patientId=${patientId}`
-    ).then((result) => result.json());
-  },
+  // async getGuardians(patientId) {
+  //   return fetch(
+  //     `${remoteURL}/guardians?patientId=${patientId}`
+  //   ).then((result) => result.json());
+  // },
 
   // //Get all Patient Spouses
   // async getSpouses(patientId) {

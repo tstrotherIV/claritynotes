@@ -96,7 +96,7 @@ function PsychologicalEvaluation_siblings(props) {
 
   useEffect(() => {
     getData();
-    getChildren();
+    // getChildren();
   }, []);
 
   return (

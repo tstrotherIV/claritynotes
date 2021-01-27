@@ -96,7 +96,7 @@ function PsychologicalEvaluationSpouse(props) {
 
   useEffect(() => {
     getData();
-    getSpouses();
+    // getSpouses();
   }, []);
 
   return (
@@ -245,7 +245,7 @@ function PsychologicalEvaluationSpouse(props) {
               console.log("")
             )}
           </div>
-          {relationshipStatus.patient_married !== "Single" ? (
+          {/* {relationshipStatus.patient_married !== "Single" ? (
             <CardDeck className="childContainer mt-3">
               {patientSpouse.map((spouse) => (
                 <SpouseCard
@@ -258,7 +258,7 @@ function PsychologicalEvaluationSpouse(props) {
             </CardDeck>
           ) : (
             console.log("")
-          )}
+          )} */}
         </div>
         <div id="footer">
           <ButtonNavigation

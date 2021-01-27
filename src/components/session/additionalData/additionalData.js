@@ -16,7 +16,7 @@ function PsychologicalEvaluationAdditionalData(props) {
       setPatient(patientInfo);
     });
     DataManager.getUser(props.userId).then((userInfo) => {
-      setUser(userInfo[0]);
+      setUser(userInfo);
     });
   }, []);
 
@@ -35,7 +35,7 @@ function PsychologicalEvaluationAdditionalData(props) {
               <div className="d-flex justify-content-center mt-5">
                 <div className="centerText">
                   Interview with {patient.patient_first_name}{" "}
-                  {patient.patient_last_name} <br></br>Interview with {user.firstName} {user.lastName}, ID: {user.id},{" "}
+                  {patient.patient_last_name} <br></br>Interview with {user.first_name} {user.last_name}, ID: {user.id},{" "}
                   {user.position}
                   <br></br>Interview with []
                 </div>

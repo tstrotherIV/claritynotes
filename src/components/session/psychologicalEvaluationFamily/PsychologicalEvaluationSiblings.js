@@ -92,7 +92,7 @@ function PsychologicalEvaluationSiblings(props) {
 
   useEffect(() => {
     getData();
-    getSiblings();
+    // getSiblings();
   }, []);
 
   return (
@@ -211,7 +211,7 @@ function PsychologicalEvaluationSiblings(props) {
               console.log("")
             )}
           </div>
-          {!checkbox.patient_only_child  ? (
+          {/* {!checkbox.patient_only_child  ? (
             <CardDeck className="siblingContainer mt-3">
               {patientSiblings.map((sibling) => (
                 <SiblingCard
@@ -224,7 +224,7 @@ function PsychologicalEvaluationSiblings(props) {
             </CardDeck>
           ) : (
             console.log("")
-          )}
+          )} */}
         </div>
         <div id="footer">
           <ButtonNavigation
