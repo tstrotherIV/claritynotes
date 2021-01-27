@@ -50,35 +50,35 @@ function WechslerAdultIntelligenceScaleIVpg2(props) {
   const updatePatient = () => {
     const editedPatient = {
       wechsler_adult_intelligence_scale_IV_pg2_col1_a:
-        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col1_a,
+        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col1_a),
       wechsler_adult_intelligence_scale_IV_pg2_col1_b:
-        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col1_b,
+        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col1_b),
       wechsler_adult_intelligence_scale_IV_pg2_col1_c:
-        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col1_c,
+        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col1_c),
       wechsler_adult_intelligence_scale_IV_pg2_col2_a:
-        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col2_a,
+        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col2_a),
       wechsler_adult_intelligence_scale_IV_pg2_col2_b:
-        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col2_b,
+        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col2_b),
       wechsler_adult_intelligence_scale_IV_pg2_col2_c:
-        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col2_c,
+        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col2_c),
       wechsler_adult_intelligence_scale_IV_pg2_col3_a:
-        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col3_a,
+        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col3_a),
       wechsler_adult_intelligence_scale_IV_pg2_col3_b:
-        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col3_b,
+        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col3_b),
       wechsler_adult_intelligence_scale_IV_pg2_col3_c:
-        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col3_c,
+        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col3_c),
       wechsler_adult_intelligence_scale_IV_pg2_col4_a:
-        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col4_a,
+        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col4_a),
       wechsler_adult_intelligence_scale_IV_pg2_col4_b:
-        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col4_b,
+        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col4_b),
       wechsler_adult_intelligence_scale_IV_pg2_col4_c:
-        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col4_c,
+        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col4_c),
       wechsler_adult_intelligence_scale_IV_pg2_col5_a:
-        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col5_a,
+        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col5_a),
       wechsler_adult_intelligence_scale_IV_pg2_col5_b:
-        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col5_b,
+        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col5_b),
       wechsler_adult_intelligence_scale_IV_pg2_col5_c:
-        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col5_c,
+        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col5_c),
     };
 
     DataManager.update("patients", editedPatient);

@@ -32,7 +32,8 @@ function RAITpg3(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      rait_pg3_a: patientRAITpg3.rait_pg3_a  };
+      rait_pg3_a: String(patientRAITpg3.rait_pg3_a),
+    };
 
     DataManager.update("patients", editedPatient).then(() => {});
   };

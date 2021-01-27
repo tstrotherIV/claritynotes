@@ -45,25 +45,25 @@ function WechslerAdultIntelligenceScaleIV(props) {
   const updatePatient = () => {
     const editedPatient = {
       wechsler_adult_intelligence_scale_IV_pg1_col1_a:
-        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_a,
+        String(wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_a),
       wechsler_adult_intelligence_scale_IV_pg1_col1_b:
-        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_b,
+      String(wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_b),
       wechsler_adult_intelligence_scale_IV_pg1_col1_c:
-        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_c,
+      String(wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_c),
       wechsler_adult_intelligence_scale_IV_pg1_col1_d:
-        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_d,
+      String(wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_d),
       wechsler_adult_intelligence_scale_IV_pg1_col1_e:
-        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_e,
+      String(wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_e),
       wechsler_adult_intelligence_scale_IV_pg1_col2_a:
-        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col2_a,
+      String( wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col2_a),
       wechsler_adult_intelligence_scale_IV_pg1_col2_b:
-        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col2_b,
+      String(wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col2_b),
       wechsler_adult_intelligence_scale_IV_pg1_col2_c:
-        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col2_c,
+      String(wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col2_c),
       wechsler_adult_intelligence_scale_IV_pg1_col2_d:
-        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col2_d,
+      String(wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col2_d),
       wechsler_adult_intelligence_scale_IV_pg1_col2_e:
-        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col2_e,
+      String(wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col2_e),
     };
 
     DataManager.update("patients", editedPatient);

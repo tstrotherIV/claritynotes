@@ -45,25 +45,25 @@ function AimswebPlusAchievementTestPg1(props) {
   const updatePatient = () => {
     const editedPatient = {
       aimsweb_plus_achievement_test_pg1_col1_a:
-        aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col1_a,
+        String(aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col1_a),
       aimsweb_plus_achievement_test_pg1_col1_b:
-        aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col1_b,
+        String(aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col1_b),
       aimsweb_plus_achievement_test_pg1_col1_c:
-        aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col1_c,
+        String(aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col1_c),
       aimsweb_plus_achievement_test_pg1_col1_d:
-        aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col1_d,
+        String(aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col1_d),
       aimsweb_plus_achievement_test_pg1_col1_e:
-        aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col1_e,
+        String(aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col1_e),
       aimsweb_plus_achievement_test_pg1_col2_a:
-        aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col2_a,
+        String(aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col2_a),
       aimsweb_plus_achievement_test_pg1_col2_b:
-        aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col2_b,
+        String(aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col2_b),
       aimsweb_plus_achievement_test_pg1_col2_c:
-        aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col2_c,
+        String(aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col2_c),
       aimsweb_plus_achievement_test_pg1_col2_d:
-        aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col2_d,
+        String(aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col2_d),
       aimsweb_plus_achievement_test_pg1_col2_e:
-        aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col2_e,
+        String(aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col2_e),
     };
 
     DataManager.update("patients", editedPatient);
