@@ -107,7 +107,7 @@ function PsychologicalEvaluationReferral(props) {
 
   useEffect(() => {
     getData();
-    getChildren();
+    // getChildren();
   }, []);
 
   return (

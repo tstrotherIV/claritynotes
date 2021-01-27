@@ -10,7 +10,6 @@ function SessionStep1(props) {
     patient_middle_name: "",
     patient_last_name: "",
     patient_Date_of_Birth: "",
-    PK: "",
     patient_case_number: "",
   });
 
@@ -33,7 +32,7 @@ function SessionStep1(props) {
         <div className="textWhite m-2 p-2">
           DOB: {patient.patient_Date_of_Birth}
         </div>
-        <div className="textWhite m-2 p-2">Patient ID: {patient.PK}</div>
+        <div className="textWhite m-2 p-2">Patient ID: {patient.id}</div>
         <div className="textWhite m-2 p-2">Existing Patient: [Case #]</div>
       </div>
       <div className="shHeader">

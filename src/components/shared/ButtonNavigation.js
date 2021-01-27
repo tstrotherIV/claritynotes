@@ -53,7 +53,7 @@ function ButtonNavigation(props) {
       </Button>
       <div className="idBox textWhite p-3">
         <div>Existing Patient: Case #{patient.patient_case_number}</div>
-        <div>Patient ID: {patient.id}</div>
+        <div>Patient ID: {props.patient}</div>
       </div>
     </div>
   );

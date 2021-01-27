@@ -128,7 +128,8 @@ import CreateAcct from "./Auth/createAcct";
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
   const setUser = props.setUser;
-  const userId = parseInt(props.userId);
+  // const userId = parseInt(props.userId);
+  const userId = "bae7fe01-75ff-40e0-b8a4-ab6e6717b159";
   // const patientId = sessionStorage.getItem("currentPatientId");
   const patientId = "e4f02139-1627-4c44-bc22-660827985263";
 
