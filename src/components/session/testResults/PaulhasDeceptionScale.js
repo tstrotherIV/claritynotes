@@ -50,9 +50,9 @@ function PaulasDeceptionScale(props) {
       paulhus_deception_scale_a:
         patientPaulasDeceptionScale.paulhus_deception_scale_a,
       paulhus_deception_scale_b:
-        patientPaulasDeceptionScale.paulhus_deception_scale_b,
+        String(patientPaulasDeceptionScale.paulhus_deception_scale_b),
       paulhus_deception_scale_c:
-        patientPaulasDeceptionScale.paulhus_deception_scale_c,
+        String(patientPaulasDeceptionScale.paulhus_deception_scale_c),
       paulhus_deception_scale_d:
         patientPaulasDeceptionScale.paulhus_deception_scale_d,
     };

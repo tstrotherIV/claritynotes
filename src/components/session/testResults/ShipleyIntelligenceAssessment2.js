@@ -47,29 +47,29 @@ function ShipleyIntelligenceAssessment2(props) {
   const updatePatient = () => {
     const editedPatient = {
       shipley_intelligence_assessment_2_pg1_col1_a:
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_a,
+        String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_a),
       shipley_intelligence_assessment_2_pg1_col1_b:
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_b,
+      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_b),
       shipley_intelligence_assessment_2_pg1_col1_c:
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_c,
+      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_c),
       shipley_intelligence_assessment_2_pg1_col1_d:
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_d,
+      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_d),
       shipley_intelligence_assessment_2_pg1_col1_e:
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_e,
+      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_e),
       shipley_intelligence_assessment_2_pg1_col1_f:
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_f,
+      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_f),
       shipley_intelligence_assessment_2_pg1_col2_a:
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_a,
+      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_a),
       shipley_intelligence_assessment_2_pg1_col2_b:
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_b,
+      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_b),
       shipley_intelligence_assessment_2_pg1_col2_c:
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_c,
+      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_c),
       shipley_intelligence_assessment_2_pg1_col2_d:
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_d,
+      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_d),
       shipley_intelligence_assessment_2_pg1_col2_e:
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_e,
+      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_e),
       shipley_intelligence_assessment_2_pg1_col2_f:
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_f,
+      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_f),
     };
 
     DataManager.update("patients", editedPatient);

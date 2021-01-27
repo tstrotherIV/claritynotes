@@ -40,13 +40,13 @@ function WasiII(props) {
   const updatePatient = () => {
     const editedPatient = {
       wasiii_pg1_col1_a: String(wasiii.wasiii_pg1_col1_a),
-      wasiii_pg1_col1_b: wasiii.wasiii_pg1_col1_b,
-      wasiii_pg1_col1_c: wasiii.wasiii_pg1_col1_c,
-      wasiii_pg1_col1_d: wasiii.wasiii_pg1_col1_d,
-      wasiii_pg1_col2_a: wasiii.wasiii_pg1_col2_a,
-      wasiii_pg1_col2_b: wasiii.wasiii_pg1_col2_b,
-      wasiii_pg1_col2_c: wasiii.wasiii_pg1_col2_c,
-      wasiii_pg1_col2_d: wasiii.wasiii_pg1_col2_d,
+      wasiii_pg1_col1_b: String(wasiii.wasiii_pg1_col1_b),
+      wasiii_pg1_col1_c: String(wasiii.wasiii_pg1_col1_c),
+      wasiii_pg1_col1_d: String(wasiii.wasiii_pg1_col1_d),
+      wasiii_pg1_col2_a: String(wasiii.wasiii_pg1_col2_a),
+      wasiii_pg1_col2_b: String(wasiii.wasiii_pg1_col2_b),
+      wasiii_pg1_col2_c: String(wasiii.wasiii_pg1_col2_c),
+      wasiii_pg1_col2_d: String(wasiii.wasiii_pg1_col2_d),
     };
 
     DataManager.update("patients", editedPatient);

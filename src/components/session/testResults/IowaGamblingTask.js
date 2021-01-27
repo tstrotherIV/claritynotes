@@ -45,9 +45,9 @@ function IowaGamblingTask(props) {
       iowa_gambling_task_a:
       patientIowaGamblingTask.iowa_gambling_task_a,
         iowa_gambling_task_b:
-        patientIowaGamblingTask.iowa_gambling_task_b,
+        String(patientIowaGamblingTask.iowa_gambling_task_b),
         iowa_gambling_task_c:
-        patientIowaGamblingTask.iowa_gambling_task_c
+        String(patientIowaGamblingTask.iowa_gambling_task_c)
     };
 
     DataManager.update("patients", editedPatient).then(() => {});

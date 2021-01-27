@@ -47,35 +47,35 @@ function WideRangeAchievementTest5(props) {
   const updatePatient = () => {
     const editedPatient = {
       wide_range_achievement_test_5_pg1_col1_a:
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_a,
+        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_a),
       wide_range_achievement_test_5_pg1_col1_b:
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_b,
+        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_b),
       wide_range_achievement_test_5_pg1_col1_c:
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_c,
+        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_c),
       wide_range_achievement_test_5_pg1_col1_d:
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_d,
+        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_d),
       wide_range_achievement_test_5_pg1_col1_e:
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_e,
+        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_e),
       wide_range_achievement_test_5_pg1_col2_a:
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_a,
+        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_a),
       wide_range_achievement_test_5_pg1_col2_b:
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_b,
+        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_b),
       wide_range_achievement_test_5_pg1_col2_c:
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_c,
+        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_c),
       wide_range_achievement_test_5_pg1_col2_d:
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_d,
+        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_d),
       wide_range_achievement_test_5_pg1_col2_e:
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_e,
+        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_e),
       wide_range_achievement_test_5_pg1_col3_a:
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_a,
+        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_a),
       wide_range_achievement_test_5_pg1_col3_b:
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_b,
+        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_b),
       wide_range_achievement_test_5_pg1_col3_c:
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_c,
+        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_c),
       wide_range_achievement_test_5_pg1_col3_d:
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_d,
+        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_d),
       wide_range_achievement_test_5_pg1_col3_e:
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_e,
+        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_e),
     };
 
     DataManager.update("patients", editedPatient);

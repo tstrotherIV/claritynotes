@@ -45,7 +45,7 @@ function ContinuousPerformanceTest3rdEd(props) {
   const updatePatient = () => {
     const editedPatient = {
       continous_performance_test_3rd_ed_a:
-        patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_a,
+        String(patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_a),
       continous_performance_test_3rd_ed_b:
         patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_b,
       continous_performance_test_3rd_ed_c:
