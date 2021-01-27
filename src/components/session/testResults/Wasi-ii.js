@@ -39,8 +39,8 @@ function WasiII(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      wasiii_pg1_col1_a: wasiii.wasiii_pg1_col1_a,
-      wasiii_pg1_col1_b: wasiii.wasiii_pg1_col1_b,
+      wasiii_pg1_col1_a: String(wasiii.wasiii_pg1_col1_a),
+      wasiii_pg1_col1_b: wasiii.wasiii_pg1_col1_b.toString(),
       wasiii_pg1_col1_c: wasiii.wasiii_pg1_col1_c,
       wasiii_pg1_col1_d: wasiii.wasiii_pg1_col1_d,
       wasiii_pg1_col2_a: wasiii.wasiii_pg1_col2_a,
