@@ -11,6 +11,10 @@ function PsychologicalEvaluationAdditionalData(props) {
   const next = "/interview_pg_1";
   const back = "/psychological_evaluation_referral";
 
+  const updatePatient = () => {
+    
+  };
+
   useEffect(() => {
     DataManager.getPatient(props.patientId).then((patientInfo) => {
       setPatient(patientInfo);
@@ -44,7 +48,7 @@ function PsychologicalEvaluationAdditionalData(props) {
           </div>
         </div>
         <div id="footer">
-          <ButtonNavigation next={next} back={back} patient={props.patientId}/>
+          <ButtonNavigation next={next} back={back} patient={props.patientId} updatePatient={updatePatient}/>
           <EmptyFooterSpace />
         </div>
       </div>

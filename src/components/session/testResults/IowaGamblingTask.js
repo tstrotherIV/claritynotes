@@ -42,7 +42,6 @@ function IowaGamblingTask(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       iowa_gambling_task_a:
       patientIowaGamblingTask.iowa_gambling_task_a,
         iowa_gambling_task_b:

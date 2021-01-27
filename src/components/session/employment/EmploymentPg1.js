@@ -41,7 +41,6 @@ function EmploymentPg1(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       employment_pg1_a: patientEmployment_pg1.employment_pg1_a,
       employment_pg1_b: patientEmployment_pg1.employment_pg1_b,
       employment_pg1_c: patientEmployment_pg1.employment_pg1_c,

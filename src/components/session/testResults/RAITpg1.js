@@ -29,7 +29,6 @@ function RAITpg1(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       rait_pg1_a: patientRAITpg1.rait_pg1_a,
       rait_pg1_b: patientRAITpg1.rait_pg1_b,
     };

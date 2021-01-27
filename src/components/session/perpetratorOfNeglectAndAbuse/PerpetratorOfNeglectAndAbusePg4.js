@@ -36,7 +36,6 @@ function PerpetratorOfNeglectAndAbusePg4(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       perpetrator_of_neglect_and_abuse_pg4_a:
         patientPerpetratorOfNeglectAndAbusePg4.perpetrator_of_neglect_and_abuse_pg4_a,
     };

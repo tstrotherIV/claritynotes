@@ -44,7 +44,6 @@ function PositiveRoleModelPg1(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       positive_role_model_pg1_a:
         patientPositiveRoleModelPg1.positive_role_model_pg1_a,
       positive_role_model_pg1_b:

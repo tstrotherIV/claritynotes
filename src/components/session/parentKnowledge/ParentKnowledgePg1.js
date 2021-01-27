@@ -40,7 +40,6 @@ function ParentKnowledgePg1(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       parent_knowledge_pg1_a: patientParentKnowledgePg1.parent_knowledge_pg1_a,
       parent_knowledge_pg1_b: patientParentKnowledgePg1.parent_knowledge_pg1_b,
       parent_knowledge_pg1_c: patientParentKnowledgePg1.parent_knowledge_pg1_c,

@@ -47,7 +47,6 @@ function PaulasDeceptionScale(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       paulhus_deception_scale_a:
         patientPaulasDeceptionScale.paulhus_deception_scale_a,
       paulhus_deception_scale_b:

@@ -50,7 +50,6 @@ function InterviewPg1(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       interview_pg1_a: patientInterview_pg1.interview_pg1_a,
     };
 

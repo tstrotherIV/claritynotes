@@ -1,7 +1,9 @@
 import { data } from "jquery";
 
-// const remoteURL = "https://cq73ylztmi.execute-api.us-west-2.amazonaws.com/staging";
-const remoteURL = "http://127.0.0.1:5000";
+const patient_id = "7647e21f-fce3-4624-82ae-0063c5beca3b";
+
+const remoteURL = "https://cq73ylztmi.execute-api.us-west-2.amazonaws.com/staging";
+// const remoteURL = "http://127.0.0.1:5000";
 
 export default {
   // ALL  GET METHODS
@@ -73,7 +75,7 @@ export default {
   },
 
   // ALL UPDATED MEHTODS
-  update(resource, editedData, patient_id) {
+  update(resource, editedData) {
     return fetch(`${remoteURL}/${resource}/${patient_id}`, {
       method: "PATCH",
       headers: {

@@ -46,7 +46,6 @@ function ShipleyIntelligenceAssessment2(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       shipley_intelligence_assessment_2_pg1_col1_a:
         shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_a,
       shipley_intelligence_assessment_2_pg1_col1_b:

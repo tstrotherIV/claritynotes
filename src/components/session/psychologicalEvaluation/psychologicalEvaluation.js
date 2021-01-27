@@ -126,7 +126,6 @@ function PsychologicalEvaluation(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      // id: props.patientId,
       patient_first_name: patientPsychological_Evaluation.patient_first_name,
       patient_middle_name: patientPsychological_Evaluation.patient_middle_name,
       patient_last_name: patientPsychological_Evaluation.patient_last_name,
@@ -145,7 +144,7 @@ function PsychologicalEvaluation(props) {
       patient_intake_time: patientPsychological_Evaluation.patient_intake_time,
       patient_gender: patientPsychological_Evaluation.patient_gender,
     };
-    DataManager.update("patients", editedPatient, props.patientId).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {});
   };
 
   //CRUD Function END

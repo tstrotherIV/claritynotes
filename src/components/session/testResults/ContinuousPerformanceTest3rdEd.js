@@ -44,7 +44,6 @@ function ContinuousPerformanceTest3rdEd(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       continous_performance_test_3rd_ed_a:
         patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_a,
       continous_performance_test_3rd_ed_b:

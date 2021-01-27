@@ -43,7 +43,6 @@ function BehavioralObservationsPg5(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       behavioral_observations_and_testing_conditions_pg5_a:
         patientBehavioralObservationsPg5.behavioral_observations_and_testing_conditions_pg5_a,
       behavioral_observations_and_testing_conditions_pg5_b:

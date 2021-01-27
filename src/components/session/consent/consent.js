@@ -8,6 +8,7 @@ import DataManager from "../../../data_module/DataManager";
 function PsychologicalEvaluationConsent(props) {
   const [patientConsent, setPatientConsent] = useState({
     patient_consent: false,
+    id: ""
   });
 
   const next = "/psychological_evaluation_referral";
@@ -23,7 +24,6 @@ function PsychologicalEvaluationConsent(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       patient_consent: patientConsent.patient_consent,
     };
 

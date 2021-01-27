@@ -42,7 +42,6 @@ function MedicalHistoryHealthConcernsLimitationsPg1(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_a:
         patientMedicalHistoryHealthConcernsLimitationsPg1.mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_a,
       mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_b:

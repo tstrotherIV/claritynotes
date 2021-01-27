@@ -43,7 +43,6 @@ function AimswebPlusAchievementTestPg2(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       aimsweb_plus_achievement_test_pg2_col1_a:
         aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col1_a,
       aimsweb_plus_achievement_test_pg2_col1_b:

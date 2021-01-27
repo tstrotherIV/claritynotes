@@ -29,6 +29,7 @@ function PsychologicalEvaluation_family(props) {
     patient_guardian_first_name: "",
     patient_guardian_last_name: "",
     patient_guardian_gender: "",
+    id: ""
   });
 
   const next = "/psychological_evaluation_siblings";
@@ -75,7 +76,6 @@ function PsychologicalEvaluation_family(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       patient_father_first_name: patientParents.patient_father_first_name,
       patient_father_last_name: patientParents.patient_father_last_name,
       patient_mother_first_name: patientParents.patient_mother_first_name,
@@ -104,6 +104,7 @@ function PsychologicalEvaluation_family(props) {
         "patient_guardian_first_name",
         "patient_guardian_last_name",
         "patient_guardian_gender",
+        "id"
       ];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
@@ -289,7 +290,7 @@ function PsychologicalEvaluation_family(props) {
               next={next}
               back={back}
               updatePatient={updatePatient}
-              patient={props.patientId}
+              patient={patientParents.id}
               patientNotes={patientParents}
             />
             <EmptyFooterSpace />

@@ -85,7 +85,6 @@ function ComputerizedNeurocognitiveAssessment(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       computerized_performance_neurocognitive_assessment_a:
         patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_a,
       computerized_performance_neurocognitive_assessment_col1_a:

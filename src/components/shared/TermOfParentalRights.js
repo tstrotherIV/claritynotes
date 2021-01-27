@@ -94,7 +94,9 @@ const TermOfParentalRights = (props) => {
     if (props.item) {
       createResponse();
     }
-  }, [props.item]);
+  }, [
+    // props.item
+  ]);
 
   return (
     <div className="dropdown_button termBackground ">
