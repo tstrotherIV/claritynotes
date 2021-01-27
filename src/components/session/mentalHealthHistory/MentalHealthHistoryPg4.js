@@ -41,7 +41,6 @@ function MentalHealthHistoryPg4(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       mental_health_history_pg4_a:
         patientMentalHealthHistory_pg4.mental_health_history_pg4_a,
       mental_health_history_pg4_b:

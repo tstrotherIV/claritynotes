@@ -33,7 +33,6 @@ function HistoryOfLegalPg15(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       history_of_legal_pg15_a:
         patientHistoryOfLegal_pg15.history_of_legal_pg15_a,
     };

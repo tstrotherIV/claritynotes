@@ -46,7 +46,6 @@ function WideRangeAchievementTest5(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       wide_range_achievement_test_5_pg1_col1_a:
         wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_a,
       wide_range_achievement_test_5_pg1_col1_b:

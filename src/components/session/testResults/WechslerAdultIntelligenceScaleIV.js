@@ -44,7 +44,6 @@ function WechslerAdultIntelligenceScaleIV(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       wechsler_adult_intelligence_scale_IV_pg1_col1_a:
         wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_a,
       wechsler_adult_intelligence_scale_IV_pg1_col1_b:

@@ -36,7 +36,6 @@ function EducationPg1(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       education_pg1_a: patientEducation_pg1.education_pg1_a,
       education_pg1_b: patientEducation_pg1.education_pg1_b,
       education_pg1_c: patientEducation_pg1.education_pg1_c,

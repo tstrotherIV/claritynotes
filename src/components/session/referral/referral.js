@@ -97,7 +97,6 @@ function PsychologicalEvaluationReferral(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       referral_paragraph_modified:
         modifiedParagraph.referral_paragraph_modified,
     };

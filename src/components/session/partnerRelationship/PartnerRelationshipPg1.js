@@ -39,7 +39,6 @@ function PartnerRelationshipPg1(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       partner_relationship_pg1_a:
         patientPartnerRelationshipPg1.partner_relationship_pg1_a,
       partner_relationship_pg1_b:

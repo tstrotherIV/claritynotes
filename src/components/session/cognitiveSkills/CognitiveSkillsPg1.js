@@ -35,7 +35,6 @@ function CognitiveSkillsPg1(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       cognitive_skills_pg1_a: patientCognitiveSkillsPg1.cognitive_skills_pg1_a,
       cognitive_skills_pg1_b: patientCognitiveSkillsPg1.cognitive_skills_pg1_b,
       cognitive_skills_pg1_c: patientCognitiveSkillsPg1.cognitive_skills_pg1_c,

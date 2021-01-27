@@ -47,7 +47,6 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       substance_abuse_subtle_screening_inventory_4_a:
         patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_a,
       substance_abuse_subtle_screening_inventory_4_b:

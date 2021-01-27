@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Button } from "reactstrap";
 import history from "../../helpers/history";
 import DataManager from "../../data_module/DataManager";
+import { useAlert } from "react-alert";
 
 function ButtonNavigation(props) {
   const [patient, setPatient] = useState("");
+
+  const alert = useAlert();
 
   const patientId = sessionStorage.getItem("currentPatientId");
 
@@ -12,6 +15,11 @@ function ButtonNavigation(props) {
     DataManager.getPatient(patientId).then((patientInfo) => {
       setPatient(patientInfo);
     });
+  };
+
+  const updatePatient = () => {
+    props.updatePatient(props.patient, props.patientNotes);
+    alert.show("Saved");
   };
 
   useEffect(() => {
@@ -33,13 +41,7 @@ function ButtonNavigation(props) {
       <Button color="info" className="button">
         Save
       </Button>
-      <Button
-        color="info"
-        className="button"
-        onClick={() => {
-          props.updatePatient(props.patient, props.patientNotes);
-        }}
-      >
+      <Button color="info" className="button" onClick={updatePatient}>
         Submit
       </Button>
       <Button

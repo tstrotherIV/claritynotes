@@ -37,7 +37,6 @@ function NeglectAbuseTraumaLossPg1(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       neglect_abuse_trauma_loss_pg1_a:
         patientNeglectAbuseTraumaLossPg1.neglect_abuse_trauma_loss_pg1_a,
       neglect_abuse_trauma_loss_pg1_b:

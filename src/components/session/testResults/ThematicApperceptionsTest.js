@@ -44,7 +44,6 @@ function ThematicApperceptionsTest(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       thematic_apperceptions_test_pg1_a:
         patientThematicApperceptionsTest.thematic_apperceptions_test_pg1_a,
     };

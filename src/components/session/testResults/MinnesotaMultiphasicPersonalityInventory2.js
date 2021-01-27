@@ -43,7 +43,6 @@ function MinnesotaMultiphasicPersonalityInventory2(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       minnesota_multiphasic_personality_inventory_2_a: patientMinnesotaMultiphasicPersonalityInventory2.minnesota_multiphasic_personality_inventory_2_a,
       minnesota_multiphasic_personality_inventory_2_b: patientMinnesotaMultiphasicPersonalityInventory2.minnesota_multiphasic_personality_inventory_2_b,
     };

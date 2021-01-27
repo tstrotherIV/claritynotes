@@ -51,7 +51,6 @@ function InterviewPg7(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       interview_pg7_a: patientInterview_pg7.interview_pg7_a,
       interview_pg7_b: patientInterview_pg7.interview_pg7_b,
     };

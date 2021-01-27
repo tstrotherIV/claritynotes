@@ -33,7 +33,6 @@ function FamilyPg2(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       family_pg2_a: patientFamily_pg2.family_pg2_a,
       family_pg2_b: patientFamily_pg2.family_pg2_b,
       family_pg2_c: patientFamily_pg2.family_pg2_c,

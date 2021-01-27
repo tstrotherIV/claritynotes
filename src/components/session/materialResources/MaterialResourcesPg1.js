@@ -50,7 +50,6 @@ function MaterialResourcesPg1(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       material_resources_pg1_a:
         patientMaterialResourcesPg1.material_resources_pg1_a,
       material_resources_pg1_b:

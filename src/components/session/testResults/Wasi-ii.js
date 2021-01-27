@@ -39,7 +39,6 @@ function WasiII(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       wasiii_pg1_col1_a: wasiii.wasiii_pg1_col1_a,
       wasiii_pg1_col1_b: wasiii.wasiii_pg1_col1_b,
       wasiii_pg1_col1_c: wasiii.wasiii_pg1_col1_c,

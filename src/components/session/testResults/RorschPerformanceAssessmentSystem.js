@@ -44,7 +44,6 @@ function RorschPerformanceAssessmentSystem(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       rorschach_performance_assessment_system_pg1_a:
       patientRorschPerformanceAssessmentSystem.rorschach_performance_assessment_system_pg1_a,
     };

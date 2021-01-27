@@ -170,7 +170,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       millon_clinical_multiaxial_inventory_iv_pg1_a:
         patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_a,
       millon_clinical_multiaxial_inventory_iv_pg1_b:

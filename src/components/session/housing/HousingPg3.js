@@ -38,7 +38,6 @@ function HousingPg3(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      id: props.patientId,
       housing_pg3_a: patientHousing_pg3.housing_pg3_a,
       housing_pg3_b: patientHousing_pg3.housing_pg3_b,
       housing_pg3_c: patientHousing_pg3.housing_pg3_c,
