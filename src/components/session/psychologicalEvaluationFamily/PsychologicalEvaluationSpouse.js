@@ -96,7 +96,7 @@ function PsychologicalEvaluationSpouse(props) {
 
   useEffect(() => {
     getData();
-    getSpouses();
+    // getSpouses();
   }, []);
 
   return (

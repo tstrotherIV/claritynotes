@@ -117,7 +117,7 @@ function PsychologicalEvaluation_family(props) {
 
   useEffect(() => {
     getData();
-    getGuardians();
+    // getGuardians();
   }, []);
 
   return (

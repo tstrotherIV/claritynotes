@@ -92,7 +92,7 @@ function PsychologicalEvaluationSiblings(props) {
 
   useEffect(() => {
     getData();
-    getSiblings();
+    // getSiblings();
   }, []);
 
   return (
