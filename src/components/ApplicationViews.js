@@ -130,7 +130,7 @@ const ApplicationViews = (props) => {
   const setUser = props.setUser;
   const userId = parseInt(props.userId);
   // const patientId = sessionStorage.getItem("currentPatientId");
-  const patientId = "c840c22a-43b0-4f2e-845a-264a1bbee413";
+  const patientId = "e4f02139-1627-4c44-bc22-660827985263";
 
   return (
     <>

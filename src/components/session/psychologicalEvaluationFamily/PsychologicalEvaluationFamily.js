@@ -6,7 +6,7 @@ import {
   DropdownMenu,
   DropdownItem,
   Button,
-  CardDeck
+  CardDeck,
 } from "reactstrap";
 
 import Heading from "../../shared/PsychologicalHeading";
@@ -15,7 +15,7 @@ import TextareaAutosize from "react-textarea-autosize";
 import EmptyFooterSpace from "./../../shared/EmptyFooterSpace";
 import DataManager from "../../../data_module/DataManager";
 import convertID from "../../../helpers/formFieldIdConverter";
-import GuardianCard from "../../guardians/guardians"
+import GuardianCard from "../../guardians/guardians";
 
 function PsychologicalEvaluation_family(props) {
   const [item, setItem] = useState("");
@@ -33,7 +33,6 @@ function PsychologicalEvaluation_family(props) {
 
   const next = "/psychological_evaluation_siblings";
   const back = "/psychological_evaluation";
-
 
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
@@ -69,7 +68,7 @@ function PsychologicalEvaluation_family(props) {
 
   const getGuardians = () => {
     DataManager.getGuardians(props.patientId).then((guardian) => {
-      setPatientGuardians(guardian);
+      setPatientGuardians(guardian.Items);
     });
   };
 
@@ -92,7 +91,6 @@ function PsychologicalEvaluation_family(props) {
 
   const getData = () => {
     DataManager.getPatient(props.patientId).then((patientInfo) => {
-      patientInfo = patientInfo[0]
       const raw = {
         ...patientInfo,
       };
@@ -269,7 +267,7 @@ function PsychologicalEvaluation_family(props) {
                 </div>
                 <div className="text-center">
                   <div className="textWhite">
-                  <Button onClick={addGuaridan}>Add Guardian</Button>
+                    <Button onClick={addGuaridan}>Add Guardian</Button>
                   </div>
                 </div>
               </div>
