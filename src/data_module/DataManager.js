@@ -1,6 +1,6 @@
 import { data } from "jquery";
 
-const remoteURL = "http://127.0.0.1:5000";
+const remoteURL = "https://cq73ylztmi.execute-api.us-west-2.amazonaws.com/staging";
 
 export default {
   // ALL  GET METHODS
@@ -45,11 +45,11 @@ export default {
   // },
 
   // //Get all Patient Guardians
-  // async getGuardians(patientId) {
-  //   return fetch(
-  //     `${remoteURL}/guardians?patientId=${patientId}`
-  //   ).then((result) => result.json());
-  // },
+  async getGuardians(patientId) {
+    return fetch(
+      `${remoteURL}/guardians?patientId=${patientId}`
+    ).then((result) => result.json());
+  },
 
   // //Get all Patient Spouses
   // async getSpouses(patientId) {
@@ -72,8 +72,8 @@ export default {
   },
 
   // ALL UPDATED MEHTODS
-  update(resource, editedData) {
-    return fetch(`${remoteURL}/${resource}/${editedData.id}`, {
+  update(resource, editedData, patient_id) {
+    return fetch(`${remoteURL}/${resource}/${patient_id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
