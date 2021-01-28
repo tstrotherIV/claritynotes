@@ -42,11 +42,11 @@ export default {
   // },
 
   // //Get all Patient Siblings
-  // async getSiblings(patientId) {
-  //   return fetch(
-  //     `${remoteURL}/siblings?patientId=${patientId}`
-  //   ).then((result) => result.json());
-  // },
+  async getSiblings(patientId) {
+    return fetch(
+      `${remoteURL}/patients/${patientId}/siblings`
+    ).then((result) => result.json());
+  },
 
   // //Get all Patient Guardians
   async getGuardians(patientId) {
@@ -86,8 +86,8 @@ export default {
     }).then((updatedData) => updatedData.json());
   },
 
-  add_guardian(newData) {
-    return fetch(`${remoteURL}/patients/${patient_id}/guardians/`, {
+  add_Item(resource, newData) {
+    return fetch(`${remoteURL}/patients/${patient_id}/${resource}/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -97,9 +97,9 @@ export default {
   },
 
   // Update Guardian
-  update_guaridan(guardian_id, editedData) {
+  update_Item(resource, item_id, editedData) {
     return fetch(
-      `${remoteURL}/patients/${patient_id}/guardians/${guardian_id}`,
+      `${remoteURL}/patients/${patient_id}/${resource}/${item_id}`,
       {
         method: "PATCH",
         headers: {
@@ -110,9 +110,9 @@ export default {
     ).then((updatedData) => updatedData.json());
   },
 
-  delete_guaridan(guardian_id) {
+  delete_Item(resource, guardian_id) {
     return fetch(
-      `${remoteURL}/patients/${patient_id}/guardians/${guardian_id}`, {
+      `${remoteURL}/patients/${patient_id}/${resource}/${guardian_id}`, {
         method: "DELETE",
       }).then((updatedData) => updatedData.json());
   },

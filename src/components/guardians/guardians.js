@@ -38,11 +38,11 @@ function GuardianCard(props) {
       gender: guardianData.gender,
     };
 
-    DataManager.update_guaridan(guardianData.id,editedGuardian);
+    DataManager.update_Item("guardians", guardianData.id,editedGuardian);
   };
 
   const deleteGuardian = () => {
-    DataManager.delete_guaridan(guardianData.id).then(() => {
+    DataManager.delete_Item("guardians", guardianData.id).then(() => {
       props.getGuardians()
     })
   }

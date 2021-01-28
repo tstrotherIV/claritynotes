@@ -53,13 +53,12 @@ function PsychologicalEvaluationSiblings(props) {
 
   const addSibling = () => {
     const editedSibling = {
-      patientId: props.patientId,
-      sibling_first_name: newSibling.sibling_first_name,
-      sibling_last_name: newSibling.sibling_last_name,
-      sibling_gender: newSibling.sibling_gender,
-      sibling_dob: newSibling.sibling_dob,
+      first_name: newSibling.sibling_first_name,
+      last_name: newSibling.sibling_last_name,
+      gender: newSibling.sibling_gender,
+      dob: newSibling.sibling_dob,
     };
-    DataManager.post("siblings", editedSibling).then(() => {
+    DataManager.add_Item("siblings", editedSibling).then(() => {
       getSiblings();
     });
   };
@@ -92,7 +91,7 @@ function PsychologicalEvaluationSiblings(props) {
 
   useEffect(() => {
     getData();
-    // getSiblings();
+    getSiblings();
   }, []);
 
   return (
@@ -211,7 +210,7 @@ function PsychologicalEvaluationSiblings(props) {
               console.log("")
             )}
           </div>
-          {/* {!checkbox.patient_only_child  ? (
+          {!checkbox.patient_only_child  ? (
             <CardDeck className="siblingContainer mt-3">
               {patientSiblings.map((sibling) => (
                 <SiblingCard
@@ -224,7 +223,7 @@ function PsychologicalEvaluationSiblings(props) {
             </CardDeck>
           ) : (
             console.log("")
-          )} */}
+          )}
         </div>
         <div id="footer">
           <ButtonNavigation
