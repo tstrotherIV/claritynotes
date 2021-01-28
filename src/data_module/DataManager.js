@@ -34,33 +34,33 @@ export default {
   //   ).then((result) => result.json());
   // },
 
-  // //Get all Patient Children
-  // async getChildren(patientId) {
-  //   return fetch(
-  //     `${remoteURL}/children?patientId=${patientId}`
-  //   ).then((result) => result.json());
-  // },
+  //Get all Patient Children
+  async getChildren(patientId) {
+    return fetch(
+      `${remoteURL}/patients/${patientId}/children`
+    ).then((result) => result.json());
+  },
 
-  // //Get all Patient Siblings
+  //Get all Patient Siblings
   async getSiblings(patientId) {
     return fetch(
       `${remoteURL}/patients/${patientId}/siblings`
     ).then((result) => result.json());
   },
 
-  // //Get all Patient Guardians
+  //Get all Patient Guardians
   async getGuardians(patientId) {
     return fetch(
       `${remoteURL}/patients/${patientId}/guardians`
     ).then((result) => result.json());
   },
 
-  // //Get all Patient Spouses
-  // async getSpouses(patientId) {
-  //   return fetch(`${remoteURL}/spouses?patientId=${patientId}`).then((result) =>
-  //     result.json()
-  //   );
-  // },
+  //Get all Patient Spouses
+  async getSpouses(patientId) {
+    return fetch(`${remoteURL}/patients/${patientId}/spouses`).then((result) =>
+      result.json()
+    );
+  },
 
   // // ALL CREATE METHODS
 

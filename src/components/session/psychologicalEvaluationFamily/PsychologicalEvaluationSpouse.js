@@ -56,14 +56,13 @@ function PsychologicalEvaluationSpouse(props) {
 
   const addSpouse = () => {
     const editedSpouse = {
-      patientId: props.patientId,
-      spouse_first_name: newSpouse.spouse_first_name,
-      spouse_last_name: newSpouse.spouse_last_name,
-      spouse_gender: newSpouse.spouse_gender,
-      spouse_dob: newSpouse.spouse_dob,
+      first_name: newSpouse.spouse_first_name,
+      last_name: newSpouse.spouse_last_name,
+      gender: newSpouse.spouse_gender,
+      dob: newSpouse.spouse_dob,
     };
 
-    DataManager.post("spouses", editedSpouse).then(() => {
+    DataManager.add_Item("spouses", editedSpouse).then(() => {
       getSpouses();
     });
   };
@@ -96,7 +95,7 @@ function PsychologicalEvaluationSpouse(props) {
 
   useEffect(() => {
     getData();
-    // getSpouses();
+    getSpouses();
   }, []);
 
   return (
@@ -245,7 +244,7 @@ function PsychologicalEvaluationSpouse(props) {
               console.log("")
             )}
           </div>
-          {/* {relationshipStatus.patient_married !== "Single" ? (
+          {relationshipStatus.patient_married !== "Single" ? (
             <CardDeck className="childContainer mt-3">
               {patientSpouse.map((spouse) => (
                 <SpouseCard
@@ -258,7 +257,7 @@ function PsychologicalEvaluationSpouse(props) {
             </CardDeck>
           ) : (
             console.log("")
-          )} */}
+          )}
         </div>
         <div id="footer">
           <ButtonNavigation

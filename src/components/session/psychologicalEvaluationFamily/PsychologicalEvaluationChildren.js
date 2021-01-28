@@ -54,13 +54,12 @@ function PsychologicalEvaluation_siblings(props) {
 
   const addChild = () => {
     const editedChild = {
-      patientId: props.patientId,
-      child_first_name: newChild.child_first_name,
-      child_last_name: newChild.child_last_name,
-      child_gender: newChild.child_gender,
-      child_dob: newChild.child_dob,
+      first_name: newChild.child_first_name,
+      last_name: newChild.child_last_name,
+      gender: newChild.child_gender,
+      dob: newChild.child_dob,
     };
-    DataManager.post("children", editedChild).then(() => {
+    DataManager.add_Item("children", editedChild).then(() => {
       getChildren();
     });
   };
@@ -96,7 +95,7 @@ function PsychologicalEvaluation_siblings(props) {
 
   useEffect(() => {
     getData();
-    // getChildren();
+    getChildren();
   }, []);
 
   return (
