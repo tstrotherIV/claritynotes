@@ -15,10 +15,9 @@ import DataManager from "../../data_module/DataManager";
 function GuardianCard(props) {
   const [guardianData, setguardianData] = useState({
     id: props.guardian.id,
-    patientId: props.guardian.patientId,
-    guardian_first_name: props.guardian.patient_guardian_first_name,
-    guardian_last_name: props.guardian.patient_guardian_last_name,
-    guardian_gender: props.guardian.patient_guardian_gender,
+    first_name: props.guardian.first_name,
+    last_name: props.guardian.last_name,
+    gender: props.guardian.gender,
   });
 
   const [dropdownOpen2, setDropdownOpen2] = useState(false);
@@ -34,18 +33,16 @@ function GuardianCard(props) {
 
   const updateGuardian = () => {
     const editedGuardian = {
-      id: props.guardian.id,
-      patientId: props.guardian.patientId,
-      guardian_first_name: guardianData.guardian_first_name,
-      guardian_last_name: guardianData.guardian_last_name,
-      guardian_gender: guardianData.guardian_gender,
+      first_name: guardianData.first_name,
+      last_name: guardianData.last_name,
+      gender: guardianData.gender,
     };
 
-    DataManager.update("guardians", editedGuardian);
+    DataManager.update_guaridan(guardianData.id,editedGuardian);
   };
 
   const deleteGuardian = () => {
-    DataManager.delete("guardians", guardianData.id).then(() => {
+    DataManager.delete_guaridan(guardianData.id).then(() => {
       props.getGuardians()
     })
   }
@@ -62,18 +59,18 @@ function GuardianCard(props) {
                   <input
                     className="fieldData"
                     type="text"
-                    id="guardian_first_name"
-                    name="guardian_first_name"
+                    id="first_name"
+                    name="first_name"
                     onChange={handleFieldChange}
-                    value={guardianData.guardian_first_name}
+                    value={guardianData.first_name}
                   />
                   <input
                     className="fieldData"
                     type="text"
-                    id="guardian_last_name"
-                    name="guardian_last_name"
+                    id="last_name"
+                    name="last_name"
                     onChange={handleFieldChange}
-                    value={guardianData.guardian_last_name}
+                    value={guardianData.last_name}
                   />
                   <Dropdown
                     isOpen={dropdownOpen2}
@@ -84,35 +81,35 @@ function GuardianCard(props) {
                       color="light"
                       className="dropdown text-center"
                       caret
-                      value={guardianData.guardian_gender}
+                      value={guardianData.gender}
                     >
-                      {guardianData.guardian_gender}
+                      {guardianData.gender}
                     </DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem
                         onClick={handleFieldChange}
-                        name="guardian_gender"
+                        name="gender"
                         value="None Selected"
                       >
                         None Selected
                       </DropdownItem>
                       <DropdownItem
                         onClick={handleFieldChange}
-                        name="guardian_gender"
+                        name="gender"
                         value="Female"
                       >
                         Female
                       </DropdownItem>
                       <DropdownItem
                         onClick={handleFieldChange}
-                        name="guardian_gender"
+                        name="gender"
                         value="Male"
                       >
                         Male
                       </DropdownItem>
                       <DropdownItem
                         onClick={handleFieldChange}
-                        name="guardian_gender"
+                        name="gender"
                         value="Other"
                       >
                         Other

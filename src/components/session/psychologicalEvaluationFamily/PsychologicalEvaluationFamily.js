@@ -57,12 +57,11 @@ function PsychologicalEvaluation_family(props) {
 
   const addGuaridan = () => {
     const editedGuardian = {
-      patientId: props.patientId,
-      patient_guardian_first_name: newGuardian.patient_guardian_first_name,
-      patient_guardian_last_name: newGuardian.patient_guardian_last_name,
-      patient_guardian_gender: newGuardian.patient_guardian_gender,
+      first_name: newGuardian.patient_guardian_first_name,
+      last_name: newGuardian.patient_guardian_last_name,
+      gender: newGuardian.patient_guardian_gender,
     };
-    DataManager.post("guardians", editedGuardian).then(() => {
+    DataManager.add_guardian(editedGuardian).then(() => {
       getGuardians();
     });
   };
@@ -70,7 +69,7 @@ function PsychologicalEvaluation_family(props) {
   const getGuardians = () => {
     DataManager.getGuardians(props.patientId).then((guardian) => {
       console.log(guardian)
-      setPatientGuardians(guardian.Items);
+      setPatientGuardians(guardian);
     });
   };
 
@@ -119,7 +118,7 @@ function PsychologicalEvaluation_family(props) {
 
   useEffect(() => {
     getData();
-    // getGuardians();
+    getGuardians();
   }, []);
 
   return (
@@ -142,7 +141,7 @@ function PsychologicalEvaluation_family(props) {
                   <TextareaAutosize
                     className="fieldData col-8"
                     type="text"
-                    id={item}
+                    id="patient_father_first_name"
                     name="patient_father_first_name"
                     onChange={handleFieldChange}
                     value={patientParents.patient_father_first_name}
@@ -155,7 +154,7 @@ function PsychologicalEvaluation_family(props) {
                   <TextareaAutosize
                     className="fieldData col-8"
                     type="text"
-                    id={item}
+                    id="patient_father_last_name"
                     name="patient_father_last_name"
                     onChange={handleFieldChange}
                     value={patientParents.patient_father_last_name}
@@ -168,7 +167,7 @@ function PsychologicalEvaluation_family(props) {
                   <TextareaAutosize
                     className="fieldData col-8"
                     type="text"
-                    id={item}
+                    id="patient_mother_first_name"
                     name="patient_mother_first_name"
                     onChange={handleFieldChange}
                     value={patientParents.patient_mother_first_name}
@@ -181,7 +180,7 @@ function PsychologicalEvaluation_family(props) {
                   <TextareaAutosize
                     className="fieldData col-8"
                     type="text"
-                    id={item}
+                    id="patient_mother_last_name"
                     name="patient_mother_last_name"
                     onChange={handleFieldChange}
                     value={patientParents.patient_mother_last_name}
@@ -274,16 +273,17 @@ function PsychologicalEvaluation_family(props) {
                 </div>
               </div>
             </div>
-            {/* <CardDeck className="guardianContainer mt-3">
+            <CardDeck className="guardianContainer mt-3">
               {patientGuardians.map((guardian) => (
                 <GuardianCard
                   key={guardian.id}
+                  id={guardian.id}
                   guardian={guardian}
                   getGuardians={getGuardians}
                   {...props}
                 />
               ))}
-            </CardDeck> */}
+            </CardDeck>
           </div>
           <div id="footer">
             <ButtonNavigation
