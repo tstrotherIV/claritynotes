@@ -2,7 +2,8 @@ import { data } from "jquery";
 
 const patient_id = "7647e21f-fce3-4624-82ae-0063c5beca3b";
 
-const remoteURL = "https://cq73ylztmi.execute-api.us-west-2.amazonaws.com/staging";
+const remoteURL =
+  "https://cq73ylztmi.execute-api.us-west-2.amazonaws.com/staging";
 // const remoteURL = "http://127.0.0.1:5000";
 
 export default {
@@ -48,11 +49,11 @@ export default {
   // },
 
   // //Get all Patient Guardians
-  // async getGuardians(patientId) {
-  //   return fetch(
-  //     `${remoteURL}/guardians?patientId=${patientId}`
-  //   ).then((result) => result.json());
-  // },
+  async getGuardians(patientId) {
+    return fetch(
+      `${remoteURL}/patients/${patientId}/guardians`
+    ).then((result) => result.json());
+  },
 
   // //Get all Patient Spouses
   // async getSpouses(patientId) {
@@ -83,6 +84,37 @@ export default {
       },
       body: JSON.stringify(editedData),
     }).then((updatedData) => updatedData.json());
+  },
+
+  add_guardian(newData) {
+    return fetch(`${remoteURL}/patients/${patient_id}/guardians/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newData),
+    }).then((postedData) => postedData.json());
+  },
+
+  // Update Guardian
+  update_guaridan(guardian_id, editedData) {
+    return fetch(
+      `${remoteURL}/patients/${patient_id}/guardians/${guardian_id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(editedData),
+      }
+    ).then((updatedData) => updatedData.json());
+  },
+
+  delete_guaridan(guardian_id) {
+    return fetch(
+      `${remoteURL}/patients/${patient_id}/guardians/${guardian_id}`, {
+        method: "DELETE",
+      }).then((updatedData) => updatedData.json());
   },
 
   // // ALL DELETE METHODS
