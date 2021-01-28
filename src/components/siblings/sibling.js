@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardBody,
@@ -15,11 +15,10 @@ import DataManager from "../../data_module/DataManager";
 function SiblingCard(props) {
   const [sibling, setsibling] = useState({
     id: props.sibling.id,
-    patientId: props.sibling.patientId,
-    sibling_first_name: props.sibling.sibling_first_name,
-    sibling_last_name: props.sibling.sibling_last_name,
-    sibling_gender: props.sibling.sibling_gender,
-    sibling_dob: props.sibling.sibling_dob,
+    first_name: props.sibling.first_name,
+    last_name: props.sibling.last_name,
+    gender: props.sibling.gender,
+    dob: props.sibling.dob,
   });
 
   const [dropdownOpen2, setDropdownOpen2] = useState(false);
@@ -35,19 +34,16 @@ function SiblingCard(props) {
 
   const updateSibling = () => {
     const editedSibling = {
-      id: props.sibling.id,
-      patientId: props.sibling.patientId,
-      sibling_first_name: sibling.sibling_first_name,
-      sibling_last_name: sibling.sibling_last_name,
-      sibling_gender: sibling.sibling_gender,
-      sibling_dob: sibling.sibling_dob,
+      first_name: sibling.first_name,
+      last_name: sibling.last_name,
+      gender: sibling.gender,
+      dob: sibling.dob,
     };
-
-    DataManager.update("siblings", editedSibling);
+    DataManager.update_Item("siblings", sibling.id, editedSibling);
   };
 
   const deleteSibling = () => {
-    DataManager.delete("siblings", sibling.id).then(() => {
+    DataManager.delete_Item("siblings", sibling.id).then(() => {
       props.getSiblings()
     })
   }
@@ -64,18 +60,18 @@ function SiblingCard(props) {
                   <input
                     className="fieldData"
                     type="text"
-                    id="sibling_first_name"
-                    name="sibling_first_name"
+                    id="first_name"
+                    name="first_name"
                     onChange={handleFieldChange}
-                    value={sibling.sibling_first_name}
+                    value={sibling.first_name}
                   />
                   <input
                     className="fieldData"
                     type="text"
-                    id="sibling_last_name"
-                    name="sibling_last_name"
+                    id="last_name"
+                    name="last_name"
                     onChange={handleFieldChange}
-                    value={sibling.sibling_last_name}
+                    value={sibling.last_name}
                   />
                   <Dropdown
                     isOpen={dropdownOpen2}
@@ -86,35 +82,35 @@ function SiblingCard(props) {
                       color="light"
                       className="dropdown text-center"
                       caret
-                      value={sibling.sibling_gender}
+                      value={sibling.gender}
                     >
-                      {sibling.sibling_gender}
+                      {sibling.gender}
                     </DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem
                         onClick={handleFieldChange}
-                        name="sibling_gender"
+                        name="gender"
                         value="None Selected"
                       >
                         None Selected
                       </DropdownItem>
                       <DropdownItem
                         onClick={handleFieldChange}
-                        name="sibling_gender"
+                        name="gender"
                         value="Female"
                       >
                         Female
                       </DropdownItem>
                       <DropdownItem
                         onClick={handleFieldChange}
-                        name="sibling_gender"
+                        name="gender"
                         value="Male"
                       >
                         Male
                       </DropdownItem>
                       <DropdownItem
                         onClick={handleFieldChange}
-                        name="sibling_gender"
+                        name="gender"
                         value="Other"
                       >
                         Other
@@ -125,10 +121,10 @@ function SiblingCard(props) {
                   <input
                     className="fieldData text-center col-8"
                     type="date"
-                    id="sibling_dob"
-                    name="sibling_dob"
+                    id="dob"
+                    name="dob"
                     onChange={handleFieldChange}
-                    value={sibling.sibling_dob}
+                    value={sibling.dob}
                     placeholder="Date of Birth"
                   />
                 </CardText>

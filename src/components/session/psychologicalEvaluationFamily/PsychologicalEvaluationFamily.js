@@ -61,7 +61,7 @@ function PsychologicalEvaluation_family(props) {
       last_name: newGuardian.patient_guardian_last_name,
       gender: newGuardian.patient_guardian_gender,
     };
-    DataManager.add_guardian(editedGuardian).then(() => {
+    DataManager.add_Item("guardians", editedGuardian).then(() => {
       getGuardians();
     });
   };
