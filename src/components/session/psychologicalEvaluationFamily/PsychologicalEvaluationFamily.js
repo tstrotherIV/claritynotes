@@ -68,7 +68,6 @@ function PsychologicalEvaluation_family(props) {
 
   const getGuardians = () => {
     DataManager.getGuardians(props.patientId).then((guardian) => {
-      console.log(guardian)
       setPatientGuardians(guardian);
     });
   };

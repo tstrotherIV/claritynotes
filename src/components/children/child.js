@@ -7,7 +7,7 @@ import {
   DropdownToggle,
   DropdownMenu,
   CardText,
-  Button
+  Button,
 } from "reactstrap";
 import "./childCard.scss";
 import DataManager from "../../data_module/DataManager";
@@ -15,11 +15,10 @@ import DataManager from "../../data_module/DataManager";
 function ChildrenCard(props) {
   const [child, setChild] = useState({
     id: props.child.id,
-    patientId: props.child.patientId,
-    child_first_name: props.child.child_first_name,
-    child_last_name: props.child.child_last_name,
-    child_gender: props.child.child_gender,
-    child_dob: props.child.child_dob,
+    first_name: props.child.first_name,
+    last_name: props.child.last_name,
+    gender: props.child.gender,
+    dob: props.child.dob,
   });
 
   const [dropdownOpen2, setDropdownOpen2] = useState(false);
@@ -35,23 +34,20 @@ function ChildrenCard(props) {
 
   const updateChild = () => {
     const editedChild = {
-      id: props.child.id,
-      patientId: props.child.patientId,
-      child_first_name: child.child_first_name,
-      child_last_name: child.child_last_name,
-      child_gender: child.child_gender,
-      child_dob: child.child_dob,
+      first_name: child.first_name,
+      last_name: child.last_name,
+      gender: child.gender,
+      dob: child.dob,
     };
 
-    DataManager.update("children", editedChild);
+    DataManager.update_Item("children", child.id, editedChild);
   };
 
   const deleteChild = () => {
     DataManager.delete("children", child.id).then(() => {
-      props.getChildren()
-    })
-  }
-
+      props.getChildren();
+    });
+  };
 
   return (
     <>
@@ -64,18 +60,18 @@ function ChildrenCard(props) {
                   <input
                     className="fieldData"
                     type="text"
-                    id="child_first_name"
-                    name="child_first_name"
+                    id="first_name"
+                    name="first_name"
                     onChange={handleFieldChange}
-                    value={child.child_first_name}
+                    value={child.first_name}
                   />
                   <input
                     className="fieldData"
                     type="text"
-                    id="child_last_name"
-                    name="child_last_name"
+                    id="last_name"
+                    name="last_name"
                     onChange={handleFieldChange}
-                    value={child.child_last_name}
+                    value={child.last_name}
                   />
                   <Dropdown
                     isOpen={dropdownOpen2}
@@ -86,35 +82,35 @@ function ChildrenCard(props) {
                       color="light"
                       className="dropdown text-center"
                       caret
-                      value={child.child_gender}
+                      value={child.gender}
                     >
-                      {child.child_gender}
+                      {child.gender}
                     </DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem
                         onClick={handleFieldChange}
-                        name="child_gender"
+                        name="gender"
                         value="None Selected"
                       >
                         None Selected
                       </DropdownItem>
                       <DropdownItem
                         onClick={handleFieldChange}
-                        name="child_gender"
+                        name="gender"
                         value="Female"
                       >
                         Female
                       </DropdownItem>
                       <DropdownItem
                         onClick={handleFieldChange}
-                        name="child_gender"
+                        name="gender"
                         value="Male"
                       >
                         Male
                       </DropdownItem>
                       <DropdownItem
                         onClick={handleFieldChange}
-                        name="child_gender"
+                        name="gender"
                         value="Other"
                       >
                         Other
@@ -125,15 +121,19 @@ function ChildrenCard(props) {
                   <input
                     className="fieldData text-center col-8"
                     type="date"
-                    id="child_dob"
-                    name="child_dob"
+                    id="dob"
+                    name="dob"
                     onChange={handleFieldChange}
-                    value={child.child_dob}
+                    value={child.dob}
                     placeholder="Date of Birth"
                   />
                 </CardText>
-                <Button className="m-2" onClick={updateChild}>Save Changes</Button>
-                <Button className="m-2" onClick={deleteChild}>Delete</Button>
+                <Button className="m-2" onClick={updateChild}>
+                  Save Changes
+                </Button>
+                <Button className="m-2" onClick={deleteChild}>
+                  Delete
+                </Button>
               </CardBody>
             </Card>
           </div>

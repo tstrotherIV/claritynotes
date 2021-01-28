@@ -15,11 +15,10 @@ import DataManager from "../../data_module/DataManager";
 function SpouseCard(props) {
   const [spouse, setSpouse] = useState({
     id: props.spouse.id,
-    patientId: props.spouse.patientId,
-    spouse_first_name: props.spouse.spouse_first_name,
-    spouse_last_name: props.spouse.spouse_last_name,
-    spouse_gender: props.spouse.spouse_gender,
-    spouse_dob: props.spouse.spouse_dob,
+    first_name: props.spouse.first_name,
+    last_name: props.spouse.last_name,
+    gender: props.spouse.gender,
+    dob: props.spouse.dob,
   });
 
   const [dropdownOpen2, setDropdownOpen2] = useState(false);
@@ -35,19 +34,17 @@ function SpouseCard(props) {
 
   const updateSpouse = () => {
     const editedSpouse = {
-      id: props.spouse.id,
-      patientId: props.spouse.patientId,
-      spouse_first_name: spouse.spouse_first_name,
-      spouse_last_name: spouse.spouse_last_name,
-      spouse_gender: spouse.spouse_gender,
-      spouse_dob: spouse.spouse_dob,
+      first_name: spouse.spouse_first_name,
+      last_name: spouse.spouse_last_name,
+      gender: spouse.spouse_gender,
+      dob: spouse.spouse_dob,
     };
 
-    DataManager.update("spouses", editedSpouse);
+    DataManager.update_Item("spouses", spouse.id, editedSpouse);
   };
 
   const deleteSpouse = () => {
-    DataManager.delete("spouses", spouse.id).then(() => {
+    DataManager.delete_Item("spouses", spouse.id).then(() => {
       props.getSpouses()
     })
   }
@@ -64,18 +61,18 @@ function SpouseCard(props) {
                   <input
                     className="fieldData"
                     type="text"
-                    id="spouse_first_name"
-                    name="spouse_first_name"
+                    id="first_name"
+                    name="first_name"
                     onChange={handleFieldChange}
-                    value={spouse.spouse_first_name}
+                    value={spouse.first_name}
                   />
                   <input
                     className="fieldData"
                     type="text"
-                    id="spouse_last_name"
-                    name="spouse_last_name"
+                    id="last_name"
+                    name="last_name"
                     onChange={handleFieldChange}
-                    value={spouse.spouse_last_name}
+                    value={spouse.last_name}
                   />
                   <Dropdown
                     isOpen={dropdownOpen2}
@@ -86,35 +83,35 @@ function SpouseCard(props) {
                       color="light"
                       className="dropdown text-center"
                       caret
-                      value={spouse.spouse_gender}
+                      value={spouse.gender}
                     >
-                      {spouse.spouse_gender}
+                      {spouse.gender}
                     </DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem
                         onClick={handleFieldChange}
-                        name="spouse_gender"
+                        name="gender"
                         value="None Selected"
                       >
                         None Selected
                       </DropdownItem>
                       <DropdownItem
                         onClick={handleFieldChange}
-                        name="spouse_gender"
+                        name="gender"
                         value="Female"
                       >
                         Female
                       </DropdownItem>
                       <DropdownItem
                         onClick={handleFieldChange}
-                        name="spouse_gender"
+                        name="gender"
                         value="Male"
                       >
                         Male
                       </DropdownItem>
                       <DropdownItem
                         onClick={handleFieldChange}
-                        name="spouse_gender"
+                        name="gender"
                         value="Other"
                       >
                         Other
@@ -125,10 +122,10 @@ function SpouseCard(props) {
                   <input
                     className="fieldData text-center col-8"
                     type="date"
-                    id="spouse_dob"
-                    name="spouse_dob"
+                    id="dob"
+                    name="dob"
                     onChange={handleFieldChange}
-                    value={spouse.spouse_dob}
+                    value={spouse.dob}
                     placeholder="Date of Birth"
                   />
                 </CardText>
