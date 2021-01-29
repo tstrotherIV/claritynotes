@@ -27,12 +27,12 @@ export default {
     );
   },
 
-  // // Get Patient Response by Patient ID and questionID
-  // async getQuestionPatientNotes(patientId, questionId) {
-  //   return fetch(
-  //     `${remoteURL}/patientNotes?patientId=${patientId}&questionId=${questionId}`
-  //   ).then((result) => result.json());
-  // },
+  // Get Patient Response by Patient ID and questionID
+  async getQuestionPatientNotes(patientId, questionId) {
+    return fetch(
+      `${remoteURL}/patients/${patientId}/patient_notes/${questionId}`
+    ).then((result) => result.json());
+  },
 
   //Get all Patient Children
   async getChildren(patientId) {

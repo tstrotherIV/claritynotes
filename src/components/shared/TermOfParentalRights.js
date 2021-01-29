@@ -27,11 +27,10 @@ const TermOfParentalRights = (props) => {
     const name = target.name;
 
     const editedNote = {
-      id: patientNotes.id,
+      // id: patientNotes.id,
       [name]: value,
     };
-
-    DataManager.update("patientNotes", editedNote).then((data) => {
+    DataManager.update_Item("patient_notes", patientNotes.id, editedNote).then((data) => {
       setPatientNotes(data);
     });
   };
@@ -78,7 +77,7 @@ const TermOfParentalRights = (props) => {
             t4h: false,
             t4i: false,
           };
-          DataManager.post("patientNotes", newNote).then((data) => {
+          DataManager.add_Item("patient_notes", newNote).then((data) => {
             setPatientNotes(data);
             // setItem(fieldID);
           });
@@ -95,7 +94,7 @@ const TermOfParentalRights = (props) => {
       createResponse();
     }
   }, [
-    // props.item
+    props.item
   ]);
 
   return (
