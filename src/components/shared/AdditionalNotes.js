@@ -76,10 +76,10 @@ class AdditionalNotes extends React.Component {
 
   handleChange(html) {
     const editedGeneralNotes = {
-      id: this.props.patientNotes.id,
+      // id: this.props.patientNotes.id,
       t1a: html,
     };
-    DataManager.update("patientNotes", editedGeneralNotes);
+    DataManager.update_Item("patient_notes", this.props.patientNotes.id, editedGeneralNotes);
   }
 
   render() {
