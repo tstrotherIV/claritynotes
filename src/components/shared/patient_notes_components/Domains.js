@@ -1,22 +1,174 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Table } from "reactstrap";
 // import DataManager from "../../../data_module/DataManager";
 import "./domains.css";
 import classNames from "classnames";
+import DataManager from "../../../data_module/DataManager";
 
 // pdf page 110
 
 function DomainsTable(props) {
   const [domainSelected, setDomainSelected] = useState({
-    col2_c: false,
-    col2_d: false,
+    col3_b: false,
+    col3_c: false,
+    col3_d: false,
+    col3_e: false,
+    col3_f: false,
+    col3_g: false,
+    col3_h: false,
+    col3_i: false,
+    col3_j: false,
+    col4_b: false,
+    col4_c: false,
+    col4_d: false,
+    col4_e: false,
+    col4_f: false,
+    col4_g: false,
+    col4_h: false,
+    col4_i: false,
+    col4_j: false,
+    col5_b: false,
+    col5_c: false,
+    col5_d: false,
+    col5_e: false,
+    col5_f: false,
+    col5_g: false,
+    col5_h: false,
+    col5_i: false,
+    col5_j: false,
+    col6_b: false,
+    col6_c: false,
+    col6_d: false,
+    col6_e: false,
+    col6_f: false,
+    col6_g: false,
+    col6_h: false,
+    col6_i: false,
+    col6_j: false,
+    col7_b: false,
+    col7_c: false,
+    col7_d: false,
+    col7_e: false,
+    col7_f: false,
+    col7_g: false,
+    col7_h: false,
+    col7_i: false,
+    col7_j: false,
+    col8_b: false,
+    col8_c: false,
+    col8_d: false,
+    col8_e: false,
+    col8_f: false,
+    col8_g: false,
+    col8_h: false,
+    col8_i: false,
+    col8_j: false,
+    col9_b: false,
+    col9_c: false,
+    col9_d: false,
+    col9_e: false,
+    col9_f: false,
+    col9_g: false,
+    col9_h: false,
+    col9_i: false,
+    col9_j: false,
+    col10_b: false,
+    col10_c: false,
+    col10_d: false,
+    col10_e: false,
+    col10_f: false,
+    col10_g: false,
+    col10_h: false,
+    col10_i: false,
+    col10_j: false,
+    col11_b: false,
+    col11_c: false,
+    col11_d: false,
+    col11_e: false,
+    col11_f: false,
+    col11_g: false,
+    col11_h: false,
+    col11_i: false,
+    col11_j: false,
+    col12_b: false,
+    col12_c: false,
+    col12_d: false,
+    col12_e: false,
+    col12_f: false,
+    col12_g: false,
+    col12_h: false,
+    col12_i: false,
+    col12_j: false,
+    col13_b: false,
+    col13_c: false,
+    col13_d: false,
+    col13_e: false,
+    col13_f: false,
+    col13_g: false,
+    col13_h: false,
+    col13_i: false,
+    col13_j: false,
+    col14_b: false,
+    col14_c: false,
+    col14_d: false,
+    col14_e: false,
+    col14_f: false,
+    col14_g: false,
+    col14_h: false,
+    col14_i: false,
+    col14_j: false,
+    col15_b: false,
+    col15_c: false,
+    col15_d: false,
+    col15_e: false,
+    col15_f: false,
+    col15_g: false,
+    col15_h: false,
+    col15_i: false,
+    col15_j: false,
+    col16_b: false,
+    col16_c: false,
+    col16_d: false,
+    col16_e: false,
+    col16_f: false,
+    col16_g: false,
+    col16_h: false,
+    col16_i: false,
+    col16_j: false,
+    col17_b: false,
+    col17_c: false,
+    col17_d: false,
+    col17_e: false,
+    col17_f: false,
+    col17_g: false,
+    col17_h: false,
+    col17_i: false,
+    col17_j: false,
   });
 
   const handleOnClick = (e) => {
     const target = e.target.id;
-    console.log(domainSelected[target]);
     setDomainSelected({ ...domainSelected, [target]: !domainSelected[target] });
+    const editedDomain = { [target]: !domainSelected[target] };
+    DataManager.update_Item("patient_notes", props.patientNotes.id, editedDomain)
   };
+
+  const getData = () => {
+    const fieldID = props.item;
+    DataManager.getQuestionPatientNotes(props.patientId, fieldID).then(
+      (domainData) => {
+        setDomainSelected(domainData[0]);
+      }
+    );
+  };
+
+  useEffect(() => {
+    if (props.item) {
+      getData();
+    }
+  }, [
+    props.item
+  ]);
 
   return (
     <>
@@ -139,7 +291,7 @@ function DomainsTable(props) {
                 Apethetc
               </th>
             </tr>
-              
+
             <tr>
               <th className="lightorange">2A</th>
               <th
@@ -1352,90 +1504,90 @@ function DomainsTable(props) {
             <tr>
               <th className="lightorange">P</th>
               <th
-                id="col7_b"
+                id="col17_b"
                 className={classNames({
-                  selected: domainSelected.col7_b,
-                  lightorange: !domainSelected.col7_b,
+                  selected: domainSelected.col17_b,
+                  lightorange: !domainSelected.col17_b,
                 })}
                 onClick={handleOnClick}
               >
                 Paranoid
               </th>
               <th
-                id="col7_c"
+                id="col17_c"
                 className={classNames({
-                  selected: domainSelected.col7_c,
-                  lightgreen: !domainSelected.col7_c,
+                  selected: domainSelected.col17_c,
+                  lightgreen: !domainSelected.col17_c,
                 })}
                 onClick={handleOnClick}
               >
                 Defensive
               </th>
               <th
-                id="col7_d"
+                id="col17_d"
                 className={classNames({
-                  selected: domainSelected.col7_d,
-                  lightgreen: !domainSelected.col7_d,
+                  selected: domainSelected.col17_d,
+                  lightgreen: !domainSelected.col17_d,
                 })}
                 onClick={handleOnClick}
               >
                 Provocative
               </th>
               <th
-                id="col7_e"
+                id="col17_e"
                 className={classNames({
-                  selected: domainSelected.col7_e,
-                  lightgreen: !domainSelected.col7_e,
+                  selected: domainSelected.col17_e,
+                  lightgreen: !domainSelected.col17_e,
                 })}
                 onClick={handleOnClick}
               >
                 Mistrustful
               </th>
               <th
-                id="col7_f"
+                id="col17_f"
                 className={classNames({
-                  selected: domainSelected.col7_f,
-                  lightgreen: !domainSelected.col7_f,
+                  selected: domainSelected.col17_f,
+                  lightgreen: !domainSelected.col17_f,
                 })}
                 onClick={handleOnClick}
               >
                 Projection
               </th>
               <th
-                id="col7_g"
+                id="col17_g"
                 className={classNames({
-                  selected: domainSelected.col7_g,
-                  lightblue: !domainSelected.col7_g,
+                  selected: domainSelected.col17_g,
+                  lightblue: !domainSelected.col17_g,
                 })}
                 onClick={handleOnClick}
               >
                 Inviolable
               </th>
               <th
-                id="col7_h"
+                id="col17_h"
                 className={classNames({
-                  selected: domainSelected.col7_h,
-                  lightblue: !domainSelected.col7_h,
+                  selected: domainSelected.col17_h,
+                  lightblue: !domainSelected.col17_h,
                 })}
                 onClick={handleOnClick}
               >
                 Unalterable
               </th>
               <th
-                id="col7_i"
+                id="col17_i"
                 className={classNames({
-                  selected: domainSelected.col7_i,
-                  lightblue: !domainSelected.col7_i,
+                  selected: domainSelected.col17_i,
+                  lightblue: !domainSelected.col17_i,
                 })}
                 onClick={handleOnClick}
               >
                 Inelastic
               </th>
               <th
-                id="col7_j"
+                id="col17_j"
                 className={classNames({
-                  selected: domainSelected.col7_j,
-                  lightblue: !domainSelected.col7_j,
+                  selected: domainSelected.col17_j,
+                  lightblue: !domainSelected.col17_j,
                 })}
                 onClick={handleOnClick}
               >
