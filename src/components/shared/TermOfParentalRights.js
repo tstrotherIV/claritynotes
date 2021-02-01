@@ -30,9 +30,11 @@ const TermOfParentalRights = (props) => {
       // id: patientNotes.id,
       [name]: value,
     };
-    DataManager.update_Item("patient_notes", patientNotes.id, editedNote).then((data) => {
-      setPatientNotes(data);
-    });
+    setPatientNotes({...patientNotes, [name]: value})
+    DataManager.update_Item("patient_notes", patientNotes.id, editedNote)
+    // .then((data) => {
+    //   setPatientNotes(data);
+    // });
   };
 
   const createResponse = (e) => {
