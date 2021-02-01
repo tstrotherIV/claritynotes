@@ -27,14 +27,10 @@ const TermOfParentalRights = (props) => {
     const name = target.name;
 
     const editedNote = {
-      // id: patientNotes.id,
       [name]: value,
     };
     setPatientNotes({...patientNotes, [name]: value})
     DataManager.update_Item("patient_notes", patientNotes.id, editedNote)
-    // .then((data) => {
-    //   setPatientNotes(data);
-    // });
   };
 
   const createResponse = (e) => {
@@ -619,7 +615,7 @@ const TermOfParentalRights = (props) => {
               </Tab>
               <Tab eventKey="domains" title={domains} className="contents">
                 <div className="domainsTable">
-                  <DomainsTable
+                  <DomainsTable patientNotes={patientNotes} item={props.item}
                   />
                 </div>
               </Tab>
