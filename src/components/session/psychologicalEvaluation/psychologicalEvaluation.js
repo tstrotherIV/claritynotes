@@ -34,7 +34,7 @@ function PsychologicalEvaluation(props) {
     patient_interview_time: "",
     patient_intake_time: "",
     patient_gender: "",
-    id: ""
+    id: "",
   });
 
   const alaCounties = [
@@ -169,7 +169,7 @@ function PsychologicalEvaluation(props) {
         "patient_interview_time",
         "patient_intake_time",
         "patient_gender",
-        "id"
+        "id",
       ];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
@@ -209,7 +209,7 @@ function PsychologicalEvaluation(props) {
                         Name
                       </Label>
                       <TextareaAutosize
-                        className="fieldData col-8"
+                        className="fieldData col-8 text-center"
                         type="text"
                         placeholder="First Name"
                         id="patient_first_name"
@@ -226,7 +226,7 @@ function PsychologicalEvaluation(props) {
                         for="middleName"
                       ></Label>
                       <TextareaAutosize
-                        className="fieldData col-8"
+                        className="fieldData col-8 text-center"
                         type="text"
                         placeholder="Middle Name"
                         id="patient_middle_name"
@@ -243,7 +243,7 @@ function PsychologicalEvaluation(props) {
                         for="lastName"
                       ></Label>
                       <TextareaAutosize
-                        className="fieldData col-8"
+                        className="fieldData col-8 text-center"
                         type="text"
                         placeholder="Last Name"
                         id="patient_last_name"
@@ -263,7 +263,7 @@ function PsychologicalEvaluation(props) {
                       </Label>
                       <Input
                         type="date"
-                        className=" col-3 dateField p-3 text-center"
+                        className="fieldData col-8 text-center"
                         id="patient_Date_of_Birth"
                         name="patient_Date_of_Birth"
                         onChange={handleFieldChange}
@@ -283,7 +283,7 @@ function PsychologicalEvaluation(props) {
                       <Dropdown
                         isOpen={dropdownOpen1}
                         toggle={toggle1}
-                        className="col-8"
+                        className="fieldData col-8 text-center"
                       >
                         <DropdownToggle
                           color="light"
@@ -315,7 +315,7 @@ function PsychologicalEvaluation(props) {
                         Office Time
                       </Label>
                       <Input
-                        className="col-3 dateField p-3 text-center"
+                        className="fieldData col-8 text-center"
                         type="time"
                         id="patient_office_time"
                         name="patient_office_time"
@@ -333,7 +333,7 @@ function PsychologicalEvaluation(props) {
                         Report Writing
                       </Label>
                       <TextareaAutosize
-                        className="fieldData col-8"
+                        className="fieldData col-8 text-center"
                         type="text"
                         id="patient_report_writing"
                         name="patient_report_writing"
@@ -351,7 +351,7 @@ function PsychologicalEvaluation(props) {
                         Case #
                       </Label>
                       <TextareaAutosize
-                        className="fieldData col-8"
+                        className="fieldData col-8 text-center"
                         type="text"
                         placeholder="Case Number"
                         id="patient_case_number"
@@ -370,19 +370,18 @@ function PsychologicalEvaluation(props) {
                         >
                           Eval 1 Date
                         </Label>
-                        <div>
-                          <Input
-                            className="fieldData p-3"
-                            type="date"
-                            id="patient_evaluation_Date"
-                            name="patient_evaluation_Date"
-                            onChange={handleFieldChange}
-                            value={
-                              patientPsychological_Evaluation.patient_evaluation_Date
-                            }
-                          />
-                          <Button className="m-2">Add Eval Date</Button>
-                        </div>
+
+                        <Input
+                          className="fieldData col-8 text-center"
+                          type="date"
+                          id="patient_evaluation_Date"
+                          name="patient_evaluation_Date"
+                          onChange={handleFieldChange}
+                          value={
+                            patientPsychological_Evaluation.patient_evaluation_Date
+                          }
+                        />
+                        <Button className="ml-2">Add Eval Date</Button>
                       </div>
                     </div>
                     <div className="textWhite d-flex justify-items-center m-4">
@@ -395,7 +394,7 @@ function PsychologicalEvaluation(props) {
                       <Dropdown
                         isOpen={dropdownOpen2}
                         toggle={toggle2}
-                        className="col-8"
+                        className="fieldData col-8 text-center"
                       >
                         <DropdownToggle
                           color="light"
@@ -427,7 +426,7 @@ function PsychologicalEvaluation(props) {
                         Interview Time
                       </Label>
                       <Input
-                        className="fieldData col-4 p-3 text-center"
+                        className="fieldData col-8 text-center"
                         type="time"
                         id="patient_interview_time"
                         name="patient_interview_time"
@@ -442,7 +441,7 @@ function PsychologicalEvaluation(props) {
                         Intake Time
                       </Label>
                       <Input
-                        className="fieldData col-4 p-3 text-center"
+                        className="fieldData col-8 text-center"
                         type="time"
                         id="patient_intake_time"
                         name="patient_intake_time"
@@ -452,7 +451,10 @@ function PsychologicalEvaluation(props) {
                         }
                       />
                     </div>
-                    <div className="line1 d-flex flex-wrap">
+                    <div className="textWhite d-flex justify-items-center m-4">
+                      <Label className="textWhite labelWidth" for="inTakeTime">
+                        Gender
+                      </Label>
                       <Dropdown
                         isOpen={dropdownOpen3}
                         toggle={toggle3}

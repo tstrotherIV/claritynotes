@@ -29,7 +29,7 @@ function PsychologicalEvaluation_family(props) {
     patient_guardian_first_name: "",
     patient_guardian_last_name: "",
     patient_guardian_gender: "",
-    id: ""
+    id: "",
   });
 
   const next = "/psychological_evaluation_siblings";
@@ -102,7 +102,7 @@ function PsychologicalEvaluation_family(props) {
         "patient_guardian_first_name",
         "patient_guardian_last_name",
         "patient_guardian_gender",
-        "id"
+        "id",
       ];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
@@ -206,10 +206,7 @@ function PsychologicalEvaluation_family(props) {
                   />
                 </div>
                 <div className="d-flex m-4">
-                  <Label
-                    className="textWhite labelWidth"
-                    for="examplePassword"
-                  ></Label>
+                  <Label className="textWhite labelWidth"></Label>
                   <TextareaAutosize
                     className="fieldData col-8"
                     type="text"
@@ -220,11 +217,12 @@ function PsychologicalEvaluation_family(props) {
                     onClick={convertIDfunc}
                   />
                 </div>
-                <div className="d-flex m-4 flex-wrap">
+                <div className="d-flex m-4">
+                  <Label className="textWhite labelWidth"></Label>
                   <Dropdown
                     isOpen={dropdownOpen1}
                     toggle={toggle1}
-                    className="col-8"
+                    className="fieldData col-8"
                   >
                     <DropdownToggle
                       color="light"
@@ -265,24 +263,30 @@ function PsychologicalEvaluation_family(props) {
                     </DropdownMenu>
                   </Dropdown>
                 </div>
-                <div className="text-center">
-                  <div className="textWhite">
-                    <Button onClick={addGuaridan}>Add Guardian</Button>
-                  </div>
+                <div className="d-flex m-4">
+                  <Label className="textWhite labelWidth"></Label>
+                  <Button
+                    className="fieldData col-8 text-center"
+                    onClick={addGuaridan}
+                  >
+                    Add Guardian
+                  </Button>
                 </div>
               </div>
             </div>
-            <CardDeck className="guardianContainer mt-3">
-              {patientGuardians.map((guardian) => (
-                <GuardianCard
-                  key={guardian.id}
-                  id={guardian.id}
-                  guardian={guardian}
-                  getGuardians={getGuardians}
-                  {...props}
-                />
-              ))}
-            </CardDeck>
+            <div className="familyBoard">
+              <CardDeck className="guardianContainer mt-3">
+                {patientGuardians.map((guardian) => (
+                  <GuardianCard
+                    key={guardian.id}
+                    id={guardian.id}
+                    guardian={guardian}
+                    getGuardians={getGuardians}
+                    {...props}
+                  />
+                ))}
+              </CardDeck>
+            </div>
           </div>
           <div id="footer">
             <ButtonNavigation

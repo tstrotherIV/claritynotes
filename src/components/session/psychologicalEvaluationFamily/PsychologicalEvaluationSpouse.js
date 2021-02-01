@@ -107,68 +107,77 @@ function PsychologicalEvaluationSpouse(props) {
             <h1 className="textWhite">Please Confirm or Update Information</h1>
           </div>
           <div className="siblingsFields">
-            <div className="line1">
-              <Dropdown isOpen={dropdownOpen1} toggle={toggle1} className="">
-                <DropdownToggle
-                  color="light"
-                  className="dropdown text-center"
-                  caret
+            <div className="col-6">
+              <div className="d-flex m-4">
+                <Label
+                  className="textWhite labelWidth"
+                  for="sibLastName"
+                >Relationship Status</Label>
+                <Dropdown
+                  isOpen={dropdownOpen1}
+                  toggle={toggle1}
+                  className="fieldData col-8 text-center"
                 >
-                  {relationshipStatus.patient_married}
-                </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem
-                    onClick={handleRelationshipChange}
-                    name="patient_married"
-                    value="Married"
+                  <DropdownToggle
+                    color="light"
+                    className="dropdown text-center"
+                    caret
                   >
-                    Married
-                  </DropdownItem>
-                  <DropdownItem
-                    onClick={handleRelationshipChange}
-                    name="patient_married"
-                    value="Single"
-                  >
-                    Single
-                  </DropdownItem>
-                  <DropdownItem
-                    onClick={handleRelationshipChange}
-                    name="patient_married"
-                    value="Divorced"
-                  >
-                    Divorced
-                  </DropdownItem>
-                  <DropdownItem
-                    onClick={handleRelationshipChange}
-                    name="patient_married"
-                    value="Separated"
-                  >
-                    Separated
-                  </DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
+                    {relationshipStatus.patient_married}
+                  </DropdownToggle>
+                  <DropdownMenu>
+                    <DropdownItem
+                      onClick={handleRelationshipChange}
+                      name="patient_married"
+                      value="Married"
+                    >
+                      Married
+                    </DropdownItem>
+                    <DropdownItem
+                      onClick={handleRelationshipChange}
+                      name="patient_married"
+                      value="Single"
+                    >
+                      Single
+                    </DropdownItem>
+                    <DropdownItem
+                      onClick={handleRelationshipChange}
+                      name="patient_married"
+                      value="Divorced"
+                    >
+                      Divorced
+                    </DropdownItem>
+                    <DropdownItem
+                      onClick={handleRelationshipChange}
+                      name="patient_married"
+                      value="Separated"
+                    >
+                      Separated
+                    </DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+              </div>
             </div>
             {relationshipStatus.patient_married !== "Single" ? (
-              <section>
-                <div className="line1">
-                  <Label className="textWhite title" for="spouseFirstName">
-                    Spouse
+              <div className="col-6">
+                <div className="d-flex m-4">
+                  <Label className="textWhite labelWidth" for="spouseFirstName">
+                    Spouse First Name
                   </Label>
                   <TextareaAutosize
-                    className="fieldData"
+                    className="fieldData col-8 text-center"
                     id="spouse_first_name"
                     name="spouse_first_name"
                     onChange={handleFieldChange}
                     placeholder="Spouse First Name"
                   />
                 </div>
-                <div className="line1">
-                  <Label
-                    className="textWhite title"
-                    for="spouseLastName"
-                  ></Label>
+                <div className="d-flex m-4">
+                  <Label className="textWhite labelWidth" for="spouseLastName">
+                    Spouse Last Name
+                  </Label>
                   <TextareaAutosize
-                    className="fieldData"
+                    className="fieldData col-8 text-center"
                     type="text"
                     id="spouse_last_name"
                     name="spouse_last_name"
@@ -176,11 +185,14 @@ function PsychologicalEvaluationSpouse(props) {
                     placeholder="Spouse Last Name"
                   />
                 </div>
-                <div className="line1">
+                <div className="d-flex m-4">
+                  <Label className="textWhite labelWidth" for="">
+                    Gender
+                  </Label>
                   <Dropdown
                     isOpen={dropdownOpen2}
                     toggle={toggle2}
-                    className=""
+                    className="fieldData col-8 text-center"
                   >
                     <DropdownToggle
                       color="light"
@@ -221,12 +233,12 @@ function PsychologicalEvaluationSpouse(props) {
                     </DropdownMenu>
                   </Dropdown>
                 </div>
-                <div className="line1">
-                  <Label className="textWhite title" for="">
+                <div className="d-flex justify-items-center m-4">
+                  <Label className="textWhite labelWidth " for="">
                     DOB
                   </Label>
                   <Input
-                    className="fieldData text-center col-8"
+                    className="fieldData col-8 text-center"
                     type="date"
                     id="spouse_dob"
                     name="spouse_dob"
@@ -234,12 +246,16 @@ function PsychologicalEvaluationSpouse(props) {
                     placeholder="Date of Birth"
                   />
                 </div>
-                <div className="d-flex justify-content-center">
-                  <div className="textWhite">
-                    <Button onClick={addSpouse}>Add Spouse</Button>
-                  </div>
+                <div className="d-flex m-4">
+                  <Label className="textWhite labelWidth"></Label>
+                  <Button
+                    className="fieldData col-8 text-center"
+                    onClick={addSpouse}
+                  >
+                    Add Spouse
+                  </Button>
                 </div>
-              </section>
+              </div>
             ) : (
               console.log("")
             )}
