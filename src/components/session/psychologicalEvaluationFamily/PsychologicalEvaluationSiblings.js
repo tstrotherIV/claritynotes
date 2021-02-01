@@ -8,7 +8,7 @@ import {
   DropdownMenu,
   DropdownItem,
   CardDeck,
-  Button
+  Button,
 } from "reactstrap";
 import Heading from "../../shared/PsychologicalHeading";
 import ButtonNavigation from "../../shared/ButtonNavigation";
@@ -117,13 +117,13 @@ function PsychologicalEvaluationSiblings(props) {
               </Label>
             </div>
             {!checkbox.patient_only_child ? (
-              <section>
-                <div className="line1">
-                  <Label className="textWhite title" for="sibFirstName">
+              <div className="col-6">
+                <div className="d-flex m-4">
+                  <Label className="textWhite labelWidth" for="sibFirstName">
                     Siblings
                   </Label>
                   <TextareaAutosize
-                    className="fieldData col-8"
+                    className="fieldData col-8 text-center"
                     type="text"
                     id="sibling_first_name"
                     name="sibling_first_name"
@@ -131,10 +131,13 @@ function PsychologicalEvaluationSiblings(props) {
                     placeholder="Sibling First Name"
                   />
                 </div>
-                <div className="line1">
-                  <Label className="textWhite title" for="sibLastName"></Label>
+                <div className="d-flex m-4">
+                  <Label
+                    className="textWhite labelWidth"
+                    for="sibLastName"
+                  ></Label>
                   <TextareaAutosize
-                    className="fieldData col-8"
+                    className="fieldData col-8 text-center"
                     type="text"
                     id="sibling_last_name"
                     name="sibling_last_name"
@@ -142,11 +145,15 @@ function PsychologicalEvaluationSiblings(props) {
                     placeholder="Sibling Last Name"
                   />
                 </div>
-                <div className="line1">
+                <div className="d-flex m-4">
+                  <Label
+                    className="textWhite labelWidth"
+                    for="sibLastName"
+                  ></Label>
                   <Dropdown
                     isOpen={dropdownOpen1}
                     toggle={toggle1}
-                    className=""
+                    className="fieldData col-8 text-center"
                   >
                     <DropdownToggle
                       color="light"
@@ -187,40 +194,46 @@ function PsychologicalEvaluationSiblings(props) {
                     </DropdownMenu>
                   </Dropdown>
                 </div>
-                <div className="line1 d-flex flex-wrap">
+                <div className="d-flex justify-items-center m-4">
                   <Label className="textWhite labelWidth " for="dateOfBirth">
                     DOB
                   </Label>
                   <Input
                     type="date"
-                    className=" col-3 dateField p-3 text-center"
+                    className="fieldData col-8 text-center"
                     id="sibling_dob"
                     name="sibling_dob"
                     onChange={handleFieldChange}
                     placeholder="Date of Birth"
                   />
                 </div>
-                <div className="m-4">
-                  <div className="textWhite">
-                    <Button onClick={addSibling}>Add Sibling</Button>
-                  </div>
+                <div className="d-flex m-4">
+                  <Label className="textWhite labelWidth"></Label>
+                  <Button
+                    className="fieldData col-8 text-center"
+                    onClick={addSibling}
+                  >
+                    Add Guardian
+                  </Button>
                 </div>
-              </section>
+              </div>
             ) : (
               console.log("")
             )}
           </div>
-          {!checkbox.patient_only_child  ? (
-            <CardDeck className="siblingContainer mt-3">
-              {patientSiblings.map((sibling) => (
-                <SiblingCard
-                  key={sibling.id}
-                  sibling={sibling}
-                  getSiblings={getSiblings}
-                  {...props}
-                />
-              ))}
-            </CardDeck>
+          {!checkbox.patient_only_child ? (
+            <div className="familyBoard">
+              <CardDeck className="siblingContainer mt-3">
+                {patientSiblings.map((sibling) => (
+                  <SiblingCard
+                    key={sibling.id}
+                    sibling={sibling}
+                    getSiblings={getSiblings}
+                    {...props}
+                  />
+                ))}
+              </CardDeck>
+            </div>
           ) : (
             console.log("")
           )}

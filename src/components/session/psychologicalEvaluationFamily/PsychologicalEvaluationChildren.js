@@ -64,7 +64,6 @@ function PsychologicalEvaluation_siblings(props) {
     });
   };
 
-
   const getChildren = () => {
     DataManager.getChildren(props.patientId).then((children) => {
       setPatientChildren(children);
@@ -89,9 +88,7 @@ function PsychologicalEvaluation_siblings(props) {
     });
   };
 
-  const updatePatient = () => {
-
-  }
+  const updatePatient = () => {};
 
   useEffect(() => {
     getData();
@@ -121,13 +118,13 @@ function PsychologicalEvaluation_siblings(props) {
               </Label>
             </div>
             {!checkbox.patient_has_children ? (
-              <section>
-                <div className="line1">
-                  <Label className="textWhite title" for="firstName">
+              <div className="col-6">
+                <div className="d-flex m-4">
+                  <Label className="textWhite labelWidth" for="firstName">
                     Children
                   </Label>
                   <TextareaAutosize
-                    className="fieldData"
+                    className="fieldData col-8 text-center"
                     type="text"
                     id="child_first_name"
                     name="child_first_name"
@@ -135,10 +132,13 @@ function PsychologicalEvaluation_siblings(props) {
                     placeholder="Child First Name"
                   />
                 </div>
-                <div className="line1">
-                  <Label className="textWhite title" for="lastName"></Label>
+                <div className="d-flex m-4">
+                  <Label
+                    className="textWhite labelWidth"
+                    for="lastName"
+                  ></Label>
                   <TextareaAutosize
-                    className="fieldData"
+                    className="fieldData col-8 text-center"
                     type="text"
                     id="child_last_name"
                     name="child_last_name"
@@ -146,11 +146,12 @@ function PsychologicalEvaluation_siblings(props) {
                     placeholder="Child Last Name"
                   />
                 </div>
-                <div className="line1 d-flex flex-wrap">
+                <div className="d-flex m-4">
+                  <Label className="textWhite labelWidth"></Label>
                   <Dropdown
                     isOpen={dropdownOpen1}
                     toggle={toggle1}
-                    className=""
+                    className="fieldData col-8 text-center"
                   >
                     <DropdownToggle
                       color="light"
@@ -192,12 +193,12 @@ function PsychologicalEvaluation_siblings(props) {
                   </Dropdown>
                 </div>
 
-                <div className="line1">
-                  <Label className="textWhite title" for="">
+                <div className="d-flex justify-items-center m-4">
+                  <Label className="textWhite labelWidth " for="dateOfBirth">
                     DOB
                   </Label>
                   <Input
-                    className="fieldData text-center col-8"
+                    className="fieldData col-8 text-center"
                     type="date"
                     id="child_dob"
                     name="child_dob"
@@ -205,12 +206,16 @@ function PsychologicalEvaluation_siblings(props) {
                     placeholder="Date of Birth"
                   />
                 </div>
-                <div className="d-flex justify-content-center">
-                  <div className="textWhite">
-                    <Button onClick={addChild}>Add Child</Button>
-                  </div>
+                <div className="d-flex m-4">
+                  <Label className="textWhite labelWidth"></Label>
+                  <Button
+                    className="fieldData col-8 text-center"
+                    onClick={addChild}
+                  >
+                    Add Child
+                  </Button>
                 </div>
-              </section>
+              </div>
             ) : (
               console.log("")
             )}
