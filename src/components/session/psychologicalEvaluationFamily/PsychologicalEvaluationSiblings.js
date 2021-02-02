@@ -117,126 +117,133 @@ function PsychologicalEvaluationSiblings(props) {
               </Label>
             </div>
             {!checkbox.patient_only_child ? (
-              <div className="col-6">
-                <div className="d-flex m-4">
-                  <Label className="textWhite labelWidth" for="sibFirstName">
-                    Siblings
-                  </Label>
-                  <TextareaAutosize
-                    className="fieldData col-8 text-center"
-                    type="text"
-                    id="sibling_first_name"
-                    name="sibling_first_name"
-                    onChange={handleFieldChange}
-                    placeholder="Sibling First Name"
-                  />
-                </div>
-                <div className="d-flex m-4">
-                  <Label
-                    className="textWhite labelWidth"
-                    for="sibLastName"
-                  ></Label>
-                  <TextareaAutosize
-                    className="fieldData col-8 text-center"
-                    type="text"
-                    id="sibling_last_name"
-                    name="sibling_last_name"
-                    onChange={handleFieldChange}
-                    placeholder="Sibling Last Name"
-                  />
-                </div>
-                <div className="d-flex m-4">
-                  <Label
-                    className="textWhite labelWidth"
-                    for="sibLastName"
-                  ></Label>
-                  <Dropdown
-                    isOpen={dropdownOpen1}
-                    toggle={toggle1}
-                    className="fieldData col-8 text-center"
-                  >
-                    <DropdownToggle
-                      color="light"
-                      className="dropdown text-center"
-                      caret
+              <div className="d-flex">
+                <div className="col-6">
+                  <div className="d-flex m-4">
+                    <Label className="textWhite labelWidth" for="sibFirstName">
+                      Siblings
+                    </Label>
+                    <TextareaAutosize
+                      className="fieldData text-center"
+                      type="text"
+                      id="sibling_first_name"
+                      name="sibling_first_name"
+                      onChange={handleFieldChange}
+                      placeholder="Sibling First Name"
+                    />
+                  </div>
+                  <div className="d-flex m-4">
+                    <Label
+                      className="textWhite labelWidth"
+                      for="sibLastName"
+                    ></Label>
+                    <TextareaAutosize
+                      className="fieldData text-center"
+                      type="text"
+                      id="sibling_last_name"
+                      name="sibling_last_name"
+                      onChange={handleFieldChange}
+                      placeholder="Sibling Last Name"
+                    />
+                  </div>
+                  <div className="d-flex m-4">
+                    <Label
+                      className="textWhite labelWidth"
+                      for="sibLastName"
+                    >Select Gender</Label>
+                    <Dropdown
+                      isOpen={dropdownOpen1}
+                      toggle={toggle1}
+                      className="fieldData text-center"
                     >
-                      {newSibling.sibling_gender}
-                    </DropdownToggle>
-                    <DropdownMenu>
-                      <DropdownItem
-                        onClick={handleFieldChange}
-                        name="sibling_gender"
-                        value="None Selected"
+                      <DropdownToggle
+                        color="light"
+                        className="dropdown text-center"
+                        caret
                       >
-                        None Selected
-                      </DropdownItem>
-                      <DropdownItem
-                        onClick={handleFieldChange}
-                        name="sibling_gender"
-                        value="Female"
-                      >
-                        Female
-                      </DropdownItem>
-                      <DropdownItem
-                        onClick={handleFieldChange}
-                        name="sibling_gender"
-                        value="Male"
-                      >
-                        Male
-                      </DropdownItem>
-                      <DropdownItem
-                        onClick={handleFieldChange}
-                        name="sibling_gender"
-                        value="Other"
-                      >
-                        Other
-                      </DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
+                        {newSibling.sibling_gender}
+                      </DropdownToggle>
+                      <DropdownMenu>
+                        <DropdownItem
+                          onClick={handleFieldChange}
+                          name="sibling_gender"
+                          value="None Selected"
+                        >
+                          None Selected
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={handleFieldChange}
+                          name="sibling_gender"
+                          value="Female"
+                        >
+                          Female
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={handleFieldChange}
+                          name="sibling_gender"
+                          value="Male"
+                        >
+                          Male
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={handleFieldChange}
+                          name="sibling_gender"
+                          value="Other"
+                        >
+                          Other
+                        </DropdownItem>
+                      </DropdownMenu>
+                    </Dropdown>
+                  </div>
+                  <div className="d-flex justify-items-center m-4">
+                    <Label className="textWhite labelWidth " for="dateOfBirth">
+                      DOB
+                    </Label>
+                    <Input
+                      type="date"
+                      className="fieldData text-center"
+                      id="sibling_dob"
+                      name="sibling_dob"
+                      onChange={handleFieldChange}
+                      placeholder="Date of Birth"
+                    />
+                  </div>
+                  <div className="d-flex m-4">
+                    <Label className="textWhite labelWidth"></Label>
+                    <Button
+                      className="fieldData text-center"
+                      onClick={addSibling}
+                    >
+                      Add Guardian
+                    </Button>
+                  </div>
                 </div>
-                <div className="d-flex justify-items-center m-4">
-                  <Label className="textWhite labelWidth " for="dateOfBirth">
-                    DOB
-                  </Label>
-                  <Input
-                    type="date"
-                    className="fieldData col-8 text-center"
-                    id="sibling_dob"
-                    name="sibling_dob"
-                    onChange={handleFieldChange}
-                    placeholder="Date of Birth"
-                  />
-                </div>
-                <div className="d-flex m-4">
-                  <Label className="textWhite labelWidth"></Label>
-                  <Button
-                    className="fieldData col-8 text-center"
-                    onClick={addSibling}
-                  >
-                    Add Guardian
-                  </Button>
+
+                <div className="siblingListBox">
+                <h3 className="text-center">SIBLING LIST</h3>
+                  {!checkbox.patient_only_child ? (
+                    <div className="familyBoard">
+                      <CardDeck className="mt-3 siblingBoard">
+                        {patientSiblings.map((sibling) => (
+                          <SiblingCard
+                            className="siblingCard"
+                            key={sibling.id}
+                            sibling={sibling}
+                            getSiblings={getSiblings}
+                            {...props}
+                          />
+                        ))}
+                      </CardDeck>
+                    </div>
+                  ) : (
+                    <div></div>
+                  )}
                 </div>
               </div>
             ) : (
               console.log("")
             )}
           </div>
-          {!checkbox.patient_only_child ? (
-            <div className="familyBoard">
-              <CardDeck className="siblingContainer mt-3">
-                {patientSiblings.map((sibling) => (
-                  <SiblingCard
-                    key={sibling.id}
-                    sibling={sibling}
-                    getSiblings={getSiblings}
-                    {...props}
-                  />
-                ))}
-              </CardDeck>
-            </div>
-          ) : (
-            console.log("")
-          )}
         </div>
         <div id="footer">
           <ButtonNavigation

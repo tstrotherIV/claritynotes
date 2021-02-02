@@ -70,13 +70,6 @@
   justify-content: space-around;
 }
 
-.siblingContainer{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
 .guardianContainer{
   display: flex;
   flex-direction: row;
@@ -93,4 +86,23 @@
 
 .familyBoard {
   padding: 10px;
+}
+
+.siblingBoard{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.siblingCard{
+  flex: 0 1 auto;
+}
+
+.siblingListBox {
+  background-color: rgb(255, 255, 255);
+  margin: 10px;
+  max-height: 600px;
+  min-width: 700px;
+  max-width: 700px;
+  overflow-y: scroll;
+  
 }
