@@ -211,10 +211,10 @@ function PsychologicalEvaluationSiblings(props) {
                   <div className="d-flex m-4">
                     <Label className="textWhite labelWidth"></Label>
                     <Button
-                      className="fieldData text-center"
+                      className="fieldData col-8 text-center"
                       onClick={addSibling}
                     >
-                      Add Guardian
+                      Add Sibling
                     </Button>
                   </div>
                 </div>
