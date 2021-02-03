@@ -26,6 +26,27 @@ export default {
       result.json()
     );
   },
+  
+  //User Login and post to DB sessions
+  async loginUser (login_data) {
+    return fetch(`${remoteURL}/sessions`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(login_data),
+    }).then((postedData) => postedData.json());
+  },
+
+  async logoutUser (session_id) {
+    return fetch(
+      `${remoteURL}/sessions/${session_id}`, {
+        method: "DELETE",
+        headers: {
+          "Authorization": `${session_id}`
+        },
+      }).then((updatedData) => updatedData.json());
+  },
 
   // Get Patient Response by Patient ID and questionID
   async getQuestionPatientNotes(patientId, questionId) {
