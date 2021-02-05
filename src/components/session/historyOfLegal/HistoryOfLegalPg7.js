@@ -71,7 +71,7 @@ function HistoryOfLegalPg7(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>

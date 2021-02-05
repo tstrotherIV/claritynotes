@@ -7,7 +7,6 @@ import DataManager from "../../../data_module/DataManager";
 //pdf page 116
 
 function ContinuousPerformanceTest3rdEd(props) {
-  const [item, setItem] = useState("");
   const [
     patientContinuousPerformanceTest3rdEd,
     setPatientContinuousPerformanceTest3rdEd,
@@ -44,8 +43,9 @@ function ContinuousPerformanceTest3rdEd(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      continous_performance_test_3rd_ed_a:
-        String(patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_a),
+      continous_performance_test_3rd_ed_a: String(
+        patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_a
+      ),
       continous_performance_test_3rd_ed_b:
         patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_b,
       continous_performance_test_3rd_ed_c:
@@ -99,7 +99,7 @@ function ContinuousPerformanceTest3rdEd(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  });
 
   return (
     <>
@@ -178,7 +178,7 @@ function ContinuousPerformanceTest3rdEd(props) {
                         <input
                           className="m-2"
                           type="checkbox"
-                          id={item}
+                          id="continous_performance_test_3rd_ed_c"
                           name="continous_performance_test_3rd_ed_c"
                           checked={
                             patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_c

@@ -46,36 +46,51 @@ function WideRangeAchievementTest5(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      wide_range_achievement_test_5_pg1_col1_a:
-        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_a),
-      wide_range_achievement_test_5_pg1_col1_b:
-        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_b),
-      wide_range_achievement_test_5_pg1_col1_c:
-        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_c),
-      wide_range_achievement_test_5_pg1_col1_d:
-        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_d),
-      wide_range_achievement_test_5_pg1_col1_e:
-        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_e),
-      wide_range_achievement_test_5_pg1_col2_a:
-        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_a),
-      wide_range_achievement_test_5_pg1_col2_b:
-        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_b),
-      wide_range_achievement_test_5_pg1_col2_c:
-        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_c),
-      wide_range_achievement_test_5_pg1_col2_d:
-        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_d),
-      wide_range_achievement_test_5_pg1_col2_e:
-        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_e),
-      wide_range_achievement_test_5_pg1_col3_a:
-        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_a),
-      wide_range_achievement_test_5_pg1_col3_b:
-        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_b),
-      wide_range_achievement_test_5_pg1_col3_c:
-        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_c),
-      wide_range_achievement_test_5_pg1_col3_d:
-        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_d),
-      wide_range_achievement_test_5_pg1_col3_e:
-        String(wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_e),
+      wide_range_achievement_test_5_pg1_col1_a: String(
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_a
+      ),
+      wide_range_achievement_test_5_pg1_col1_b: String(
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_b
+      ),
+      wide_range_achievement_test_5_pg1_col1_c: String(
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_c
+      ),
+      wide_range_achievement_test_5_pg1_col1_d: String(
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_d
+      ),
+      wide_range_achievement_test_5_pg1_col1_e: String(
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_e
+      ),
+      wide_range_achievement_test_5_pg1_col2_a: String(
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_a
+      ),
+      wide_range_achievement_test_5_pg1_col2_b: String(
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_b
+      ),
+      wide_range_achievement_test_5_pg1_col2_c: String(
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_c
+      ),
+      wide_range_achievement_test_5_pg1_col2_d: String(
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_d
+      ),
+      wide_range_achievement_test_5_pg1_col2_e: String(
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_e
+      ),
+      wide_range_achievement_test_5_pg1_col3_a: String(
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_a
+      ),
+      wide_range_achievement_test_5_pg1_col3_b: String(
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_b
+      ),
+      wide_range_achievement_test_5_pg1_col3_c: String(
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_c
+      ),
+      wide_range_achievement_test_5_pg1_col3_d: String(
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_d
+      ),
+      wide_range_achievement_test_5_pg1_col3_e: String(
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_e
+      ),
     };
 
     DataManager.update("patients", editedPatient);
@@ -119,7 +134,7 @@ function WideRangeAchievementTest5(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  });
 
   return (
     <>
@@ -153,7 +168,6 @@ function WideRangeAchievementTest5(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wide_range_achievement_test_5_pg1_col1_a"
                           name="wide_range_achievement_test_5_pg1_col1_a"
                           onChange={handleFieldChange}
@@ -168,7 +182,6 @@ function WideRangeAchievementTest5(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wide_range_achievement_test_5_pg1_col2_a"
                           name="wide_range_achievement_test_5_pg1_col2_a"
                           onChange={handleFieldChange}
@@ -183,7 +196,6 @@ function WideRangeAchievementTest5(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wide_range_achievement_test_5_pg1_col3_a"
                           name="wide_range_achievement_test_5_pg1_col3_a"
                           onChange={handleFieldChange}
@@ -203,7 +215,6 @@ function WideRangeAchievementTest5(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wide_range_achievement_test_5_pg1_col1_b"
                           name="wide_range_achievement_test_5_pg1_col1_b"
                           onChange={handleFieldChange}
@@ -218,7 +229,6 @@ function WideRangeAchievementTest5(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wide_range_achievement_test_5_pg1_col2_b"
                           name="wide_range_achievement_test_5_pg1_col2_b"
                           onChange={handleFieldChange}
@@ -233,7 +243,6 @@ function WideRangeAchievementTest5(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wide_range_achievement_test_5_pg1_col3_b"
                           name="wide_range_achievement_test_5_pg1_col3_b"
                           onChange={handleFieldChange}
@@ -253,7 +262,6 @@ function WideRangeAchievementTest5(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wide_range_achievement_test_5_pg1_col1_c"
                           name="wide_range_achievement_test_5_pg1_col1_c"
                           onChange={handleFieldChange}
@@ -268,7 +276,6 @@ function WideRangeAchievementTest5(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wide_range_achievement_test_5_pg1_col2_c"
                           name="wide_range_achievement_test_5_pg1_col2_c"
                           onChange={handleFieldChange}
@@ -283,7 +290,6 @@ function WideRangeAchievementTest5(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wide_range_achievement_test_5_pg1_col3_c"
                           name="wide_range_achievement_test_5_pg1_col3_c"
                           onChange={handleFieldChange}
@@ -303,7 +309,6 @@ function WideRangeAchievementTest5(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wide_range_achievement_test_5_pg1_col1_d"
                           name="wide_range_achievement_test_5_pg1_col1_d"
                           onChange={handleFieldChange}
@@ -318,7 +323,6 @@ function WideRangeAchievementTest5(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wide_range_achievement_test_5_pg1_col2_d"
                           name="wide_range_achievement_test_5_pg1_col2_d"
                           onChange={handleFieldChange}
@@ -333,7 +337,6 @@ function WideRangeAchievementTest5(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wide_range_achievement_test_5_pg1_col3_d"
                           name="wide_range_achievement_test_5_pg1_col3_d"
                           onChange={handleFieldChange}
@@ -353,7 +356,6 @@ function WideRangeAchievementTest5(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wide_range_achievement_test_5_pg1_col1_e"
                           name="wide_range_achievement_test_5_pg1_col1_e"
                           onChange={handleFieldChange}
@@ -368,7 +370,6 @@ function WideRangeAchievementTest5(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wide_range_achievement_test_5_pg1_col2_e"
                           name="wide_range_achievement_test_5_pg1_col2_e"
                           onChange={handleFieldChange}
@@ -383,7 +384,6 @@ function WideRangeAchievementTest5(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wide_range_achievement_test_5_pg1_col3_e"
                           name="wide_range_achievement_test_5_pg1_col3_e"
                           onChange={handleFieldChange}

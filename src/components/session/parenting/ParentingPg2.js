@@ -65,7 +65,7 @@ function ParentingPg2(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>

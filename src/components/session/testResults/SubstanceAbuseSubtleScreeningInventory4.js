@@ -87,7 +87,7 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>

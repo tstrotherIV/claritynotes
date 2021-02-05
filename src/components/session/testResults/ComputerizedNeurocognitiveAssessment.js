@@ -8,7 +8,6 @@ import DataManager from "../../../data_module/DataManager";
 // pdf page 117
 
 function ComputerizedNeurocognitiveAssessment(props) {
-  const [item, setItem] = useState("");
   const [
     patientComputerizedNeurocognitiveAssessment,
     setPatientComputerizedNeurocognitiveAssessment,
@@ -85,72 +84,105 @@ function ComputerizedNeurocognitiveAssessment(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      computerized_performance_neurocognitive_assessment_a:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_a),
-      computerized_performance_neurocognitive_assessment_col1_a:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_a),
-      computerized_performance_neurocognitive_assessment_col1_b:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_b),
-      computerized_performance_neurocognitive_assessment_col1_c:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_c),
-      computerized_performance_neurocognitive_assessment_col1_d:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_d),
-      computerized_performance_neurocognitive_assessment_col1_e:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_e),
-      computerized_performance_neurocognitive_assessment_col1_f:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_f),
-      computerized_performance_neurocognitive_assessment_col1_g:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_g),
-      computerized_performance_neurocognitive_assessment_col1_h:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_h),
-      computerized_performance_neurocognitive_assessment_col1_i:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_i),
-      computerized_performance_neurocognitive_assessment_col1_j:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_j),
-      computerized_performance_neurocognitive_assessment_col1_k:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_k),
-      computerized_performance_neurocognitive_assessment_col1_l:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_l),
-      computerized_performance_neurocognitive_assessment_col1_m:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_m),
-      computerized_performance_neurocognitive_assessment_col1_n:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_n),
-      computerized_performance_neurocognitive_assessment_col1_o:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_o),
-      computerized_performance_neurocognitive_assessment_col1_p:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_p),
-      computerized_performance_neurocognitive_assessment_col2_a:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_a),
-      computerized_performance_neurocognitive_assessment_col2_b:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_b),
-      computerized_performance_neurocognitive_assessment_col2_c:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_c),
-      computerized_performance_neurocognitive_assessment_col2_d:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_d),
-      computerized_performance_neurocognitive_assessment_col2_e:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_e),
-      computerized_performance_neurocognitive_assessment_col2_f:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_f),
-      computerized_performance_neurocognitive_assessment_col2_g:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_g),
-      computerized_performance_neurocognitive_assessment_col2_h:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_h),
-      computerized_performance_neurocognitive_assessment_col2_i:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_i),
-      computerized_performance_neurocognitive_assessment_col2_j:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_j),
-      computerized_performance_neurocognitive_assessment_col2_k:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_k),
-      computerized_performance_neurocognitive_assessment_col2_l:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_l),
-      computerized_performance_neurocognitive_assessment_col2_m:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_m),
-      computerized_performance_neurocognitive_assessment_col2_n:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_n),
-      computerized_performance_neurocognitive_assessment_col2_o:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_o),
-      computerized_performance_neurocognitive_assessment_col2_p:
-        String(patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_p),
+      computerized_performance_neurocognitive_assessment_a: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_a
+      ),
+      computerized_performance_neurocognitive_assessment_col1_a: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_a
+      ),
+      computerized_performance_neurocognitive_assessment_col1_b: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_b
+      ),
+      computerized_performance_neurocognitive_assessment_col1_c: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_c
+      ),
+      computerized_performance_neurocognitive_assessment_col1_d: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_d
+      ),
+      computerized_performance_neurocognitive_assessment_col1_e: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_e
+      ),
+      computerized_performance_neurocognitive_assessment_col1_f: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_f
+      ),
+      computerized_performance_neurocognitive_assessment_col1_g: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_g
+      ),
+      computerized_performance_neurocognitive_assessment_col1_h: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_h
+      ),
+      computerized_performance_neurocognitive_assessment_col1_i: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_i
+      ),
+      computerized_performance_neurocognitive_assessment_col1_j: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_j
+      ),
+      computerized_performance_neurocognitive_assessment_col1_k: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_k
+      ),
+      computerized_performance_neurocognitive_assessment_col1_l: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_l
+      ),
+      computerized_performance_neurocognitive_assessment_col1_m: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_m
+      ),
+      computerized_performance_neurocognitive_assessment_col1_n: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_n
+      ),
+      computerized_performance_neurocognitive_assessment_col1_o: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_o
+      ),
+      computerized_performance_neurocognitive_assessment_col1_p: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_p
+      ),
+      computerized_performance_neurocognitive_assessment_col2_a: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_a
+      ),
+      computerized_performance_neurocognitive_assessment_col2_b: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_b
+      ),
+      computerized_performance_neurocognitive_assessment_col2_c: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_c
+      ),
+      computerized_performance_neurocognitive_assessment_col2_d: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_d
+      ),
+      computerized_performance_neurocognitive_assessment_col2_e: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_e
+      ),
+      computerized_performance_neurocognitive_assessment_col2_f: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_f
+      ),
+      computerized_performance_neurocognitive_assessment_col2_g: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_g
+      ),
+      computerized_performance_neurocognitive_assessment_col2_h: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_h
+      ),
+      computerized_performance_neurocognitive_assessment_col2_i: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_i
+      ),
+      computerized_performance_neurocognitive_assessment_col2_j: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_j
+      ),
+      computerized_performance_neurocognitive_assessment_col2_k: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_k
+      ),
+      computerized_performance_neurocognitive_assessment_col2_l: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_l
+      ),
+      computerized_performance_neurocognitive_assessment_col2_m: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_m
+      ),
+      computerized_performance_neurocognitive_assessment_col2_n: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_n
+      ),
+      computerized_performance_neurocognitive_assessment_col2_o: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_o
+      ),
+      computerized_performance_neurocognitive_assessment_col2_p: String(
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_p
+      ),
       computerized_performance_neurocognitive_assessment_col3_a:
         patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col3_a,
       computerized_performance_neurocognitive_assessment_col3_b:
@@ -260,7 +292,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  });
 
   return (
     <>
@@ -279,7 +311,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                 <input
                   className=""
                   type="checkbox"
-                  id={item}
+                  id="computerized_performance_neurocognitive_assessment_a"
                   name="computerized_performance_neurocognitive_assessment_a"
                   checked={
                     patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_a
@@ -308,10 +340,10 @@ function ComputerizedNeurocognitiveAssessment(props) {
                       <th className="m-0 customPadding domainScoreWidth">
                         Domain Scores
                       </th>
+                      <th className="m-0 customPadding tdWidth">IQ</th>
                       <th className="m-0 customPadding tdWidth">
-                        IQ
+                        Better Than Percentile
                       </th>
-                      <th className="m-0 customPadding tdWidth">Better Than Percentile</th>
                       <th className="m-0 customPadding tdWidth">
                         Functional Range
                       </th>
@@ -328,9 +360,8 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
-                          id={item}
-                          name="computerized_performance_neurocognitive_assessment_col1_a"
+                          id="computerized_performance_neurocognitive_assessment_a"
+                          name="computerized_performance_neurocognitive_assessment_a"
                           onChange={handleFieldChange}
                           value={
                             patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_a
@@ -343,8 +374,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col2_a"
                           name="computerized_performance_neurocognitive_assessment_col2_a"
                           onChange={handleFieldChange}
                           value={
@@ -356,7 +386,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         <select
                           className="customSelect m-0 p-0"
                           required
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col3_a"
                           name="computerized_performance_neurocognitive_assessment_col3_a"
                           onChange={handleFieldChange}
                           value={
@@ -385,7 +415,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col1_b"
                           name="computerized_performance_neurocognitive_assessment_col1_b"
                           onChange={handleFieldChange}
                           value={
@@ -399,7 +429,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col2_b"
                           name="computerized_performance_neurocognitive_assessment_col2_b"
                           onChange={handleFieldChange}
                           value={
@@ -411,7 +441,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         <select
                           className="customSelect m-0 p-0"
                           required
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col3_b"
                           name="computerized_performance_neurocognitive_assessment_col3_b"
                           onChange={handleFieldChange}
                           value={
@@ -440,7 +470,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col1_c"
                           name="computerized_performance_neurocognitive_assessment_col1_c"
                           onChange={handleFieldChange}
                           value={
@@ -454,7 +484,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col2_c"
                           name="computerized_performance_neurocognitive_assessment_col2_c"
                           onChange={handleFieldChange}
                           value={
@@ -466,7 +496,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         <select
                           className="customSelect m-0 p-0"
                           required
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col3_c"
                           name="computerized_performance_neurocognitive_assessment_col3_c"
                           onChange={handleFieldChange}
                           value={
@@ -495,7 +525,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col1_d"
                           name="computerized_performance_neurocognitive_assessment_col1_d"
                           onChange={handleFieldChange}
                           value={
@@ -509,7 +539,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col2_d"
                           name="computerized_performance_neurocognitive_assessment_col2_d"
                           onChange={handleFieldChange}
                           value={
@@ -521,7 +551,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         <select
                           className="customSelect m-0 p-0"
                           required
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col3_d"
                           name="computerized_performance_neurocognitive_assessment_col3_d"
                           onChange={handleFieldChange}
                           value={
@@ -550,7 +580,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col1_e"
                           name="computerized_performance_neurocognitive_assessment_col1_e"
                           onChange={handleFieldChange}
                           value={
@@ -564,7 +594,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col2_e"
                           name="computerized_performance_neurocognitive_assessment_col2_e"
                           onChange={handleFieldChange}
                           value={
@@ -576,7 +606,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         <select
                           className="customSelect m-0 p-0"
                           required
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col3_e"
                           name="computerized_performance_neurocognitive_assessment_col3_e"
                           onChange={handleFieldChange}
                           value={
@@ -605,7 +635,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col1_f"
                           name="computerized_performance_neurocognitive_assessment_col1_f"
                           onChange={handleFieldChange}
                           value={
@@ -619,7 +649,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col2_f"
                           name="computerized_performance_neurocognitive_assessment_col2_f"
                           onChange={handleFieldChange}
                           value={
@@ -631,7 +661,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         <select
                           className="customSelect m-0 p-0"
                           required
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col3_f"
                           name="computerized_performance_neurocognitive_assessment_col3_f"
                           onChange={handleFieldChange}
                           value={
@@ -660,7 +690,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col1_g"
                           name="computerized_performance_neurocognitive_assessment_col1_g"
                           onChange={handleFieldChange}
                           value={
@@ -674,7 +704,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col2_g"
                           name="computerized_performance_neurocognitive_assessment_col2_g"
                           onChange={handleFieldChange}
                           value={
@@ -686,7 +716,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         <select
                           className="customSelect m-0 p-0"
                           required
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col3_g"
                           name="computerized_performance_neurocognitive_assessment_col3_g"
                           onChange={handleFieldChange}
                           value={
@@ -715,7 +745,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col1_h"
                           name="computerized_performance_neurocognitive_assessment_col1_h"
                           onChange={handleFieldChange}
                           value={
@@ -729,7 +759,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col2_h"
                           name="computerized_performance_neurocognitive_assessment_col2_h"
                           onChange={handleFieldChange}
                           value={
@@ -741,7 +771,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         <select
                           className="customSelect m-0 p-0"
                           required
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col3_h"
                           name="computerized_performance_neurocognitive_assessment_col3_h"
                           onChange={handleFieldChange}
                           value={
@@ -770,7 +800,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col1_i"
                           name="computerized_performance_neurocognitive_assessment_col1_i"
                           onChange={handleFieldChange}
                           value={
@@ -784,7 +814,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col2_i"
                           name="computerized_performance_neurocognitive_assessment_col2_i"
                           onChange={handleFieldChange}
                           value={
@@ -796,7 +826,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         <select
                           className="customSelect m-0 p-0"
                           required
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col3_i"
                           name="computerized_performance_neurocognitive_assessment_col3_i"
                           onChange={handleFieldChange}
                           value={
@@ -825,7 +855,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col1_j"
                           name="computerized_performance_neurocognitive_assessment_col1_j"
                           onChange={handleFieldChange}
                           value={
@@ -839,7 +869,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col2_j"
                           name="computerized_performance_neurocognitive_assessment_col2_j"
                           onChange={handleFieldChange}
                           value={
@@ -851,7 +881,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         <select
                           className="customSelect m-0 p-0"
                           required
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col3_j"
                           name="computerized_performance_neurocognitive_assessment_col3_j"
                           onChange={handleFieldChange}
                           value={
@@ -880,7 +910,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col1_k"
                           name="computerized_performance_neurocognitive_assessment_col1_k"
                           onChange={handleFieldChange}
                           value={
@@ -894,7 +924,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col2_k"
                           name="computerized_performance_neurocognitive_assessment_col2_k"
                           onChange={handleFieldChange}
                           value={
@@ -906,7 +936,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         <select
                           className="customSelect m-0 p-0"
                           required
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col3_k"
                           name="computerized_performance_neurocognitive_assessment_col3_k"
                           onChange={handleFieldChange}
                           value={
@@ -935,7 +965,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col1_l"
                           name="computerized_performance_neurocognitive_assessment_col1_l"
                           onChange={handleFieldChange}
                           value={
@@ -949,7 +979,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col2_l"
                           name="computerized_performance_neurocognitive_assessment_col2_l"
                           onChange={handleFieldChange}
                           value={
@@ -961,7 +991,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         <select
                           className="customSelect m-0 p-0"
                           required
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col3_l"
                           name="computerized_performance_neurocognitive_assessment_col3_l"
                           onChange={handleFieldChange}
                           value={
@@ -990,7 +1020,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col1_m"
                           name="computerized_performance_neurocognitive_assessment_col1_m"
                           onChange={handleFieldChange}
                           value={
@@ -1004,7 +1034,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col2_m"
                           name="computerized_performance_neurocognitive_assessment_col2_m"
                           onChange={handleFieldChange}
                           value={
@@ -1016,7 +1046,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         <select
                           className="customSelect m-0 p-0"
                           required
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col3_m"
                           name="computerized_performance_neurocognitive_assessment_col3_m"
                           onChange={handleFieldChange}
                           value={
@@ -1045,7 +1075,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col1_n"
                           name="computerized_performance_neurocognitive_assessment_col1_n"
                           onChange={handleFieldChange}
                           value={
@@ -1059,7 +1089,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col2_n"
                           name="computerized_performance_neurocognitive_assessment_col2_n"
                           onChange={handleFieldChange}
                           value={
@@ -1071,7 +1101,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         <select
                           className="customSelect m-0 p-0"
                           required
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col3_n"
                           name="computerized_performance_neurocognitive_assessment_col3_n"
                           onChange={handleFieldChange}
                           value={
@@ -1100,7 +1130,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col1_o"
                           name="computerized_performance_neurocognitive_assessment_col1_o"
                           onChange={handleFieldChange}
                           value={
@@ -1114,7 +1144,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col2_o"
                           name="computerized_performance_neurocognitive_assessment_col2_o"
                           onChange={handleFieldChange}
                           value={
@@ -1126,7 +1156,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         <select
                           className="customSelect m-0 p-0"
                           required
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col3_o"
                           name="computerized_performance_neurocognitive_assessment_col3_o"
                           onChange={handleFieldChange}
                           value={
@@ -1155,7 +1185,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col1_p"
                           name="computerized_performance_neurocognitive_assessment_col1_p"
                           onChange={handleFieldChange}
                           value={
@@ -1169,7 +1199,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col2_p"
                           name="computerized_performance_neurocognitive_assessment_col2_p"
                           onChange={handleFieldChange}
                           value={
@@ -1181,7 +1211,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         <select
                           className="customSelect m-0 p-0"
                           required
-                          id={item}
+                          id="computerized_performance_neurocognitive_assessment_col3_p"
                           name="computerized_performance_neurocognitive_assessment_col3_p"
                           onChange={handleFieldChange}
                           value={

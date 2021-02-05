@@ -90,7 +90,7 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>

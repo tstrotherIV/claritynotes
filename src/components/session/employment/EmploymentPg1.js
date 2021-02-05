@@ -89,7 +89,7 @@ function EmploymentPg1(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>

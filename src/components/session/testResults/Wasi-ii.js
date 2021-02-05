@@ -83,7 +83,7 @@ function WasiII(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  });
 
   return (
     <>
@@ -128,7 +128,6 @@ function WasiII(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wasiii_pg1_col1_a"
                           name="wasiii_pg1_col1_a"
                           onChange={handleFieldChange}
@@ -141,7 +140,6 @@ function WasiII(props) {
                           type="number"
                           min={0}
                           max={100}
-                          type="number"
                           id="wasiii_pg1_col2_a"
                           name="wasiii_pg1_col2_a"
                           onChange={handleFieldChange}
@@ -160,7 +158,6 @@ function WasiII(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wasiii_pg1_col1_b"
                           name="wasiii_pg1_col1_b"
                           onChange={handleFieldChange}
@@ -173,7 +170,6 @@ function WasiII(props) {
                           type="number"
                           min={0}
                           max={100}
-                          type="number"
                           id="wasiii_pg1_col2_b"
                           name="wasiii_pg1_col2_b"
                           onChange={handleFieldChange}
@@ -192,7 +188,6 @@ function WasiII(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wasiii_pg1_col1_c"
                           name="wasiii_pg1_col1_c"
                           onChange={handleFieldChange}
@@ -205,7 +200,6 @@ function WasiII(props) {
                           type="number"
                           min={0}
                           max={100}
-                          type="number"
                           id="wasiii_pg1_col2_c"
                           name="wasiii_pg1_col2_c"
                           onChange={handleFieldChange}
@@ -224,7 +218,6 @@ function WasiII(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wasiii_pg1_col1_d"
                           name="wasiii_pg1_col1_d"
                           onChange={handleFieldChange}
@@ -237,7 +230,6 @@ function WasiII(props) {
                           type="number"
                           min={0}
                           max={100}
-                          type="number"
                           id="wasiii_pg1_col2_d"
                           name="wasiii_pg1_col2_d"
                           onChange={handleFieldChange}

@@ -44,26 +44,36 @@ function AimswebPlusAchievementTestPg1(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      aimsweb_plus_achievement_test_pg1_col1_a:
-        String(aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col1_a),
-      aimsweb_plus_achievement_test_pg1_col1_b:
-        String(aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col1_b),
-      aimsweb_plus_achievement_test_pg1_col1_c:
-        String(aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col1_c),
-      aimsweb_plus_achievement_test_pg1_col1_d:
-        String(aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col1_d),
-      aimsweb_plus_achievement_test_pg1_col1_e:
-        String(aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col1_e),
-      aimsweb_plus_achievement_test_pg1_col2_a:
-        String(aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col2_a),
-      aimsweb_plus_achievement_test_pg1_col2_b:
-        String(aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col2_b),
-      aimsweb_plus_achievement_test_pg1_col2_c:
-        String(aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col2_c),
-      aimsweb_plus_achievement_test_pg1_col2_d:
-        String(aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col2_d),
-      aimsweb_plus_achievement_test_pg1_col2_e:
-        String(aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col2_e),
+      aimsweb_plus_achievement_test_pg1_col1_a: String(
+        aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col1_a
+      ),
+      aimsweb_plus_achievement_test_pg1_col1_b: String(
+        aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col1_b
+      ),
+      aimsweb_plus_achievement_test_pg1_col1_c: String(
+        aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col1_c
+      ),
+      aimsweb_plus_achievement_test_pg1_col1_d: String(
+        aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col1_d
+      ),
+      aimsweb_plus_achievement_test_pg1_col1_e: String(
+        aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col1_e
+      ),
+      aimsweb_plus_achievement_test_pg1_col2_a: String(
+        aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col2_a
+      ),
+      aimsweb_plus_achievement_test_pg1_col2_b: String(
+        aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col2_b
+      ),
+      aimsweb_plus_achievement_test_pg1_col2_c: String(
+        aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col2_c
+      ),
+      aimsweb_plus_achievement_test_pg1_col2_d: String(
+        aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col2_d
+      ),
+      aimsweb_plus_achievement_test_pg1_col2_e: String(
+        aimswebPlusAchievementTestPg1.aimsweb_plus_achievement_test_pg1_col2_e
+      ),
     };
 
     DataManager.update("patients", editedPatient);
@@ -102,7 +112,7 @@ function AimswebPlusAchievementTestPg1(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>
@@ -159,7 +169,6 @@ function AimswebPlusAchievementTestPg1(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="aimsweb_plus_achievement_test_pg1_col1_a"
                           name="aimsweb_plus_achievement_test_pg1_col1_a"
                           onChange={handleFieldChange}
@@ -174,7 +183,6 @@ function AimswebPlusAchievementTestPg1(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="aimsweb_plus_achievement_test_pg1_col2_a"
                           name="aimsweb_plus_achievement_test_pg1_col2_a"
                           onChange={handleFieldChange}
@@ -195,7 +203,6 @@ function AimswebPlusAchievementTestPg1(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="aimsweb_plus_achievement_test_pg1_col1_b"
                           name="aimsweb_plus_achievement_test_pg1_col1_b"
                           onChange={handleFieldChange}
@@ -210,7 +217,6 @@ function AimswebPlusAchievementTestPg1(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="aimsweb_plus_achievement_test_pg1_col2_b"
                           name="aimsweb_plus_achievement_test_pg1_col2_b"
                           onChange={handleFieldChange}
@@ -234,7 +240,6 @@ function AimswebPlusAchievementTestPg1(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="aimsweb_plus_achievement_test_pg1_col1_c"
                           name="aimsweb_plus_achievement_test_pg1_col1_c"
                           onChange={handleFieldChange}
@@ -249,7 +254,6 @@ function AimswebPlusAchievementTestPg1(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="aimsweb_plus_achievement_test_pg1_col2_c"
                           name="aimsweb_plus_achievement_test_pg1_col2_c"
                           onChange={handleFieldChange}
@@ -273,7 +277,6 @@ function AimswebPlusAchievementTestPg1(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="aimsweb_plus_achievement_test_pg1_col1_d"
                           name="aimsweb_plus_achievement_test_pg1_col1_d"
                           onChange={handleFieldChange}
@@ -288,7 +291,6 @@ function AimswebPlusAchievementTestPg1(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="aimsweb_plus_achievement_test_pg1_col2_d"
                           name="aimsweb_plus_achievement_test_pg1_col2_d"
                           onChange={handleFieldChange}
@@ -312,7 +314,6 @@ function AimswebPlusAchievementTestPg1(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="aimsweb_plus_achievement_test_pg1_col1_e"
                           name="aimsweb_plus_achievement_test_pg1_col1_e"
                           onChange={handleFieldChange}
@@ -327,7 +328,6 @@ function AimswebPlusAchievementTestPg1(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="aimsweb_plus_achievement_test_pg1_col2_e"
                           name="aimsweb_plus_achievement_test_pg1_col2_e"
                           onChange={handleFieldChange}

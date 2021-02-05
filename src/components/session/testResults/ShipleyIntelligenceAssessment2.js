@@ -46,30 +46,42 @@ function ShipleyIntelligenceAssessment2(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      shipley_intelligence_assessment_2_pg1_col1_a:
-        String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_a),
-      shipley_intelligence_assessment_2_pg1_col1_b:
-      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_b),
-      shipley_intelligence_assessment_2_pg1_col1_c:
-      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_c),
-      shipley_intelligence_assessment_2_pg1_col1_d:
-      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_d),
-      shipley_intelligence_assessment_2_pg1_col1_e:
-      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_e),
-      shipley_intelligence_assessment_2_pg1_col1_f:
-      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_f),
-      shipley_intelligence_assessment_2_pg1_col2_a:
-      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_a),
-      shipley_intelligence_assessment_2_pg1_col2_b:
-      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_b),
-      shipley_intelligence_assessment_2_pg1_col2_c:
-      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_c),
-      shipley_intelligence_assessment_2_pg1_col2_d:
-      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_d),
-      shipley_intelligence_assessment_2_pg1_col2_e:
-      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_e),
-      shipley_intelligence_assessment_2_pg1_col2_f:
-      String(shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_f),
+      shipley_intelligence_assessment_2_pg1_col1_a: String(
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_a
+      ),
+      shipley_intelligence_assessment_2_pg1_col1_b: String(
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_b
+      ),
+      shipley_intelligence_assessment_2_pg1_col1_c: String(
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_c
+      ),
+      shipley_intelligence_assessment_2_pg1_col1_d: String(
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_d
+      ),
+      shipley_intelligence_assessment_2_pg1_col1_e: String(
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_e
+      ),
+      shipley_intelligence_assessment_2_pg1_col1_f: String(
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_f
+      ),
+      shipley_intelligence_assessment_2_pg1_col2_a: String(
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_a
+      ),
+      shipley_intelligence_assessment_2_pg1_col2_b: String(
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_b
+      ),
+      shipley_intelligence_assessment_2_pg1_col2_c: String(
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_c
+      ),
+      shipley_intelligence_assessment_2_pg1_col2_d: String(
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_d
+      ),
+      shipley_intelligence_assessment_2_pg1_col2_e: String(
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_e
+      ),
+      shipley_intelligence_assessment_2_pg1_col2_f: String(
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_f
+      ),
     };
 
     DataManager.update("patients", editedPatient);
@@ -110,7 +122,7 @@ function ShipleyIntelligenceAssessment2(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>
@@ -149,7 +161,6 @@ function ShipleyIntelligenceAssessment2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="shipley_intelligence_assessment_2_pg1_col1_a"
                           name="shipley_intelligence_assessment_2_pg1_col1_a"
                           onChange={handleFieldChange}
@@ -164,7 +175,6 @@ function ShipleyIntelligenceAssessment2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="shipley_intelligence_assessment_2_pg1_col2_a"
                           name="shipley_intelligence_assessment_2_pg1_col2_a"
                           onChange={handleFieldChange}
@@ -184,7 +194,6 @@ function ShipleyIntelligenceAssessment2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="shipley_intelligence_assessment_2_pg1_col1_b"
                           name="shipley_intelligence_assessment_2_pg1_col1_b"
                           onChange={handleFieldChange}
@@ -199,7 +208,6 @@ function ShipleyIntelligenceAssessment2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="shipley_intelligence_assessment_2_pg1_col2_b"
                           name="shipley_intelligence_assessment_2_pg1_col2_b"
                           onChange={handleFieldChange}
@@ -219,7 +227,6 @@ function ShipleyIntelligenceAssessment2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="shipley_intelligence_assessment_2_pg1_col1_c"
                           name="shipley_intelligence_assessment_2_pg1_col1_c"
                           onChange={handleFieldChange}
@@ -234,7 +241,6 @@ function ShipleyIntelligenceAssessment2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="shipley_intelligence_assessment_2_pg1_col2_c"
                           name="shipley_intelligence_assessment_2_pg1_col2_c"
                           onChange={handleFieldChange}
@@ -255,7 +261,6 @@ function ShipleyIntelligenceAssessment2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="shipley_intelligence_assessment_2_pg1_col1_d"
                           name="shipley_intelligence_assessment_2_pg1_col1_d"
                           onChange={handleFieldChange}
@@ -270,7 +275,6 @@ function ShipleyIntelligenceAssessment2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="shipley_intelligence_assessment_2_pg1_col2_d"
                           name="shipley_intelligence_assessment_2_pg1_col2_d"
                           onChange={handleFieldChange}
@@ -291,7 +295,6 @@ function ShipleyIntelligenceAssessment2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="shipley_intelligence_assessment_2_pg1_col1_e"
                           name="shipley_intelligence_assessment_2_pg1_col1_e"
                           onChange={handleFieldChange}
@@ -306,7 +309,6 @@ function ShipleyIntelligenceAssessment2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="shipley_intelligence_assessment_2_pg1_col2_e"
                           name="shipley_intelligence_assessment_2_pg1_col2_e"
                           onChange={handleFieldChange}
@@ -326,7 +328,6 @@ function ShipleyIntelligenceAssessment2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="shipley_intelligence_assessment_2_pg1_col1_f"
                           name="shipley_intelligence_assessment_2_pg1_col1_f"
                           onChange={handleFieldChange}
@@ -341,7 +342,6 @@ function ShipleyIntelligenceAssessment2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="shipley_intelligence_assessment_2_pg1_col2_f"
                           name="shipley_intelligence_assessment_2_pg1_col2_f"
                           onChange={handleFieldChange}

@@ -96,7 +96,7 @@ function MaterialResourcesPg1(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>

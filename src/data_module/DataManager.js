@@ -1,5 +1,3 @@
-import { data } from "jquery";
-
 const patient_id = "7647e21f-fce3-4624-82ae-0063c5beca3b";
 
 const remoteURL =

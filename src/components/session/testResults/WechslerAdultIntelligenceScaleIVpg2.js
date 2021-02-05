@@ -49,36 +49,51 @@ function WechslerAdultIntelligenceScaleIVpg2(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      wechsler_adult_intelligence_scale_IV_pg2_col1_a:
-        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col1_a),
-      wechsler_adult_intelligence_scale_IV_pg2_col1_b:
-        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col1_b),
-      wechsler_adult_intelligence_scale_IV_pg2_col1_c:
-        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col1_c),
-      wechsler_adult_intelligence_scale_IV_pg2_col2_a:
-        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col2_a),
-      wechsler_adult_intelligence_scale_IV_pg2_col2_b:
-        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col2_b),
-      wechsler_adult_intelligence_scale_IV_pg2_col2_c:
-        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col2_c),
-      wechsler_adult_intelligence_scale_IV_pg2_col3_a:
-        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col3_a),
-      wechsler_adult_intelligence_scale_IV_pg2_col3_b:
-        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col3_b),
-      wechsler_adult_intelligence_scale_IV_pg2_col3_c:
-        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col3_c),
-      wechsler_adult_intelligence_scale_IV_pg2_col4_a:
-        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col4_a),
-      wechsler_adult_intelligence_scale_IV_pg2_col4_b:
-        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col4_b),
-      wechsler_adult_intelligence_scale_IV_pg2_col4_c:
-        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col4_c),
-      wechsler_adult_intelligence_scale_IV_pg2_col5_a:
-        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col5_a),
-      wechsler_adult_intelligence_scale_IV_pg2_col5_b:
-        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col5_b),
-      wechsler_adult_intelligence_scale_IV_pg2_col5_c:
-        String(wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col5_c),
+      wechsler_adult_intelligence_scale_IV_pg2_col1_a: String(
+        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col1_a
+      ),
+      wechsler_adult_intelligence_scale_IV_pg2_col1_b: String(
+        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col1_b
+      ),
+      wechsler_adult_intelligence_scale_IV_pg2_col1_c: String(
+        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col1_c
+      ),
+      wechsler_adult_intelligence_scale_IV_pg2_col2_a: String(
+        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col2_a
+      ),
+      wechsler_adult_intelligence_scale_IV_pg2_col2_b: String(
+        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col2_b
+      ),
+      wechsler_adult_intelligence_scale_IV_pg2_col2_c: String(
+        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col2_c
+      ),
+      wechsler_adult_intelligence_scale_IV_pg2_col3_a: String(
+        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col3_a
+      ),
+      wechsler_adult_intelligence_scale_IV_pg2_col3_b: String(
+        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col3_b
+      ),
+      wechsler_adult_intelligence_scale_IV_pg2_col3_c: String(
+        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col3_c
+      ),
+      wechsler_adult_intelligence_scale_IV_pg2_col4_a: String(
+        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col4_a
+      ),
+      wechsler_adult_intelligence_scale_IV_pg2_col4_b: String(
+        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col4_b
+      ),
+      wechsler_adult_intelligence_scale_IV_pg2_col4_c: String(
+        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col4_c
+      ),
+      wechsler_adult_intelligence_scale_IV_pg2_col5_a: String(
+        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col5_a
+      ),
+      wechsler_adult_intelligence_scale_IV_pg2_col5_b: String(
+        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col5_b
+      ),
+      wechsler_adult_intelligence_scale_IV_pg2_col5_c: String(
+        wechslerAdultIntelligenceScaleIV_pg2.wechsler_adult_intelligence_scale_IV_pg2_col5_c
+      ),
     };
 
     DataManager.update("patients", editedPatient);
@@ -122,7 +137,7 @@ function WechslerAdultIntelligenceScaleIVpg2(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  });
 
   return (
     <>
@@ -168,7 +183,6 @@ function WechslerAdultIntelligenceScaleIVpg2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wechsler_adult_intelligence_scale_IV_pg2_col1_a"
                           name="wechsler_adult_intelligence_scale_IV_pg2_col1_a"
                           onChange={handleFieldChange}
@@ -183,7 +197,6 @@ function WechslerAdultIntelligenceScaleIVpg2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wechsler_adult_intelligence_scale_IV_pg2_col2_a"
                           name="wechsler_adult_intelligence_scale_IV_pg2_col2_a"
                           onChange={handleFieldChange}
@@ -198,7 +211,6 @@ function WechslerAdultIntelligenceScaleIVpg2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wechsler_adult_intelligence_scale_IV_pg2_col3_a"
                           name="wechsler_adult_intelligence_scale_IV_pg2_col3_a"
                           onChange={handleFieldChange}
@@ -213,7 +225,6 @@ function WechslerAdultIntelligenceScaleIVpg2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wechsler_adult_intelligence_scale_IV_pg2_col4_a"
                           name="wechsler_adult_intelligence_scale_IV_pg2_col4_a"
                           onChange={handleFieldChange}
@@ -228,7 +239,6 @@ function WechslerAdultIntelligenceScaleIVpg2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wechsler_adult_intelligence_scale_IV_pg2_col5_a"
                           name="wechsler_adult_intelligence_scale_IV_pg2_col5_a"
                           onChange={handleFieldChange}
@@ -240,7 +250,7 @@ function WechslerAdultIntelligenceScaleIVpg2(props) {
                     </tr>
                     <tr>
                       <th scope="row" className="rowHeight">
-                      Better Than Percentile
+                        Better Than Percentile
                       </th>
                       <td className="m-0 p-0">
                         <input
@@ -328,7 +338,6 @@ function WechslerAdultIntelligenceScaleIVpg2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wechsler_adult_intelligence_scale_IV_pg2_col1_c"
                           name="wechsler_adult_intelligence_scale_IV_pg2_col1_c"
                           onChange={handleFieldChange}
@@ -343,7 +352,6 @@ function WechslerAdultIntelligenceScaleIVpg2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wechsler_adult_intelligence_scale_IV_pg2_col2_c"
                           name="wechsler_adult_intelligence_scale_IV_pg2_col2_c"
                           onChange={handleFieldChange}
@@ -358,7 +366,6 @@ function WechslerAdultIntelligenceScaleIVpg2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wechsler_adult_intelligence_scale_IV_pg2_col3_c"
                           name="wechsler_adult_intelligence_scale_IV_pg2_col3_c"
                           onChange={handleFieldChange}
@@ -373,7 +380,6 @@ function WechslerAdultIntelligenceScaleIVpg2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wechsler_adult_intelligence_scale_IV_pg2_col1_c"
                           name="wechsler_adult_intelligence_scale_IV_pg2_col4_c"
                           onChange={handleFieldChange}
@@ -388,7 +394,6 @@ function WechslerAdultIntelligenceScaleIVpg2(props) {
                           type="number"
                           min={0}
                           max={10}
-                          type="number"
                           id="wechsler_adult_intelligence_scale_IV_pg2_col5_c"
                           name="wechsler_adult_intelligence_scale_IV_pg2_col5_c"
                           onChange={handleFieldChange}

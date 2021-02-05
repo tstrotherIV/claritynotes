@@ -92,7 +92,7 @@ function InterviewPg5(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>

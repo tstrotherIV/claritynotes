@@ -65,7 +65,7 @@ function FamilyPg6(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>

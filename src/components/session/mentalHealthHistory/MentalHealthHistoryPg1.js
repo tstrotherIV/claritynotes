@@ -74,7 +74,7 @@ function MentalHealthHistoryPg1(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>
