@@ -217,7 +217,7 @@ function PsychologicalEvaluation_siblings(props) {
                 </div>
               </div>
             ) : (
-              console.log("")
+              ""
             )}
           </div>
           {!checkbox.patient_has_children ? (
@@ -232,7 +232,7 @@ function PsychologicalEvaluation_siblings(props) {
               ))}
             </CardDeck>
           ) : (
-            console.log("")
+            ""
           )}
         </div>
         <div id="footer">

@@ -257,7 +257,7 @@ function PsychologicalEvaluationSpouse(props) {
                 </div>
               </div>
             ) : (
-              console.log("")
+              ""
             )}
           </div>
           {relationshipStatus.patient_married !== "Single" ? (
@@ -272,7 +272,7 @@ function PsychologicalEvaluationSpouse(props) {
               ))}
             </CardDeck>
           ) : (
-            console.log("")
+            ""
           )}
         </div>
         <div id="footer">

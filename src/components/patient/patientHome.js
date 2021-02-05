@@ -28,18 +28,17 @@ function PatientHomePage(props) {
 
   const getData = () => {
     DataManager.getAllPatients().then((patientInfo) => {
-      // patientInfo = patientInfo.Items
-      // console.log(patientInfo)
-      // const results = patientInfo.filter(
-      //   (person) =>
-      //     person.patient_first_name
-      //       .toLowerCase()
-      //       .includes(searchTerm.toLowerCase()) ||
-      //     person.patient_last_name
-      //       .toLowerCase()
-      //       .includes(searchTerm.toLowerCase())
-      // );
-      setSearchResults(patientInfo);
+      patientInfo = patientInfo.Items
+      const results = patientInfo.filter(
+        (person) =>
+          person.patient_first_name
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase()) ||
+          person.patient_last_name
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase())
+      );
+      setSearchResults(results);
     });
   };
 
@@ -96,7 +95,7 @@ function PatientHomePage(props) {
                             value={searchTerm}
                             onChange={handleSearchChange}
                           />
-                          {/* {searchResults.map((item) => (
+                          {searchResults.map((item) => (
                             <DropdownItem
                               id={item.id}
                               key={item.id}
@@ -107,7 +106,7 @@ function PatientHomePage(props) {
                               {item.patient_last_name},{" "}
                               {item.patient_first_name}
                             </DropdownItem>
-                          ))} */}
+                          ))}
                         </div>
                       </DropdownMenu>
                     </Dropdown>

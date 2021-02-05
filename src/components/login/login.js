@@ -21,16 +21,21 @@ function Login(props) {
       email: credentials.email,
       password: credentials.password,
     };
-    DataManager.loginUser(loginData).then((data) => {
-      console.log(data);
-      if (!data.id) {
-        alert("user does not exist");
-      } else {
-        sessionStorage.setItem("session_id", data.id);
-        sessionStorage.setItem("logged_in_user", data.user_id);
-        props.history.push("/patient");
-      }
-    });
+    if (loginData.email === "") {
+      alert("Please Enter an Email Address");
+    } else if (loginData.password === "") {
+      alert("Please Enter a Password");
+    } else {
+      DataManager.loginUser(loginData).then((data) => {
+        if (!data.id) {
+          alert("Email or Password is not correct. Please Try again.");
+        } else {
+          sessionStorage.setItem("session_id", data.id);
+          sessionStorage.setItem("logged_in_user", data.user_id);
+          props.history.push("/patient");
+        }
+      });
+    }
   };
 
   // const createUser = () => {

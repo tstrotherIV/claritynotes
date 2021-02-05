@@ -29,7 +29,6 @@ const NavBar = (props) => {
 
   return (
     <div>
-      {/* {props.hasUser ? ( */}
       <Navbar color="light" light expand="false" color="white">
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -135,7 +134,6 @@ const NavBar = (props) => {
           </Nav>
         </Collapse>
       </Navbar>
-      {/* ) : null} */}
     </div>
   );
 };
