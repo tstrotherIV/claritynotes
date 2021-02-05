@@ -18,7 +18,7 @@ import "./psychologicalEvaluationFamily.scss";
 import DataManager from "../../../data_module/DataManager";
 import ChildrenCard from "../../children/child";
 
-function PsychologicalEvaluation_siblings(props) {
+function PsychologicalEvaluation_children(props) {
   const [newChild, setNewChild] = useState("");
   const [patientChildren, setPatientChildren] = useState([]);
   const [checkbox, setCheckbox] = useState(false);
@@ -220,20 +220,23 @@ function PsychologicalEvaluation_siblings(props) {
               ""
             )}
           </div>
-          {!checkbox.patient_has_children ? (
-            <CardDeck className="childContainer mt-3">
-              {patientChildren.map((child) => (
-                <ChildrenCard
-                  key={child.id}
-                  child={child}
-                  getChildren={getChildren}
-                  {...props}
-                />
-              ))}
-            </CardDeck>
-          ) : (
-            ""
-          )}
+          <section>
+            {!checkbox.patient_has_children ? (
+              <CardDeck className="childContainer mt-3">
+                {patientChildren.map((child) => (
+                  <ChildrenCard
+                    key={child.id}
+                    id={child.id}
+                    child={child}
+                    getChildren={getChildren}
+                    {...props}
+                  />
+                ))}
+              </CardDeck>
+            ) : (
+              ""
+            )}
+          </section>
         </div>
         <div id="footer">
           <ButtonNavigation
@@ -250,4 +253,4 @@ function PsychologicalEvaluation_siblings(props) {
   );
 }
 
-export default PsychologicalEvaluation_siblings;
+export default PsychologicalEvaluation_children;

@@ -9,7 +9,6 @@ import TextareaAutosize from "react-textarea-autosize";
 
 function PsychologicalEvaluationReferral(props) {
   const [patient, setPatient] = useState("");
-  const [patientChildren, setPatientChildren] = useState([]);
   const [lastItem, setLastItem] = useState([]);
   const [startItem, setStartItem] = useState([]);
   const [paragraphEnableEdit, setParagraphEnableEdit] = useState(false);
@@ -52,15 +51,15 @@ function PsychologicalEvaluationReferral(props) {
         protect, provide for, and care for {String(patientProNoun())} children{" "}
         {String(
           startItem.map((child) => {
-            let childAge = new AgeFromDateString(child.child_dob).age;
-            return ` ${child.child_first_name} (${childAge}), `;
+            let childAge = new AgeFromDateString(child.dob).age;
+            return ` ${child.first_name} (${childAge}), `;
           })
         )}{" "}
         and{" "}
         {String(
           lastItem.map((child) => {
-            let childAge = new AgeFromDateString(child.child_dob).age;
-            return ` ${child.child_first_name} (${childAge}) `;
+            let childAge = new AgeFromDateString(child.dob).age;
+            return ` ${child.first_name} (${childAge}) `;
           })
         )}
         and maintain their placement in {String(patientProNoun())} home.
@@ -81,7 +80,6 @@ function PsychologicalEvaluationReferral(props) {
 
   const getChildren = () => {
     DataManager.getChildren(props.patientId).then((children) => {
-      setPatientChildren(children);
       setStartItem(children.slice(0, -1));
       setLastItem(children.slice(-1));
     });
@@ -106,7 +104,7 @@ function PsychologicalEvaluationReferral(props) {
 
   useEffect(() => {
     getData();
-    // getChildren();
+    getChildren();
   }, []);
 
   return (

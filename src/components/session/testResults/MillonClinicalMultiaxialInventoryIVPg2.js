@@ -145,11 +145,6 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
-    setItem(fieldID);
-  };
-
   //CRUD Function Start
 
   const updatePatient = () => {

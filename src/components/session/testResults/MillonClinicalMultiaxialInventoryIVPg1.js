@@ -161,11 +161,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
-    setItem(fieldID);
-  };
-
   //CRUD Function Start
 
   const updatePatient = () => {
@@ -234,198 +229,294 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
         patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_ee,
       millon_clinical_multiaxial_inventory_iv_pg1_ff:
         patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_ff,
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_a:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_a),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_b:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_b),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_c:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_c),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_d:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_d),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_e:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_e),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_f:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_f),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_g:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_g),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_h:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_h),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_i:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_i),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_j:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_j),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_k:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_k),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_l:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_l),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_m:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_m),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_n:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_n),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_o:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_o),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_p:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_p),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_q:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_q),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_r:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_r),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_s:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_s),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_t:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_t),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_u:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_u),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_v:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_v),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_w:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_w),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_x:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_x),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_y:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_y),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_z:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_z),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_aa:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_aa),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_bb:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_bb),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_cc:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_cc),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_dd:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_dd),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_ee:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_ee),
-      millon_clinical_multiaxial_inventory_iv_pg1_Raw_ff:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_ff),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_a:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_a),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_b:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_b),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_c:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_c),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_d:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_d),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_e:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_e),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_f:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_f),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_g:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_g),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_h:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_h),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_i:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_i),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_j:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_j),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_k:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_k),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_l:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_l),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_m:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_m),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_n:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_n),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_o:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_o),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_p:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_p),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_q:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_q),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_r:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_r),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_s:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_s),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_t:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_t),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_u:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_u),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_v:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_v),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_w:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_w),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_x:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_x),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_y:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_y),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_z:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_z),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_aa:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_aa),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_bb:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_bb),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_cc:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_cc),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_dd:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_dd),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_ee:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_ee),
-      millon_clinical_multiaxial_inventory_iv_pg1_PR_ff:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_ff),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_a:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_a),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_b:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_b),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_c:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_c),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_d:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_d),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_e:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_e),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_f:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_f),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_g:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_g),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_h:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_h),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_i:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_i),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_j:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_j),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_k:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_k),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_l:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_l),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_m:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_m),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_n:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_n),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_o:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_o),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_p:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_p),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_q:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_q),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_r:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_r),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_s:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_s),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_t:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_t),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_u:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_u),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_v:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_v),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_w:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_w),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_x:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_x),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_y:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_y),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_z:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_z),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_aa:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_aa),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_bb:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_bb),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_cc:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_cc),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_dd:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_dd),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_ee:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_ee),
-      millon_clinical_multiaxial_inventory_iv_pg1_BR_ff:
-        String(patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_ff),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_a: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_a
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_b: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_b
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_c: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_c
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_d: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_d
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_e: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_e
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_f: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_f
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_g: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_g
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_h: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_h
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_i: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_i
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_j: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_j
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_k: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_k
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_l: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_l
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_m: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_m
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_n: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_n
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_o: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_o
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_p: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_p
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_q: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_q
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_r: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_r
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_s: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_s
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_t: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_t
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_u: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_u
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_v: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_v
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_w: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_w
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_x: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_x
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_y: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_y
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_z: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_z
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_aa: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_aa
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_bb: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_bb
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_cc: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_cc
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_dd: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_dd
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_ee: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_ee
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_Raw_ff: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_ff
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_a: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_a
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_b: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_b
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_c: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_c
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_d: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_d
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_e: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_e
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_f: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_f
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_g: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_g
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_h: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_h
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_i: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_i
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_j: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_j
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_k: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_k
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_l: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_l
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_m: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_m
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_n: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_n
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_o: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_o
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_p: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_p
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_q: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_q
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_r: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_r
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_s: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_s
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_t: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_t
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_u: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_u
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_v: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_v
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_w: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_w
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_x: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_x
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_y: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_y
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_z: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_z
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_aa: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_aa
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_bb: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_bb
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_cc: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_cc
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_dd: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_dd
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_ee: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_ee
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_PR_ff: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_ff
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_a: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_a
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_b: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_b
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_c: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_c
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_d: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_d
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_e: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_e
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_f: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_f
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_g: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_g
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_h: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_h
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_i: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_i
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_j: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_j
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_k: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_k
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_l: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_l
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_m: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_m
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_n: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_n
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_o: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_o
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_p: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_p
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_q: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_q
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_r: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_r
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_s: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_s
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_t: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_t
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_u: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_u
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_v: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_v
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_w: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_w
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_x: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_x
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_y: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_y
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_z: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_z
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_aa: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_aa
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_bb: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_bb
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_cc: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_cc
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_dd: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_dd
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_ee: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_ee
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_ff: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_ff
+      ),
     };
 
     DataManager.update("patients", editedPatient).then(() => {});
@@ -582,7 +673,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  });
 
   return (
     <>

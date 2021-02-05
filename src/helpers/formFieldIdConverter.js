@@ -10,7 +10,7 @@ export default {
       }
       return y
     }).filter(x => {
-      return x != "_"
+      return x !== "_"
       }
     )
     const convertedQuestionID = lton(questionId.join('').toUpperCase())

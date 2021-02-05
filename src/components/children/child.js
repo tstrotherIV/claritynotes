@@ -8,6 +8,7 @@ import {
   DropdownMenu,
   CardText,
   Button,
+  Input
 } from "reactstrap";
 import "./childCard.scss";
 import DataManager from "../../data_module/DataManager";
@@ -51,94 +52,86 @@ function ChildrenCard(props) {
 
   return (
     <>
-      <section>
-        <div className="">
-          <div>
-            <Card className="childCard">
-              <CardBody>
-                <CardText>
-                  <input
-                    className="fieldData"
-                    type="text"
-                    id="first_name"
-                    name="first_name"
-                    onChange={handleFieldChange}
-                    value={child.first_name}
-                  />
-                  <input
-                    className="fieldData"
-                    type="text"
-                    id="last_name"
-                    name="last_name"
-                    onChange={handleFieldChange}
-                    value={child.last_name}
-                  />
-                  <Dropdown
-                    isOpen={dropdownOpen2}
-                    toggle={toggle2}
-                    className=""
+      <div>
+        <Card className="childCard">
+          <CardBody>
+            <CardText>
+              <Input
+                className="fieldData"
+                type="text"
+                id="first_name"
+                name="first_name"
+                onChange={handleFieldChange}
+                value={child.first_name}
+              />
+              <Input
+                className="fieldData"
+                type="text"
+                id="last_name"
+                name="last_name"
+                onChange={handleFieldChange}
+                value={child.last_name}
+              />
+              <Dropdown isOpen={dropdownOpen2} toggle={toggle2} className="">
+                <DropdownToggle
+                  color="light"
+                  className="dropdown text-center"
+                  caret
+                  value={child.gender}
+                >
+                  {child.gender}
+                </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem
+                    onClick={handleFieldChange}
+                    name="gender"
+                    value="None Selected"
                   >
-                    <DropdownToggle
-                      color="light"
-                      className="dropdown text-center"
-                      caret
-                      value={child.gender}
-                    >
-                      {child.gender}
-                    </DropdownToggle>
-                    <DropdownMenu>
-                      <DropdownItem
-                        onClick={handleFieldChange}
-                        name="gender"
-                        value="None Selected"
-                      >
-                        None Selected
-                      </DropdownItem>
-                      <DropdownItem
-                        onClick={handleFieldChange}
-                        name="gender"
-                        value="Female"
-                      >
-                        Female
-                      </DropdownItem>
-                      <DropdownItem
-                        onClick={handleFieldChange}
-                        name="gender"
-                        value="Male"
-                      >
-                        Male
-                      </DropdownItem>
-                      <DropdownItem
-                        onClick={handleFieldChange}
-                        name="gender"
-                        value="Other"
-                      >
-                        Other
-                      </DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
+                    None Selected
+                  </DropdownItem>
+                  <DropdownItem
+                    onClick={handleFieldChange}
+                    name="gender"
+                    value="Female"
+                  >
+                    Female
+                  </DropdownItem>
+                  <DropdownItem
+                    onClick={handleFieldChange}
+                    name="gender"
+                    value="Male"
+                  >
+                    Male
+                  </DropdownItem>
+                  <DropdownItem
+                    onClick={handleFieldChange}
+                    name="gender"
+                    value="Other"
+                  >
+                    Other
+                  </DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
 
-                  <input
-                    className="fieldData text-center col-8"
-                    type="date"
-                    id="dob"
-                    name="dob"
-                    onChange={handleFieldChange}
-                    value={child.dob}
-                    placeholder="Date of Birth"
-                  />
-                </CardText>
-                <Button className="m-2" onClick={updateChild}>
-                  Save Changes
-                </Button>
-                <Button className="m-2" onClick={deleteChild}>
-                  Delete
-                </Button>
-              </CardBody>
-            </Card>
-          </div>
-        </div>
-      </section>
+              <Input
+                className="fieldData text-center col-8"
+                type="date"
+                id="dob"
+                name="dob"
+                onChange={handleFieldChange}
+                value={child.dob}
+                placeholder="Date of Birth"
+              />
+            </CardText>
+            <Button className="m-2" onClick={updateChild}>
+              Save Changes
+            </Button>
+            <Button className="m-2" onClick={deleteChild}>
+              Delete
+            </Button>
+          </CardBody>
+        </Card>
+      </div>
     </>
   );
 }

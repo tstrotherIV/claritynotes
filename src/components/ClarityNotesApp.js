@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ApplicationViews from "./ApplicationViews";
 import "./ClarityNotesApp.scss";
 import NavBar from "./shared/sideNav/sideNav";
