@@ -241,7 +241,7 @@ function PsychologicalEvaluationSiblings(props) {
                 </div>
               </div>
             ) : (
-              console.log("")
+              ""
             )}
           </div>
         </div>

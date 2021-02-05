@@ -4,17 +4,12 @@ import "./ClarityNotesApp.scss";
 import NavBar from "./shared/sideNav/sideNav";
 
 const ClarityNotes = (props) => {
-
-  const loggedUserId = 107;
+  const loggedUserId = sessionStorage.getItem(`logged_in_user`);
 
   return (
     <>
       <NavBar />
-      <ApplicationViews
-        // hasUser={hasUser}
-        // setUser={setUser}
-        userId={loggedUserId}
-      />
+      <ApplicationViews userId={loggedUserId} />
     </>
   );
 };
