@@ -65,7 +65,7 @@ function EducationPg4(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>

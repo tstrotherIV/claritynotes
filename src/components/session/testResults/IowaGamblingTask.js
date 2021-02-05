@@ -79,7 +79,7 @@ function IowaGamblingTask(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>

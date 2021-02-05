@@ -102,7 +102,7 @@ function PositiveRoleModelPg1(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  },);
 
   return (
     <>

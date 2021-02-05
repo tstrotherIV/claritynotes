@@ -75,7 +75,7 @@ function PartnerRelationshipPg9(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>

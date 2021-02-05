@@ -76,7 +76,7 @@ function InterviewPg8(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>

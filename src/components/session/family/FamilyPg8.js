@@ -70,7 +70,7 @@ function FamilyPg8(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>

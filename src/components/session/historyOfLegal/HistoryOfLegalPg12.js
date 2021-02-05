@@ -88,7 +88,7 @@ function HistoryOfLegalPg12(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>

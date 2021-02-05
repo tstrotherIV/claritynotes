@@ -119,7 +119,7 @@ function WideRangeAchievementTest5(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>

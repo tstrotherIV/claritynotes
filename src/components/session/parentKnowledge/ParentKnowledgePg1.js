@@ -86,7 +86,7 @@ function ParentKnowledgePg1(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>

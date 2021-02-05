@@ -69,7 +69,7 @@ function Interview_Pg2(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>

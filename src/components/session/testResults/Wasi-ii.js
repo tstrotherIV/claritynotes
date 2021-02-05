@@ -83,7 +83,7 @@ function WasiII(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>

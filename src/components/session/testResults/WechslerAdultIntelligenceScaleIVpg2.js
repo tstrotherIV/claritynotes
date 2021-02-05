@@ -122,7 +122,7 @@ function WechslerAdultIntelligenceScaleIVpg2(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, );
 
   return (
     <>
