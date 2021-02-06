@@ -60,7 +60,7 @@ function RAITpg3(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   return (
     <>

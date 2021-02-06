@@ -75,7 +75,7 @@ function RorschPerformanceAssessmentSystem(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   return (
     <>

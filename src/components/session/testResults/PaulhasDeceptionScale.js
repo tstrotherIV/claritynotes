@@ -87,7 +87,7 @@ function PaulasDeceptionScale(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   return (
     <>

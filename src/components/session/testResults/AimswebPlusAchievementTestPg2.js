@@ -111,7 +111,7 @@ function AimswebPlusAchievementTestPg2(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   return (
     <>

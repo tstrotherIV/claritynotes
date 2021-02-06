@@ -92,7 +92,7 @@ function BehavioralObservationsPg5(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   return (
     <div>

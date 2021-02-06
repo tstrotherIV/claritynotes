@@ -63,7 +63,7 @@ function FamilyPg11(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   return (
     <>

@@ -66,7 +66,7 @@ function HousingPg1(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   return (
     <>

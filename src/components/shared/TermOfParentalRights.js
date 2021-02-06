@@ -29,8 +29,8 @@ const TermOfParentalRights = (props) => {
     const editedNote = {
       [name]: value,
     };
-    setPatientNotes({...patientNotes, [name]: value})
     DataManager.update_Item("patient_notes", patientNotes.id, editedNote)
+    setPatientNotes({...patientNotes, [name]: value})
   };
 
   const createResponse = (e) => {

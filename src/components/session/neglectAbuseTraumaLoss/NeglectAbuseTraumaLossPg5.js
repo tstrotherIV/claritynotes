@@ -74,7 +74,7 @@ function NeglectAbuseTraumaLossPg5(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   return (
     <>

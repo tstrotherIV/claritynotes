@@ -513,7 +513,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   return (
     <>
