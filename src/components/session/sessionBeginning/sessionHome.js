@@ -21,7 +21,7 @@ function SessionStep1(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   return (
     <>

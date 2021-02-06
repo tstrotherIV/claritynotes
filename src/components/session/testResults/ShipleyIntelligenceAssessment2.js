@@ -122,7 +122,7 @@ function ShipleyIntelligenceAssessment2(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   return (
     <>

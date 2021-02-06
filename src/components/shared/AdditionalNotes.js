@@ -70,16 +70,19 @@ const CustomToolbar = () => (
 class AdditionalNotes extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = { editorHtml: "" };
+    this.state = { editorHtml: "" };
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(html) {
     const editedGeneralNotes = {
-      // id: this.props.patientNotes.id,
       t1a: html,
     };
-    DataManager.update_Item("patient_notes", this.props.patientNotes.id, editedGeneralNotes);
+    DataManager.update_Item(
+      "patient_notes",
+      this.props.patientNotes.id,
+      editedGeneralNotes
+    );
   }
 
   render() {

@@ -112,7 +112,7 @@ function WechslerAdultIntelligenceScaleIV(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   return (
     <>

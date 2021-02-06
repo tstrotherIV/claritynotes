@@ -53,7 +53,7 @@ function PsychologicalEvaluationConsent(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   return (
     <div id="page-container">

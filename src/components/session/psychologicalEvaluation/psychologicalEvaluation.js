@@ -184,7 +184,7 @@ function PsychologicalEvaluation(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   const next = "/psychological_evaluation_family";
   const back = "/patient";

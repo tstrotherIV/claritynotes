@@ -123,7 +123,7 @@ function ProceduresAdministeredPg1(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   return (
     <>

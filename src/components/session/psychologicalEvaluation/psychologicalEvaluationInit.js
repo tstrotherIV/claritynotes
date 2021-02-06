@@ -81,7 +81,7 @@ function PsychologicalEvaluationInit(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   const next = "/sessionStep1";
   const back = "/patient";

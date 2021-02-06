@@ -75,7 +75,7 @@ function MinnesotaMultiphasicPersonalityInventory2(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   return (
     <>

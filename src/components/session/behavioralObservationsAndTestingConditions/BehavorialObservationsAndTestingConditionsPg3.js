@@ -110,7 +110,7 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   return (
     <>

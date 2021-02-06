@@ -72,7 +72,7 @@ function HistoryOfLegalPg10(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   return (
     <>

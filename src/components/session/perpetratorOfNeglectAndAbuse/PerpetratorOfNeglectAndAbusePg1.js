@@ -74,7 +74,7 @@ function PerpetratorOfNeglectAndAbusePg1(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   return (
     <>

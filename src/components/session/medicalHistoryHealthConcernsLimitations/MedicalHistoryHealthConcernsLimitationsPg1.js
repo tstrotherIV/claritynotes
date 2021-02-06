@@ -82,7 +82,7 @@ function MedicalHistoryHealthConcernsLimitationsPg1(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   return (
     <>

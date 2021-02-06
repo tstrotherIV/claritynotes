@@ -73,7 +73,7 @@ function ThematicApperceptionsTest(props) {
 
   useEffect(() => {
     getData();
-  }, );
+  }, []);
 
   return (
     <>
