@@ -98,7 +98,7 @@ function BehavioralObservationsPg5(props) {
     <div>
       <div id="page-container">
         <div id="content-wrap">
-          <Heading />
+           
           <h2 className="textWhite text-center mb-1">
             Behavioral Observations and Testing Conditions
           </h2>

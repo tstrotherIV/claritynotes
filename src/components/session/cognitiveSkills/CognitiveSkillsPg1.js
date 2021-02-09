@@ -76,7 +76,7 @@ function CognitiveSkillsPg1(props) {
   return (
     <>
       <div id="page-container">
-        <Heading />
+         
         <div id="content-wrap">
           <h2 className="textWhite text-center mb-4">COGNITIVE SKILLS</h2>
           <div className="questionsContainer text-center">

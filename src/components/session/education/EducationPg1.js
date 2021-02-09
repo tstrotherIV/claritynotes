@@ -80,7 +80,7 @@ function EducationPg1(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-          <Heading />
+           
           <h2 className="textWhite text-center mb-4 ">Education</h2>
           <div className="questionsContainerWide row d-flex flex-wrap center-text justify-items-center align-items-end">
             <Label className="textWhite col-4 text-center" for="">

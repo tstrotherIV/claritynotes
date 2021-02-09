@@ -70,7 +70,7 @@ function PerpetratorOfNeglectAndAbusePg4(props) {
   return (
     <>
       <div id="page-container">
-        <Heading />
+         
         <div id="content-wrap">
           <h2 className="textWhite text-center mb-4">
             PERPETRATOR OF NEGLECT AND ABUSE

@@ -117,7 +117,7 @@ function AimswebPlusAchievementTestPg2(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-          <Heading />
+           
           <div className="ml-5 mr-5 mt-3">
             <div className="d-flex flex-wrap text-white align-items-baseline">
               <h3 className="mb-1 col-2">Test Results</h3>

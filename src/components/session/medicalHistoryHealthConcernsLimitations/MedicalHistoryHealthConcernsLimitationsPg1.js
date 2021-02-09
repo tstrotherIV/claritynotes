@@ -88,7 +88,7 @@ function MedicalHistoryHealthConcernsLimitationsPg1(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-          <Heading />
+           
           <h2 className="textWhite text-center mb-4">
             MEDICAL HISTORY <span>&#183;</span> HEALTH CONCERNS{" "}
             <span>&#183;</span> LIMITATIONS

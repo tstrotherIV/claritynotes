@@ -108,7 +108,7 @@ function PositiveRoleModelPg1(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-          <Heading />
+           
           <h2 className="textWhite text-center mb-4">POSITIVE ROLE MODEL</h2>
           <div className="questionsContainer">
             <h4 className="textWhite centerItem">

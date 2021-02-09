@@ -72,7 +72,7 @@ function HousingPg2(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-          <Heading />
+           
           <h2 className="textWhite text-center mb-4">Housing</h2>
           <h4 className="textWhite centerItem">All or part?</h4>
           <div className="questionsContainerWide">

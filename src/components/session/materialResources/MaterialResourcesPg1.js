@@ -102,7 +102,7 @@ function MaterialResourcesPg1(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-          <Heading />
+           
           <h2 className="textWhite text-center mb-4">Material Resources</h2>
           <div className="questionsContainer">
             <div className="mb-4 d-flex flex-wrap justify-content-center mt-4">

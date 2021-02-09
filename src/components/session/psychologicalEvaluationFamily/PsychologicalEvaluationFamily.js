@@ -124,7 +124,7 @@ function PsychologicalEvaluation_family(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-          <Heading />
+           
           <div className="minWidthContainer">
             <div className="header">
               <h1 className="textWhite mt-2">

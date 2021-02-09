@@ -5,3 +5,12 @@
   color: red;
   /* background: red; */
 }
+
+.nav-container {
+  display: flex;
+}
+
+.top-header {
+  margin-left: auto;
+  margin-right: auto;
+}

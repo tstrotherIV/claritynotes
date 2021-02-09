@@ -85,7 +85,7 @@ function InterviewPg4(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-          <Heading />
+           
           <div className="header">
             <h2 className="textWhite">Interviews</h2>
           </div>

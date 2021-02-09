@@ -8,8 +8,10 @@ import {
   Nav,
   NavItem,
   NavLink,
+  Container,
 } from "reactstrap";
 import DataManager from "../../../data_module/DataManager";
+import Header from "../../shared/PsychologicalHeading";
 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,12 +31,12 @@ const NavBar = (props) => {
 
   return (
     <div>
-      <Navbar color="light" light expand="false" color="white">
+      <Navbar color="light" light expand="false" color="white" className="nav-container">
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar onClick={toggle}>
             <NavItem>
-              <NavLink href="/">Home</NavLink>
+              <NavLink href="/patient">Home</NavLink>
             </NavItem>
             {loggedUser ? (
               <>
@@ -133,6 +135,7 @@ const NavBar = (props) => {
             )}
           </Nav>
         </Collapse>
+          <Header />
       </Navbar>
     </div>
   );

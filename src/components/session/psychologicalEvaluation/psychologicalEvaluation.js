@@ -194,7 +194,6 @@ function PsychologicalEvaluation(props) {
       <div>
         <div id="page-container">
           <div id="content-wrap">
-            <Heading />
             <div className="minWidthContainer">
               <div className="header">
                 <h2 className="textWhite mt-2">
