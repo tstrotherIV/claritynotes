@@ -187,7 +187,7 @@ function PsychologicalEvaluation(props) {
   }, []);
 
   const next = "/psychological_evaluation_family";
-  const back = "/patient";
+  const back = "/sessionStep1";
 
   return (
     <>
