@@ -68,7 +68,7 @@ function HistoryOfLegalPg15(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-          <Heading />
+           
           <h2 className="textWhite text-center mb-4">
             History of Legal, Crime, and Conviction
           </h2>

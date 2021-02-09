@@ -71,7 +71,7 @@ function Interview_Pg9(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-          <Heading />
+           
           <div className="header questionsContainerWide">
             <h2 className="textWhite">Interviews</h2>
           </div>

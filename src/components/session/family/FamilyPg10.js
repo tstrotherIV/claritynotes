@@ -67,7 +67,7 @@ function FamilyPg10(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-          <Heading />
+           
           <div className="questionsContainerWide">
             <div className="header">
               <h2 className="textWhite">Family</h2>

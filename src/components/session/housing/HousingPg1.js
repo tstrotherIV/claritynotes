@@ -72,7 +72,7 @@ function HousingPg1(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-          <Heading />
+           
           <h2 className="textWhite text-center mb-4">Housing</h2>
           <div className="questionsContainer">
             <h4 className="textWhite centerItem">Do you live alone?</h4>

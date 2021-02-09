@@ -88,7 +88,7 @@ function PartnerRelationshipPg1(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-          <Heading />
+           
           <h2 className="textWhite text-center mb-4">PARTNER RELATIONSHIP</h2>
           <div className="text-center questionsContainerWide row d-flex flex-wrap justify-content-center">
             <h4 className="textWhite centerItem offset-2">

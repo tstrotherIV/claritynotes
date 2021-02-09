@@ -1,17 +1,13 @@
-import React from 'react';
+import React from "react";
+import { Container } from "reactstrap";
+import "../shared/sideNav/nav.css";
 
 const PsychologicalHeading = () => {
-    return (
-    <> 
-    <div className="jumbotron jumbotron-fluid mb-2">
-      <div className="container"> 
-        <h1 className="d-flex justify-content-center p-2 jumboResp">
-          Psychological Evaluation
-        </h1>
-      </div>
-      </div>
- </>
-    )
-}
+  return (
+    <>
+      <h1 className="top-header">Psychological Evaluation</h1>
+    </>
+  );
+};
 
 export default PsychologicalHeading;

@@ -68,7 +68,7 @@ function ParentingPg3(props) {
   return (
     <>
       <div id="page-container">
-        <Heading />
+         
         <div id="content-wrap">
           <h2 className="textWhite text-center mb-4">PARENTING</h2>
           <div className="questionsContainer text-center">

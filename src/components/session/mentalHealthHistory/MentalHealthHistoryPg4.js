@@ -87,7 +87,7 @@ function MentalHealthHistoryPg4(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-          <Heading />
+           
           <h2 className="textWhite text-center mb-4">Mental Health History</h2>
           <div className="questionsContainer text-center">
             <h4 className="textWhite centerItem">What was it about?</h4>

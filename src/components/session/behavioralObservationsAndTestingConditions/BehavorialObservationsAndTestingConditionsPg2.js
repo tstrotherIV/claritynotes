@@ -76,7 +76,7 @@ function BehavioralObservationsAndTestingConditionsPg2(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-          <Heading />
+           
           <h2 className="textWhite text-center mb-4">
             {" "}
             Behavioral Observations and Testing Conditions

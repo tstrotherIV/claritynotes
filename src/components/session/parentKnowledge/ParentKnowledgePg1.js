@@ -92,7 +92,7 @@ function ParentKnowledgePg1(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-          <Heading />
+           
           <h2 className="textWhite text-center mb-4">PARENT KNOWLEDGE</h2>
           <div className="text-center questionsContainer">
             <h4 className="textWhite centerItem">
