@@ -76,8 +76,8 @@ function PatientHomePage(props) {
                 block
                 color="light"
                 onClick={() => {
-                  // props.history.push(`/psychological_evaluationInit`);
-                  props.history.push(`/sessionStep1`);
+                  props.history.push(`/psychological_evaluationInit`);
+                  // props.history.push(`/sessionStep1`);
                 }}
               >
                 New Patient
