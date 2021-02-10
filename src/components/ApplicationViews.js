@@ -127,9 +127,8 @@ import CreateAcct from "./Auth/createAcct";
 
 const ApplicationViews = (props) => {
   let hasUser = false;
-  let userId = "bae7fe01-75ff-40e0-b8a4-ab6e6717b159";
+  let userId = sessionStorage.getItem("logged_in_user");
   let patientId = sessionStorage.getItem("patient_id");
-  // const patientId = "7647e21f-fce3-4624-82ae-0063c5beca3b";
 
 
   return (
