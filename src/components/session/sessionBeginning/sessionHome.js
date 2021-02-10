@@ -4,7 +4,6 @@ import { Button } from "reactstrap";
 import DataManager from "../../../data_module/DataManager";
 
 function SessionStep1(props) {
-
   const [patient, setPatient] = useState({
     patient_first_name: "",
     patient_middle_name: "",
@@ -14,9 +13,11 @@ function SessionStep1(props) {
   });
 
   const getData = () => {
-    DataManager.getPatient(props.patientId).then((patientInfo) => {
+    const check_for_patient = sessionStorage.getItem("patient_id");
+
+    DataManager.getPatient(check_for_patient).then((patientInfo) => {
       setPatient(patientInfo);
-    }); 
+    });
   };
 
   useEffect(() => {

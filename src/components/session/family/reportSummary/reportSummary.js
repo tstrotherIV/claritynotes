@@ -13,7 +13,9 @@ function FamilyReportSummary(props) {
   const next = "housing_pg_1";
 
   const getData = () => {
-    DataManager.getPatient(props.patientId).then((patientInfo) => {
+    const check_for_patient = sessionStorage.getItem("patient_id");
+
+    DataManager.getPatient(check_for_patient).then((patientInfo) => {
       
       setPatient(patientInfo);
     });

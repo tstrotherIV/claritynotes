@@ -46,7 +46,9 @@ function HistoryOfLegalPg9(props) {
   //CRUD Function END
 
   const getData = () => {
-    DataManager.getPatient(props.patientId).then((patientInfo) => {
+    const check_for_patient = sessionStorage.getItem("patient_id");
+
+    DataManager.getPatient(check_for_patient).then((patientInfo) => {
       const raw = {
         ...patientInfo,
       };

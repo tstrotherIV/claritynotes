@@ -16,7 +16,9 @@ function PsychologicalEvaluationAdditionalData(props) {
   };
 
   useEffect(() => {
-    DataManager.getPatient(props.patientId).then((patientInfo) => {
+    const check_for_patient = sessionStorage.getItem("patient_id");
+
+    DataManager.getPatient(check_for_patient).then((patientInfo) => {
       setPatient(patientInfo);
     });
     DataManager.getUser(props.userId).then((userInfo) => {

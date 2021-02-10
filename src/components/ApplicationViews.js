@@ -127,10 +127,9 @@ import CreateAcct from "./Auth/createAcct";
 
 const ApplicationViews = (props) => {
   let hasUser = false;
-  // const userId = parseInt(props.userId);
-  const userId = "bae7fe01-75ff-40e0-b8a4-ab6e6717b159";
-  // const patientId = sessionStorage.getItem("currentPatientId");
-  const patientId = "7647e21f-fce3-4624-82ae-0063c5beca3b";
+  let userId = "bae7fe01-75ff-40e0-b8a4-ab6e6717b159";
+  let patientId = sessionStorage.getItem("patient_id");
+  // const patientId = "7647e21f-fce3-4624-82ae-0063c5beca3b";
 
 
   return (
