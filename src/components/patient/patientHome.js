@@ -23,12 +23,21 @@ function PatientHomePage(props) {
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
 
   const handleFieldChange = (e) => {
-    setPatientId(parseInt(e.target.value));
+    const patientSession = sessionStorage.getItem("patient_id");
+    if (patientSession) {
+      sessionStorage.removeItem("patient_id");
+      setPatientId(e.target.value);
+      sessionStorage.setItem("patient_id", e.target.value);
+    } else {
+      setPatientId(e.target.value);
+      sessionStorage.setItem("patient_id", e.target.value);
+    }
+    props.history.push(`/sessionStep1`);
   };
 
   const getData = () => {
     DataManager.getAllPatients().then((patientInfo) => {
-      patientInfo = patientInfo.Items
+      patientInfo = patientInfo.Items;
       const results = patientInfo.filter(
         (person) =>
           person.patient_first_name
