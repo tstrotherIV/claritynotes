@@ -1,4 +1,3 @@
-const patient_id = "7647e21f-fce3-4624-82ae-0063c5beca3b";
 
 const remoteURL =
   "https://cq73ylztmi.execute-api.us-west-2.amazonaws.com/staging";
@@ -96,6 +95,7 @@ export default {
 
   // ALL UPDATED MEHTODS
   update(resource, editedData) {
+    const patient_id = sessionStorage.getItem("patient_id");
     return fetch(`${remoteURL}/${resource}/${patient_id}`, {
       method: "PATCH",
       headers: {
@@ -106,6 +106,7 @@ export default {
   },
 
   add_Item(resource, newData) {
+    const patient_id = sessionStorage.getItem("patient_id");
     return fetch(`${remoteURL}/patients/${patient_id}/${resource}/`, {
       method: "POST",
       headers: {
@@ -117,6 +118,7 @@ export default {
 
   // Update Guardian
   update_Item(resource, item_id, editedData) {
+    const patient_id = sessionStorage.getItem("patient_id");
     return fetch(
       `${remoteURL}/patients/${patient_id}/${resource}/${item_id}`,
       {
@@ -130,6 +132,7 @@ export default {
   },
 
   delete_Item(resource, guardian_id) {
+    const patient_id = sessionStorage.getItem("patient_id");
     return fetch(
       `${remoteURL}/patients/${patient_id}/${resource}/${guardian_id}`, {
         method: "DELETE",
