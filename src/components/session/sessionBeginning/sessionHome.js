@@ -52,7 +52,7 @@ function SessionStep1(props) {
               props.history.push(`/psychological_evaluation`);
             }}
           >
-            Psychological Evaluation
+            Interview
           </Button>
           <Button
             className="col-md button2"

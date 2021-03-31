@@ -38,39 +38,6 @@ function Login(props) {
     }
   };
 
-  // const createUser = () => {
-  //   const newUser = {
-  //     email: credentials.email,
-  //     password: credentials.password,
-  //   };
-  //   DataManager.post("users", newUser).then((user) => {
-  //     console.log(user);
-  //   });
-  // };
-
-  // const handleLogin = (e) => {
-  //   e.preventDefault();
-  //   if (credentials.email === "" || credentials.password === "") {
-  //     window.alert("Please enter your Login Information below");
-  //   } else {
-  //     DataManager.getUser(credentials.email).then((user) => {
-  //       if (user.length < 1) {
-  //         window.alert("User Account doesn't exist, Please Create an account");
-  //       } else if (
-  //         user[0].email === credentials.email &&
-  //         user[0].password === parseInt(credentials.password)
-  //       ) {
-  //         sessionStorage.setItem("loggedUser", user[0].id);
-  //         sessionStorage.setItem("loggedUserName", user[0].firstName);
-  //         let loggedUser = sessionStorage.getItem(`loggedUser`);
-  //         props.setUser(loggedUser);
-
-  //         props.history.push(`/patient`);
-  //       }
-  //     });
-  //   }
-  // };
-
   return (
     <div className="textWhite mt-5 mb-5">
       <Container className="mt-5">
