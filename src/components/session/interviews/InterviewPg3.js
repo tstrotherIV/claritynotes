@@ -17,12 +17,6 @@ function Interview_Pg3(props) {
   const next = "/interview_pg_4";
   const back = "/interview_pg_2";
 
-  // const [dropdownOpen1, setDropdownOpen1] = useState(false);
-  // const [modal, setModal] = useState(false);
-
-  // const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
-  // const toggle3 = () => setModal(!modal);
-
   const handleFieldChange = (e) => {
     setPatientInterview_pg3({
       ...patientInterview_pg3,
@@ -76,7 +70,6 @@ function Interview_Pg3(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="header">
             <h2 className="textWhite">Interviews</h2>
           </div>
@@ -86,7 +79,7 @@ function Interview_Pg3(props) {
           <div className="interview_div1">
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
-                [Patient Name, First] said:
+                {props.patientName.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
@@ -103,7 +96,7 @@ function Interview_Pg3(props) {
           <div className="interview_div1">
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
-                [Patient Name, First] said:
+                {props.patientName.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
@@ -115,72 +108,6 @@ function Interview_Pg3(props) {
                 value={patientInterview_pg3.interview_pg3_b}
               />
             </div>
-          </div>
-          <div>
-            {/* <div className="div1Fields">
-          <div className="in1">
-            <Label className="textWhite mr-2" for="firstName">
-              [User Name, First]’s Inference and Observations:
-            </Label>
-            <Dropdown isOpen={dropdownOpen1} toggle={toggle1}>
-              <DropdownToggle color="light" className="dropdown" caret>
-                Please Select
-              </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem header>Header</DropdownItem>
-                <DropdownItem>Some Action</DropdownItem>
-                <DropdownItem disabled>Action (disabled)</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Foo Action</DropdownItem>
-                <DropdownItem>Bar Action</DropdownItem>
-                <DropdownItem>Quo Action</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-            <div>
-              <Button color="light" className="m-3">
-                Edit List
-              </Button>
-            </div>
-          </div>
-          <div className="in1">
-            <Label className="textWhite title" for="caseNumber">
-              Additional Notes:
-            </Label>
-            <TextareaAutosize              className="fieldData2"
-              type="text"
-              id="caseNumber"
-            />
-            <div>
-              <div className="m-3">
-                <Button color="light" onClick={toggle3}>
-                  Add Notes to Gold
-                </Button>
-                <Modal isOpen={modal} fade={false} toggle={toggle3}>
-                  <ModalHeader toggle={toggle3}>Add Notes to Gold</ModalHeader>
-                  <ModalBody>
-                    <div className="in1">
-                      <Label className=" title" for="caseNumber">
-                        Additional Notes:
-                      </Label>
-                      <TextareaAutosize                        className=""
-                        type="text"
-                        id="caseNumber"
-                      />
-                    </div>
-                  </ModalBody>
-                  <ModalFooter>
-                    <Button color="info" onClick={toggle3}>
-                      Cancel
-                    </Button>{" "}
-                    <Button color="info" onClick={toggle3}>
-                      Save
-                    </Button>
-                  </ModalFooter>
-                </Modal>
-              </div>
-            </div>
-          </div>
-        </div> */}
           </div>
         </div>
         <div id="footer">

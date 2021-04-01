@@ -1,5 +1,5 @@
 import { Route, Switch, Redirect } from "react-router-dom";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Login from "./login/login";
 import CreateUser from "./createUser/createUser";
 import PatientHomePage from "./patient/patientHome";
@@ -124,12 +124,27 @@ import MillonClinicalMultiaxialInventoryIVPg2 from "./session/testResults/Millon
 import RorschPerformanceAssessmentSystem from "./session/testResults/RorschPerformanceAssessmentSystem";
 import ThematicApperceptionsTest from "./session/testResults/ThematicApperceptionsTest";
 import CreateAcct from "./Auth/createAcct";
+import DataManager from "../data_module/DataManager";
 
 const ApplicationViews = (props) => {
+  const [patientName, setPatientName] = useState({});
+
   let hasUser = false;
   let userId = sessionStorage.getItem("logged_in_user");
   let patientId = sessionStorage.getItem("patient_id");
 
+  const getData = async () => {
+    const check_for_patient = await sessionStorage.getItem("patient_id");
+    const patientInfo = await DataManager.getPatient(check_for_patient);
+
+    const { patient_first_name, patient_last_name } = patientInfo;
+
+    setPatientName({ patient_first_name, patient_last_name });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <>
@@ -167,6 +182,7 @@ const ApplicationViews = (props) => {
                   <PatientHomePage
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -180,6 +196,7 @@ const ApplicationViews = (props) => {
                   <SessionStep1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -193,6 +210,7 @@ const ApplicationViews = (props) => {
                   <PsychologicalEvaluation
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -206,6 +224,7 @@ const ApplicationViews = (props) => {
                   <PsychologicalEvaluationInit
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -219,6 +238,7 @@ const ApplicationViews = (props) => {
                   <PsychologicalEvaluationFamily
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -232,6 +252,7 @@ const ApplicationViews = (props) => {
                   <PsychologicalEvaluationSiblings
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -245,6 +266,7 @@ const ApplicationViews = (props) => {
                   <PsychologicalEvaluationChildren
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -258,6 +280,7 @@ const ApplicationViews = (props) => {
                   <PsychologicalEvaluationSpouse
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -271,6 +294,7 @@ const ApplicationViews = (props) => {
                   <PsychologicalEvaluationConsent
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -284,6 +308,7 @@ const ApplicationViews = (props) => {
                   <PsychologicalEvaluationReferral
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -297,6 +322,7 @@ const ApplicationViews = (props) => {
                   <PsychologicalEvaluationAdditionalData
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     userId={userId}
                     {...props}
                   />
@@ -311,6 +337,8 @@ const ApplicationViews = (props) => {
                   <InterviewPg1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -324,6 +352,7 @@ const ApplicationViews = (props) => {
                   <InterviewPg2
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -337,6 +366,7 @@ const ApplicationViews = (props) => {
                   <InterviewPg3
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -350,6 +380,7 @@ const ApplicationViews = (props) => {
                   <InterviewPg4
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -363,6 +394,7 @@ const ApplicationViews = (props) => {
                   <InterviewPg5
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -376,6 +408,7 @@ const ApplicationViews = (props) => {
                   <InterviewPg6
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -389,6 +422,7 @@ const ApplicationViews = (props) => {
                   <InterviewPg7
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -402,6 +436,7 @@ const ApplicationViews = (props) => {
                   <InterviewPg8
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -415,6 +450,7 @@ const ApplicationViews = (props) => {
                   <InterviewPg9
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -428,6 +464,7 @@ const ApplicationViews = (props) => {
                   <FamilyPg1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -441,6 +478,7 @@ const ApplicationViews = (props) => {
                   <FamilyPg2
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -454,6 +492,7 @@ const ApplicationViews = (props) => {
                   <FamilyPg3
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -467,6 +506,7 @@ const ApplicationViews = (props) => {
                   <FamilyPg4
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -480,6 +520,7 @@ const ApplicationViews = (props) => {
                   <FamilyPg5
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -493,6 +534,7 @@ const ApplicationViews = (props) => {
                   <FamilyPg6
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -506,6 +548,7 @@ const ApplicationViews = (props) => {
                   <FamilyPg7
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -519,6 +562,7 @@ const ApplicationViews = (props) => {
                   <FamilyPg8
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -532,6 +576,7 @@ const ApplicationViews = (props) => {
                   <FamilyPg9
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -545,6 +590,7 @@ const ApplicationViews = (props) => {
                   <FamilyPg10
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -558,6 +604,7 @@ const ApplicationViews = (props) => {
                   <FamilyPg11
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -571,6 +618,7 @@ const ApplicationViews = (props) => {
                   <FamilyPg12
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -584,6 +632,7 @@ const ApplicationViews = (props) => {
                   <FamilyPg13
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -597,6 +646,7 @@ const ApplicationViews = (props) => {
                   <FamilyPg14
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -610,6 +660,7 @@ const ApplicationViews = (props) => {
                   <FamilyPg15
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -630,6 +681,7 @@ const ApplicationViews = (props) => {
                   <HousingPg1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -643,6 +695,7 @@ const ApplicationViews = (props) => {
                   <HousingPg2
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -656,6 +709,7 @@ const ApplicationViews = (props) => {
                   <HousingPg3
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -669,6 +723,7 @@ const ApplicationViews = (props) => {
                   <EmploymentPg1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -682,6 +737,7 @@ const ApplicationViews = (props) => {
                   <EmploymentPg2
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -695,6 +751,7 @@ const ApplicationViews = (props) => {
                   <EmploymentPg3
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -708,6 +765,7 @@ const ApplicationViews = (props) => {
                   <EducationPg1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -721,6 +779,7 @@ const ApplicationViews = (props) => {
                   <EducationPg2
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -734,6 +793,7 @@ const ApplicationViews = (props) => {
                   <EducationPg3
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -747,6 +807,7 @@ const ApplicationViews = (props) => {
                   <EducationPg4
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -760,6 +821,7 @@ const ApplicationViews = (props) => {
                   <HistoryOfLegalPg1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -773,6 +835,7 @@ const ApplicationViews = (props) => {
                   <HistoryOfLegalPg2
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -786,6 +849,7 @@ const ApplicationViews = (props) => {
                   <HistoryOfLegalPg3
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -799,6 +863,7 @@ const ApplicationViews = (props) => {
                   <HistoryOfLegalPg4
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -812,6 +877,7 @@ const ApplicationViews = (props) => {
                   <HistoryOfLegalPg5
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -825,6 +891,7 @@ const ApplicationViews = (props) => {
                   <HistoryOfLegalPg6
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -838,6 +905,7 @@ const ApplicationViews = (props) => {
                   <HistoryOfLegalPg7
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -851,6 +919,7 @@ const ApplicationViews = (props) => {
                   <HistoryOfLegalPg8
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -864,6 +933,7 @@ const ApplicationViews = (props) => {
                   <HistoryOfLegalPg9
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -877,6 +947,7 @@ const ApplicationViews = (props) => {
                   <HistoryOfLegalPg10
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -890,6 +961,7 @@ const ApplicationViews = (props) => {
                   <HistoryOfLegalPg11
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -903,6 +975,7 @@ const ApplicationViews = (props) => {
                   <HistoryOfLegalPg12
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -916,6 +989,7 @@ const ApplicationViews = (props) => {
                   <HistoryOfLegalPg13
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -929,6 +1003,7 @@ const ApplicationViews = (props) => {
                   <HistoryOfLegalPg14
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -942,6 +1017,7 @@ const ApplicationViews = (props) => {
                   <HistoryOfLegalPg15
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -955,6 +1031,7 @@ const ApplicationViews = (props) => {
                   <MentalHealthHistoryPg1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -968,6 +1045,7 @@ const ApplicationViews = (props) => {
                   <MentalHealthHistoryPg2
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -981,6 +1059,7 @@ const ApplicationViews = (props) => {
                   <MentalHealthHistoryPg3
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -994,6 +1073,7 @@ const ApplicationViews = (props) => {
                   <MentalHealthHistoryPg4
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1007,6 +1087,7 @@ const ApplicationViews = (props) => {
                   <MedicalHistoryHealthConcernsLimitionsPg1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1020,6 +1101,7 @@ const ApplicationViews = (props) => {
                   <NeglectAbuseTraumaLossPg1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1033,6 +1115,7 @@ const ApplicationViews = (props) => {
                   <NeglectAbuseTraumaLossPg2
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1046,6 +1129,7 @@ const ApplicationViews = (props) => {
                   <NeglectAbuseTraumaLossPg3
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1059,6 +1143,7 @@ const ApplicationViews = (props) => {
                   <NeglectAbuseTraumaLossPg4
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1072,6 +1157,7 @@ const ApplicationViews = (props) => {
                   <NeglectAbuseTraumaLossPg5
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1085,6 +1171,7 @@ const ApplicationViews = (props) => {
                   <PerpetratorOfNeglectAndAbusePg1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1098,6 +1185,7 @@ const ApplicationViews = (props) => {
                   <PerpetratorOfNeglectAndAbusePg2
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1111,6 +1199,7 @@ const ApplicationViews = (props) => {
                   <PerpetratorOfNeglectAndAbusePg3
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1124,6 +1213,7 @@ const ApplicationViews = (props) => {
                   <PerpetratorOfNeglectAndAbusePg4
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1137,6 +1227,7 @@ const ApplicationViews = (props) => {
                   <PartnerRelationshipPg1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1150,6 +1241,7 @@ const ApplicationViews = (props) => {
                   <PartnerRelationshipPg2
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1163,6 +1255,7 @@ const ApplicationViews = (props) => {
                   <PartnerRelationshipPg3
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1176,6 +1269,7 @@ const ApplicationViews = (props) => {
                   <PartnerRelationshipPg4
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1189,6 +1283,7 @@ const ApplicationViews = (props) => {
                   <PartnerRelationshipPg5
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1202,6 +1297,7 @@ const ApplicationViews = (props) => {
                   <PartnerRelationshipPg6
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1215,6 +1311,7 @@ const ApplicationViews = (props) => {
                   <PartnerRelationshipPg7
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1228,6 +1325,7 @@ const ApplicationViews = (props) => {
                   <PartnerRelationshipPg8
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1241,6 +1339,7 @@ const ApplicationViews = (props) => {
                   <PartnerRelationshipPg9
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1254,6 +1353,7 @@ const ApplicationViews = (props) => {
                   <PartnerRelationshipPg10
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1267,6 +1367,7 @@ const ApplicationViews = (props) => {
                   <ParentingPg1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1280,6 +1381,7 @@ const ApplicationViews = (props) => {
                   <ParentingPg2
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1293,6 +1395,7 @@ const ApplicationViews = (props) => {
                   <ParentingPg3
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1306,6 +1409,7 @@ const ApplicationViews = (props) => {
                   <PositiveRoleModelPg1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1319,6 +1423,7 @@ const ApplicationViews = (props) => {
                   <PositiveRoleModelPg2
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1332,6 +1437,7 @@ const ApplicationViews = (props) => {
                   <ParentKnowledgePg1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1345,6 +1451,7 @@ const ApplicationViews = (props) => {
                   <CognitiveSkillsPg1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1358,6 +1465,7 @@ const ApplicationViews = (props) => {
                   <MaterialResourcesPg1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1371,6 +1479,7 @@ const ApplicationViews = (props) => {
                   <BehavioralObservationsAndTestingConditionsPg1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1384,6 +1493,7 @@ const ApplicationViews = (props) => {
                   <BehavioralObservationsAndTestingConditionsPg2
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1397,6 +1507,7 @@ const ApplicationViews = (props) => {
                   <BehavioralObservationsAndTestingConditionsPg3
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1410,6 +1521,7 @@ const ApplicationViews = (props) => {
                   <BehavioralObservationsAndTestingConditionsPg4
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1423,6 +1535,7 @@ const ApplicationViews = (props) => {
                   <BehavioralObservationsAndTestingConditionsPg5
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1436,6 +1549,7 @@ const ApplicationViews = (props) => {
                   <ProceduresAdministedPg1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1458,6 +1572,7 @@ const ApplicationViews = (props) => {
                   <WechslerAdultIntelligenceScaleIV
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1471,6 +1586,7 @@ const ApplicationViews = (props) => {
                   <ShipleyIntelligenceAssessment2
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1511,6 +1627,7 @@ const ApplicationViews = (props) => {
                   <WechslerAdultIntelligenceScaleIVpg2
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1524,6 +1641,7 @@ const ApplicationViews = (props) => {
                   <WideRangeAchievementTest5
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1537,6 +1655,7 @@ const ApplicationViews = (props) => {
                   <AimswebPlusAchievementTestPg1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1550,6 +1669,7 @@ const ApplicationViews = (props) => {
                   <AimswebPlusAchievementTestPg2
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1563,6 +1683,7 @@ const ApplicationViews = (props) => {
                   <AimswebPlusAchievementTestPg3
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1576,6 +1697,7 @@ const ApplicationViews = (props) => {
                   <AimswebPlusAchievementTestPg4
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1589,6 +1711,7 @@ const ApplicationViews = (props) => {
                   <ContinuousPerformanceTest3rdEd
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1602,6 +1725,7 @@ const ApplicationViews = (props) => {
                   <ComputerizedNeurocognitiveAssessment
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1615,6 +1739,7 @@ const ApplicationViews = (props) => {
                   <PaulasDeceptionScale
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1628,6 +1753,7 @@ const ApplicationViews = (props) => {
                   <MinnesotaMultiphasicPersonalityInventory2
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1641,6 +1767,7 @@ const ApplicationViews = (props) => {
                   <SubstanceAbuseSubtleScreeningInventory4
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1654,6 +1781,7 @@ const ApplicationViews = (props) => {
                   <IowaGamblingTask
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1667,6 +1795,7 @@ const ApplicationViews = (props) => {
                   <MillonClinicalMultiaxialInventoryIVPg1
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1680,6 +1809,7 @@ const ApplicationViews = (props) => {
                   <MillonClinicalMultiaxialInventoryIVPg2
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1693,6 +1823,7 @@ const ApplicationViews = (props) => {
                   <RorschPerformanceAssessmentSystem
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
@@ -1706,6 +1837,7 @@ const ApplicationViews = (props) => {
                   <ThematicApperceptionsTest
                     hasUser={hasUser}
                     patientId={patientId}
+                    patientName={patientName}
                     {...props}
                   />
                 );
