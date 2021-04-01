@@ -1,6 +1,5 @@
 import React from "react";
-import { Container } from "reactstrap";
-import "../shared/sideNav/nav.css";
+import "./Nav/nav.css";
 
 const PsychologicalHeading = () => {
   return (

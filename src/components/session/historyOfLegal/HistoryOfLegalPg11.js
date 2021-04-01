@@ -94,7 +94,7 @@ function HistoryOfLegalPg11(props) {
         <div id="content-wrap">
            
           <h2 className="textWhite text-center mb-4">
-            History of Legal, Crime, and Conviction
+          Substance Abuse
           </h2>
           <div className="questionsContainer text-center">
             <h4 className="mt-2 textWhite centerItem">
