@@ -1560,7 +1560,7 @@ const ApplicationViews = (props) => {
               path="/wasi-ii"
               render={(props) => {
                 return (
-                  <WasiII hasUser={hasUser} patientId={patientId} {...props} />
+                  <WasiII hasUser={hasUser} patientId={patientId} patientName={patientName} {...props} />
                 );
               }}
             />
@@ -1597,7 +1597,7 @@ const ApplicationViews = (props) => {
               path="/rait_pg_1"
               render={(props) => {
                 return (
-                  <RAITpg1 hasUser={hasUser} patientId={patientId} {...props} />
+                  <RAITpg1 hasUser={hasUser} patientId={patientId} patientName={patientName} {...props} />
                 );
               }}
             />
@@ -1606,7 +1606,7 @@ const ApplicationViews = (props) => {
               path="/rait_pg_2"
               render={(props) => {
                 return (
-                  <RAITpg2 hasUser={hasUser} patientId={patientId} {...props} />
+                  <RAITpg2 hasUser={hasUser} patientId={patientId} patientName={patientName} {...props} />
                 );
               }}
             />
@@ -1615,7 +1615,7 @@ const ApplicationViews = (props) => {
               path="/rait_pg_3"
               render={(props) => {
                 return (
-                  <RAITpg3 hasUser={hasUser} patientId={patientId} {...props} />
+                  <RAITpg3 hasUser={hasUser} patientId={patientId} patientName={patientName} {...props} />
                 );
               }}
             />

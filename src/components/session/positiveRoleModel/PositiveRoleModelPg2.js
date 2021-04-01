@@ -111,7 +111,7 @@ function PositiveRoleModelPg2(props) {
                   others?
                 </h5>
                 <div className="textWhite d-flex flex-wrap align-content-end col-2 mb-2">
-                  [Patient Name, First] said:
+                  {props.patientName.patient_first_name} said:
                 </div>
                 <div className="col-3 d-flex flex-wrap align-items-end m-0 p-0">
                   <Label className="textWhite"></Label>
@@ -162,7 +162,7 @@ function PositiveRoleModelPg2(props) {
                   promises to yourself and others?
                 </h5>
                 <div className="textWhite d-flex flex-wrap align-content-end col-2 mb-2">
-                  [Patient Name, First] said:
+                  {props.patientName.patient_first_name} said:
                 </div>
                 <div className="col-3 d-flex flex-wrap align-items-end m-0 p-0">
                   <Label className="textWhite"></Label>
@@ -225,9 +225,9 @@ function PositiveRoleModelPg2(props) {
                 />
 
                 <Label className="textWhite text-center" for="firstName">
-                  [Patient Name, First] appears to be lacking knowledge and
+                  {props.patientName.patient_first_name} appears to be lacking knowledge and
                   examples which illustrates probable deficits in this area.
-                  [Patient Name, First] will need this area to be further
+                  {props.patientName.patient_first_name} will need this area to be further
                   developed in therapy. She/he needs her/his goals and values
                   developed in order to guide their own behavior as well as that
                   of their children.

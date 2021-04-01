@@ -693,7 +693,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
               <div className="col-2">
                 <p>
                   The Millon Clinical Multiaxial Inventory-IV (MCMI-IV) was
-                  administered to assess [Patient Name, First] [Patient Name,
+                  administered to assess {props.patientName.patient_first_name} [Patient Name,
                   Last]'s general psychological functioning.
                 </p>
               </div>

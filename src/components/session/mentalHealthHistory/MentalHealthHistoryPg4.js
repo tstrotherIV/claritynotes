@@ -96,7 +96,7 @@ function MentalHealthHistoryPg4(props) {
             <div className="interview_div1">
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  [Patient Name, First] said:
+                  {props.patientName.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -115,7 +115,7 @@ function MentalHealthHistoryPg4(props) {
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  [Patient Name, First] said:
+                  {props.patientName.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -134,7 +134,7 @@ function MentalHealthHistoryPg4(props) {
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  [Patient Name, First] said:
+                  {props.patientName.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -167,7 +167,7 @@ function MentalHealthHistoryPg4(props) {
                 onChange={handleFieldChange}
               />
               <Label className="textWhite" for="firstName">
-                [Patient Name, First] denied any current intent or plan.
+                {props.patientName.patient_first_name} denied any current intent or plan.
               </Label>
             </div>
           </div>

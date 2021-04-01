@@ -84,7 +84,7 @@ function HousingPg2(props) {
                   className="textWhite interview_title text-center"
                   for="hs-all-or-part"
                 >
-                  [Patient Name, First] said:
+                  {props.patientName.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -106,7 +106,7 @@ function HousingPg2(props) {
                   className="textWhite interview_title text-center"
                   for="hs-housing-cost"
                 >
-                  [Patient Name, First] said:
+                  {props.patientName.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -128,7 +128,7 @@ function HousingPg2(props) {
                   className="textWhite interview_title text-center"
                   for="hs-without-shelter"
                 >
-                  [Patient Name, First] said:
+                  {props.patientName.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"

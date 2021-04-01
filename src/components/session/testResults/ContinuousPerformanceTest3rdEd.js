@@ -154,7 +154,7 @@ function ContinuousPerformanceTest3rdEd(props) {
                 <div className="d-flex flex-wrap">
                   <div className="col-6 text-white">
                     <p>
-                      [Patient Name, First] has a total of [X] atypical
+                      {props.patientName.patient_first_name} has a total of [X] atypical
                       T-scores, which falls is associated with a (very high [OR]
                       moderate) likelihood of having a disorder characterized by
                       attention deficits, such as ADHD. (Patient's name) profile

@@ -113,7 +113,7 @@ function MaterialResourcesPg1(props) {
                 to care for yourself and others?
               </p>
               <div className="textWhite d-flex flex-wrap align-content-end text-center col-3 mb-2">
-                [Patient Name, First] said:
+                {props.patientName.patient_first_name} said:
               </div>
               <div className="col-3 d-flex flex-wrap justify-content-center align-items-end p-1">
                 <Label className="textWhite"></Label>
@@ -159,7 +159,7 @@ function MaterialResourcesPg1(props) {
             <div className="interview_div1">
               <div className="m-auto d-flex align-items-center textWhite">
                 <Label className="textWhite col-3 text-right" for="">
-                  [Patient Name, First]
+                  {props.patientName.patient_first_name}
                 </Label>
                 <div className="m-2">indicated [her]</div>
                 <TextareaAutosize
@@ -211,7 +211,7 @@ function MaterialResourcesPg1(props) {
                   className="textWhite col-3 p-0 m-0 d-flex align-items-end justify-content-center"
                   for=""
                 >
-                  [Patient Name, First]
+                  {props.patientName.patient_first_name}
                 </Label>
                 <div className="m-2">reported [she] attends </div>
                 <TextareaAutosize

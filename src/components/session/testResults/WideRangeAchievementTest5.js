@@ -403,7 +403,7 @@ function WideRangeAchievementTest5(props) {
                 <p className="text-white">
                   {" "}
                   On the Wide Range Achievement Test-Revision 5 (WRAT-5).
-                  [Patient Name, First] [Patient Name, Last]'s math computation
+                  {props.patientName.patient_first_name} [Patient Name, Last]'s math computation
                   standard scores fell on a [Result Grade Level] grade level,
                   spelling on a [Result Grade Level] grade level, and sentence
                   comprehension on a [Result Grade Level] grade level.

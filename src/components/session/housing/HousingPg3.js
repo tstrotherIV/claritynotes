@@ -94,7 +94,7 @@ function HousingPg3(props) {
             <div className="interview_div1">
               <div className="interview_line1">
                 <Label className="textWhite interview_title" for="">
-                  [Patient Name, First] said:
+                  {props.patientName.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="interview_fieldData"
@@ -116,7 +116,7 @@ function HousingPg3(props) {
                   className="textWhite interview_title"
                   for="hs-housing-cost"
                 >
-                  [Patient Name, First] said:
+                  {props.patientName.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="interview_fieldData"

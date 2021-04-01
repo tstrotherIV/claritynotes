@@ -90,7 +90,7 @@ function FamilyPg1(props) {
             <h4 className="textWhite centerItem">Who raised you from?</h4>
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
-                [Patient Name, First] said:
+                {props.patientName.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
@@ -108,7 +108,7 @@ function FamilyPg1(props) {
             </h4>
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
-                [Patient Name, First] said:
+                {props.patientName.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
@@ -129,7 +129,7 @@ function FamilyPg1(props) {
           <div className="interview_div1">
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
-                [Patient Name, First] said:
+                {props.patientName.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
@@ -149,7 +149,7 @@ function FamilyPg1(props) {
           <div className="interview_div1">
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
-                [Patient Name, First] said:
+                {props.patientName.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
@@ -166,7 +166,7 @@ function FamilyPg1(props) {
             <div className="interview_div1">
               <div className="interview_line1">
                 <Label className="textWhite interview_title" for="">
-                  [Patient Name, First] said:
+                  {props.patientName.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="interview_fieldData"

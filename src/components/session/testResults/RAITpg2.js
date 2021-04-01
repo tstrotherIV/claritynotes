@@ -107,12 +107,12 @@ function RAITpg2(props) {
                   />
                   <h4>Results:</h4>
                   <p>
-                    [Patient Name, First] earned a CII of [CII Score], which
+                    {props.patientName.patient_first_name} earned a CII of [CII Score], which
                     falls in the [Score Result Descriptor Correlation] range of
                     intelligence. On the RAIT, this level of performance falls
                     within the range of scores designated as [Score Result
                     Placement Descriptor] and exceeds te performance of [Score
-                    Result Percentage] of individuals at [Patient Name, First]
+                    Result Percentage] of individuals at {props.patientName.patient_first_name}
                     [Patient Name, Last]'s age.
                   </p>
                 </div>
@@ -138,12 +138,12 @@ function RAITpg2(props) {
                   />
                   <h4>Results:</h4>
                   <p>
-                    [Patient Name, First] earned a FII of [FII Score], which
+                    {props.patientName.patient_first_name} earned a FII of [FII Score], which
                     falls in the [Score Result Descriptor Correlation] range of
                     intelligence. On the RAIT, this level of performance falls
                     within the range of scores designated as [Score Result
                     Placement Descriptor] and exceeds the performance of [Score
-                    Result Percentage] of individuals at [Patient Name, First]
+                    Result Percentage] of individuals at {props.patientName.patient_first_name}
                     [Patient Name, Last]'s age.
                   </p>
                 </div>
