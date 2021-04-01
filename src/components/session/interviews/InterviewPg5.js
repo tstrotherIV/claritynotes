@@ -5,13 +5,7 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  Button,
-  Modal,
-  ModalBody,
-  ModalHeader,
-  ModalFooter,
 } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";

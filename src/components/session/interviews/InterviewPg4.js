@@ -1,16 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Label,
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  Button,
-  Modal,
-  ModalBody,
-  ModalHeader,
-  ModalFooter,
-} from "reactstrap";
+import { Label } from "reactstrap";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
