@@ -37,7 +37,7 @@ function PsychologicalEvaluation(props) {
     id: "",
   });
 
-  const alaCounties = [
+  const allCounties = [
     "Autauga County",
     "Baldwin County",
     "Barbour County",
@@ -298,7 +298,7 @@ function PsychologicalEvaluation(props) {
                         </DropdownToggle>
                         <DropdownMenu className="referralDropDown">
                           <DropdownItem>Make a Selection</DropdownItem>
-                          {alaCounties.map((county) => (
+                          {allCounties.map((county) => (
                             <DropdownItem
                               id={`${county} DHR`}
                               name="patient_referral"
@@ -408,7 +408,7 @@ function PsychologicalEvaluation(props) {
                         <DropdownMenu>
                           <DropdownMenu className="referralDropDown">
                             <DropdownItem>Make a Selection</DropdownItem>
-                            {alaCounties.map((county) => (
+                            {allCounties.map((county) => (
                               <DropdownItem
                                 id={county}
                                 name="patient_county"
