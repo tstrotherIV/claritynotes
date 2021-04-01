@@ -115,7 +115,7 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
                   onChange={handleFieldChange}
                 />
                 <Label>
-                  [Patient Name, First] completed the Substance Abuse Subtle
+                  {props.patientName.patient_first_name} completed the Substance Abuse Subtle
                   Screening Inventory-4 (SASSI-4)
                 </Label>
                 <p>
@@ -153,7 +153,7 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
                     onChange={handleFieldChange}
                   />
                   <Label className="col-10" for="">
-                    [Patient Name, First] invalidated this instrument. [She]
+                    {props.patientName.patient_first_name} invalidated this instrument. [She]
                     gave answers to questions which are not probable. [She]
                     appeared to make a significant effort to appear perfect and
                     without flaws. Deliberate non-compliance and
@@ -172,14 +172,14 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
                     onChange={handleFieldChange}
                   />
                   <Label className="col-10" for="">
-                    [Patient Name, First] showed a significant level of
+                    {props.patientName.patient_first_name} showed a significant level of
                     defensiveness related to substance (alcohol or drug) misuse.
-                    [Patient Name, First] acknowledged alcohol and drug use, the
+                    {props.patientName.patient_first_name} acknowledged alcohol and drug use, the
                     motivation and consequences of usage, and loss of control.
                   </Label>
                 </div>
                 <p className="ml-1 mt-4 col-10">
-                  [Patient Name, First] acknowledged a pattern of current or
+                  {props.patientName.patient_first_name} acknowledged a pattern of current or
                   past problematic usage, and the subtle scale scores are
                   somewhat elevated, suggesting the possibility of a mild
                   substance use disorder. Consideration should be given to

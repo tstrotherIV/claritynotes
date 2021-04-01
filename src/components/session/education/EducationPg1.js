@@ -86,7 +86,7 @@ function EducationPg1(props) {
           <h2 className="textWhite text-center mb-4 ">Education</h2>
           <div className="questionsContainerWide row d-flex flex-wrap center-text justify-items-center align-items-end">
             <Label className="textWhite col-4 text-center" for="">
-              [Patient Name, First] said:
+              {props.patientName.patient_first_name} said:
             </Label>
             <div className="d-flex flex-wrap justify-content-center col-4">
               <p className="textWhite">Did you quit school?</p>
@@ -119,7 +119,7 @@ function EducationPg1(props) {
               className="textWhite col-4 text-center"
               for="graduateHighSchool"
             >
-              [Patient Name, First] said:
+              {props.patientName.patient_first_name} said:
             </Label>
             <div className="d-flex flex-wrap justify-content-center text-center col-4">
               <p className="textWhite">Did you graduate from high school?</p>
@@ -152,7 +152,7 @@ function EducationPg1(props) {
           <div className="interview_div1">
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
-                [Patient Name, First] said:
+                {props.patientName.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="col-6 fieldData"

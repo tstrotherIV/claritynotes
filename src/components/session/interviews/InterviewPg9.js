@@ -83,7 +83,7 @@ function Interview_Pg9(props) {
           <div className="interview_div1">
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
-                [Patient Name, First] said:
+                {props.patientName.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
@@ -100,7 +100,7 @@ function Interview_Pg9(props) {
             <div className="div1Fields">
               <div className="in2">
                 <Label className="textWhite title" for="caseNumber">
-                  [Patient Name, First] was dressed in
+                  {props.patientName.patient_first_name} was dressed in
                 </Label>
                 <TextareaAutosize
                   className="fieldData2"

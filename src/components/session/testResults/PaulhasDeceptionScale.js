@@ -110,7 +110,7 @@ function PaulasDeceptionScale(props) {
                 onChange={handleFieldChange}
               />
               <Label for="" className="m-3">
-                [Patient Name, First] completed a Paulus Deception Scales (PDS)
+                {props.patientName.patient_first_name} completed a Paulus Deception Scales (PDS)
               </Label>
               <p className="text-white">
                 {" "}

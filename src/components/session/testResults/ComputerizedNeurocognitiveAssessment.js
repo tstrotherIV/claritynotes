@@ -320,7 +320,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                   }
                   onChange={handleFieldChange}
                 />
-                <Label className="m-2" for=""></Label>[Patient Name, First]
+                <Label className="m-2" for=""></Label>{props.patientName.patient_first_name}
                 completed the Computerized Neurocognitive Assessment (CNS).
                 <p className="m-2">
                   This instrument is a clinical testing procedure used to

@@ -22,14 +22,14 @@ function ReportSummary(props) {
           <div className="d-flex justify-content-center mt-5">
             <div className="centerText">
               HELLOOOOOOO
-              [Patient Name, First][Patient Name, Last] reported she has been
+              {props.patientName.patient_first_name}[Patient Name, Last] reported she has been
               married since. She has son/s and daughter/s. [Patient Name,
               First] said she currently lives with _ in [Location] 
               
               
               [Patient
               Name, First] reported she has been married _ times. She has son/s
-              and daughter/s. [Patient Name, First] and her current spouse have
+              and daughter/s. {props.patientName.patient_first_name} and her current spouse have
               been married for _ years. She said she currently lives with _ in
               [Location]. 
               
@@ -39,9 +39,9 @@ function ReportSummary(props) {
                or 
               
               
-              [Patient Name, First]
+              {props.patientName.patient_first_name}
               reported she has never been married. She has _son/s and
-              _daughter/s. [Patient Name, First] said she currently lives with _
+              _daughter/s. {props.patientName.patient_first_name} said she currently lives with _
               in [Location].
             </div>
           </div>

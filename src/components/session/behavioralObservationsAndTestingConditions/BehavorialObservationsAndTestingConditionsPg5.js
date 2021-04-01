@@ -107,7 +107,7 @@ function BehavioralObservationsPg5(props) {
           <div className="questionsContainerWide">
             <p className="textWhite text-center m-0 ">
               Please note the following behaviors you observed in your session
-              with [Patient Name, First] [Patient Name, Last].
+              with {props.patientName.patient_first_name} [Patient Name, Last].
             </p>
             <div className="row mt-4">
               <div className="d-flex flex-wrap col-6">

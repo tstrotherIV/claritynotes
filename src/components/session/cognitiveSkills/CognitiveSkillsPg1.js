@@ -88,7 +88,7 @@ function CognitiveSkillsPg1(props) {
             <div className="interview_div1">
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  [Patient Name, First] said:
+                  {props.patientName.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -107,7 +107,7 @@ function CognitiveSkillsPg1(props) {
             <div className="interview_div1">
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  [Patient Name, First] said:
+                  {props.patientName.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -126,7 +126,7 @@ function CognitiveSkillsPg1(props) {
             <div className="interview_div1">
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  [Patient Name, First] said:
+                  {props.patientName.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -140,7 +140,7 @@ function CognitiveSkillsPg1(props) {
               </div>
               <div className="m-auto d-flex align-items-baseline textWhite justify-content-center">
                 <Label className="textWhite text-right" for="">
-                  [Patient Name, First]
+                  {props.patientName.patient_first_name}
                 </Label>
                 <div className="m-2">'s language skills</div>
                 <TextareaAutosize

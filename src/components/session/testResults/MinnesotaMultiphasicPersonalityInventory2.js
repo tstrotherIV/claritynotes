@@ -94,7 +94,7 @@ function MinnesotaMultiphasicPersonalityInventory2(props) {
               <div className="col-10 text-white">
                 <p className="mt-5 col-10">
                   The Minnesota Multiphasic Personality Inventory-2 (MMPI-2) was
-                  administered to assess [Patient Name, First] [Patient Name,
+                  administered to assess {props.patientName.patient_first_name} [Patient Name,
                   Last] general psychological functioning.
                 </p>
                 <div>
@@ -129,7 +129,7 @@ function MinnesotaMultiphasicPersonalityInventory2(props) {
                     <h5>L-Scale Was High</h5>
                   </Label>
                   <p className="col-10">
-                    [Patient Name, First]'s L-Scale was elevated. Most often,
+                    {props.patientName.patient_first_name}'s L-Scale was elevated. Most often,
                     higher raw scores on L reflect the tendency to place oneself
                     in a favorable light. Consequently, the clinical scales will
                     be suppressed because the individual is tending to deny

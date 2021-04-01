@@ -104,7 +104,7 @@ function WasiII(props) {
               <p className="col-4 text-white">
                 {" "}
                 On the Wechsler Abbreviated Scale of Intelligence-Second Edition
-                (WASI-II). [Patient Name, First] achieved a Full Scale IQ Score
+                (WASI-II). {props.patientName.patient_first_name} achieved a Full Scale IQ Score
                 of [Score Result] which falls in the [Score Result Descriptor
                 Correlation] range of intelligence.
               </p>

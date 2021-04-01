@@ -81,7 +81,7 @@ function FamilyPg7(props) {
             <div className="interview_div1">
               <div className="interview_line1">
                 <Label className="textWhite interview_title" for="">
-                  [Patient Name, First] said:
+                  {props.patientName.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="interview_fieldData"
@@ -107,7 +107,7 @@ function FamilyPg7(props) {
                 </div>
                 <div className="col-6 d-flex flex-wrap align-content-center">
                   <Label className="textWhite" for="">
-                    [Patient Name, First]'s Inference and Observations:
+                    {props.patientName.patient_first_name}'s Inference and Observations:
                   </Label>
                   <TextareaAutosize
                     className="fieldData"
