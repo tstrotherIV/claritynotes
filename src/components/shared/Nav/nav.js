@@ -31,7 +31,13 @@ const NavBar = (props) => {
 
   return (
     <div>
-      <Navbar color="light" light expand="false" color="white" className="nav-container">
+      <Navbar
+        color="light"
+        light
+        expand="false"
+        color="white"
+        className="nav-container"
+      >
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar onClick={toggle}>
@@ -111,11 +117,7 @@ const NavBar = (props) => {
                     Parent Knowledge
                   </NavLink>
                 </NavItem>
-                <NavItem>
-                  <NavLink href="/cognitive_skills_pg_1">
-                    Cognitive Skills
-                  </NavLink>
-                </NavItem>
+
                 <NavItem>
                   <NavLink href="/material_resources_pg_1">
                     Material Resources
@@ -140,7 +142,7 @@ const NavBar = (props) => {
             )}
           </Nav>
         </Collapse>
-          <Header />
+        <Header />
       </Navbar>
     </div>
   );

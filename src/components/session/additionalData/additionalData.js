@@ -28,18 +28,18 @@ function PsychologicalEvaluationAdditionalData(props) {
 
   return (
     <>
-      <div id="page-container" className="sessionStepContainer">
-        <div id="content-wrap" className="whiteBGD reportMinHeight">
-          <div className="whiteBGD">
+      <div>
+        <div>
+          <div>
             <div className="centerContent">
               <div className="d-flex justify-content-center mt-5">
-                <h2>Psychological Evaluation</h2>
+                <h2 className="text-white">Psychological Evaluation</h2>
               </div>
               <div className="d-flex justify-content-center mt-5">
-                <h2>Additional Data</h2>
+                <h2 className="text-white">Additional Data</h2>
               </div>
               <div className="d-flex justify-content-center mt-5">
-                <div className="centerText">
+                <div className="centerText text-white">
                   Interview with {patient.patient_first_name}{" "}
                   {patient.patient_last_name} <br></br>Interview with {user.first_name} {user.last_name}, ID: {user.id},{" "}
                   {user.position}

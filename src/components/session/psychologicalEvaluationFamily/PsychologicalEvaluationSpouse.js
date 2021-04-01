@@ -102,9 +102,8 @@ function PsychologicalEvaluationSpouse(props) {
 
   return (
     <>
-      <div id="page-container">
-        <div id="content-wrap">
-           
+      <div>
+        <div>
           <div className="header">
             <h1 className="textWhite">Please Confirm or Update Information</h1>
           </div>

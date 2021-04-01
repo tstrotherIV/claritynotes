@@ -6,7 +6,6 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -14,7 +13,7 @@ import DataManager from "../../../data_module/DataManager";
 // pdf page 97
 
 const next = "/behavioral_observations_and_testing_conditions_pg_1";
-const back = "/cognitive_skills_pg_1";
+const back = "/parent_knowledge_pg_1";
 
 function MaterialResourcesPg1(props) {
   const [item, setItem] = useState("");
