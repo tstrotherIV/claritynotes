@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Label, Input } from "reactstrap";
+import { Col, Container, Label, Input, Row } from "reactstrap";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import EmptyFooterSpace from "../../shared/EmptyFooterSpace";
 import "./consent.scss";
 import DataManager from "../../../data_module/DataManager";
+import ReferralComp from "../referral/referral";
 
 function PsychologicalEvaluationConsent(props) {
   const [patientConsent, setPatientConsent] = useState({
     patient_consent: false,
-    id: ""
+    id: "",
   });
 
-  const next = "/psychological_evaluation_referral";
+  const next = "/psychological_evaluation_additional_data";
   const back = "/psychological_evaluation_spouse";
 
   const handleFieldChange = (e) => {
@@ -36,12 +37,11 @@ function PsychologicalEvaluationConsent(props) {
     const check_for_patient = sessionStorage.getItem("patient_id");
 
     DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      
       const raw = {
-        ...patientInfo
+        ...patientInfo,
       };
-      
-      const allowed = ['patient_consent'];
+
+      const allowed = ["patient_consent"];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
         .reduce((obj, key) => {
@@ -49,7 +49,7 @@ function PsychologicalEvaluationConsent(props) {
           return obj;
         }, {});
 
-        setPatientConsent(filtered);
+      setPatientConsent(filtered);
     });
   };
 
@@ -58,40 +58,54 @@ function PsychologicalEvaluationConsent(props) {
   }, []);
 
   return (
-    <div id="">
-      <div id="" className="">
-        <div className="">
-          <div className="centerContent">
-            <div className="d-flex justify-content-center mt-5">
-              <h2 className="text-white">Psychological Evaluation</h2>
-            </div>
-            <div className="d-flex justify-content-center mt-5">
-              <h2 className="text-white">Consent</h2>
-            </div>
-            <div className="d-flex justify-content-center mt-5">
-              <div className="centerText text-white">
-                Prior to initiating the evaluation, its nature, purpose, the
-                risks and benefits were explained to {patientConsent.patient_first_name} {patientConsent.patient_last_name}. Questions were sought and answered. {patientConsent.patient_first_name} demonstrated a basic understanding by
-                restating the information in her own words. {patientConsent.patient_first_name} indicated willingness to participate in the evaluation
-                and complied with requests.
+    <>
+      <Container fluid={true}>
+        <Row>
+          <Col xs="6">
+            <div className="">
+              <div className="centerContent">
+                <div className="d-flex justify-content-center mt-5">
+                  <h2 className="text-white">Psychological Evaluation</h2>
+                </div>
+                <div className="d-flex justify-content-center mt-5">
+                  <h2 className="text-white">Consent</h2>
+                </div>
+                <div className="d-flex justify-content-center mt-5">
+                  <div className="centerText text-white">
+                    Prior to initiating the evaluation, its nature, purpose, the
+                    risks and benefits were explained to{" "}
+                    {patientConsent.patient_first_name}{" "}
+                    {patientConsent.patient_last_name}. Questions were sought
+                    and answered. {patientConsent.patient_first_name}{" "}
+                    demonstrated a basic understanding by restating the
+                    information in her own words.{" "}
+                    {patientConsent.patient_first_name} indicated willingness to
+                    participate in the evaluation and complied with requests.
+                  </div>
+                </div>
+              </div>
+
+              <div className="siblingsFields">
+                <div className="m-4">
+                  <Input
+                    type="checkbox"
+                    id="patient_only_child"
+                    name="patient_consent"
+                    checked={patientConsent.patient_consent}
+                    onChange={handleFieldChange}
+                  />
+                  <Label className="title text-white">
+                    Check Here to Confirm
+                  </Label>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div className="siblingsFields">
-            <div className="m-4">
-              <Input
-                type="checkbox"
-                id="patient_only_child"
-                name="patient_consent"
-                checked={patientConsent.patient_consent}
-                onChange={handleFieldChange}
-              />
-              <Label className="title text-white">Check Here to Confirm</Label>
-            </div>
-          </div>
-        </div>
-      </div>
+          </Col>
+          <Col xs="6">
+            <ReferralComp />
+          </Col>
+        </Row>
+      </Container>
       <div id="footer">
         <ButtonNavigation
           next={next}
@@ -102,7 +116,7 @@ function PsychologicalEvaluationConsent(props) {
         />
         <EmptyFooterSpace />
       </div>
-    </div>
+    </>
   );
 }
 

@@ -9,7 +9,7 @@ function PsychologicalEvaluationAdditionalData(props) {
   const [user, setUser] = useState("");
 
   const next = "/interview_pg_1";
-  const back = "/psychological_evaluation_referral";
+  const back = "/psychological_evaluation_consent";
 
   const updatePatient = () => {
     
