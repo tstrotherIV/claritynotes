@@ -289,7 +289,7 @@ const TermOfParentalRights = (props) => {
                         onChange={handlePatientNotesChange}
                       ></Input>
                       <Label className="" for="">
-                        otherwise maltreated the child
+                        Otherwise Maltreated the Child
                       </Label>
                     </div>
                   </div>

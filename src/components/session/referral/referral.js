@@ -110,19 +110,19 @@ function PsychologicalEvaluationReferral(props) {
   }, []);
 
   return (
-    <div id="page-container">
-      <div id="content-wrap" className="whiteBGD reportMinHeight">
+    <div>
+      <div>
         <div className="fullpage">
-          <div className="whiteBGD">
+          <div>
             <div className="centerContent">
               <div className="d-flex justify-content-center mt-5">
-                <h1>Psychological Evaluation</h1>
+                <h1 className="text-white">Psychological Evaluation</h1>
               </div>
               <div className="d-flex justify-content-center mt-5">
-                <h2>Reason for Referral</h2>
+                <h2 className="text-white">Reason for Referral</h2>
               </div>
 
-              <div className="d-flex justify-content-center mt-5">
+              <div className="d-flex justify-content-center mt-5 text-white">
                 {!paragraphEnableEdit ? (
                   <>
                     <div className="m-4">
@@ -149,7 +149,7 @@ function PsychologicalEvaluationReferral(props) {
                       value={paragraph}
                       // onChange={handleChange}
                     />
-                    <Button>Save Changes</Button>
+                    <Button className="text-white">Save Changes</Button>
                   </>
                 )}
               </div>

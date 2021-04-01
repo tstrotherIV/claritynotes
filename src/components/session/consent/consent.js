@@ -58,18 +58,18 @@ function PsychologicalEvaluationConsent(props) {
   }, []);
 
   return (
-    <div id="page-container">
-      <div id="content-wrap" className="whiteBGD reportMinHeight">
-        <div className="whiteBGD ">
+    <div id="">
+      <div id="" className="">
+        <div className="">
           <div className="centerContent">
             <div className="d-flex justify-content-center mt-5">
-              <h2>Psychological Evaluation</h2>
+              <h2 className="text-white">Psychological Evaluation</h2>
             </div>
             <div className="d-flex justify-content-center mt-5">
-              <h2>Consent</h2>
+              <h2 className="text-white">Consent</h2>
             </div>
             <div className="d-flex justify-content-center mt-5">
-              <div className="centerText">
+              <div className="centerText text-white">
                 Prior to initiating the evaluation, its nature, purpose, the
                 risks and benefits were explained to {patientConsent.patient_first_name} {patientConsent.patient_last_name}. Questions were sought and answered. {patientConsent.patient_first_name} demonstrated a basic understanding by
                 restating the information in her own words. {patientConsent.patient_first_name} indicated willingness to participate in the evaluation
@@ -87,7 +87,7 @@ function PsychologicalEvaluationConsent(props) {
                 checked={patientConsent.patient_consent}
                 onChange={handleFieldChange}
               />
-              <Label className="title">Check Here to Confirm</Label>
+              <Label className="title text-white">Check Here to Confirm</Label>
             </div>
           </div>
         </div>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Label } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -21,7 +20,7 @@ function ParentKnowledgePg1(props) {
     parent_knowledge_pg1_i: "",
   });
 
-  const next = "/cognitive_skills_pg_1";
+  const next = "/material_resources_pg_1";
   const back = "/positive_role_model_pg_2";
 
   const handleFieldChange = (e) => {
