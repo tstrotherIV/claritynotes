@@ -41,7 +41,7 @@ function PsychologicalEvaluationConsent(props) {
         ...patientInfo,
       };
 
-      const allowed = ["patient_consent"];
+      const allowed = ["patient_consent", "patient_gender"];
       const filtered = Object.keys(raw)
         .filter((key) => allowed.includes(key))
         .reduce((obj, key) => {
@@ -51,6 +51,17 @@ function PsychologicalEvaluationConsent(props) {
 
       setPatientConsent(filtered);
     });
+  };
+
+  const patientProNoun = () => {
+    switch (patientConsent.patient_gender) {
+      case "Male":
+        return "his";
+      case "Female":
+        return "her";
+      default:
+        return "they";
+    }
   };
 
   useEffect(() => {
@@ -74,13 +85,13 @@ function PsychologicalEvaluationConsent(props) {
                   <div className="centerText text-white">
                     Prior to initiating the evaluation, its nature, purpose, the
                     risks and benefits were explained to{" "}
-                    {patientConsent.patient_first_name}{" "}
-                    {patientConsent.patient_last_name}. Questions were sought
-                    and answered. {patientConsent.patient_first_name}{" "}
+                    {props.patientName.patient_first_name}{" "}
+                    {props.patientName.patient_last_name}. Questions were sought
+                    and answered. {props.patientName.patient_first_name}{" "}
                     demonstrated a basic understanding by restating the
-                    information in her own words.{" "}
-                    {patientConsent.patient_first_name} indicated willingness to
-                    participate in the evaluation and complied with requests.
+                    information in {patientProNoun()} own words.
+                    {props.patientName.patient_first_name} indicated willingness
+                    to participate in the evaluation and complied with requests.
                   </div>
                 </div>
               </div>
@@ -102,6 +113,7 @@ function PsychologicalEvaluationConsent(props) {
             </div>
           </Col>
           <Col xs="6">
+            {/* Client wanted to combine the Rerral page, so it is imported here */}
             <ReferralComp />
           </Col>
         </Row>
