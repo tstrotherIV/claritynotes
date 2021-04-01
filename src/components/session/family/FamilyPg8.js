@@ -112,7 +112,7 @@ function FamilyPg8(props) {
                 </h5>
                 <div className="observationsColumn pl-3">
                   <Label className="textWhite" for="">
-                    [User Name, First]’s Inference and Observations:
+                    {props.patientName.patient_first_name} stated:
                   </Label>
                   <TextareaAutosize
                     type="text"
@@ -136,7 +136,7 @@ function FamilyPg8(props) {
                 </h5>
                 <div className="observationsColumn pl-3">
                   <Label className="textWhite" for="">
-                    [User Name, First]’s Inference and Observations:
+                  {props.patientName.patient_first_name} stated:
                   </Label>
                   <TextareaAutosize
                     type="text"
@@ -159,7 +159,7 @@ function FamilyPg8(props) {
                 </h5>
                 <div className="observationsColumn pl-3">
                   <Label className="textWhite" for="">
-                    [User Name, First]’s Inference and Observations:
+                  {props.patientName.patient_first_name} stated:
                   </Label>
                   <TextareaAutosize
                     type="text"

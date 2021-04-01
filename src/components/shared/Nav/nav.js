@@ -11,7 +11,7 @@ import {
   Container,
 } from "reactstrap";
 import DataManager from "../../../data_module/DataManager";
-import Header from "../../shared/PsychologicalHeading";
+import Header from "../PsychologicalHeading";
 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,6 +66,11 @@ const NavBar = (props) => {
                 <NavItem>
                   <NavLink href="/history_of_legal_pg_1">
                     History of Legal
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/history_of_legal_pg_6">
+                    Substance Abuse
                   </NavLink>
                 </NavItem>
                 <NavItem>

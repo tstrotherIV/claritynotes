@@ -69,10 +69,7 @@ function HistoryOfLegalPg6(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
-          <h2 className="textWhite text-center mb-4">
-            History of Legal, Crime, and Conviction
-          </h2>
+          <h2 className="textWhite text-center mb-4">Substance Abuse</h2>
           <div className="questionsContainer text-center">
             <h4 className="textWhite centerItem">
               Have you had any legal involvement related to a substance;
