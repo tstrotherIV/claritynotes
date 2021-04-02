@@ -1,7 +1,7 @@
 import { Route, Switch, Redirect } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import Login from "./login/login";
-import CreateUser from "./createUser/createUser";
+// import CreateUser from "./createUser/createUser";
 import PatientHomePage from "./patient/patientHome";
 import SessionStep1 from "./session/sessionBeginning/sessionHome";
 import PsychologicalEvaluation from "./session/psychologicalEvaluation/psychologicalEvaluation";
@@ -126,8 +126,12 @@ import ThematicApperceptionsTest from "./session/testResults/ThematicApperceptio
 import CreateAcct from "./Auth/createAcct";
 import DataManager from "../data_module/DataManager";
 
+//Lazy Load Refactoring
+const CreateUser = lazy(() => import("./createUser/createUser"));
+
 const ApplicationViews = (props) => {
-  const [patientName, setPatientName] = useState({});
+  const [patientDetails, setPatientDetails] = useState({});
+  const [update, setUpdate] = useState(false);
 
   let hasUser = false;
   let userId = sessionStorage.getItem("logged_in_user");
@@ -135,11 +139,10 @@ const ApplicationViews = (props) => {
 
   const getData = async () => {
     const check_for_patient = await sessionStorage.getItem("patient_id");
-    const patientInfo = await DataManager.getPatient(check_for_patient);
-
-    const { patient_first_name, patient_last_name } = patientInfo;
-
-    setPatientName({ patient_first_name, patient_last_name });
+    DataManager.getPatient(check_for_patient).then((patientInfo) => {
+      setPatientDetails(patientInfo);
+      setUpdate(false);
+    });
   };
 
   useEffect(() => {
@@ -148,22 +151,31 @@ const ApplicationViews = (props) => {
 
   return (
     <>
-      <Route
-        exact
-        path="/"
-        render={(props) => {
-          return <Login hasUser={hasUser} patientId={patientId} {...props} />;
-        }}
-      />
-      <Switch>
+      <Suspense fallback={<div>Loading...</div>}>
         <Route
           exact
-          path="/createAcct"
+          path="/"
           render={(props) => {
-            return <CreateAcct {...props} />;
+            return <Login hasUser={hasUser} patientId={patientId} {...props} />;
           }}
         />
-        <Route
+        <Switch>
+          <Route
+            exact
+            path="/createAcct"
+            render={(props) => {
+              return <CreateAcct {...props} />;
+            }}
+          />
+          <Route
+            exact
+            path="/createUser"
+            component={CreateUser}
+            hasUser={hasUser}
+            patientId={patientId}
+            {...props}
+          />
+          {/* <Route
           exact
           path="/createUser"
           render={(props) => {
@@ -171,1683 +183,1825 @@ const ApplicationViews = (props) => {
               <CreateUser hasUser={hasUser} patientId={patientId} {...props} />
             );
           }}
-        />
-        {!hasUser ? (
-          <>
-            <Route
-              exact
-              path="/patient"
-              render={(props) => {
-                return (
-                  <PatientHomePage
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/sessionStep1"
-              render={(props) => {
-                return (
-                  <SessionStep1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/psychological_evaluation"
-              render={(props) => {
-                return (
-                  <PsychologicalEvaluation
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/psychological_evaluationInit"
-              render={(props) => {
-                return (
-                  <PsychologicalEvaluationInit
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/psychological_evaluation_family"
-              render={(props) => {
-                return (
-                  <PsychologicalEvaluationFamily
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/psychological_evaluation_siblings"
-              render={(props) => {
-                return (
-                  <PsychologicalEvaluationSiblings
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/psychological_evaluation_children"
-              render={(props) => {
-                return (
-                  <PsychologicalEvaluationChildren
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/psychological_evaluation_spouse"
-              render={(props) => {
-                return (
-                  <PsychologicalEvaluationSpouse
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/psychological_evaluation_consent"
-              render={(props) => {
-                return (
-                  <PsychologicalEvaluationConsent
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/psychological_evaluation_referral"
-              render={(props) => {
-                return (
-                  <PsychologicalEvaluationReferral
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/psychological_evaluation_additional_data"
-              render={(props) => {
-                return (
-                  <PsychologicalEvaluationAdditionalData
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    userId={userId}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/interview_pg_1"
-              render={(props) => {
-                return (
-                  <InterviewPg1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/interview_pg_2"
-              render={(props) => {
-                return (
-                  <InterviewPg2
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/interview_pg_3"
-              render={(props) => {
-                return (
-                  <InterviewPg3
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/interview_pg_4"
-              render={(props) => {
-                return (
-                  <InterviewPg4
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/interview_pg_5"
-              render={(props) => {
-                return (
-                  <InterviewPg5
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/interview_pg_6"
-              render={(props) => {
-                return (
-                  <InterviewPg6
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/interview_pg_7"
-              render={(props) => {
-                return (
-                  <InterviewPg7
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/interview_pg_8"
-              render={(props) => {
-                return (
-                  <InterviewPg8
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/interview_pg_9"
-              render={(props) => {
-                return (
-                  <InterviewPg9
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/family_pg_1"
-              render={(props) => {
-                return (
-                  <FamilyPg1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/family_pg_2"
-              render={(props) => {
-                return (
-                  <FamilyPg2
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/family_pg_3"
-              render={(props) => {
-                return (
-                  <FamilyPg3
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/family_pg_4"
-              render={(props) => {
-                return (
-                  <FamilyPg4
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/family_pg_5"
-              render={(props) => {
-                return (
-                  <FamilyPg5
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/family_pg_6"
-              render={(props) => {
-                return (
-                  <FamilyPg6
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/family_pg_7"
-              render={(props) => {
-                return (
-                  <FamilyPg7
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/family_pg_8"
-              render={(props) => {
-                return (
-                  <FamilyPg8
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/family_pg_9"
-              render={(props) => {
-                return (
-                  <FamilyPg9
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/family_pg_10"
-              render={(props) => {
-                return (
-                  <FamilyPg10
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/family_pg_11"
-              render={(props) => {
-                return (
-                  <FamilyPg11
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/family_pg_12"
-              render={(props) => {
-                return (
-                  <FamilyPg12
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/family_pg_13"
-              render={(props) => {
-                return (
-                  <FamilyPg13
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/family_pg_14"
-              render={(props) => {
-                return (
-                  <FamilyPg14
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/family_pg_15"
-              render={(props) => {
-                return (
-                  <FamilyPg15
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            {/* <Route
+        /> */}
+          {!hasUser ? (
+            <>
+              <Route
+                exact
+                path="/patient"
+                render={(props) => {
+                  return (
+                    <PatientHomePage
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/sessionStep1"
+                render={(props) => {
+                  return (
+                    <SessionStep1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/psychological_evaluation"
+                render={(props) => {
+                  return (
+                    <PsychologicalEvaluation
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/psychological_evaluationInit"
+                render={(props) => {
+                  return (
+                    <PsychologicalEvaluationInit
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/psychological_evaluation_family"
+                render={(props) => {
+                  return (
+                    <PsychologicalEvaluationFamily
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/psychological_evaluation_siblings"
+                render={(props) => {
+                  return (
+                    <PsychologicalEvaluationSiblings
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/psychological_evaluation_children"
+                render={(props) => {
+                  return (
+                    <PsychologicalEvaluationChildren
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/psychological_evaluation_spouse"
+                render={(props) => {
+                  return (
+                    <PsychologicalEvaluationSpouse
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/psychological_evaluation_consent"
+                render={(props) => {
+                  return (
+                    <PsychologicalEvaluationConsent
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/psychological_evaluation_referral"
+                render={(props) => {
+                  return (
+                    <PsychologicalEvaluationReferral
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/psychological_evaluation_additional_data"
+                render={(props) => {
+                  return (
+                    <PsychologicalEvaluationAdditionalData
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      userId={userId}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/interview_pg_1"
+                render={(props) => {
+                  return (
+                    <InterviewPg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/interview_pg_2"
+                render={(props) => {
+                  return (
+                    <InterviewPg2
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/interview_pg_3"
+                render={(props) => {
+                  return (
+                    <InterviewPg3
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/interview_pg_4"
+                render={(props) => {
+                  return (
+                    <InterviewPg4
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/interview_pg_5"
+                render={(props) => {
+                  return (
+                    <InterviewPg5
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/interview_pg_6"
+                render={(props) => {
+                  return (
+                    <InterviewPg6
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/interview_pg_7"
+                render={(props) => {
+                  return (
+                    <InterviewPg7
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/interview_pg_8"
+                render={(props) => {
+                  return (
+                    <InterviewPg8
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/interview_pg_9"
+                render={(props) => {
+                  return (
+                    <InterviewPg9
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/family_pg_1"
+                render={(props) => {
+                  return (
+                    <FamilyPg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/family_pg_2"
+                render={(props) => {
+                  return (
+                    <FamilyPg2
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/family_pg_3"
+                render={(props) => {
+                  return (
+                    <FamilyPg3
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/family_pg_4"
+                render={(props) => {
+                  return (
+                    <FamilyPg4
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/family_pg_5"
+                render={(props) => {
+                  return (
+                    <FamilyPg5
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/family_pg_6"
+                render={(props) => {
+                  return (
+                    <FamilyPg6
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/family_pg_7"
+                render={(props) => {
+                  return (
+                    <FamilyPg7
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/family_pg_8"
+                render={(props) => {
+                  return (
+                    <FamilyPg8
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/family_pg_9"
+                render={(props) => {
+                  return (
+                    <FamilyPg9
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/family_pg_10"
+                render={(props) => {
+                  return (
+                    <FamilyPg10
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/family_pg_11"
+                render={(props) => {
+                  return (
+                    <FamilyPg11
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/family_pg_12"
+                render={(props) => {
+                  return (
+                    <FamilyPg12
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/family_pg_13"
+                render={(props) => {
+                  return (
+                    <FamilyPg13
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/family_pg_14"
+                render={(props) => {
+                  return (
+                    <FamilyPg14
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/family_pg_15"
+                render={(props) => {
+                  return (
+                    <FamilyPg15
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              {/* <Route
         exact
         path="/psychological_evaluation_report_summary"
         render={(props) => {
           return <PsychologicalEvaluationReportSummary  hasUser={hasUser}  patientId={patientId} {...props} />;
         }}
       /> */}
-            <Route
-              exact
-              path="/housing_pg_1"
-              render={(props) => {
-                return (
-                  <HousingPg1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/housing_pg_2"
-              render={(props) => {
-                return (
-                  <HousingPg2
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/housing_pg_3"
-              render={(props) => {
-                return (
-                  <HousingPg3
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/employment_pg_1"
-              render={(props) => {
-                return (
-                  <EmploymentPg1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/employment_pg_2"
-              render={(props) => {
-                return (
-                  <EmploymentPg2
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/employment_pg_3"
-              render={(props) => {
-                return (
-                  <EmploymentPg3
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/education_pg_1"
-              render={(props) => {
-                return (
-                  <EducationPg1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/education_pg_2"
-              render={(props) => {
-                return (
-                  <EducationPg2
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/education_pg_3"
-              render={(props) => {
-                return (
-                  <EducationPg3
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/education_pg_4"
-              render={(props) => {
-                return (
-                  <EducationPg4
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/history_of_legal_pg_1"
-              render={(props) => {
-                return (
-                  <HistoryOfLegalPg1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/history_of_legal_pg_2"
-              render={(props) => {
-                return (
-                  <HistoryOfLegalPg2
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/history_of_legal_pg_3"
-              render={(props) => {
-                return (
-                  <HistoryOfLegalPg3
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/history_of_legal_pg_4"
-              render={(props) => {
-                return (
-                  <HistoryOfLegalPg4
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/history_of_legal_pg_5"
-              render={(props) => {
-                return (
-                  <HistoryOfLegalPg5
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/history_of_legal_pg_6"
-              render={(props) => {
-                return (
-                  <HistoryOfLegalPg6
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/history_of_legal_pg_7"
-              render={(props) => {
-                return (
-                  <HistoryOfLegalPg7
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/history_of_legal_pg_8"
-              render={(props) => {
-                return (
-                  <HistoryOfLegalPg8
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/history_of_legal_pg_9"
-              render={(props) => {
-                return (
-                  <HistoryOfLegalPg9
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/history_of_legal_pg_10"
-              render={(props) => {
-                return (
-                  <HistoryOfLegalPg10
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/history_of_legal_pg_11"
-              render={(props) => {
-                return (
-                  <HistoryOfLegalPg11
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/history_of_legal_pg_12"
-              render={(props) => {
-                return (
-                  <HistoryOfLegalPg12
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/history_of_legal_pg_13"
-              render={(props) => {
-                return (
-                  <HistoryOfLegalPg13
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/history_of_legal_pg_14"
-              render={(props) => {
-                return (
-                  <HistoryOfLegalPg14
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/history_of_legal_pg_15"
-              render={(props) => {
-                return (
-                  <HistoryOfLegalPg15
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/mental_health_history_pg_1"
-              render={(props) => {
-                return (
-                  <MentalHealthHistoryPg1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/mental_health_history_pg_2"
-              render={(props) => {
-                return (
-                  <MentalHealthHistoryPg2
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/mental_health_history_pg_3"
-              render={(props) => {
-                return (
-                  <MentalHealthHistoryPg3
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/mental_health_history_pg_4"
-              render={(props) => {
-                return (
-                  <MentalHealthHistoryPg4
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/medical_history_health_concerns_limitations_pg_1"
-              render={(props) => {
-                return (
-                  <MedicalHistoryHealthConcernsLimitionsPg1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/neglect_abuse_trauma_loss_pg_1"
-              render={(props) => {
-                return (
-                  <NeglectAbuseTraumaLossPg1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/neglect_abuse_trauma_loss_pg_2"
-              render={(props) => {
-                return (
-                  <NeglectAbuseTraumaLossPg2
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/neglect_abuse_trauma_loss_pg_3"
-              render={(props) => {
-                return (
-                  <NeglectAbuseTraumaLossPg3
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/neglect_abuse_trauma_loss_pg_4"
-              render={(props) => {
-                return (
-                  <NeglectAbuseTraumaLossPg4
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/neglect_abuse_trauma_loss_pg_5"
-              render={(props) => {
-                return (
-                  <NeglectAbuseTraumaLossPg5
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/perpetrator_of_neglect_and_abuse_pg_1"
-              render={(props) => {
-                return (
-                  <PerpetratorOfNeglectAndAbusePg1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/perpetrator_of_neglect_and_abuse_pg_2"
-              render={(props) => {
-                return (
-                  <PerpetratorOfNeglectAndAbusePg2
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/perpetrator_of_neglect_and_abuse_pg_3"
-              render={(props) => {
-                return (
-                  <PerpetratorOfNeglectAndAbusePg3
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/perpetrator_of_neglect_and_abuse_pg_4"
-              render={(props) => {
-                return (
-                  <PerpetratorOfNeglectAndAbusePg4
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/partner_relationship_pg_1"
-              render={(props) => {
-                return (
-                  <PartnerRelationshipPg1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/partner_relationship_pg_2"
-              render={(props) => {
-                return (
-                  <PartnerRelationshipPg2
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/partner_relationship_pg_3"
-              render={(props) => {
-                return (
-                  <PartnerRelationshipPg3
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/partner_relationship_pg_4"
-              render={(props) => {
-                return (
-                  <PartnerRelationshipPg4
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/partner_relationship_pg_5"
-              render={(props) => {
-                return (
-                  <PartnerRelationshipPg5
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/partner_relationship_pg_6"
-              render={(props) => {
-                return (
-                  <PartnerRelationshipPg6
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/partner_relationship_pg_7"
-              render={(props) => {
-                return (
-                  <PartnerRelationshipPg7
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/partner_relationship_pg_8"
-              render={(props) => {
-                return (
-                  <PartnerRelationshipPg8
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/partner_relationship_pg_9"
-              render={(props) => {
-                return (
-                  <PartnerRelationshipPg9
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/partner_relationship_pg_10"
-              render={(props) => {
-                return (
-                  <PartnerRelationshipPg10
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/parenting_pg_1"
-              render={(props) => {
-                return (
-                  <ParentingPg1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/parenting_pg_2"
-              render={(props) => {
-                return (
-                  <ParentingPg2
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/parenting_pg_3"
-              render={(props) => {
-                return (
-                  <ParentingPg3
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/positive_role_model_pg_1"
-              render={(props) => {
-                return (
-                  <PositiveRoleModelPg1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/positive_role_model_pg_2"
-              render={(props) => {
-                return (
-                  <PositiveRoleModelPg2
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/parent_knowledge_pg_1"
-              render={(props) => {
-                return (
-                  <ParentKnowledgePg1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/cognitive_skills_pg_1"
-              render={(props) => {
-                return (
-                  <CognitiveSkillsPg1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/material_resources_pg_1"
-              render={(props) => {
-                return (
-                  <MaterialResourcesPg1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/behavioral_observations_and_testing_conditions_pg_1"
-              render={(props) => {
-                return (
-                  <BehavioralObservationsAndTestingConditionsPg1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/behavioral_observations_and_testing_conditions_pg_2"
-              render={(props) => {
-                return (
-                  <BehavioralObservationsAndTestingConditionsPg2
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/behavioral_observations_and_testing_conditions_pg_3"
-              render={(props) => {
-                return (
-                  <BehavioralObservationsAndTestingConditionsPg3
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/behavioral_observations_and_testing_conditions_pg_4"
-              render={(props) => {
-                return (
-                  <BehavioralObservationsAndTestingConditionsPg4
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/behavioral_observations_and_testing_conditions_pg_5"
-              render={(props) => {
-                return (
-                  <BehavioralObservationsAndTestingConditionsPg5
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/procedures_administered_pg_1"
-              render={(props) => {
-                return (
-                  <ProceduresAdministedPg1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/wasi-ii"
-              render={(props) => {
-                return (
-                  <WasiII hasUser={hasUser} patientId={patientId} patientName={patientName} {...props} />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/wechsler_adult_intelligence_scale_IV"
-              render={(props) => {
-                return (
-                  <WechslerAdultIntelligenceScaleIV
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/shipley_intelligence_assessment_2"
-              render={(props) => {
-                return (
-                  <ShipleyIntelligenceAssessment2
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/rait_pg_1"
-              render={(props) => {
-                return (
-                  <RAITpg1 hasUser={hasUser} patientId={patientId} patientName={patientName} {...props} />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/rait_pg_2"
-              render={(props) => {
-                return (
-                  <RAITpg2 hasUser={hasUser} patientId={patientId} patientName={patientName} {...props} />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/rait_pg_3"
-              render={(props) => {
-                return (
-                  <RAITpg3 hasUser={hasUser} patientId={patientId} patientName={patientName} {...props} />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/wechsler_adult_intelligence_scale_IV_pg_2"
-              render={(props) => {
-                return (
-                  <WechslerAdultIntelligenceScaleIVpg2
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/wide_range_achievement_test_5"
-              render={(props) => {
-                return (
-                  <WideRangeAchievementTest5
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/aimsweb_plus_achievement_test_pg_1"
-              render={(props) => {
-                return (
-                  <AimswebPlusAchievementTestPg1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/aimsweb_plus_achievement_test_pg_2"
-              render={(props) => {
-                return (
-                  <AimswebPlusAchievementTestPg2
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/aimsweb_plus_achievement_test_pg_3"
-              render={(props) => {
-                return (
-                  <AimswebPlusAchievementTestPg3
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/aimsweb_plus_achievement_test_pg_4"
-              render={(props) => {
-                return (
-                  <AimswebPlusAchievementTestPg4
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/continous_performance_test_3rd_ed"
-              render={(props) => {
-                return (
-                  <ContinuousPerformanceTest3rdEd
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/computerized_performance_neurocognitive_assessment"
-              render={(props) => {
-                return (
-                  <ComputerizedNeurocognitiveAssessment
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/paulhus_deception_scale"
-              render={(props) => {
-                return (
-                  <PaulasDeceptionScale
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/minnesota_multiphasic_personality_inventory_2"
-              render={(props) => {
-                return (
-                  <MinnesotaMultiphasicPersonalityInventory2
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/substance_abuse_subtle_screening_inventory_4"
-              render={(props) => {
-                return (
-                  <SubstanceAbuseSubtleScreeningInventory4
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/iowa_gambling_task"
-              render={(props) => {
-                return (
-                  <IowaGamblingTask
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/millon_clinical_multiaxial_inventory_iv_pg_1"
-              render={(props) => {
-                return (
-                  <MillonClinicalMultiaxialInventoryIVPg1
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/millon_clinical_multiaxial_inventory_iv_pg_2"
-              render={(props) => {
-                return (
-                  <MillonClinicalMultiaxialInventoryIVPg2
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/rorschach_performance_assessment_system"
-              render={(props) => {
-                return (
-                  <RorschPerformanceAssessmentSystem
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path="/thematic_apperceptions_test"
-              render={(props) => {
-                return (
-                  <ThematicApperceptionsTest
-                    hasUser={hasUser}
-                    patientId={patientId}
-                    patientName={patientName}
-                    {...props}
-                  />
-                );
-              }}
-            />
-          </>
-        ) : (
-          <Redirect to="/" />
-        )}
-      </Switch>
+              <Route
+                exact
+                path="/housing_pg_1"
+                render={(props) => {
+                  return (
+                    <HousingPg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/housing_pg_2"
+                render={(props) => {
+                  return (
+                    <HousingPg2
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/housing_pg_3"
+                render={(props) => {
+                  return (
+                    <HousingPg3
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/employment_pg_1"
+                render={(props) => {
+                  return (
+                    <EmploymentPg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/employment_pg_2"
+                render={(props) => {
+                  return (
+                    <EmploymentPg2
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/employment_pg_3"
+                render={(props) => {
+                  return (
+                    <EmploymentPg3
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/education_pg_1"
+                render={(props) => {
+                  return (
+                    <EducationPg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/education_pg_2"
+                render={(props) => {
+                  return (
+                    <EducationPg2
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/education_pg_3"
+                render={(props) => {
+                  return (
+                    <EducationPg3
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/education_pg_4"
+                render={(props) => {
+                  return (
+                    <EducationPg4
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/history_of_legal_pg_1"
+                render={(props) => {
+                  return (
+                    <HistoryOfLegalPg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/history_of_legal_pg_2"
+                render={(props) => {
+                  return (
+                    <HistoryOfLegalPg2
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/history_of_legal_pg_3"
+                render={(props) => {
+                  return (
+                    <HistoryOfLegalPg3
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/history_of_legal_pg_4"
+                render={(props) => {
+                  return (
+                    <HistoryOfLegalPg4
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/history_of_legal_pg_5"
+                render={(props) => {
+                  return (
+                    <HistoryOfLegalPg5
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/history_of_legal_pg_6"
+                render={(props) => {
+                  return (
+                    <HistoryOfLegalPg6
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/history_of_legal_pg_7"
+                render={(props) => {
+                  return (
+                    <HistoryOfLegalPg7
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/history_of_legal_pg_8"
+                render={(props) => {
+                  return (
+                    <HistoryOfLegalPg8
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/history_of_legal_pg_9"
+                render={(props) => {
+                  return (
+                    <HistoryOfLegalPg9
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/history_of_legal_pg_10"
+                render={(props) => {
+                  return (
+                    <HistoryOfLegalPg10
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/history_of_legal_pg_11"
+                render={(props) => {
+                  return (
+                    <HistoryOfLegalPg11
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/history_of_legal_pg_12"
+                render={(props) => {
+                  return (
+                    <HistoryOfLegalPg12
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/history_of_legal_pg_13"
+                render={(props) => {
+                  return (
+                    <HistoryOfLegalPg13
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/history_of_legal_pg_14"
+                render={(props) => {
+                  return (
+                    <HistoryOfLegalPg14
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/history_of_legal_pg_15"
+                render={(props) => {
+                  return (
+                    <HistoryOfLegalPg15
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/mental_health_history_pg_1"
+                render={(props) => {
+                  return (
+                    <MentalHealthHistoryPg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/mental_health_history_pg_2"
+                render={(props) => {
+                  return (
+                    <MentalHealthHistoryPg2
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/mental_health_history_pg_3"
+                render={(props) => {
+                  return (
+                    <MentalHealthHistoryPg3
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/mental_health_history_pg_4"
+                render={(props) => {
+                  return (
+                    <MentalHealthHistoryPg4
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/medical_history_health_concerns_limitations_pg_1"
+                render={(props) => {
+                  return (
+                    <MedicalHistoryHealthConcernsLimitionsPg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/neglect_abuse_trauma_loss_pg_1"
+                render={(props) => {
+                  return (
+                    <NeglectAbuseTraumaLossPg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/neglect_abuse_trauma_loss_pg_2"
+                render={(props) => {
+                  return (
+                    <NeglectAbuseTraumaLossPg2
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/neglect_abuse_trauma_loss_pg_3"
+                render={(props) => {
+                  return (
+                    <NeglectAbuseTraumaLossPg3
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/neglect_abuse_trauma_loss_pg_4"
+                render={(props) => {
+                  return (
+                    <NeglectAbuseTraumaLossPg4
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/neglect_abuse_trauma_loss_pg_5"
+                render={(props) => {
+                  return (
+                    <NeglectAbuseTraumaLossPg5
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/perpetrator_of_neglect_and_abuse_pg_1"
+                render={(props) => {
+                  return (
+                    <PerpetratorOfNeglectAndAbusePg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/perpetrator_of_neglect_and_abuse_pg_2"
+                render={(props) => {
+                  return (
+                    <PerpetratorOfNeglectAndAbusePg2
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/perpetrator_of_neglect_and_abuse_pg_3"
+                render={(props) => {
+                  return (
+                    <PerpetratorOfNeglectAndAbusePg3
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/perpetrator_of_neglect_and_abuse_pg_4"
+                render={(props) => {
+                  return (
+                    <PerpetratorOfNeglectAndAbusePg4
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/partner_relationship_pg_1"
+                render={(props) => {
+                  return (
+                    <PartnerRelationshipPg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/partner_relationship_pg_2"
+                render={(props) => {
+                  return (
+                    <PartnerRelationshipPg2
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/partner_relationship_pg_3"
+                render={(props) => {
+                  return (
+                    <PartnerRelationshipPg3
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/partner_relationship_pg_4"
+                render={(props) => {
+                  return (
+                    <PartnerRelationshipPg4
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/partner_relationship_pg_5"
+                render={(props) => {
+                  return (
+                    <PartnerRelationshipPg5
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/partner_relationship_pg_6"
+                render={(props) => {
+                  return (
+                    <PartnerRelationshipPg6
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/partner_relationship_pg_7"
+                render={(props) => {
+                  return (
+                    <PartnerRelationshipPg7
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/partner_relationship_pg_8"
+                render={(props) => {
+                  return (
+                    <PartnerRelationshipPg8
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/partner_relationship_pg_9"
+                render={(props) => {
+                  return (
+                    <PartnerRelationshipPg9
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/partner_relationship_pg_10"
+                render={(props) => {
+                  return (
+                    <PartnerRelationshipPg10
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/parenting_pg_1"
+                render={(props) => {
+                  return (
+                    <ParentingPg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/parenting_pg_2"
+                render={(props) => {
+                  return (
+                    <ParentingPg2
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/parenting_pg_3"
+                render={(props) => {
+                  return (
+                    <ParentingPg3
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/positive_role_model_pg_1"
+                render={(props) => {
+                  return (
+                    <PositiveRoleModelPg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/positive_role_model_pg_2"
+                render={(props) => {
+                  return (
+                    <PositiveRoleModelPg2
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/parent_knowledge_pg_1"
+                render={(props) => {
+                  return (
+                    <ParentKnowledgePg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/cognitive_skills_pg_1"
+                render={(props) => {
+                  return (
+                    <CognitiveSkillsPg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/material_resources_pg_1"
+                render={(props) => {
+                  return (
+                    <MaterialResourcesPg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/behavioral_observations_and_testing_conditions_pg_1"
+                render={(props) => {
+                  return (
+                    <BehavioralObservationsAndTestingConditionsPg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/behavioral_observations_and_testing_conditions_pg_2"
+                render={(props) => {
+                  return (
+                    <BehavioralObservationsAndTestingConditionsPg2
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/behavioral_observations_and_testing_conditions_pg_3"
+                render={(props) => {
+                  return (
+                    <BehavioralObservationsAndTestingConditionsPg3
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/behavioral_observations_and_testing_conditions_pg_4"
+                render={(props) => {
+                  return (
+                    <BehavioralObservationsAndTestingConditionsPg4
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/behavioral_observations_and_testing_conditions_pg_5"
+                render={(props) => {
+                  return (
+                    <BehavioralObservationsAndTestingConditionsPg5
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/procedures_administered_pg_1"
+                render={(props) => {
+                  return (
+                    <ProceduresAdministedPg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/wasi-ii"
+                render={(props) => {
+                  return (
+                    <WasiII
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/wechsler_adult_intelligence_scale_IV"
+                render={(props) => {
+                  return (
+                    <WechslerAdultIntelligenceScaleIV
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/shipley_intelligence_assessment_2"
+                render={(props) => {
+                  return (
+                    <ShipleyIntelligenceAssessment2
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/rait_pg_1"
+                render={(props) => {
+                  return (
+                    <RAITpg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/rait_pg_2"
+                render={(props) => {
+                  return (
+                    <RAITpg2
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/rait_pg_3"
+                render={(props) => {
+                  return (
+                    <RAITpg3
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/wechsler_adult_intelligence_scale_IV_pg_2"
+                render={(props) => {
+                  return (
+                    <WechslerAdultIntelligenceScaleIVpg2
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/wide_range_achievement_test_5"
+                render={(props) => {
+                  return (
+                    <WideRangeAchievementTest5
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/aimsweb_plus_achievement_test_pg_1"
+                render={(props) => {
+                  return (
+                    <AimswebPlusAchievementTestPg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/aimsweb_plus_achievement_test_pg_2"
+                render={(props) => {
+                  return (
+                    <AimswebPlusAchievementTestPg2
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/aimsweb_plus_achievement_test_pg_3"
+                render={(props) => {
+                  return (
+                    <AimswebPlusAchievementTestPg3
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/aimsweb_plus_achievement_test_pg_4"
+                render={(props) => {
+                  return (
+                    <AimswebPlusAchievementTestPg4
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/continous_performance_test_3rd_ed"
+                render={(props) => {
+                  return (
+                    <ContinuousPerformanceTest3rdEd
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/computerized_performance_neurocognitive_assessment"
+                render={(props) => {
+                  return (
+                    <ComputerizedNeurocognitiveAssessment
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/paulhus_deception_scale"
+                render={(props) => {
+                  return (
+                    <PaulasDeceptionScale
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/minnesota_multiphasic_personality_inventory_2"
+                render={(props) => {
+                  return (
+                    <MinnesotaMultiphasicPersonalityInventory2
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/substance_abuse_subtle_screening_inventory_4"
+                render={(props) => {
+                  return (
+                    <SubstanceAbuseSubtleScreeningInventory4
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/iowa_gambling_task"
+                render={(props) => {
+                  return (
+                    <IowaGamblingTask
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/millon_clinical_multiaxial_inventory_iv_pg_1"
+                render={(props) => {
+                  return (
+                    <MillonClinicalMultiaxialInventoryIVPg1
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/millon_clinical_multiaxial_inventory_iv_pg_2"
+                render={(props) => {
+                  return (
+                    <MillonClinicalMultiaxialInventoryIVPg2
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/rorschach_performance_assessment_system"
+                render={(props) => {
+                  return (
+                    <RorschPerformanceAssessmentSystem
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/thematic_apperceptions_test"
+                render={(props) => {
+                  return (
+                    <ThematicApperceptionsTest
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+            </>
+          ) : (
+            <Redirect to="/" />
+          )}
+        </Switch>
+      </Suspense>
     </>
   );
 };

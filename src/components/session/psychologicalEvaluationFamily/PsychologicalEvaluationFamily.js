@@ -21,16 +21,7 @@ function PsychologicalEvaluation_family(props) {
   const [item, setItem] = useState("");
   const [newGuardian, setNewGuardian] = useState("");
   const [patientGuardians, setPatientGuardians] = useState([]);
-  const [patientParents, setPatientParents] = useState({
-    patient_father_first_name: "",
-    patient_father_last_name: "",
-    patient_mother_first_name: "",
-    patient_mother_last_name: "",
-    patient_guardian_first_name: "",
-    patient_guardian_last_name: "",
-    patient_guardian_gender: "",
-    id: "",
-  });
+  const [patientParents, setPatientParents] = useState({});
 
   const next = "/psychological_evaluation_siblings";
   const back = "/psychological_evaluation";
@@ -83,50 +74,26 @@ function PsychologicalEvaluation_family(props) {
       patient_guardian_gender: patientParents.patient_guardian_gender,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
-  const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "patient_father_first_name",
-        "patient_father_last_name",
-        "patient_mother_first_name",
-        "patient_mother_last_name",
-        "patient_guardian_first_name",
-        "patient_guardian_last_name",
-        "patient_guardian_gender",
-        "id",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientParents(filtered);
-    });
+  const getData = async () => {
+    setPatientParents(props.patientDetails);
   };
 
   useEffect(() => {
     getData();
     getGuardians();
-  },[]);
+  }, [props]);
 
   return (
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="minWidthContainer">
             <div className="header">
               <h1 className="textWhite mt-2">

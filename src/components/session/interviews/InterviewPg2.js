@@ -35,20 +35,15 @@ function Interview_Pg2(props) {
       interview_pg2_b: patientInterview_pg2.interview_pg2_b,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData()
+    });
   };
 
   //CRUD Function END
 
   const getData = async () => {
-    const check_for_patient = await sessionStorage.getItem("patient_id");
-    const patientInfo = await DataManager.getPatient(check_for_patient);
-
-    let { interview_pg2_a, interview_pg2_b } = patientInfo;
-    setPatientInterview_pg2({
-      interview_pg2_a,
-      interview_pg2_b,
-    });
+    setPatientInterview_pg2(props.patientDetails);
   };
 
   useEffect(() => {
@@ -66,7 +61,7 @@ function Interview_Pg2(props) {
           <div className="interview_div1">
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
@@ -85,7 +80,7 @@ function Interview_Pg2(props) {
           <div className="interview_div1">
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
