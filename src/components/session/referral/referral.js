@@ -42,13 +42,16 @@ function PsychologicalEvaluationReferral(props) {
   const DefaultParagraph = () => {
     return (
       <div className="centerText" id="referral_paragraph">
-        {String(patient.patient_first_name)} {String(patient.patient_last_name)}{" "}
-        is a {String(ageFromString)} year old {String(patient.patient_married)}{" "}
-        {String(patient.patient_gender)} who was referred by the [Referral] for
-        a psychological evaluation to determine {String(patientProNoun())}{" "}
-        current cognitive, emotional, behavioral, and psychological status and
-        make recommendations as to {String(patientProNoun())} ability to
-        protect, provide for, and care for {String(patientProNoun())} children{" "}
+        {String(props.patientDetails.patient_first_name)}{" "}
+        {String(props.patientDetails.patient_last_name)} is a{" "}
+        {String(ageFromString)} year old{" "}
+        {String(props.patientDetails.patient_married)}{" "}
+        {String(props.patientDetails.patient_gender)} who was referred by the
+        [Referral] for a psychological evaluation to determine{" "}
+        {String(patientProNoun())} current cognitive, emotional, behavioral, and
+        psychological status and make recommendations as to{" "}
+        {String(patientProNoun())} ability to protect, provide for, and care for{" "}
+        {String(patientProNoun())} children{" "}
         {String(
           startItem.map((child) => {
             let childAge = new AgeFromDateString(child.dob).age;
@@ -91,9 +94,9 @@ function PsychologicalEvaluationReferral(props) {
     const editedParagraph = {
       ...paragraph,
       [e.target.name]: e.target.value,
-    }
+    };
     DataManager.update("patientNotes", editedParagraph);
-  }
+  };
 
   const updatePatient = () => {
     const editedPatient = {

@@ -31,15 +31,13 @@ function InterviewPg1(props) {
       interview_pg1_a: patientInterview_pg1.interview_pg1_a,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   const getData = async () => {
-    const check_for_patient = await sessionStorage.getItem("patient_id");
-    const patientInfo = await DataManager.getPatient(check_for_patient);
-
-    let { interview_pg1_a } = patientInfo;
-    setPatientInterview_pg1({ interview_pg1_a });
+    setPatientInterview_pg1(props.patientDetails);
   };
 
   useEffect(() => {
@@ -53,22 +51,22 @@ function InterviewPg1(props) {
           <div className="header">
             <h2 className="textWhite">Interviews</h2>
             <h5 className="textWhite">
-              Perspective from {props.patientName.patient_first_name}{" "}
-              {props.patientName.patient_last_name}:
+              Perspective from {props.patientDetails.patient_first_name}{" "}
+              {props.patientDetails.patient_last_name}:
             </h5>
             <h4 className="textWhite">
-              The following is from {props.patientName.patient_first_name}’s
+              The following is from {props.patientDetails.patient_first_name}’s
               perspective unless otherwise noted.
             </h4>
             <h4 className="textWhite">
-              {props.patientName.patient_first_name}, how many times has DHR
+              {props.patientDetails.patient_first_name}, how many times has DHR
               directly or indirectly interacted with you?
             </h4>
           </div>
           <div className="interview_div1">
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"

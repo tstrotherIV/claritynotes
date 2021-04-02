@@ -9,7 +9,6 @@ import {
   Form,
   Input,
 } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading.js";
 import TextareaAutosize from "react-textarea-autosize";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
@@ -144,49 +143,20 @@ function PsychologicalEvaluation(props) {
       patient_intake_time: patientPsychological_Evaluation.patient_intake_time,
       patient_gender: patientPsychological_Evaluation.patient_gender,
     };
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData()
+    });
   };
 
   //CRUD Function END
 
-  const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "patient_first_name",
-        "patient_middle_name",
-        "patient_last_name",
-        "patient_Date_of_Birth",
-        "patient_referral",
-        "patient_office_time",
-        "patient_report_writing",
-        "patient_case_number",
-        "patient_evaluation_Date",
-        "patient_county",
-        "patient_interview_time",
-        "patient_intake_time",
-        "patient_gender",
-        "id",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientPsychological_Evaluation(filtered);
-    });
+  const getData = async () => {
+    setPatientPsychological_Evaluation(props.patientDetails)
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   const next = "/psychological_evaluation_family";
   const back = "/sessionStep1";

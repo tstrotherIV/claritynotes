@@ -85,12 +85,12 @@ function PsychologicalEvaluationConsent(props) {
                   <div className="centerText text-white">
                     Prior to initiating the evaluation, its nature, purpose, the
                     risks and benefits were explained to{" "}
-                    {props.patientName.patient_first_name}{" "}
-                    {props.patientName.patient_last_name}. Questions were sought
-                    and answered. {props.patientName.patient_first_name}{" "}
+                    {props.patientDetails.patient_first_name}{" "}
+                    {props.patientDetails.patient_last_name}. Questions were sought
+                    and answered. {props.patientDetails.patient_first_name}{" "}
                     demonstrated a basic understanding by restating the
                     information in {patientProNoun()} own words.
-                    {props.patientName.patient_first_name} indicated willingness
+                    {props.patientDetails.patient_first_name} indicated willingness
                     to participate in the evaluation and complied with requests.
                   </div>
                 </div>
@@ -114,7 +114,7 @@ function PsychologicalEvaluationConsent(props) {
           </Col>
           <Col xs="6">
             {/* Client wanted to combine the Rerral page, so it is imported here */}
-            <ReferralComp />
+            <ReferralComp {...props}/>
           </Col>
         </Row>
       </Container>

@@ -11,9 +11,7 @@ function PsychologicalEvaluationAdditionalData(props) {
   const next = "/interview_pg_1";
   const back = "/psychological_evaluation_consent";
 
-  const updatePatient = () => {
-    
-  };
+  const updatePatient = () => {};
 
   useEffect(() => {
     const check_for_patient = sessionStorage.getItem("patient_id");
@@ -29,30 +27,27 @@ function PsychologicalEvaluationAdditionalData(props) {
   return (
     <>
       <div>
-        <div>
-          <div>
-            <div className="centerContent">
-              <div className="d-flex justify-content-center mt-5">
-                <h2 className="text-white">Psychological Evaluation</h2>
-              </div>
-              <div className="d-flex justify-content-center mt-5">
-                <h2 className="text-white">Additional Data</h2>
-              </div>
-              <div className="d-flex justify-content-center mt-5">
-                <div className="centerText text-white">
-                  Interview with {patient.patient_first_name}{" "}
-                  {patient.patient_last_name} <br></br>Interview with {user.first_name} {user.last_name}, ID: {user.id},{" "}
-                  {user.position}
-                  <br></br>Interview with []
-                </div>
-              </div>
+        <div className="centerContent">
+          <div className="d-flex justify-content-center mt-5">
+            <h2 className="text-white">Additional Data</h2>
+          </div>
+          <div className="d-flex justify-content-center mt-5">
+            <div className="centerText text-white">
+              <p>Arrest Record</p>
+              <p>Interview with Social Worker [name]</p>
+              <p>DHR Social Worker</p>
             </div>
           </div>
         </div>
-        <div id="footer">
-          <ButtonNavigation next={next} back={back} patient={props.patientId} updatePatient={updatePatient}/>
-          <EmptyFooterSpace />
-        </div>
+      </div>
+      <div id="footer">
+        <ButtonNavigation
+          next={next}
+          back={back}
+          patient={props.patientId}
+          updatePatient={updatePatient}
+        />
+        <EmptyFooterSpace />
       </div>
     </>
   );
