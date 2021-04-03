@@ -40,7 +40,7 @@ function Interview_Pg9(props) {
       interview_pg9_c: patientInterview_pg9.interview_pg9_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -61,13 +61,13 @@ function Interview_Pg9(props) {
           return obj;
         }, {});
 
-      setPatientInterview_pg9(filtered);
+      setPatientInterview_pg9(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -83,7 +83,7 @@ function Interview_Pg9(props) {
           <div className="interview_div1">
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
@@ -100,7 +100,7 @@ function Interview_Pg9(props) {
             <div className="div1Fields">
               <div className="in2">
                 <Label className="textWhite title" for="caseNumber">
-                  {props.patientName.patient_first_name} was dressed in
+                  {props.patientDetails.patient_first_name} was dressed in
                 </Label>
                 <TextareaAutosize
                   className="fieldData2"

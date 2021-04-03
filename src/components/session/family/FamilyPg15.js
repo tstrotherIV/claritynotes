@@ -38,7 +38,7 @@ function FamilyPg15(props) {
       family_pg15_b: patientFamily_pg15.family_pg15_b,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -59,13 +59,13 @@ function FamilyPg15(props) {
           return obj;
         }, {});
 
-      setPatientFamily_pg15(filtered);
+      setPatientFamily_pg15(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -81,7 +81,7 @@ function FamilyPg15(props) {
           <div className="interview_div1">
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
@@ -101,7 +101,7 @@ function FamilyPg15(props) {
           <div className="interview_div1">
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"

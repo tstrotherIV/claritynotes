@@ -41,7 +41,7 @@ function CognitiveSkillsPg1(props) {
       cognitive_skills_pg1_d: patientCognitiveSkillsPg1.cognitive_skills_pg1_d,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -67,13 +67,13 @@ function CognitiveSkillsPg1(props) {
           return obj;
         }, {});
 
-      setPatientCognitiveSkillsPg1(filtered);
+      setPatientCognitiveSkillsPg1(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -88,7 +88,7 @@ function CognitiveSkillsPg1(props) {
             <div className="interview_div1">
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -107,7 +107,7 @@ function CognitiveSkillsPg1(props) {
             <div className="interview_div1">
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -126,7 +126,7 @@ function CognitiveSkillsPg1(props) {
             <div className="interview_div1">
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -140,7 +140,7 @@ function CognitiveSkillsPg1(props) {
               </div>
               <div className="m-auto d-flex align-items-baseline textWhite justify-content-center">
                 <Label className="textWhite text-right" for="">
-                  {props.patientName.patient_first_name}
+                  {props.patientDetails.patient_first_name}
                 </Label>
                 <div className="m-2">'s language skills</div>
                 <TextareaAutosize

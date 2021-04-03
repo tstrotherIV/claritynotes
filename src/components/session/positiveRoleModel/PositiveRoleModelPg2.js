@@ -60,7 +60,7 @@ function PositiveRoleModelPg2(props) {
         patientPositiveRoleModelPg2.positive_role_model_pg2_g,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -89,13 +89,13 @@ function PositiveRoleModelPg2(props) {
           return obj;
         }, {});
 
-      setPatientPositiveRoleModelPg2(filtered);
+      setPatientPositiveRoleModelPg2(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -111,7 +111,7 @@ function PositiveRoleModelPg2(props) {
                   others?
                 </h5>
                 <div className="textWhite d-flex flex-wrap align-content-end col-2 mb-2">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </div>
                 <div className="col-3 d-flex flex-wrap align-items-end m-0 p-0">
                   <Label className="textWhite"></Label>
@@ -162,7 +162,7 @@ function PositiveRoleModelPg2(props) {
                   promises to yourself and others?
                 </h5>
                 <div className="textWhite d-flex flex-wrap align-content-end col-2 mb-2">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </div>
                 <div className="col-3 d-flex flex-wrap align-items-end m-0 p-0">
                   <Label className="textWhite"></Label>
@@ -225,9 +225,9 @@ function PositiveRoleModelPg2(props) {
                 />
 
                 <Label className="textWhite text-center" for="firstName">
-                  {props.patientName.patient_first_name} appears to be lacking knowledge and
+                  {props.patientDetails.patient_first_name} appears to be lacking knowledge and
                   examples which illustrates probable deficits in this area.
-                  {props.patientName.patient_first_name} will need this area to be further
+                  {props.patientDetails.patient_first_name} will need this area to be further
                   developed in therapy. She/he needs her/his goals and values
                   developed in order to guide their own behavior as well as that
                   of their children.

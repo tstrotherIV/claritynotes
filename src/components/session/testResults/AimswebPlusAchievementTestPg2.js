@@ -107,13 +107,13 @@ function AimswebPlusAchievementTestPg2(props) {
           return obj;
         }, {});
 
-      setAimswebPlusAchievementTestPg2(filtered);
+      setAimswebPlusAchievementTestPg2(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>

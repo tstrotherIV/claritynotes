@@ -67,7 +67,7 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
         patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_g,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -96,13 +96,13 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
           return obj;
         }, {});
 
-      setPatientBehavioralObservationsPg3(filtered);
+      setPatientBehavioralObservationsPg3(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -114,7 +114,7 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
           <div className="text-center questionsContainer">
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name}
+                {props.patientDetails.patient_first_name}
               </Label>
               <Label className="textWhite m-2">Height:</Label>
               <TextareaAutosize
@@ -132,7 +132,7 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
 
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name}
+                {props.patientDetails.patient_first_name}
               </Label>
               <Label className="textWhite m-2">Weight:</Label>
               <TextareaAutosize
@@ -150,7 +150,7 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
 
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name}
+                {props.patientDetails.patient_first_name}
               </Label>
               <Label className="textWhite m-2">Build:</Label>
               <TextareaAutosize
@@ -168,7 +168,7 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
 
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name}
+                {props.patientDetails.patient_first_name}
               </Label>
               <Label className="textWhite m-2">Hearing:</Label>
               <TextareaAutosize
@@ -186,7 +186,7 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
 
             <div className=" mb-4">
               <Label className="textWhite interview_title" for="">
-                Was {props.patientName.patient_first_name} groom appropriately? (Yes/No)
+                Was {props.patientDetails.patient_first_name} groom appropriately? (Yes/No)
               </Label>
               <input
                 className="fieldData mb-2"
@@ -204,7 +204,7 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
 
             <div className="mb-4">
               <Label className="textWhite interview_title" for="">
-                What kind of effort did {props.patientName.patient_first_name} show?
+                What kind of effort did {props.patientDetails.patient_first_name} show?
               </Label>
               <Container>
                 <Row xs="2">

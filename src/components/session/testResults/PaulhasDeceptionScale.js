@@ -57,7 +57,7 @@ function PaulasDeceptionScale(props) {
         patientPaulasDeceptionScale.paulhus_deception_scale_d,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -83,13 +83,13 @@ function PaulasDeceptionScale(props) {
           return obj;
         }, {});
 
-      setPatientPaulasDeceptionScale(filtered);
+      setPatientPaulasDeceptionScale(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -110,7 +110,7 @@ function PaulasDeceptionScale(props) {
                 onChange={handleFieldChange}
               />
               <Label for="" className="m-3">
-                {props.patientName.patient_first_name} completed a Paulus Deception Scales (PDS)
+                {props.patientDetails.patient_first_name} completed a Paulus Deception Scales (PDS)
               </Label>
               <p className="text-white">
                 {" "}

@@ -51,7 +51,7 @@ function InterviewPg8(props) {
       interview_pg8_a: patientInterview_pg8.interview_pg8_a,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -72,13 +72,13 @@ function InterviewPg8(props) {
           return obj;
         }, {});
 
-      setPatientInterview_pg8(filtered);
+      setPatientInterview_pg8(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -94,7 +94,7 @@ function InterviewPg8(props) {
           <div className="interview_div1">
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"

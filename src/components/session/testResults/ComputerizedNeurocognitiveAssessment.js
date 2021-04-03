@@ -217,7 +217,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
         patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col3_p,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -288,7 +288,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
           return obj;
         }, {});
 
-      setPatientComputerizedNeurocognitiveAssessment(filtered);
+      setPatientComputerizedNeurocognitiveAssessment(props.patientDetails);
     });
   };
 
@@ -320,7 +320,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                   }
                   onChange={handleFieldChange}
                 />
-                <Label className="m-2" for=""></Label>{props.patientName.patient_first_name}
+                <Label className="m-2" for=""></Label>{props.patientDetails.patient_first_name}
                 completed the Computerized Neurocognitive Assessment (CNS).
                 <p className="m-2">
                   This instrument is a clinical testing procedure used to

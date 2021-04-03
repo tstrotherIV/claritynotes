@@ -51,7 +51,7 @@ function PartnerRelationshipPg1(props) {
         patientPartnerRelationshipPg1.partner_relationship_pg1_e,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -78,13 +78,13 @@ function PartnerRelationshipPg1(props) {
           return obj;
         }, {});
 
-      setPatientPartnerRelationshipPg1(filtered);
+      setPatientPartnerRelationshipPg1(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -98,7 +98,7 @@ function PartnerRelationshipPg1(props) {
             </h4>
             <div className="mb-4 d-flex flex-wrap justify-content-center">
               <div className="textWhite d-flex flex-wrap align-content-end col-2 mb-2">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </div>
               <div className="col-3 d-flex flex-wrap align-items-end m-0 p-0">
                 <Label className="textWhite"></Label>
@@ -150,7 +150,7 @@ function PartnerRelationshipPg1(props) {
             <div className="interview_div1">
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -169,7 +169,7 @@ function PartnerRelationshipPg1(props) {
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"

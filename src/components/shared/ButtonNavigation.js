@@ -24,7 +24,7 @@ function ButtonNavigation(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <div className="buttonSection">

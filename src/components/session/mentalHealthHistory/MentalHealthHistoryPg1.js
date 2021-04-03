@@ -45,7 +45,7 @@ function MentalHealthHistoryPg1(props) {
         patientMentalHealthHistory_pg1.mental_health_history_pg1_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -70,13 +70,13 @@ function MentalHealthHistoryPg1(props) {
           return obj;
         }, {});
 
-      setPatientMentalHealthHistory_pg1(filtered);
+      setPatientMentalHealthHistory_pg1(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -91,7 +91,7 @@ function MentalHealthHistoryPg1(props) {
             <div className="interview_div1">
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -111,7 +111,7 @@ function MentalHealthHistoryPg1(props) {
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -131,7 +131,7 @@ function MentalHealthHistoryPg1(props) {
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"

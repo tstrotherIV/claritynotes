@@ -45,7 +45,7 @@ function PerpetratorOfNeglectAndAbusePg1(props) {
         patientPerpetratorOfNeglectAndAbusePg1.perpetrator_of_neglect_and_abuse_pg1_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -70,13 +70,13 @@ function PerpetratorOfNeglectAndAbusePg1(props) {
           return obj;
         }, {});
 
-      setPatientPerpetratorOfNeglectAndAbusePg1(filtered);
+      setPatientPerpetratorOfNeglectAndAbusePg1(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -93,7 +93,7 @@ function PerpetratorOfNeglectAndAbusePg1(props) {
             <div className="interview_div1">
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -112,7 +112,7 @@ function PerpetratorOfNeglectAndAbusePg1(props) {
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -131,7 +131,7 @@ function PerpetratorOfNeglectAndAbusePg1(props) {
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"

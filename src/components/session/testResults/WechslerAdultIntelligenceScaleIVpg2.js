@@ -133,7 +133,7 @@ function WechslerAdultIntelligenceScaleIVpg2(props) {
           return obj;
         }, {});
 
-      setWechslerAdultIntelligenceScaleIV_pg2(filtered);
+      setWechslerAdultIntelligenceScaleIV_pg2(props.patientDetails);
     });
   };
 

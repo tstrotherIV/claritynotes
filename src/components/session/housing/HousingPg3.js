@@ -45,7 +45,7 @@ function HousingPg3(props) {
       housing_pg3_e: patientHousing_pg3.housing_pg3_e,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -72,13 +72,13 @@ function HousingPg3(props) {
           return obj;
         }, {});
 
-      setPatientHousing_pg3(filtered);
+      setPatientHousing_pg3(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -94,7 +94,7 @@ function HousingPg3(props) {
             <div className="interview_div1">
               <div className="interview_line1">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="interview_fieldData"
@@ -116,7 +116,7 @@ function HousingPg3(props) {
                   className="textWhite interview_title"
                   for="hs-housing-cost"
                 >
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="interview_fieldData"

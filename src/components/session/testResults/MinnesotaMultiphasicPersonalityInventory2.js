@@ -47,7 +47,7 @@ function MinnesotaMultiphasicPersonalityInventory2(props) {
       minnesota_multiphasic_personality_inventory_2_b: patientMinnesotaMultiphasicPersonalityInventory2.minnesota_multiphasic_personality_inventory_2_b,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -71,13 +71,13 @@ function MinnesotaMultiphasicPersonalityInventory2(props) {
           return obj;
         }, {});
 
-        setPatientMinnesotaMultiphasicPersonalityInventory2(filtered);
+        setPatientMinnesotaMultiphasicPersonalityInventory2(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -94,7 +94,7 @@ function MinnesotaMultiphasicPersonalityInventory2(props) {
               <div className="col-10 text-white">
                 <p className="mt-5 col-10">
                   The Minnesota Multiphasic Personality Inventory-2 (MMPI-2) was
-                  administered to assess {props.patientName.patient_first_name} [Patient Name,
+                  administered to assess {props.patientDetails.patient_first_name} [Patient Name,
                   Last] general psychological functioning.
                 </p>
                 <div>
@@ -129,7 +129,7 @@ function MinnesotaMultiphasicPersonalityInventory2(props) {
                     <h5>L-Scale Was High</h5>
                   </Label>
                   <p className="col-10">
-                    {props.patientName.patient_first_name}'s L-Scale was elevated. Most often,
+                    {props.patientDetails.patient_first_name}'s L-Scale was elevated. Most often,
                     higher raw scores on L reflect the tendency to place oneself
                     in a favorable light. Consequently, the clinical scales will
                     be suppressed because the individual is tending to deny

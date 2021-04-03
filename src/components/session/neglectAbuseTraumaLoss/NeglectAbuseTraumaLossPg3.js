@@ -45,7 +45,7 @@ function NeglectAbuseTraumaLossPg3(props) {
         patientNeglectAbuseTraumaLossPg3.neglect_abuse_trauma_loss_pg3_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -70,13 +70,13 @@ function NeglectAbuseTraumaLossPg3(props) {
           return obj;
         }, {});
 
-      setPatientNeglectAbuseTraumaLossPg3(filtered);
+      setPatientNeglectAbuseTraumaLossPg3(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -94,7 +94,7 @@ function NeglectAbuseTraumaLossPg3(props) {
             <div className="interview_div1">
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -113,7 +113,7 @@ function NeglectAbuseTraumaLossPg3(props) {
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -132,7 +132,7 @@ function NeglectAbuseTraumaLossPg3(props) {
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"

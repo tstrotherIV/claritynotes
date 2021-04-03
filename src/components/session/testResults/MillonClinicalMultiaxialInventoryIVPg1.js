@@ -519,7 +519,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
       ),
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -669,7 +669,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
           return obj;
         }, {});
 
-      setPatientMillonClinicalMultiaxialInventoryIVPg1(filtered);
+      setPatientMillonClinicalMultiaxialInventoryIVPg1(props.patientDetails);
     });
   };
 
@@ -693,7 +693,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
               <div className="col-2">
                 <p>
                   The Millon Clinical Multiaxial Inventory-IV (MCMI-IV) was
-                  administered to assess {props.patientName.patient_first_name} [Patient Name,
+                  administered to assess {props.patientDetails.patient_first_name} [Patient Name,
                   Last]'s general psychological functioning.
                 </p>
               </div>

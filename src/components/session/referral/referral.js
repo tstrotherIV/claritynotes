@@ -104,7 +104,7 @@ function PsychologicalEvaluationReferral(props) {
         modifiedParagraph.referral_paragraph_modified,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   useEffect(() => {

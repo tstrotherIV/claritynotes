@@ -64,7 +64,7 @@ function ContinuousPerformanceTest3rdEd(props) {
         patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_i,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -95,7 +95,7 @@ function ContinuousPerformanceTest3rdEd(props) {
           return obj;
         }, {});
 
-      setPatientContinuousPerformanceTest3rdEd(filtered);
+      setPatientContinuousPerformanceTest3rdEd(props.patientDetails);
     });
   };
 
@@ -154,7 +154,7 @@ function ContinuousPerformanceTest3rdEd(props) {
                 <div className="d-flex flex-wrap">
                   <div className="col-6 text-white">
                     <p>
-                      {props.patientName.patient_first_name} has a total of [X] atypical
+                      {props.patientDetails.patient_first_name} has a total of [X] atypical
                       T-scores, which falls is associated with a (very high [OR]
                       moderate) likelihood of having a disorder characterized by
                       attention deficits, such as ADHD. (Patient's name) profile

@@ -118,13 +118,13 @@ function ShipleyIntelligenceAssessment2(props) {
           return obj;
         }, {});
 
-      setShipleyIntelligenceAssessment2(filtered);
+      setShipleyIntelligenceAssessment2(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -139,7 +139,7 @@ function ShipleyIntelligenceAssessment2(props) {
             <div className="m-5 d-flex flex-wrap justify-content-around">
               <p className="col-4 text-white">
                 {" "}
-                Shipley Intelligence Assessment 2, {props.patientName.patient_first_name}
+                Shipley Intelligence Assessment 2, {props.patientDetails.patient_first_name}
                 achieved a Full Scale IQ of [Score Result] which falls into the
                 [Score Result Descriptor Correlation] range of intelligence.{" "}
               </p>
