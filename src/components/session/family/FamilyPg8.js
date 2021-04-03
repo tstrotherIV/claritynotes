@@ -40,7 +40,7 @@ function FamilyPg8(props) {
       family_pg8_d: patientFamily_pg8.family_pg8_d,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -66,13 +66,13 @@ function FamilyPg8(props) {
           return obj;
         }, {});
 
-      setPatientFamily_pg8(filtered);
+      setPatientFamily_pg8(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -89,7 +89,7 @@ function FamilyPg8(props) {
             <div className="interview_div1">
               <div className="interview_line1">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -112,7 +112,7 @@ function FamilyPg8(props) {
                 </h5>
                 <div className="observationsColumn pl-3">
                   <Label className="textWhite" for="">
-                    {props.patientName.patient_first_name} stated:
+                    {props.patientDetails.patient_first_name} stated:
                   </Label>
                   <TextareaAutosize
                     type="text"
@@ -136,7 +136,7 @@ function FamilyPg8(props) {
                 </h5>
                 <div className="observationsColumn pl-3">
                   <Label className="textWhite" for="">
-                  {props.patientName.patient_first_name} stated:
+                  {props.patientDetails.patient_first_name} stated:
                   </Label>
                   <TextareaAutosize
                     type="text"
@@ -159,7 +159,7 @@ function FamilyPg8(props) {
                 </h5>
                 <div className="observationsColumn pl-3">
                   <Label className="textWhite" for="">
-                  {props.patientName.patient_first_name} stated:
+                  {props.patientDetails.patient_first_name} stated:
                   </Label>
                   <TextareaAutosize
                     type="text"

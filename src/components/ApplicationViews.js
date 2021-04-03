@@ -147,7 +147,7 @@ const ApplicationViews = (props) => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>

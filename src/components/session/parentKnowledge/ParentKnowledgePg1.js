@@ -50,7 +50,7 @@ function ParentKnowledgePg1(props) {
       parent_knowledge_pg1_i: patientParentKnowledgePg1.parent_knowledge_pg1_i,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -81,13 +81,13 @@ function ParentKnowledgePg1(props) {
           return obj;
         }, {});
 
-      setPatientParentKnowledgePg1(filtered);
+      setPatientParentKnowledgePg1(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -101,7 +101,7 @@ function ParentKnowledgePg1(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="fieldData mb-2"
@@ -118,7 +118,7 @@ function ParentKnowledgePg1(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="fieldData mb-2"
@@ -136,7 +136,7 @@ function ParentKnowledgePg1(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="fieldData mb-2"
@@ -154,7 +154,7 @@ function ParentKnowledgePg1(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="fieldData mb-2"
@@ -171,7 +171,7 @@ function ParentKnowledgePg1(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="fieldData mb-2"
@@ -188,7 +188,7 @@ function ParentKnowledgePg1(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="fieldData mb-2"
@@ -205,7 +205,7 @@ function ParentKnowledgePg1(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="fieldData mb-2"
@@ -222,7 +222,7 @@ function ParentKnowledgePg1(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="fieldData mb-2"
@@ -239,7 +239,7 @@ function ParentKnowledgePg1(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="fieldData mb-2"

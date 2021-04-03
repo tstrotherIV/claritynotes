@@ -85,7 +85,7 @@ function PsychologicalEvaluationSiblings(props) {
           return obj;
         }, {});
 
-      setCheckbox(filtered);
+      setCheckbox(props.patientDetails);
     });
   };
 

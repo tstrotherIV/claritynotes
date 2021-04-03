@@ -49,7 +49,7 @@ function HistoryOfLegalPg13(props) {
         patientHistoryOfLegal_pg13.history_of_legal_pg13_e,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -76,13 +76,13 @@ function HistoryOfLegalPg13(props) {
           return obj;
         }, {});
 
-      setPatientHistoryOfLegal_pg13(filtered);
+      setPatientHistoryOfLegal_pg13(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -99,7 +99,7 @@ function HistoryOfLegalPg13(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="fieldData"
@@ -117,7 +117,7 @@ function HistoryOfLegalPg13(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title ">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="fieldData"
@@ -135,7 +135,7 @@ function HistoryOfLegalPg13(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title ">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="fieldData"
@@ -152,7 +152,7 @@ function HistoryOfLegalPg13(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title ">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="fieldData"
@@ -169,7 +169,7 @@ function HistoryOfLegalPg13(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title ">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="fieldData"

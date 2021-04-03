@@ -42,7 +42,7 @@ function InterviewPg1(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>

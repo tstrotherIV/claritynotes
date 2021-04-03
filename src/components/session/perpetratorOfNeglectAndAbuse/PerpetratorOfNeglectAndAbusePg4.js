@@ -40,7 +40,7 @@ function PerpetratorOfNeglectAndAbusePg4(props) {
         patientPerpetratorOfNeglectAndAbusePg4.perpetrator_of_neglect_and_abuse_pg4_a,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -61,13 +61,13 @@ function PerpetratorOfNeglectAndAbusePg4(props) {
           return obj;
         }, {});
 
-      setPatientPerpetratorOfNeglectAndAbusePg4(filtered);
+      setPatientPerpetratorOfNeglectAndAbusePg4(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -85,7 +85,7 @@ function PerpetratorOfNeglectAndAbusePg4(props) {
             <div className="interview_div1">
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"

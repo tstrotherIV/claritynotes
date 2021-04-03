@@ -54,7 +54,7 @@ function BehavioralObservationsPg1(props) {
         patientBehavioralObservationsPg1.behavioral_observations_and_testing_conditions_pg1_f,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -82,13 +82,13 @@ function BehavioralObservationsPg1(props) {
           return obj;
         }, {});
 
-      setPatientBehavioralObservationsPg1(filtered);
+      setPatientBehavioralObservationsPg1(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <div>

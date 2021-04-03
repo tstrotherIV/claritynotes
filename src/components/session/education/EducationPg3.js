@@ -40,7 +40,7 @@ function EducationPg3(props) {
       education_pg3_c: patientEducation_pg3.education_pg3_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -61,13 +61,13 @@ function EducationPg3(props) {
           return obj;
         }, {});
 
-      setPatientEducation_pg3(filtered);
+      setPatientEducation_pg3(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -80,7 +80,7 @@ function EducationPg3(props) {
             <div className="interview_div1">
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -97,7 +97,7 @@ function EducationPg3(props) {
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -114,7 +114,7 @@ function EducationPg3(props) {
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"

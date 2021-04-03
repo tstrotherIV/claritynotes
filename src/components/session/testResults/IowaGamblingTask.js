@@ -50,7 +50,7 @@ function IowaGamblingTask(props) {
         String(patientIowaGamblingTask.iowa_gambling_task_c)
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -75,13 +75,13 @@ function IowaGamblingTask(props) {
           return obj;
         }, {});
 
-        setPatientIowaGamblingTask(filtered);
+        setPatientIowaGamblingTask(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>

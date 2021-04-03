@@ -48,7 +48,7 @@ function RorschPerformanceAssessmentSystem(props) {
       patientRorschPerformanceAssessmentSystem.rorschach_performance_assessment_system_pg1_a,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -71,13 +71,13 @@ function RorschPerformanceAssessmentSystem(props) {
           return obj;
         }, {});
 
-        setPatientRorschPerformanceAssessmentSystem(filtered);
+        setPatientRorschPerformanceAssessmentSystem(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>

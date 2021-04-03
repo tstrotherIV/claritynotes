@@ -40,7 +40,7 @@ function HistoryOfLegalPg9(props) {
       history_of_legal_pg9_c: patientHistoryOfLegal_pg9.history_of_legal_pg9_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -65,13 +65,13 @@ function HistoryOfLegalPg9(props) {
           return obj;
         }, {});
 
-      setPatientHistoryOfLegal_pg9(filtered);
+      setPatientHistoryOfLegal_pg9(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -88,7 +88,7 @@ function HistoryOfLegalPg9(props) {
             <div className="interview_div1">
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -103,7 +103,7 @@ function HistoryOfLegalPg9(props) {
               <h4 className="textWhite centerItem">In relation to drug use?</h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -120,7 +120,7 @@ function HistoryOfLegalPg9(props) {
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"

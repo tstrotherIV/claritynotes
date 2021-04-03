@@ -82,7 +82,7 @@ function ProceduresAdministeredPg1(props) {
         patientProceduresAdministeredPg1.procedures_administered_pg1_o,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -119,13 +119,13 @@ function ProceduresAdministeredPg1(props) {
           return obj;
         }, {});
 
-      setPatientProceduresAdministeredPg1(filtered);
+      setPatientProceduresAdministeredPg1(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>

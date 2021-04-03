@@ -57,7 +57,7 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
         patientBehavioralObservationsPg4.behavioral_observations_and_testing_conditions_pg4_g,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -86,13 +86,13 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
           return obj;
         }, {});
 
-      setPatientBehavioralObservationsPg4(filtered);
+      setPatientBehavioralObservationsPg4(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -106,7 +106,7 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
             <div className="interview_div1">
               <div className="d-flex align-items-center textWhite m-2">
                 <Label className="textWhite col-3 text-right p-0 m-0" for="">
-                  {props.patientName.patient_first_name}
+                  {props.patientDetails.patient_first_name}
                 </Label>
                 <div className="ml-2 p-0 mr-2">mood was</div>
                 <TextareaAutosize
@@ -124,7 +124,7 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
               </div>
               <div className="d-flex align-items-center textWhite m-2">
                 <Label className="textWhite col-3 text-right p-0 m-0" for="">
-                  {props.patientName.patient_first_name}
+                  {props.patientDetails.patient_first_name}
                 </Label>
                 <div className="ml-2 p-0 col-4">was very hyperactive.</div>
                 <TextareaAutosize
@@ -143,7 +143,7 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
 
               <div className="d-flex align-items-center textWhite m-2">
                 <Label className="textWhite col-3 text-right p-0 m-0" for="">
-                  {props.patientName.patient_first_name}
+                  {props.patientDetails.patient_first_name}
                 </Label>
                 <div className="ml-2 p-0 col-4">was irritable.</div>
                 <TextareaAutosize
@@ -162,7 +162,7 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
 
               <div className="d-flex align-items-center textWhite m-2">
                 <Label className="textWhite col-3 text-right p-0 m-0" for="">
-                  {props.patientName.patient_first_name}
+                  {props.patientDetails.patient_first_name}
                 </Label>
                 <div className="ml-2 p-0 col-4">was withdrawn.</div>
                 <TextareaAutosize
@@ -180,7 +180,7 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
               </div>
               <div className="d-flex align-items-center textWhite m-2">
                 <Label className="textWhite col-3 text-right p-0 m-0" for="">
-                  {props.patientName.patient_first_name}
+                  {props.patientDetails.patient_first_name}
                 </Label>
                 <div className="ml-1 p-0 col-4">
                   ’s eye contact was strong.{" "}
@@ -200,7 +200,7 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
               </div>
               <div className="d-flex align-items-center textWhite m-2">
                 <Label className="textWhite col-3 text-right p-0 m-0" for="">
-                  {props.patientName.patient_first_name}
+                  {props.patientDetails.patient_first_name}
                 </Label>
                 <div className="ml-2 p-0 col-4">
                   was circumspect in her answers.
@@ -220,7 +220,7 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
               </div>
               <div className="d-flex align-items-center textWhite m-2">
                 <Label className="textWhite col-3 text-right p-0 m-0" for="">
-                  {props.patientName.patient_first_name}
+                  {props.patientDetails.patient_first_name}
                 </Label>
                 <div className="ml-2 p-0 col-4">
                   offered information readily.{" "}

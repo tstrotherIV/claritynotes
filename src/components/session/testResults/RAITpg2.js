@@ -37,7 +37,7 @@ function RAITpg2(props) {
       rait_pg2_b: String(patientRAITpg2.rait_pg2_b),
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -58,13 +58,13 @@ function RAITpg2(props) {
           return obj;
         }, {});
 
-      setPatientRAITpg2(filtered);
+      setPatientRAITpg2(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -107,12 +107,12 @@ function RAITpg2(props) {
                   />
                   <h4>Results:</h4>
                   <p>
-                    {props.patientName.patient_first_name} earned a CII of [CII Score], which
+                    {props.patientDetails.patient_first_name} earned a CII of [CII Score], which
                     falls in the [Score Result Descriptor Correlation] range of
                     intelligence. On the RAIT, this level of performance falls
                     within the range of scores designated as [Score Result
                     Placement Descriptor] and exceeds te performance of [Score
-                    Result Percentage] of individuals at {props.patientName.patient_first_name}
+                    Result Percentage] of individuals at {props.patientDetails.patient_first_name}
                     [Patient Name, Last]'s age.
                   </p>
                 </div>
@@ -138,12 +138,12 @@ function RAITpg2(props) {
                   />
                   <h4>Results:</h4>
                   <p>
-                    {props.patientName.patient_first_name} earned a FII of [FII Score], which
+                    {props.patientDetails.patient_first_name} earned a FII of [FII Score], which
                     falls in the [Score Result Descriptor Correlation] range of
                     intelligence. On the RAIT, this level of performance falls
                     within the range of scores designated as [Score Result
                     Placement Descriptor] and exceeds the performance of [Score
-                    Result Percentage] of individuals at {props.patientName.patient_first_name}
+                    Result Percentage] of individuals at {props.patientDetails.patient_first_name}
                     [Patient Name, Last]'s age.
                   </p>
                 </div>

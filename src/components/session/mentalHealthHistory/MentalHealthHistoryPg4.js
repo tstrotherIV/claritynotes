@@ -51,7 +51,7 @@ function MentalHealthHistoryPg4(props) {
         patientMentalHealthHistory_pg4.mental_health_history_pg4_d,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -77,13 +77,13 @@ function MentalHealthHistoryPg4(props) {
           return obj;
         }, {});
 
-      setPatientMentalHealthHistory_pg4(filtered);
+      setPatientMentalHealthHistory_pg4(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -96,7 +96,7 @@ function MentalHealthHistoryPg4(props) {
             <div className="interview_div1">
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -115,7 +115,7 @@ function MentalHealthHistoryPg4(props) {
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -134,7 +134,7 @@ function MentalHealthHistoryPg4(props) {
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -167,7 +167,7 @@ function MentalHealthHistoryPg4(props) {
                 onChange={handleFieldChange}
               />
               <Label className="textWhite" for="firstName">
-                {props.patientName.patient_first_name} denied any current intent or plan.
+                {props.patientDetails.patient_first_name} denied any current intent or plan.
               </Label>
             </div>
           </div>

@@ -48,7 +48,7 @@ function ThematicApperceptionsTest(props) {
         patientThematicApperceptionsTest.thematic_apperceptions_test_pg1_a,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -69,13 +69,13 @@ function ThematicApperceptionsTest(props) {
           return obj;
         }, {});
 
-      setPatientThematicApperceptionsTest(filtered);
+      setPatientThematicApperceptionsTest(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>

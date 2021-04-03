@@ -89,7 +89,7 @@ function PsychologicalEvaluationSpouse(props) {
           return obj;
         }, {});
 
-      setrelationshipStatus(filtered);
+      setrelationshipStatus(props.patientDetails);
     });
   };
 

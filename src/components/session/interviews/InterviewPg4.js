@@ -42,34 +42,20 @@ function InterviewPg4(props) {
       interview_pg4_b: patientInterview_pg4.interview_pg4_b,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = ["interview_pg4_a", "interview_pg4_b"];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientInterview_pg4(filtered);
-    });
+    setPatientInterview_pg4(props.patientDetails);
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -85,7 +71,7 @@ function InterviewPg4(props) {
           <div className="interview_div1">
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
@@ -104,7 +90,7 @@ function InterviewPg4(props) {
           <div className="interview_div1">
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"

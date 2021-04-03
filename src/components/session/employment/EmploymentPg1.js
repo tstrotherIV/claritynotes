@@ -53,7 +53,7 @@ function EmploymentPg1(props) {
       employment_pg1_j: patientEmployment_pg1.employment_pg1_j,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -85,13 +85,13 @@ function EmploymentPg1(props) {
           return obj;
         }, {});
 
-      setPatientEmployment_pg1(filtered);
+      setPatientEmployment_pg1(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -105,7 +105,7 @@ function EmploymentPg1(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
@@ -122,7 +122,7 @@ function EmploymentPg1(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
@@ -139,7 +139,7 @@ function EmploymentPg1(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
@@ -156,7 +156,7 @@ function EmploymentPg1(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
@@ -174,7 +174,7 @@ function EmploymentPg1(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
@@ -192,7 +192,7 @@ function EmploymentPg1(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
@@ -210,7 +210,7 @@ function EmploymentPg1(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
@@ -227,7 +227,7 @@ function EmploymentPg1(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
@@ -244,7 +244,7 @@ function EmploymentPg1(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"
@@ -261,7 +261,7 @@ function EmploymentPg1(props) {
             </h4>
             <div className="interview_line1 mb-4">
               <Label className="textWhite interview_title" for="">
-                {props.patientName.patient_first_name} said:
+                {props.patientDetails.patient_first_name} said:
               </Label>
               <TextareaAutosize
                 className="interview_fieldData"

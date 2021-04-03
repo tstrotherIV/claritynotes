@@ -35,7 +35,7 @@ function RAITpg3(props) {
       rait_pg3_a: String(patientRAITpg3.rait_pg3_a),
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -56,13 +56,13 @@ function RAITpg3(props) {
           return obj;
         }, {});
 
-      setPatientRAITpg3(filtered);
+      setPatientRAITpg3(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -110,12 +110,12 @@ function RAITpg3(props) {
                   />
                   <h4>Results:</h4>
                   <p>
-                    {props.patientName.patient_first_name} earned a TBII of [TBII Score], which
+                    {props.patientDetails.patient_first_name} earned a TBII of [TBII Score], which
                     falls in the [Score Result Descriptor Correlation] range of
                     intelligence. On the RAIT, this level of performance falls
                     within the range of scores designated as [Score Result
                     Placement Descriptor] and exceeds te performance of [Score
-                    Result Percentage] of individuals at {props.patientName.patient_first_name}
+                    Result Percentage] of individuals at {props.patientDetails.patient_first_name}
                     [Patient Name, Last]'s age.
                   </p>
                 </div>

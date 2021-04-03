@@ -375,7 +375,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
         String(patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_bb),
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -509,13 +509,13 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
           return obj;
         }, {});
 
-      setPatientMillonClinicalMultiaxialInventoryIVPg2(filtered);
+      setPatientMillonClinicalMultiaxialInventoryIVPg2(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -533,7 +533,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
               <div className="col-2">
                 <p>
                   The Millon Clinical Multiaxial Inventory-IV (MCMI-IV) was
-                  administered to assess {props.patientName.patient_first_name} [Patient Name,
+                  administered to assess {props.patientDetails.patient_first_name} [Patient Name,
                   Last]'s general psychological functioning.
                 </p>
               </div>

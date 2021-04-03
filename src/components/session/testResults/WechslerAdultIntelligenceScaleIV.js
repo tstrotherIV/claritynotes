@@ -108,13 +108,13 @@ function WechslerAdultIntelligenceScaleIV(props) {
           return obj;
         }, {});
 
-      setWechslerAdultIntelligenceScaleIV(filtered);
+      setWechslerAdultIntelligenceScaleIV(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>

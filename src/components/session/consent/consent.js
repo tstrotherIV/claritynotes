@@ -28,7 +28,7 @@ function PsychologicalEvaluationConsent(props) {
       patient_consent: patientConsent.patient_consent,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -49,7 +49,7 @@ function PsychologicalEvaluationConsent(props) {
           return obj;
         }, {});
 
-      setPatientConsent(filtered);
+      setPatientConsent(props.patientDetails);
     });
   };
 
@@ -66,7 +66,7 @@ function PsychologicalEvaluationConsent(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>

@@ -86,7 +86,7 @@ function PsychologicalEvaluation_children(props) {
           return obj;
         }, {});
 
-      setCheckbox(filtered);
+      setCheckbox(props.patientDetails);
     });
   };
 

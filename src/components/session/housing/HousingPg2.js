@@ -41,7 +41,7 @@ function HousingPg2(props) {
       housing_pg2_c: patientHousing_pg2.housing_pg2_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -62,13 +62,13 @@ function HousingPg2(props) {
           return obj;
         }, {});
 
-      setPatientHousing_pg2(filtered);
+      setPatientHousing_pg2(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -84,7 +84,7 @@ function HousingPg2(props) {
                   className="textWhite interview_title text-center"
                   for="hs-all-or-part"
                 >
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -106,7 +106,7 @@ function HousingPg2(props) {
                   className="textWhite interview_title text-center"
                   for="hs-housing-cost"
                 >
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -128,7 +128,7 @@ function HousingPg2(props) {
                   className="textWhite interview_title text-center"
                   for="hs-without-shelter"
                 >
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"

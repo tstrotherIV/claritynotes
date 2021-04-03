@@ -23,7 +23,7 @@ function FamilyReportSummary(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <div id="page-container">

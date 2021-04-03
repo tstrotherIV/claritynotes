@@ -59,7 +59,7 @@ function BehavioralObservationsPg5(props) {
         patientBehavioralObservationsPg5.behavioral_observations_and_testing_conditions_pg5_g,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -88,13 +88,13 @@ function BehavioralObservationsPg5(props) {
           return obj;
         }, {});
 
-      setPatientBehavioralObservationsPg5(filtered);
+      setPatientBehavioralObservationsPg5(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <div>
@@ -107,7 +107,7 @@ function BehavioralObservationsPg5(props) {
           <div className="questionsContainerWide">
             <p className="textWhite text-center m-0 ">
               Please note the following behaviors you observed in your session
-              with {props.patientName.patient_first_name} [Patient Name, Last].
+              with {props.patientDetails.patient_first_name} [Patient Name, Last].
             </p>
             <div className="row mt-4">
               <div className="d-flex flex-wrap col-6">

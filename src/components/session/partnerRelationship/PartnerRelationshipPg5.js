@@ -46,7 +46,7 @@ function PartnerRelationshipPg5(props) {
         patientPartnerRelationshipPg5.partner_relationship_pg5_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {});
+    DataManager.update("patients", editedPatient).then(() => {props.getData()});
   };
 
   //CRUD Function END
@@ -71,13 +71,13 @@ function PartnerRelationshipPg5(props) {
           return obj;
         }, {});
 
-      setPatientPartnerRelationshipPg5(filtered);
+      setPatientPartnerRelationshipPg5(props.patientDetails);
     });
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <>
@@ -92,7 +92,7 @@ function PartnerRelationshipPg5(props) {
             <div className="interview_div1">
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -113,7 +113,7 @@ function PartnerRelationshipPg5(props) {
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
@@ -132,7 +132,7 @@ function PartnerRelationshipPg5(props) {
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientName.patient_first_name} said:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
                   className="fieldData"
