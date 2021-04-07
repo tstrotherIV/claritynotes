@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Label } from "reactstrap";
+import { Input, Label } from "reactstrap";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -21,6 +21,25 @@ function EmploymentPg2(props) {
     });
   };
 
+  const handleCheckBoxChange = async (e) => {
+    const target = e.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name = target.name;
+
+    const editedPatient = {
+      id: props.patientId,
+      [name]: value,
+    };
+
+    setPatientEmployment_pg2({
+      ...patientEmployment_pg2,
+      employment_pg2_d: value,
+    });
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
+  };
+
   const captureFieldName = (e) => {
     const fieldID = e.target.name;
     setItem(fieldID);
@@ -33,6 +52,7 @@ function EmploymentPg2(props) {
       employment_pg2_a: patientEmployment_pg2.employment_pg2_a,
       employment_pg2_b: patientEmployment_pg2.employment_pg2_b,
       employment_pg2_c: patientEmployment_pg2.employment_pg2_c,
+      employment_pg2_d: patientEmployment_pg2.employment_pg2_d,
     };
 
     DataManager.update("patients", editedPatient).then(() => {
@@ -107,6 +127,20 @@ function EmploymentPg2(props) {
                   onClick={captureFieldName}
                   value={patientEmployment_pg2.employment_pg2_c}
                 />
+              </div>
+              <div className="siblingsFields">
+                <div className="m-1">
+                  <Input
+                    type="checkbox"
+                    id="employment_pg2_d"
+                    name="employment_pg2_d"
+                    checked={patientEmployment_pg2.employment_pg2_d}
+                    onChange={handleCheckBoxChange}
+                  />
+                  <Label className="textWhite">
+                    Is the longest they have been at one place less than a year?
+                  </Label>
+                </div>
               </div>
             </div>
           </div>
