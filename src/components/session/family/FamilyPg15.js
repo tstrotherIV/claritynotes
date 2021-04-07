@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Label } from "reactstrap";
+import { Input, Label } from "reactstrap";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -21,6 +21,25 @@ function FamilyPg15(props) {
     });
   };
 
+  const handleCheckBoxChange = async (e) => {
+    const target = e.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name = target.name;
+
+    const editedPatient = {
+      id: props.patientId,
+      [name]: value,
+    };
+
+    setPatientFamily_pg15({
+      ...patientFamily_pg15,
+      family_pg15_c: value,
+    });
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
+  };
+
   const captureFieldName = (e) => {
     const fieldID = e.target.name;
     setItem(fieldID);
@@ -32,6 +51,7 @@ function FamilyPg15(props) {
     const editedPatient = {
       family_pg15_a: patientFamily_pg15.family_pg15_a,
       family_pg15_b: patientFamily_pg15.family_pg15_b,
+      family_pg15_c: patientFamily_pg15.family_pg15_c,
     };
 
     DataManager.update("patients", editedPatient).then(() => {
@@ -93,6 +113,20 @@ function FamilyPg15(props) {
                 onClick={captureFieldName}
                 value={patientFamily_pg15.family_pg15_b}
               />
+            </div>
+          </div>
+          <div className="siblingsFields">
+            <div className="m-1">
+              <Input
+                type="checkbox"
+                id="family_pg15_c"
+                name="family_pg15_c"
+                checked={patientFamily_pg15.family_pg15_c}
+                onChange={handleCheckBoxChange}
+              />
+              <Label className="textWhite">
+                The Patient does not have good Values or Goals.
+              </Label>
             </div>
           </div>
         </div>

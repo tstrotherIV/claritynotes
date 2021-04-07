@@ -57,9 +57,10 @@ function FamilyPg1(props) {
           <div className="header">
             <h2 className="textWhite">Family</h2>
           </div>
-          {/* <div className="d-flex flex-wrap justify-content-center align-items-baseline m-2"> */}
           <div className="interview_div1">
-            <h4 className="textWhite centerItem">Who raised you from?</h4>
+            <h4 className="textWhite centerItem">
+              Who raised you from birth until you moved out of the home?
+            </h4>
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
                 {props.patientDetails.patient_first_name} said:
@@ -75,9 +76,7 @@ function FamilyPg1(props) {
                 onClick={captureFieldName}
               />
             </div>
-            <h4 className="textWhite centerItem">
-              What type of housing were you raised in?
-            </h4>
+            <h4 className="textWhite centerItem">What are their names?</h4>
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
                 {props.patientDetails.patient_first_name} said:
@@ -94,9 +93,8 @@ function FamilyPg1(props) {
               />
             </div>
           </div>
-          {/* </div> */}
           <h4 className="textWhite centerItem">
-            How many brothers and/or sisters did you have?
+            Were different people involved?
           </h4>
           <div className="interview_div1">
             <div className="interview_line1">
@@ -115,9 +113,7 @@ function FamilyPg1(props) {
               />
             </div>
           </div>
-          <h4 className="textWhite centerItem">
-            Who raised you from birth until you moved out of the home?
-          </h4>
+          <h4 className="textWhite centerItem">What are their names?</h4>
           <div className="interview_div1">
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
@@ -134,7 +130,9 @@ function FamilyPg1(props) {
                 onClick={captureFieldName}
               />
             </div>
-            <h4 className="textWhite centerItem">What are their names?</h4>
+            <h4 className="textWhite centerItem">
+              What city or town did you grow up in?
+            </h4>
             <div className="interview_div1">
               <div className="interview_line1">
                 <Label className="textWhite interview_title" for="">
