@@ -10,7 +10,6 @@ import {
   CardDeck,
   Button,
 } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import EmptyFooterSpace from "./../../shared/EmptyFooterSpace";
