@@ -34,6 +34,8 @@ function FamilyPg6(props) {
       family_pg6_a: patientFamily_pg6.family_pg6_a,
       family_pg6_b: patientFamily_pg6.family_pg6_b,
       family_pg6_c: patientFamily_pg6.family_pg6_c,
+      family_pg6_d: patientFamily_pg6.family_pg6_d,
+      family_pg6_e: patientFamily_pg6.family_pg6_e,
     };
 
     DataManager.update("patients", editedPatient).then(() => {
@@ -60,7 +62,8 @@ function FamilyPg6(props) {
           </div>
           <div className="questionsContainerWide">
             <h4 className="textWhite centerItem">
-              Was there a lot of drinking in the home growing up?
+              Tell me about your closest friendship that was not a romantic
+              relationship.
             </h4>
             <div className="interview_div1">
               <div className="interview_line1">
@@ -78,7 +81,10 @@ function FamilyPg6(props) {
                 />
               </div>
             </div>
-            <h4 className="textWhite centerItem">If so, how did you cope?</h4>
+            <h4 className="textWhite centerItem">
+              Tell me more about relationships with teachers, supervisors,
+              schoolmates, bosses, or workmates of any importance.
+            </h4>
             <div className="interview_div1">
               <div className="interview_line1">
                 <Label className="textWhite interview_title" for="">
@@ -95,30 +101,59 @@ function FamilyPg6(props) {
                 />
               </div>
             </div>
-            <div className="row m-5">
-              <div className="row col-5 m-0 p-0">
-                <div className="col-6 d-flex flex-wrap"></div>
-                <h4 className="row col-6 d-flex justify-content-center align-content-end textWhite mr-3 ">
-                  {" "}
-                  Responsive
-                </h4>
-                <p className="row col-12 textWhite d-flex justify-content-end align-content-midline m-0">
-                  Does the parent think it is OK
-                </p>
-              </div>
-              <div className="col-6 text-center m-0 p-0">
+            <h4 className="textWhite centerItem">
+              How did they shape your view of the world?
+            </h4>
+            <div className="interview_div1">
+              <div className="interview_line1">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientDetails.patient_first_name}'s Inference and
-                  Observations:
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
                 <TextareaAutosize
-                  className="fieldData col-12"
+                  className="interview_fieldData"
                   type="text"
                   id={item}
                   name="family_pg6_c"
                   onChange={handleFieldChange}
                   onClick={captureFieldName}
                   value={patientFamily_pg6.family_pg6_c}
+                />
+              </div>
+            </div>
+            <h4 className="textWhite centerItem">
+              Was there ever anyone that was more important to you than your
+              biological family?
+            </h4>
+            <div className="interview_div1">
+              <div className="interview_line1">
+                <Label className="textWhite interview_title" for="">
+                  {props.patientDetails.patient_first_name} said:
+                </Label>
+                <TextareaAutosize
+                  className="interview_fieldData"
+                  type="text"
+                  id={item}
+                  name="family_pg6_d"
+                  onChange={handleFieldChange}
+                  onClick={captureFieldName}
+                  value={patientFamily_pg6.family_pg6_d}
+                />
+              </div>
+            </div>
+            <h4 className="textWhite centerItem">If so, who and why?</h4>
+            <div className="interview_div1">
+              <div className="interview_line1">
+                <Label className="textWhite interview_title" for="">
+                  {props.patientDetails.patient_first_name} said:
+                </Label>
+                <TextareaAutosize
+                  className="interview_fieldData"
+                  type="text"
+                  id={item}
+                  name="family_pg6_e"
+                  onChange={handleFieldChange}
+                  onClick={captureFieldName}
+                  value={patientFamily_pg6.family_pg6_e}
                 />
               </div>
             </div>

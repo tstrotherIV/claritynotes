@@ -58,7 +58,7 @@ function FamilyPg2(props) {
             <h2 className="textWhite">Family</h2>
           </div>
           <h4 className="textWhite centerItem">
-            Were different people involved?
+            What are the names of your siblings?
           </h4>
           <div className="interview_div1">
             <div className="interview_line1">
@@ -76,7 +76,10 @@ function FamilyPg2(props) {
               />
             </div>
           </div>
-          <h4 className="textWhite centerItem">What are their names?</h4>
+          <h4 className="textWhite centerItem">
+            What kind of a person was your biological mother when you were
+            growing up?
+          </h4>
           <div className="interview_div1">
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
@@ -94,7 +97,7 @@ function FamilyPg2(props) {
             </div>
           </div>
           <h4 className="textWhite centerItem">
-            What city or town did you grow up in?
+            Did you have any stepparents? What were they like?
           </h4>
           <div className="interview_div1">
             <div className="interview_line1">
@@ -109,6 +112,45 @@ function FamilyPg2(props) {
                 onChange={handleFieldChange}
                 onClick={captureFieldName}
                 value={patientFamily_pg2.family_pg2_c}
+              />
+            </div>
+          </div>
+          <h4 className="textWhite centerItem">
+            Did you have a close relationship with any of your grandparents
+            growing up? What were they like?
+          </h4>
+          <div className="interview_div1">
+            <div className="interview_line1">
+              <Label className="textWhite interview_title" for="">
+                {props.patientDetails.patient_first_name} said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                id={item}
+                name="family_pg2_d"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientFamily_pg2.family_pg2_d}
+              />
+            </div>
+          </div>
+          <h4 className="textWhite centerItem">
+            What kind of a person was your grandfather when you were growing up?
+          </h4>
+          <div className="interview_div1">
+            <div className="interview_line1">
+              <Label className="textWhite interview_title" for="">
+                {props.patientDetails.patient_first_name} said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                id={item}
+                name="family_pg2_e"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientFamily_pg2.family_pg2_e}
               />
             </div>
           </div>

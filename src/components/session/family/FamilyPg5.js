@@ -35,6 +35,9 @@ function FamilyPg5(props) {
     const editedPatient = {
       family_pg5_a: patientFamily_pg5.family_pg5_a,
       family_pg5_b: patientFamily_pg5.family_pg5_b,
+      family_pg5_c: patientFamily_pg5.family_pg5_c,
+      family_pg5_d: patientFamily_pg5.family_pg5_d,
+      family_pg5_e: patientFamily_pg5.family_pg5_e,
     };
 
     DataManager.update("patients", editedPatient).then(() => {
@@ -61,8 +64,7 @@ function FamilyPg5(props) {
           </div>
           <div className="questionsContainer mt-4">
             <h4 className="textWhite text-center">
-              Did you feel loved and accepted by each parent, even when you
-              disappointed them?
+              What is your least favorite childhood memory?
             </h4>
             <div className="interview_div1">
               <div className="interview_line1">
@@ -80,15 +82,8 @@ function FamilyPg5(props) {
                 />
               </div>
             </div>
-            <div className="interview_div1">
-              <div className="interview_line1 textWhite">
-                (IF THEY DO NOT OFFER MORE THAN “YES” OR “NO,” ASK THEM: “How
-                did they show you they loved you and accepted you?” AND/OR “Tell
-                me more about that.” GET AS MUCH INFO AS POSSIBLE.)
-              </div>
-            </div>
             <h4 className="textWhite centerItem mt-4">
-              Do you remember a lot of fighting in the home growing up?
+              Tell me more about that. How did it make you feel?
             </h4>
             <div className="interview_div1">
               <div className="interview_line1">
@@ -103,6 +98,61 @@ function FamilyPg5(props) {
                   onChange={handleFieldChange}
                   onClick={captureFieldName}
                   value={patientFamily_pg5.family_pg5_b}
+                />
+              </div>
+            </div>
+            <h4 className="textWhite centerItem mt-4">
+              How do you want the memories of your children to be different?
+            </h4>
+            <div className="interview_div1">
+              <div className="interview_line1">
+                <Label className="textWhite interview_title" for="">
+                  {props.patientDetails.patient_first_name} said:
+                </Label>
+                <TextareaAutosize
+                  className="interview_fieldData"
+                  type="text"
+                  id={item}
+                  name="family_pg5_c"
+                  onChange={handleFieldChange}
+                  onClick={captureFieldName}
+                  value={patientFamily_pg5.family_pg5_c}
+                />
+              </div>
+            </div>
+            <h4 className="textWhite centerItem mt-4">How do you do this?</h4>
+            <div className="interview_div1">
+              <div className="interview_line1">
+                <Label className="textWhite interview_title" for="">
+                  {props.patientDetails.patient_first_name} said:
+                </Label>
+                <TextareaAutosize
+                  className="interview_fieldData"
+                  type="text"
+                  id={item}
+                  name="family_pg5_d"
+                  onChange={handleFieldChange}
+                  onClick={captureFieldName}
+                  value={patientFamily_pg5.family_pg5_d}
+                />
+              </div>
+            </div>
+            <h4 className="textWhite centerItem mt-4">
+              How do these memories impact your parenting?
+            </h4>
+            <div className="interview_div1">
+              <div className="interview_line1">
+                <Label className="textWhite interview_title" for="">
+                  {props.patientDetails.patient_first_name} said:
+                </Label>
+                <TextareaAutosize
+                  className="interview_fieldData"
+                  type="text"
+                  id={item}
+                  name="family_pg5_e"
+                  onChange={handleFieldChange}
+                  onClick={captureFieldName}
+                  value={patientFamily_pg5.family_pg5_e}
                 />
               </div>
             </div>

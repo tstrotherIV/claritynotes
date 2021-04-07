@@ -31,6 +31,8 @@ function FamilyPg4(props) {
       family_pg4_a: patientFamily_pg4.family_pg4_a,
       family_pg4_b: patientFamily_pg4.family_pg4_b,
       family_pg4_c: patientFamily_pg4.family_pg4_c,
+      family_pg4_d: patientFamily_pg4.family_pg4_d,
+      family_pg4_e: patientFamily_pg4.family_pg4_e,
     };
 
     DataManager.update("patients", editedPatient).then(() => {
@@ -55,10 +57,7 @@ function FamilyPg4(props) {
           <div className="header">
             <h2 className="textWhite mb-4">Family</h2>
           </div>
-          <h4 className="textWhite centerItem">
-            What kind of a person was your grandmother (maternal or paternal)
-            when you were growing up?
-          </h4>
+          <h4 className="textWhite centerItem">What about drug use?</h4>
           <div className="interview_div1">
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
@@ -75,9 +74,7 @@ function FamilyPg4(props) {
               />
             </div>
           </div>
-          <h4 className="textWhite centerItem">
-            What kind of a person was your grandfather when you were growing up?
-          </h4>
+          <h4 className="textWhite centerItem">If so, how did you cope?</h4>
           <div className="interview_div1">
             <div className="interview_line1">
               <Label className="textWhite interview_title" for="">
@@ -95,7 +92,8 @@ function FamilyPg4(props) {
             </div>
           </div>
           <h4 className="textWhite centerItem">
-            Did you experience a sudden loss or death?
+            How was disapproval of your actions displayed by your parents/how
+            were you punished when you acted out?
           </h4>
           <div className="interview_div1">
             <div className="interview_line1">
@@ -110,6 +108,44 @@ function FamilyPg4(props) {
                 onChange={handleFieldChange}
                 onClick={captureFieldName}
                 value={patientFamily_pg4.family_pg4_c}
+              />
+            </div>
+          </div>
+          <h4 className="textWhite centerItem">
+            What is your favorite childhood memory?
+          </h4>
+          <div className="interview_div1">
+            <div className="interview_line1">
+              <Label className="textWhite interview_title" for="">
+                {props.patientDetails.patient_first_name} said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                id={item}
+                name="family_pg4_d"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientFamily_pg4.family_pg4_d}
+              />
+            </div>
+          </div>
+          <h4 className="textWhite centerItem">
+            Tell me more about that. How did it make you feel?
+          </h4>
+          <div className="interview_div1">
+            <div className="interview_line1">
+              <Label className="textWhite interview_title" for="">
+                {props.patientDetails.patient_first_name} said:
+              </Label>
+              <TextareaAutosize
+                className="interview_fieldData"
+                type="text"
+                id={item}
+                name="family_pg4_e"
+                onChange={handleFieldChange}
+                onClick={captureFieldName}
+                value={patientFamily_pg4.family_pg4_e}
               />
             </div>
           </div>
