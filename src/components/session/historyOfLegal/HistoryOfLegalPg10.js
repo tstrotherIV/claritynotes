@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Label } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -10,11 +9,9 @@ import DataManager from "../../../data_module/DataManager";
 
 function HistoryOfLegalPg10(props) {
   const [item, setItem] = useState("");
-  const [patientHistoryOfLegal_pg10, setPatientHistoryOfLegal_pg10] = useState({
-    history_of_legal_pg10_a: "",
-    history_of_legal_pg10_b: "",
-    history_of_legal_pg10_c: "",
-  });
+  const [patientHistoryOfLegal_pg10, setPatientHistoryOfLegal_pg10] = useState(
+    {}
+  );
 
   const next = "/history_of_legal_pg_11";
   const back = "/history_of_legal_pg_9";
@@ -43,33 +40,15 @@ function HistoryOfLegalPg10(props) {
         patientHistoryOfLegal_pg10.history_of_legal_pg10_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "history_of_legal_pg10_a",
-        "history_of_legal_pg10_b",
-        "history_of_legal_pg10_c",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientHistoryOfLegal_pg10(props.patientDetails);
-    });
+    setPatientHistoryOfLegal_pg10(props.patientDetails);
   };
 
   useEffect(() => {
@@ -80,10 +59,7 @@ function HistoryOfLegalPg10(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
-          <h2 className="textWhite text-center mb-4">
-          Substance Abuse
-          </h2>
+          <h2 className="textWhite text-center mb-4">Substance Abuse</h2>
           <div className="questionsContainer text-center">
             <h4 className="textWhite centerItem">In relation to drug use?</h4>
             <div className="interview_div1">

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Label } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -8,11 +7,7 @@ import DataManager from "../../../data_module/DataManager";
 
 function FamilyPg12(props) {
   const [item, setItem] = useState("");
-  const [patientFamily_pg12, setPatientFamily_pg12] = useState({
-    familiy_pg12_a: "",
-    familiy_pg12_b: "",
-    familiy_pg12_c: "",
-  });
+  const [patientFamily_pg12, setPatientFamily_pg12] = useState({});
 
   const next = "/family_pg_13";
   const back = "/family_pg_11";
@@ -38,29 +33,15 @@ function FamilyPg12(props) {
       family_pg12_c: patientFamily_pg12.family_pg12_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = ["family_pg12_a", "family_pg12_b", "family_pg12_c"];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientFamily_pg12(props.patientDetails);
-    });
+    setPatientFamily_pg12(props.patientDetails);
   };
 
   useEffect(() => {
@@ -71,7 +52,6 @@ function FamilyPg12(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="header">
             <h2 className="textWhite">Family</h2>
           </div>

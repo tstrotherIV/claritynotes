@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Label, Navbar } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
+import { Label } from "reactstrap";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -9,11 +8,9 @@ import DataManager from "../../../data_module/DataManager";
 
 function HistoryOfLegalPg1(props) {
   const [item, setItem] = useState("");
-  const [patientHistoryOfLegal_pg1, setPatientHistoryOfLegal_pg1] = useState({
-    history_of_legal_pg1_a: "",
-    history_of_legal_pg1_b: "",
-    history_of_legal_pg1_c: "",
-  });
+  const [patientHistoryOfLegal_pg1, setPatientHistoryOfLegal_pg1] = useState(
+    {}
+  );
 
   const next = "/history_of_legal_pg_2";
   const back = "/education_pg_4";
@@ -39,33 +36,15 @@ function HistoryOfLegalPg1(props) {
       history_of_legal_pg1_c: patientHistoryOfLegal_pg1.history_of_legal_pg1_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "history_of_legal_pg1_a",
-        "history_of_legal_pg1_b",
-        "history_of_legal_pg1_c",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientHistoryOfLegal_pg1(props.patientDetails);
-    });
+    setPatientHistoryOfLegal_pg1(props.patientDetails);
   };
 
   useEffect(() => {
@@ -76,7 +55,6 @@ function HistoryOfLegalPg1(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-4">
             History of Legal, Crime, and Conviction
           </h2>

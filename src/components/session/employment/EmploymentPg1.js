@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Label, Navbar } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
+import { Label } from "reactstrap";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -9,18 +8,7 @@ import DataManager from "../../../data_module/DataManager";
 
 function EmploymentPg1(props) {
   const [item, setItem] = useState("");
-  const [patientEmployment_pg1, setPatientEmployment_pg1] = useState({
-    employment_pg1_a: "",
-    employment_pg1_b: "",
-    employment_pg1_c: "",
-    employment_pg1_d: "",
-    employment_pg1_e: "",
-    employment_pg1_f: "",
-    employment_pg1_g: "",
-    employment_pg1_h: "",
-    employment_pg1_i: "",
-    employment_pg1_j: "",
-  });
+  const [patientEmployment_pg1, setPatientEmployment_pg1] = useState({});
 
   const next = "/employment_pg_2";
   const back = "/housing_pg_3";
@@ -53,40 +41,15 @@ function EmploymentPg1(props) {
       employment_pg1_j: patientEmployment_pg1.employment_pg1_j,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "employment_pg1_a",
-        "employment_pg1_b",
-        "employment_pg1_c",
-        "employment_pg1_d",
-        "employment_pg1_e",
-        "employment_pg1_f",
-        "employment_pg1_g",
-        "employment_pg1_h",
-        "employment_pg1_i",
-        "employment_pg1_j",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientEmployment_pg1(props.patientDetails);
-    });
+    setPatientEmployment_pg1(props.patientDetails);
   };
 
   useEffect(() => {
@@ -97,7 +60,6 @@ function EmploymentPg1(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-4">Employment</h2>
           <div className="questionsContainer">
             <h4 className="textWhite centerItem">

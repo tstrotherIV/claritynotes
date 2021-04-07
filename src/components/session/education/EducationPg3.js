@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Label } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -10,11 +9,7 @@ import DataManager from "../../../data_module/DataManager";
 
 function EducationPg3(props) {
   const [item, setItem] = useState("");
-  const [patientEducation_pg3, setPatientEducation_pg3] = useState({
-    education_pg3_a: "",
-    education_pg3_b: "",
-    education_pg3_c: "",
-  });
+  const [patientEducation_pg3, setPatientEducation_pg3] = useState({});
 
   const next = "/education_pg_4";
   const back = "/education_pg_2";
@@ -40,29 +35,15 @@ function EducationPg3(props) {
       education_pg3_c: patientEducation_pg3.education_pg3_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = ["education_pg3_a", "education_pg3_b", "education_pg3_c"];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientEducation_pg3(props.patientDetails);
-    });
+    setPatientEducation_pg3(props.patientDetails);
   };
 
   useEffect(() => {
@@ -73,7 +54,6 @@ function EducationPg3(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-4">Education</h2>
           <div className="questionsContainer text-center">
             <h4 className="textWhite centerItem">Were you ever expelled?</h4>

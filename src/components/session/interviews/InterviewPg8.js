@@ -11,7 +11,6 @@ import {
   ModalBody,
   ModalFooter,
 } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -19,9 +18,7 @@ import DataManager from "../../../data_module/DataManager";
 
 function InterviewPg8(props) {
   const [item, setItem] = useState("");
-  const [patientInterview_pg8, setPatientInterview_pg8] = useState({
-    interview_pg8_a: "",
-  });
+  const [patientInterview_pg8, setPatientInterview_pg8] = useState({});
 
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const [modal, setModal] = useState(false);
@@ -51,29 +48,15 @@ function InterviewPg8(props) {
       interview_pg8_a: patientInterview_pg8.interview_pg8_a,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = ["interview_pg8_a"];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientInterview_pg8(props.patientDetails);
-    });
+    setPatientInterview_pg8(props.patientDetails);
   };
 
   useEffect(() => {
@@ -84,7 +67,6 @@ function InterviewPg8(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="header">
             <h2 className="textWhite">Interviews</h2>
           </div>

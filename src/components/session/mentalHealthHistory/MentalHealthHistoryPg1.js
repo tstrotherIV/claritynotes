@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Label, Navbar } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
+import { Label } from "reactstrap";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -45,33 +44,15 @@ function MentalHealthHistoryPg1(props) {
         patientMentalHealthHistory_pg1.mental_health_history_pg1_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "mental_health_history_pg1_a",
-        "mental_health_history_pg1_b",
-        "mental_health_history_pg1_c",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientMentalHealthHistory_pg1(props.patientDetails);
-    });
+    setPatientMentalHealthHistory_pg1(props.patientDetails);
   };
 
   useEffect(() => {
@@ -82,7 +63,6 @@ function MentalHealthHistoryPg1(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-4">Mental Health History</h2>
           <div className="questionsContainer text-center">
             <h4 className="textWhite centerItem">

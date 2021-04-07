@@ -153,22 +153,31 @@ function DomainsTable(props) {
     DataManager.update_Item("patient_notes", props.patientNotes.id, editedDomain)
   };
 
-  const getData = () => {
-    const fieldID = props.item;
-    DataManager.getQuestionPatientNotes(props.patientId, fieldID).then(
-      (domainData) => {
-        setDomainSelected(domainData[0]);
-      }
-    );
+  const getData = async () => {
+    setDomainSelected(props.patientNotes);
   };
 
   useEffect(() => {
-    if (props.item) {
-      getData();
-    }
-  }, [
-    props.item
-  ]);
+    getData();
+  }, [props]);
+
+  // const getData = () => {
+  //   const fieldID = props.item;
+  //   DataManager.getQuestionPatientNotes(props.patientNotes.patientId, fieldID).then(
+  //     (domainData) => {
+  //       console.log(domainData)
+  //       // setDomainSelected(domainData[0]);
+  //     }
+  //   );
+  // };
+
+  // useEffect(() => {
+  //   if (props.item) {
+  //     getData();
+  //   }
+  // }, [
+  //   props.item
+  // ]);
 
   return (
     <>

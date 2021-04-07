@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./housing.scss";
 import { Label } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -11,11 +10,7 @@ import DataManager from "../../../data_module/DataManager";
 
 function HousingPg2(props) {
   const [item, setItem] = useState("");
-  const [patientHousing_pg2, setPatientHousing_pg2] = useState({
-    housing_pg2_a: "",
-    housing_pg2_b: "",
-    housing_pg2_c: "",
-  });
+  const [patientHousing_pg2, setPatientHousing_pg2] = useState({});
 
   const next = "/housing_pg_3";
   const back = "/housing_pg_1";
@@ -41,29 +36,15 @@ function HousingPg2(props) {
       housing_pg2_c: patientHousing_pg2.housing_pg2_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = ["housing_pg2_a", "housing_pg2_b", "housing_pg2_c"];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientHousing_pg2(props.patientDetails);
-    });
+    setPatientHousing_pg2(props.patientDetails);
   };
 
   useEffect(() => {
@@ -74,7 +55,6 @@ function HousingPg2(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-4">Housing</h2>
           <h4 className="textWhite centerItem">All or part?</h4>
           <div className="questionsContainerWide">

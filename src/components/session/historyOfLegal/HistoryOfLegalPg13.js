@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Label } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -10,13 +9,9 @@ import DataManager from "../../../data_module/DataManager";
 
 function HistoryOfLegalPg13(props) {
   const [item, setItem] = useState("");
-  const [patientHistoryOfLegal_pg13, setPatientHistoryOfLegal_pg13] = useState({
-    history_of_legal_pg13_a: "",
-    history_of_legal_pg13_b: "",
-    history_of_legal_pg13_c: "",
-    history_of_legal_pg13_d: "",
-    history_of_legal_pg13_e: "",
-  });
+  const [patientHistoryOfLegal_pg13, setPatientHistoryOfLegal_pg13] = useState(
+    {}
+  );
 
   const next = "/history_of_legal_pg_14";
   const back = "/history_of_legal_pg_12";
@@ -49,35 +44,15 @@ function HistoryOfLegalPg13(props) {
         patientHistoryOfLegal_pg13.history_of_legal_pg13_e,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "history_of_legal_pg13_a",
-        "history_of_legal_pg13_b",
-        "history_of_legal_pg13_c",
-        "history_of_legal_pg13_d",
-        "history_of_legal_pg13_e",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientHistoryOfLegal_pg13(props.patientDetails);
-    });
+    setPatientHistoryOfLegal_pg13(props.patientDetails);
   };
 
   useEffect(() => {
@@ -88,10 +63,7 @@ function HistoryOfLegalPg13(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
-          <h2 className="textWhite text-center mb-4">
-          Substance Abuse
-          </h2>
+          <h2 className="textWhite text-center mb-4">Substance Abuse</h2>
           <div className="text-center questionsContainer">
             <h4 className="textWhite centerItem">
               How many times have things gotten a little out of control, more

@@ -10,11 +10,7 @@ import DataManager from "../../../data_module/DataManager";
 
 function FamilyPg6(props) {
   const [item, setItem] = useState("");
-  const [patientFamily_pg6, setPatientFamily_pg6] = useState({
-    familiy_pg6_a: "",
-    familiy_pg6_b: "",
-    familiy_pg6_c: "",
-  });
+  const [patientFamily_pg6, setPatientFamily_pg6] = useState({});
 
   const next = "/family_pg_7";
   const back = "/family_pg_5";
@@ -40,29 +36,15 @@ function FamilyPg6(props) {
       family_pg6_c: patientFamily_pg6.family_pg6_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = ["family_pg6_a", "family_pg6_b", "family_pg6_c"];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientFamily_pg6(props.patientDetails);
-    });
+    setPatientFamily_pg6(props.patientDetails);
   };
 
   useEffect(() => {
@@ -73,7 +55,6 @@ function FamilyPg6(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="header">
             <h2 className="textWhite">Family</h2>
           </div>
@@ -127,7 +108,8 @@ function FamilyPg6(props) {
               </div>
               <div className="col-6 text-center m-0 p-0">
                 <Label className="textWhite interview_title" for="">
-                  {props.patientDetails.patient_first_name}'s Inference and Observations:
+                  {props.patientDetails.patient_first_name}'s Inference and
+                  Observations:
                 </Label>
                 <TextareaAutosize
                   className="fieldData col-12"

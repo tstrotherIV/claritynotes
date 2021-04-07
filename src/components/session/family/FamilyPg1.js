@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Label, Navbar } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
+import { Label } from "reactstrap";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -8,13 +7,7 @@ import DataManager from "../../../data_module/DataManager";
 
 function FamilyPg1(props) {
   const [item, setItem] = useState("");
-  const [patientFamily_pg1, setPatientFamily_pg1] = useState({
-    family_pg1_a: "",
-    family_pg1_b: "",
-    family_pg1_c: "",
-    family_pg1_d: "",
-    family_pg1_e: "",
-  });
+  const [patientFamily_pg1, setPatientFamily_pg1] = useState({});
 
   const next = "/family_pg_2";
   const back = "/interview_pg_9";
@@ -42,35 +35,15 @@ function FamilyPg1(props) {
       family_pg1_e: patientFamily_pg1.family_pg1_e,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "family_pg1_a",
-        "family_pg1_b",
-        "family_pg1_c",
-        "family_pg1_d",
-        "family_pg1_e",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientFamily_pg1(props.patientDetails);
-    });
+    setPatientFamily_pg1(props.patientDetails);
   };
 
   useEffect(() => {
@@ -81,7 +54,6 @@ function FamilyPg1(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="header">
             <h2 className="textWhite">Family</h2>
           </div>

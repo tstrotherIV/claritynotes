@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Label } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -8,12 +7,7 @@ import DataManager from "../../../data_module/DataManager";
 
 function FamilyPg8(props) {
   const [item, setItem] = useState("");
-  const [patientFamily_pg8, setPatientFamily_pg8] = useState({
-    familiy_pg8_a: "",
-    familiy_pg8_b: "",
-    familiy_pg8_c: "",
-    familiy_pg8_d: "",
-  });
+  const [patientFamily_pg8, setPatientFamily_pg8] = useState({});
 
   const next = "/family_pg_9";
   const back = "/family_pg_7";
@@ -40,34 +34,15 @@ function FamilyPg8(props) {
       family_pg8_d: patientFamily_pg8.family_pg8_d,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "family_pg8_a",
-        "family_pg8_b",
-        "family_pg8_c",
-        "family_pg8_d",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientFamily_pg8(props.patientDetails);
-    });
+    setPatientFamily_pg8(props.patientDetails);
   };
 
   useEffect(() => {
@@ -78,7 +53,6 @@ function FamilyPg8(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="header">
             <h2 className="textWhite">Family</h2>
           </div>
@@ -136,7 +110,7 @@ function FamilyPg8(props) {
                 </h5>
                 <div className="observationsColumn pl-3">
                   <Label className="textWhite" for="">
-                  {props.patientDetails.patient_first_name} stated:
+                    {props.patientDetails.patient_first_name} stated:
                   </Label>
                   <TextareaAutosize
                     type="text"
@@ -159,7 +133,7 @@ function FamilyPg8(props) {
                 </h5>
                 <div className="observationsColumn pl-3">
                   <Label className="textWhite" for="">
-                  {props.patientDetails.patient_first_name} stated:
+                    {props.patientDetails.patient_first_name} stated:
                   </Label>
                   <TextareaAutosize
                     type="text"
