@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Label } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -8,11 +7,7 @@ import DataManager from "../../../data_module/DataManager";
 
 function FamilyPg2(props) {
   const [item, setItem] = useState("");
-  const [patientFamily_pg2, setPatientFamily_pg2] = useState({
-    familiy_pg2_a: "",
-    familiy_pg2_b: "",
-    familiy_pg2_c: "",
-  });
+  const [patientFamily_pg2, setPatientFamily_pg2] = useState({});
 
   const next = "/family_pg_3";
   const back = "/family_pg_1";
@@ -40,35 +35,15 @@ function FamilyPg2(props) {
       family_pg2_e: patientFamily_pg2.family_pg2_e,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "family_pg2_a",
-        "family_pg2_b",
-        "family_pg2_c",
-        "family_pg2_d",
-        "family_pg2_e",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientFamily_pg2(props.patientDetails);
-    });
+    setPatientFamily_pg2(props.patientDetails);
   };
 
   useEffect(() => {
@@ -79,7 +54,6 @@ function FamilyPg2(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="header">
             <h2 className="textWhite">Family</h2>
           </div>

@@ -16,8 +16,7 @@ import DataManager from "../../data_module/DataManager";
 function PatientHomePage(props) {
   let USERNAME = "Chris";
 
-  const [patient, setPatient] = useState([]);
-  const [patientId, setPatientId] = useState("");
+  // const [patientId, setPatientId] = useState("");
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
 
   const toggle1 = () => setDropdownOpen1((prevState) => !prevState);
@@ -26,12 +25,13 @@ function PatientHomePage(props) {
     const patientSession = sessionStorage.getItem("patient_id");
     if (patientSession) {
       sessionStorage.removeItem("patient_id");
-      setPatientId(e.target.value);
+      // setPatientId(e.target.value);
       sessionStorage.setItem("patient_id", e.target.value);
     } else {
-      setPatientId(e.target.value);
+      // setPatientId(e.target.value);
       sessionStorage.setItem("patient_id", e.target.value);
     }
+    props.getData()
     props.history.push(`/sessionStep1`);
   };
 

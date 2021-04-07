@@ -156,7 +156,14 @@ const ApplicationViews = (props) => {
           exact
           path="/"
           render={(props) => {
-            return <Login hasUser={hasUser} patientId={patientId} {...props} />;
+            return (
+              <Login
+                hasUser={hasUser}
+                patientId={patientId}
+                getData={getData}
+                {...props}
+              />
+            );
           }}
         />
         <Switch>

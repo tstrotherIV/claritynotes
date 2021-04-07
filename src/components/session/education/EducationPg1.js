@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Label, Navbar } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -9,13 +8,7 @@ import DataManager from "../../../data_module/DataManager";
 
 function EducationPg1(props) {
   const [item, setItem] = useState("");
-  const [patientEducation_pg1, setPatientEducation_pg1] = useState({
-    education_pg1_a: "",
-    education_pg1_b: "",
-    education_pg1_c: "",
-    education_pg1_d: "",
-    education_pg1_e: "",
-  });
+  const [patientEducation_pg1, setPatientEducation_pg1] = useState({});
 
   const next = "/education_pg_2";
   const back = "/employment_pg_3";
@@ -43,35 +36,15 @@ function EducationPg1(props) {
       education_pg1_e: patientEducation_pg1.education_pg1_e,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "education_pg1_a",
-        "education_pg1_b",
-        "education_pg1_c",
-        "education_pg1_d",
-        "education_pg1_e",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientEducation_pg1(props.patientDetails);
-    });
+    setPatientEducation_pg1(props.patientDetails);
   };
 
   useEffect(() => {
@@ -82,7 +55,6 @@ function EducationPg1(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-4 ">Education</h2>
           <div className="questionsContainerWide row d-flex flex-wrap center-text justify-items-center align-items-end">
             <Label className="textWhite col-4 text-center" for="">

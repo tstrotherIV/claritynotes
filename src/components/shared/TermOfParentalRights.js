@@ -3,10 +3,11 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import { Tab, Tabs } from "react-bootstrap";
 import { Input, Label } from "reactstrap";
-import AdditionalNotes from "./AdditionalNotes";
 import "./ps.scss";
 import DataManager from "../../data_module/DataManager";
 import DomainsTable from "../shared/patient_notes_components/Domains";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 const termTitle = (
   <p className="term">Termination of Parental Rights Criteria</p>
@@ -20,6 +21,7 @@ const generalNotes = <p className="generalNotes">General Notes</p>;
 
 const TermOfParentalRights = (props) => {
   const [patientNotes, setPatientNotes] = useState("");
+  const [additionalNotesValue, setAdditionalNotesValue] = useState("");
 
   const handlePatientNotesChange = (e) => {
     const target = e.target;
@@ -29,9 +31,17 @@ const TermOfParentalRights = (props) => {
     const editedNote = {
       [name]: value,
     };
-    DataManager.update_Item("patient_notes", patientNotes.id, editedNote)
-    setPatientNotes({...patientNotes, [name]: value})
+    DataManager.update_Item("patient_notes", patientNotes.id, editedNote);
+    setPatientNotes({ ...patientNotes, [name]: value });
   };
+
+  const handleAdditionalNotesChange = (e) => {
+    setAdditionalNotesValue(e)
+  };
+
+  const saveAdditionalNotes = () => {
+    DataManager.update_Item("patient_notes", patientNotes.id, {t1a : additionalNotesValue});
+  }
 
   const createResponse = (e) => {
     const fieldID = props.item;
@@ -77,11 +87,11 @@ const TermOfParentalRights = (props) => {
           };
           DataManager.add_Item("patient_notes", newNote).then((data) => {
             setPatientNotes(data);
-            // setItem(fieldID);
+            setAdditionalNotesValue(data.t1a);
           });
         } else {
           setPatientNotes(patientNotesResponses[0]);
-          // setItem(fieldID);
+          setAdditionalNotesValue(patientNotesResponses[0].t1a);
         }
       }
     );
@@ -91,9 +101,7 @@ const TermOfParentalRights = (props) => {
     if (props.item) {
       createResponse();
     }
-  }, [
-    props.item
-  ]);
+  }, [props.item]);
 
   return (
     <div className="dropdown_button termBackground ">
@@ -117,10 +125,13 @@ const TermOfParentalRights = (props) => {
                 eventKey="generalNotes"
                 title={generalNotes}
                 className="contents"
+                onBlur={saveAdditionalNotes}
               >
-                <AdditionalNotes
-                  patientNotes={patientNotes}
-                  handlePatientNotesChange={handlePatientNotesChange}
+                <ReactQuill
+                  theme="snow"
+                  value={additionalNotesValue}
+                  onChange={handleAdditionalNotesChange}
+                  onBlur={saveAdditionalNotes}
                 />
               </Tab>
               <Tab
@@ -615,8 +626,7 @@ const TermOfParentalRights = (props) => {
               </Tab>
               <Tab eventKey="domains" title={domains} className="contents">
                 <div className="domainsTable">
-                  <DomainsTable patientNotes={patientNotes} item={props.item}
-                  />
+                  <DomainsTable patientNotes={patientNotes} item={props.item} />
                 </div>
               </Tab>
             </Tabs>

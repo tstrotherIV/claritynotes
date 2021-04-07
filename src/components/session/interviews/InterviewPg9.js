@@ -10,11 +10,7 @@ import "./interviews.scss";
 
 function Interview_Pg9(props) {
   const [item, setItem] = useState("");
-  const [patientInterview_pg9, setPatientInterview_pg9] = useState({
-    interview_pg9_a: "",
-    interview_pg9_b: "",
-    interview_pg9_c: "",
-  });
+  const [patientInterview_pg9, setPatientInterview_pg9] = useState({});
 
   const next = "/family_pg_1";
   const back = "/interview_pg_8";
@@ -40,29 +36,15 @@ function Interview_Pg9(props) {
       interview_pg9_c: patientInterview_pg9.interview_pg9_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = ["interview_pg9_a", "interview_pg9_b", "interview_pg9_c"];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientInterview_pg9(props.patientDetails);
-    });
+    setPatientInterview_pg9(props.patientDetails);
   };
 
   useEffect(() => {
@@ -73,7 +55,6 @@ function Interview_Pg9(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="header questionsContainerWide">
             <h2 className="textWhite">Interviews</h2>
           </div>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Label } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -10,11 +9,7 @@ import DataManager from "../../../data_module/DataManager";
 
 function EmploymentPg3(props) {
   const [item, setItem] = useState("");
-  const [patientEmployment_pg3, setPatientEmployment_pg3] = useState({
-    employment_pg3_a: "",
-    employment_pg3_b: "",
-    employment_pg3_c: "",
-  });
+  const [patientEmployment_pg3, setPatientEmployment_pg3] = useState({});
 
   const next = "/education_pg_1";
   const back = "/employment_pg_2";
@@ -40,33 +35,15 @@ function EmploymentPg3(props) {
       employment_pg3_c: patientEmployment_pg3.employment_pg3_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "employment_pg3_a",
-        "employment_pg3_b",
-        "employment_pg3_c",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientEmployment_pg3(props.patientDetails);
-    });
+    setPatientEmployment_pg3(props.patientDetails);
   };
 
   useEffect(() => {
@@ -77,7 +54,6 @@ function EmploymentPg3(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-4">Employment</h2>
           <div className="questionsContainer">
             <h4 className="textWhite centerItem">

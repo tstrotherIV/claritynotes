@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Label } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -10,11 +9,7 @@ import DataManager from "../../../data_module/DataManager";
 
 function EducationPg2(props) {
   const [item, setItem] = useState("");
-  const [patientEducation_pg2, setPatientEducation_pg2] = useState({
-    education_pg2_a: "",
-    education_pg2_b: "",
-    education_pg2_c: "",
-  });
+  const [patientEducation_pg2, setPatientEducation_pg2] = useState({});
 
   const next = "/education_pg_3";
   const back = "/education_pg_1";
@@ -40,29 +35,15 @@ function EducationPg2(props) {
       education_pg2_c: patientEducation_pg2.education_pg2_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = ["education_pg2_a", "education_pg2_b", "education_pg2_c"];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientEducation_pg2(props.patientDetails);
-    });
+    setPatientEducation_pg2(props.patientDetails);
   };
 
   useEffect(() => {
@@ -73,7 +54,6 @@ function EducationPg2(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-4">Education</h2>
           <div className="questionsContainer text-center">
             <h4 className="textWhite centerItem">

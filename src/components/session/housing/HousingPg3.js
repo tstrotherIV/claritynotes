@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./housing.scss";
 import { Label } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -45,35 +44,15 @@ function HousingPg3(props) {
       housing_pg3_e: patientHousing_pg3.housing_pg3_e,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "housing_pg3_a",
-        "housing_pg3_b",
-        "housing_pg3_c",
-        "housing_pg3_d",
-        "housing_pg3_e",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientHousing_pg3(props.patientDetails);
-    });
+    setPatientHousing_pg3(props.patientDetails);
   };
 
   useEffect(() => {
@@ -84,7 +63,6 @@ function HousingPg3(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-4">Housing</h2>
           <div className="questionsContainer">
             <h4 className="textWhite centerItem">
