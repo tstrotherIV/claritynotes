@@ -13,20 +13,7 @@ function ShipleyIntelligenceAssessment2(props) {
   const [
     shipleyIntelligenceAssessment2,
     setShipleyIntelligenceAssessment2,
-  ] = useState({
-    shipley_intelligence_assessment_2_pg1_col1_a: "",
-    shipley_intelligence_assessment_2_pg1_col1_b: "",
-    shipley_intelligence_assessment_2_pg1_col1_c: "",
-    shipley_intelligence_assessment_2_pg1_col1_d: "",
-    shipley_intelligence_assessment_2_pg1_col1_e: "",
-    shipley_intelligence_assessment_2_pg1_col1_f: "",
-    shipley_intelligence_assessment_2_pg1_col2_a: "",
-    shipley_intelligence_assessment_2_pg1_col2_b: "",
-    shipley_intelligence_assessment_2_pg1_col2_c: "",
-    shipley_intelligence_assessment_2_pg1_col2_d: "",
-    shipley_intelligence_assessment_2_pg1_col2_e: "",
-    shipley_intelligence_assessment_2_pg1_col2_f: "",
-  });
+  ] = useState({});
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -47,79 +34,62 @@ function ShipleyIntelligenceAssessment2(props) {
   const updatePatient = () => {
     const editedPatient = {
       shipley_intelligence_assessment_2_pg1_col1_a: String(
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_a
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_a ||
+          "0"
       ),
       shipley_intelligence_assessment_2_pg1_col1_b: String(
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_b
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_b ||
+          "0"
       ),
       shipley_intelligence_assessment_2_pg1_col1_c: String(
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_c
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_c ||
+          "0"
       ),
       shipley_intelligence_assessment_2_pg1_col1_d: String(
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_d
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_d ||
+          "0"
       ),
       shipley_intelligence_assessment_2_pg1_col1_e: String(
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_e
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_e ||
+          "0"
       ),
       shipley_intelligence_assessment_2_pg1_col1_f: String(
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_f
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col1_f ||
+          "0"
       ),
       shipley_intelligence_assessment_2_pg1_col2_a: String(
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_a
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_a ||
+          "0"
       ),
       shipley_intelligence_assessment_2_pg1_col2_b: String(
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_b
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_b ||
+          "0"
       ),
       shipley_intelligence_assessment_2_pg1_col2_c: String(
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_c
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_c ||
+          "0"
       ),
       shipley_intelligence_assessment_2_pg1_col2_d: String(
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_d
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_d ||
+          "0"
       ),
       shipley_intelligence_assessment_2_pg1_col2_e: String(
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_e
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_e ||
+          "0"
       ),
       shipley_intelligence_assessment_2_pg1_col2_f: String(
-        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_f
+        shipleyIntelligenceAssessment2.shipley_intelligence_assessment_2_pg1_col2_f ||
+          "0"
       ),
     };
 
-    DataManager.update("patients", editedPatient);
+    DataManager.update("patients", editedPatient).then(() => props.getData());
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "shipley_intelligence_assessment_2_pg1_col1_a",
-        "shipley_intelligence_assessment_2_pg1_col1_b",
-        "shipley_intelligence_assessment_2_pg1_col1_c",
-        "shipley_intelligence_assessment_2_pg1_col1_d",
-        "shipley_intelligence_assessment_2_pg1_col1_e",
-        "shipley_intelligence_assessment_2_pg1_col1_f",
-        "shipley_intelligence_assessment_2_pg1_col2_a",
-        "shipley_intelligence_assessment_2_pg1_col2_b",
-        "shipley_intelligence_assessment_2_pg1_col2_c",
-        "shipley_intelligence_assessment_2_pg1_col2_d",
-        "shipley_intelligence_assessment_2_pg1_col2_e",
-        "shipley_intelligence_assessment_2_pg1_col2_f",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setShipleyIntelligenceAssessment2(props.patientDetails);
-    });
+    setShipleyIntelligenceAssessment2(props.patientDetails);
   };
 
   useEffect(() => {
@@ -130,7 +100,6 @@ function ShipleyIntelligenceAssessment2(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="ml-5 mr-5 mt-3">
             <div className="d-flex flex-wrap text-white align-items-baseline">
               <h3 className=" mb-1 col-2">Test Results</h3>
@@ -139,7 +108,8 @@ function ShipleyIntelligenceAssessment2(props) {
             <div className="m-5 d-flex flex-wrap justify-content-around">
               <p className="col-4 text-white">
                 {" "}
-                Shipley Intelligence Assessment 2, {props.patientDetails.patient_first_name}
+                Shipley Intelligence Assessment 2,{" "}
+                {props.patientDetails.patient_first_name}
                 achieved a Full Scale IQ of [Score Result] which falls into the
                 [Score Result Descriptor Correlation] range of intelligence.{" "}
               </p>

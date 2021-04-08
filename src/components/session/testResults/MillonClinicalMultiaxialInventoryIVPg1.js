@@ -1,148 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 117
 
 function MillonClinicalMultiaxialInventoryIVPg1(props) {
-  const [item, setItem] = useState("");
   const [
     patientMillonClinicalMultiaxialInventoryIVPg1,
     setPatientMillonClinicalMultiaxialInventoryIVPg1,
-  ] = useState({
-    millon_clinical_multiaxial_inventory_iv_pg1_a: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_b: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_c: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_d: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_e: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_f: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_g: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_h: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_i: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_j: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_k: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_l: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_m: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_n: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_o: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_p: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_q: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_r: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_s: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_t: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_u: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_v: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_w: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_x: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_y: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_z: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_aa: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_bb: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_cc: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_dd: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_ee: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_ff: false,
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_a: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_b: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_c: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_d: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_e: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_f: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_g: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_h: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_i: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_j: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_k: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_l: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_m: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_n: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_o: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_p: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_q: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_r: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_s: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_t: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_u: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_v: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_w: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_x: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_y: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_z: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_aa: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_bb: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_cc: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_dd: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_ee: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_Raw_ff: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_a: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_b: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_c: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_d: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_e: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_f: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_g: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_h: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_i: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_j: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_k: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_l: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_m: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_n: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_o: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_p: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_q: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_r: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_s: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_t: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_u: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_v: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_w: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_x: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_y: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_z: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_aa: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_bb: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_cc: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_dd: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_ee: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_PR_ff: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_a: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_b: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_c: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_d: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_e: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_f: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_g: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_h: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_i: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_j: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_k: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_l: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_m: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_n: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_o: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_p: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_q: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_r: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_s: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_t: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_u: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_v: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_w: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_x: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_y: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_z: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_aa: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_bb: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_cc: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_dd: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_ee: "",
-    millon_clinical_multiaxial_inventory_iv_pg1_BR_ff: "",
-  });
+  ] = useState({});
 
   const next = "/millon_clinical_multiaxial_inventory_iv_pg_2";
   const back = "/minnesota_multiphasic_personality_inventory_2";
@@ -230,458 +98,410 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
       millon_clinical_multiaxial_inventory_iv_pg1_ff:
         patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_ff,
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_a: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_a
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_a ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_b: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_b
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_b ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_c: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_c
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_c ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_d: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_d
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_d ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_e: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_e
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_e ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_f: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_f
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_f ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_g: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_g
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_g ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_h: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_h
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_h ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_i: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_i
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_i ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_j: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_j
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_j ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_k: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_k
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_k ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_l: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_l
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_l ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_m: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_m
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_m ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_n: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_n
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_n ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_o: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_o
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_o ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_p: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_p
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_p ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_q: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_q
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_q ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_r: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_r
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_r ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_s: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_s
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_s ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_t: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_t
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_t ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_u: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_u
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_u ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_v: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_v
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_v ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_w: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_w
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_w ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_x: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_x
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_x ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_y: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_y
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_y ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_z: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_z
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_z ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_aa: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_aa
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_aa ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_bb: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_bb
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_bb ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_cc: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_cc
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_cc ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_dd: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_dd
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_dd ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_ee: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_ee
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_ee ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_Raw_ff: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_ff
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_Raw_ff ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_a: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_a
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_a ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_b: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_b
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_b ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_c: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_c
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_c ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_d: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_d
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_d ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_e: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_e
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_e ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_f: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_f
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_f ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_g: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_g
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_g ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_h: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_h
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_h ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_i: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_i
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_i ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_j: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_j
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_j ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_k: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_k
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_k ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_l: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_l
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_l ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_m: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_m
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_m ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_n: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_n
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_n ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_o: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_o
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_o ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_p: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_p
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_p ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_q: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_q
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_q ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_r: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_r
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_r ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_s: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_s
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_s ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_t: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_t
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_t ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_u: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_u
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_u ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_v: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_v
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_v ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_w: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_w
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_w ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_x: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_x
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_x ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_y: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_y
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_y ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_z: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_z
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_z ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_aa: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_aa
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_aa ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_bb: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_bb
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_bb ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_cc: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_cc
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_cc ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_dd: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_dd
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_dd ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_ee: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_ee
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_ee ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_PR_ff: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_ff
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_ff ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_a: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_a
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_a ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_b: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_b
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_b ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_c: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_c
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_c ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_d: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_d
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_d ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_e: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_e
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_e ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_f: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_f
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_f ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_g: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_g
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_g ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_h: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_h
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_h ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_i: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_i
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_i ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_j: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_j
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_j ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_k: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_k
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_k ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_l: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_l
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_l ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_m: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_m
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_m ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_n: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_n
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_n ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_o: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_o
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_o ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_p: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_p
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_p ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_q: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_q
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_q ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_r: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_r
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_r ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_s: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_s
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_s ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_t: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_t
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_t ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_u: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_u
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_u ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_v: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_v
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_v ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_w: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_w
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_w ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_x: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_x
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_x ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_y: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_y
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_y ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_z: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_z
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_z ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_aa: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_aa
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_aa ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_bb: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_bb
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_bb ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_cc: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_cc
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_cc ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_dd: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_dd
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_dd ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_ee: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_ee
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_ee ||
+          "0"
       ),
       millon_clinical_multiaxial_inventory_iv_pg1_BR_ff: String(
-        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_ff
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_ff ||
+          "0"
       ),
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "millon_clinical_multiaxial_inventory_iv_pg1_a",
-        "millon_clinical_multiaxial_inventory_iv_pg1_b",
-        "millon_clinical_multiaxial_inventory_iv_pg1_c",
-        "millon_clinical_multiaxial_inventory_iv_pg1_d",
-        "millon_clinical_multiaxial_inventory_iv_pg1_e",
-        "millon_clinical_multiaxial_inventory_iv_pg1_f",
-        "millon_clinical_multiaxial_inventory_iv_pg1_g",
-        "millon_clinical_multiaxial_inventory_iv_pg1_h",
-        "millon_clinical_multiaxial_inventory_iv_pg1_i",
-        "millon_clinical_multiaxial_inventory_iv_pg1_j",
-        "millon_clinical_multiaxial_inventory_iv_pg1_k",
-        "millon_clinical_multiaxial_inventory_iv_pg1_l",
-        "millon_clinical_multiaxial_inventory_iv_pg1_m",
-        "millon_clinical_multiaxial_inventory_iv_pg1_n",
-        "millon_clinical_multiaxial_inventory_iv_pg1_o",
-        "millon_clinical_multiaxial_inventory_iv_pg1_p",
-        "millon_clinical_multiaxial_inventory_iv_pg1_q",
-        "millon_clinical_multiaxial_inventory_iv_pg1_r",
-        "millon_clinical_multiaxial_inventory_iv_pg1_s",
-        "millon_clinical_multiaxial_inventory_iv_pg1_t",
-        "millon_clinical_multiaxial_inventory_iv_pg1_u",
-        "millon_clinical_multiaxial_inventory_iv_pg1_v",
-        "millon_clinical_multiaxial_inventory_iv_pg1_w",
-        "millon_clinical_multiaxial_inventory_iv_pg1_x",
-        "millon_clinical_multiaxial_inventory_iv_pg1_y",
-        "millon_clinical_multiaxial_inventory_iv_pg1_z",
-        "millon_clinical_multiaxial_inventory_iv_pg1_aa",
-        "millon_clinical_multiaxial_inventory_iv_pg1_bb",
-        "millon_clinical_multiaxial_inventory_iv_pg1_cc",
-        "millon_clinical_multiaxial_inventory_iv_pg1_dd",
-        "millon_clinical_multiaxial_inventory_iv_pg1_ee",
-        "millon_clinical_multiaxial_inventory_iv_pg1_ff",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_a",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_b",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_c",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_d",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_e",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_f",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_g",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_h",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_i",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_j",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_k",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_l",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_m",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_n",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_o",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_p",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_q",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_r",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_s",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_t",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_u",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_v",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_w",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_x",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_y",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_z",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_aa",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_bb",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_cc",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_dd",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_ee",
-        "millon_clinical_multiaxial_inventory_iv_pg1_Raw_ff",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_a",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_b",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_c",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_d",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_e",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_f",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_g",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_h",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_i",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_j",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_k",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_l",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_m",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_n",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_o",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_p",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_q",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_r",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_s",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_t",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_u",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_v",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_w",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_x",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_y",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_z",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_aa",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_bb",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_cc",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_dd",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_ee",
-        "millon_clinical_multiaxial_inventory_iv_pg1_PR_ff",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_a",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_b",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_c",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_d",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_e",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_f",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_g",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_h",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_i",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_j",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_k",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_l",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_m",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_n",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_o",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_p",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_q",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_r",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_s",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_t",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_u",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_v",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_w",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_x",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_y",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_z",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_aa",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_bb",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_cc",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_dd",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_ee",
-        "millon_clinical_multiaxial_inventory_iv_pg1_BR_ff",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientMillonClinicalMultiaxialInventoryIVPg1(props.patientDetails);
-    });
+    setPatientMillonClinicalMultiaxialInventoryIVPg1(props.patientDetails);
   };
 
   useEffect(() => {
     getData();
-  });
+  }, [props]);
 
   return (
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="ml-5 mr-5 mt-3">
             <div className="d-flex flex-wrap text-white align-items-baseline">
               <h3 className="mb-1 col-2">Test Results</h3>
@@ -693,7 +513,8 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
               <div className="col-2">
                 <p>
                   The Millon Clinical Multiaxial Inventory-IV (MCMI-IV) was
-                  administered to assess {props.patientDetails.patient_first_name} [Patient Name,
+                  administered to assess{" "}
+                  {props.patientDetails.patient_first_name} [Patient Name,
                   Last]'s general psychological functioning.
                 </p>
               </div>
@@ -714,7 +535,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                       <th>
                         <input
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_a"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_a
@@ -734,7 +554,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_a"
                           onChange={handleFieldChange}
                           value={
@@ -748,7 +567,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_a"
                           onChange={handleFieldChange}
                           value={
@@ -762,7 +580,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_a"
                           onChange={handleFieldChange}
                           value={
@@ -776,7 +593,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_b"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_b
@@ -794,7 +610,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_b"
                           onChange={handleFieldChange}
                           value={
@@ -808,7 +623,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_b"
                           onChange={handleFieldChange}
                           value={
@@ -822,7 +636,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_b"
                           onChange={handleFieldChange}
                           value={
@@ -836,7 +649,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_c"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_c
@@ -854,7 +666,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_c"
                           onChange={handleFieldChange}
                           value={
@@ -868,7 +679,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_c"
                           onChange={handleFieldChange}
                           value={
@@ -882,7 +692,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_c"
                           onChange={handleFieldChange}
                           value={
@@ -896,7 +705,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_d"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_d
@@ -914,7 +722,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_d"
                           onChange={handleFieldChange}
                           value={
@@ -928,7 +735,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_d"
                           onChange={handleFieldChange}
                           value={
@@ -942,7 +748,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_d"
                           onChange={handleFieldChange}
                           value={
@@ -956,7 +761,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_e"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_e
@@ -976,7 +780,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_e"
                           onChange={handleFieldChange}
                           value={
@@ -990,7 +793,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_e"
                           onChange={handleFieldChange}
                           value={
@@ -1004,7 +806,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_e"
                           onChange={handleFieldChange}
                           value={
@@ -1018,7 +819,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_f"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_f
@@ -1036,7 +836,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_f"
                           onChange={handleFieldChange}
                           value={
@@ -1050,7 +849,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_f"
                           onChange={handleFieldChange}
                           value={
@@ -1064,7 +862,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_f"
                           onChange={handleFieldChange}
                           value={
@@ -1078,7 +875,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_g"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_g
@@ -1096,7 +892,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_g"
                           onChange={handleFieldChange}
                           value={
@@ -1110,7 +905,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_g"
                           onChange={handleFieldChange}
                           value={
@@ -1124,7 +918,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_g"
                           onChange={handleFieldChange}
                           value={
@@ -1138,7 +931,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_h"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_h
@@ -1156,7 +948,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_h"
                           onChange={handleFieldChange}
                           value={
@@ -1170,7 +961,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_h"
                           onChange={handleFieldChange}
                           value={
@@ -1184,7 +974,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_h"
                           onChange={handleFieldChange}
                           value={
@@ -1198,7 +987,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_i"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_i
@@ -1218,7 +1006,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_i"
                           onChange={handleFieldChange}
                           value={
@@ -1232,7 +1019,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_i"
                           onChange={handleFieldChange}
                           value={
@@ -1246,7 +1032,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_i"
                           onChange={handleFieldChange}
                           value={
@@ -1260,7 +1045,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_j"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_j
@@ -1278,7 +1062,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_j"
                           onChange={handleFieldChange}
                           value={
@@ -1292,7 +1075,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_j"
                           onChange={handleFieldChange}
                           value={
@@ -1306,7 +1088,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_j"
                           onChange={handleFieldChange}
                           value={
@@ -1320,7 +1101,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_k"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_k
@@ -1338,7 +1118,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_k"
                           onChange={handleFieldChange}
                           value={
@@ -1352,7 +1131,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_k"
                           onChange={handleFieldChange}
                           value={
@@ -1366,7 +1144,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_k"
                           onChange={handleFieldChange}
                           value={
@@ -1380,7 +1157,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_l"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_l
@@ -1398,7 +1174,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_l"
                           onChange={handleFieldChange}
                           value={
@@ -1412,7 +1187,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_l"
                           onChange={handleFieldChange}
                           value={
@@ -1426,7 +1200,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_l"
                           onChange={handleFieldChange}
                           value={
@@ -1440,7 +1213,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_m"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_m
@@ -1460,7 +1232,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_m"
                           onChange={handleFieldChange}
                           value={
@@ -1474,7 +1245,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_m"
                           onChange={handleFieldChange}
                           value={
@@ -1488,7 +1258,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_m"
                           onChange={handleFieldChange}
                           value={
@@ -1502,7 +1271,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_n"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_n
@@ -1520,7 +1288,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_n"
                           onChange={handleFieldChange}
                           value={
@@ -1534,7 +1301,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_n"
                           onChange={handleFieldChange}
                           value={
@@ -1548,7 +1314,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_n"
                           onChange={handleFieldChange}
                           value={
@@ -1562,7 +1327,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_o"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_o
@@ -1580,7 +1344,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_o"
                           onChange={handleFieldChange}
                           value={
@@ -1594,7 +1357,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_o"
                           onChange={handleFieldChange}
                           value={
@@ -1608,7 +1370,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_o"
                           onChange={handleFieldChange}
                           value={
@@ -1622,7 +1383,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_p"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_p
@@ -1640,7 +1400,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_p"
                           onChange={handleFieldChange}
                           value={
@@ -1654,7 +1413,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_p"
                           onChange={handleFieldChange}
                           value={
@@ -1668,7 +1426,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_p"
                           onChange={handleFieldChange}
                           value={
@@ -1698,7 +1455,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_q"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_q
@@ -1718,7 +1474,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_q"
                           onChange={handleFieldChange}
                           value={
@@ -1732,7 +1487,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_q"
                           onChange={handleFieldChange}
                           value={
@@ -1746,7 +1500,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_q"
                           onChange={handleFieldChange}
                           value={
@@ -1760,7 +1513,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_r"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_r
@@ -1778,7 +1530,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_r"
                           onChange={handleFieldChange}
                           value={
@@ -1792,7 +1543,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_r"
                           onChange={handleFieldChange}
                           value={
@@ -1806,7 +1556,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_r"
                           onChange={handleFieldChange}
                           value={
@@ -1820,7 +1569,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_s"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_s
@@ -1838,7 +1586,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_s"
                           onChange={handleFieldChange}
                           value={
@@ -1852,7 +1599,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_s"
                           onChange={handleFieldChange}
                           value={
@@ -1866,7 +1612,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_s"
                           onChange={handleFieldChange}
                           value={
@@ -1880,7 +1625,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_t"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_t
@@ -1898,7 +1642,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_t"
                           onChange={handleFieldChange}
                           value={
@@ -1912,7 +1655,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_t"
                           onChange={handleFieldChange}
                           value={
@@ -1926,7 +1668,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_t"
                           onChange={handleFieldChange}
                           value={
@@ -1940,7 +1681,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_u"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_u
@@ -1960,7 +1700,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_u"
                           onChange={handleFieldChange}
                           value={
@@ -1974,7 +1713,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_u"
                           onChange={handleFieldChange}
                           value={
@@ -1988,7 +1726,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_u"
                           onChange={handleFieldChange}
                           value={
@@ -2002,7 +1739,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_v"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_v
@@ -2020,7 +1756,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_v"
                           onChange={handleFieldChange}
                           value={
@@ -2034,7 +1769,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_v"
                           onChange={handleFieldChange}
                           value={
@@ -2048,7 +1782,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_v"
                           onChange={handleFieldChange}
                           value={
@@ -2062,7 +1795,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_w"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_w
@@ -2080,7 +1812,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_w"
                           onChange={handleFieldChange}
                           value={
@@ -2094,7 +1825,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_w"
                           onChange={handleFieldChange}
                           value={
@@ -2108,7 +1838,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_w"
                           onChange={handleFieldChange}
                           value={
@@ -2122,7 +1851,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_x"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_x
@@ -2140,7 +1868,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_x"
                           onChange={handleFieldChange}
                           value={
@@ -2154,7 +1881,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_x"
                           onChange={handleFieldChange}
                           value={
@@ -2168,7 +1894,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_x"
                           onChange={handleFieldChange}
                           value={
@@ -2182,7 +1907,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_y"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_y
@@ -2202,7 +1926,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_y"
                           onChange={handleFieldChange}
                           value={
@@ -2216,7 +1939,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_y"
                           onChange={handleFieldChange}
                           value={
@@ -2230,7 +1952,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_y"
                           onChange={handleFieldChange}
                           value={
@@ -2244,7 +1965,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_z"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_z
@@ -2262,7 +1982,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_z"
                           onChange={handleFieldChange}
                           value={
@@ -2276,7 +1995,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_z"
                           onChange={handleFieldChange}
                           value={
@@ -2290,7 +2008,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_z"
                           onChange={handleFieldChange}
                           value={
@@ -2304,7 +2021,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_aa"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_aa
@@ -2322,7 +2038,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_aa"
                           onChange={handleFieldChange}
                           value={
@@ -2336,7 +2051,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_aa"
                           onChange={handleFieldChange}
                           value={
@@ -2350,7 +2064,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_aa"
                           onChange={handleFieldChange}
                           value={
@@ -2364,7 +2077,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_bb"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_bb
@@ -2382,7 +2094,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_bb"
                           onChange={handleFieldChange}
                           value={
@@ -2396,7 +2107,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_bb"
                           onChange={handleFieldChange}
                           value={
@@ -2410,7 +2120,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_bb"
                           onChange={handleFieldChange}
                           value={
@@ -2424,7 +2133,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_cc"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_cc
@@ -2444,7 +2152,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_cc"
                           onChange={handleFieldChange}
                           value={
@@ -2458,7 +2165,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_cc"
                           onChange={handleFieldChange}
                           value={
@@ -2472,7 +2178,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_cc"
                           onChange={handleFieldChange}
                           value={
@@ -2486,7 +2191,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_dd"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_dd
@@ -2504,7 +2208,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_dd"
                           onChange={handleFieldChange}
                           value={
@@ -2518,7 +2221,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_dd"
                           onChange={handleFieldChange}
                           value={
@@ -2532,7 +2234,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_dd"
                           onChange={handleFieldChange}
                           value={
@@ -2546,7 +2247,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_ee"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_ee
@@ -2564,7 +2264,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_ee"
                           onChange={handleFieldChange}
                           value={
@@ -2578,7 +2277,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_ee"
                           onChange={handleFieldChange}
                           value={
@@ -2592,7 +2290,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_ee"
                           onChange={handleFieldChange}
                           value={
@@ -2606,7 +2303,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         <input
                           className=""
                           type="checkbox"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_ff"
                           checked={
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_ff
@@ -2624,7 +2320,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_Raw_ff"
                           onChange={handleFieldChange}
                           value={
@@ -2638,7 +2333,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_PR_ff"
                           onChange={handleFieldChange}
                           value={
@@ -2652,7 +2346,6 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                           min={0}
                           max={10}
                           type="number"
-                          id={item}
                           name="millon_clinical_multiaxial_inventory_iv_pg1_BR_ff"
                           onChange={handleFieldChange}
                           value={

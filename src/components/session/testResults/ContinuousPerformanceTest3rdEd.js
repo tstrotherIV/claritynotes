@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Label } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
@@ -10,17 +9,7 @@ function ContinuousPerformanceTest3rdEd(props) {
   const [
     patientContinuousPerformanceTest3rdEd,
     setPatientContinuousPerformanceTest3rdEd,
-  ] = useState({
-    continous_performance_test_3rd_ed_a: "",
-    continous_performance_test_3rd_ed_b: false,
-    continous_performance_test_3rd_ed_c: false,
-    continous_performance_test_3rd_ed_d: false,
-    continous_performance_test_3rd_ed_e: false,
-    continous_performance_test_3rd_ed_f: false,
-    continous_performance_test_3rd_ed_g: false,
-    continous_performance_test_3rd_ed_h: false,
-    continous_performance_test_3rd_ed_i: false,
-  });
+  ] = useState({});
 
   const next = "/computerized_performance_neurocognitive_assessment";
   const back = "/aimsweb_plus_achievement_test_pg_4";
@@ -44,7 +33,8 @@ function ContinuousPerformanceTest3rdEd(props) {
   const updatePatient = () => {
     const editedPatient = {
       continous_performance_test_3rd_ed_a: String(
-        patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_a
+        patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_a ||
+          "0"
       ),
       continous_performance_test_3rd_ed_b:
         patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_b,
@@ -64,50 +54,23 @@ function ContinuousPerformanceTest3rdEd(props) {
         patientContinuousPerformanceTest3rdEd.continous_performance_test_3rd_ed_i,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => props.getData());
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "continous_performance_test_3rd_ed_a",
-        "continous_performance_test_3rd_ed_b",
-        "continous_performance_test_3rd_ed_c",
-        "continous_performance_test_3rd_ed_d",
-        "continous_performance_test_3rd_ed_e",
-        "continous_performance_test_3rd_ed_f",
-        "continous_performance_test_3rd_ed_g",
-        "continous_performance_test_3rd_ed_h",
-        "continous_performance_test_3rd_ed_i",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientContinuousPerformanceTest3rdEd(props.patientDetails);
-    });
+    setPatientContinuousPerformanceTest3rdEd(props.patientDetails);
   };
 
   useEffect(() => {
     getData();
-  });
+  }, [props]);
 
   return (
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="ml-5 mr-5 mt-3">
             <div className="d-flex flex-wrap text-white align-items-baseline">
               <h3 className=" mb-1 col-2">Test Results</h3>
@@ -154,12 +117,12 @@ function ContinuousPerformanceTest3rdEd(props) {
                 <div className="d-flex flex-wrap">
                   <div className="col-6 text-white">
                     <p>
-                      {props.patientDetails.patient_first_name} has a total of [X] atypical
-                      T-scores, which falls is associated with a (very high [OR]
-                      moderate) likelihood of having a disorder characterized by
-                      attention deficits, such as ADHD. (Patient's name) profile
-                      of scores and response pattern indicate he/she may have
-                      issues related to:{" "}
+                      {props.patientDetails.patient_first_name} has a total of
+                      [X] atypical T-scores, which falls is associated with a
+                      (very high [OR] moderate) likelihood of having a disorder
+                      characterized by attention deficits, such as ADHD.
+                      (Patient's name) profile of scores and response pattern
+                      indicate he/she may have issues related to:{" "}
                     </p>
 
                     <div className="">

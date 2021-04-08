@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
 // pdf page 107
 
 function RAITpg1(props) {
-  const [item, setItem] = useState("");
-  const [patientRAITpg1, setPatientRAITpg1] = useState({
-    rait_pg1_a: "",
-    rait_pg1_b: "",
-  });
+  const [patientRAITpg1, setPatientRAITpg1] = useState({});
 
   const next = "/rait_pg_2";
   const back = "/shipley_intelligence_assessment_2";
@@ -23,39 +18,21 @@ function RAITpg1(props) {
     });
   };
 
-
-
   //CRUD Function Start
 
   const updatePatient = () => {
     const editedPatient = {
-      rait_pg1_a: String(patientRAITpg1.rait_pg1_a),
-      rait_pg1_b: String(patientRAITpg1.rait_pg1_b),
+      rait_pg1_a: String(patientRAITpg1.rait_pg1_a || "0"),
+      rait_pg1_b: String(patientRAITpg1.rait_pg1_b || "0"),
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => props.getData());
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = ["rait_pg1_a", "rait_pg1_b"];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientRAITpg1(props.patientDetails);
-    });
+    setPatientRAITpg1(props.patientDetails);
   };
 
   useEffect(() => {
@@ -66,7 +43,6 @@ function RAITpg1(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="ml-5 mr-5 mt-3">
             <div className="d-flex flex-wrap text-white align-items-baseline">
               <h3 className=" mb-1 col-2">Test Results</h3>
@@ -98,19 +74,19 @@ function RAITpg1(props) {
                   <input
                     className="fieldData m-3"
                     type="number"
-                    id={item}
                     name="rait_pg1_a"
                     onChange={handleFieldChange}
                     value={patientRAITpg1.rait_pg1_a}
                   />
                   <h4>Results:</h4>
                   <p>
-                    {props.patientDetails.patient_first_name} earned a TBII of [TBII Score], which
-                    falls in the [Score Result Descriptor Correlation] range of
-                    intelligence. On the RAIT, this level of performance falls
-                    within the range of scores designated as [Score Result
-                    Placement Descriptor] and exceeds te performance of [Score
-                    Result Percentage] of individuals at {props.patientDetails.patient_first_name}
+                    {props.patientDetails.patient_first_name} earned a TBII of
+                    [TBII Score], which falls in the [Score Result Descriptor
+                    Correlation] range of intelligence. On the RAIT, this level
+                    of performance falls within the range of scores designated
+                    as [Score Result Placement Descriptor] and exceeds te
+                    performance of [Score Result Percentage] of individuals at{" "}
+                    {props.patientDetails.patient_first_name}
                     [Patient Name, Last]'s age.
                   </p>
                 </div>
@@ -127,19 +103,19 @@ function RAITpg1(props) {
                   <input
                     className="fieldData m-3"
                     type="number"
-                    id={item}
                     name="rait_pg1_b"
                     onChange={handleFieldChange}
                     value={patientRAITpg1.rait_pg1_b}
                   />
                   <h4>Results:</h4>
                   <p>
-                    {props.patientDetails.patient_first_name} earned a TII of [TII Score], which
-                    falls in the [Score Result Descriptor Correlation] range of
-                    intelligence. On the RAIT, this level of performance falls
-                    within the range of scores designated as [Score Result
-                    Placement Descriptor] and exceeds the performance of [Score
-                    Result Percentage] of individuals at {props.patientDetails.patient_first_name}
+                    {props.patientDetails.patient_first_name} earned a TII of
+                    [TII Score], which falls in the [Score Result Descriptor
+                    Correlation] range of intelligence. On the RAIT, this level
+                    of performance falls within the range of scores designated
+                    as [Score Result Placement Descriptor] and exceeds the
+                    performance of [Score Result Percentage] of individuals at{" "}
+                    {props.patientDetails.patient_first_name}
                     [Patient Name, Last]'s age.
                   </p>
                 </div>

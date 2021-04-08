@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Table, Label } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
@@ -11,57 +10,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
   const [
     patientComputerizedNeurocognitiveAssessment,
     setPatientComputerizedNeurocognitiveAssessment,
-  ] = useState({
-    computerized_performance_neurocognitive_assessment_a: false,
-    computerized_performance_neurocognitive_assessment_col1_a: "",
-    computerized_performance_neurocognitive_assessment_col1_b: "",
-    computerized_performance_neurocognitive_assessment_col1_c: "",
-    computerized_performance_neurocognitive_assessment_col1_d: "",
-    computerized_performance_neurocognitive_assessment_col1_e: "",
-    computerized_performance_neurocognitive_assessment_col1_f: "",
-    computerized_performance_neurocognitive_assessment_col1_g: "",
-    computerized_performance_neurocognitive_assessment_col1_h: "",
-    computerized_performance_neurocognitive_assessment_col1_i: "",
-    computerized_performance_neurocognitive_assessment_col1_j: "",
-    computerized_performance_neurocognitive_assessment_col1_k: "",
-    computerized_performance_neurocognitive_assessment_col1_l: "",
-    computerized_performance_neurocognitive_assessment_col1_m: "",
-    computerized_performance_neurocognitive_assessment_col1_n: "",
-    computerized_performance_neurocognitive_assessment_col1_o: "",
-    computerized_performance_neurocognitive_assessment_col1_p: "",
-    computerized_performance_neurocognitive_assessment_col2_a: "",
-    computerized_performance_neurocognitive_assessment_col2_b: "",
-    computerized_performance_neurocognitive_assessment_col2_c: "",
-    computerized_performance_neurocognitive_assessment_col2_d: "",
-    computerized_performance_neurocognitive_assessment_col2_e: "",
-    computerized_performance_neurocognitive_assessment_col2_f: "",
-    computerized_performance_neurocognitive_assessment_col2_g: "",
-    computerized_performance_neurocognitive_assessment_col2_h: "",
-    computerized_performance_neurocognitive_assessment_col2_i: "",
-    computerized_performance_neurocognitive_assessment_col2_j: "",
-    computerized_performance_neurocognitive_assessment_col2_k: "",
-    computerized_performance_neurocognitive_assessment_col2_l: "",
-    computerized_performance_neurocognitive_assessment_col2_m: "",
-    computerized_performance_neurocognitive_assessment_col2_n: "",
-    computerized_performance_neurocognitive_assessment_col2_o: "",
-    computerized_performance_neurocognitive_assessment_col2_p: "",
-    computerized_performance_neurocognitive_assessment_col3_a: "",
-    computerized_performance_neurocognitive_assessment_col3_b: "",
-    computerized_performance_neurocognitive_assessment_col3_c: "",
-    computerized_performance_neurocognitive_assessment_col3_d: "",
-    computerized_performance_neurocognitive_assessment_col3_e: "",
-    computerized_performance_neurocognitive_assessment_col3_f: "",
-    computerized_performance_neurocognitive_assessment_col3_g: "",
-    computerized_performance_neurocognitive_assessment_col3_h: "",
-    computerized_performance_neurocognitive_assessment_col3_i: "",
-    computerized_performance_neurocognitive_assessment_col3_j: "",
-    computerized_performance_neurocognitive_assessment_col3_k: "",
-    computerized_performance_neurocognitive_assessment_col3_l: "",
-    computerized_performance_neurocognitive_assessment_col3_m: "",
-    computerized_performance_neurocognitive_assessment_col3_n: "",
-    computerized_performance_neurocognitive_assessment_col3_o: "",
-    computerized_performance_neurocognitive_assessment_col3_p: "",
-  });
+  ] = useState({});
 
   const next = "/paulhus_deception_scale";
   const back = "/continous_performance_test_3rd_ed";
@@ -80,108 +29,156 @@ function ComputerizedNeurocognitiveAssessment(props) {
     });
   };
 
+  const handleCheckBoxChange = async (e) => {
+    const target = e.target;
+    const value = target.checked;
+    const name = target.name;
+
+    const editedPatient = {
+      id: props.patientId,
+      [name]: value,
+    };
+
+    setPatientComputerizedNeurocognitiveAssessment({
+      ...patientComputerizedNeurocognitiveAssessment,
+      computerized_performance_neurocognitive_assessment_a: value,
+    });
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
+  };
+
   //CRUD Function Start
 
   const updatePatient = () => {
     const editedPatient = {
-      computerized_performance_neurocognitive_assessment_a: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_a
-      ),
       computerized_performance_neurocognitive_assessment_col1_a: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_a
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_a ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col1_b: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_b
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_b ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col1_c: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_c
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_c ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col1_d: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_d
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_d ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col1_e: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_e
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_e ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col1_f: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_f
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_f ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col1_g: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_g
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_g ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col1_h: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_h
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_h ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col1_i: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_i
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_i ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col1_j: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_j
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_j ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col1_k: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_k
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_k ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col1_l: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_l
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_l ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col1_m: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_m
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_m ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col1_n: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_n
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_n ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col1_o: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_o
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_o ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col1_p: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_p
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_p ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col2_a: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_a
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_a ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col2_b: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_b
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_b ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col2_c: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_c
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_c ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col2_d: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_d
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_d ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col2_e: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_e
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_e ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col2_f: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_f
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_f ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col2_g: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_g
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_g ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col2_h: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_h
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_h ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col2_i: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_i
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_i ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col2_j: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_j
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_j ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col2_k: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_k
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_k ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col2_l: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_l
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_l ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col2_m: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_m
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_m ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col2_n: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_n
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_n ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col2_o: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_o
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_o ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col2_p: String(
-        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_p
+        patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col2_p ||
+          "0"
       ),
       computerized_performance_neurocognitive_assessment_col3_a:
         patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col3_a,
@@ -217,90 +214,23 @@ function ComputerizedNeurocognitiveAssessment(props) {
         patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col3_p,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => props.getData());
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "computerized_performance_neurocognitive_assessment_a",
-        "computerized_performance_neurocognitive_assessment_col1_a",
-        "computerized_performance_neurocognitive_assessment_col1_b",
-        "computerized_performance_neurocognitive_assessment_col1_c",
-        "computerized_performance_neurocognitive_assessment_col1_d",
-        "computerized_performance_neurocognitive_assessment_col1_e",
-        "computerized_performance_neurocognitive_assessment_col1_f",
-        "computerized_performance_neurocognitive_assessment_col1_g",
-        "computerized_performance_neurocognitive_assessment_col1_h",
-        "computerized_performance_neurocognitive_assessment_col1_i",
-        "computerized_performance_neurocognitive_assessment_col1_j",
-        "computerized_performance_neurocognitive_assessment_col1_k",
-        "computerized_performance_neurocognitive_assessment_col1_l",
-        "computerized_performance_neurocognitive_assessment_col1_m",
-        "computerized_performance_neurocognitive_assessment_col1_n",
-        "computerized_performance_neurocognitive_assessment_col1_o",
-        "computerized_performance_neurocognitive_assessment_col1_p",
-        "computerized_performance_neurocognitive_assessment_col2_a",
-        "computerized_performance_neurocognitive_assessment_col2_b",
-        "computerized_performance_neurocognitive_assessment_col2_c",
-        "computerized_performance_neurocognitive_assessment_col2_d",
-        "computerized_performance_neurocognitive_assessment_col2_e",
-        "computerized_performance_neurocognitive_assessment_col2_f",
-        "computerized_performance_neurocognitive_assessment_col2_g",
-        "computerized_performance_neurocognitive_assessment_col2_h",
-        "computerized_performance_neurocognitive_assessment_col2_i",
-        "computerized_performance_neurocognitive_assessment_col2_j",
-        "computerized_performance_neurocognitive_assessment_col2_k",
-        "computerized_performance_neurocognitive_assessment_col2_l",
-        "computerized_performance_neurocognitive_assessment_col2_m",
-        "computerized_performance_neurocognitive_assessment_col2_n",
-        "computerized_performance_neurocognitive_assessment_col2_o",
-        "computerized_performance_neurocognitive_assessment_col2_p",
-        "computerized_performance_neurocognitive_assessment_col3_a",
-        "computerized_performance_neurocognitive_assessment_col3_b",
-        "computerized_performance_neurocognitive_assessment_col3_c",
-        "computerized_performance_neurocognitive_assessment_col3_d",
-        "computerized_performance_neurocognitive_assessment_col3_e",
-        "computerized_performance_neurocognitive_assessment_col3_f",
-        "computerized_performance_neurocognitive_assessment_col3_g",
-        "computerized_performance_neurocognitive_assessment_col3_h",
-        "computerized_performance_neurocognitive_assessment_col3_i",
-        "computerized_performance_neurocognitive_assessment_col3_j",
-        "computerized_performance_neurocognitive_assessment_col3_k",
-        "computerized_performance_neurocognitive_assessment_col3_l",
-        "computerized_performance_neurocognitive_assessment_col3_m",
-        "computerized_performance_neurocognitive_assessment_col3_n",
-        "computerized_performance_neurocognitive_assessment_col3_o",
-        "computerized_performance_neurocognitive_assessment_col3_p",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientComputerizedNeurocognitiveAssessment(props.patientDetails);
-    });
+    setPatientComputerizedNeurocognitiveAssessment(props.patientDetails);
   };
 
   useEffect(() => {
     getData();
-  });
+  }, [props]);
 
   return (
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="ml-5 mr-5 mt-3">
             <div className="d-flex flex-wrap text-white align-items-baseline">
               <h3 className="mb-1 col-2">Test Results</h3>
@@ -318,9 +248,10 @@ function ComputerizedNeurocognitiveAssessment(props) {
                   checked={
                     patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_a
                   }
-                  onChange={handleFieldChange}
+                  onChange={handleCheckBoxChange}
                 />
-                <Label className="m-2" for=""></Label>{props.patientDetails.patient_first_name}
+                <Label className="m-2" for=""></Label>
+                {props.patientDetails.patient_first_name}{" "}
                 completed the Computerized Neurocognitive Assessment (CNS).
                 <p className="m-2">
                   This instrument is a clinical testing procedure used to
@@ -362,8 +293,8 @@ function ComputerizedNeurocognitiveAssessment(props) {
                           type="number"
                           min={0}
                           max={10}
-                          id="computerized_performance_neurocognitive_assessment_a"
-                          name="computerized_performance_neurocognitive_assessment_a"
+                          id="computerized_performance_neurocognitive_assessment_col1_a"
+                          name="computerized_performance_neurocognitive_assessment_col1_a"
                           onChange={handleFieldChange}
                           value={
                             patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_a

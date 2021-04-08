@@ -1,22 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Label } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 117
 
 function RorschPerformanceAssessmentSystem(props) {
-  const [item, setItem] = useState("");
   const [
     patientRorschPerformanceAssessmentSystem,
     setPatientRorschPerformanceAssessmentSystem,
-  ] = useState({
-    rorschach_performance_assessment_system_pg1_a: "",
-  });
+  ] = useState({});
 
   const next = "/thematic_apperceptions_test";
   const back = "/millon_clinical_multiaxial_inventory_iv_pg_2";
@@ -35,44 +30,21 @@ function RorschPerformanceAssessmentSystem(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
-    setItem(fieldID);
-  };
-
   //CRUD Function Start
 
   const updatePatient = () => {
     const editedPatient = {
       rorschach_performance_assessment_system_pg1_a:
-      patientRorschPerformanceAssessmentSystem.rorschach_performance_assessment_system_pg1_a,
+        patientRorschPerformanceAssessmentSystem.rorschach_performance_assessment_system_pg1_a,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => props.getData());
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "rorschach_performance_assessment_system_pg1_a",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-        setPatientRorschPerformanceAssessmentSystem(props.patientDetails);
-    });
+    setPatientRorschPerformanceAssessmentSystem(props.patientDetails);
   };
 
   useEffect(() => {
@@ -83,7 +55,6 @@ function RorschPerformanceAssessmentSystem(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="ml-5 mr-5 mt-3">
             <div className="d-flex flex-wrap text-white align-items-baseline">
               <h3 className="mb-1 col-2">Test Results</h3>
@@ -112,11 +83,10 @@ function RorschPerformanceAssessmentSystem(props) {
                   <TextareaAutosize
                     className="fieldData pauhasInput"
                     type="text"
-                    id={item}
                     name="rorschach_performance_assessment_system_pg1_a"
                     onChange={handleFieldChange}
                     value={
-                        patientRorschPerformanceAssessmentSystem.rorschach_performance_assessment_system_pg1_a
+                      patientRorschPerformanceAssessmentSystem.rorschach_performance_assessment_system_pg1_a
                     }
                   />
                 </div>

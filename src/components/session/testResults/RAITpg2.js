@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
@@ -8,10 +7,7 @@ import convertID from "../../../helpers/formFieldIdConverter";
 
 function RAITpg2(props) {
   const [item, setItem] = useState("");
-  const [patientRAITpg2, setPatientRAITpg2] = useState({
-    rait_pg2_a: "",
-    rait_pg2_b: "",
-  });
+  const [patientRAITpg2, setPatientRAITpg2] = useState({});
 
   const next = "/rait_pg_3";
   const back = "/rait_pg_1";
@@ -24,42 +20,21 @@ function RAITpg2(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
-    setItem(fieldID);
-  };
-
   //CRUD Function Start
 
   const updatePatient = () => {
     const editedPatient = {
-      rait_pg2_a: String(patientRAITpg2.rait_pg2_a),
-      rait_pg2_b: String(patientRAITpg2.rait_pg2_b),
+      rait_pg2_a: String(patientRAITpg2.rait_pg2_a || "0"),
+      rait_pg2_b: String(patientRAITpg2.rait_pg2_b || "0"),
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => props.getData());
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = ["rait_pg2_a", "rait_pg2_b"];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientRAITpg2(props.patientDetails);
-    });
+    setPatientRAITpg2(props.patientDetails);
   };
 
   useEffect(() => {
@@ -70,7 +45,6 @@ function RAITpg2(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="ml-5 mr-5 mt-3">
             <div className="d-flex flex-wrap text-white align-items-baseline">
               <h3 className=" mb-1 col-2">Test Results</h3>
@@ -107,12 +81,13 @@ function RAITpg2(props) {
                   />
                   <h4>Results:</h4>
                   <p>
-                    {props.patientDetails.patient_first_name} earned a CII of [CII Score], which
-                    falls in the [Score Result Descriptor Correlation] range of
-                    intelligence. On the RAIT, this level of performance falls
-                    within the range of scores designated as [Score Result
-                    Placement Descriptor] and exceeds te performance of [Score
-                    Result Percentage] of individuals at {props.patientDetails.patient_first_name}
+                    {props.patientDetails.patient_first_name} earned a CII of
+                    [CII Score], which falls in the [Score Result Descriptor
+                    Correlation] range of intelligence. On the RAIT, this level
+                    of performance falls within the range of scores designated
+                    as [Score Result Placement Descriptor] and exceeds te
+                    performance of [Score Result Percentage] of individuals at{" "}
+                    {props.patientDetails.patient_first_name}
                     [Patient Name, Last]'s age.
                   </p>
                 </div>
@@ -138,12 +113,13 @@ function RAITpg2(props) {
                   />
                   <h4>Results:</h4>
                   <p>
-                    {props.patientDetails.patient_first_name} earned a FII of [FII Score], which
-                    falls in the [Score Result Descriptor Correlation] range of
-                    intelligence. On the RAIT, this level of performance falls
-                    within the range of scores designated as [Score Result
-                    Placement Descriptor] and exceeds the performance of [Score
-                    Result Percentage] of individuals at {props.patientDetails.patient_first_name}
+                    {props.patientDetails.patient_first_name} earned a FII of
+                    [FII Score], which falls in the [Score Result Descriptor
+                    Correlation] range of intelligence. On the RAIT, this level
+                    of performance falls within the range of scores designated
+                    as [Score Result Placement Descriptor] and exceeds the
+                    performance of [Score Result Percentage] of individuals at{" "}
+                    {props.patientDetails.patient_first_name}
                     [Patient Name, Last]'s age.
                   </p>
                 </div>

@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Label, Input } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 //pdf page 119
 
@@ -38,53 +36,44 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
-    setItem(fieldID);
+  const handleCheckBoxChange = async (e) => {
+    const target = e.target;
+    const value = target.checked;
+    const name = target.name;
+
+    const editedPatient = {
+      id: props.patientId,
+      [name]: value,
+    };
+
+    setPatientSubstanceAbuseSubtleScreeningInventory4({
+      ...patientSubstanceAbuseSubtleScreeningInventory4,
+      [name]: value,
+    });
+    DataManager.update("patients", editedPatient).then(() => props.getData());
   };
 
   //CRUD Function Start
 
   const updatePatient = () => {
     const editedPatient = {
-      substance_abuse_subtle_screening_inventory_4_a:
-        patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_a,
+      // substance_abuse_subtle_screening_inventory_4_a:
+      //   patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_a,
       substance_abuse_subtle_screening_inventory_4_b:
         patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_b,
-      substance_abuse_subtle_screening_inventory_4_c:
-        patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_c,
-      substance_abuse_subtle_screening_inventory_4_d:
-        patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_d,
+      // substance_abuse_subtle_screening_inventory_4_c:
+      //   patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_c,
+      // substance_abuse_subtle_screening_inventory_4_d:
+      //   patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_d,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => props.getData());
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "substance_abuse_subtle_screening_inventory_4_a",
-        "substance_abuse_subtle_screening_inventory_4_b",
-        "substance_abuse_subtle_screening_inventory_4_c",
-        "substance_abuse_subtle_screening_inventory_4_d",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientSubstanceAbuseSubtleScreeningInventory4(props.patientDetails);
-    });
+    setPatientSubstanceAbuseSubtleScreeningInventory4(props.patientDetails);
   };
 
   useEffect(() => {
@@ -95,7 +84,6 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="ml-5 mr-5 mt-3">
             <div className="d-flex flex-wrap text-white align-items-baseline">
               <h3 className=" mb-1 col-2">Test Results</h3>
@@ -112,11 +100,11 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
                   checked={
                     patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_a
                   }
-                  onChange={handleFieldChange}
+                  onChange={handleCheckBoxChange}
                 />
                 <Label>
-                  {props.patientDetails.patient_first_name} completed the Substance Abuse Subtle
-                  Screening Inventory-4 (SASSI-4)
+                  {props.patientDetails.patient_first_name} completed the
+                  Substance Abuse Subtle Screening Inventory-4 (SASSI-4)
                 </Label>
                 <p>
                   The results indicated the Low/High Probability of [Patient
@@ -150,14 +138,14 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
                     checked={
                       patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_c
                     }
-                    onChange={handleFieldChange}
+                    onChange={handleCheckBoxChange}
                   />
                   <Label className="col-10" for="">
-                    {props.patientDetails.patient_first_name} invalidated this instrument. [She]
-                    gave answers to questions which are not probable. [She]
-                    appeared to make a significant effort to appear perfect and
-                    without flaws. Deliberate non-compliance and
-                    passive-aggressive behaviors appear likely.
+                    {props.patientDetails.patient_first_name} invalidated this
+                    instrument. [She] gave answers to questions which are not
+                    probable. [She] appeared to make a significant effort to
+                    appear perfect and without flaws. Deliberate non-compliance
+                    and passive-aggressive behaviors appear likely.
                   </Label>
                 </div>
                 <div className="mt-4">
@@ -169,23 +157,36 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
                     checked={
                       patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_d
                     }
-                    onChange={handleFieldChange}
+                    onChange={handleCheckBoxChange}
                   />
                   <Label className="col-10" for="">
-                    {props.patientDetails.patient_first_name} showed a significant level of
-                    defensiveness related to substance (alcohol or drug) misuse.
-                    {props.patientDetails.patient_first_name} acknowledged alcohol and drug use, the
-                    motivation and consequences of usage, and loss of control.
+                    {props.patientDetails.patient_first_name} showed a
+                    significant level of defensiveness related to substance
+                    (alcohol or drug) misuse.
+                    {props.patientDetails.patient_first_name} acknowledged
+                    alcohol and drug use, the motivation and consequences of
+                    usage, and loss of control.
                   </Label>
                 </div>
-                <p className="ml-1 mt-4 col-10">
-                  {props.patientDetails.patient_first_name} acknowledged a pattern of current or
-                  past problematic usage, and the subtle scale scores are
-                  somewhat elevated, suggesting the possibility of a mild
-                  substance use disorder. Consideration should be given to
-                  providing substance use education, values clarification, and
-                  ongoing assessment.
-                </p>
+                <div>
+                  <Input
+                    className=""
+                    type="checkbox"
+                    name="substance_abuse_subtle_screening_inventory_4_e"
+                    checked={
+                      patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_e
+                    }
+                    onChange={handleCheckBoxChange}
+                  />
+                  <Label className="col-10">
+                    {props.patientDetails.patient_first_name} acknowledged a
+                    pattern of current or past problematic usage, and the subtle
+                    scale scores are somewhat elevated, suggesting the
+                    possibility of a mild substance use disorder. Consideration
+                    should be given to providing substance use education, values
+                    clarification, and ongoing assessment.
+                  </Label>
+                </div>
               </div>
             </div>
           </div>

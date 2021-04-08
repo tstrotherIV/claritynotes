@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
 
@@ -8,25 +7,11 @@ import DataManager from "../../../data_module/DataManager";
 
 function WideRangeAchievementTest5(props) {
   const next = "/aimsweb_plus_achievement_test_pg_1";
-  const back = "/wechsler_adult_intelligence_scale_IV_pg_2";
+  const back = "/rait_pg_4";
 
-  const [wideRangeAchievementTest5, setWideRangeAchievementTest5] = useState({
-    wide_range_achievement_test_5_pg1_col1_a: "",
-    wide_range_achievement_test_5_pg1_col1_b: "",
-    wide_range_achievement_test_5_pg1_col1_c: "",
-    wide_range_achievement_test_5_pg1_col1_d: "",
-    wide_range_achievement_test_5_pg1_col1_e: "",
-    wide_range_achievement_test_5_pg1_col2_a: "",
-    wide_range_achievement_test_5_pg1_col2_b: "",
-    wide_range_achievement_test_5_pg1_col2_c: "",
-    wide_range_achievement_test_5_pg1_col2_d: "",
-    wide_range_achievement_test_5_pg1_col2_e: "",
-    wide_range_achievement_test_5_pg1_col3_a: "",
-    wide_range_achievement_test_5_pg1_col3_b: "",
-    wide_range_achievement_test_5_pg1_col3_c: "",
-    wide_range_achievement_test_5_pg1_col3_d: "",
-    wide_range_achievement_test_5_pg1_col3_e: "",
-  });
+  const [wideRangeAchievementTest5, setWideRangeAchievementTest5] = useState(
+    {}
+  );
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -47,102 +32,84 @@ function WideRangeAchievementTest5(props) {
   const updatePatient = () => {
     const editedPatient = {
       wide_range_achievement_test_5_pg1_col1_a: String(
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_a
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_a ||
+          "0"
       ),
       wide_range_achievement_test_5_pg1_col1_b: String(
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_b
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_b ||
+          "0"
       ),
       wide_range_achievement_test_5_pg1_col1_c: String(
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_c
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_c ||
+          "0"
       ),
       wide_range_achievement_test_5_pg1_col1_d: String(
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_d
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_d ||
+          "0"
       ),
       wide_range_achievement_test_5_pg1_col1_e: String(
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_e
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col1_e ||
+          "0"
       ),
       wide_range_achievement_test_5_pg1_col2_a: String(
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_a
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_a ||
+          "0"
       ),
       wide_range_achievement_test_5_pg1_col2_b: String(
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_b
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_b ||
+          "0"
       ),
       wide_range_achievement_test_5_pg1_col2_c: String(
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_c
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_c ||
+          "0"
       ),
       wide_range_achievement_test_5_pg1_col2_d: String(
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_d
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_d ||
+          "0"
       ),
       wide_range_achievement_test_5_pg1_col2_e: String(
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_e
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col2_e ||
+          "0"
       ),
       wide_range_achievement_test_5_pg1_col3_a: String(
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_a
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_a ||
+          "0"
       ),
       wide_range_achievement_test_5_pg1_col3_b: String(
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_b
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_b ||
+          "0"
       ),
       wide_range_achievement_test_5_pg1_col3_c: String(
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_c
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_c ||
+          "0"
       ),
       wide_range_achievement_test_5_pg1_col3_d: String(
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_d
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_d ||
+          "0"
       ),
       wide_range_achievement_test_5_pg1_col3_e: String(
-        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_e
+        wideRangeAchievementTest5.wide_range_achievement_test_5_pg1_col3_e ||
+          "0"
       ),
     };
 
-    DataManager.update("patients", editedPatient);
+    DataManager.update("patients", editedPatient).then(() => props.getData());
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "wide_range_achievement_test_5_pg1_col1_a",
-        "wide_range_achievement_test_5_pg1_col1_b",
-        "wide_range_achievement_test_5_pg1_col1_c",
-        "wide_range_achievement_test_5_pg1_col1_d",
-        "wide_range_achievement_test_5_pg1_col1_e",
-        "wide_range_achievement_test_5_pg1_col2_a",
-        "wide_range_achievement_test_5_pg1_col2_b",
-        "wide_range_achievement_test_5_pg1_col2_c",
-        "wide_range_achievement_test_5_pg1_col2_d",
-        "wide_range_achievement_test_5_pg1_col2_e",
-        "wide_range_achievement_test_5_pg1_col3_a",
-        "wide_range_achievement_test_5_pg1_col3_b",
-        "wide_range_achievement_test_5_pg1_col3_c",
-        "wide_range_achievement_test_5_pg1_col3_d",
-        "wide_range_achievement_test_5_pg1_col3_e",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setWideRangeAchievementTest5(props.patientDetails);
-    });
+    setWideRangeAchievementTest5(props.patientDetails);
   };
 
   useEffect(() => {
     getData();
-  });
+  }, [props]);
 
   return (
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="ml-5 mr-5 mt-3">
             <div className="d-flex flex-wrap text-white align-items-baseline">
               <h3 className=" mb-1 col-2">Test Results</h3>
@@ -403,10 +370,11 @@ function WideRangeAchievementTest5(props) {
                 <p className="text-white">
                   {" "}
                   On the Wide Range Achievement Test-Revision 5 (WRAT-5).
-                  {props.patientDetails.patient_first_name} [Patient Name, Last]'s math computation
-                  standard scores fell on a [Result Grade Level] grade level,
-                  spelling on a [Result Grade Level] grade level, and sentence
-                  comprehension on a [Result Grade Level] grade level.
+                  {props.patientDetails.patient_first_name} [Patient Name,
+                  Last]'s math computation standard scores fell on a [Result
+                  Grade Level] grade level, spelling on a [Result Grade Level]
+                  grade level, and sentence comprehension on a [Result Grade
+                  Level] grade level.
                 </p>
               </div>
             </div>

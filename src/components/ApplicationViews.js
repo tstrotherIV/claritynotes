@@ -107,7 +107,7 @@ import ShipleyIntelligenceAssessment2 from "./session/testResults/ShipleyIntelli
 import RAITpg1 from "./session/testResults/RAITpg1";
 import RAITpg2 from "./session/testResults/RAITpg2";
 import RAITpg3 from "./session/testResults/RAITpg3";
-import WechslerAdultIntelligenceScaleIVpg2 from "./session/testResults/WechslerAdultIntelligenceScaleIVpg2";
+import RAITpg4 from "./session/testResults/Raitpg4";
 import WideRangeAchievementTest5 from "./session/testResults/WideRangeAchievementTest5";
 import AimswebPlusAchievementTestPg1 from "./session/testResults/AimswebPlusAchievementTestPg1";
 import AimswebPlusAchievementTestPg2 from "./session/testResults/AimswebPlusAchievementTestPg2";
@@ -1765,10 +1765,10 @@ const ApplicationViews = (props) => {
               />
               <Route
                 exact
-                path="/wechsler_adult_intelligence_scale_IV_pg_2"
+                path="/rait_pg_4"
                 render={(props) => {
                   return (
-                    <WechslerAdultIntelligenceScaleIVpg2
+                    <RAITpg4
                       hasUser={hasUser}
                       patientId={patientId}
                       patientDetails={patientDetails}
