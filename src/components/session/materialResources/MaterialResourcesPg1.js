@@ -20,14 +20,7 @@ function MaterialResourcesPg1(props) {
   const [
     patientMaterialResourcesPg1,
     setPatientMaterialResourcesPg1,
-  ] = useState({
-    material_resources_pg1_a: "",
-    material_resources_pg1_b: "",
-    material_resources_pg1_c: "",
-    material_resources_pg1_d: "",
-    material_resources_pg1_e: "",
-    material_resources_pg1_f: "",
-  });
+  ] = useState({});
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -63,36 +56,13 @@ function MaterialResourcesPg1(props) {
         patientMaterialResourcesPg1.material_resources_pg1_f,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => props.getData());
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "material_resources_pg1_a",
-        "material_resources_pg1_b",
-        "material_resources_pg1_c",
-        "material_resources_pg1_d",
-        "material_resources_pg1_e",
-        "material_resources_pg1_f",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientMaterialResourcesPg1(props.patientDetails);
-    });
+    setPatientMaterialResourcesPg1(props.patientDetails);
   };
 
   useEffect(() => {
@@ -103,15 +73,14 @@ function MaterialResourcesPg1(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-4">Material Resources</h2>
           <div className="questionsContainer">
             <div className="mb-4 d-flex flex-wrap justify-content-center mt-4">
-              <p className="textWhite centerItem text-center offset-2">
+              <h4 className="textWhite centerItem text-center offset-2">
                 Give three examples of financial and material resources you have
                 to care for yourself and others?
-              </p>
-              <div className="textWhite d-flex flex-wrap align-content-end text-center col-3 mb-2">
+              </h4>
+              <div className="textWhite d-flex flex-wrap align-content-end text-center mb-2">
                 {props.patientDetails.patient_first_name} said:
               </div>
               <div className="col-3 d-flex flex-wrap justify-content-center align-items-end p-1">
@@ -152,79 +121,73 @@ function MaterialResourcesPg1(props) {
               </div>
             </div>
 
-            <h2 className="textWhite text-center mb-4 mt-4">
-              Healthy Adult Social Supports
-            </h2>
             <div className="interview_div1">
-              <div className="m-auto d-flex align-items-center textWhite">
-                <Label className="textWhite col-3 text-right" for="">
-                  {props.patientDetails.patient_first_name}
+              <h4 className="textWhite text-center mb-4 mt-4">
+                Who is available to you as a support system?
+              </h4>
+              <div className="interview_line1">
+                <Label className="textWhite interview_title" for="">
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
-                <div className="m-2">indicated [her]</div>
                 <TextareaAutosize
-                  className="col-2 mr-2 mb-2 fieldData"
+                  className="interview_fieldData"
                   type="text"
+                  name=""
                   id="material_resources_pg1_d"
                   name="material_resources_pg1_d"
                   onChange={handleFieldChange}
-                  onClick={captureFieldName}
                   value={patientMaterialResourcesPg1.material_resources_pg1_d}
+                  onClick={captureFieldName}
                 />
-                are available as a support system for [her].
               </div>
               <h2 className="textWhite text-center mb-4 mt-4">
                 Community and Cultural Affiliation
               </h2>
-              <div className="row justify-content-center m-3 p-0 align-content-center">
-                <p className="textWhite p-0 m-0 d-flex align-items-end">
-                  {" "}
-                  Religious Affiliation:
-                </p>
-                <Dropdown
-                  className="d-flex textWhite flex-wrap col-1"
-                  isOpen={dropdownOpen}
-                  toggle={toggle}
-                >
-                  <DropdownToggle caret>Dropdown</DropdownToggle>
-                  <DropdownMenu
-                    id="material_resources_pg1_e"
-                    name="material_resources_pg1_e"
-                    onChange={handleFieldChange}
-                    onClick={captureFieldName}
-                    value={patientMaterialResourcesPg1.material_resources_pg1_e}
-                  >
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem>Some Action</DropdownItem>
-                    <DropdownItem text>Dropdown Item Text</DropdownItem>
-                    <DropdownItem disabled>Action (disabled)</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Foo Action</DropdownItem>
-                    <DropdownItem>Bar Action</DropdownItem>
-                    <DropdownItem>Quo Action</DropdownItem>
-                  </DropdownMenu>
-                </Dropdown>
-              </div>
 
-              <div className="m-auto d-flex align-items-center justify-content-center textWhite row">
-                <Label
-                  className="textWhite col-3 p-0 m-0 d-flex align-items-end justify-content-center"
-                  for=""
-                >
-                  {props.patientDetails.patient_first_name}
+              <h4 className="textWhite text-center mb-4 mt-4">
+                What is the name of the Church you attend?
+              </h4>
+              <div className="interview_line1">
+                <Label className="textWhite interview_title" for="">
+                  {props.patientDetails.patient_first_name} said:
                 </Label>
-                <div className="m-2">reported [she] attends </div>
                 <TextareaAutosize
-                  className="col-3 mr-2 mb-2 fieldData"
+                  className="interview_fieldData"
                   type="text"
+                  name=""
                   id="material_resources_pg1_f"
                   name="material_resources_pg1_f"
                   onChange={handleFieldChange}
-                  onClick={captureFieldName}
                   value={patientMaterialResourcesPg1.material_resources_pg1_f}
-                  placeholder=""
+                  onClick={captureFieldName}
                 />
-                church.
               </div>
+            </div>
+            <div className="row justify-content-center m-3 p-0 align-content-center">
+              <p className="textWhite p-0 m-0 d-flex align-items-end">
+                {" "}
+                Religious Affiliation:
+              </p>
+              <Dropdown
+                className="d-flex textWhite flex-wrap col-1"
+                isOpen={dropdownOpen}
+                toggle={toggle}
+              >
+                <DropdownToggle caret>Select Option</DropdownToggle>
+                <DropdownMenu
+                  id="material_resources_pg1_e"
+                  name="material_resources_pg1_e"
+                  onChange={handleFieldChange}
+                  onClick={captureFieldName}
+                  value={patientMaterialResourcesPg1.material_resources_pg1_e}
+                >
+                  <DropdownItem>Religion Option 1</DropdownItem>
+                  <DropdownItem>Religion Option 2</DropdownItem>
+                  <DropdownItem>Religion Option 3</DropdownItem>
+                  <DropdownItem>Religion Option 4</DropdownItem>
+                  <DropdownItem>Religion Option 5</DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
             </div>
           </div>
           <div id="footer">
