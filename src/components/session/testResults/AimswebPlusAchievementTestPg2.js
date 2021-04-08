@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
 
@@ -12,18 +11,7 @@ function AimswebPlusAchievementTestPg2(props) {
   const [
     aimswebPlusAchievementTestPg2,
     setAimswebPlusAchievementTestPg2,
-  ] = useState({
-    aimsweb_plus_achievement_test_pg2_col1_a: "",
-    aimsweb_plus_achievement_test_pg2_col1_b: "",
-    aimsweb_plus_achievement_test_pg2_col1_c: "",
-    aimsweb_plus_achievement_test_pg2_col1_d: "",
-    aimsweb_plus_achievement_test_pg2_col1_e: "",
-    aimsweb_plus_achievement_test_pg2_col2_a: "",
-    aimsweb_plus_achievement_test_pg2_col2_b: "",
-    aimsweb_plus_achievement_test_pg2_col2_c: "",
-    aimsweb_plus_achievement_test_pg2_col2_d: "",
-    aimsweb_plus_achievement_test_pg2_col2_e: "",
-  });
+  ] = useState({});
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -44,71 +32,54 @@ function AimswebPlusAchievementTestPg2(props) {
   const updatePatient = () => {
     const editedPatient = {
       aimsweb_plus_achievement_test_pg2_col1_a: String(
-        aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col1_a
+        aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col1_a ||
+          "0"
       ),
       aimsweb_plus_achievement_test_pg2_col1_b: String(
-        aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col1_b
+        aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col1_b ||
+          "0"
       ),
       aimsweb_plus_achievement_test_pg2_col1_c: String(
-        aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col1_c
+        aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col1_c ||
+          "0"
       ),
       aimsweb_plus_achievement_test_pg2_col1_d: String(
-        aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col1_d
+        aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col1_d ||
+          "0"
       ),
       aimsweb_plus_achievement_test_pg2_col1_e: String(
-        aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col1_e
+        aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col1_e ||
+          "0"
       ),
       aimsweb_plus_achievement_test_pg2_col2_a: String(
-        aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col2_a
+        aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col2_a ||
+          "0"
       ),
       aimsweb_plus_achievement_test_pg2_col2_b: String(
-        aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col2_b
+        aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col2_b ||
+          "0"
       ),
       aimsweb_plus_achievement_test_pg2_col2_c: String(
-        aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col2_c
+        aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col2_c ||
+          "0"
       ),
       aimsweb_plus_achievement_test_pg2_col2_d: String(
-        aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col2_d
+        aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col2_d ||
+          "0"
       ),
       aimsweb_plus_achievement_test_pg2_col2_e: String(
-        aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col2_e
+        aimswebPlusAchievementTestPg2.aimsweb_plus_achievement_test_pg2_col2_e ||
+          "0"
       ),
     };
 
-    DataManager.update("patients", editedPatient);
+    DataManager.update("patients", editedPatient).then(() => props.getData());
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "aimsweb_plus_achievement_test_pg2_col1_a",
-        "aimsweb_plus_achievement_test_pg2_col1_b",
-        "aimsweb_plus_achievement_test_pg2_col1_c",
-        "aimsweb_plus_achievement_test_pg2_col1_d",
-        "aimsweb_plus_achievement_test_pg2_col1_e",
-        "aimsweb_plus_achievement_test_pg2_col2_a",
-        "aimsweb_plus_achievement_test_pg2_col2_b",
-        "aimsweb_plus_achievement_test_pg2_col2_c",
-        "aimsweb_plus_achievement_test_pg2_col2_d",
-        "aimsweb_plus_achievement_test_pg2_col2_e",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setAimswebPlusAchievementTestPg2(props.patientDetails);
-    });
+    setAimswebPlusAchievementTestPg2(props.patientDetails);
   };
 
   useEffect(() => {
@@ -119,7 +90,6 @@ function AimswebPlusAchievementTestPg2(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="ml-5 mr-5 mt-3">
             <div className="d-flex flex-wrap text-white align-items-baseline">
               <h3 className="mb-1 col-2">Test Results</h3>

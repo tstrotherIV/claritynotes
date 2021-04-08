@@ -13,18 +13,7 @@ function WechslerAdultIntelligenceScaleIV(props) {
   const [
     wechslerAdultIntelligenceScaleIV,
     setWechslerAdultIntelligenceScaleIV,
-  ] = useState({
-    wechsler_adult_intelligence_scale_IV_pg1_col1_a: "",
-    wechsler_adult_intelligence_scale_IV_pg1_col1_b: "",
-    wechsler_adult_intelligence_scale_IV_pg1_col1_c: "",
-    wechsler_adult_intelligence_scale_IV_pg1_col1_d: "",
-    wechsler_adult_intelligence_scale_IV_pg1_col1_e: "",
-    wechsler_adult_intelligence_scale_IV_pg1_col2_a: "",
-    wechsler_adult_intelligence_scale_IV_pg1_col2_b: "",
-    wechsler_adult_intelligence_scale_IV_pg1_col2_c: "",
-    wechsler_adult_intelligence_scale_IV_pg1_col2_d: "",
-    wechsler_adult_intelligence_scale_IV_pg1_col2_e: "",
-  });
+  ] = useState({});
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -45,71 +34,54 @@ function WechslerAdultIntelligenceScaleIV(props) {
   const updatePatient = () => {
     const editedPatient = {
       wechsler_adult_intelligence_scale_IV_pg1_col1_a: String(
-        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_a
+        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_a ||
+          "0"
       ),
       wechsler_adult_intelligence_scale_IV_pg1_col1_b: String(
-        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_b
+        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_b ||
+          "0"
       ),
       wechsler_adult_intelligence_scale_IV_pg1_col1_c: String(
-        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_c
+        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_c ||
+          "0"
       ),
       wechsler_adult_intelligence_scale_IV_pg1_col1_d: String(
-        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_d
+        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_d ||
+          "0"
       ),
       wechsler_adult_intelligence_scale_IV_pg1_col1_e: String(
-        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_e
+        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col1_e ||
+          "0"
       ),
       wechsler_adult_intelligence_scale_IV_pg1_col2_a: String(
-        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col2_a
+        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col2_a ||
+          "0"
       ),
       wechsler_adult_intelligence_scale_IV_pg1_col2_b: String(
-        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col2_b
+        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col2_b ||
+          "0"
       ),
       wechsler_adult_intelligence_scale_IV_pg1_col2_c: String(
-        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col2_c
+        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col2_c ||
+          "0"
       ),
       wechsler_adult_intelligence_scale_IV_pg1_col2_d: String(
-        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col2_d
+        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col2_d ||
+          "0"
       ),
       wechsler_adult_intelligence_scale_IV_pg1_col2_e: String(
-        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col2_e
+        wechslerAdultIntelligenceScaleIV.wechsler_adult_intelligence_scale_IV_pg1_col2_e ||
+          "0"
       ),
     };
 
-    DataManager.update("patients", editedPatient);
+    DataManager.update("patients", editedPatient).then(() => props.getData());
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "wechsler_adult_intelligence_scale_IV_pg1_col1_a",
-        "wechsler_adult_intelligence_scale_IV_pg1_col1_b",
-        "wechsler_adult_intelligence_scale_IV_pg1_col1_c",
-        "wechsler_adult_intelligence_scale_IV_pg1_col1_d",
-        "wechsler_adult_intelligence_scale_IV_pg1_col1_e",
-        "wechsler_adult_intelligence_scale_IV_pg1_col2_a",
-        "wechsler_adult_intelligence_scale_IV_pg1_col2_b",
-        "wechsler_adult_intelligence_scale_IV_pg1_col2_c",
-        "wechsler_adult_intelligence_scale_IV_pg1_col2_d",
-        "wechsler_adult_intelligence_scale_IV_pg1_col2_e",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setWechslerAdultIntelligenceScaleIV(props.patientDetails);
-    });
+    setWechslerAdultIntelligenceScaleIV(props.patientDetails);
   };
 
   useEffect(() => {
@@ -120,7 +92,6 @@ function WechslerAdultIntelligenceScaleIV(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="ml-5 mr-5 mt-3">
             <div className="d-flex flex-wrap text-white align-items-baseline">
               <h3 className=" mb-1 col-2">Test Results</h3>

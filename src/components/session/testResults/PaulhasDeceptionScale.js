@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Label } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 //pdf page 118
 
@@ -14,12 +12,7 @@ function PaulasDeceptionScale(props) {
   const [
     patientPaulasDeceptionScale,
     setPatientPaulasDeceptionScale,
-  ] = useState({
-    paulhus_deception_scale_a: false,
-    paulhus_deception_scale_b: "",
-    paulhus_deception_scale_c: "",
-    paulhus_deception_scale_d: "",
-  });
+  ] = useState({});
 
   const next = "/substance_abuse_subtle_screening_inventory_4";
   const back = "/computerized_performance_neurocognitive_assessment";
@@ -38,9 +31,21 @@ function PaulasDeceptionScale(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
-    setItem(fieldID);
+  const handleCheckBoxChange = async (e) => {
+    const target = e.target;
+    const value = target.checked;
+    const name = target.name;
+
+    const editedPatient = {
+      id: props.patientId,
+      [name]: value,
+    };
+
+    setPatientPaulasDeceptionScale({
+      ...patientPaulasDeceptionScale,
+      paulhus_deception_scale_a: value,
+    });
+    DataManager.update("patients", editedPatient).then(() => props.getData());
   };
 
   //CRUD Function Start
@@ -49,42 +54,23 @@ function PaulasDeceptionScale(props) {
     const editedPatient = {
       paulhus_deception_scale_a:
         patientPaulasDeceptionScale.paulhus_deception_scale_a,
-      paulhus_deception_scale_b:
-        String(patientPaulasDeceptionScale.paulhus_deception_scale_b),
-      paulhus_deception_scale_c:
-        String(patientPaulasDeceptionScale.paulhus_deception_scale_c),
+      paulhus_deception_scale_b: String(
+        patientPaulasDeceptionScale.paulhus_deception_scale_b || "0"
+      ),
+      paulhus_deception_scale_c: String(
+        patientPaulasDeceptionScale.paulhus_deception_scale_c || "0"
+      ),
       paulhus_deception_scale_d:
         patientPaulasDeceptionScale.paulhus_deception_scale_d,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => props.getData());
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "paulhus_deception_scale_a",
-        "paulhus_deception_scale_b",
-        "paulhus_deception_scale_c",
-        "paulhus_deception_scale_d",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientPaulasDeceptionScale(props.patientDetails);
-    });
+    setPatientPaulasDeceptionScale(props.patientDetails);
   };
 
   useEffect(() => {
@@ -95,7 +81,6 @@ function PaulasDeceptionScale(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="ml-5 mr-5 mt-3">
             <div className="d-flex flex-wrap text-white align-items-baseline">
               <h3 className=" mb-1 col-2">Test Results</h3>
@@ -107,10 +92,11 @@ function PaulasDeceptionScale(props) {
                 id={item}
                 name="paulhus_deception_scale_a"
                 checked={patientPaulasDeceptionScale.paulhus_deception_scale_a}
-                onChange={handleFieldChange}
+                onChange={handleCheckBoxChange}
               />
               <Label for="" className="m-3">
-                {props.patientDetails.patient_first_name} completed a Paulus Deception Scales (PDS)
+                {props.patientDetails.patient_first_name} completed a Paulus
+                Deception Scales (PDS)
               </Label>
               <p className="text-white">
                 {" "}

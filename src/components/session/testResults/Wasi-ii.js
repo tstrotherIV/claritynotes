@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
 
@@ -10,16 +9,7 @@ function WasiII(props) {
   const next = "/wechsler_adult_intelligence_scale_IV";
   const back = "/procedures_administered_pg_1";
 
-  const [wasiii, setWasiii] = useState({
-    wasiii_pg1_col1_a: "",
-    wasiii_pg1_col1_b: "",
-    wasiii_pg1_col1_c: "",
-    wasiii_pg1_col1_d: "",
-    wasiii_pg1_col2_a: "",
-    wasiii_pg1_col2_b: "",
-    wasiii_pg1_col2_c: "",
-    wasiii_pg1_col2_d: "",
-  });
+  const [wasiii, setWasiii] = useState({});
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -39,59 +29,35 @@ function WasiII(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      wasiii_pg1_col1_a: String(wasiii.wasiii_pg1_col1_a),
-      wasiii_pg1_col1_b: String(wasiii.wasiii_pg1_col1_b),
-      wasiii_pg1_col1_c: String(wasiii.wasiii_pg1_col1_c),
-      wasiii_pg1_col1_d: String(wasiii.wasiii_pg1_col1_d),
-      wasiii_pg1_col2_a: String(wasiii.wasiii_pg1_col2_a),
-      wasiii_pg1_col2_b: String(wasiii.wasiii_pg1_col2_b),
-      wasiii_pg1_col2_c: String(wasiii.wasiii_pg1_col2_c),
-      wasiii_pg1_col2_d: String(wasiii.wasiii_pg1_col2_d),
+      wasiii_pg1_col1_a: String(wasiii.wasiii_pg1_col1_a || "0"),
+      wasiii_pg1_col1_b: String(wasiii.wasiii_pg1_col1_b || "0"),
+      wasiii_pg1_col1_c: String(wasiii.wasiii_pg1_col1_c || "0"),
+      wasiii_pg1_col1_d: String(wasiii.wasiii_pg1_col1_d || "0"),
+      wasiii_pg1_col2_a: String(wasiii.wasiii_pg1_col2_a || "0"),
+      wasiii_pg1_col2_b: String(wasiii.wasiii_pg1_col2_b || "0"),
+      wasiii_pg1_col2_c: String(wasiii.wasiii_pg1_col2_c || "0"),
+      wasiii_pg1_col2_d: String(wasiii.wasiii_pg1_col2_d || "0"),
     };
 
-    DataManager.update("patients", editedPatient);
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "wasiii_pg1_col1_a",
-        "wasiii_pg1_col1_b",
-        "wasiii_pg1_col1_c",
-        "wasiii_pg1_col1_d",
-        "wasiii_pg1_col2_a",
-        "wasiii_pg1_col2_b",
-        "wasiii_pg1_col2_c",
-        "wasiii_pg1_col2_d",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setWasiii(props.patientDetails);
-    });
+    setWasiii(props.patientDetails);
   };
 
   useEffect(() => {
     getData();
-  });
+  }, [props]);
 
   return (
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="ml-5 mr-5 mt-3">
             <div className="d-flex flex-wrap text-white align-items-baseline">
               <h3 className=" mb-1 col-2">Test Results</h3>
@@ -104,9 +70,9 @@ function WasiII(props) {
               <p className="col-4 text-white">
                 {" "}
                 On the Wechsler Abbreviated Scale of Intelligence-Second Edition
-                (WASI-II). {props.patientDetails.patient_first_name} achieved a Full Scale IQ Score
-                of [Score Result] which falls in the [Score Result Descriptor
-                Correlation] range of intelligence.
+                (WASI-II). {props.patientDetails.patient_first_name} achieved a
+                Full Scale IQ Score of [Score Result] which falls in the [Score
+                Result Descriptor Correlation] range of intelligence.
               </p>
               <div className="">
                 <Table>

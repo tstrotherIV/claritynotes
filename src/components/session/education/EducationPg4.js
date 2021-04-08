@@ -54,7 +54,7 @@ function EducationPg4(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-          <h2 className="textWhite text-center mb-4">Education</h2>
+          <h2 className="textWhite text-center mb-4">EDUCATION (COGNITIVE)</h2>
           <div className="questionsContainer text-center">
             <h4 className="textWhite centerItem">
               Do you feel your substance use impacted your grades?

@@ -1,20 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Label } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 //pdf page 120
 
 function IowaGamblingTask(props) {
-  const [item, setItem] = useState("");
-  const [patientIowaGamblingTask, setPatientIowaGamblingTask] = useState({
-    iowa_gambling_task_a: "",
-    iowa_gambling_task_b: "",
-    iowa_gambling_task_c: "",
-  });
+  const [patientIowaGamblingTask, setPatientIowaGamblingTask] = useState({});
 
   const next = "/minnesota_multiphasic_personality_inventory_2";
   const back = "/substance_abuse_subtle_screening_inventory_4";
@@ -33,50 +26,26 @@ function IowaGamblingTask(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
-    setItem(fieldID);
-  };
-
   //CRUD Function Start
 
   const updatePatient = () => {
     const editedPatient = {
-      iowa_gambling_task_a:
-      patientIowaGamblingTask.iowa_gambling_task_a,
-        iowa_gambling_task_b:
-        String(patientIowaGamblingTask.iowa_gambling_task_b),
-        iowa_gambling_task_c:
-        String(patientIowaGamblingTask.iowa_gambling_task_c)
+      iowa_gambling_task_a: patientIowaGamblingTask.iowa_gambling_task_a,
+      iowa_gambling_task_b: String(
+        patientIowaGamblingTask.iowa_gambling_task_b
+      ),
+      iowa_gambling_task_c: String(
+        patientIowaGamblingTask.iowa_gambling_task_c
+      ),
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => props.getData());
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "iowa_gambling_task_a",
-        "iowa_gambling_task_b",
-        "iowa_gambling_task_c"
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-        setPatientIowaGamblingTask(props.patientDetails);
-    });
+    setPatientIowaGamblingTask(props.patientDetails);
   };
 
   useEffect(() => {
@@ -87,7 +56,6 @@ function IowaGamblingTask(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="ml-5 mr-5 mt-3">
             <div className="d-flex flex-wrap text-white align-items-baseline">
               <h3 className=" mb-1 col-2">Test Results</h3>
@@ -111,7 +79,6 @@ function IowaGamblingTask(props) {
                   <select
                     className="m-1"
                     required
-                    id={item}
                     name="iowa_gambling_task_a"
                     onChange={handleFieldChange}
                     value={patientIowaGamblingTask.iowa_gambling_task_a}
@@ -132,7 +99,6 @@ function IowaGamblingTask(props) {
                   <input
                     className="m-3 col-4 inputHeight"
                     type="number"
-                    id={item}
                     name="iowa_gambling_task_b"
                     onChange={handleFieldChange}
                     value={patientIowaGamblingTask.iowa_gambling_task_b}
@@ -143,7 +109,6 @@ function IowaGamblingTask(props) {
                   <input
                     className="m-3 col-4 inputHeight"
                     type="number"
-                    id={item}
                     name="iowa_gambling_task_c"
                     onChange={handleFieldChange}
                     value={patientIowaGamblingTask.iowa_gambling_task_c}
