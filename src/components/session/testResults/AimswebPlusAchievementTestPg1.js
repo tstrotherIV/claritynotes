@@ -112,7 +112,7 @@ function AimswebPlusAchievementTestPg1(props) {
                 </div>
               </div>
               <div>
-                <Table>
+                <Table striped>
                   <thead className="tableHeader text-center">
                     <tr className="tableBorder">
                       <th className="tdHeaderWidth" colSpan="4">

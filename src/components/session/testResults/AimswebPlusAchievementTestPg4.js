@@ -34,7 +34,7 @@ function AimswebPlusAchievementTestPg4(props) {
             </div>
             <div className="d-flex flex-wrap justify-content-center">
               <div className="col-10">
-                <Table>
+                <Table striped> 
                   <thead className="tableHeader text-center">
                     <tr className="tableBorder">
                       <th className="tdHeaderWidth" colSpan="6">

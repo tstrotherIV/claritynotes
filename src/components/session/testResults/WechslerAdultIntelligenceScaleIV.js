@@ -105,7 +105,7 @@ function WechslerAdultIntelligenceScaleIV(props) {
                 intelligence.{" "}
               </p>
               <div className="">
-                <Table>
+                <Table striped>
                   <thead className="tableHeader text-center">
                     <tr className="tableBorder">
                       <th className="tdHeaderWidth">Composite</th>

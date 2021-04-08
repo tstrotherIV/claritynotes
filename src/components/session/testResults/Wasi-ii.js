@@ -75,7 +75,7 @@ function WasiII(props) {
                 Result Descriptor Correlation] range of intelligence.
               </p>
               <div className="">
-                <Table>
+                <Table striped>
                   <thead className="tableHeader text-center">
                     <tr className="tableBorder">
                       <th className="tdHeaderWidth">Composite</th>

@@ -117,7 +117,7 @@ function WideRangeAchievementTest5(props) {
             </div>
             <div className="m-5 d-flex flex-wrap justify-content-around">
               <div className="col-6">
-                <Table>
+                <Table striped>
                   <thead className="tableHeader text-center">
                     <tr className="tableBorder">
                       <th className="tdHeaderWidth"></th>

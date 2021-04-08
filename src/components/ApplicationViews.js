@@ -93,7 +93,6 @@ import ParentingPg3 from "./session/parenting/ParentingPg3";
 import PositiveRoleModelPg1 from "./session/positiveRoleModel/PositiveRoleModelPg1";
 import PositiveRoleModelPg2 from "./session/positiveRoleModel/PositiveRoleModelPg2";
 import ParentKnowledgePg1 from "./session/parentKnowledge/ParentKnowledgePg1";
-import CognitiveSkillsPg1 from "./session/cognitiveSkills/CognitiveSkillsPg1";
 import MaterialResourcesPg1 from "./session/materialResources/MaterialResourcesPg1";
 import BehavioralObservationsAndTestingConditionsPg1 from "./session/behavioralObservationsAndTestingConditions/BehavioralObservationsAndTestingConditionsPg1";
 import BehavioralObservationsAndTestingConditionsPg2 from "./session/behavioralObservationsAndTestingConditions/BehavorialObservationsAndTestingConditionsPg2";
@@ -131,7 +130,6 @@ const CreateUser = lazy(() => import("./createUser/createUser"));
 
 const ApplicationViews = (props) => {
   const [patientDetails, setPatientDetails] = useState({});
-  const [update, setUpdate] = useState(false);
 
   let hasUser = false;
   let userId = sessionStorage.getItem("logged_in_user");
@@ -141,7 +139,6 @@ const ApplicationViews = (props) => {
     const check_for_patient = await sessionStorage.getItem("patient_id");
     DataManager.getPatient(check_for_patient).then((patientInfo) => {
       setPatientDetails(patientInfo);
-      setUpdate(false);
     });
   };
 
@@ -1544,21 +1541,6 @@ const ApplicationViews = (props) => {
                 render={(props) => {
                   return (
                     <ParentKnowledgePg1
-                      hasUser={hasUser}
-                      patientId={patientId}
-                      patientDetails={patientDetails}
-                      getData={getData}
-                      {...props}
-                    />
-                  );
-                }}
-              />
-              <Route
-                exact
-                path="/cognitive_skills_pg_1"
-                render={(props) => {
-                  return (
-                    <CognitiveSkillsPg1
                       hasUser={hasUser}
                       patientId={patientId}
                       patientDetails={patientDetails}
