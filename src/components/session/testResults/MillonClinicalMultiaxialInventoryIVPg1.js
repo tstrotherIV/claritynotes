@@ -519,7 +519,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                 </p>
               </div>
               <div className="ml-3">
-                <Table className="pb-4">
+                <Table striped className="pb-4">
                   <thead className="tableHeader text-center">
                     <tr>
                       <th></th>
@@ -1438,7 +1438,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                 </Table>
               </div>
               <div className="ml-3">
-                <Table>
+                <Table striped>
                   <thead className="tableHeader text-center">
                     <tr>
                       <th></th>

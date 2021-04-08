@@ -267,7 +267,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                 </p>
               </div>
               <div className="col-8">
-                <Table className="mb-4">
+                <Table striped className="mb-4">
                   <thead className="tableHeader text-center">
                     <tr>
                       <th className="m-0 customPadding domainScoreWidth">
