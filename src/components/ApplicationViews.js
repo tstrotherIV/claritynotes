@@ -134,6 +134,11 @@ import SubstanceAbusePg7 from "./session/substanceAbuse/SubstanceAbusePg7";
 import SubstanceAbusePg8 from "./session/substanceAbuse/SubstanceAbusePg8";
 import SubstanceAbusePg9 from "./session/substanceAbuse/SubstanceAbusePg9";
 import SubstanceAbusePg10 from "./session/substanceAbuse/SubstanceAbusePg10";
+import SubstanceAbusePg11 from "./session/substanceAbuse/SubstanceAbusePg11";
+import SubstanceAbusePg12 from "./session/substanceAbuse/SubstanceAbusePg12";
+import SubstanceAbusePg13 from "./session/substanceAbuse/SubstanceAbusePg13";
+import SubstanceAbusePg14 from "./session/substanceAbuse/SubstanceAbusePg14";
+import SubstanceAbusePg15 from "./session/substanceAbuse/SubstanceAbusePg15";
 
 //Lazy Load Refactoring
 const CreateUser = lazy(() => import("./createUser/createUser"));
@@ -1092,6 +1097,81 @@ const ApplicationViews = (props) => {
                 render={(props) => {
                   return (
                     <SubstanceAbusePg10
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/substance_abuse_pg11"
+                render={(props) => {
+                  return (
+                    <SubstanceAbusePg11
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/substance_abuse_pg12"
+                render={(props) => {
+                  return (
+                    <SubstanceAbusePg12
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/substance_abuse_pg13"
+                render={(props) => {
+                  return (
+                    <SubstanceAbusePg13
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/substance_abuse_pg14"
+                render={(props) => {
+                  return (
+                    <SubstanceAbusePg14
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/substance_abuse_pg15"
+                render={(props) => {
+                  return (
+                    <SubstanceAbusePg15
                       hasUser={hasUser}
                       patientId={patientId}
                       patientDetails={patientDetails}
