@@ -5,20 +5,18 @@ import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
 
-// pdf page 55
+// pdf page 56
 
-function HistoryOfLegalPg5(props) {
+function SubstanceAbusePg12(props) {
   const [item, setItem] = useState("");
-  const [patientHistoryOfLegal_pg5, setPatientHistoryOfLegal_pg5] = useState(
-    {}
-  );
+  const [substanceAbusePg12, setSubstanceAbusePg12] = useState({});
 
-  const next = "/substance_abuse_pg1";
-  const back = "/history_of_legal_pg_4";
+  const next = "/substance_abuse_pg13";
+  const back = "/substance_abuse_pg11";
 
   const handleFieldChange = (e) => {
-    setPatientHistoryOfLegal_pg5({
-      ...patientHistoryOfLegal_pg5,
+    setSubstanceAbusePg12({
+      ...substanceAbusePg12,
       [e.target.name]: e.target.value,
     });
   };
@@ -32,9 +30,10 @@ function HistoryOfLegalPg5(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      history_of_legal_pg5_a: patientHistoryOfLegal_pg5.history_of_legal_pg5_a,
-      history_of_legal_pg5_b: patientHistoryOfLegal_pg5.history_of_legal_pg5_b,
-      history_of_legal_pg5_c: patientHistoryOfLegal_pg5.history_of_legal_pg5_c,
+      substance_abuse_pg12_a: substanceAbusePg12.substance_abuse_pg12_a,
+      substance_abuse_pg12_b: substanceAbusePg12.substance_abuse_pg12_b,
+      substance_abuse_pg12_c: substanceAbusePg12.substance_abuse_pg12_c,
+      substance_abuse_pg12_d: substanceAbusePg12.substance_abuse_pg12_d,
     };
 
     DataManager.update("patients", editedPatient).then(() => {
@@ -45,7 +44,7 @@ function HistoryOfLegalPg5(props) {
   //CRUD Function END
 
   const getData = () => {
-    setPatientHistoryOfLegal_pg5(props.patientDetails);
+    setSubstanceAbusePg12(props.patientDetails);
   };
 
   useEffect(() => {
@@ -56,12 +55,21 @@ function HistoryOfLegalPg5(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-          <h2 className="textWhite text-center mb-4">
-            History of Legal, Crime, and Conviction
+          <h2 className="textWhite text-center mb-4 pt-4">
+            EXCESSIVE USE OF A CONTROLLED SUBSTANCE
           </h2>
+          <p className="textWhite text-center mb-4">
+            HISTORY OF DRUG USE & ADDICTIVE BEHAVIORS
+          </p>
+          <p className="textWhite text-center mb-4">
+            (ALWAYS ask every question, even if they deny use!! Do not just
+            delete the questions; ask them and type their exact responses.)
+          </p>
+
+          {/* Question Section */}
           <div className="questionsContainer text-center">
             <h4 className="textWhite centerItem">
-              What were the initial charges?
+              Have you ever had increased tolerance to alcohol?
             </h4>
             <div className="interview_div1">
               <div className="interview_line1 mb-4">
@@ -71,16 +79,16 @@ function HistoryOfLegalPg5(props) {
                 <TextareaAutosize
                   className="fieldData"
                   type="text"
-                  id="history_of_legal_pg5_a"
-                  name="history_of_legal_pg5_a"
+                  id="substance_abuse_pg12_a"
+                  name="substance_abuse_pg12_a"
                   onChange={handleFieldChange}
                   onClick={captureFieldName}
-                  value={patientHistoryOfLegal_pg5.history_of_legal_pg5_a}
+                  value={substanceAbusePg12.substance_abuse_pg12_a}
                 />
               </div>
-              <h4 className="textWhite centerItem">
-                What was the final agreed upon charge?
-              </h4>
+            </div>
+            <h4 className="textWhite centerItem">In relation to drug use?</h4>
+            <div className="interview_div1">
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
                   {props.patientDetails.patient_first_name} said:
@@ -88,16 +96,18 @@ function HistoryOfLegalPg5(props) {
                 <TextareaAutosize
                   className="fieldData"
                   type="text"
-                  id="history_of_legal_pg5_b"
-                  name="history_of_legal_pg5_b"
+                  id="substance_abuse_pg12_b"
+                  name="substance_abuse_pg12_b"
                   onChange={handleFieldChange}
                   onClick={captureFieldName}
-                  value={patientHistoryOfLegal_pg5.history_of_legal_pg5_b}
+                  value={substanceAbusePg12.substance_abuse_pg12_b}
                 />
               </div>
-              <h4 className="textWhite centerItem">
-                Has your probation ever been revoked?
-              </h4>
+            </div>
+            <h4 className="textWhite centerItem">
+              Has your use ever limited your ability to drive?
+            </h4>
+            <div className="interview_div1">
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
                   {props.patientDetails.patient_first_name} said:
@@ -105,11 +115,28 @@ function HistoryOfLegalPg5(props) {
                 <TextareaAutosize
                   className="fieldData"
                   type="text"
-                  id="history_of_legal_pg5_c"
-                  name="history_of_legal_pg5_c"
+                  id="substance_abuse_pg12_c"
+                  name="substance_abuse_pg12_c"
                   onChange={handleFieldChange}
                   onClick={captureFieldName}
-                  value={patientHistoryOfLegal_pg5.history_of_legal_pg5_c}
+                  value={substanceAbusePg12.substance_abuse_pg12_c}
+                />
+              </div>
+            </div>
+            <h4 className="textWhite centerItem">In relation to drug use?</h4>
+            <div className="interview_div1">
+              <div className="interview_line1 mb-4">
+                <Label className="textWhite interview_title" for="">
+                  {props.patientDetails.patient_first_name} said:
+                </Label>
+                <TextareaAutosize
+                  className="fieldData"
+                  type="text"
+                  id="substance_abuse_pg12_d"
+                  name="substance_abuse_pg12_d"
+                  onChange={handleFieldChange}
+                  onClick={captureFieldName}
+                  value={substanceAbusePg12.substance_abuse_pg12_d}
                 />
               </div>
             </div>
@@ -120,7 +147,7 @@ function HistoryOfLegalPg5(props) {
               back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
-              patientNotes={patientHistoryOfLegal_pg5}
+              patientNotes={substanceAbusePg12}
             />
             <TermOfParentalRights
               questionId={item}
@@ -134,4 +161,4 @@ function HistoryOfLegalPg5(props) {
   );
 }
 
-export default HistoryOfLegalPg5;
+export default SubstanceAbusePg12;

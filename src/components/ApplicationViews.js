@@ -37,7 +37,6 @@ import FamilyPg12 from "./session/family/FamilyPg12";
 import FamilyPg13 from "./session/family/FamilyPg13";
 import FamilyPg14 from "./session/family/FamilyPg14";
 import FamilyPg15 from "./session/family/FamilyPg15";
-// import PsychologicalEvaluationReportSummary from "./session/family/reportSummary/reportSummary";
 import HousingPg1 from "./session/housing/HousingPg1";
 import HousingPg2 from "./session/housing/HousingPg2";
 import HousingPg3 from "./session/housing/HousingPg3";
@@ -53,16 +52,17 @@ import HistoryOfLegalPg2 from "./session/historyOfLegal/HistoryOfLegalPg2";
 import HistoryOfLegalPg3 from "./session/historyOfLegal/HistoryOfLegalPg3";
 import HistoryOfLegalPg4 from "./session/historyOfLegal/HistoryOfLegalPg4";
 import HistoryOfLegalPg5 from "./session/historyOfLegal/HistoryOfLegalPg5";
-import HistoryOfLegalPg6 from "./session/historyOfLegal/HistoryOfLegalPg6";
-import HistoryOfLegalPg7 from "./session/historyOfLegal/HistoryOfLegalPg7";
-import HistoryOfLegalPg8 from "./session/historyOfLegal/HistoryOfLegalPg8";
-import HistoryOfLegalPg9 from "./session/historyOfLegal/HistoryOfLegalPg9";
-import HistoryOfLegalPg10 from "./session/historyOfLegal/HistoryOfLegalPg10";
-import HistoryOfLegalPg11 from "./session/historyOfLegal/HistoryOfLegalPg11";
-import HistoryOfLegalPg12 from "./session/historyOfLegal/HistoryOfLegalPg12";
-import HistoryOfLegalPg13 from "./session/historyOfLegal/HistoryOfLegalPg13";
-import HistoryOfLegalPg14 from "./session/historyOfLegal/HistoryOfLegalPg14";
-import HistoryOfLegalPg15 from "./session/historyOfLegal/HistoryOfLegalPg15";
+// import HistoryOfLegalPg6 from "./session/historyOfLegal/HistoryOfLegalPg6";
+// import HistoryOfLegalPg7 from "./session/historyOfLegal/HistoryOfLegalPg7";
+// import HistoryOfLegalPg8 from "./session/historyOfLegal/HistoryOfLegalPg8";
+// import HistoryOfLegalPg9 from "./session/historyOfLegal/HistoryOfLegalPg9";
+// import HistoryOfLegalPg10 from "./session/historyOfLegal/HistoryOfLegalPg10";
+// import HistoryOfLegalPg11 from "./session/historyOfLegal/HistoryOfLegalPg11";
+// import HistoryOfLegalPg12 from "./session/historyOfLegal/HistoryOfLegalPg12";
+// import HistoryOfLegalPg13 from "./session/historyOfLegal/HistoryOfLegalPg13";
+// import HistoryOfLegalPg14 from "./session/historyOfLegal/HistoryOfLegalPg14";
+// import HistoryOfLegalPg15 from "./session/historyOfLegal/HistoryOfLegalPg15";
+
 import MentalHealthHistoryPg1 from "./session/mentalHealthHistory/MentalHealthHistoryPg1";
 import MentalHealthHistoryPg2 from "./session/mentalHealthHistory/MentalHealthHistoryPg2";
 import MentalHealthHistoryPg3 from "./session/mentalHealthHistory/MentalHealthHistoryPg3";
@@ -124,6 +124,21 @@ import RorschPerformanceAssessmentSystem from "./session/testResults/RorschPerfo
 import ThematicApperceptionsTest from "./session/testResults/ThematicApperceptionsTest";
 import CreateAcct from "./Auth/createAcct";
 import DataManager from "../data_module/DataManager";
+import SubstanceAbusePg1 from "./session/substanceAbuse/SubstanceAbusePg1";
+import SubstanceAbusePg2 from "./session/substanceAbuse/SubstanceAbusePg2";
+import SubstanceAbusePg3 from "./session/substanceAbuse/SubstanceAbusePg3";
+import SubstanceAbusePg4 from "./session/substanceAbuse/SubstanceAbusePg4";
+import SubstanceAbusePg5 from "./session/substanceAbuse/SubstanceAbusePg5";
+import SubstanceAbusePg6 from "./session/substanceAbuse/SubstanceAbusePg6";
+import SubstanceAbusePg7 from "./session/substanceAbuse/SubstanceAbusePg7";
+import SubstanceAbusePg8 from "./session/substanceAbuse/SubstanceAbusePg8";
+import SubstanceAbusePg9 from "./session/substanceAbuse/SubstanceAbusePg9";
+import SubstanceAbusePg10 from "./session/substanceAbuse/SubstanceAbusePg10";
+import SubstanceAbusePg11 from "./session/substanceAbuse/SubstanceAbusePg11";
+import SubstanceAbusePg12 from "./session/substanceAbuse/SubstanceAbusePg12";
+import SubstanceAbusePg13 from "./session/substanceAbuse/SubstanceAbusePg13";
+import SubstanceAbusePg14 from "./session/substanceAbuse/SubstanceAbusePg14";
+import SubstanceAbusePg15 from "./session/substanceAbuse/SubstanceAbusePg15";
 
 //Lazy Load Refactoring
 const CreateUser = lazy(() => import("./createUser/createUser"));
@@ -179,15 +194,6 @@ const ApplicationViews = (props) => {
             patientId={patientId}
             {...props}
           />
-          {/* <Route
-          exact
-          path="/createUser"
-          render={(props) => {
-            return (
-              <CreateUser hasUser={hasUser} patientId={patientId} {...props} />
-            );
-          }}
-        /> */}
           {!hasUser ? (
             <>
               <Route
@@ -952,10 +958,10 @@ const ApplicationViews = (props) => {
               />
               <Route
                 exact
-                path="/history_of_legal_pg_6"
+                path="/substance_abuse_pg1"
                 render={(props) => {
                   return (
-                    <HistoryOfLegalPg6
+                    <SubstanceAbusePg1
                       hasUser={hasUser}
                       patientId={patientId}
                       patientDetails={patientDetails}
@@ -966,6 +972,216 @@ const ApplicationViews = (props) => {
                 }}
               />
               <Route
+                exact
+                path="/substance_abuse_pg2"
+                render={(props) => {
+                  return (
+                    <SubstanceAbusePg2
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/substance_abuse_pg3"
+                render={(props) => {
+                  return (
+                    <SubstanceAbusePg3
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/substance_abuse_pg4"
+                render={(props) => {
+                  return (
+                    <SubstanceAbusePg4
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/substance_abuse_pg5"
+                render={(props) => {
+                  return (
+                    <SubstanceAbusePg5
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/substance_abuse_pg6"
+                render={(props) => {
+                  return (
+                    <SubstanceAbusePg6
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/substance_abuse_pg7"
+                render={(props) => {
+                  return (
+                    <SubstanceAbusePg7
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/substance_abuse_pg8"
+                render={(props) => {
+                  return (
+                    <SubstanceAbusePg8
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/substance_abuse_pg9"
+                render={(props) => {
+                  return (
+                    <SubstanceAbusePg9
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/substance_abuse_pg10"
+                render={(props) => {
+                  return (
+                    <SubstanceAbusePg10
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/substance_abuse_pg11"
+                render={(props) => {
+                  return (
+                    <SubstanceAbusePg11
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/substance_abuse_pg12"
+                render={(props) => {
+                  return (
+                    <SubstanceAbusePg12
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/substance_abuse_pg13"
+                render={(props) => {
+                  return (
+                    <SubstanceAbusePg13
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/substance_abuse_pg14"
+                render={(props) => {
+                  return (
+                    <SubstanceAbusePg14
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/substance_abuse_pg15"
+                render={(props) => {
+                  return (
+                    <SubstanceAbusePg15
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              {/* <Route
                 exact
                 path="/history_of_legal_pg_7"
                 render={(props) => {
@@ -1099,7 +1315,7 @@ const ApplicationViews = (props) => {
                     />
                   );
                 }}
-              />
+              /> */}
               <Route
                 exact
                 path="/mental_health_history_pg_1"
