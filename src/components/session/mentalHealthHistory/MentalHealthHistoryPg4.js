@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -14,7 +14,7 @@ function MentalHealthHistoryPg4(props) {
     setPatientMentalHealthHistory_pg4,
   ] = useState({});
 
-  const next = "/medical_history_health_concerns_limitations_pg_1";
+  const next = "/mental_health_history_pg_5";
   const back = "/mental_health_history_pg_3";
 
   const handleFieldChange = (e) => {
@@ -66,8 +66,11 @@ function MentalHealthHistoryPg4(props) {
         <div id="content-wrap">
           <h2 className="textWhite text-center mb-4">Mental Health History</h2>
           <div className="questionsContainer text-center">
-            <h4 className="textWhite centerItem">What was it about?</h4>
             <div className="interview_div1">
+              <h4 className="textWhite centerItem">
+                When people reject you do you tell yourself, “I don’t care, or
+                it doesn’t matter?”
+              </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
                   {props.patientDetails.patient_first_name} said:
@@ -85,7 +88,8 @@ function MentalHealthHistoryPg4(props) {
                 />
               </div>
               <h4 className="textWhite centerItem">
-                Have you ever cut or deliberately injured yourself?
+                When you get angry do you take it out on yourself or others? How
+                so?
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
@@ -104,7 +108,8 @@ function MentalHealthHistoryPg4(props) {
                 />
               </div>
               <h4 className="textWhite centerItem">
-                Have you ever thought about hurting yourself or anyone else?
+                Do you ever feel bitter? What does that look like? Do you take
+                it out on others?
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
@@ -122,30 +127,28 @@ function MentalHealthHistoryPg4(props) {
                   }
                 />
               </div>
-            </div>
-            <div className="textWhite">
-              IF SUICIDE REPORTED, ASK ABOUT A PLAN? If yes, CALL 911. IF NOT
-              SELECT:
-            </div>
-          </div>
-          <div className="siblingsFields">
-            <div className="m-1">
-              <Input
-                type="checkbox"
-                className=""
-                id="mental_health_history_pg4_d"
-                name="mental_health_history_pg4_d"
-                checked={
-                  patientMentalHealthHistory_pg4.mental_health_history_pg4_d
-                }
-                onChange={handleFieldChange}
-              />
-              <Label className="textWhite" for="firstName">
-                {props.patientDetails.patient_first_name} denied any current
-                intent or plan.
-              </Label>
+              <h4 className="textWhite centerItem">
+                How do you feel about rules?
+              </h4>
+              <div className="interview_line1 mb-4">
+                <Label className="textWhite interview_title" for="">
+                  {props.patientDetails.patient_first_name} said:
+                </Label>
+                <TextareaAutosize
+                  className="fieldData"
+                  type="text"
+                  id="mental_health_history_pg4_d"
+                  name="mental_health_history_pg4_d"
+                  onChange={handleFieldChange}
+                  onClick={captureFieldName}
+                  value={
+                    patientMentalHealthHistory_pg4.mental_health_history_pg4_d
+                  }
+                />
+              </div>
             </div>
           </div>
+
           <div id="footer">
             <ButtonNavigation
               next={next}

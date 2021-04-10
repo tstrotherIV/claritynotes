@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Label, Input } from "reactstrap";
+import { Label } from "reactstrap";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -7,21 +7,21 @@ import DataManager from "../../../data_module/DataManager";
 
 // pdf page 69
 
-function MentalHealthHistoryPg3(props) {
+function MentalHealthHistoryPg11(props) {
   const [item, setItem] = useState("");
   const [
-    patientMentalHealthHistory_pg3,
-    setPatientMentalHealthHistory_pg3,
+    patientMentalHealthHistory_pg11,
+    setPatientMentalHealthHistory_pg11,
   ] = useState({});
 
-  const next = "/mental_health_history_pg_4";
-  const back = "/mental_health_history_pg_2";
+  const next = "/mental_health_history_pg_12";
+  const back = "/mental_health_history_pg_10";
 
   const handleFieldChange = (e) => {
     const target = e.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
-    setPatientMentalHealthHistory_pg3({
-      ...patientMentalHealthHistory_pg3,
+    setPatientMentalHealthHistory_pg11({
+      ...patientMentalHealthHistory_pg11,
       [e.target.name]: value,
     });
   };
@@ -35,14 +35,14 @@ function MentalHealthHistoryPg3(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      mental_health_history_pg3_a:
-        patientMentalHealthHistory_pg3.mental_health_history_pg3_a,
-      mental_health_history_pg3_b:
-        patientMentalHealthHistory_pg3.mental_health_history_pg3_b,
-      mental_health_history_pg3_c:
-        patientMentalHealthHistory_pg3.mental_health_history_pg3_c,
-      mental_health_history_pg3_d:
-        patientMentalHealthHistory_pg3.mental_health_history_pg3_d,
+      mental_health_history_pg11_a:
+        patientMentalHealthHistory_pg11.mental_health_history_pg11_a,
+      mental_health_history_pg11_b:
+        patientMentalHealthHistory_pg11.mental_health_history_pg11_b,
+      mental_health_history_pg11_c:
+        patientMentalHealthHistory_pg11.mental_health_history_pg11_c,
+      mental_health_history_pg11_d:
+        patientMentalHealthHistory_pg11.mental_health_history_pg11_d,
     };
 
     DataManager.update("patients", editedPatient).then(() => {
@@ -53,7 +53,7 @@ function MentalHealthHistoryPg3(props) {
   //CRUD Function END
 
   const getData = () => {
-    setPatientMentalHealthHistory_pg3(props.patientDetails);
+    setPatientMentalHealthHistory_pg11(props.patientDetails);
   };
 
   useEffect(() => {
@@ -68,7 +68,8 @@ function MentalHealthHistoryPg3(props) {
           <div className="questionsContainer text-center">
             <div className="interview_div1">
               <h4 className="textWhite centerItem">
-              It is important for you to stay positive no matter what?
+                When around new people, do you find that you are self-conscious
+                and compare yourself critically?
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
@@ -77,17 +78,19 @@ function MentalHealthHistoryPg3(props) {
                 <TextareaAutosize
                   className="fieldData"
                   type="text"
-                  id="mental_health_history_pg3_a"
-                  name="mental_health_history_pg3_a"
+                  id="mental_health_history_pg11_a"
+                  name="mental_health_history_pg11_a"
                   onChange={handleFieldChange}
                   onClick={captureFieldName}
                   value={
-                    patientMentalHealthHistory_pg3.mental_health_history_pg3_a
+                    patientMentalHealthHistory_pg11.mental_health_history_pg11_a
                   }
                 />
               </div>
               <h4 className="textWhite centerItem">
-              When you have a setback in your life, do you find yourself feeling numb?
+                When things are quiet and you are by yourself, do you find that
+                you start thinking about things and realize that you are
+                insecure and feel inadequate?
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
@@ -96,17 +99,17 @@ function MentalHealthHistoryPg3(props) {
                 <TextareaAutosize
                   className="fieldData"
                   type="text"
-                  id="mental_health_history_pg3_b"
-                  name="mental_health_history_pg3_b"
+                  id="mental_health_history_pg11_b"
+                  name="mental_health_history_pg11_b"
                   onChange={handleFieldChange}
                   onClick={captureFieldName}
                   value={
-                    patientMentalHealthHistory_pg3.mental_health_history_pg3_b
+                    patientMentalHealthHistory_pg11.mental_health_history_pg11_b
                   }
                 />
               </div>
               <h4 className="textWhite centerItem">
-              When others are upset, do you find you are indifferent, or at least try to be?
+                Do you ever feel inferior?
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
@@ -115,17 +118,17 @@ function MentalHealthHistoryPg3(props) {
                 <TextareaAutosize
                   className="fieldData"
                   type="text"
-                  id="mental_health_history_pg3_c"
-                  name="mental_health_history_pg3_c"
+                  id="mental_health_history_pg11_c"
+                  name="mental_health_history_pg11_c"
                   onChange={handleFieldChange}
                   onClick={captureFieldName}
                   value={
-                    patientMentalHealthHistory_pg3.mental_health_history_pg3_c
+                    patientMentalHealthHistory_pg11.mental_health_history_pg11_c
                   }
                 />
               </div>
               <h4 className="textWhite centerItem">
-              Have you ever wanted to be numb to stop the hurt or being vulnerable anymore?
+                Do you ever feel like a fraud?
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
@@ -134,12 +137,12 @@ function MentalHealthHistoryPg3(props) {
                 <TextareaAutosize
                   className="fieldData"
                   type="text"
-                  id="mental_health_history_pg3_d"
-                  name="mental_health_history_pg3_d"
+                  id="mental_health_history_pg11_d"
+                  name="mental_health_history_pg11_d"
                   onChange={handleFieldChange}
                   onClick={captureFieldName}
                   value={
-                    patientMentalHealthHistory_pg3.mental_health_history_pg3_d
+                    patientMentalHealthHistory_pg11.mental_health_history_pg11_d
                   }
                 />
               </div>
@@ -152,7 +155,7 @@ function MentalHealthHistoryPg3(props) {
               back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
-              patientNotes={patientMentalHealthHistory_pg3}
+              patientNotes={patientMentalHealthHistory_pg11}
             />
             <TermOfParentalRights
               questionId={item}
@@ -166,4 +169,4 @@ function MentalHealthHistoryPg3(props) {
   );
 }
 
-export default MentalHealthHistoryPg3;
+export default MentalHealthHistoryPg11;

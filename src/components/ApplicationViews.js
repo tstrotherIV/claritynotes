@@ -64,9 +64,6 @@ import HistoryOfLegalPg5 from "./session/historyOfLegal/HistoryOfLegalPg5";
 // import HistoryOfLegalPg15 from "./session/historyOfLegal/HistoryOfLegalPg15";
 
 import MentalHealthHistoryPg1 from "./session/mentalHealthHistory/MentalHealthHistoryPg1";
-import MentalHealthHistoryPg2 from "./session/mentalHealthHistory/MentalHealthHistoryPg2";
-import MentalHealthHistoryPg3 from "./session/mentalHealthHistory/MentalHealthHistoryPg3";
-import MentalHealthHistoryPg4 from "./session/mentalHealthHistory/MentalHealthHistoryPg4";
 import MedicalHistoryHealthConcernsLimitionsPg1 from "./session/medicalHistoryHealthConcernsLimitations/MedicalHistoryHealthConcernsLimitationsPg1";
 import NeglectAbuseTraumaLossPg1 from "./session/neglectAbuseTraumaLoss/NeglectAbuseTraumaLossPg1";
 import NeglectAbuseTraumaLossPg2 from "./session/neglectAbuseTraumaLoss/NeglectAbuseTraumaLossPg2";
@@ -139,6 +136,22 @@ import SubstanceAbusePg12 from "./session/substanceAbuse/SubstanceAbusePg12";
 import SubstanceAbusePg13 from "./session/substanceAbuse/SubstanceAbusePg13";
 import SubstanceAbusePg14 from "./session/substanceAbuse/SubstanceAbusePg14";
 import SubstanceAbusePg15 from "./session/substanceAbuse/SubstanceAbusePg15";
+import MentalHealthHistoryPg2 from "./session/mentalHealthHistory/MentalHealthHistoryPg2";
+import MentalHealthHistoryPg3 from "./session/mentalHealthHistory/MentalHealthHistoryPg3";
+import MentalHealthHistoryPg4 from "./session/mentalHealthHistory/MentalHealthHistoryPg4";
+import MentalHealthHistoryPg5 from "./session/mentalHealthHistory/MentalHealthHistoryPg5";
+import MentalHealthHistoryPg6 from "./session/mentalHealthHistory/MentalHealthHistoryPg6";
+import MentalHealthHistoryPg7 from "./session/mentalHealthHistory/MentalHealthHistoryPg7";
+import MentalHealthHistoryPg8 from "./session/mentalHealthHistory/MentalHealthHistoryPg8";
+import MentalHealthHistoryPg9 from "./session/mentalHealthHistory/MentalHealthHistoryPg9";
+import MentalHealthHistoryPg10 from "./session/mentalHealthHistory/MentalHealthHistoryPg10";
+import MentalHealthHistoryPg11 from "./session/mentalHealthHistory/MentalHealthHistoryPg11";
+import MentalHealthHistoryPg12 from "./session/mentalHealthHistory/MentalHealthHistoryPg12";
+import MentalHealthHistoryPg13 from "./session/mentalHealthHistory/MentalHealthHistoryPg13";
+import MentalHealthHistoryPg14 from "./session/mentalHealthHistory/MentalHealthHistoryPg14";
+import MentalHealthHistoryPg15 from "./session/mentalHealthHistory/MentalHealthHistoryPg15";
+import MentalHealthHistoryPg16 from "./session/mentalHealthHistory/MentalHealthHistoryPg16";
+import MentalHealthHistoryPg17 from "./session/mentalHealthHistory/MentalHealthHistoryPg17";
 
 //Lazy Load Refactoring
 const CreateUser = lazy(() => import("./createUser/createUser"));
@@ -1367,6 +1380,201 @@ const ApplicationViews = (props) => {
                 render={(props) => {
                   return (
                     <MentalHealthHistoryPg4
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/mental_health_history_pg_5"
+                render={(props) => {
+                  return (
+                    <MentalHealthHistoryPg5
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/mental_health_history_pg_6"
+                render={(props) => {
+                  return (
+                    <MentalHealthHistoryPg6
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/mental_health_history_pg_7"
+                render={(props) => {
+                  return (
+                    <MentalHealthHistoryPg7
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/mental_health_history_pg_8"
+                render={(props) => {
+                  return (
+                    <MentalHealthHistoryPg8
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/mental_health_history_pg_9"
+                render={(props) => {
+                  return (
+                    <MentalHealthHistoryPg9
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/mental_health_history_pg_10"
+                render={(props) => {
+                  return (
+                    <MentalHealthHistoryPg10
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/mental_health_history_pg_11"
+                render={(props) => {
+                  return (
+                    <MentalHealthHistoryPg11
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/mental_health_history_pg_12"
+                render={(props) => {
+                  return (
+                    <MentalHealthHistoryPg12
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/mental_health_history_pg_13"
+                render={(props) => {
+                  return (
+                    <MentalHealthHistoryPg13
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/mental_health_history_pg_14"
+                render={(props) => {
+                  return (
+                    <MentalHealthHistoryPg14
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/mental_health_history_pg_15"
+                render={(props) => {
+                  return (
+                    <MentalHealthHistoryPg15
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/mental_health_history_pg_16"
+                render={(props) => {
+                  return (
+                    <MentalHealthHistoryPg16
+                      hasUser={hasUser}
+                      patientId={patientId}
+                      patientDetails={patientDetails}
+                      getData={getData}
+                      {...props}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/mental_health_history_pg_17"
+                render={(props) => {
+                  return (
+                    <MentalHealthHistoryPg17
                       hasUser={hasUser}
                       patientId={patientId}
                       patientDetails={patientDetails}
