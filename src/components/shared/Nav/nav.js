@@ -75,7 +75,7 @@ const NavBar = (props) => {
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/history_of_legal_pg_6">
+                  <NavLink href="/substance_abuse_pg1">
                     Substance Abuse
                   </NavLink>
                 </NavItem>
