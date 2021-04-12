@@ -7,21 +7,21 @@ import DataManager from "../../../data_module/DataManager";
 
 // pdf page 69
 
-function MentalHealthHistoryPg17(props) {
+function MentalHealthHistoryPg22(props) {
   const [item, setItem] = useState("");
   const [
-    patientMentalHealthHistory_pg17,
-    setPatientMentalHealthHistory_pg17,
+    patientMentalHealthHistory_pg22,
+    setPatientMentalHealthHistory_pg22,
   ] = useState({});
 
-  const next = "/mental_health_history_pg_18";
-  const back = "/mental_health_history_pg_16";
+  const next = "/mental_health_history_pg_23";
+  const back = "/mental_health_history_pg_21";
 
   const handleFieldChange = (e) => {
     const target = e.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
-    setPatientMentalHealthHistory_pg17({
-      ...patientMentalHealthHistory_pg17,
+    setPatientMentalHealthHistory_pg22({
+      ...patientMentalHealthHistory_pg22,
       [e.target.name]: value,
     });
   };
@@ -35,16 +35,16 @@ function MentalHealthHistoryPg17(props) {
 
   const updatePatient = () => {
     const editedPatient = {
-      mental_health_history_pg17_a:
-        patientMentalHealthHistory_pg17.mental_health_history_pg17_a,
-      mental_health_history_pg17_b:
-        patientMentalHealthHistory_pg17.mental_health_history_pg17_b,
-      mental_health_history_pg17_c:
-        patientMentalHealthHistory_pg17.mental_health_history_pg17_c,
-      mental_health_history_pg17_d:
-        patientMentalHealthHistory_pg17.mental_health_history_pg17_d,
-      mental_health_history_pg17_e:
-        patientMentalHealthHistory_pg17.mental_health_history_pg17_e,
+      mental_health_history_pg22_a:
+        patientMentalHealthHistory_pg22.mental_health_history_pg22_a,
+      mental_health_history_pg22_b:
+        patientMentalHealthHistory_pg22.mental_health_history_pg22_b,
+      mental_health_history_pg22_c:
+        patientMentalHealthHistory_pg22.mental_health_history_pg22_c,
+      mental_health_history_pg22_d:
+        patientMentalHealthHistory_pg22.mental_health_history_pg22_d,
+      mental_health_history_pg22_e:
+        patientMentalHealthHistory_pg22.mental_health_history_pg22_e,
     };
 
     DataManager.update("patients", editedPatient).then(() => {
@@ -55,7 +55,7 @@ function MentalHealthHistoryPg17(props) {
   //CRUD Function END
 
   const getData = () => {
-    setPatientMentalHealthHistory_pg17(props.patientDetails);
+    setPatientMentalHealthHistory_pg22(props.patientDetails);
   };
 
   useEffect(() => {
@@ -70,7 +70,7 @@ function MentalHealthHistoryPg17(props) {
           <div className="questionsContainer text-center">
             <div className="interview_div1">
               <h4 className="textWhite centerItem">
-                When under stress have you ever just fallen apart?
+                Do you ever use drugs to just chill?
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
@@ -79,18 +79,17 @@ function MentalHealthHistoryPg17(props) {
                 <TextareaAutosize
                   className="fieldData"
                   type="text"
-                  id="mental_health_history_pg17_a"
-                  name="mental_health_history_pg17_a"
+                  id="mental_health_history_pg22_a"
+                  name="mental_health_history_pg22_a"
                   onChange={handleFieldChange}
                   onClick={captureFieldName}
                   value={
-                    patientMentalHealthHistory_pg17.mental_health_history_pg17_a
+                    patientMentalHealthHistory_pg22.mental_health_history_pg22_a
                   }
                 />
               </div>
               <h4 className="textWhite centerItem">
-                Have you been accused of being misunderstanding people’s
-                motives?
+                Do you prefer to be alone rather than with others?
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
@@ -99,18 +98,18 @@ function MentalHealthHistoryPg17(props) {
                 <TextareaAutosize
                   className="fieldData"
                   type="text"
-                  id="mental_health_history_pg17_b"
-                  name="mental_health_history_pg17_b"
+                  id="mental_health_history_pg22_b"
+                  name="mental_health_history_pg22_b"
                   onChange={handleFieldChange}
                   onClick={captureFieldName}
                   value={
-                    patientMentalHealthHistory_pg17.mental_health_history_pg17_b
+                    patientMentalHealthHistory_pg22.mental_health_history_pg22_b
                   }
                 />
               </div>
               <h4 className="textWhite centerItem">
-                Do you feel that your thoughts and actions are outside of your
-                control?
+                Do you find that you are shy, interpersonally uncomfortable,
+                insecure, introverted, and submissive?
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
@@ -119,18 +118,17 @@ function MentalHealthHistoryPg17(props) {
                 <TextareaAutosize
                   className="fieldData"
                   type="text"
-                  id="mental_health_history_pg17_c"
-                  name="mental_health_history_pg17_c"
+                  id="mental_health_history_pg22_c"
+                  name="mental_health_history_pg22_c"
                   onChange={handleFieldChange}
                   onClick={captureFieldName}
                   value={
-                    patientMentalHealthHistory_pg17.mental_health_history_pg17_c
+                    patientMentalHealthHistory_pg22.mental_health_history_pg22_c
                   }
                 />
               </div>
               <h4 className="textWhite centerItem">
-                Have you ever had a conversation with someone, and they complain
-                you are hard to follow?
+                Do you have good social supports?
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
@@ -139,17 +137,18 @@ function MentalHealthHistoryPg17(props) {
                 <TextareaAutosize
                   className="fieldData"
                   type="text"
-                  id="mental_health_history_pg17_d"
-                  name="mental_health_history_pg17_d"
+                  id="mental_health_history_pg22_d"
+                  name="mental_health_history_pg22_d"
                   onChange={handleFieldChange}
                   onClick={captureFieldName}
                   value={
-                    patientMentalHealthHistory_pg17.mental_health_history_pg17_d
+                    patientMentalHealthHistory_pg22.mental_health_history_pg22_d
                   }
                 />
               </div>
               <h4 className="textWhite centerItem">
-                Describe your self-image for me? How do you see yourself?
+                Have you ever had problems in establishing meaningful
+                attachments with others?
               </h4>
               <div className="interview_line1 mb-4">
                 <Label className="textWhite interview_title" for="">
@@ -158,12 +157,12 @@ function MentalHealthHistoryPg17(props) {
                 <TextareaAutosize
                   className="fieldData"
                   type="text"
-                  id="mental_health_history_pg17_e"
-                  name="mental_health_history_pg17_e"
+                  id="mental_health_history_pg22_e"
+                  name="mental_health_history_pg22_e"
                   onChange={handleFieldChange}
                   onClick={captureFieldName}
                   value={
-                    patientMentalHealthHistory_pg17.mental_health_history_pg17_e
+                    patientMentalHealthHistory_pg22.mental_health_history_pg22_e
                   }
                 />
               </div>
@@ -176,7 +175,7 @@ function MentalHealthHistoryPg17(props) {
               back={back}
               updatePatient={updatePatient}
               patient={props.patientId}
-              patientNotes={patientMentalHealthHistory_pg17}
+              patientNotes={patientMentalHealthHistory_pg22}
             />
             <TermOfParentalRights
               questionId={item}
@@ -190,4 +189,4 @@ function MentalHealthHistoryPg17(props) {
   );
 }
 
-export default MentalHealthHistoryPg17;
+export default MentalHealthHistoryPg22;
