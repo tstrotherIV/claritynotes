@@ -14,7 +14,7 @@ function MentalHealthHistoryPg17(props) {
     setPatientMentalHealthHistory_pg17,
   ] = useState({});
 
-  const next = "/mental_health_history_pg_18";
+  const next = "/medical_history_health_concerns_limitations_pg_1";
   const back = "/mental_health_history_pg_16";
 
   const handleFieldChange = (e) => {
@@ -43,8 +43,6 @@ function MentalHealthHistoryPg17(props) {
         patientMentalHealthHistory_pg17.mental_health_history_pg17_c,
       mental_health_history_pg17_d:
         patientMentalHealthHistory_pg17.mental_health_history_pg17_d,
-      mental_health_history_pg17_e:
-        patientMentalHealthHistory_pg17.mental_health_history_pg17_e,
     };
 
     DataManager.update("patients", editedPatient).then(() => {
@@ -125,45 +123,6 @@ function MentalHealthHistoryPg17(props) {
                   onClick={captureFieldName}
                   value={
                     patientMentalHealthHistory_pg17.mental_health_history_pg17_c
-                  }
-                />
-              </div>
-              <h4 className="textWhite centerItem">
-                Have you ever had a conversation with someone, and they complain
-                you are hard to follow?
-              </h4>
-              <div className="interview_line1 mb-4">
-                <Label className="textWhite interview_title" for="">
-                  {props.patientDetails.patient_first_name} said:
-                </Label>
-                <TextareaAutosize
-                  className="fieldData"
-                  type="text"
-                  id="mental_health_history_pg17_d"
-                  name="mental_health_history_pg17_d"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={
-                    patientMentalHealthHistory_pg17.mental_health_history_pg17_d
-                  }
-                />
-              </div>
-              <h4 className="textWhite centerItem">
-                Describe your self-image for me? How do you see yourself?
-              </h4>
-              <div className="interview_line1 mb-4">
-                <Label className="textWhite interview_title" for="">
-                  {props.patientDetails.patient_first_name} said:
-                </Label>
-                <TextareaAutosize
-                  className="fieldData"
-                  type="text"
-                  id="mental_health_history_pg17_e"
-                  name="mental_health_history_pg17_e"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
-                  value={
-                    patientMentalHealthHistory_pg17.mental_health_history_pg17_e
                   }
                 />
               </div>

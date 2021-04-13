@@ -152,12 +152,6 @@ import MentalHealthHistoryPg14 from "./session/mentalHealthHistory/MentalHealthH
 import MentalHealthHistoryPg15 from "./session/mentalHealthHistory/MentalHealthHistoryPg15";
 import MentalHealthHistoryPg16 from "./session/mentalHealthHistory/MentalHealthHistoryPg16";
 import MentalHealthHistoryPg17 from "./session/mentalHealthHistory/MentalHealthHistoryPg17";
-import MentalHealthHistoryPg18 from "./session/mentalHealthHistory/MentalHealthHistoryPg18";
-import MentalHealthHistoryPg19 from "./session/mentalHealthHistory/MentalHealthHistoryPg19";
-import MentalHealthHistoryPg20 from "./session/mentalHealthHistory/MentalHealthHistoryPg20";
-import MentalHealthHistoryPg21 from "./session/mentalHealthHistory/MentalHealthHistoryPg21";
-import MentalHealthHistoryPg22 from "./session/mentalHealthHistory/MentalHealthHistoryPg22";
-import MentalHealthHistoryPg23 from "./session/mentalHealthHistory/MentalHealthHistoryPg23";
 
 //Lazy Load Refactoring
 const CreateUser = lazy(() => import("./createUser/createUser"));
@@ -1581,96 +1575,6 @@ const ApplicationViews = (props) => {
                 render={(props) => {
                   return (
                     <MentalHealthHistoryPg17
-                      hasUser={hasUser}
-                      patientId={patientId}
-                      patientDetails={patientDetails}
-                      getData={getData}
-                      {...props}
-                    />
-                  );
-                }}
-              />
-              <Route
-                exact
-                path="/mental_health_history_pg_18"
-                render={(props) => {
-                  return (
-                    <MentalHealthHistoryPg18
-                      hasUser={hasUser}
-                      patientId={patientId}
-                      patientDetails={patientDetails}
-                      getData={getData}
-                      {...props}
-                    />
-                  );
-                }}
-              />
-              <Route
-                exact
-                path="/mental_health_history_pg_19"
-                render={(props) => {
-                  return (
-                    <MentalHealthHistoryPg19
-                      hasUser={hasUser}
-                      patientId={patientId}
-                      patientDetails={patientDetails}
-                      getData={getData}
-                      {...props}
-                    />
-                  );
-                }}
-              />
-              <Route
-                exact
-                path="/mental_health_history_pg_20"
-                render={(props) => {
-                  return (
-                    <MentalHealthHistoryPg20
-                      hasUser={hasUser}
-                      patientId={patientId}
-                      patientDetails={patientDetails}
-                      getData={getData}
-                      {...props}
-                    />
-                  );
-                }}
-              />
-              <Route
-                exact
-                path="/mental_health_history_pg_21"
-                render={(props) => {
-                  return (
-                    <MentalHealthHistoryPg21
-                      hasUser={hasUser}
-                      patientId={patientId}
-                      patientDetails={patientDetails}
-                      getData={getData}
-                      {...props}
-                    />
-                  );
-                }}
-              />
-              <Route
-                exact
-                path="/mental_health_history_pg_22"
-                render={(props) => {
-                  return (
-                    <MentalHealthHistoryPg22
-                      hasUser={hasUser}
-                      patientId={patientId}
-                      patientDetails={patientDetails}
-                      getData={getData}
-                      {...props}
-                    />
-                  );
-                }}
-              />
-              <Route
-                exact
-                path="/mental_health_history_pg_23"
-                render={(props) => {
-                  return (
-                    <MentalHealthHistoryPg23
                       hasUser={hasUser}
                       patientId={patientId}
                       patientDetails={patientDetails}
