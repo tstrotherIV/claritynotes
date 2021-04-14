@@ -36,7 +36,7 @@ function PsychologicalEvaluationReferral(props) {
     const value = target.checked;
     const name = target.name;
     getParagraph();
-    setParagraphEnableEdit({ ...paragraphEnableEdit, [name]: value });
+    setParagraphEnableEdit(true);
   };
 
   const DefaultParagraph = () => {
@@ -80,6 +80,9 @@ function PsychologicalEvaluationReferral(props) {
 
     DataManager.getPatient(check_for_patient).then((patientInfo) => {
       setPatient(patientInfo);
+      if (patientInfo.referral_paragraph_updated) {
+        setParagraph(patientInfo?.referral_paragraph_updated);
+      }
     });
   };
 
@@ -90,12 +93,19 @@ function PsychologicalEvaluationReferral(props) {
     });
   };
 
-  const handleChange = (e) => {
-    const editedParagraph = {
-      ...paragraph,
-      [e.target.name]: e.target.value,
-    };
-    DataManager.update("patientNotes", editedParagraph);
+  const updateParagraph = (e) => {
+    const target = e.target;
+    const value = target.value;
+    setParagraph(value);
+  };
+
+  const saveParagraph = () => {
+    DataManager.update("patients", {
+      referral_paragraph_updated: paragraph,
+    }).then(() => {
+      props.getData();
+      setParagraphEnableEdit(false);
+    });
   };
 
   const updatePatient = () => {
@@ -104,13 +114,15 @@ function PsychologicalEvaluationReferral(props) {
         modifiedParagraph.referral_paragraph_modified,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   useEffect(() => {
     getData();
     getChildren();
-  }, []);
+  }, [props]);
 
   return (
     <div>
@@ -136,8 +148,10 @@ function PsychologicalEvaluationReferral(props) {
                         onChange={handleCheckBoxChange}
                       />
                     </div>
-                    {patient.referral_paragraph_modified ? (
-                      <div>{patient.referral_paragraph_modified}</div>
+                    {patient.referral_paragraph_updated ? (
+                      <div id="referral_paragraph">
+                        {patient.referral_paragraph_updated}
+                      </div>
                     ) : (
                       <DefaultParagraph />
                     )}
@@ -150,9 +164,11 @@ function PsychologicalEvaluationReferral(props) {
                       name="referral_paragraph_modified"
                       id="referral_paragraph_modified"
                       value={paragraph}
-                      // onChange={handleChange}
+                      onChange={updateParagraph}
                     />
-                    <Button className="text-white">Save Changes</Button>
+                    <Button className="text-white" onClick={saveParagraph}>
+                      Save Changes
+                    </Button>
                   </>
                 )}
               </div>
