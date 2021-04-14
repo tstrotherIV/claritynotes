@@ -45,7 +45,11 @@ function PsychologicalEvaluationAdditionalData(props) {
 
   const handleUpload = async (e) => {
     e.preventDefault();
-    const uploadTask = storage.ref(`/images/${file.name}`).put(file);
+    const uploadTask = storage
+      .ref(
+        `/${additionalData.patient_last_name},${additionalData.patient_first_name}/${file.name}`
+      )
+      .put(file);
     uploadTask.on("state_changed", () => {
       storage
         .ref("images")
@@ -124,7 +128,7 @@ function PsychologicalEvaluationAdditionalData(props) {
                   <tbody>
                     {/* <tr> */}
                     {patientDocuments.map((doc) => (
-                      <tr>
+                      <tr key={doc.id}>
                         <th className="additionalDataTableFields">
                           {doc.file_name}
                         </th>
@@ -132,7 +136,9 @@ function PsychologicalEvaluationAdditionalData(props) {
                           {doc.date_added}
                         </th>
                         <th className="additionalDataTableFields">
-                          <a href={doc.file_url} target="_blank">View File</a>
+                          <a href={doc.file_url} target="_blank">
+                            View File
+                          </a>
                         </th>
                         <th>
                           <Button color="danger">Delete File</Button>
