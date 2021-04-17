@@ -50,9 +50,12 @@ function PsychologicalEvaluationAdditionalData(props) {
         `/${additionalData.patient_last_name},${additionalData.patient_first_name}/${file.name}`
       )
       .put(file);
+
     uploadTask.on("state_changed", () => {
       storage
-        .ref("images")
+        .ref(
+          `/${additionalData.patient_last_name},${additionalData.patient_first_name}`
+        )
         .child(file.name)
         .getDownloadURL()
         .then((item) => {
@@ -69,13 +72,29 @@ function PsychologicalEvaluationAdditionalData(props) {
               },
             ],
           };
-          console.log(editedPatient);
           DataManager.update("patients", editedPatient).then(() => {
             props.getData();
             setFile(null);
           });
         });
     });
+  };
+
+  const handleDelete = (fileRef) => {
+    const storageRef = storage.ref();
+    const item = storageRef.child(
+      `/${additionalData.patient_last_name},${additionalData.patient_first_name}/${fileRef}`
+    );
+
+    item
+      .delete()
+      .then(() => {
+        console.log("Deleted");
+        props.getData();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   useEffect(() => {
@@ -141,7 +160,14 @@ function PsychologicalEvaluationAdditionalData(props) {
                           </a>
                         </th>
                         <th>
-                          <Button color="danger">Delete File</Button>
+                          <Button
+                            color="danger"
+                            onClick={() => {
+                              handleDelete(doc.document_original_name);
+                            }}
+                          >
+                            Delete File
+                          </Button>
                         </th>
                       </tr>
                     ))}
