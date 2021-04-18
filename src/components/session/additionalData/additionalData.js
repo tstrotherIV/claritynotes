@@ -45,53 +45,54 @@ function PsychologicalEvaluationAdditionalData(props) {
 
   const handleUpload = async (e) => {
     e.preventDefault();
-    const uploadTask = storage
-      .ref(
-        `/${additionalData.patient_last_name},${additionalData.patient_first_name}/${file.name}`
-      )
-      .put(file);
 
-    uploadTask.on("state_changed", () => {
-      storage
-        .ref(
-          `/${additionalData.patient_last_name},${additionalData.patient_first_name}`
-        )
-        .child(file.name)
-        .getDownloadURL()
-        .then((item) => {
-          setURL(item);
-          const editedPatient = {
-            patient_docs: [
-              ...patientDocuments,
-              {
-                id: uuidv4(),
-                document_original_name: file.name,
-                file_name: fileName,
-                file_url: item,
-                date_added: new Date().toLocaleDateString(),
-              },
-            ],
-          };
-          DataManager.update("patients", editedPatient).then(() => {
-            props.getData();
-            setFile(null);
-          });
+    const fileRef = `${additionalData.patient_last_name},${
+      additionalData.patient_first_name
+    }/${file.name}-${uuidv4()}`;
+
+    await storage.ref(fileRef).put(file);
+
+    await storage
+      .ref(fileRef)
+      .getDownloadURL()
+      .then((item) => {
+        setURL(item);
+        const editedPatient = {
+          patient_docs: [
+            ...patientDocuments,
+            {
+              id: uuidv4(),
+              document_original_name: file.name,
+              file_name: fileName,
+              file_url: item,
+              date_added: new Date().toLocaleDateString(),
+              identifier: fileRef,
+            },
+          ],
+        };
+        DataManager.update("patients", editedPatient).then(() => {
+          props.getData();
+          document.getElementById("file_path").value = "";
+          document.getElementById("files_name").value = "";
         });
-    });
+      });
   };
 
-  const handleDelete = (fileRef) => {
-    const storageRef = storage.ref();
-    const item = storageRef.child(
-      `/${additionalData.patient_last_name},${additionalData.patient_first_name}/${fileRef}`
-    );
+  const handleDelete = async (fileRef) => {
+    let filteredArray = patientDocuments.filter(function (e) {
+      return e.identifier != fileRef;
+    });
+    DataManager.update("patients", {
+      patient_docs: filteredArray,
+    }).then(() => {
+      props.getData();
+    });
+
+    const item = storage.ref().child(`/${fileRef}`);
 
     item
       .delete()
-      .then(() => {
-        console.log("Deleted");
-        props.getData();
-      })
+      .then(() => {})
       .catch((error) => {
         console.log(error);
       });
@@ -113,12 +114,14 @@ function PsychologicalEvaluationAdditionalData(props) {
               <Form onSubmit={handleUpload}>
                 <FormGroup className="formCenter">
                   <Input
+                    id="file_path"
                     type="file"
                     onChange={handleChange}
                     className="formItemCenter p-2 m-2"
                     required
                   />
                   <Input
+                    id="files_name"
                     type="text"
                     className="formItemCenter p-2 m-2"
                     placeholder="Add File Name"
@@ -163,7 +166,7 @@ function PsychologicalEvaluationAdditionalData(props) {
                           <Button
                             color="danger"
                             onClick={() => {
-                              handleDelete(doc.document_original_name);
+                              handleDelete(doc.identifier);
                             }}
                           >
                             Delete File
