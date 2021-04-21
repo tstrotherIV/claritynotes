@@ -43,6 +43,7 @@ function PsychologicalEvaluationAdditionalData(props) {
     setFileName(e.target.value);
   }
 
+  // Method will upload the file to firebase, and then addes the file to a document array on AWS
   const handleUpload = async (e) => {
     e.preventDefault();
 
@@ -78,6 +79,7 @@ function PsychologicalEvaluationAdditionalData(props) {
       });
   };
 
+  // Method to Delete a file from Firebase Storage and AWS
   const handleDelete = async (fileRef) => {
     let filteredArray = patientDocuments.filter(function (e) {
       return e.identifier != fileRef;
