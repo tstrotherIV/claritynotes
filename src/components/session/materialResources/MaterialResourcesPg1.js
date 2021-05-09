@@ -10,7 +10,7 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import "./materialResource.css"
+import "./materialResource.css";
 // pdf page 97
 
 const next = "/behavioral_observations_and_testing_conditions_pg_1";
@@ -204,7 +204,7 @@ function MaterialResourcesPg1(props) {
                     : "Select Religion"}
                 </DropdownToggle>
                 <DropdownMenu className="religionDropdown">
-                  {religionList.map((religion) => (
+                  {religionList.sort().map((religion) => (
                     <DropdownItem
                       onClick={handleFieldChange}
                       name="material_resources_pg1_e"
