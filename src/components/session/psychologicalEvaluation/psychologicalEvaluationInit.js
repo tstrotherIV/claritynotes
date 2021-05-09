@@ -8,11 +8,9 @@ import {
   Input,
   Container,
 } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading.js";
 import TextareaAutosize from "react-textarea-autosize";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
-import { v4 as uuidv4 } from "uuid";
 
 import "./psychologicalEvaluation.scss";
 
