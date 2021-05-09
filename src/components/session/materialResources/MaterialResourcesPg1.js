@@ -10,6 +10,7 @@ import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
+import "./materialResource.css"
 // pdf page 97
 
 const next = "/behavioral_observations_and_testing_conditions_pg_1";
@@ -25,6 +26,25 @@ function MaterialResourcesPg1(props) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
+
+  const religionList = [
+    "Catholic",
+    "Assembly of God",
+    "Church of Christ",
+    "Non Denominational",
+    "Baptist",
+    "Pentecostal",
+    "Methodist",
+    "Presbyterian",
+    "Jehovah's Witness",
+    "Church of Latter Day Saints",
+    "Jewish",
+    "Islam",
+    "Buddhist",
+    "Hindu",
+    "Atheist",
+    "Other",
+  ];
 
   const handleFieldChange = (e) => {
     setPatientMaterialResourcesPg1({
@@ -173,19 +193,26 @@ function MaterialResourcesPg1(props) {
                 isOpen={dropdownOpen}
                 toggle={toggle}
               >
-                <DropdownToggle caret>Select Option</DropdownToggle>
-                <DropdownMenu
-                  id="material_resources_pg1_e"
-                  name="material_resources_pg1_e"
-                  onChange={handleFieldChange}
-                  onClick={captureFieldName}
+                <DropdownToggle
+                  color="light"
+                  className="dropdown text-center"
+                  caret
                   value={patientMaterialResourcesPg1.material_resources_pg1_e}
                 >
-                  <DropdownItem>Religion Option 1</DropdownItem>
-                  <DropdownItem>Religion Option 2</DropdownItem>
-                  <DropdownItem>Religion Option 3</DropdownItem>
-                  <DropdownItem>Religion Option 4</DropdownItem>
-                  <DropdownItem>Religion Option 5</DropdownItem>
+                  {patientMaterialResourcesPg1.material_resources_pg1_e
+                    ? patientMaterialResourcesPg1.material_resources_pg1_e
+                    : "Select Religion"}
+                </DropdownToggle>
+                <DropdownMenu className="religionDropdown">
+                  {religionList.map((religion) => (
+                    <DropdownItem
+                      onClick={handleFieldChange}
+                      name="material_resources_pg1_e"
+                      value={religion}
+                    >
+                      {religion}
+                    </DropdownItem>
+                  ))}
                 </DropdownMenu>
               </Dropdown>
             </div>
