@@ -119,7 +119,7 @@ function ShipleyIntelligenceAssessment2(props) {
                     <tr className="tableBorder">
                       <th className="tdHeaderWidth">Composite</th>
                       <th className="tdWidth">IQ</th>
-                      <th className="tdWidth">Range</th>
+                      <th className="tdWidth">PERCENTAGE</th>
                     </tr>
                   </thead>
                   <tbody className="text-center">

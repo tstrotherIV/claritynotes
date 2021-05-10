@@ -111,7 +111,7 @@ function WechslerAdultIntelligenceScaleIV(props) {
                       <th className="tdHeaderWidth">Composite</th>
                       <th className="thWidth"></th>
                       <th className="tdWidth">IQ</th>
-                      <th className="tdWidth">Range</th>
+                      <th className="tdWidth">PERCENTAGE</th>
                     </tr>
                   </thead>
                   <tbody className="text-center">

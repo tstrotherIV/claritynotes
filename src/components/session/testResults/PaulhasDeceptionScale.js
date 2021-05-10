@@ -95,7 +95,7 @@ function PaulasDeceptionScale(props) {
                 onChange={handleCheckBoxChange}
               />
               <Label for="" className="m-3">
-                {props.patientDetails.patient_first_name} completed a Paulus
+                {props.patientDetails.patient_first_name} completed a Paulhus
                 Deception Scales (PDS)
               </Label>
               <p className="text-white">

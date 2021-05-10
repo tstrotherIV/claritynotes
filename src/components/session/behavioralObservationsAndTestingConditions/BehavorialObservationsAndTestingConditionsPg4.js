@@ -22,7 +22,7 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
     behavioral_observations_and_testing_conditions_pg4_g: "",
   });
 
-  const next = "/behavioral_observations_and_testing_conditions_pg_5";
+  const next = "/procedures_administered_pg_1";
   const back = "/behavioral_observations_and_testing_conditions_pg_3";
 
   const handleFieldChange = (e) => {
