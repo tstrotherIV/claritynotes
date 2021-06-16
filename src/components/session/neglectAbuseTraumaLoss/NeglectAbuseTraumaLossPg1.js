@@ -57,7 +57,8 @@ function NeglectAbuseTraumaLossPg1(props) {
 
   //CRUD Function END
 
-  const getData = () => {setPatientNeglectAbuseTraumaLossPg1(props.patientDetails);
+  const getData = () => {
+    setPatientNeglectAbuseTraumaLossPg1(props.patientDetails);
   };
 
   useEffect(() => {
@@ -80,6 +81,7 @@ function NeglectAbuseTraumaLossPg1(props) {
                 &#9432;{" "}
               </span>
               <Tooltip
+                autohide={false}
                 placement="bottom"
                 isOpen={tooltipOpen}
                 target="question1"
@@ -140,6 +142,7 @@ function NeglectAbuseTraumaLossPg1(props) {
                   &#9432;{" "}
                 </span>
                 <Tooltip
+                  autohide={false}
                   placement="bottom"
                   isOpen={tooltipOpen1}
                   target="question2"
@@ -186,6 +189,7 @@ function NeglectAbuseTraumaLossPg1(props) {
                   &#9432;{" "}
                 </span>
                 <Tooltip
+                  autohide={false}
                   placement="bottom"
                   isOpen={tooltipOpen2}
                   target="question3"
