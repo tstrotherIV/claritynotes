@@ -45,33 +45,15 @@ function NeglectAbuseTraumaLossPg5(props) {
         patientNeglectAbuseTraumaLossPg5.neglect_abuse_trauma_loss_pg5_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "neglect_abuse_trauma_loss_pg5_a",
-        "neglect_abuse_trauma_loss_pg5_b",
-        "neglect_abuse_trauma_loss_pg5_c",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientNeglectAbuseTraumaLossPg5(props.patientDetails);
-    });
+    setPatientNeglectAbuseTraumaLossPg5(props.patientDetails);
   };
 
   useEffect(() => {
@@ -82,7 +64,6 @@ function NeglectAbuseTraumaLossPg5(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-4">
             NEGLECT <span>&#183;</span> ABUSE <span>&#183;</span> TRAUMA{" "}
             <span>&#183;</span> LOSS

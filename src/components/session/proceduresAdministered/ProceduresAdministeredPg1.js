@@ -82,45 +82,15 @@ function ProceduresAdministeredPg1(props) {
         patientProceduresAdministeredPg1.procedures_administered_pg1_o,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "procedures_administered_pg1_a",
-        "procedures_administered_pg1_b",
-        "procedures_administered_pg1_c",
-        "procedures_administered_pg1_d",
-        "procedures_administered_pg1_e",
-        "procedures_administered_pg1_f",
-        "procedures_administered_pg1_g",
-        "procedures_administered_pg1_h",
-        "procedures_administered_pg1_i",
-        "procedures_administered_pg1_j",
-        "procedures_administered_pg1_k",
-        "procedures_administered_pg1_l",
-        "procedures_administered_pg1_m",
-        "procedures_administered_pg1_n",
-        "procedures_administered_pg1_o",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientProceduresAdministeredPg1(props.patientDetails);
-    });
+    setPatientProceduresAdministeredPg1(props.patientDetails);
   };
 
   useEffect(() => {
@@ -131,7 +101,6 @@ function ProceduresAdministeredPg1(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-4">
             Procedures Administered
           </h2>

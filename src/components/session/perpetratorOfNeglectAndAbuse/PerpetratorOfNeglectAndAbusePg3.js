@@ -46,33 +46,15 @@ function PerpetratorOfNeglectAndAbusePg3(props) {
         patientPerpetratorOfNeglectAndAbusePg3.perpetrator_of_neglect_and_abuse_pg3_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "perpetrator_of_neglect_and_abuse_pg3_a",
-        "perpetrator_of_neglect_and_abuse_pg3_b",
-        "perpetrator_of_neglect_and_abuse_pg3_c",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientPerpetratorOfNeglectAndAbusePg3(props.patientDetails);
-    });
+    setPatientPerpetratorOfNeglectAndAbusePg3(props.patientDetails);
   };
 
   useEffect(() => {
@@ -82,7 +64,6 @@ function PerpetratorOfNeglectAndAbusePg3(props) {
   return (
     <>
       <div id="page-container">
-         
         <div id="content-wrap">
           <h2 className="textWhite text-center mb-4">
             PERPETRATOR OF NEGLECT AND ABUSE

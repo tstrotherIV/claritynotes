@@ -39,29 +39,15 @@ function ParentingPg1(props) {
       parenting_pg1_c: patientParentingPg1.parenting_pg1_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = ["parenting_pg1_a", "parenting_pg1_b", "parenting_pg1_c"];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientParentingPg1(props.patientDetails);
-    });
+    setPatientParentingPg1(props.patientDetails);
   };
 
   useEffect(() => {
@@ -71,7 +57,6 @@ function ParentingPg1(props) {
   return (
     <>
       <div id="page-container">
-         
         <div id="content-wrap">
           <h2 className="textWhite text-center mb-4">PARENTING</h2>
           <div className="questionsContainer text-center">

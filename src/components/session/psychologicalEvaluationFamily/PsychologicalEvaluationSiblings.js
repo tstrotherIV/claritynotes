@@ -69,23 +69,7 @@ function PsychologicalEvaluationSiblings(props) {
   };
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = ["patient_only_child"];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setCheckbox(props.patientDetails);
-    });
+    setCheckbox(props.patientDetails);
   };
 
   const updatePatient = () => {};
@@ -99,7 +83,6 @@ function PsychologicalEvaluationSiblings(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="header">
             <h1 className="textWhite">Please Confirm or Update Information</h1>
           </div>
@@ -148,10 +131,9 @@ function PsychologicalEvaluationSiblings(props) {
                     />
                   </div>
                   <div className="d-flex m-4">
-                    <Label
-                      className="textWhite labelWidth"
-                      for="sibLastName"
-                    >Select Gender</Label>
+                    <Label className="textWhite labelWidth" for="sibLastName">
+                      Select Gender
+                    </Label>
                     <Dropdown
                       isOpen={dropdownOpen1}
                       toggle={toggle1}
@@ -221,7 +203,7 @@ function PsychologicalEvaluationSiblings(props) {
                 </div>
 
                 <div className="siblingListBox">
-                <h3 className="text-center">SIBLING LIST</h3>
+                  <h3 className="text-center">SIBLING LIST</h3>
                   {!checkbox.patient_only_child ? (
                     <div className="familyBoard">
                       <CardDeck className="mt-3 siblingBoard">

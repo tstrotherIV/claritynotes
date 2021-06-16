@@ -9,10 +9,8 @@ import DataManager from "../../../data_module/DataManager";
 
 function PaulasDeceptionScale(props) {
   const [item, setItem] = useState("");
-  const [
-    patientPaulasDeceptionScale,
-    setPatientPaulasDeceptionScale,
-  ] = useState({});
+  const [patientPaulasDeceptionScale, setPatientPaulasDeceptionScale] =
+    useState({});
 
   const next = "/substance_abuse_subtle_screening_inventory_4";
   const back = "/computerized_performance_neurocognitive_assessment";
@@ -99,18 +97,18 @@ function PaulasDeceptionScale(props) {
                 Deception Scales (PDS)
               </Label>
               <p className="text-white">
-                {" "}
-                The Continuous Performance Test 3rd Edition (CPT 3) is a
-                task-oriented computerized assessment of attention-related
-                problems in individuals aged eight years and older. By indexing
-                the respondent's performance in areas of inattentiveness,
-                implusivity, sustained attention, and vigilance the CPT 3 can be
-                useful to the process of diagnosing
-                Attention-Deficit/Hyperactive Disorder (ADHD) and other
-                neurological conditions related to attention. The CPT 3 provides
-                objective information about an individual's performance in
-                attention tasks, complementing information obtained from
-                behavior rating scales.
+                {props.patientDetails.patient_first_name} completed a Paulhus
+                Deception Scales (PDS). The PDS is designed to assess socially
+                desirable responding. Social desirability bias is the tendency
+                to answer questions in a manner that will be viewed favorably by
+                others. It can take the form of over-reporting pro-social
+                behavior or under-reporting inappropriate behavior. The PDS
+                measures two distinct forms of social desirability:
+                self-deception and impression man- agement. According to
+                theories of deception styles, “self-deception” represents an un-
+                conscious process to deny psychologically threatening thoughts
+                and feelings, and “im- pression management” represents conscious
+                distortion toward self-enhancement.
               </p>
               <div className="m-4 text-center">
                 Paste in paragraph that says "IM___, SDE___" and type the actual
