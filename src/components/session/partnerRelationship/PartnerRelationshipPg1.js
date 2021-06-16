@@ -9,16 +9,14 @@ import DataManager from "../../../data_module/DataManager";
 
 function PartnerRelationshipPg1(props) {
   const [item, setItem] = useState("");
-  const [
-    patientPartnerRelationshipPg1,
-    setPatientPartnerRelationshipPg1,
-  ] = useState({
-    partner_relationship_pg1_a: "",
-    partner_relationship_pg1_b: "",
-    partner_relationship_pg1_c: "",
-    partner_relationship_pg1_d: "",
-    partner_relationship_pg1_e: "",
-  });
+  const [patientPartnerRelationshipPg1, setPatientPartnerRelationshipPg1] =
+    useState({
+      partner_relationship_pg1_a: "",
+      partner_relationship_pg1_b: "",
+      partner_relationship_pg1_c: "",
+      partner_relationship_pg1_d: "",
+      partner_relationship_pg1_e: "",
+    });
 
   const next = "/partner_relationship_pg_2";
   const back = "/perpetrator_of_neglect_and_abuse_pg_4";
@@ -51,35 +49,15 @@ function PartnerRelationshipPg1(props) {
         patientPartnerRelationshipPg1.partner_relationship_pg1_e,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "partner_relationship_pg1_a",
-        "partner_relationship_pg1_b",
-        "partner_relationship_pg1_c",
-        "partner_relationship_pg1_d",
-        "partner_relationship_pg1_e",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientPartnerRelationshipPg1(props.patientDetails);
-    });
+    setPatientPartnerRelationshipPg1(props.patientDetails);
   };
 
   useEffect(() => {
@@ -90,7 +68,6 @@ function PartnerRelationshipPg1(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-4">PARTNER RELATIONSHIP</h2>
           <div className="text-center questionsContainerWide row d-flex flex-wrap justify-content-center">
             <h4 className="textWhite centerItem offset-2">

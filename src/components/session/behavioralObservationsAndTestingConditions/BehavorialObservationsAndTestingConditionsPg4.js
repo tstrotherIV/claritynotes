@@ -57,37 +57,15 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
         patientBehavioralObservationsPg4.behavioral_observations_and_testing_conditions_pg4_g,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "behavioral_observations_and_testing_conditions_pg4_a",
-        "behavioral_observations_and_testing_conditions_pg4_b",
-        "behavioral_observations_and_testing_conditions_pg4_c",
-        "behavioral_observations_and_testing_conditions_pg4_d",
-        "behavioral_observations_and_testing_conditions_pg4_e",
-        "behavioral_observations_and_testing_conditions_pg4_f",
-        "behavioral_observations_and_testing_conditions_pg4_g",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientBehavioralObservationsPg4(props.patientDetails);
-    });
+    setPatientBehavioralObservationsPg4(props.patientDetails);
   };
 
   useEffect(() => {
@@ -98,7 +76,6 @@ function BehaviorObservationsAndTestingConditionsPg4(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-4">
             Behavioral Observations and Testing Conditions
           </h2>

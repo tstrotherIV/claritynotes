@@ -54,36 +54,15 @@ function BehavioralObservationsPg1(props) {
         patientBehavioralObservationsPg1.behavioral_observations_and_testing_conditions_pg1_f,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "behavioral_observations_and_testing_conditions_pg1_a",
-        "behavioral_observations_and_testing_conditions_pg1_b",
-        "behavioral_observations_and_testing_conditions_pg1_c",
-        "behavioral_observations_and_testing_conditions_pg1_d",
-        "behavioral_observations_and_testing_conditions_pg1_e",
-        "behavioral_observations_and_testing_conditions_pg1_f",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientBehavioralObservationsPg1(props.patientDetails);
-    });
+    setPatientBehavioralObservationsPg1(props.patientDetails);
   };
 
   useEffect(() => {
@@ -94,7 +73,6 @@ function BehavioralObservationsPg1(props) {
     <div>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-1">
             Behavioral Observations and Testing Conditions
           </h2>

@@ -59,37 +59,15 @@ function BehavioralObservationsPg5(props) {
         patientBehavioralObservationsPg5.behavioral_observations_and_testing_conditions_pg5_g,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "behavioral_observations_and_testing_conditions_pg5_a",
-        "behavioral_observations_and_testing_conditions_pg5_b",
-        "behavioral_observations_and_testing_conditions_pg5_c",
-        "behavioral_observations_and_testing_conditions_pg5_d",
-        "behavioral_observations_and_testing_conditions_pg5_e",
-        "behavioral_observations_and_testing_conditions_pg5_f",
-        "behavioral_observations_and_testing_conditions_pg5_g",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientBehavioralObservationsPg5(props.patientDetails);
-    });
+    setPatientBehavioralObservationsPg5(props.patientDetails);
   };
 
   useEffect(() => {
@@ -100,14 +78,14 @@ function BehavioralObservationsPg5(props) {
     <div>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-1">
             Behavioral Observations and Testing Conditions
           </h2>
           <div className="questionsContainerWide">
             <p className="textWhite text-center m-0 ">
               Please note the following behaviors you observed in your session
-              with {props.patientDetails.patient_first_name} [Patient Name, Last].
+              with {props.patientDetails.patient_first_name} [Patient Name,
+              Last].
             </p>
             <div className="row mt-4">
               <div className="d-flex flex-wrap col-6">

@@ -1,6 +1,7 @@
+// Page Deleted??
+
 import React, { useState, useEffect } from "react";
 import { Label } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
@@ -41,34 +42,15 @@ function CognitiveSkillsPg1(props) {
       cognitive_skills_pg1_d: patientCognitiveSkillsPg1.cognitive_skills_pg1_d,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "cognitive_skills_pg1_a",
-        "cognitive_skills_pg1_b",
-        "cognitive_skills_pg1_c",
-        "cognitive_skills_pg1_d",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientCognitiveSkillsPg1(props.patientDetails);
-    });
+    setPatientCognitiveSkillsPg1(props.patientDetails);
   };
 
   useEffect(() => {
@@ -78,7 +60,6 @@ function CognitiveSkillsPg1(props) {
   return (
     <>
       <div id="page-container">
-         
         <div id="content-wrap">
           <h2 className="textWhite text-center mb-4">COGNITIVE SKILLS</h2>
           <div className="questionsContainer text-center">

@@ -71,23 +71,7 @@ function PsychologicalEvaluation_children(props) {
   };
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = ["patient_has_children"];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setCheckbox(props.patientDetails);
-    });
+    setCheckbox(props.patientDetails);
   };
 
   const updatePatient = () => {};
@@ -101,7 +85,6 @@ function PsychologicalEvaluation_children(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="header">
             <h1 className="textWhite">Please Confirm or Update Information</h1>
           </div>

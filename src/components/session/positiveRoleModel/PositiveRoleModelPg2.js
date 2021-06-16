@@ -10,18 +10,16 @@ import DataManager from "../../../data_module/DataManager";
 
 function PositiveRoleModelPg2(props) {
   const [item, setItem] = useState("");
-  const [
-    patientPositiveRoleModelPg2,
-    setPatientPositiveRoleModelPg2,
-  ] = useState({
-    positive_role_model_pg2_a: "",
-    positive_role_model_pg2_b: "",
-    positive_role_model_pg2_c: "",
-    positive_role_model_pg2_d: "",
-    positive_role_model_pg2_e: "",
-    positive_role_model_pg2_f: "",
-    positive_role_model_pg2_g: false,
-  });
+  const [patientPositiveRoleModelPg2, setPatientPositiveRoleModelPg2] =
+    useState({
+      positive_role_model_pg2_a: "",
+      positive_role_model_pg2_b: "",
+      positive_role_model_pg2_c: "",
+      positive_role_model_pg2_d: "",
+      positive_role_model_pg2_e: "",
+      positive_role_model_pg2_f: "",
+      positive_role_model_pg2_g: false,
+    });
 
   const next = "/parent_knowledge_pg_1";
   const back = "/positive_role_model_pg_1";
@@ -60,37 +58,15 @@ function PositiveRoleModelPg2(props) {
         patientPositiveRoleModelPg2.positive_role_model_pg2_g,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "positive_role_model_pg2_a",
-        "positive_role_model_pg2_b",
-        "positive_role_model_pg2_c",
-        "positive_role_model_pg2_d",
-        "positive_role_model_pg2_e",
-        "positive_role_model_pg2_f",
-        "positive_role_model_pg2_g",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientPositiveRoleModelPg2(props.patientDetails);
-    });
+    setPatientPositiveRoleModelPg2(props.patientDetails);
   };
 
   useEffect(() => {
@@ -101,7 +77,6 @@ function PositiveRoleModelPg2(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-4">POSITIVE ROLE MODEL</h2>
           <div className="questionsContainer">
             <div className="interview_div1">
@@ -225,12 +200,13 @@ function PositiveRoleModelPg2(props) {
                 />
 
                 <Label className="textWhite text-center" for="firstName">
-                  {props.patientDetails.patient_first_name} appears to be lacking knowledge and
-                  examples which illustrates probable deficits in this area.
-                  {props.patientDetails.patient_first_name} will need this area to be further
-                  developed in therapy. She/he needs her/his goals and values
-                  developed in order to guide their own behavior as well as that
-                  of their children.
+                  {props.patientDetails.patient_first_name} appears to be
+                  lacking knowledge and examples which illustrates probable
+                  deficits in this area.
+                  {props.patientDetails.patient_first_name} will need this area
+                  to be further developed in therapy. She/he needs her/his goals
+                  and values developed in order to guide their own behavior as
+                  well as that of their children.
                 </Label>
               </div>
             </div>

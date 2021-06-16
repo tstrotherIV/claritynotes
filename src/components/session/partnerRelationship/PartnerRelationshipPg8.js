@@ -10,14 +10,12 @@ import DataManager from "../../../data_module/DataManager";
 
 function PartnerRelationshipPg8(props) {
   const [item, setItem] = useState("");
-  const [
-    patientPartnerRelationshipPg8,
-    setPatientPartnerRelationshipPg8,
-  ] = useState({
-    partner_relationship_pg8_a: "",
-    partner_relationship_pg8_b: "",
-    partner_relationship_pg8_c: "",
-  });
+  const [patientPartnerRelationshipPg8, setPatientPartnerRelationshipPg8] =
+    useState({
+      partner_relationship_pg8_a: "",
+      partner_relationship_pg8_b: "",
+      partner_relationship_pg8_c: "",
+    });
 
   const next = "/partner_relationship_pg_9";
   const back = "/partner_relationship_pg_7";
@@ -46,33 +44,15 @@ function PartnerRelationshipPg8(props) {
         patientPartnerRelationshipPg8.partner_relationship_pg8_c,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "partner_relationship_pg8_a",
-        "partner_relationship_pg8_b",
-        "partner_relationship_pg8_c",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientPartnerRelationshipPg8(props.patientDetails);
-    });
+    setPatientPartnerRelationshipPg8(props.patientDetails);
   };
 
   useEffect(() => {
@@ -82,7 +62,6 @@ function PartnerRelationshipPg8(props) {
   return (
     <>
       <div id="page-container">
-         
         <div id="content-wrap">
           <h2 className="textWhite text-center mb-4">PARTNER RELATIONSHIP</h2>
           <div className="questionsContainer text-center">

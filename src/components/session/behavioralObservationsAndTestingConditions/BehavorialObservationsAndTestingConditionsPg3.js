@@ -18,7 +18,7 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
     behavioral_observations_and_testing_conditions_pg3_d: "",
     behavioral_observations_and_testing_conditions_pg3_e: "",
     behavioral_observations_and_testing_conditions_pg3_f: "",
-    behavioral_observations_and_testing_conditions_pg3_g: ""
+    behavioral_observations_and_testing_conditions_pg3_g: "",
   });
 
   const next = "/behavioral_observations_and_testing_conditions_pg_4";
@@ -62,42 +62,20 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
       behavioral_observations_and_testing_conditions_pg3_e:
         patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_e,
       behavioral_observations_and_testing_conditions_pg3_f:
-      patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_f,
+        patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_f,
       behavioral_observations_and_testing_conditions_pg3_g:
         patientBehavioralObservationsPg3.behavioral_observations_and_testing_conditions_pg3_g,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "behavioral_observations_and_testing_conditions_pg3_a",
-        "behavioral_observations_and_testing_conditions_pg3_b",
-        "behavioral_observations_and_testing_conditions_pg3_c",
-        "behavioral_observations_and_testing_conditions_pg3_d",
-        "behavioral_observations_and_testing_conditions_pg3_e",
-        "behavioral_observations_and_testing_conditions_pg3_f",
-        "behavioral_observations_and_testing_conditions_pg3_g",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientBehavioralObservationsPg3(props.patientDetails);
-    });
+    setPatientBehavioralObservationsPg3(props.patientDetails);
   };
 
   useEffect(() => {
@@ -186,7 +164,8 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
 
             <div className=" mb-4">
               <Label className="textWhite interview_title" for="">
-                Was {props.patientDetails.patient_first_name} groom appropriately? (Yes/No)
+                Was {props.patientDetails.patient_first_name} groom
+                appropriately? (Yes/No)
               </Label>
               <input
                 className="fieldData mb-2"
@@ -204,7 +183,8 @@ function BehaviorObservationsAndTestingConditionsPg3(props) {
 
             <div className="mb-4">
               <Label className="textWhite interview_title" for="">
-                What kind of effort did {props.patientDetails.patient_first_name} show?
+                What kind of effort did{" "}
+                {props.patientDetails.patient_first_name} show?
               </Label>
               <Container>
                 <Row xs="2">

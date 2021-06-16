@@ -8,8 +8,8 @@ import { Table } from "reactstrap";
 function RAITpg2(props) {
   const [patientRAITpg2, setPatientRAITpg2] = useState({});
 
-  const next = "/rait_pg_3";
-  const back = "/rait_pg_1";
+  const next = "/rait_pg_4";
+  const back = "/shipley_intelligence_assessment_2";
 
   const handleFieldChange = (e) => {
     setPatientRAITpg2({

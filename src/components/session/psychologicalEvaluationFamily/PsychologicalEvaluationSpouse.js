@@ -74,23 +74,7 @@ function PsychologicalEvaluationSpouse(props) {
   };
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = ["patient_married"];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setrelationshipStatus(props.patientDetails);
-    });
+    setrelationshipStatus(props.patientDetails);
   };
 
   const updatePatient = () => {};
@@ -110,10 +94,9 @@ function PsychologicalEvaluationSpouse(props) {
           <div className="siblingsFields">
             <div className="col-6">
               <div className="d-flex m-4">
-                <Label
-                  className="textWhite labelWidth"
-                  for="sibLastName"
-                >Relationship Status</Label>
+                <Label className="textWhite labelWidth" for="sibLastName">
+                  Relationship Status
+                </Label>
                 <Dropdown
                   isOpen={dropdownOpen1}
                   toggle={toggle1}

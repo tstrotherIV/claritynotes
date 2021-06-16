@@ -10,13 +10,11 @@ import DataManager from "../../../data_module/DataManager";
 
 function PartnerRelationshipPg10(props) {
   const [item, setItem] = useState("");
-  const [
-    patientPartnerRelationshipPg10,
-    setPatientPartnerRelationshipPg10,
-  ] = useState({
-    partner_relationship_pg10_a: "",
-    partner_relationship_pg10_b: "",
-  });
+  const [patientPartnerRelationshipPg10, setPatientPartnerRelationshipPg10] =
+    useState({
+      partner_relationship_pg10_a: "",
+      partner_relationship_pg10_b: "",
+    });
 
   const next = "/parenting_pg_1";
   const back = "/partner_relationship_pg_9";
@@ -43,32 +41,15 @@ function PartnerRelationshipPg10(props) {
         patientPartnerRelationshipPg10.partner_relationship_pg10_b,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "partner_relationship_pg10_a",
-        "partner_relationship_pg10_b",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientPartnerRelationshipPg10(props.patientDetails);
-    });
+    setPatientPartnerRelationshipPg10(props.patientDetails);
   };
 
   useEffect(() => {
@@ -79,7 +60,6 @@ function PartnerRelationshipPg10(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-4">PARTNER RELATIONSHIP</h2>
           <div className="questionsContainer text-center">
             <h4 className="textWhite centerItem">

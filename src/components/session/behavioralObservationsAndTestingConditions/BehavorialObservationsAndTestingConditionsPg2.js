@@ -42,32 +42,15 @@ function BehavioralObservationsAndTestingConditionsPg2(props) {
         patientBehavioralObservationsPg2.behavioral_observations_and_testing_conditions_pg2_b,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "behavioral_observations_and_testing_conditions_pg2_a",
-        "behavioral_observations_and_testing_conditions_pg2_b",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientBehavioralObservationsPg2(props.patientDetails);
-    });
+    setPatientBehavioralObservationsPg2(props.patientDetails);
   };
 
   useEffect(() => {
@@ -78,7 +61,6 @@ function BehavioralObservationsAndTestingConditionsPg2(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-4">
             {" "}
             Behavioral Observations and Testing Conditions

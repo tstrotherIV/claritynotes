@@ -57,28 +57,7 @@ function NeglectAbuseTraumaLossPg1(props) {
 
   //CRUD Function END
 
-  const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "neglect_abuse_trauma_loss_pg1_a",
-        "neglect_abuse_trauma_loss_pg1_b",
-        "neglect_abuse_trauma_loss_pg1_c",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientNeglectAbuseTraumaLossPg1(props.patientDetails);
-    });
+  const getData = () => {setPatientNeglectAbuseTraumaLossPg1(props.patientDetails);
   };
 
   useEffect(() => {

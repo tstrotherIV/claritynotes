@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
 
 // pdf page 106
 
 function ShipleyIntelligenceAssessment2(props) {
-  const next = "/rait_pg_1";
+  const next = "/rait_pg_2";
   const back = "/wechsler_adult_intelligence_scale_IV";
 
   const [

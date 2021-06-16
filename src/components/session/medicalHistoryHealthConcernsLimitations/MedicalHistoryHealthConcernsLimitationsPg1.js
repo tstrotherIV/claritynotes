@@ -52,34 +52,15 @@ function MedicalHistoryHealthConcernsLimitationsPg1(props) {
         patientMedicalHistoryHealthConcernsLimitationsPg1.mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_d,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_a",
-        "mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_b",
-        "mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_c",
-        "mental_heamedicalhistory_healthconcerns_limitations_pg1_alth_history_pg4_d",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientMedicalHistoryHealthConcernsLimitationsPg1(props.patientDetails);
-    });
+    setPatientMedicalHistoryHealthConcernsLimitationsPg1(props.patientDetails);
   };
 
   useEffect(() => {
@@ -90,7 +71,6 @@ function MedicalHistoryHealthConcernsLimitationsPg1(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-4">
             MEDICAL HISTORY <span>&#183;</span> HEALTH CONCERNS{" "}
             <span>&#183;</span> LIMITATIONS

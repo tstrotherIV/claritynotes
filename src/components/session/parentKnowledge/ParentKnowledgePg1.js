@@ -50,39 +50,15 @@ function ParentKnowledgePg1(props) {
       parent_knowledge_pg1_i: patientParentKnowledgePg1.parent_knowledge_pg1_i,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = [
-        "parent_knowledge_pg1_a",
-        "parent_knowledge_pg1_b",
-        "parent_knowledge_pg1_c",
-        "parent_knowledge_pg1_d",
-        "parent_knowledge_pg1_e",
-        "parent_knowledge_pg1_f",
-        "parent_knowledge_pg1_g",
-        "parent_knowledge_pg1_h",
-        "parent_knowledge_pg1_i",
-      ];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientParentKnowledgePg1(props.patientDetails);
-    });
+    setPatientParentKnowledgePg1(props.patientDetails);
   };
 
   useEffect(() => {
@@ -93,7 +69,6 @@ function ParentKnowledgePg1(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <h2 className="textWhite text-center mb-4">PARENT KNOWLEDGE</h2>
           <div className="text-center questionsContainer">
             <h4 className="textWhite centerItem">

@@ -273,7 +273,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
                       <th className="m-0 customPadding domainScoreWidth">
                         Domain Scores
                       </th>
-                      <th className="m-0 customPadding tdWidth">IQ</th>
+                      <th className="m-0 customPadding tdWidth">Score</th>
                       <th className="m-0 customPadding tdWidth">
                         Better Than Percentile
                       </th>

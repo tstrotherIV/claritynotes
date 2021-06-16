@@ -48,29 +48,15 @@ function ThematicApperceptionsTest(props) {
         patientThematicApperceptionsTest.thematic_apperceptions_test_pg1_a,
     };
 
-    DataManager.update("patients", editedPatient).then(() => {props.getData()});
+    DataManager.update("patients", editedPatient).then(() => {
+      props.getData();
+    });
   };
 
   //CRUD Function END
 
   const getData = () => {
-    const check_for_patient = sessionStorage.getItem("patient_id");
-
-    DataManager.getPatient(check_for_patient).then((patientInfo) => {
-      const raw = {
-        ...patientInfo,
-      };
-
-      const allowed = ["thematic_apperceptions_test_pg1_a"];
-      const filtered = Object.keys(raw)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = raw[key];
-          return obj;
-        }, {});
-
-      setPatientThematicApperceptionsTest(props.patientDetails);
-    });
+    setPatientThematicApperceptionsTest(props.patientDetails);
   };
 
   useEffect(() => {
@@ -81,7 +67,6 @@ function ThematicApperceptionsTest(props) {
     <>
       <div id="page-container">
         <div id="content-wrap">
-           
           <div className="ml-5 mr-5 mt-3">
             <div className="d-flex flex-wrap text-white align-items-baseline">
               <h3 className="mb-1 col-2">Test Results</h3>
