@@ -3,6 +3,7 @@ import { Table } from "reactstrap";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
+import "./tests.css"
 
 // pdf page 117
 
@@ -518,19 +519,19 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                   Last]'s general psychological functioning.
                 </p>
               </div>
-              <div className="ml-3">
+              <div className="ml-3 mb-5">
                 <Table striped className="pb-4">
                   <thead className="tableHeader text-center">
                     <tr>
                       <th></th>
                       <th></th>
                       <th className="millonWideWidth"></th>
-                      <th className="m-0 customPadding millonWidth">Raw</th>
-                      <th className="m-0 customPadding millonWidth">PR</th>
+                      {/* <th className="m-0 customPadding millonWidth">Raw</th>
+                      <th className="m-0 customPadding millonWidth">PR</th> */}
                       <th className="m-0 customPadding millonWidth">BR</th>
                     </tr>
                   </thead>
-                  <tbody className="">
+                  <tbody>
                     <tr>
                       <th>
                         <input
@@ -548,7 +549,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                       <td className="m-0 p-0">
                         <strong>Schizoid</strong>
                       </td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -573,7 +574,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_a
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -604,7 +605,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         1.1
                       </th>
                       <td className="m-0 p-0">Interpersonally Unengaged</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -629,7 +630,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_b
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -660,7 +661,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         1.2
                       </th>
                       <td className="m-0 p-0">Meager Content</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -685,7 +686,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_c
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -716,7 +717,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         1.3
                       </th>
                       <td className="m-0 p-0">Temperamentally Apathetic</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -741,7 +742,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_d
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -774,7 +775,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                       <td className="m-0 p-0">
                         <strong>Avoidant</strong>
                       </td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -799,7 +800,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_e
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -830,7 +831,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         2A.1
                       </th>
                       <td className="m-0 p-0">Interpersonally Aversive</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -855,7 +856,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_f
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -886,7 +887,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         2A.2
                       </th>
                       <td className="m-0 p-0">Alienated Self Image</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -911,7 +912,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_g
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -942,7 +943,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         2A.3
                       </th>
                       <td className="m-0 p-0">Vexatious Content</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -967,7 +968,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_h
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -1000,7 +1001,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                       <td className="m-0 p-0">
                         <strong>Melancholic</strong>
                       </td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -1025,7 +1026,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_i
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -1056,7 +1057,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         2B.1
                       </th>
                       <td className="m-0 p-0">Cognitively Fatalistic</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -1081,7 +1082,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_j
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -1112,7 +1113,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         2B.2
                       </th>
                       <td className="m-0 p-0">Worthless Self Image</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -1137,7 +1138,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_k
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -1168,7 +1169,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         2B.3
                       </th>
                       <td className="m-0 p-0">Temperamentally Woeful</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -1193,7 +1194,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_l
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -1226,7 +1227,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                       <td className="m-0 p-0">
                         <strong>Dependent</strong>
                       </td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -1251,7 +1252,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_m
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -1282,7 +1283,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         3.1
                       </th>
                       <td className="m-0 p-0">Expressively Puerile</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -1307,7 +1308,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_n
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -1338,7 +1339,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         3.2
                       </th>
                       <td className="m-0 p-0">Interpersonally Submissive</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -1363,7 +1364,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_o
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -1394,7 +1395,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         3.3
                       </th>
                       <td className="m-0 p-0">Inept Self Image</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -1419,7 +1420,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_p
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -1444,8 +1445,8 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                       <th></th>
                       <th></th>
                       <th className="millonWideWidth"></th>
-                      <th className="m-0 customPadding millonWidth">Raw</th>
-                      <th className="m-0 customPadding millonWidth">PR</th>
+                      {/* <th className="m-0 customPadding millonWidth">Raw</th>
+                      <th className="m-0 customPadding millonWidth">PR</th> */}
                       <th className="m-0 customPadding millonWidth">BR</th>
                     </tr>
                   </thead>
@@ -1468,7 +1469,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                       <td className="m-0 p-0">
                         <strong>Histrionic</strong>
                       </td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -1493,7 +1494,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_q
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -1524,7 +1525,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         4A.1
                       </th>
                       <td className="m-0 p-0">Expressively Dramatic</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -1549,7 +1550,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_r
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -1580,7 +1581,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         4A.2
                       </th>
                       <td className="m-0 p-0">Interpersonally Attn Seeking</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -1605,7 +1606,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_s
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -1636,7 +1637,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         4A.3
                       </th>
                       <td className="m-0 p-0">Temperamentally Fickle</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -1661,7 +1662,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_t
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -1694,7 +1695,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                       <td className="m-0 p-0">
                         <strong>Turbulent</strong>
                       </td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -1719,7 +1720,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_u
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -1750,7 +1751,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         4B.1
                       </th>
                       <td className="m-0 p-0">Expressively Impetuous</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -1775,7 +1776,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_v
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -1806,7 +1807,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         4B.2
                       </th>
                       <td className="m-0 p-0">Interpersonally High Spirited</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -1831,7 +1832,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_w
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -1862,7 +1863,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         4B.3
                       </th>
                       <td className="m-0 p-0">Temperamentally Fickle</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -1887,7 +1888,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_x
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -1920,7 +1921,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                       <td className="m-0 p-0">
                         <strong>Narcissistic</strong>
                       </td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -1945,7 +1946,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_y
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -1976,7 +1977,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         5.1
                       </th>
                       <td className="m-0 p-0">Interpersonally Exploitive</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -2001,7 +2002,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_z
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -2032,7 +2033,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         5.2
                       </th>
                       <td className="m-0 p-0">Cognitively Expansive</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -2057,7 +2058,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_aa
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -2088,7 +2089,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         5.3
                       </th>
                       <td className="m-0 p-0">Admirable Self Image</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -2113,7 +2114,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_bb
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -2146,7 +2147,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                       <td className="m-0 p-0">
                         <strong>Antisocial</strong>
                       </td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -2171,7 +2172,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_cc
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -2202,7 +2203,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         3.1
                       </th>
                       <td className="m-0 p-0">Interpersonally Irresponsible</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -2227,7 +2228,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_dd
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -2258,7 +2259,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         3.2
                       </th>
                       <td className="m-0 p-0">Autonomous Self Image</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -2283,7 +2284,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_ee
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
@@ -2314,7 +2315,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                         3.3
                       </th>
                       <td className="m-0 p-0">Acting Out Dynamics</td>
-                      <td className="m-0 p-0">
+                      {/* <td className="m-0 p-0">
                         <input
                           className="form-control"
                           min={0}
@@ -2339,7 +2340,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
                             patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_PR_ff
                           }
                         />
-                      </td>
+                      </td> */}
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
