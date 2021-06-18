@@ -25,7 +25,29 @@ function WasiII(props) {
     });
   };
 
-  //CRUD Function Start
+  const UpdateRange = (value) => {
+    if (value >= 36 && value <= 55) {
+      return "Intellectual Disability, Moderate (36-55)";
+    } else if (value >= 56 && value <= 70) {
+      return "Intellectual Disability, Mild (56-70) Profound Concern";
+    } else if (value >= 71 && value <= 85) {
+      return "Borderline (71-85) Moderate to Elevated Concern";
+    } else if (value >= 86 && value <= 90) {
+      return "Low Average (86-90) Mild Concern";
+    } else if (value >= 91 && value <= 109) {
+      return "Average (91-109)";
+    } else if (value >= 110 && value <= 114) {
+      return "High Average (110-114)";
+    } else if (value >= 115 && value <= 129) {
+      return "High Above Average (115-129)";
+    } else if (value >= 130 && value <= 139) {
+      return "Gifted (130-139)";
+    } else if (value >= 140 && value <= 160) {
+      return "Highly Gifted (140-160)";
+    } else {
+      return "Value Not in Range. Adjust the IQ Value";
+    }
+  };
 
   const updatePatient = () => {
     const editedPatient = {
@@ -81,7 +103,7 @@ function WasiII(props) {
                       <th className="tdHeaderWidth">Composite</th>
                       <th className="thWidth"></th>
                       <th className="tdWidth">IQ</th>
-                      <th className="tdWidth">Range</th>
+                      <th className="">Range</th>
                     </tr>
                   </thead>
                   <tbody className="text-center">
@@ -94,8 +116,8 @@ function WasiII(props) {
                         <input
                           className="form-control"
                           type="number"
-                          min={0}
-                          max={10}
+                          min={36}
+                          max={160}
                           id="wasiii_pg1_col1_a"
                           name="wasiii_pg1_col1_a"
                           onChange={handleFieldChange}
@@ -103,16 +125,9 @@ function WasiII(props) {
                         />
                       </td>
                       <td className="m-0 p-0">
-                        <input
-                          className="form-control"
-                          type="number"
-                          min={0}
-                          max={100}
-                          id="wasiii_pg1_col2_a"
-                          name="wasiii_pg1_col2_a"
-                          onChange={handleFieldChange}
-                          value={wasiii.wasiii_pg1_col2_a}
-                        />
+                        <p className="m-4">
+                          {UpdateRange(wasiii.wasiii_pg1_col1_a)}
+                        </p>
                       </td>
                     </tr>
                     <tr>
@@ -124,8 +139,8 @@ function WasiII(props) {
                         <input
                           className="form-control"
                           type="number"
-                          min={0}
-                          max={10}
+                          min={36}
+                          max={160}
                           id="wasiii_pg1_col1_b"
                           name="wasiii_pg1_col1_b"
                           onChange={handleFieldChange}
@@ -133,16 +148,9 @@ function WasiII(props) {
                         />
                       </td>
                       <td className="m-0 p-0">
-                        <input
-                          className="form-control"
-                          type="number"
-                          min={0}
-                          max={100}
-                          id="wasiii_pg1_col2_b"
-                          name="wasiii_pg1_col2_b"
-                          onChange={handleFieldChange}
-                          value={wasiii.wasiii_pg1_col2_b}
-                        />
+                        <p className="m-4">
+                          {UpdateRange(wasiii.wasiii_pg1_col1_b)}
+                        </p>
                       </td>
                     </tr>
                     <tr>
@@ -154,8 +162,8 @@ function WasiII(props) {
                         <input
                           className="form-control"
                           type="number"
-                          min={0}
-                          max={10}
+                          min={36}
+                          max={160}
                           id="wasiii_pg1_col1_c"
                           name="wasiii_pg1_col1_c"
                           onChange={handleFieldChange}
@@ -163,16 +171,9 @@ function WasiII(props) {
                         />
                       </td>
                       <td className="m-0 p-0">
-                        <input
-                          className="form-control"
-                          type="number"
-                          min={0}
-                          max={100}
-                          id="wasiii_pg1_col2_c"
-                          name="wasiii_pg1_col2_c"
-                          onChange={handleFieldChange}
-                          value={wasiii.wasiii_pg1_col2_c}
-                        />
+                        <p className="m-4">
+                          {UpdateRange(wasiii.wasiii_pg1_col1_c)}
+                        </p>
                       </td>
                     </tr>
                     <tr>
@@ -184,8 +185,8 @@ function WasiII(props) {
                         <input
                           className="form-control"
                           type="number"
-                          min={0}
-                          max={10}
+                          min={36}
+                          max={160}
                           id="wasiii_pg1_col1_d"
                           name="wasiii_pg1_col1_d"
                           onChange={handleFieldChange}
@@ -193,16 +194,9 @@ function WasiII(props) {
                         />
                       </td>
                       <td className="m-0 p-0">
-                        <input
-                          className="form-control"
-                          type="number"
-                          min={0}
-                          max={100}
-                          id="wasiii_pg1_col2_d"
-                          name="wasiii_pg1_col2_d"
-                          onChange={handleFieldChange}
-                          value={wasiii.wasiii_pg1_col2_d}
-                        />
+                        <p className="m-4">
+                          {UpdateRange(wasiii.wasiii_pg1_col1_d)}
+                        </p>
                       </td>
                     </tr>
                   </tbody>
