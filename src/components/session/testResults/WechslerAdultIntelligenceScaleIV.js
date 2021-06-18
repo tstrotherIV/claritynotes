@@ -29,7 +29,9 @@ function WechslerAdultIntelligenceScaleIV(props) {
     });
   };
 
-  //CRUD Function Start
+
+  
+
 
   const updatePatient = () => {
     const editedPatient = {

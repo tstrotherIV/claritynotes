@@ -3,7 +3,6 @@ import { Table } from "reactstrap";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
-import "./tests.css"
 
 // pdf page 117
 
