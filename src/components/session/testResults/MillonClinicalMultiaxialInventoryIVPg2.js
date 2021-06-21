@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Table } from "reactstrap";
+import { Table, FormGroup, Label, Input } from "reactstrap";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
@@ -2046,6 +2046,82 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                   </tbody>
                 </Table>
               </div>
+            </div>
+            <div className="d-flex row justify-content-around">
+              <FormGroup>
+                <Label for="exampleSelect" className="text-white">
+                  Select
+                </Label>
+                <Input
+                  type="select"
+                  name="select"
+                  id="exampleSelect"
+                  className=""
+                >
+                  <option>Select Option</option>
+                  <option>(1) Schizoid</option>
+                  <option>(2A) Avoidant</option>
+                  <option>(2B) Melancholic</option>
+                  <option>(3) Dependent</option>
+                  <option>(4A) Histrionic</option>
+                  <option>(4B) Turbulent</option>
+                  <option>(5) Narcissistic</option>
+                  <option>(6A) Antisocial</option>
+                  <option>(6B) Sadistic</option>
+                  <option>(7) Complusive</option>
+                  <option>(8A) Negativistic</option>
+                  <option>(8B) Masochistic</option>
+                  <option>(S) Schizotypal</option>
+                  <option>(C) Bordeline</option>
+                  <option>(P) Paranoid</option>
+                </Input>
+              </FormGroup>
+              <FormGroup>
+                <Label for="exampleSelect" className="text-white">
+                  Select
+                </Label>
+                <Input type="select" name="select" id="exampleSelect">
+                  <option>Select Option</option>
+                  <option>(1) Schizoid</option>
+                  <option>(2A) Avoidant</option>
+                  <option>(2B) Melancholic</option>
+                  <option>(3) Dependent</option>
+                  <option>(4A) Histrionic</option>
+                  <option>(4B) Turbulent</option>
+                  <option>(5) Narcissistic</option>
+                  <option>(6A) Antisocial</option>
+                  <option>(6B) Sadistic</option>
+                  <option>(7) Complusive</option>
+                  <option>(8A) Negativistic</option>
+                  <option>(8B) Masochistic</option>
+                  <option>(S) Schizotypal</option>
+                  <option>(C) Bordeline</option>
+                  <option>(P) Paranoid</option>
+                </Input>
+              </FormGroup>
+              <FormGroup>
+                <Label for="exampleSelect" className="text-white">
+                  Select
+                </Label>
+                <Input type="select" name="select" id="exampleSelect">
+                  <option>Select Option</option>
+                  <option>(1) Schizoid</option>
+                  <option>(2A) Avoidant</option>
+                  <option>(2B) Melancholic</option>
+                  <option>(3) Dependent</option>
+                  <option>(4A) Histrionic</option>
+                  <option>(4B) Turbulent</option>
+                  <option>(5) Narcissistic</option>
+                  <option>(6A) Antisocial</option>
+                  <option>(6B) Sadistic</option>
+                  <option>(7) Complusive</option>
+                  <option>(8A) Negativistic</option>
+                  <option>(8B) Masochistic</option>
+                  <option>(S) Schizotypal</option>
+                  <option>(C) Bordeline</option>
+                  <option>(P) Paranoid</option>
+                </Input>
+              </FormGroup>
             </div>
           </div>
         </div>
