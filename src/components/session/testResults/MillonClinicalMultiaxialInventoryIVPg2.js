@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Table, FormGroup, Label, Input } from "reactstrap";
+import {
+  Table,
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from "reactstrap";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
@@ -28,6 +34,32 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
           : target.value,
     });
   };
+
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [dropdownOpen2, setDropdownOpen2] = useState(false);
+  const [dropdownOpen3, setDropdownOpen3] = useState(false);
+
+  const toggle = () => setDropdownOpen((prevState) => !prevState);
+  const toggle2 = () => setDropdownOpen2((prevState) => !prevState);
+  const toggle3 = () => setDropdownOpen3((prevState) => !prevState);
+
+  const dropdownChoices = [
+    "(1) Schizoid",
+    "(2A) Avoidant",
+    "(2B) Melancholic",
+    "(2) Dependent",
+    "(4a) Histrionic",
+    "(4B) Turbulent",
+    "(5) Narcissistic",
+    "(6A) Antisocial",
+    "(6B) Sadistic",
+    "(7) Complusive",
+    "(8A) Negativistic",
+    "(8B) Masochistic",
+    "(S) Schizotypal",
+    "(C) Bordeline",
+    "(P) Paranoid",
+  ];
 
   //CRUD Function Start
 
@@ -425,6 +457,12 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
         patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_bb ||
           "0"
       ),
+      millon_clinical_multiaxial_inventory_iv_pg2_dropdown_a:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_a,
+      millon_clinical_multiaxial_inventory_iv_pg2_dropdown_b:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_b,
+      millon_clinical_multiaxial_inventory_iv_pg2_dropdown_c:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_c,
     };
 
     DataManager.update("patients", editedPatient).then(() => props.getData());
@@ -442,7 +480,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
 
   return (
     <>
-      <div id="page-container">
+      <div id="page-container" className="p-5">
         <div id="content-wrap">
           <div className="ml-5 mr-5 mt-3">
             <div className="d-flex flex-wrap text-white align-items-baseline">
@@ -2048,80 +2086,93 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
               </div>
             </div>
             <div className="d-flex row justify-content-around">
-              <FormGroup>
-                <Label for="exampleSelect" className="text-white">
-                  Select
-                </Label>
-                <Input
-                  type="select"
-                  name="select"
-                  id="exampleSelect"
-                  className=""
+              <Dropdown
+                className="d-flex textWhite flex-wrap col-3"
+                isOpen={dropdownOpen}
+                toggle={toggle}
+              >
+                <DropdownToggle
+                  color="light"
+                  className="text-center"
+                  caret
+                  value={
+                    patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_a
+                  }
                 >
-                  <option>Select Option</option>
-                  <option>(1) Schizoid</option>
-                  <option>(2A) Avoidant</option>
-                  <option>(2B) Melancholic</option>
-                  <option>(3) Dependent</option>
-                  <option>(4A) Histrionic</option>
-                  <option>(4B) Turbulent</option>
-                  <option>(5) Narcissistic</option>
-                  <option>(6A) Antisocial</option>
-                  <option>(6B) Sadistic</option>
-                  <option>(7) Complusive</option>
-                  <option>(8A) Negativistic</option>
-                  <option>(8B) Masochistic</option>
-                  <option>(S) Schizotypal</option>
-                  <option>(C) Bordeline</option>
-                  <option>(P) Paranoid</option>
-                </Input>
-              </FormGroup>
-              <FormGroup>
-                <Label for="exampleSelect" className="text-white">
-                  Select
-                </Label>
-                <Input type="select" name="select" id="exampleSelect">
-                  <option>Select Option</option>
-                  <option>(1) Schizoid</option>
-                  <option>(2A) Avoidant</option>
-                  <option>(2B) Melancholic</option>
-                  <option>(3) Dependent</option>
-                  <option>(4A) Histrionic</option>
-                  <option>(4B) Turbulent</option>
-                  <option>(5) Narcissistic</option>
-                  <option>(6A) Antisocial</option>
-                  <option>(6B) Sadistic</option>
-                  <option>(7) Complusive</option>
-                  <option>(8A) Negativistic</option>
-                  <option>(8B) Masochistic</option>
-                  <option>(S) Schizotypal</option>
-                  <option>(C) Bordeline</option>
-                  <option>(P) Paranoid</option>
-                </Input>
-              </FormGroup>
-              <FormGroup>
-                <Label for="exampleSelect" className="text-white">
-                  Select
-                </Label>
-                <Input type="select" name="select" id="exampleSelect">
-                  <option>Select Option</option>
-                  <option>(1) Schizoid</option>
-                  <option>(2A) Avoidant</option>
-                  <option>(2B) Melancholic</option>
-                  <option>(3) Dependent</option>
-                  <option>(4A) Histrionic</option>
-                  <option>(4B) Turbulent</option>
-                  <option>(5) Narcissistic</option>
-                  <option>(6A) Antisocial</option>
-                  <option>(6B) Sadistic</option>
-                  <option>(7) Complusive</option>
-                  <option>(8A) Negativistic</option>
-                  <option>(8B) Masochistic</option>
-                  <option>(S) Schizotypal</option>
-                  <option>(C) Bordeline</option>
-                  <option>(P) Paranoid</option>
-                </Input>
-              </FormGroup>
+                  {patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_a
+                    ? patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_a
+                    : "Make a Selection"}
+                </DropdownToggle>
+                <DropdownMenu className="">
+                  {dropdownChoices.sort().map((option) => (
+                    <DropdownItem
+                      onClick={handleFieldChange}
+                      name="millon_clinical_multiaxial_inventory_iv_pg2_dropdown_a"
+                      value={option}
+                    >
+                      {option}
+                    </DropdownItem>
+                  ))}
+                </DropdownMenu>
+              </Dropdown>
+              <Dropdown
+                className="d-flex textWhite flex-wrap col-3"
+                isOpen={dropdownOpen2}
+                toggle={toggle2}
+              >
+                <DropdownToggle
+                  color="light"
+                  className="text-center"
+                  caret
+                  value={
+                    patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_b
+                  }
+                >
+                  {patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_b
+                    ? patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_b
+                    : "Make a Selection"}
+                </DropdownToggle>
+                <DropdownMenu className="">
+                  {dropdownChoices.sort().map((option) => (
+                    <DropdownItem
+                      onClick={handleFieldChange}
+                      name="millon_clinical_multiaxial_inventory_iv_pg2_dropdown_b"
+                      value={option}
+                    >
+                      {option}
+                    </DropdownItem>
+                  ))}
+                </DropdownMenu>
+              </Dropdown>
+              <Dropdown
+                className="d-flex textWhite flex-wrap col-3"
+                isOpen={dropdownOpen3}
+                toggle={toggle3}
+              >
+                <DropdownToggle
+                  color="light"
+                  className="text-center"
+                  caret
+                  value={
+                    patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_c
+                  }
+                >
+                  {patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_c
+                    ? patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_c
+                    : "Make a Selection"}
+                </DropdownToggle>
+                <DropdownMenu className="">
+                  {dropdownChoices.sort().map((option) => (
+                    <DropdownItem
+                      onClick={handleFieldChange}
+                      name="millon_clinical_multiaxial_inventory_iv_pg2_dropdown_c"
+                      value={option}
+                    >
+                      {option}
+                    </DropdownItem>
+                  ))}
+                </DropdownMenu>
+              </Dropdown>
             </div>
           </div>
         </div>
