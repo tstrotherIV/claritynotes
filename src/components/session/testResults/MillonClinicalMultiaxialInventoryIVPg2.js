@@ -457,12 +457,12 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
         patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_BR_bb ||
           "0"
       ),
-      millon_clinical_multiaxial_inventory_iv_pg2_dropdown_a:
-        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_a,
-      millon_clinical_multiaxial_inventory_iv_pg2_dropdown_b:
-        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_b,
-      millon_clinical_multiaxial_inventory_iv_pg2_dropdown_c:
-        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_c,
+      millon_clinical_multiaxial_inventory_iv_pg1_dropdown_a:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg1_dropdown_a,
+      millon_clinical_multiaxial_inventory_iv_pg1_dropdown_b:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg1_dropdown_b,
+      millon_clinical_multiaxial_inventory_iv_pg1_dropdown_c:
+        patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg1_dropdown_c,
     };
 
     DataManager.update("patients", editedPatient).then(() => props.getData());
@@ -532,7 +532,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_a"
                           onChange={handleFieldChange}
@@ -545,7 +545,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_a"
                           onChange={handleFieldChange}
@@ -558,7 +558,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_a"
                           onChange={handleFieldChange}
@@ -587,7 +587,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_b"
                           onChange={handleFieldChange}
@@ -600,7 +600,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_b"
                           onChange={handleFieldChange}
@@ -613,7 +613,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_b"
                           onChange={handleFieldChange}
@@ -642,7 +642,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_c"
                           onChange={handleFieldChange}
@@ -655,7 +655,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_c"
                           onChange={handleFieldChange}
@@ -668,7 +668,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_c"
                           onChange={handleFieldChange}
@@ -697,7 +697,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_d"
                           onChange={handleFieldChange}
@@ -710,7 +710,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_d"
                           onChange={handleFieldChange}
@@ -723,7 +723,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_d"
                           onChange={handleFieldChange}
@@ -754,7 +754,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_e"
                           onChange={handleFieldChange}
@@ -767,7 +767,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_e"
                           onChange={handleFieldChange}
@@ -780,7 +780,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_e"
                           onChange={handleFieldChange}
@@ -809,7 +809,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_f"
                           onChange={handleFieldChange}
@@ -822,7 +822,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_f"
                           onChange={handleFieldChange}
@@ -835,7 +835,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_f"
                           onChange={handleFieldChange}
@@ -864,7 +864,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_g"
                           onChange={handleFieldChange}
@@ -877,7 +877,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_g"
                           onChange={handleFieldChange}
@@ -890,7 +890,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_g"
                           onChange={handleFieldChange}
@@ -919,7 +919,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_h"
                           onChange={handleFieldChange}
@@ -932,7 +932,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_h"
                           onChange={handleFieldChange}
@@ -945,7 +945,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_h"
                           onChange={handleFieldChange}
@@ -976,7 +976,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_i"
                           onChange={handleFieldChange}
@@ -989,7 +989,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_i"
                           onChange={handleFieldChange}
@@ -1002,7 +1002,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_i"
                           onChange={handleFieldChange}
@@ -1031,7 +1031,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_j"
                           onChange={handleFieldChange}
@@ -1044,7 +1044,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_j"
                           onChange={handleFieldChange}
@@ -1057,7 +1057,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_j"
                           onChange={handleFieldChange}
@@ -1086,7 +1086,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_k"
                           onChange={handleFieldChange}
@@ -1099,7 +1099,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_k"
                           onChange={handleFieldChange}
@@ -1112,7 +1112,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_k"
                           onChange={handleFieldChange}
@@ -1141,7 +1141,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_l"
                           onChange={handleFieldChange}
@@ -1154,7 +1154,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_l"
                           onChange={handleFieldChange}
@@ -1167,7 +1167,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_l"
                           onChange={handleFieldChange}
@@ -1198,7 +1198,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_m"
                           onChange={handleFieldChange}
@@ -1211,7 +1211,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_m"
                           onChange={handleFieldChange}
@@ -1224,7 +1224,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_m"
                           onChange={handleFieldChange}
@@ -1253,7 +1253,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_n"
                           onChange={handleFieldChange}
@@ -1266,7 +1266,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_n"
                           onChange={handleFieldChange}
@@ -1279,7 +1279,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_n"
                           onChange={handleFieldChange}
@@ -1308,7 +1308,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_o"
                           onChange={handleFieldChange}
@@ -1321,7 +1321,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_o"
                           onChange={handleFieldChange}
@@ -1334,7 +1334,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_o"
                           onChange={handleFieldChange}
@@ -1363,7 +1363,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_p"
                           onChange={handleFieldChange}
@@ -1376,7 +1376,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_p"
                           onChange={handleFieldChange}
@@ -1389,7 +1389,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_p"
                           onChange={handleFieldChange}
@@ -1436,7 +1436,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_q"
                           onChange={handleFieldChange}
@@ -1449,7 +1449,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_q"
                           onChange={handleFieldChange}
@@ -1462,7 +1462,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_q"
                           onChange={handleFieldChange}
@@ -1491,7 +1491,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_r"
                           onChange={handleFieldChange}
@@ -1504,7 +1504,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_r"
                           onChange={handleFieldChange}
@@ -1517,7 +1517,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_r"
                           onChange={handleFieldChange}
@@ -1546,7 +1546,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_s"
                           onChange={handleFieldChange}
@@ -1559,7 +1559,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_s"
                           onChange={handleFieldChange}
@@ -1572,7 +1572,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_s"
                           onChange={handleFieldChange}
@@ -1601,7 +1601,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_t"
                           onChange={handleFieldChange}
@@ -1614,7 +1614,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_t"
                           onChange={handleFieldChange}
@@ -1627,7 +1627,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_t"
                           onChange={handleFieldChange}
@@ -1658,7 +1658,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_u"
                           onChange={handleFieldChange}
@@ -1671,7 +1671,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_u"
                           onChange={handleFieldChange}
@@ -1684,7 +1684,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_u"
                           onChange={handleFieldChange}
@@ -1713,7 +1713,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_v"
                           onChange={handleFieldChange}
@@ -1726,7 +1726,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_v"
                           onChange={handleFieldChange}
@@ -1739,7 +1739,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_v"
                           onChange={handleFieldChange}
@@ -1768,7 +1768,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_w"
                           onChange={handleFieldChange}
@@ -1781,7 +1781,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_w"
                           onChange={handleFieldChange}
@@ -1794,7 +1794,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_w"
                           onChange={handleFieldChange}
@@ -1823,7 +1823,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_x"
                           onChange={handleFieldChange}
@@ -1836,7 +1836,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_x"
                           onChange={handleFieldChange}
@@ -1849,7 +1849,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_x"
                           onChange={handleFieldChange}
@@ -1880,7 +1880,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_y"
                           onChange={handleFieldChange}
@@ -1893,7 +1893,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_y"
                           onChange={handleFieldChange}
@@ -1906,7 +1906,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_y"
                           onChange={handleFieldChange}
@@ -1935,7 +1935,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_z"
                           onChange={handleFieldChange}
@@ -1948,7 +1948,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_z"
                           onChange={handleFieldChange}
@@ -1961,7 +1961,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_z"
                           onChange={handleFieldChange}
@@ -1990,7 +1990,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_aa"
                           onChange={handleFieldChange}
@@ -2003,7 +2003,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_aa"
                           onChange={handleFieldChange}
@@ -2016,7 +2016,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_aa"
                           onChange={handleFieldChange}
@@ -2045,7 +2045,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_Raw_bb"
                           onChange={handleFieldChange}
@@ -2058,7 +2058,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_PR_bb"
                           onChange={handleFieldChange}
@@ -2071,7 +2071,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                         <input
                           className="form-control"
                           min={0}
-                          max={10}
+                          max={120}
                           type="number"
                           name="millon_clinical_multiaxial_inventory_iv_pg2_BR_bb"
                           onChange={handleFieldChange}
@@ -2096,18 +2096,18 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                   className="text-center"
                   caret
                   value={
-                    patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_a
+                    patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg1_dropdown_a
                   }
                 >
-                  {patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_a
-                    ? patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_a
+                  {patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg1_dropdown_a
+                    ? patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg1_dropdown_a
                     : "Make a Selection"}
                 </DropdownToggle>
                 <DropdownMenu className="">
                   {dropdownChoices.sort().map((option) => (
                     <DropdownItem
                       onClick={handleFieldChange}
-                      name="millon_clinical_multiaxial_inventory_iv_pg2_dropdown_a"
+                      name="millon_clinical_multiaxial_inventory_iv_pg1_dropdown_a"
                       value={option}
                     >
                       {option}
@@ -2125,18 +2125,18 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                   className="text-center"
                   caret
                   value={
-                    patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_b
+                    patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg1_dropdown_b
                   }
                 >
-                  {patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_b
-                    ? patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_b
+                  {patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg1_dropdown_b
+                    ? patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg1_dropdown_b
                     : "Make a Selection"}
                 </DropdownToggle>
                 <DropdownMenu className="">
                   {dropdownChoices.sort().map((option) => (
                     <DropdownItem
                       onClick={handleFieldChange}
-                      name="millon_clinical_multiaxial_inventory_iv_pg2_dropdown_b"
+                      name="millon_clinical_multiaxial_inventory_iv_pg1_dropdown_b"
                       value={option}
                     >
                       {option}
@@ -2154,18 +2154,18 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                   className="text-center"
                   caret
                   value={
-                    patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_c
+                    patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg1_dropdown_c
                   }
                 >
-                  {patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_c
-                    ? patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg2_dropdown_c
+                  {patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg1_dropdown_c
+                    ? patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg1_dropdown_c
                     : "Make a Selection"}
                 </DropdownToggle>
                 <DropdownMenu className="">
                   {dropdownChoices.sort().map((option) => (
                     <DropdownItem
                       onClick={handleFieldChange}
-                      name="millon_clinical_multiaxial_inventory_iv_pg2_dropdown_c"
+                      name="millon_clinical_multiaxial_inventory_iv_pg1_dropdown_c"
                       value={option}
                     >
                       {option}
