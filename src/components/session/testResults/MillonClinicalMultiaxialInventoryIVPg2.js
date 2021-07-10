@@ -9,6 +9,8 @@ import {
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 // pdf page 117
 
@@ -17,6 +19,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
     patientMillonClinicalMultiaxialInventoryIVPg2,
     setPatientMillonClinicalMultiaxialInventoryIVPg2,
   ] = useState({});
+  const [notesbox, setnotesbox] = useState("");
 
   const next = "/rorschach_performance_assessment_system";
   const back = "/millon_clinical_multiaxial_inventory_iv_pg_1";
@@ -33,6 +36,11 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
           ? target.checked
           : target.value,
     });
+  };
+
+  // Handles the onChange for the React-Quill notes box
+  const handleNoteBoxChange = (e) => {
+    setnotesbox(e);
   };
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -60,8 +68,6 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
     "(C) Bordeline",
     "(P) Paranoid",
   ];
-
-  //CRUD Function Start
 
   const updatePatient = () => {
     const editedPatient = {
@@ -463,6 +469,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
         patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg1_dropdown_b,
       millon_clinical_multiaxial_inventory_iv_pg1_dropdown_c:
         patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg1_dropdown_c,
+      millon_clinical_multiaxial_inventory_iv_pg2_notesbox: notesbox,
     };
 
     DataManager.update("patients", editedPatient).then(() => props.getData());
@@ -472,6 +479,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
 
   const getData = () => {
     setPatientMillonClinicalMultiaxialInventoryIVPg2(props.patientDetails);
+    setnotesbox(props.patientDetails.millon_clinical_multiaxial_inventory_iv_pg2_notesbox)
   };
 
   useEffect(() => {
@@ -489,9 +497,9 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                 Millon Clinical Multiaxial Inventory-IV (MCMI-IV){" "}
               </h4>
             </div>
-            <div className="text-white d-flex flex-wrap justify-content-center">
+            <div className="d-flex flex-wrap justify-content-center">
               <div className="col-3">
-                <p>
+                <p className="text-white ">
                   The Millon Clinical Multiaxial Inventory-IV (MCMI-IV) was
                   administered to assess{" "}
                   {props.patientDetails.patient_first_name} [Patient Name,
@@ -2123,6 +2131,14 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
                     </tr>
                   </tbody>
                 </Table>
+                <div>
+                  <ReactQuill
+                    className="my-3 bg-white"
+                    theme="snow"
+                    value={notesbox}
+                    onChange={handleNoteBoxChange}
+                  />
+                </div>
               </div>
             </div>
             <div className="d-flex row justify-content-around">
