@@ -7,7 +7,7 @@ import DataManager from "../../../data_module/DataManager";
 
 function WideRangeAchievementTest5(props) {
   const next = "/aimsweb_plus_achievement_test_pg_1";
-  const back = "/rait_pg_4";
+  const back = "/rait_pg_2";
 
   const [wideRangeAchievementTest5, setWideRangeAchievementTest5] = useState(
     {}

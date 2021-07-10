@@ -48,6 +48,30 @@ function ComputerizedNeurocognitiveAssessment(props) {
     });
   };
 
+  const UpdateRange = (value) => {
+    if (value >= 36 && value <= 55) {
+      return "Moderate (36-55)";
+    } else if (value >= 56 && value <= 70) {
+      return "Mild (56-70)";
+    } else if (value >= 71 && value <= 85) {
+      return "Borderline (71-85)";
+    } else if (value >= 86 && value <= 90) {
+      return "Low Average (86-90)";
+    } else if (value >= 91 && value <= 109) {
+      return "Average (91-109)";
+    } else if (value >= 110 && value <= 114) {
+      return "High Average (110-114)";
+    } else if (value >= 115 && value <= 129) {
+      return "High Above Average (115-129)";
+    } else if (value >= 130 && value <= 139) {
+      return "Gifted (130-139)";
+    } else if (value >= 140 && value <= 160) {
+      return "Highly Gifted (140-160)";
+    } else {
+      return "Value Not in Range. Adjust the IQ Value";
+    }
+  };
+
   //CRUD Function Start
 
   const updatePatient = () => {
@@ -235,7 +259,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
             <div className="d-flex flex-wrap text-white align-items-baseline">
               <h3 className="mb-1 col-2">Test Results</h3>
               <h4 className="mb-3">
-                Computerized Computerized Neurocognitive Assessment (CNS){" "}
+                Computerized Neurocognitive Assessment (CNS){" "}
               </h4>
             </div>
             <div className="text-white d-flex flex-wrap">
@@ -251,8 +275,8 @@ function ComputerizedNeurocognitiveAssessment(props) {
                   onChange={handleCheckBoxChange}
                 />
                 <Label className="m-2" for=""></Label>
-                {props.patientDetails.patient_first_name}{" "}
-                completed the Computerized Neurocognitive Assessment (CNS).
+                {props.patientDetails.patient_first_name} completed the
+                Computerized Neurocognitive Assessment (CNS).
                 <p className="m-2">
                   This instrument is a clinical testing procedure used to
                   evaluate the neurocognitive state. It can be successfully
@@ -291,8 +315,8 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         <input
                           className="form-control"
                           type="number"
-                          min={0}
-                          max={10}
+                          min={36}
+                          max={160}
                           id="computerized_performance_neurocognitive_assessment_col1_a"
                           name="computerized_performance_neurocognitive_assessment_col1_a"
                           onChange={handleFieldChange}
@@ -316,26 +340,11 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         />
                       </td>
                       <td className="m-0 p-0">
-                        <select
-                          className="customSelect m-0 p-0"
-                          required
-                          id="computerized_performance_neurocognitive_assessment_col3_a"
-                          name="computerized_performance_neurocognitive_assessment_col3_a"
-                          onChange={handleFieldChange}
-                          value={
-                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col3_a
-                          }
-                        >
-                          <option value=""></option>
-                          <option value="average">Average</option>
-                          <option value="low_average">Low Average</option>
-                          <option value="moderately_impaired">
-                            Moderately Impaired
-                          </option>
-                          <option value="severely_impaired">
-                            Severely Impaired
-                          </option>
-                        </select>
+                        <p className="m-4">
+                          {UpdateRange(
+                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_a
+                          )}
+                        </p>
                       </td>
                     </tr>
                     <tr>
@@ -345,8 +354,8 @@ function ComputerizedNeurocognitiveAssessment(props) {
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
-                          min={0}
-                          max={10}
+                          min={36}
+                          max={160}
                           type="number"
                           id="computerized_performance_neurocognitive_assessment_col1_b"
                           name="computerized_performance_neurocognitive_assessment_col1_b"
@@ -371,26 +380,11 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         />
                       </td>
                       <td className="m-0 p-0">
-                        <select
-                          className="customSelect m-0 p-0"
-                          required
-                          id="computerized_performance_neurocognitive_assessment_col3_b"
-                          name="computerized_performance_neurocognitive_assessment_col3_b"
-                          onChange={handleFieldChange}
-                          value={
-                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col3_b
-                          }
-                        >
-                          <option value=""></option>
-                          <option value="average">Average</option>
-                          <option value="low_average">Low Average</option>
-                          <option value="moderately_impaired">
-                            Moderately Impaired
-                          </option>
-                          <option value="severely_impaired">
-                            Severely Impaired
-                          </option>
-                        </select>
+                        <p className="m-4">
+                          {UpdateRange(
+                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_b
+                          )}
+                        </p>
                       </td>
                     </tr>
                     <tr>
@@ -400,8 +394,8 @@ function ComputerizedNeurocognitiveAssessment(props) {
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
-                          min={0}
-                          max={10}
+                          min={36}
+                          max={160}
                           type="number"
                           id="computerized_performance_neurocognitive_assessment_col1_c"
                           name="computerized_performance_neurocognitive_assessment_col1_c"
@@ -426,26 +420,11 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         />
                       </td>
                       <td className="m-0 p-0">
-                        <select
-                          className="customSelect m-0 p-0"
-                          required
-                          id="computerized_performance_neurocognitive_assessment_col3_c"
-                          name="computerized_performance_neurocognitive_assessment_col3_c"
-                          onChange={handleFieldChange}
-                          value={
-                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col3_c
-                          }
-                        >
-                          <option value=""></option>
-                          <option value="average">Average</option>
-                          <option value="low_average">Low Average</option>
-                          <option value="moderately_impaired">
-                            Moderately Impaired
-                          </option>
-                          <option value="severely_impaired">
-                            Severely Impaired
-                          </option>
-                        </select>
+                        <p className="m-4">
+                          {UpdateRange(
+                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_c
+                          )}
+                        </p>
                       </td>
                     </tr>
                     <tr>
@@ -455,8 +434,8 @@ function ComputerizedNeurocognitiveAssessment(props) {
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
-                          min={0}
-                          max={10}
+                          min={36}
+                          max={160}
                           type="number"
                           id="computerized_performance_neurocognitive_assessment_col1_d"
                           name="computerized_performance_neurocognitive_assessment_col1_d"
@@ -481,26 +460,11 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         />
                       </td>
                       <td className="m-0 p-0">
-                        <select
-                          className="customSelect m-0 p-0"
-                          required
-                          id="computerized_performance_neurocognitive_assessment_col3_d"
-                          name="computerized_performance_neurocognitive_assessment_col3_d"
-                          onChange={handleFieldChange}
-                          value={
-                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col3_d
-                          }
-                        >
-                          <option value=""></option>
-                          <option value="average">Average</option>
-                          <option value="low_average">Low Average</option>
-                          <option value="moderately_impaired">
-                            Moderately Impaired
-                          </option>
-                          <option value="severely_impaired">
-                            Severely Impaired
-                          </option>
-                        </select>
+                        <p className="m-4">
+                          {UpdateRange(
+                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_d
+                          )}
+                        </p>
                       </td>
                     </tr>
                     <tr>
@@ -510,8 +474,8 @@ function ComputerizedNeurocognitiveAssessment(props) {
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
-                          min={0}
-                          max={10}
+                          min={36}
+                          max={160}
                           type="number"
                           id="computerized_performance_neurocognitive_assessment_col1_e"
                           name="computerized_performance_neurocognitive_assessment_col1_e"
@@ -536,26 +500,11 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         />
                       </td>
                       <td className="m-0 p-0">
-                        <select
-                          className="customSelect m-0 p-0"
-                          required
-                          id="computerized_performance_neurocognitive_assessment_col3_e"
-                          name="computerized_performance_neurocognitive_assessment_col3_e"
-                          onChange={handleFieldChange}
-                          value={
-                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col3_e
-                          }
-                        >
-                          <option value=""></option>
-                          <option value="average">Average</option>
-                          <option value="low_average">Low Average</option>
-                          <option value="moderately_impaired">
-                            Moderately Impaired
-                          </option>
-                          <option value="severely_impaired">
-                            Severely Impaired
-                          </option>
-                        </select>
+                        <p className="m-4">
+                          {UpdateRange(
+                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_e
+                          )}
+                        </p>
                       </td>
                     </tr>
                     <tr>
@@ -565,8 +514,8 @@ function ComputerizedNeurocognitiveAssessment(props) {
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
-                          min={0}
-                          max={10}
+                          min={36}
+                          max={160}
                           type="number"
                           id="computerized_performance_neurocognitive_assessment_col1_f"
                           name="computerized_performance_neurocognitive_assessment_col1_f"
@@ -591,26 +540,11 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         />
                       </td>
                       <td className="m-0 p-0">
-                        <select
-                          className="customSelect m-0 p-0"
-                          required
-                          id="computerized_performance_neurocognitive_assessment_col3_f"
-                          name="computerized_performance_neurocognitive_assessment_col3_f"
-                          onChange={handleFieldChange}
-                          value={
-                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col3_f
-                          }
-                        >
-                          <option value=""></option>
-                          <option value="average">Average</option>
-                          <option value="low_average">Low Average</option>
-                          <option value="moderately_impaired">
-                            Moderately Impaired
-                          </option>
-                          <option value="severely_impaired">
-                            Severely Impaired
-                          </option>
-                        </select>
+                        <p className="m-4">
+                          {UpdateRange(
+                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_f
+                          )}
+                        </p>
                       </td>
                     </tr>
                     <tr>
@@ -620,8 +554,8 @@ function ComputerizedNeurocognitiveAssessment(props) {
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
-                          min={0}
-                          max={10}
+                          min={36}
+                          max={160}
                           type="number"
                           id="computerized_performance_neurocognitive_assessment_col1_g"
                           name="computerized_performance_neurocognitive_assessment_col1_g"
@@ -646,26 +580,11 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         />
                       </td>
                       <td className="m-0 p-0">
-                        <select
-                          className="customSelect m-0 p-0"
-                          required
-                          id="computerized_performance_neurocognitive_assessment_col3_g"
-                          name="computerized_performance_neurocognitive_assessment_col3_g"
-                          onChange={handleFieldChange}
-                          value={
-                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col3_g
-                          }
-                        >
-                          <option value=""></option>
-                          <option value="average">Average</option>
-                          <option value="low_average">Low Average</option>
-                          <option value="moderately_impaired">
-                            Moderately Impaired
-                          </option>
-                          <option value="severely_impaired">
-                            Severely Impaired
-                          </option>
-                        </select>
+                        <p className="m-4">
+                          {UpdateRange(
+                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_g
+                          )}
+                        </p>
                       </td>
                     </tr>
                     <tr>
@@ -675,8 +594,8 @@ function ComputerizedNeurocognitiveAssessment(props) {
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
-                          min={0}
-                          max={10}
+                          min={36}
+                          max={160}
                           type="number"
                           id="computerized_performance_neurocognitive_assessment_col1_h"
                           name="computerized_performance_neurocognitive_assessment_col1_h"
@@ -701,26 +620,11 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         />
                       </td>
                       <td className="m-0 p-0">
-                        <select
-                          className="customSelect m-0 p-0"
-                          required
-                          id="computerized_performance_neurocognitive_assessment_col3_h"
-                          name="computerized_performance_neurocognitive_assessment_col3_h"
-                          onChange={handleFieldChange}
-                          value={
-                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col3_h
-                          }
-                        >
-                          <option value=""></option>
-                          <option value="average">Average</option>
-                          <option value="low_average">Low Average</option>
-                          <option value="moderately_impaired">
-                            Moderately Impaired
-                          </option>
-                          <option value="severely_impaired">
-                            Severely Impaired
-                          </option>
-                        </select>
+                        <p className="m-4">
+                          {UpdateRange(
+                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_h
+                          )}
+                        </p>
                       </td>
                     </tr>
                     <tr>
@@ -730,8 +634,8 @@ function ComputerizedNeurocognitiveAssessment(props) {
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
-                          min={0}
-                          max={10}
+                          min={36}
+                          max={160}
                           type="number"
                           id="computerized_performance_neurocognitive_assessment_col1_i"
                           name="computerized_performance_neurocognitive_assessment_col1_i"
@@ -756,26 +660,11 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         />
                       </td>
                       <td className="m-0 p-0">
-                        <select
-                          className="customSelect m-0 p-0"
-                          required
-                          id="computerized_performance_neurocognitive_assessment_col3_i"
-                          name="computerized_performance_neurocognitive_assessment_col3_i"
-                          onChange={handleFieldChange}
-                          value={
-                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col3_i
-                          }
-                        >
-                          <option value=""></option>
-                          <option value="average">Average</option>
-                          <option value="low_average">Low Average</option>
-                          <option value="moderately_impaired">
-                            Moderately Impaired
-                          </option>
-                          <option value="severely_impaired">
-                            Severely Impaired
-                          </option>
-                        </select>
+                        <p className="m-4">
+                          {UpdateRange(
+                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_i
+                          )}
+                        </p>
                       </td>
                     </tr>
                     <tr>
@@ -785,8 +674,8 @@ function ComputerizedNeurocognitiveAssessment(props) {
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
-                          min={0}
-                          max={10}
+                          min={36}
+                          max={160}
                           type="number"
                           id="computerized_performance_neurocognitive_assessment_col1_j"
                           name="computerized_performance_neurocognitive_assessment_col1_j"
@@ -811,26 +700,11 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         />
                       </td>
                       <td className="m-0 p-0">
-                        <select
-                          className="customSelect m-0 p-0"
-                          required
-                          id="computerized_performance_neurocognitive_assessment_col3_j"
-                          name="computerized_performance_neurocognitive_assessment_col3_j"
-                          onChange={handleFieldChange}
-                          value={
-                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col3_j
-                          }
-                        >
-                          <option value=""></option>
-                          <option value="average">Average</option>
-                          <option value="low_average">Low Average</option>
-                          <option value="moderately_impaired">
-                            Moderately Impaired
-                          </option>
-                          <option value="severely_impaired">
-                            Severely Impaired
-                          </option>
-                        </select>
+                        <p className="m-4">
+                          {UpdateRange(
+                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_j
+                          )}
+                        </p>
                       </td>
                     </tr>
                     <tr>
@@ -840,8 +714,8 @@ function ComputerizedNeurocognitiveAssessment(props) {
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
-                          min={0}
-                          max={10}
+                          min={36}
+                          max={160}
                           type="number"
                           id="computerized_performance_neurocognitive_assessment_col1_k"
                           name="computerized_performance_neurocognitive_assessment_col1_k"
@@ -866,26 +740,11 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         />
                       </td>
                       <td className="m-0 p-0">
-                        <select
-                          className="customSelect m-0 p-0"
-                          required
-                          id="computerized_performance_neurocognitive_assessment_col3_k"
-                          name="computerized_performance_neurocognitive_assessment_col3_k"
-                          onChange={handleFieldChange}
-                          value={
-                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col3_k
-                          }
-                        >
-                          <option value=""></option>
-                          <option value="average">Average</option>
-                          <option value="low_average">Low Average</option>
-                          <option value="moderately_impaired">
-                            Moderately Impaired
-                          </option>
-                          <option value="severely_impaired">
-                            Severely Impaired
-                          </option>
-                        </select>
+                        <p className="m-4">
+                          {UpdateRange(
+                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_k
+                          )}
+                        </p>
                       </td>
                     </tr>
                     <tr>
@@ -895,8 +754,8 @@ function ComputerizedNeurocognitiveAssessment(props) {
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
-                          min={0}
-                          max={10}
+                          min={36}
+                          max={160}
                           type="number"
                           id="computerized_performance_neurocognitive_assessment_col1_l"
                           name="computerized_performance_neurocognitive_assessment_col1_l"
@@ -921,26 +780,11 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         />
                       </td>
                       <td className="m-0 p-0">
-                        <select
-                          className="customSelect m-0 p-0"
-                          required
-                          id="computerized_performance_neurocognitive_assessment_col3_l"
-                          name="computerized_performance_neurocognitive_assessment_col3_l"
-                          onChange={handleFieldChange}
-                          value={
-                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col3_l
-                          }
-                        >
-                          <option value=""></option>
-                          <option value="average">Average</option>
-                          <option value="low_average">Low Average</option>
-                          <option value="moderately_impaired">
-                            Moderately Impaired
-                          </option>
-                          <option value="severely_impaired">
-                            Severely Impaired
-                          </option>
-                        </select>
+                        <p className="m-4">
+                          {UpdateRange(
+                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_l
+                          )}
+                        </p>
                       </td>
                     </tr>
                     <tr>
@@ -950,8 +794,8 @@ function ComputerizedNeurocognitiveAssessment(props) {
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
-                          min={0}
-                          max={10}
+                          min={36}
+                          max={160}
                           type="number"
                           id="computerized_performance_neurocognitive_assessment_col1_m"
                           name="computerized_performance_neurocognitive_assessment_col1_m"
@@ -976,26 +820,11 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         />
                       </td>
                       <td className="m-0 p-0">
-                        <select
-                          className="customSelect m-0 p-0"
-                          required
-                          id="computerized_performance_neurocognitive_assessment_col3_m"
-                          name="computerized_performance_neurocognitive_assessment_col3_m"
-                          onChange={handleFieldChange}
-                          value={
-                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col3_m
-                          }
-                        >
-                          <option value=""></option>
-                          <option value="average">Average</option>
-                          <option value="low_average">Low Average</option>
-                          <option value="moderately_impaired">
-                            Moderately Impaired
-                          </option>
-                          <option value="severely_impaired">
-                            Severely Impaired
-                          </option>
-                        </select>
+                        <p className="m-4">
+                          {UpdateRange(
+                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_m
+                          )}
+                        </p>
                       </td>
                     </tr>
                     <tr>
@@ -1005,8 +834,8 @@ function ComputerizedNeurocognitiveAssessment(props) {
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
-                          min={0}
-                          max={10}
+                          min={36}
+                          max={160}
                           type="number"
                           id="computerized_performance_neurocognitive_assessment_col1_n"
                           name="computerized_performance_neurocognitive_assessment_col1_n"
@@ -1031,26 +860,11 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         />
                       </td>
                       <td className="m-0 p-0">
-                        <select
-                          className="customSelect m-0 p-0"
-                          required
-                          id="computerized_performance_neurocognitive_assessment_col3_n"
-                          name="computerized_performance_neurocognitive_assessment_col3_n"
-                          onChange={handleFieldChange}
-                          value={
-                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col3_n
-                          }
-                        >
-                          <option value=""></option>
-                          <option value="average">Average</option>
-                          <option value="low_average">Low Average</option>
-                          <option value="moderately_impaired">
-                            Moderately Impaired
-                          </option>
-                          <option value="severely_impaired">
-                            Severely Impaired
-                          </option>
-                        </select>
+                        <p className="m-4">
+                          {UpdateRange(
+                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_n
+                          )}
+                        </p>
                       </td>
                     </tr>
                     <tr>
@@ -1060,8 +874,8 @@ function ComputerizedNeurocognitiveAssessment(props) {
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
-                          min={0}
-                          max={10}
+                          min={36}
+                          max={160}
                           type="number"
                           id="computerized_performance_neurocognitive_assessment_col1_o"
                           name="computerized_performance_neurocognitive_assessment_col1_o"
@@ -1086,26 +900,11 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         />
                       </td>
                       <td className="m-0 p-0">
-                        <select
-                          className="customSelect m-0 p-0"
-                          required
-                          id="computerized_performance_neurocognitive_assessment_col3_o"
-                          name="computerized_performance_neurocognitive_assessment_col3_o"
-                          onChange={handleFieldChange}
-                          value={
-                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col3_o
-                          }
-                        >
-                          <option value=""></option>
-                          <option value="average">Average</option>
-                          <option value="low_average">Low Average</option>
-                          <option value="moderately_impaired">
-                            Moderately Impaired
-                          </option>
-                          <option value="severely_impaired">
-                            Severely Impaired
-                          </option>
-                        </select>
+                        <p className="m-4">
+                          {UpdateRange(
+                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_o
+                          )}
+                        </p>
                       </td>
                     </tr>
                     <tr>
@@ -1115,8 +914,8 @@ function ComputerizedNeurocognitiveAssessment(props) {
                       <td className="m-0 p-0">
                         <input
                           className="form-control"
-                          min={0}
-                          max={10}
+                          min={36}
+                          max={160}
                           type="number"
                           id="computerized_performance_neurocognitive_assessment_col1_p"
                           name="computerized_performance_neurocognitive_assessment_col1_p"
@@ -1141,26 +940,11 @@ function ComputerizedNeurocognitiveAssessment(props) {
                         />
                       </td>
                       <td className="m-0 p-0">
-                        <select
-                          className="customSelect m-0 p-0"
-                          required
-                          id="computerized_performance_neurocognitive_assessment_col3_p"
-                          name="computerized_performance_neurocognitive_assessment_col3_p"
-                          onChange={handleFieldChange}
-                          value={
-                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col3_p
-                          }
-                        >
-                          <option value=""></option>
-                          <option value="average">Average</option>
-                          <option value="low_average">Low Average</option>
-                          <option value="moderately_impaired">
-                            Moderately Impaired
-                          </option>
-                          <option value="severely_impaired">
-                            Severely Impaired
-                          </option>
-                        </select>
+                        <p className="m-4">
+                          {UpdateRange(
+                            patientComputerizedNeurocognitiveAssessment.computerized_performance_neurocognitive_assessment_col1_p
+                          )}
+                        </p>
                       </td>
                     </tr>
                   </tbody>
