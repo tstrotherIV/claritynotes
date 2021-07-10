@@ -9,7 +9,7 @@ import "./test.css";
 function RAITpg2(props) {
   const [patientRAITpg2, setPatientRAITpg2] = useState({});
 
-  const next = "/rait_pg_4";
+  const next = "/wide_range_achievement_test_5";
   const back = "/shipley_intelligence_assessment_2";
 
   const handleFieldChange = (e) => {
@@ -22,13 +22,13 @@ function RAITpg2(props) {
 
   const UpdateRange = (value) => {
     if (value >= 36 && value <= 55) {
-      return "Intellectual Disability, Moderate (36-55)";
+      return "Moderate (36-55)";
     } else if (value >= 56 && value <= 70) {
-      return "Intellectual Disability, Mild (56-70) Profound Concern";
+      return "Mild (56-70)";
     } else if (value >= 71 && value <= 85) {
-      return "Borderline (71-85) Moderate to Elevated Concern";
+      return "Borderline (71-85)";
     } else if (value >= 86 && value <= 90) {
-      return "Low Average (86-90) Mild Concern";
+      return "Low Average (86-90)";
     } else if (value >= 91 && value <= 109) {
       return "Average (91-109)";
     } else if (value >= 110 && value <= 114) {
