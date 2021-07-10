@@ -513,6 +513,14 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
         patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_ff ||
           "0"
       ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_gg: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_gg ||
+          "0"
+      ),
+      millon_clinical_multiaxial_inventory_iv_pg1_BR_hh: String(
+        patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_hh ||
+          "0"
+      ),
       millon_clinical_multiaxial_inventory_iv_pg1_dropdown_a:
         patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_dropdown_a,
       millon_clinical_multiaxial_inventory_iv_pg1_dropdown_b:
@@ -548,13 +556,53 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
               </h4>
             </div>
             <div className="text-white d-flex flex-wrap justify-content-center">
-              <div className="col-2">
+              <div className="col-3">
                 <p>
                   The Millon Clinical Multiaxial Inventory-IV (MCMI-IV) was
                   administered to assess{" "}
                   {props.patientDetails.patient_first_name} [Patient Name,
                   Last]'s general psychological functioning.
                 </p>
+                <div>
+                  <Table striped className="pb-4">
+                    <thead className="tableHeader text-center">
+                      <tr>
+                        <th>DISCLOSURE</th>
+                        <th>DESIRABILITY</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <input
+                            className="form-control"
+                            min={0}
+                            max={120}
+                            type="number"
+                            name="millon_clinical_multiaxial_inventory_iv_pg1_BR_gg"
+                            onChange={handleFieldChange}
+                            value={
+                              patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_gg
+                            }
+                          />
+                        </td>
+                        <td>
+                          <input
+                            className="form-control"
+                            min={0}
+                            max={120}
+                            type="number"
+                            name="millon_clinical_multiaxial_inventory_iv_pg1_BR_hh"
+                            onChange={handleFieldChange}
+                            value={
+                              patientMillonClinicalMultiaxialInventoryIVPg1.millon_clinical_multiaxial_inventory_iv_pg1_BR_hh
+                            }
+                          />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </Table>
+                </div>
               </div>
               <div className="ml-3 mb-5">
                 <Table striped className="pb-4">

@@ -490,13 +490,53 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
               </h4>
             </div>
             <div className="text-white d-flex flex-wrap justify-content-center">
-              <div className="col-2">
+              <div className="col-3">
                 <p>
                   The Millon Clinical Multiaxial Inventory-IV (MCMI-IV) was
                   administered to assess{" "}
                   {props.patientDetails.patient_first_name} [Patient Name,
                   Last]'s general psychological functioning.
                 </p>
+                <div>
+                  <Table striped className="pb-4">
+                    <thead className="tableHeader text-center">
+                      <tr>
+                        <th>DISCLOSURE</th>
+                        <th>DESIRABILITY</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <input
+                            className="form-control"
+                            min={0}
+                            max={120}
+                            type="number"
+                            name="millon_clinical_multiaxial_inventory_iv_pg1_BR_gg"
+                            onChange={handleFieldChange}
+                            value={
+                              patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg1_BR_gg
+                            }
+                          />
+                        </td>
+                        <td>
+                          <input
+                            className="form-control"
+                            min={0}
+                            max={120}
+                            type="number"
+                            name="millon_clinical_multiaxial_inventory_iv_pg1_BR_hh"
+                            onChange={handleFieldChange}
+                            value={
+                              patientMillonClinicalMultiaxialInventoryIVPg2.millon_clinical_multiaxial_inventory_iv_pg1_BR_hh
+                            }
+                          />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </Table>
+                </div>
               </div>
               <div className="ml-3 mb-5">
                 <Table striped>
