@@ -187,8 +187,8 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
                   />
                   <Label className="col-10" for="">
                     {props.patientDetails.patient_first_name} invalidated this
-                    instrument. [She] gave answers to questions which are not
-                    probable. [She] appeared to make a significant effort to
+                    instrument. {props.patientDetails.patient_first_name} gave answers to questions which are not
+                    probable. {props.patientDetails.patient_first_name} appeared to make a significant effort to
                     appear perfect and without flaws. Deliberate non-compliance
                     and passive-aggressive behaviors appear likely.
                   </Label>
