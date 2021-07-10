@@ -106,10 +106,55 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
                   {props.patientDetails.patient_first_name} completed the
                   Substance Abuse Subtle Screening Inventory-4 (SASSI-4)
                 </Label>
-                <p>
-                  The results indicated the Low/High Probability of [Patient
-                  Name, First] having a Substance Dependence disorder.
-                </p>
+                <div className="ml-4">
+                  <div>
+                    <Input
+                      className=""
+                      type="checkbox"
+                      id={item}
+                      name="substance_abuse_subtle_screening_inventory_4_f"
+                      checked={
+                        patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_f
+                      }
+                      onChange={handleCheckBoxChange}
+                    />
+                    <Label>
+                      The results indicated the Low Probability of{" "}
+                      {props.patientDetails.patient_first_name} having a
+                      Substance Dependence disorder.
+                    </Label>
+                  </div>
+                  <div>
+                    <Input
+                      className=""
+                      type="checkbox"
+                      id={item}
+                      name="substance_abuse_subtle_screening_inventory_4_g"
+                      checked={
+                        patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_g
+                      }
+                      onChange={handleCheckBoxChange}
+                    />
+                    <Label>
+                      The results indicated the High Probability of{" "}
+                      {props.patientDetails.patient_first_name} having a
+                      Substance Dependence disorder.
+                    </Label>
+                  </div>
+                  <div>
+                    <Input
+                      className=""
+                      type="checkbox"
+                      id={item}
+                      name="substance_abuse_subtle_screening_inventory_4_h"
+                      checked={
+                        patientSubstanceAbuseSubtleScreeningInventory4.substance_abuse_subtle_screening_inventory_4_h
+                      }
+                      onChange={handleCheckBoxChange}
+                    />
+                    <Label>Probability Excluded</Label>
+                  </div>
+                </div>
 
                 <Label className="mt-3 textTeal col-7" for="">
                   {" "}
