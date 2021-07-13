@@ -10,6 +10,7 @@ function MinnesotaMultiphasicPersonalityInventory2(props) {
     patientMinnesotaMultiphasicPersonalityInventory2,
     setPatientMinnesotaMultiphasicPersonalityInventory2,
   ] = useState({});
+  const [item, setItem] = useState("");
 
   const next = "/millon_clinical_multiaxial_inventory_iv_pg_1";
   const back = "/iowa_gambling_task";
@@ -60,6 +61,7 @@ function MinnesotaMultiphasicPersonalityInventory2(props) {
 
   const getData = () => {
     setPatientMinnesotaMultiphasicPersonalityInventory2(props.patientDetails);
+    setItem("minnesota_multiphasic_personality_inventory_2_patientNotes");
   };
 
   useEffect(() => {
@@ -133,7 +135,11 @@ function MinnesotaMultiphasicPersonalityInventory2(props) {
               patient={props.patientId}
               patientNotes={patientMinnesotaMultiphasicPersonalityInventory2}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>

@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 
 // pdf page 115
 
 function AimswebPlusAchievementTestPg4(props) {
-  const [
-    aimswebPlusAchievementTestPg4,
-    setAimswebPlusAchievementTestPg4,
-  ] = useState({});
+  const [aimswebPlusAchievementTestPg4, setAimswebPlusAchievementTestPg4] =
+    useState({});
+
+  const [item, setItem] = useState("");
 
   const next = "/continous_performance_test_3rd_ed";
   const back = "/aimsweb_plus_achievement_test_pg_3";
 
   const getData = () => {
     setAimswebPlusAchievementTestPg4(props.patientDetails);
+    setItem("aimsweb_plus_achievement_test_pg_4_patientNotes");
   };
 
   useEffect(() => {
@@ -34,7 +34,7 @@ function AimswebPlusAchievementTestPg4(props) {
             </div>
             <div className="d-flex flex-wrap justify-content-center">
               <div className="col-10">
-                <Table striped> 
+                <Table striped>
                   <thead className="tableHeader text-center">
                     <tr className="tableBorder">
                       <th className="tdHeaderWidth" colSpan="6">
@@ -139,7 +139,11 @@ function AimswebPlusAchievementTestPg4(props) {
             patient={props.patientId}
             patientNotes={aimswebPlusAchievementTestPg4}
           />
-          <TermOfParentalRights />
+          <TermOfParentalRights
+            questionId={item}
+            patientId={props.patientId}
+            item={item}
+          />
         </div>
       </div>
     </>

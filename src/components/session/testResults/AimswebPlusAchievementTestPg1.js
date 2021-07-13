@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Table } from "reactstrap";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
+import TermOfParentalRights from "../../shared/TermOfParentalRights";
 
 // pdf page 112
 
@@ -9,10 +10,10 @@ function AimswebPlusAchievementTestPg1(props) {
   const next = "/aimsweb_plus_achievement_test_pg_2";
   const back = "/wide_range_achievement_test_5";
 
-  const [
-    aimswebPlusAchievementTestPg1,
-    setAimswebPlusAchievementTestPg1,
-  ] = useState({});
+  const [item, setItem] = useState("");
+
+  const [aimswebPlusAchievementTestPg1, setAimswebPlusAchievementTestPg1] =
+    useState({});
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -81,6 +82,7 @@ function AimswebPlusAchievementTestPg1(props) {
 
   const getData = () => {
     setAimswebPlusAchievementTestPg1(props.patientDetails);
+    setItem("aimsweb_plus_achievement_test_pg1");
   };
 
   useEffect(() => {
@@ -321,6 +323,11 @@ function AimswebPlusAchievementTestPg1(props) {
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={aimswebPlusAchievementTestPg1}
+            />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
             />
           </div>
         </div>

@@ -17,6 +17,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
     patientMillonClinicalMultiaxialInventoryIVPg1,
     setPatientMillonClinicalMultiaxialInventoryIVPg1,
   ] = useState({});
+  const [item, setItem] = useState("");
 
   const next = "/millon_clinical_multiaxial_inventory_iv_pg_2";
   const back = "/minnesota_multiphasic_personality_inventory_2";
@@ -538,6 +539,7 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
 
   const getData = () => {
     setPatientMillonClinicalMultiaxialInventoryIVPg1(props.patientDetails);
+    setItem("millon_clinical_multiaxial_inventory_iv_pg1_patientNotes");
   };
 
   useEffect(() => {
@@ -2543,7 +2545,11 @@ function MillonClinicalMultiaxialInventoryIVPg1(props) {
             patient={props.patientId}
             patientNotes={patientMillonClinicalMultiaxialInventoryIVPg1}
           />
-          <TermOfParentalRights />
+          <TermOfParentalRights
+            questionId={item}
+            patientId={props.patientId}
+            item={item}
+          />
         </div>
       </div>
     </>

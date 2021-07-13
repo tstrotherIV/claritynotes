@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
 import { Table } from "reactstrap";
 import "./test.css";
+import TermOfParentalRights from "../../shared/TermOfParentalRights";
 // pdf page 108
 
 function RAITpg2(props) {
   const [patientRAITpg2, setPatientRAITpg2] = useState({});
+  const [item, setItem] = useState("");
 
   const next = "/wide_range_achievement_test_5";
   const back = "/shipley_intelligence_assessment_2";
@@ -77,6 +78,7 @@ function RAITpg2(props) {
 
   const getData = () => {
     setPatientRAITpg2(props.patientDetails);
+    setItem("rait_pg2_patientNotes");
   };
 
   useEffect(() => {
@@ -344,7 +346,11 @@ function RAITpg2(props) {
               patient={props.patientId}
               patientNotes={patientRAITpg2}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>

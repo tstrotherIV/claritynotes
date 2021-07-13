@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Table } from "reactstrap";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
+import TermOfParentalRights from "../../shared/TermOfParentalRights";
 
 // pdf page 112
 
@@ -12,6 +13,7 @@ function WideRangeAchievementTest5(props) {
   const [wideRangeAchievementTest5, setWideRangeAchievementTest5] = useState(
     {}
   );
+  const [item, setItem] = useState("");
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -100,6 +102,7 @@ function WideRangeAchievementTest5(props) {
 
   const getData = () => {
     setWideRangeAchievementTest5(props.patientDetails);
+    setItem("wide_range_achievement_test_5_pg1_patientNotes");
   };
 
   useEffect(() => {
@@ -386,6 +389,11 @@ function WideRangeAchievementTest5(props) {
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={wideRangeAchievementTest5}
+            />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
             />
           </div>
         </div>

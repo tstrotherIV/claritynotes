@@ -20,6 +20,7 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
     setPatientMillonClinicalMultiaxialInventoryIVPg2,
   ] = useState({});
   const [notesbox, setnotesbox] = useState("");
+  const [item, setItem] = useState("");
 
   const next = "/rorschach_performance_assessment_system";
   const back = "/millon_clinical_multiaxial_inventory_iv_pg_1";
@@ -479,7 +480,10 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
 
   const getData = () => {
     setPatientMillonClinicalMultiaxialInventoryIVPg2(props.patientDetails);
-    setnotesbox(props.patientDetails.millon_clinical_multiaxial_inventory_iv_pg2_notesbox)
+    setnotesbox(
+      props.patientDetails.millon_clinical_multiaxial_inventory_iv_pg2_notesbox
+    );
+    setItem("millon_clinical_multiaxial_inventory_iv_pg2_patientNotes");
   };
 
   useEffect(() => {
@@ -2240,7 +2244,11 @@ function MillonClinicalMultiaxialInventoryIVPg2(props) {
             patient={props.patientId}
             patientNotes={patientMillonClinicalMultiaxialInventoryIVPg2}
           />
-          <TermOfParentalRights />
+          <TermOfParentalRights
+            questionId={item}
+            patientId={props.patientId}
+            item={item}
+          />
         </div>
       </div>
     </>

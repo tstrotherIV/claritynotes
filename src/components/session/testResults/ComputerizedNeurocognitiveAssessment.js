@@ -12,6 +12,8 @@ function ComputerizedNeurocognitiveAssessment(props) {
     setPatientComputerizedNeurocognitiveAssessment,
   ] = useState({});
 
+  const [item, setItem] = useState("");
+
   const next = "/paulhus_deception_scale";
   const back = "/continous_performance_test_3rd_ed";
 
@@ -245,6 +247,7 @@ function ComputerizedNeurocognitiveAssessment(props) {
 
   const getData = () => {
     setPatientComputerizedNeurocognitiveAssessment(props.patientDetails);
+    setItem("computerized_performance_neurocognitive_assessment_patientNotes");
   };
 
   useEffect(() => {
@@ -961,7 +964,11 @@ function ComputerizedNeurocognitiveAssessment(props) {
             patient={props.patientId}
             patientNotes={patientComputerizedNeurocognitiveAssessment}
           />
-          <TermOfParentalRights />
+          <TermOfParentalRights
+            questionId={item}
+            patientId={props.patientId}
+            item={item}
+          />
         </div>
       </div>
     </>
