@@ -8,6 +8,7 @@ import DataManager from "../../../data_module/DataManager";
 
 function IowaGamblingTask(props) {
   const [patientIowaGamblingTask, setPatientIowaGamblingTask] = useState({});
+  const [item, setItem] = useState("");
 
   const next = "/minnesota_multiphasic_personality_inventory_2";
   const back = "/substance_abuse_subtle_screening_inventory_4";
@@ -46,6 +47,7 @@ function IowaGamblingTask(props) {
 
   const getData = () => {
     setPatientIowaGamblingTask(props.patientDetails);
+    setItem("iowa_gambling_task_patientNotes");
   };
 
   useEffect(() => {
@@ -140,7 +142,11 @@ function IowaGamblingTask(props) {
               patient={props.patientId}
               patientNotes={patientIowaGamblingTask}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>

@@ -6,16 +6,17 @@ import ButtonNavigation from "../../shared/ButtonNavigation";
 // pdf page 114
 
 function AimswebPlusAchievementTestPg3(props) {
-  const [
-    aimswebPlusAchievementTestPg3,
-    setAimswebPlusAchievementTestPg3,
-  ] = useState({});
+  const [aimswebPlusAchievementTestPg3, setAimswebPlusAchievementTestPg3] =
+    useState({});
+
+  const [item, setItem] = useState("");
 
   const next = "/aimsweb_plus_achievement_test_pg_4";
   const back = "/aimsweb_plus_achievement_test_pg_2";
 
   const getData = () => {
     setAimswebPlusAchievementTestPg3(props.patientDetails);
+    setItem("aimsweb_plus_achievement_test_pg3_patientNotes");
   };
 
   useEffect(() => {
@@ -91,7 +92,11 @@ function AimswebPlusAchievementTestPg3(props) {
             patient={props.patientId}
             patientNotes={aimswebPlusAchievementTestPg3}
           />
-          <TermOfParentalRights />
+          <TermOfParentalRights
+            questionId={item}
+            patientId={props.patientId}
+            item={item}
+          />
         </div>
       </div>
     </>

@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Table } from "reactstrap";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
+import TermOfParentalRights from "../../shared/TermOfParentalRights";
 
 // pdf page 105
 
 function WechslerAdultIntelligenceScaleIV(props) {
   const next = "/shipley_intelligence_assessment_2";
   const back = "/wasi-ii";
+
+  const [item, setItem] = useState("");
 
   const [
     wechslerAdultIntelligenceScaleIV,
@@ -27,10 +30,6 @@ function WechslerAdultIntelligenceScaleIV(props) {
           : target.value,
     });
   };
-
-
-  
-
 
   const updatePatient = () => {
     const editedPatient = {
@@ -83,6 +82,7 @@ function WechslerAdultIntelligenceScaleIV(props) {
 
   const getData = () => {
     setWechslerAdultIntelligenceScaleIV(props.patientDetails);
+    setItem("wechsler_adult_intelligence_scale_IV_pg1_patientNotes");
   };
 
   useEffect(() => {
@@ -299,6 +299,11 @@ function WechslerAdultIntelligenceScaleIV(props) {
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={wechslerAdultIntelligenceScaleIV}
+            />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
             />
           </div>
         </div>

@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Label } from "reactstrap";
-import Heading from "../../shared/PsychologicalHeading";
 import TermOfParentalRights from "../../shared/TermOfParentalRights";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import TextareaAutosize from "react-textarea-autosize";
 import DataManager from "../../../data_module/DataManager";
-import convertID from "../../../helpers/formFieldIdConverter";
 
 // pdf page 118
 
@@ -35,11 +33,6 @@ function ThematicApperceptionsTest(props) {
     });
   };
 
-  const convertIDfunc = (e) => {
-    const fieldID = convertID.convertID(e);
-    setItem(fieldID);
-  };
-
   //CRUD Function Start
 
   const updatePatient = () => {
@@ -57,6 +50,7 @@ function ThematicApperceptionsTest(props) {
 
   const getData = () => {
     setPatientThematicApperceptionsTest(props.patientDetails);
+    setItem("thematic_apperceptions_test_pg1_patientNotes");
   };
 
   useEffect(() => {
@@ -112,7 +106,11 @@ function ThematicApperceptionsTest(props) {
             patient={props.patientId}
             patientNotes={patientThematicApperceptionsTest}
           />
-          <TermOfParentalRights />
+          <TermOfParentalRights
+            questionId={item}
+            patientId={props.patientId}
+            item={item}
+          />
         </div>
       </div>
     </>

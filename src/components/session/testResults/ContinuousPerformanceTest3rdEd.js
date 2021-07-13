@@ -11,6 +11,8 @@ function ContinuousPerformanceTest3rdEd(props) {
     setPatientContinuousPerformanceTest3rdEd,
   ] = useState({});
 
+  const [item, setItem] = useState("");
+
   const next = "/computerized_performance_neurocognitive_assessment";
   const back = "/aimsweb_plus_achievement_test_pg_4";
 
@@ -61,6 +63,7 @@ function ContinuousPerformanceTest3rdEd(props) {
 
   const getData = () => {
     setPatientContinuousPerformanceTest3rdEd(props.patientDetails);
+    setItem("continous_performance_test_3rd_ed_patientNotes");
   };
 
   useEffect(() => {
@@ -270,7 +273,11 @@ function ContinuousPerformanceTest3rdEd(props) {
               patient={props.patientId}
               patientNotes={patientContinuousPerformanceTest3rdEd}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>

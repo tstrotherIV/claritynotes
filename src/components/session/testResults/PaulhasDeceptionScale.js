@@ -69,6 +69,7 @@ function PaulasDeceptionScale(props) {
 
   const getData = () => {
     setPatientPaulasDeceptionScale(props.patientDetails);
+    setItem("paulhus_deception_scale_patientNotes");
   };
 
   useEffect(() => {
@@ -170,7 +171,11 @@ function PaulasDeceptionScale(props) {
               patient={props.patientId}
               patientNotes={patientPaulasDeceptionScale}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>

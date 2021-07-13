@@ -74,6 +74,7 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
 
   const getData = () => {
     setPatientSubstanceAbuseSubtleScreeningInventory4(props.patientDetails);
+    setItem("substance_abuse_subtle_screening_inventory_4_patientNotes");
   };
 
   useEffect(() => {
@@ -187,10 +188,12 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
                   />
                   <Label className="col-10" for="">
                     {props.patientDetails.patient_first_name} invalidated this
-                    instrument. {props.patientDetails.patient_first_name} gave answers to questions which are not
-                    probable. {props.patientDetails.patient_first_name} appeared to make a significant effort to
-                    appear perfect and without flaws. Deliberate non-compliance
-                    and passive-aggressive behaviors appear likely.
+                    instrument. {props.patientDetails.patient_first_name} gave
+                    answers to questions which are not probable.{" "}
+                    {props.patientDetails.patient_first_name} appeared to make a
+                    significant effort to appear perfect and without flaws.
+                    Deliberate non-compliance and passive-aggressive behaviors
+                    appear likely.
                   </Label>
                 </div>
                 <div className="mt-4">
@@ -243,7 +246,11 @@ function SubstanceAbuseSubtleScreeningInventory4(props) {
               patient={props.patientId}
               patientNotes={patientSubstanceAbuseSubtleScreeningInventory4}
             />
-            <TermOfParentalRights />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
+            />
           </div>
         </div>
       </div>

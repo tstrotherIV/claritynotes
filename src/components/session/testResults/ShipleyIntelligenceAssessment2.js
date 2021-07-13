@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Table } from "reactstrap";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
+import TermOfParentalRights from "../../shared/TermOfParentalRights";
 
 // pdf page 106
 
@@ -9,10 +10,10 @@ function ShipleyIntelligenceAssessment2(props) {
   const next = "/rait_pg_2";
   const back = "/wechsler_adult_intelligence_scale_IV";
 
-  const [
-    shipleyIntelligenceAssessment2,
-    setShipleyIntelligenceAssessment2,
-  ] = useState({});
+  const [item, setItem] = useState("");
+
+  const [shipleyIntelligenceAssessment2, setShipleyIntelligenceAssessment2] =
+    useState({});
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -89,6 +90,7 @@ function ShipleyIntelligenceAssessment2(props) {
 
   const getData = () => {
     setShipleyIntelligenceAssessment2(props.patientDetails);
+    setItem("shipley_intelligence_assessment_2_pg1_patientNotes");
   };
 
   useEffect(() => {
@@ -334,6 +336,11 @@ function ShipleyIntelligenceAssessment2(props) {
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={shipleyIntelligenceAssessment2}
+            />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
             />
           </div>
         </div>

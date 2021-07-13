@@ -12,6 +12,7 @@ function RorschPerformanceAssessmentSystem(props) {
     patientRorschPerformanceAssessmentSystem,
     setPatientRorschPerformanceAssessmentSystem,
   ] = useState({});
+  const [item, setItem] = useState("");
 
   const next = "/thematic_apperceptions_test";
   const back = "/millon_clinical_multiaxial_inventory_iv_pg_2";
@@ -45,6 +46,7 @@ function RorschPerformanceAssessmentSystem(props) {
 
   const getData = () => {
     setPatientRorschPerformanceAssessmentSystem(props.patientDetails);
+    setItem("rorschach_performance_assessment_system_pg1_patientNotes");
   };
 
   useEffect(() => {
@@ -104,7 +106,11 @@ function RorschPerformanceAssessmentSystem(props) {
             patient={props.patientId}
             patientNotes={patientRorschPerformanceAssessmentSystem}
           />
-          <TermOfParentalRights />
+          <TermOfParentalRights
+            questionId={item}
+            patientId={props.patientId}
+            item={item}
+          />
         </div>
       </div>
     </>

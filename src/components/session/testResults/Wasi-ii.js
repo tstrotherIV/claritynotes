@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Table } from "reactstrap";
 import ButtonNavigation from "../../shared/ButtonNavigation";
 import DataManager from "../../../data_module/DataManager";
+import TermOfParentalRights from "../../shared/TermOfParentalRights";
 
 // pdf page 104
 
@@ -10,6 +11,8 @@ function WasiII(props) {
   const back = "/procedures_administered_pg_1";
 
   const [wasiii, setWasiii] = useState({});
+  const [item, setItem] = useState("");
+
 
   const handleFieldChange = (e) => {
     const target = e.target;
@@ -70,6 +73,7 @@ function WasiII(props) {
 
   const getData = () => {
     setWasiii(props.patientDetails);
+    setItem("wasiii_pg1_patientNotes")
   };
 
   useEffect(() => {
@@ -211,6 +215,11 @@ function WasiII(props) {
               updatePatient={updatePatient}
               patient={props.patientId}
               patientNotes={wasiii}
+            />
+            <TermOfParentalRights
+              questionId={item}
+              patientId={props.patientId}
+              item={item}
             />
           </div>
         </div>
